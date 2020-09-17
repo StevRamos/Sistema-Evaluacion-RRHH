@@ -1,11 +1,10 @@
 import java.util.ArrayList;
-
 public class DetalleCriterio{
 	private double nota;
 	private double notaAutoEval;
 	private PesoCriterio pesoCriterio;
 	private Evaluacion evaluacion;
-	private ListArray<DetalleSubcriterio> detallesSubcriterio;
+	private ArrayList<DetalleSubcriterio> detallesSubcriterio;
 
 	public DetalleCriterio(){
 		this.detallesSubcriterio = new ArrayList<DetalleSubcriterio>();
@@ -43,11 +42,11 @@ public class DetalleCriterio{
 		this.evaluacion = evaluacion;
 	};
 
-	public DetalleSubcriterio getDetallesSubcriterio(){
+	public ArrayList<DetalleSubcriterio> getDetallesSubcriterio(){
 		return this.detallesSubcriterio;
 	};
 
-	public void setDetallesSubcriterio( ListArray<DetalleSubcriterio> detallesSubcriterio ){
+	public void setDetallesSubcriterio( DetalleSubcriterio detallesSubcriterio ){
 		this.detallesSubcriterio.add(detallesSubcriterio);
 	};
 

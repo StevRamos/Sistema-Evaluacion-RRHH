@@ -1,12 +1,11 @@
 import java.util.ArrayList;
-
 public class Criterio{
 	private int id;
 	private String nombre;
 	private String descripcion;
 	private boolean esVigente;
-	private ListArray<Subcriterio> subcriterios;
-	private ListArray<PesoCriterio> pesosCriterios;
+	private ArrayList<Subcriterio> subcriterios;
+	private ArrayList<PesoCriterio> pesosCriterios;
 	private TipoCriterio tipo;
 
 	public Criterio(){
@@ -46,19 +45,19 @@ public class Criterio{
 		this.esVigente = esVigente;
 	};
 
-	public Subcriterio getSubcriterios(){
+	public ArrayList<Subcriterio> getSubcriterios(){
 		return this.subcriterios;
 	};
 
-	public void setSubcriterios( ListArray<Subcriterio> subcriterios ){
+	public void setSubcriterios( Subcriterio subcriterios ){
 		this.subcriterios.add(subcriterios);
 	};
 
-	public PesoCriterio getPesosCriterios(){
+	public ArrayList<PesoCriterio> getPesosCriterios(){
 		return this.pesosCriterios;
 	};
 
-	public void setPesosCriterios( ListArray<PesoCriterio> pesosCriterios ){
+	public void setPesosCriterios( PesoCriterio pesosCriterios ){
 		this.pesosCriterios.add(pesosCriterios);
 	};
 

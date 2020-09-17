@@ -1,11 +1,10 @@
 import java.util.ArrayList;
-
 public class EvaluacionDesempenho{
 	private double notaEvalObj;
 	private double notaEvalCompetencia;
 	private double notaAutoEvalComp;
 	private double notaAutoEvalObj;
-	private ListArray<DetalleObjEvDesempenho> detallesObjetivos;
+	private ArrayList<DetalleObjEvDesempenho> detallesObjetivos;
 	private EvaluacionFinal evaluacionFinal;
 
 	public EvaluacionDesempenho(){
@@ -44,11 +43,11 @@ public class EvaluacionDesempenho{
 		this.notaAutoEvalObj = notaAutoEvalObj;
 	};
 
-	public DetalleObjEvDesempenho getDetallesObjetivos(){
+	public ArrayList<DetalleObjEvDesempenho> getDetallesObjetivos(){
 		return this.detallesObjetivos;
 	};
 
-	public void setDetallesObjetivos( ListArray<DetalleObjEvDesempenho> detallesObjetivos ){
+	public void setDetallesObjetivos( DetalleObjEvDesempenho detallesObjetivos ){
 		this.detallesObjetivos.add(detallesObjetivos);
 	};
 

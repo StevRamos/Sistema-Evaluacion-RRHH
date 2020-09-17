@@ -1,10 +1,9 @@
 import java.util.ArrayList;
-
 public class Escala{
 	private int id;
 	private String nombre;
 	private TipoCriterio tipoCriterio;
-	private ListArray<EscalaPeriodo> rangos;
+	private ArrayList<EscalaPeriodo> rangos;
 
 	public Escala(){
 		this.rangos = new ArrayList<EscalaPeriodo>();
@@ -34,11 +33,11 @@ public class Escala{
 		this.tipoCriterio = tipoCriterio;
 	};
 
-	public EscalaPeriodo getRangos(){
+	public ArrayList<EscalaPeriodo> getRangos(){
 		return this.rangos;
 	};
 
-	public void setRangos( ListArray<EscalaPeriodo> rangos ){
+	public void setRangos( EscalaPeriodo rangos ){
 		this.rangos.add(rangos);
 	};
 

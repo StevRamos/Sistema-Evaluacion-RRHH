@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Colaborador{
 	private int id;
@@ -9,12 +10,12 @@ public class Colaborador{
 	private String correo;
 	private int telefono;
 	private Date fechaNac;
-	private ListArray<Objetivo> objetivos;
-	private ListArray<EvaluacionFinal> evaluaciones;
+	private ArrayList<Objetivo> objetivos;
+	private ArrayList<EvaluacionFinal> evaluaciones;
 	private PuestoTrabajo puestoTrabajo;
 	private Area area;
 	private Colaborador jefe;
-	private ListArray<Colaborador> subordinados;
+	private ArrayList<Colaborador> subordinados;
 
 	public Colaborador(){
 		this.objetivos = new ArrayList<Objetivo>();
@@ -86,19 +87,19 @@ public class Colaborador{
 		this.fechaNac = fechaNac;
 	};
 
-	public Objetivo getObjetivos(){
+	public ArrayList<Objetivo> getObjetivos(){
 		return this.objetivos;
 	};
 
-	public void setObjetivos( ListArray<Objetivo> objetivos ){
+	public void setObjetivos( Objetivo objetivos ){
 		this.objetivos.add(objetivos);
 	};
 
-	public EvaluacionFinal getEvaluaciones(){
+	public ArrayList<EvaluacionFinal> getEvaluaciones(){
 		return this.evaluaciones;
 	};
 
-	public void setEvaluaciones( ListArray<EvaluacionFinal> evaluaciones ){
+	public void setEvaluaciones( EvaluacionFinal evaluaciones ){
 		this.evaluaciones.add(evaluaciones);
 	};
 
@@ -126,11 +127,11 @@ public class Colaborador{
 		this.jefe = jefe;
 	};
 
-	public Colaborador getSubordinados(){
+	public ArrayList<Colaborador> getSubordinados(){
 		return this.subordinados;
 	};
 
-	public void setSubordinados( ListArray<Colaborador> subordinados ){
+	public void setSubordinados( Colaborador subordinados ){
 		this.subordinados.add(subordinados);
 	};
 

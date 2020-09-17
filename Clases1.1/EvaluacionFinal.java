@@ -1,13 +1,12 @@
 import java.util.ArrayList;
-
 public class EvaluacionFinal{
 	private EvaluacionDesempenho evaluacionDesempenho;
 	private EvaluacionPotencial evaluacionPotencial;
 	private Periodo periodo;
-	private ListArray<EscalaPerPotencial> escalaSinCalibrar;
-	private ListArray<EscalaPerPotencial> escalaFinal;
-	private ListArray<EscalaPerDesempenho> letraSinCalibrar;
-	private ListArray<EscalaPerDesempenho> letraFinal;
+	private ArrayList<EscalaPerPotencial> escalaSinCalibrar;
+	private ArrayList<EscalaPerPotencial> escalaFinal;
+	private ArrayList<EscalaPerDesempenho> letraSinCalibrar;
+	private ArrayList<EscalaPerDesempenho> letraFinal;
 	private Colaborador colaborador;
 
 	public EvaluacionFinal(){
@@ -41,35 +40,35 @@ public class EvaluacionFinal{
 		this.periodo = periodo;
 	};
 
-	public EscalaPerPotencial getEscalaSinCalibrar(){
+	public ArrayList<EscalaPerPotencial> getEscalaSinCalibrar(){
 		return this.escalaSinCalibrar;
 	};
 
-	public void setEscalaSinCalibrar( ListArray<EscalaPerPotencial> escalaSinCalibrar ){
+	public void setEscalaSinCalibrar( EscalaPerPotencial escalaSinCalibrar ){
 		this.escalaSinCalibrar.add(escalaSinCalibrar);
 	};
 
-	public EscalaPerPotencial getEscalaFinal(){
+	public ArrayList<EscalaPerPotencial> getEscalaFinal(){
 		return this.escalaFinal;
 	};
 
-	public void setEscalaFinal( ListArray<EscalaPerPotencial> escalaFinal ){
+	public void setEscalaFinal( EscalaPerPotencial escalaFinal ){
 		this.escalaFinal.add(escalaFinal);
 	};
 
-	public EscalaPerDesempenho getLetraSinCalibrar(){
+	public ArrayList<EscalaPerDesempenho> getLetraSinCalibrar(){
 		return this.letraSinCalibrar;
 	};
 
-	public void setLetraSinCalibrar( ListArray<EscalaPerDesempenho> letraSinCalibrar ){
+	public void setLetraSinCalibrar( EscalaPerDesempenho letraSinCalibrar ){
 		this.letraSinCalibrar.add(letraSinCalibrar);
 	};
 
-	public EscalaPerDesempenho getLetraFinal(){
+	public ArrayList<EscalaPerDesempenho> getLetraFinal(){
 		return this.letraFinal;
 	};
 
-	public void setLetraFinal( ListArray<EscalaPerDesempenho> letraFinal ){
+	public void setLetraFinal( EscalaPerDesempenho letraFinal ){
 		this.letraFinal.add(letraFinal);
 	};
 

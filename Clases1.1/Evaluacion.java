@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Evaluacion{
 	private int id;
@@ -7,7 +8,7 @@ public class Evaluacion{
 	private double notaSinCalibrar;
 	private double notaFinal;
 	private String observaciones;
-	private ListArray<DetalleCriterio> detallesCriterio;
+	private ArrayList<DetalleCriterio> detallesCriterio;
 
 	public Evaluacion(){
 		this.detallesCriterio = new ArrayList<DetalleCriterio>();
@@ -61,11 +62,11 @@ public class Evaluacion{
 		this.observaciones = observaciones;
 	};
 
-	public DetalleCriterio getDetallesCriterio(){
+	public ArrayList<DetalleCriterio> getDetallesCriterio(){
 		return this.detallesCriterio;
 	};
 
-	public void setDetallesCriterio( ListArray<DetalleCriterio> detallesCriterio ){
+	public void setDetallesCriterio( DetalleCriterio detallesCriterio ){
 		this.detallesCriterio.add(detallesCriterio);
 	};
 

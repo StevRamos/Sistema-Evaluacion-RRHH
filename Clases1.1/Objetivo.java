@@ -1,3 +1,5 @@
+import java.util.Date;
+
 public class Objetivo{
 	private int id;
 	private String descripcion;
@@ -7,7 +9,6 @@ public class Objetivo{
 	private double meta;
 	private char unidadMedida;
 	private String observacion;
-	private booleano estado;
 	private DetalleObjEvDesempenho detalleObjetivo;
 	private Colaborador colaborador;
 	private Periodo periodo;
@@ -74,14 +75,6 @@ public class Objetivo{
 
 	public void setObservacion( String observacion ){
 		this.observacion = observacion;
-	};
-
-	public booleano getEstado(){
-		return this.estado;
-	};
-
-	public void setEstado( booleano estado ){
-		this.estado = estado;
 	};
 
 	public DetalleObjEvDesempenho getDetalleObjetivo(){

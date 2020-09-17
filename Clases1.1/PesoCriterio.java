@@ -1,8 +1,7 @@
 import java.util.ArrayList;
-
 public class PesoCriterio{
 	private double peso;
-	private ListArray<DetalleCriterio> detallesCriterio;
+	private ArrayList<DetalleCriterio> detallesCriterio;
 	private Criterio criterio;
 	private PuestoTrabajo puestoTrabajo;
 	private Area area;
@@ -20,11 +19,11 @@ public class PesoCriterio{
 		this.peso = peso;
 	};
 
-	public DetalleCriterio getDetallesCriterio(){
+	public ArrayList<DetalleCriterio> getDetallesCriterio(){
 		return this.detallesCriterio;
 	};
 
-	public void setDetallesCriterio( ListArray<DetalleCriterio> detallesCriterio ){
+	public void setDetallesCriterio( DetalleCriterio detallesCriterio ){
 		this.detallesCriterio.add(detallesCriterio);
 	};
 

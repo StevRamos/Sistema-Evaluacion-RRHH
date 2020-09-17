@@ -1,13 +1,12 @@
 import java.util.ArrayList;
-
 public class Area{
 	private int id;
 	private String nombre;
 	private String descripcion;
-	private ListArray<PesoCriterio> pesosCriterios;
-	private ListArray<PuestoTrabajo> puestosTrabajo;
-	private ListArray<Cupos> cupos;
-	private ListArray<Colaborador> colaboradores;
+	private ArrayList<PesoCriterio> pesosCriterios;
+	private ArrayList<PuestoTrabajo> puestosTrabajo;
+	private ArrayList<Cupos> cupos;
+	private ArrayList<Colaborador> colaboradores;
 
 	public Area(){
 		this.pesosCriterios = new ArrayList<PesoCriterio>();
@@ -40,35 +39,35 @@ public class Area{
 		this.descripcion = descripcion;
 	};
 
-	public PesoCriterio getPesosCriterios(){
+	public ArrayList<PesoCriterio> getPesosCriterios(){
 		return this.pesosCriterios;
 	};
 
-	public void setPesosCriterios( ListArray<PesoCriterio> pesosCriterios ){
+	public void setPesosCriterios( PesoCriterio pesosCriterios ){
 		this.pesosCriterios.add(pesosCriterios);
 	};
 
-	public PuestoTrabajo getPuestosTrabajo(){
+	public ArrayList<PuestoTrabajo> getPuestosTrabajo(){
 		return this.puestosTrabajo;
 	};
 
-	public void setPuestosTrabajo( ListArray<PuestoTrabajo> puestosTrabajo ){
+	public void setPuestosTrabajo( PuestoTrabajo puestosTrabajo ){
 		this.puestosTrabajo.add(puestosTrabajo);
 	};
 
-	public Cupos getCupos(){
+	public ArrayList<Cupos> getCupos(){
 		return this.cupos;
 	};
 
-	public void setCupos( ListArray<Cupos> cupos ){
+	public void setCupos( Cupos cupos ){
 		this.cupos.add(cupos);
 	};
 
-	public Colaborador getColaboradores(){
+	public ArrayList<Colaborador> getColaboradores(){
 		return this.colaboradores;
 	};
 
-	public void setColaboradores( ListArray<Colaborador> colaboradores ){
+	public void setColaboradores( Colaborador colaboradores ){
 		this.colaboradores.add(colaboradores);
 	};
 

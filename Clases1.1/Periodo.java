@@ -1,13 +1,14 @@
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Periodo{
 	private int id;
 	private Date fechaInicio;
 	private Date fechaFin;
-	private ListArray<EvaluacionFinal> evaluaciones;
-	private ListArray<PesoCriterio> pesosCriterios;
-	private ListArray<EscalaPeriodo> escalasPeriodo;
-	private ListArray<Objetivo> objetivos;
+	private ArrayList<EvaluacionFinal> evaluaciones;
+	private ArrayList<PesoCriterio> pesosCriterios;
+	private ArrayList<EscalaPeriodo> escalasPeriodo;
+	private ArrayList<Objetivo> objetivos;
 
 	public Periodo(){
 		this.evaluaciones = new ArrayList<EvaluacionFinal>();
@@ -40,35 +41,35 @@ public class Periodo{
 		this.fechaFin = fechaFin;
 	};
 
-	public EvaluacionFinal getEvaluaciones(){
+	public ArrayList<EvaluacionFinal> getEvaluaciones(){
 		return this.evaluaciones;
 	};
 
-	public void setEvaluaciones( ListArray<EvaluacionFinal> evaluaciones ){
+	public void setEvaluaciones( EvaluacionFinal evaluaciones ){
 		this.evaluaciones.add(evaluaciones);
 	};
 
-	public PesoCriterio getPesosCriterios(){
+	public ArrayList<PesoCriterio> getPesosCriterios(){
 		return this.pesosCriterios;
 	};
 
-	public void setPesosCriterios( ListArray<PesoCriterio> pesosCriterios ){
+	public void setPesosCriterios( PesoCriterio pesosCriterios ){
 		this.pesosCriterios.add(pesosCriterios);
 	};
 
-	public EscalaPeriodo getEscalasPeriodo(){
+	public ArrayList<EscalaPeriodo> getEscalasPeriodo(){
 		return this.escalasPeriodo;
 	};
 
-	public void setEscalasPeriodo( ListArray<EscalaPeriodo> escalasPeriodo ){
+	public void setEscalasPeriodo( EscalaPeriodo escalasPeriodo ){
 		this.escalasPeriodo.add(escalasPeriodo);
 	};
 
-	public Objetivo getObjetivos(){
+	public ArrayList<Objetivo> getObjetivos(){
 		return this.objetivos;
 	};
 
-	public void setObjetivos( ListArray<Objetivo> objetivos ){
+	public void setObjetivos( Objetivo objetivos ){
 		this.objetivos.add(objetivos);
 	};
 

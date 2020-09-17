@@ -1,17 +1,16 @@
 import java.util.ArrayList;
-
 public class EscalaPerPotencial{
-	private ListArray<EvaluacionFinal> evaluaciones;
+	private ArrayList<EvaluacionFinal> evaluaciones;
 
 	public EscalaPerPotencial(){
 		this.evaluaciones = new ArrayList<EvaluacionFinal>();
 	};
 
-	public EvaluacionFinal getEvaluaciones(){
+	public ArrayList<EvaluacionFinal> getEvaluaciones(){
 		return this.evaluaciones;
 	};
 
-	public void setEvaluaciones( ListArray<EvaluacionFinal> evaluaciones ){
+	public void setEvaluaciones( EvaluacionFinal evaluaciones ){
 		this.evaluaciones.add(evaluaciones);
 	};
 

@@ -1,11 +1,10 @@
 import java.util.ArrayList;
-
 public class Subcriterio{
 	private int id;
 	private String nombre;
 	private String descripcion;
 	private boolean esVigente;
-	private ListArray<PesoSubcriterio> pesosSubcriterios;
+	private ArrayList<PesoSubcriterio> pesosSubcriterios;
 	private Criterio criterio;
 
 	public Subcriterio(){
@@ -44,11 +43,11 @@ public class Subcriterio{
 		this.esVigente = esVigente;
 	};
 
-	public PesoSubcriterio getPesosSubcriterios(){
+	public ArrayList<PesoSubcriterio> getPesosSubcriterios(){
 		return this.pesosSubcriterios;
 	};
 
-	public void setPesosSubcriterios( ListArray<PesoSubcriterio> pesosSubcriterios ){
+	public void setPesosSubcriterios( PesoSubcriterio pesosSubcriterios ){
 		this.pesosSubcriterios.add(pesosSubcriterios);
 	};
 
