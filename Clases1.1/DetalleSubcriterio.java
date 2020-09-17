@@ -1,4 +1,4 @@
-public class DetalleSubcriterio{
+public abstract class DetalleSubcriterio{
 	private DetalleCriterio detalleCriterio;
 	private PesoSubcriterio pesoSubcriterio;
 

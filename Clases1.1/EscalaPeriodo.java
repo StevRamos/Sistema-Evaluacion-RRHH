@@ -1,4 +1,4 @@
-public class EscalaPeriodo{
+public abstract class EscalaPeriodo{
 	private double notaMax;
 	private double notaMin;
 	private Periodo periodo;

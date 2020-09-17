@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Evaluacion{
+public abstract class Evaluacion{
 	private int id;
 	private Date fechaInicio;
 	private Date fechaFin;
