@@ -1,4 +1,4 @@
-public class DetalleSubcompetencia{
+public class DetalleSubcompetencia extends DetalleSubcriterio{
 	private double nota;
 	private double notaAutoEval;
 

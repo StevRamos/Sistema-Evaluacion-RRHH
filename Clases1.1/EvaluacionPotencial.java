@@ -1,4 +1,4 @@
-public class EvaluacionPotencial{
+public class EvaluacionPotencial extends Evaluacion{
 	private double notaAutoEval;
 	private EvaluacionFinal evaluacionFinal;
 

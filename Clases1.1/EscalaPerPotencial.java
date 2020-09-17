@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class EscalaPerPotencial{
+public class EscalaPerPotencial extends EscalaPeriodo{
 	private ArrayList<EvaluacionFinal> evaluaciones;
 
 	public EscalaPerPotencial(){

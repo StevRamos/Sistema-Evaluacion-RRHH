@@ -1,4 +1,4 @@
-public class DetalleSubpotencial{
+public class DetalleSubpotencial extends DetalleSubcriterio{
 	private boolean cumplio;
 	private boolean cumplioAutoEval;
 

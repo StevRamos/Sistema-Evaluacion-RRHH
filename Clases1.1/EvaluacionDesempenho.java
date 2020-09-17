@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class EvaluacionDesempenho{
+public class EvaluacionDesempenho extends Evaluacion{
 	private double notaEvalObj;
 	private double notaEvalCompetencia;
 	private double notaAutoEvalComp;
