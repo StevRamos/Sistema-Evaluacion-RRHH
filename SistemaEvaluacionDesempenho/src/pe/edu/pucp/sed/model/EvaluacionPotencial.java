@@ -1,14 +1,16 @@
+package pe.edu.pucp.sed.model;
+
 public class EvaluacionPotencial{
-	private varchar observaciones;
+	private String observaciones;
 	private double notaAutoEval;
 	private double notaPrevia;
 	private double notaFinal;
 
-	public varchar getObservaciones(){
+	public String getObservaciones(){
 		return this.observaciones;
 	};
 
-	public void setObservaciones( varchar observaciones ){
+	public void setObservaciones( String observaciones ){
 		this.observaciones = observaciones;
 	};
 

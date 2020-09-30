@@ -1,3 +1,5 @@
+package pe.edu.pucp.sed.model;
+
 public class LineaCriterio{
 	private int idLineaCriterio;
 	private LineaEvaluacion lineaEvaluacion;

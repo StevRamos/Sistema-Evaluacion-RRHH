@@ -1,3 +1,5 @@
+package pe.edu.pucp.sed.model;
+
 public class LineaCompetencia{
 	private double nota;
 	private double notaAutoEval;

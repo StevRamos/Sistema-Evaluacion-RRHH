@@ -1,3 +1,5 @@
+package pe.edu.pucp.sed.model;
+
 public class LineaPotencial{
 	private boolean cumplioAutoEval;
 	private boolean cumplioPrevia;

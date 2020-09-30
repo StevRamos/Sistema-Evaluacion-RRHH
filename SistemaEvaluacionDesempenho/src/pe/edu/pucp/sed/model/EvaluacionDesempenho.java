@@ -1,10 +1,12 @@
+package pe.edu.pucp.sed.model;
+
 import java.util.ArrayList;
 public class EvaluacionDesempenho{
-	private varchar observacionesComp;
+	private String observacionesComp;
 	private double notaAutoEvalComp;
 	private double notaPreviaComp;
 	private double notaFinalComp;
-	private varchar observacionesObj;
+	private String observacionesObj;
 	private double notaAutoEvalOb;
 	private double notaPreviaObj;
 	private double notaFinalObj;
@@ -14,11 +16,11 @@ public class EvaluacionDesempenho{
 		this.objetivos = new ArrayList<Objetivo>();
 	};
 
-	public varchar getObservacionesComp(){
+	public String getObservacionesComp(){
 		return this.observacionesComp;
 	};
 
-	public void setObservacionesComp( varchar observacionesComp ){
+	public void setObservacionesComp( String observacionesComp ){
 		this.observacionesComp = observacionesComp;
 	};
 
@@ -46,11 +48,11 @@ public class EvaluacionDesempenho{
 		this.notaFinalComp = notaFinalComp;
 	};
 
-	public varchar getObservacionesObj(){
+	public String getObservacionesObj(){
 		return this.observacionesObj;
 	};
 
-	public void setObservacionesObj( varchar observacionesObj ){
+	public void setObservacionesObj( String observacionesObj ){
 		this.observacionesObj = observacionesObj;
 	};
 

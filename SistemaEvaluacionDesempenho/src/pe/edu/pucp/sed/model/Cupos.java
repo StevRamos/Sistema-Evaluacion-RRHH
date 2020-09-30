@@ -1,3 +1,5 @@
+package pe.edu.pucp.sed.model;
+
 public class Cupos{
 	private int numeroCupos;
 	private Area area;

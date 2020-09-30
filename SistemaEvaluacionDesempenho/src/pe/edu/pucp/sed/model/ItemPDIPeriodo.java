@@ -1,3 +1,5 @@
+package pe.edu.pucp.sed.model;
+
 public class ItemPDIPeriodo{
 	private double notaMin;
 	private double notaMax;

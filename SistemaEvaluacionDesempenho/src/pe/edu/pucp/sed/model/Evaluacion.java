@@ -1,3 +1,5 @@
+package pe.edu.pucp.sed.model;
+
 import java.util.ArrayList;
 public class Evaluacion{
 	private int idEvaluacion;
