@@ -1,7 +1,7 @@
 import java.util.Date;
 
 public class Objetivo{
-	private int id;
+	private int idObjetivo;
 	private String descripcion;
 	private boolean estado;
 	private Date fechaFormulacion;
@@ -9,16 +9,20 @@ public class Objetivo{
 	private double meta;
 	private char unidadMedida;
 	private String observacion;
-	private DetalleObjEvDesempenho detalleObjetivo;
+	private double peso;
+	private double notaPrevia;
+	private double notaAutoEval;
+	private double notaFinal;
 	private Colaborador colaborador;
+	private EvaluacionDesempenho evaluacion;
 	private Periodo periodo;
 
-	public int getId(){
-		return this.id;
+	public int getIdObjetivo(){
+		return this.idObjetivo;
 	};
 
-	public void setId( int id ){
-		this.id = id;
+	public void setIdObjetivo( int idObjetivo ){
+		this.idObjetivo = idObjetivo;
 	};
 
 	public String getDescripcion(){
@@ -77,12 +81,36 @@ public class Objetivo{
 		this.observacion = observacion;
 	};
 
-	public DetalleObjEvDesempenho getDetalleObjetivo(){
-		return this.detalleObjetivo;
+	public double getPeso(){
+		return this.peso;
 	};
 
-	public void setDetalleObjetivo( DetalleObjEvDesempenho detalleObjetivo ){
-		this.detalleObjetivo = detalleObjetivo;
+	public void setPeso( double peso ){
+		this.peso = peso;
+	};
+
+	public double getNotaPrevia(){
+		return this.notaPrevia;
+	};
+
+	public void setNotaPrevia( double notaPrevia ){
+		this.notaPrevia = notaPrevia;
+	};
+
+	public double getNotaAutoEval(){
+		return this.notaAutoEval;
+	};
+
+	public void setNotaAutoEval( double notaAutoEval ){
+		this.notaAutoEval = notaAutoEval;
+	};
+
+	public double getNotaFinal(){
+		return this.notaFinal;
+	};
+
+	public void setNotaFinal( double notaFinal ){
+		this.notaFinal = notaFinal;
 	};
 
 	public Colaborador getColaborador(){
@@ -91,6 +119,14 @@ public class Objetivo{
 
 	public void setColaborador( Colaborador colaborador ){
 		this.colaborador = colaborador;
+	};
+
+	public EvaluacionDesempenho getEvaluacion(){
+		return this.evaluacion;
+	};
+
+	public void setEvaluacion( EvaluacionDesempenho evaluacion ){
+		this.evaluacion = evaluacion;
 	};
 
 	public Periodo getPeriodo(){

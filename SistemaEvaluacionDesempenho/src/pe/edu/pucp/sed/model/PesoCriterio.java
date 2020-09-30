@@ -1,14 +1,23 @@
 import java.util.ArrayList;
 public class PesoCriterio{
+	private int idPesoCriterio;
 	private double peso;
-	private ArrayList<DetalleCriterio> detallesCriterio;
+	private ArrayList<LineaEvaluacion> lineasEvaluacion;
 	private Criterio criterio;
 	private PuestoTrabajo puestoTrabajo;
 	private Area area;
 	private Periodo periodo;
 
 	public PesoCriterio(){
-		this.detallesCriterio = new ArrayList<DetalleCriterio>();
+		this.lineasEvaluacion = new ArrayList<LineaEvaluacion>();
+	};
+
+	public int getIdPesoCriterio(){
+		return this.idPesoCriterio;
+	};
+
+	public void setIdPesoCriterio( int idPesoCriterio ){
+		this.idPesoCriterio = idPesoCriterio;
 	};
 
 	public double getPeso(){
@@ -19,12 +28,12 @@ public class PesoCriterio{
 		this.peso = peso;
 	};
 
-	public ArrayList<DetalleCriterio> getDetallesCriterio(){
-		return this.detallesCriterio;
+	public ArrayList<LineaEvaluacion> getLineasEvaluacion(){
+		return this.lineasEvaluacion;
 	};
 
-	public void setDetallesCriterio( DetalleCriterio detallesCriterio ){
-		this.detallesCriterio.add(detallesCriterio);
+	public void setLineasEvaluacion( LineaEvaluacion lineasEvaluacion ){
+		this.lineasEvaluacion.add(lineasEvaluacion);
 	};
 
 	public Criterio getCriterio(){

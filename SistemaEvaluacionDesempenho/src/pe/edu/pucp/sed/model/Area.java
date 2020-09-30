@@ -1,26 +1,30 @@
 import java.util.ArrayList;
 public class Area{
-	private int id;
+	private int idArea;
 	private String nombre;
 	private String descripcion;
-	private ArrayList<PesoCriterio> pesosCriterios;
+	private ArrayList<PesoSubcriterio> pesosSubcriterio;
+	private ArrayList<PesoCriterio> pesosCriterio;
 	private ArrayList<PuestoTrabajo> puestosTrabajo;
+	private ArrayList<AreaPeriodo> configuracionFechas;
 	private ArrayList<Cupos> cupos;
 	private ArrayList<Colaborador> colaboradores;
 
 	public Area(){
-		this.pesosCriterios = new ArrayList<PesoCriterio>();
+		this.pesosSubcriterio = new ArrayList<PesoSubcriterio>();
+		this.pesosCriterio = new ArrayList<PesoCriterio>();
 		this.puestosTrabajo = new ArrayList<PuestoTrabajo>();
+		this.configuracionFechas = new ArrayList<AreaPeriodo>();
 		this.cupos = new ArrayList<Cupos>();
 		this.colaboradores = new ArrayList<Colaborador>();
 	};
 
-	public int getId(){
-		return this.id;
+	public int getIdArea(){
+		return this.idArea;
 	};
 
-	public void setId( int id ){
-		this.id = id;
+	public void setIdArea( int idArea ){
+		this.idArea = idArea;
 	};
 
 	public String getNombre(){
@@ -39,12 +43,20 @@ public class Area{
 		this.descripcion = descripcion;
 	};
 
-	public ArrayList<PesoCriterio> getPesosCriterios(){
-		return this.pesosCriterios;
+	public ArrayList<PesoSubcriterio> getPesosSubcriterio(){
+		return this.pesosSubcriterio;
 	};
 
-	public void setPesosCriterios( PesoCriterio pesosCriterios ){
-		this.pesosCriterios.add(pesosCriterios);
+	public void setPesosSubcriterio( PesoSubcriterio pesosSubcriterio ){
+		this.pesosSubcriterio.add(pesosSubcriterio);
+	};
+
+	public ArrayList<PesoCriterio> getPesosCriterio(){
+		return this.pesosCriterio;
+	};
+
+	public void setPesosCriterio( PesoCriterio pesosCriterio ){
+		this.pesosCriterio.add(pesosCriterio);
 	};
 
 	public ArrayList<PuestoTrabajo> getPuestosTrabajo(){
@@ -53,6 +65,14 @@ public class Area{
 
 	public void setPuestosTrabajo( PuestoTrabajo puestosTrabajo ){
 		this.puestosTrabajo.add(puestosTrabajo);
+	};
+
+	public ArrayList<AreaPeriodo> getConfiguracionFechas(){
+		return this.configuracionFechas;
+	};
+
+	public void setConfiguracionFechas( AreaPeriodo configuracionFechas ){
+		this.configuracionFechas.add(configuracionFechas);
 	};
 
 	public ArrayList<Cupos> getCupos(){

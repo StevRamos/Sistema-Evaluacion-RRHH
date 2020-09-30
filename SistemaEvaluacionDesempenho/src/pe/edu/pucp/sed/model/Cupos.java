@@ -1,7 +1,7 @@
 public class Cupos{
 	private int numeroCupos;
 	private Area area;
-	private EscalaPerDesempenho escalaPerDesempenho;
+	private EscalaPeriodo escala;
 
 	public int getNumeroCupos(){
 		return this.numeroCupos;
@@ -19,12 +19,12 @@ public class Cupos{
 		this.area = area;
 	};
 
-	public EscalaPerDesempenho getEscalaPerDesempenho(){
-		return this.escalaPerDesempenho;
+	public EscalaPeriodo getEscala(){
+		return this.escala;
 	};
 
-	public void setEscalaPerDesempenho( EscalaPerDesempenho escalaPerDesempenho ){
-		this.escalaPerDesempenho = escalaPerDesempenho;
+	public void setEscala( EscalaPeriodo escala ){
+		this.escala = escala;
 	};
 
 }

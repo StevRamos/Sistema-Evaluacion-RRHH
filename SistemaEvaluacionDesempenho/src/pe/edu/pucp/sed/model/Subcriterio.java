@@ -1,22 +1,23 @@
 import java.util.ArrayList;
 public class Subcriterio{
-	private int id;
+	private int idSubcriterio;
 	private String nombre;
 	private String descripcion;
 	private boolean esVigente;
-	private ArrayList<PesoSubcriterio> pesosSubcriterios;
+	private int tipo;
+	private ArrayList<PesoSubcriterio> pesosSubcriterio;
 	private Criterio criterio;
 
 	public Subcriterio(){
-		this.pesosSubcriterios = new ArrayList<PesoSubcriterio>();
+		this.pesosSubcriterio = new ArrayList<PesoSubcriterio>();
 	};
 
-	public int getId(){
-		return this.id;
+	public int getIdSubcriterio(){
+		return this.idSubcriterio;
 	};
 
-	public void setId( int id ){
-		this.id = id;
+	public void setIdSubcriterio( int idSubcriterio ){
+		this.idSubcriterio = idSubcriterio;
 	};
 
 	public String getNombre(){
@@ -43,12 +44,20 @@ public class Subcriterio{
 		this.esVigente = esVigente;
 	};
 
-	public ArrayList<PesoSubcriterio> getPesosSubcriterios(){
-		return this.pesosSubcriterios;
+	public int getTipo(){
+		return this.tipo;
 	};
 
-	public void setPesosSubcriterios( PesoSubcriterio pesosSubcriterios ){
-		this.pesosSubcriterios.add(pesosSubcriterios);
+	public void setTipo( int tipo ){
+		this.tipo = tipo;
+	};
+
+	public ArrayList<PesoSubcriterio> getPesosSubcriterio(){
+		return this.pesosSubcriterio;
+	};
+
+	public void setPesosSubcriterio( PesoSubcriterio pesosSubcriterio ){
+		this.pesosSubcriterio.add(pesosSubcriterio);
 	};
 
 	public Criterio getCriterio(){

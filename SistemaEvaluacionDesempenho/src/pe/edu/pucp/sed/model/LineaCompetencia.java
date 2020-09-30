@@ -1,6 +1,7 @@
-public class DetalleSubcompetencia extends DetalleSubcriterio{
+public class LineaCompetencia{
 	private double nota;
 	private double notaAutoEval;
+	private double notaPrevia;
 
 	public double getNota(){
 		return this.nota;
@@ -16,6 +17,14 @@ public class DetalleSubcompetencia extends DetalleSubcriterio{
 
 	public void setNotaAutoEval( double notaAutoEval ){
 		this.notaAutoEval = notaAutoEval;
+	};
+
+	public double getNotaPrevia(){
+		return this.notaPrevia;
+	};
+
+	public void setNotaPrevia( double notaPrevia ){
+		this.notaPrevia = notaPrevia;
 	};
 
 }

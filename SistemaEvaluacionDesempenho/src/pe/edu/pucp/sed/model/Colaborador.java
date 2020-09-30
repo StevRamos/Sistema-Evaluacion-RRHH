@@ -2,16 +2,16 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class Colaborador{
-	private int id;
+	private int idColaborador;
 	private String nombres;
 	private String apellidos;
 	private String direccion;
-	private int dni;
+	private String dni;
 	private String correo;
-	private int telefono;
+	private String telefono;
 	private Date fechaNac;
 	private ArrayList<Objetivo> objetivos;
-	private ArrayList<EvaluacionFinal> evaluaciones;
+	private ArrayList<Evaluacion> evaluaciones;
 	private PuestoTrabajo puestoTrabajo;
 	private Area area;
 	private Colaborador jefe;
@@ -19,16 +19,16 @@ public class Colaborador{
 
 	public Colaborador(){
 		this.objetivos = new ArrayList<Objetivo>();
-		this.evaluaciones = new ArrayList<EvaluacionFinal>();
+		this.evaluaciones = new ArrayList<Evaluacion>();
 		this.subordinados = new ArrayList<Colaborador>();
 	};
 
-	public int getId(){
-		return this.id;
+	public int getIdColaborador(){
+		return this.idColaborador;
 	};
 
-	public void setId( int id ){
-		this.id = id;
+	public void setIdColaborador( int idColaborador ){
+		this.idColaborador = idColaborador;
 	};
 
 	public String getNombres(){
@@ -55,11 +55,11 @@ public class Colaborador{
 		this.direccion = direccion;
 	};
 
-	public int getDni(){
+	public String getDni(){
 		return this.dni;
 	};
 
-	public void setDni( int dni ){
+	public void setDni( String dni ){
 		this.dni = dni;
 	};
 
@@ -71,11 +71,11 @@ public class Colaborador{
 		this.correo = correo;
 	};
 
-	public int getTelefono(){
+	public String getTelefono(){
 		return this.telefono;
 	};
 
-	public void setTelefono( int telefono ){
+	public void setTelefono( String telefono ){
 		this.telefono = telefono;
 	};
 
@@ -95,11 +95,11 @@ public class Colaborador{
 		this.objetivos.add(objetivos);
 	};
 
-	public ArrayList<EvaluacionFinal> getEvaluaciones(){
+	public ArrayList<Evaluacion> getEvaluaciones(){
 		return this.evaluaciones;
 	};
 
-	public void setEvaluaciones( EvaluacionFinal evaluaciones ){
+	public void setEvaluaciones( Evaluacion evaluaciones ){
 		this.evaluaciones.add(evaluaciones);
 	};
 

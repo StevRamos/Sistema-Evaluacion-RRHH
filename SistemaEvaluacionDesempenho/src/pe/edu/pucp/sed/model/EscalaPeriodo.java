@@ -1,8 +1,14 @@
-public abstract class EscalaPeriodo{
+import java.util.ArrayList;
+public class EscalaPeriodo{
 	private double notaMax;
 	private double notaMin;
-	private Periodo periodo;
 	private Escala escala;
+	private Periodo periodo;
+	private ArrayList<Cupos> cupos;
+
+	public EscalaPeriodo(){
+		this.cupos = new ArrayList<Cupos>();
+	};
 
 	public double getNotaMax(){
 		return this.notaMax;
@@ -20,6 +26,14 @@ public abstract class EscalaPeriodo{
 		this.notaMin = notaMin;
 	};
 
+	public Escala getEscala(){
+		return this.escala;
+	};
+
+	public void setEscala( Escala escala ){
+		this.escala = escala;
+	};
+
 	public Periodo getPeriodo(){
 		return this.periodo;
 	};
@@ -28,12 +42,12 @@ public abstract class EscalaPeriodo{
 		this.periodo = periodo;
 	};
 
-	public Escala getEscala(){
-		return this.escala;
+	public ArrayList<Cupos> getCupos(){
+		return this.cupos;
 	};
 
-	public void setEscala( Escala escala ){
-		this.escala = escala;
+	public void setCupos( Cupos cupos ){
+		this.cupos.add(cupos);
 	};
 
 }
