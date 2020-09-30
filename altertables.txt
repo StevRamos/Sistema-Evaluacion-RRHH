@@ -1,0 +1,148 @@
+ALTER TABLE `db_sed`.`Areas` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `descripcion`;
+
+
+ALTER TABLE `db_sed`.`Areas` 
+CHANGE COLUMN `descripcion` `descripcion` VARCHAR(150) NULL ;
+
+
+ALTER TABLE `db_sed`.`Areas_Periodos` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `fechaFinEval`,
+CHANGE COLUMN `fechaInicioPlan` `fechaInicioPlan` DATE NULL ,
+CHANGE COLUMN `fechaFinPlan` `fechaFinPlan` DATE NULL ,
+CHANGE COLUMN `fechaInicioEval` `fechaInicioEval` DATE NULL ,
+CHANGE COLUMN `fechaFinEval` `fechaFinEval` DATE NULL ;
+
+ALTER TABLE `db_sed`.`Colaboradores` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `id_Jefe`;
+
+ALTER TABLE `db_sed`.`Cupos` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `num_Cupos`,
+CHANGE COLUMN `num_Cupos` `num_Cupos` INT NULL ;
+
+ALTER TABLE `db_sed`.`Escalas` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `tipo`;
+
+ALTER TABLE `db_sed`.`Escalas_Periodos` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `notaMin`,
+CHANGE COLUMN `notaMax` `notaMax` DOUBLE NULL ,
+CHANGE COLUMN `notaMin` `notaMin` DOUBLE NULL ;
+
+
+ALTER TABLE `db_sed`.`Evaluaciones` 
+DROP FOREIGN KEY `fk_Evaluaciones_Escalas1`,
+DROP FOREIGN KEY `fk_Evaluaciones_Escalas2`;
+ALTER TABLE `db_sed`.`Evaluaciones` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `id_EscalaFinal`,
+CHANGE COLUMN `id_EscalaSinCalibrar` `id_EscalaSinCalibrar` INT NULL ,
+CHANGE COLUMN `id_EscalaFinal` `id_EscalaFinal` INT NULL ;
+ALTER TABLE `db_sed`.`Evaluaciones` 
+ADD CONSTRAINT `fk_Evaluaciones_Escalas1`
+  FOREIGN KEY (`id_EscalaSinCalibrar`)
+  REFERENCES `db_sed`.`Escalas` (`id_Escala`),
+ADD CONSTRAINT `fk_Evaluaciones_Escalas2`
+  FOREIGN KEY (`id_EscalaFinal`)
+  REFERENCES `db_sed`.`Escalas` (`id_Escala`);
+
+ALTER TABLE `db_sed`.`EvaluacionesDesempenho` 
+CHANGE COLUMN `observacionesComp` `observacionesComp` VARCHAR(100) NULL ,
+CHANGE COLUMN `notaAutoEvalComp` `notaAutoEvalComp` DOUBLE NULL ,
+CHANGE COLUMN `notaPreviaComp` `notaPreviaComp` DOUBLE NULL ,
+CHANGE COLUMN `notaFinalComp` `notaFinalComp` DOUBLE NULL ,
+CHANGE COLUMN `observacionesObj` `observacionesObj` VARCHAR(100) NULL ,
+CHANGE COLUMN `notaAutoEvalObj` `notaAutoEvalObj` DOUBLE NULL ,
+CHANGE COLUMN `notaPreviaObj` `notaPreviaObj` DOUBLE NULL ,
+CHANGE COLUMN `notaFinalObj` `notaFinalObj` DOUBLE NULL ;
+
+
+ALTER TABLE `db_sed`.`EvaluacionesPotencial` 
+CHANGE COLUMN `observaciones` `observaciones` VARCHAR(150) NULL ,
+CHANGE COLUMN `notaAutoEval` `notaAutoEval` DOUBLE NULL ,
+CHANGE COLUMN `notaPrevia` `notaPrevia` DOUBLE NULL ,
+CHANGE COLUMN `notaFinal` `notaFinal` DOUBLE NULL ;
+
+ALTER TABLE `db_sed`.`ItemsPDI` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `nombre`;
+
+
+ALTER TABLE `db_sed`.`LineasCompetencia` 
+CHANGE COLUMN `notaAutoEval` `notaAutoEval` DOUBLE NULL ,
+CHANGE COLUMN `notaPrevia` `notaPrevia` DOUBLE NULL ,
+CHANGE COLUMN `notaFinal` `notaFinal` DOUBLE NULL ;
+
+
+ALTER TABLE `db_sed`.`LineasCriterio` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `id_LineaCriterio`;
+
+
+ALTER TABLE `db_sed`.`LineasEvaluacion` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `notaFinal`,
+CHANGE COLUMN `notaAutoEval` `notaAutoEval` DOUBLE NULL ,
+CHANGE COLUMN `notaPrevia` `notaPrevia` DOUBLE NULL ,
+CHANGE COLUMN `notaFinal` `notaFinal` DOUBLE NULL ;
+
+
+ALTER TABLE `db_sed`.`LineasEvaluacion` 
+DROP FOREIGN KEY `fk_Evaluaciones_has_PesosCriterios_ItemsPDI1`;
+ALTER TABLE `db_sed`.`LineasEvaluacion` 
+CHANGE COLUMN `id_ItemPDI` `id_ItemPDI` INT NULL ;
+ALTER TABLE `db_sed`.`LineasEvaluacion` 
+ADD CONSTRAINT `fk_Evaluaciones_has_PesosCriterios_ItemsPDI1`
+  FOREIGN KEY (`id_ItemPDI`)
+  REFERENCES `db_sed`.`ItemsPDI` (`id_ItemPDI`);
+
+
+
+ALTER TABLE `db_sed`.`LineasPotencial` 
+CHANGE COLUMN `cumplioAutoEval` `cumplioAutoEval` TINYINT(1) NULL ,
+CHANGE COLUMN `cumplioPrevia` `cumplioPrevia` TINYINT(1) NULL ,
+CHANGE COLUMN `cumplioFinal` `cumplioFinal` TINYINT(1) NULL ;
+
+
+ALTER TABLE `db_sed`.`Objetivos` 
+DROP FOREIGN KEY `fk_Objetivos_EvaluacionesDesempenho1`;
+ALTER TABLE `db_sed`.`Objetivos` 
+CHANGE COLUMN `fechaAprobacion` `fechaAprobacion` DATE NULL ,
+CHANGE COLUMN `observacion` `observacion` VARCHAR(200) NULL ,
+CHANGE COLUMN `notaPrevia` `notaPrevia` DOUBLE NULL ,
+CHANGE COLUMN `notaAutoEval` `notaAutoEval` DOUBLE NULL ,
+CHANGE COLUMN `notaFinal` `notaFinal` DOUBLE NULL ,
+CHANGE COLUMN `id_Evaluacion` `id_Evaluacion` INT NULL ;
+ALTER TABLE `db_sed`.`Objetivos` 
+ADD CONSTRAINT `fk_Objetivos_EvaluacionesDesempenho1`
+  FOREIGN KEY (`id_Evaluacion`)
+  REFERENCES `db_sed`.`EvaluacionesDesempenho` (`id_Evaluacion`);
+
+
+ALTER TABLE `db_sed`.`Objetivos` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `id_Evaluacion`;
+
+
+ALTER TABLE `db_sed`.`Periodos` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `pesoEvalComp`,
+CHANGE COLUMN `pesoEvalObj` `pesoEvalObj` DOUBLE NULL ,
+CHANGE COLUMN `pesoEvalComp` `pesoEvalComp` DOUBLE NULL ;
+
+ALTER TABLE `db_sed`.`PesosCriterios` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `peso`;
+
+ALTER TABLE `db_sed`.`PesosSubcriterios` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `id_Periodo`;
+
+
+ALTER TABLE `db_sed`.`PuestosTrabajo` 
+ADD COLUMN `activo` TINYINT(1) NULL AFTER `descripcion`,
+CHANGE COLUMN `descripcion` `descripcion` VARCHAR(150) NULL ;
+
+ALTER TABLE `db_sed`.`Subcriterios` 
+CHANGE COLUMN `descripcion` `descripcion` VARCHAR(150) NULL ,
+CHANGE COLUMN `esVigente` `activo` TINYINT(1) NULL ;
+
+
+ALTER TABLE `db_sed`.`Criterios` 
+CHANGE COLUMN `esVigente` `activo` TINYINT(1) NULL ;
+
+
+
+
+
