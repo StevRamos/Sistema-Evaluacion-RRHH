@@ -1,6 +1,0 @@
-instanceNameAWS="lp2tased"
-hostname="lp2tased.cabhw39pknc4.us-east-1.rds.amazonaws.com"
-port="3306"
-username="admin"
-password="lp2ta20202"
-nameBD="db_sed"
