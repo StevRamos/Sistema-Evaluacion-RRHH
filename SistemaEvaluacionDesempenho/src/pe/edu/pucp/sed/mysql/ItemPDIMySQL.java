@@ -36,7 +36,7 @@ public class ItemPDIMySQL implements ItemPDIDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(ItemPDI itemPDI){
+	public int actualizar(ItemPDI itemPDI){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class ItemPDIMySQL implements ItemPDIDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idItemPDI){
+	public int eliminar(int idItemPDI){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class ItemPDIMySQL implements ItemPDIDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<ItemPDI> listar(){
+	public ArrayList<ItemPDI> listar(){
 		ArrayList<ItemPDI> itemPDI = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

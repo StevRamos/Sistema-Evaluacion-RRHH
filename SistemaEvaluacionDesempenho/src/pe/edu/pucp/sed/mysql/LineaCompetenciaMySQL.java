@@ -36,7 +36,7 @@ public class LineaCompetenciaMySQL implements LineaCompetenciaDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(LineaCompetencia lineaCompetencia){
+	public int actualizar(LineaCompetencia lineaCompetencia){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class LineaCompetenciaMySQL implements LineaCompetenciaDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idLineaCompetencia){
+	public int eliminar(int idLineaCompetencia){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class LineaCompetenciaMySQL implements LineaCompetenciaDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<LineaCompetencia> listar(){
+	public ArrayList<LineaCompetencia> listar(){
 		ArrayList<LineaCompetencia> lineaCompetencia = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

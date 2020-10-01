@@ -36,7 +36,7 @@ public class PesoSubcriterioMySQL implements PesoSubcriterioDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(PesoSubcriterio pesoSubcriterio){
+	public int actualizar(PesoSubcriterio pesoSubcriterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class PesoSubcriterioMySQL implements PesoSubcriterioDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idPesoSubcriterio){
+	public int eliminar(int idPesoSubcriterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class PesoSubcriterioMySQL implements PesoSubcriterioDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<PesoSubcriterio> listar(){
+	public ArrayList<PesoSubcriterio> listar(){
 		ArrayList<PesoSubcriterio> pesoSubcriterio = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

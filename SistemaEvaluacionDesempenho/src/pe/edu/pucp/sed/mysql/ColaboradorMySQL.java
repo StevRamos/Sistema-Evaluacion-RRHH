@@ -36,7 +36,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Colaborador colaborador){
+	public int actualizar(Colaborador colaborador){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idColaborador){
+	public int eliminar(int idColaborador){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Colaborador> listar(){
+	public ArrayList<Colaborador> listar(){
 		ArrayList<Colaborador> colaborador = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

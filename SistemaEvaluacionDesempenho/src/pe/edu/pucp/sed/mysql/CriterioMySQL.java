@@ -36,7 +36,7 @@ public class CriterioMySQL implements CriterioDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Criterio criterio){
+	public int actualizar(Criterio criterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class CriterioMySQL implements CriterioDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idCriterio){
+	public int eliminar(int idCriterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class CriterioMySQL implements CriterioDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Criterio> listar(){
+	public ArrayList<Criterio> listar(){
 		ArrayList<Criterio> criterio = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

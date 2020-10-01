@@ -36,7 +36,7 @@ public class LineaPotencialMySQL implements LineaPotencialDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(LineaPotencial lineaPotencial){
+	public int actualizar(LineaPotencial lineaPotencial){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class LineaPotencialMySQL implements LineaPotencialDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idLineaPotencial){
+	public int eliminar(int idLineaPotencial){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class LineaPotencialMySQL implements LineaPotencialDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<LineaPotencial> listar(){
+	public ArrayList<LineaPotencial> listar(){
 		ArrayList<LineaPotencial> lineaPotencial = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

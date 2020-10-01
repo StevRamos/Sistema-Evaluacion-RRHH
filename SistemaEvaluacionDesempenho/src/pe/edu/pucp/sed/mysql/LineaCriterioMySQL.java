@@ -36,7 +36,7 @@ public class LineaCriterioMySQL implements LineaCriterioDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(LineaCriterio lineaCriterio){
+	public int actualizar(LineaCriterio lineaCriterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class LineaCriterioMySQL implements LineaCriterioDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idLineaCriterio){
+	public int eliminar(int idLineaCriterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class LineaCriterioMySQL implements LineaCriterioDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<LineaCriterio> listar(){
+	public ArrayList<LineaCriterio> listar(){
 		ArrayList<LineaCriterio> lineaCriterio = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

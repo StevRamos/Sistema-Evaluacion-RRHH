@@ -36,7 +36,7 @@ public class CuposMySQL implements CuposDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Cupos cupos){
+	public int actualizar(Cupos cupos){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class CuposMySQL implements CuposDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idCupos){
+	public int eliminar(int idCupos){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class CuposMySQL implements CuposDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Cupos> listar(){
+	public ArrayList<Cupos> listar(){
 		ArrayList<Cupos> cupos = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

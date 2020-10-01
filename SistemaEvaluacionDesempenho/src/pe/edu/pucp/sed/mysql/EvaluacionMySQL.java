@@ -36,7 +36,7 @@ public class EvaluacionMySQL implements EvaluacionDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Evaluacion evaluacion){
+	public int actualizar(Evaluacion evaluacion){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class EvaluacionMySQL implements EvaluacionDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idEvaluacion){
+	public int eliminar(int idEvaluacion){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class EvaluacionMySQL implements EvaluacionDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Evaluacion> listar(){
+	public ArrayList<Evaluacion> listar(){
 		ArrayList<Evaluacion> evaluacion = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

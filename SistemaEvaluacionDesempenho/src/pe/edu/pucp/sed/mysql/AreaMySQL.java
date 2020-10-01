@@ -36,7 +36,7 @@ public class AreaMySQL implements AreaDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Area area){
+	public int actualizar(Area area){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class AreaMySQL implements AreaDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idArea){
+	public int eliminar(int idArea){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class AreaMySQL implements AreaDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Area> listar(){
+	public ArrayList<Area> listar(){
 		ArrayList<Area> area = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

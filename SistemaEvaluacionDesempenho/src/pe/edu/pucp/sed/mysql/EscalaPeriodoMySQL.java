@@ -36,7 +36,7 @@ public class EscalaPeriodoMySQL implements EscalaPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(EscalaPeriodo escalaPeriodo){
+	public int actualizar(EscalaPeriodo escalaPeriodo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class EscalaPeriodoMySQL implements EscalaPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idEscalaPeriodo){
+	public int eliminar(int idEscalaPeriodo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class EscalaPeriodoMySQL implements EscalaPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<EscalaPeriodo> listar(){
+	public ArrayList<EscalaPeriodo> listar(){
 		ArrayList<EscalaPeriodo> escalaPeriodo = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

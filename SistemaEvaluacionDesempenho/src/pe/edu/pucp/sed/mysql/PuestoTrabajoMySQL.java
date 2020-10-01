@@ -36,7 +36,7 @@ public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(PuestoTrabajo puestoTrabajo){
+	public int actualizar(PuestoTrabajo puestoTrabajo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idPuestoTrabajo){
+	public int eliminar(int idPuestoTrabajo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<PuestoTrabajo> listar(){
+	public ArrayList<PuestoTrabajo> listar(){
 		ArrayList<PuestoTrabajo> puestoTrabajo = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

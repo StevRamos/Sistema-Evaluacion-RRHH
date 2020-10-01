@@ -36,7 +36,7 @@ public class AreaPeriodoMySQL implements AreaPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(AreaPeriodo areaPeriodo){
+	public int actualizar(AreaPeriodo areaPeriodo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class AreaPeriodoMySQL implements AreaPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idAreaPeriodo){
+	public int eliminar(int idAreaPeriodo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class AreaPeriodoMySQL implements AreaPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<AreaPeriodo> listar(){
+	public ArrayList<AreaPeriodo> listar(){
 		ArrayList<AreaPeriodo> areaPeriodo = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

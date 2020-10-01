@@ -36,7 +36,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(EvaluacionDesempenho evaluacionDesempenho){
+	public int actualizar(EvaluacionDesempenho evaluacionDesempenho){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idEvaluacionDesempenho){
+	public int eliminar(int idEvaluacionDesempenho){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<EvaluacionDesempenho> listar(){
+	public ArrayList<EvaluacionDesempenho> listar(){
 		ArrayList<EvaluacionDesempenho> evaluacionDesempenho = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

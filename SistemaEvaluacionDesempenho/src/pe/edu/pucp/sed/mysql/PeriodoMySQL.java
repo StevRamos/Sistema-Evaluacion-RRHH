@@ -36,7 +36,7 @@ public class PeriodoMySQL implements PeriodoDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Periodo periodo){
+	public int actualizar(Periodo periodo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class PeriodoMySQL implements PeriodoDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idPeriodo){
+	public int eliminar(int idPeriodo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class PeriodoMySQL implements PeriodoDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Periodo> listar(){
+	public ArrayList<Periodo> listar(){
 		ArrayList<Periodo> periodo = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

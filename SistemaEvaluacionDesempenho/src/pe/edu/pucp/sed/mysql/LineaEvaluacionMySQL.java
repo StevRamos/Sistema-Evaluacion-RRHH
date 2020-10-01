@@ -36,7 +36,7 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(LineaEvaluacion lineaEvaluacion){
+	public int actualizar(LineaEvaluacion lineaEvaluacion){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idLineaEvaluacion){
+	public int eliminar(int idLineaEvaluacion){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<LineaEvaluacion> listar(){
+	public ArrayList<LineaEvaluacion> listar(){
 		ArrayList<LineaEvaluacion> lineaEvaluacion = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

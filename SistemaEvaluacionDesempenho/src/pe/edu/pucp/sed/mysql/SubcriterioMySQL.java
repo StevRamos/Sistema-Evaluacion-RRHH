@@ -36,7 +36,7 @@ public class SubcriterioMySQL implements SubcriterioDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Subcriterio subcriterio){
+	public int actualizar(Subcriterio subcriterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class SubcriterioMySQL implements SubcriterioDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idSubcriterio){
+	public int eliminar(int idSubcriterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class SubcriterioMySQL implements SubcriterioDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Subcriterio> listar(){
+	public ArrayList<Subcriterio> listar(){
 		ArrayList<Subcriterio> subcriterio = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

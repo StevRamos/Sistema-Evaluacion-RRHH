@@ -36,7 +36,7 @@ public class ItemPDIPeriodoMySQL implements ItemPDIPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(ItemPDIPeriodo itemPDIPeriodo){
+	public int actualizar(ItemPDIPeriodo itemPDIPeriodo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class ItemPDIPeriodoMySQL implements ItemPDIPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idItemPDIPeriodo){
+	public int eliminar(int idItemPDIPeriodo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class ItemPDIPeriodoMySQL implements ItemPDIPeriodoDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<ItemPDIPeriodo> listar(){
+	public ArrayList<ItemPDIPeriodo> listar(){
 		ArrayList<ItemPDIPeriodo> itemPDIPeriodo = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

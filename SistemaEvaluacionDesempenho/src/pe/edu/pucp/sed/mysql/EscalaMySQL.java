@@ -36,7 +36,7 @@ public class EscalaMySQL implements EscalaDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Escala escala){
+	public int actualizar(Escala escala){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class EscalaMySQL implements EscalaDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idEscala){
+	public int eliminar(int idEscala){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class EscalaMySQL implements EscalaDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Escala> listar(){
+	public ArrayList<Escala> listar(){
 		ArrayList<Escala> escala = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");

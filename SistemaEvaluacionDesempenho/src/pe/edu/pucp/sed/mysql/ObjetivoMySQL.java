@@ -36,7 +36,7 @@ public class ObjetivoMySQL implements ObjetivoDAO{
 		return resultado;
 	}
 	@Override
-	int actualizar(Objetivo objetivo){
+	public int actualizar(Objetivo objetivo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -54,7 +54,7 @@ public class ObjetivoMySQL implements ObjetivoDAO{
 		return resultado;
 	}
 	@Override
-	int eliminar(int idObjetivo){
+	public int eliminar(int idObjetivo){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
@@ -72,7 +72,7 @@ public class ObjetivoMySQL implements ObjetivoDAO{
 		return resultado;
 	}
 	@Override
-	ArrayList<Objetivo> listar(){
+	public ArrayList<Objetivo> listar(){
 		ArrayList<Objetivo> objetivo = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
