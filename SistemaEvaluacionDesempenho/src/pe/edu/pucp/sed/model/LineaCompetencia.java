@@ -1,6 +1,6 @@
 package pe.edu.pucp.sed.model;
 
-public class LineaCompetencia{
+public class LineaCompetencia extends LineaCriterio{
 	private double nota;
 	private double notaAutoEval;
 	private double notaPrevia;

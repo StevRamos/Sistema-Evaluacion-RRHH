@@ -1,6 +1,6 @@
 package pe.edu.pucp.sed.model;
 
-public class EvaluacionPotencial{
+public class EvaluacionPotencial extends Evaluacion{
 	private String observaciones;
 	private double notaAutoEval;
 	private double notaPrevia;
@@ -41,10 +41,5 @@ public class EvaluacionPotencial{
 	public void calcularNotaEvalPotencial(){
 
 	};
-
-	public void calcularNotaEvalPotencial(){
-
-	};
-
 }
 

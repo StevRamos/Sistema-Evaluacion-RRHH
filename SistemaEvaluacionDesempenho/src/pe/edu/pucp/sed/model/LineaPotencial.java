@@ -1,6 +1,6 @@
 package pe.edu.pucp.sed.model;
 
-public class LineaPotencial{
+public class LineaPotencial extends LineaCriterio{
 	private boolean cumplioAutoEval;
 	private boolean cumplioPrevia;
 	private boolean cumplioFinal;
