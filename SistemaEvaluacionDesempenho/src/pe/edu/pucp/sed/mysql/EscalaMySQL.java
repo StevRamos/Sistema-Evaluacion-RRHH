@@ -12,77 +12,77 @@ import pe.edu.pucp.sed.model.Escala;
 
 public class EscalaMySQL implements EscalaDAO{
 
-	Connection con;
-	PreparedStatement ps;
-	ResultSet rs;
-	CallableStatement cs;
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+    CallableStatement cs;
 
-	@Override
-	public int insertar(Escala escala){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+    @Override
+    public int insertar(Escala escala){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public int actualizar(Escala escala){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public int actualizar(Escala escala){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public int eliminar(int idEscala){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public int eliminar(int idEscala){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public ArrayList<Escala> listar(){
-		ArrayList<Escala> escala = new ArrayList<>();
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public ArrayList<Escala> listar(){
+        ArrayList<Escala> escalas = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return ;
-	}
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return escalas;
+    }
 }

@@ -83,6 +83,6 @@ public class ItemPDIMySQL implements ItemPDIDAO{
 		}finally{
 			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
 		}
-		return ;
+		return itemPDI;
 	}
 }

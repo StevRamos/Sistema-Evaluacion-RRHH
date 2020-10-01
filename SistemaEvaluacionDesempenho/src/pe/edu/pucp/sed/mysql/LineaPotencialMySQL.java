@@ -12,77 +12,77 @@ import pe.edu.pucp.sed.model.LineaPotencial;
 
 public class LineaPotencialMySQL implements LineaPotencialDAO{
 
-	Connection con;
-	PreparedStatement ps;
-	ResultSet rs;
-	CallableStatement cs;
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+    CallableStatement cs;
 
-	@Override
-	public int insertar(LineaPotencial lineaPotencial){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+    @Override
+    public int insertar(LineaPotencial lineaPotencial){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public int actualizar(LineaPotencial lineaPotencial){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public int actualizar(LineaPotencial lineaPotencial){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public int eliminar(int idLineaPotencial){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public int eliminar(int idLineaPotencial){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public ArrayList<LineaPotencial> listar(){
-		ArrayList<LineaPotencial> lineaPotencial = new ArrayList<>();
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public ArrayList<LineaPotencial> listar(){
+        ArrayList<LineaPotencial> lineasPotencial = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return ;
-	}
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return lineasPotencial;
+    }
 }

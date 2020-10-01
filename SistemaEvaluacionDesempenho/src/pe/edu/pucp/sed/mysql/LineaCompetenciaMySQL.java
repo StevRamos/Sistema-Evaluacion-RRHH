@@ -12,77 +12,77 @@ import pe.edu.pucp.sed.model.LineaCompetencia;
 
 public class LineaCompetenciaMySQL implements LineaCompetenciaDAO{
 
-	Connection con;
-	PreparedStatement ps;
-	ResultSet rs;
-	CallableStatement cs;
+    Connection con;
+    PreparedStatement ps;
+    ResultSet rs;
+    CallableStatement cs;
 
-	@Override
-	public int insertar(LineaCompetencia lineaCompetencia){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+    @Override
+    public int insertar(LineaCompetencia lineaCompetencia){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public int actualizar(LineaCompetencia lineaCompetencia){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public int actualizar(LineaCompetencia lineaCompetencia){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public int eliminar(int idLineaCompetencia){
-		int resultado = 0;
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public int eliminar(int idLineaCompetencia){
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ()}";
+            cs = con.prepareCall(sql);
 
-			cs.executeUpdate();
-			resultado = 1;
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return resultado;
-	}
-	@Override
-	public ArrayList<LineaCompetencia> listar(){
-		ArrayList<LineaCompetencia> lineaCompetencia = new ArrayList<>();
-		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado;
+    }
+    @Override
+    public ArrayList<LineaCompetencia> listar(){
+        ArrayList<LineaCompetencia> lineasCompetencia = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
-		}catch(Exception ex){
-			System.out.println(ex.getMessage());
-		}finally{
-			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-		}
-		return ;
-	}
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return lineasCompetencia;
+    }
 }

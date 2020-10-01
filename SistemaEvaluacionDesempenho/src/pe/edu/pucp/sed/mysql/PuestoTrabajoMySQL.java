@@ -83,6 +83,6 @@ public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
 		}finally{
 			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
 		}
-		return ;
+		return puestoTrabajo;
 	}
 }

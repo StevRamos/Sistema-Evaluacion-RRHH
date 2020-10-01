@@ -83,6 +83,6 @@ public class AreaMySQL implements AreaDAO{
 		}finally{
 			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
 		}
-		return ;
+		return area;
 	}
 }

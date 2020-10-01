@@ -83,6 +83,6 @@ public class ObjetivoMySQL implements ObjetivoDAO{
 		}finally{
 			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
 		}
-		return ;
+		return objetivo;
 	}
 }

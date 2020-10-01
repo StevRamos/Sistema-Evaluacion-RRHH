@@ -83,6 +83,6 @@ public class CriterioMySQL implements CriterioDAO{
 		}finally{
 			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
 		}
-		return ;
+		return criterio;
 	}
 }
