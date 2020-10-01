@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
@@ -23,10 +24,17 @@ public class PeriodoMySQL implements PeriodoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call ()}";
+            String sql = "{call INSERTAR_PERIODO(?,?,?,?,?)}";
             cs = con.prepareCall(sql);
-
+            cs.registerOutParameter("_ID_PERIODO", java.sql.Types.INTEGER);
+            cs.setDate("_FECHA_INICIO", 
+                   new java.sql.Date(periodo.getFechaInicio().getTime()));
+            cs.setDate("_FECHA_FIN", 
+                   new java.sql.Date(periodo.getFechaFin().getTime()));
+            cs.setDouble("_PESO_EVAL_OBJ", periodo.getPesoEvalObj());
+            cs.setDouble("_PESO_EVAL_COMP", periodo.getPesoEvalComp());
             cs.executeUpdate();
+            periodo.setIdPeriodo(cs.getInt("_ID_PERIODO"));
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
@@ -35,15 +43,20 @@ public class PeriodoMySQL implements PeriodoDAO{
         }
         return resultado;
     }
+    
     @Override
     public int actualizar(Periodo periodo){
         int resultado = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call ()}";
+            String sql = "{call ACTULIZAR_PERIODO(?,?,?)}";
             cs = con.prepareCall(sql);
-
+            cs.setInt("_ID_PERIODO", periodo.getIdPeriodo());
+            cs.setDate("_FECHA_INICIO", 
+                   new java.sql.Date(periodo.getFechaInicio().getTime()));
+            cs.setDate("_FECHA_FIN", 
+                   new java.sql.Date(periodo.getFechaFin().getTime()));
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -53,15 +66,16 @@ public class PeriodoMySQL implements PeriodoDAO{
         }
         return resultado;
     }
+    
     @Override
     public int eliminar(int idPeriodo){
         int resultado = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call ()}";
+            String sql = "{call ELIMINAR_PERIODO(?)}";
             cs = con.prepareCall(sql);
-
+            cs.setInt("_ID_PERIODO", idPeriodo);   
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
@@ -71,13 +85,28 @@ public class PeriodoMySQL implements PeriodoDAO{
         }
         return resultado;
     }
+    
     @Override
     public ArrayList<Periodo> listar(){
         ArrayList<Periodo> periodos = new ArrayList<>();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-
+            String sql = "{call LISTAR_PERIODO()}";
+            cs = con.prepareCall(sql);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                Periodo per = new Periodo();
+                per.setIdPeriodo(rs.getInt("id_Periodo"));
+                per.setFechaInicio(formato.parse(rs.getDate("fechaInicio").toString()));
+                per.setFechaFin(formato.parse(rs.getDate("fechaFin").toString()));
+                per.setPesoEvalObj(rs.getDouble("pesoEvalObj"));
+                per.setPesoEvalComp(rs.getDouble("pesoEvalComp"));
+                
+                periodos.add(per);
+            }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{

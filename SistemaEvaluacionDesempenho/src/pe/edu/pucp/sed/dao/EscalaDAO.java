@@ -5,7 +5,7 @@ import pe.edu.pucp.sed.model.Escala;
 
 public interface EscalaDAO{
 	int insertar(Escala escala);
-	int actualizar(Escala escala);
-	int eliminar(int idEscala);
-	ArrayList<Escala> listar();
+        int actualizar(Escala escala);
+        int eliminar(int idEscala);
+        ArrayList<Escala> listar();
 }
