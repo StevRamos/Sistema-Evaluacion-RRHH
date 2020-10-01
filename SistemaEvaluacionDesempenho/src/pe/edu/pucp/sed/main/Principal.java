@@ -5,24 +5,19 @@
  */
 package pe.edu.pup.sed.main;
 
-import java.sql.Array;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import pe.edu.pucp.sed.dao.AreaDAO;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
-import pe.edu.pucp.sed.dao.CriterioDAO;
-import pe.edu.pucp.sed.dao.ItemPDIDAO;
-import pe.edu.pucp.sed.dao.PuestoTrabajoDAO;
-import pe.edu.pucp.sed.model.Area;
+import pe.edu.pucp.sed.dao.EscalaDAO;
+import pe.edu.pucp.sed.dao.EvaluacionPotencialDAO;
+import pe.edu.pucp.sed.dao.PeriodoDAO;
 import pe.edu.pucp.sed.model.Colaborador;
-import pe.edu.pucp.sed.model.Criterio;
-import pe.edu.pucp.sed.model.ItemPDI;
-import pe.edu.pucp.sed.model.PuestoTrabajo;
-import pe.edu.pucp.sed.mysql.AreaMySQL;
+import pe.edu.pucp.sed.model.Escala;
+import pe.edu.pucp.sed.model.EvaluacionPotencial;
+import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
-import pe.edu.pucp.sed.mysql.CriterioMySQL;
-import pe.edu.pucp.sed.mysql.ItemPDIMySQL;
-import pe.edu.pucp.sed.mysql.PuestoTrabajoMySQL;
+import pe.edu.pucp.sed.mysql.EscalaMySQL;
+import pe.edu.pucp.sed.mysql.EvaluacionPotencialMySQL;
+import pe.edu.pucp.sed.mysql.PeriodoMySQL;
 
 /**
  *
@@ -31,9 +26,75 @@ import pe.edu.pucp.sed.mysql.PuestoTrabajoMySQL;
 public class Principal {
     public static void main(String[] args){
         
-        //SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+//Colaboradores        
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+//        
+//        ColaboradorDAO daoColab = new ColaboradorMySQL();
+//        Colaborador jefe = new Colaborador();
+//        jefe.setIdColaborador(1);
+//        Colaborador col1 = new Colaborador();
+////        
+//        try{
+//            col1.setIdColaborador(6);
+//            col1.setNombres("Jorge Baca");
+//            col1.setApellidos("Baca Saenz");
+//            col1.setDireccion("PUCP");
+//            col1.setCorreo("jorge.baca@pucp.edu.pe");
+//            col1.setTelefono("997328619");
+//            col1.setFechaNac(formato.parse("18-04-2000"));
+//            col1.setDni("1234678");
+//            col1.setJefe(jefe);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        if(daoColab.insertar(col1) == 1)
+//            System.out.println("Se ha insertado un empleado");
+//        
+//        if(daoColab.actualizar(col1) == 1)
+//            System.out.println("Se ha actualizado un empleado");
+//        
+//        
+//
+//        if(daoColab.eliminar(col1.getIdColaborador()) == 1)
+//            System.out.println("Se ha eliminado un empleado");
         
-       // AreaDAO daoArea = new AreaMySQL();
+//        for(Colaborador c : daoColab.listar())
+//            System.out.println(c.getNombres());
+        
+//Escala
+//        EscalaDAO daoEsc = new EscalaMySQL();
+//        Escala esc = new Escala();
+//        
+//        esc.setIdEscala(21);
+//        esc.setNombre("I");
+//        esc.setTipo(true);
+        
+//        if(daoEsc.insertar(esc) == 1)
+//            System.out.println("Se ha insertado una escala");
+        
+//        if(daoEsc.actualizar(esc) == 1)
+//            System.out.println("Se ha actualizado una escala");
+        
+//        if(daoEsc.eliminar(esc.getIdEscala()) == 1)
+//            System.out.println("Se ha eliminado una escala");
+        
+//        for(Escala e : daoEsc.listar())
+//            System.out.println(e.getNombre());
+
+//EvaluacionPotencial
+//        EvaluacionPotencialDAO daoEp = new EvaluacionPotencialMySQL();
+//        EvaluacionPotencial ep = new EvaluacionPotencial();
+//        
+//        Periodo per = new Periodo();
+//        per.setIdPeriodo(1);
+//        
+//        ep.setColaborador(col1);
+//        ep.setPeriodo(per);
+//        
+//        if(daoEp.insertar(ep) == 1)
+//            System.out.println("Se ha insertado una evaluacion potencial");        
+        
+// AreaDAO daoArea = new AreaMySQL();
        // Area area = new Area();
         
      
@@ -113,33 +174,64 @@ public class Principal {
        // for(ItemPDI a : itemPDIs){
         //    System.out.println(a.getIdItemPDI()+ " - " + a.getNombre());
         //}
-        
-        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
-        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
-        
-     
-        try{
-            puestoTrabajo.setIdPuestoTrabajo(3);
-            puestoTrabajo.setNombre("Senior Data Scientist");
-            puestoTrabajo.setDescripcion("CREA MODELOS DE DEEP LEARNING");     
-        }catch(Exception ex){
-        System.out.println(ex.getMessage());
-        }
+//        
+//        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
+//        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
+//        
+//     
+//        try{
+//            puestoTrabajo.setIdPuestoTrabajo(3);
+//            puestoTrabajo.setNombre("Senior Data Scientist");
+//            puestoTrabajo.setDescripcion("CREA MODELOS DE DEEP LEARNING");     
+//        }catch(Exception ex){
+//        System.out.println(ex.getMessage());
+//        }
+//    
+//        if(daoPuestoTrabajo.eliminar(3) == 1)
+//            System.out.println("Se ha eliminado un puestoTrabajo");
+//        
+//       // if(daoPuestoTrabajo.actualizar(puestoTrabajo) == 1)
+//         //   System.out.println("Se ha actualizado un puestoTrabajo");
+//        
+//        //if(daoPuestoTrabajo.insertar(puestoTrabajo) == 1)
+//         //   System.out.println("Se ha insertado un puestoTrabajo");
+//        
+//        ArrayList<PuestoTrabajo> puestosTrabajo = daoPuestoTrabajo.listar();
+//        for(PuestoTrabajo a : puestosTrabajo){
+//            System.out.println(a.getIdPuestoTrabajo()+ " - " + a.getNombre());
+//        }
     
-        if(daoPuestoTrabajo.eliminar(3) == 1)
-            System.out.println("Se ha eliminado un puestoTrabajo");
-        
-       // if(daoPuestoTrabajo.actualizar(puestoTrabajo) == 1)
-         //   System.out.println("Se ha actualizado un puestoTrabajo");
-        
-        //if(daoPuestoTrabajo.insertar(puestoTrabajo) == 1)
-         //   System.out.println("Se ha insertado un puestoTrabajo");
-        
-        //ArrayList<PuestoTrabajo> puestosTrabajo = daoPuestoTrabajo.listar();
-        //for(PuestoTrabajo a : puestosTrabajo){
-         //   System.out.println(a.getIdPuestoTrabajo()+ " - " + a.getNombre());
-        //}
-   
+//    Periodo per = new Periodo();
+//    
+//    
+//    try{
+//        per.setFechaInicio(formato.parse("18-04-2000"));
+//        per.setFechaFin(formato.parse("18-04-2001"));
+//        per.setPesoEvalObj(0.5);
+//        per.setPesoEvalComp(0.5);
+//    }catch(Exception ex){
+//        System.out.println(ex.getMessage());
+//    }
+//    
+//    PeriodoDAO perDAO = new PeriodoMySQL();
+    
+//    if(perDAO.insertar(per) == 1)
+//        System.out.println("Se ha ingresaro un Periodo");
+//    try{
+//        per.setFechaFin(formato.parse("18-10-2000"));
+//    }catch(Exception ex){
+//        System.out.println(ex.getMessage());
+//    }
+    
+//    if(perDAO.actualizar(per) == 1)
+//        System.out.println("Se ha actualizado un Periodo");
+    
+//    if(perDAO.eliminar(per.getIdPeriodo()) == 1)
+//        System.out.println("Se ha eliminado un Periodo");
+    
+//    for(Periodo p : perDAO.listar()){
+//            System.out.println(p.getFechaInicio()+ " - " + p.getFechaFin());
+//        }
     
     }
 }
