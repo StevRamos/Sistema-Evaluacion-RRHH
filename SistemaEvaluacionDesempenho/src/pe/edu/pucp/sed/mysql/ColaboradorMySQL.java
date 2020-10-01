@@ -5,6 +5,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
@@ -14,6 +16,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
 
     Connection con;
     PreparedStatement ps;
+    Statement st;
     ResultSet rs;
     CallableStatement cs;
 
@@ -93,10 +96,27 @@ public class ColaboradorMySQL implements ColaboradorDAO{
     @Override
     public ArrayList<Colaborador> listar(){
         ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            
+            String sql = "{call LISTAR_COLABORADORES()}";
+            cs = con.prepareCall(sql);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                Colaborador col = new Colaborador();
+                col.setIdColaborador(rs.getInt("id_Colaborador"));
+                col.setDni(rs.getString("dni"));
+                col.setNombres(rs.getString("nombres"));
+                col.setApellidos(rs.getString("apellidos"));
+                col.setDireccion(rs.getString("direccion"));
+                col.setCorreo(rs.getString("correo"));
+                col.setTelefono(rs.getString("telefono"));
+                col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                
+                colaboradores.add(col);
+            }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
