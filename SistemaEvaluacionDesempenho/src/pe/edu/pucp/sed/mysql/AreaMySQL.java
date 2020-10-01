@@ -23,10 +23,17 @@ public class AreaMySQL implements AreaDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call INSERTAR_AREA(?,?,?)}";
 			cs = con.prepareCall(sql);
-
+                        
+                        cs.setString("_NOMBRE",area.getNombre());
+                        cs.setString("_DESCRIPCION",area.getDescripcion());
+                        cs.registerOutParameter("_ID_AREA", java.sql.Types.INTEGER);
+                        
 			cs.executeUpdate();
+                        
+                        area.setIdArea(cs.getInt("_ID_AREA"));
+                        
 			resultado = 1;
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
@@ -41,9 +48,13 @@ public class AreaMySQL implements AreaDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ACTUALIZAR_AREA(?,?)}";
 			cs = con.prepareCall(sql);
 
+                        cs.setString("_DESCRIPCION",area.getDescripcion());
+                        cs.setInt("_ID_AREA",area.getIdArea());
+                        
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
@@ -59,9 +70,11 @@ public class AreaMySQL implements AreaDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ELIMINAR_AREA(?)}";
 			cs = con.prepareCall(sql);
-
+                        
+                        cs.setInt("_ID_AREA",idArea);
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
@@ -77,7 +90,7 @@ public class AreaMySQL implements AreaDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-
+                        
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}finally{
