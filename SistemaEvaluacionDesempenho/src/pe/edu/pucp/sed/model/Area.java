@@ -5,6 +5,7 @@ public class Area{
 	private int idArea;
 	private String nombre;
 	private String descripcion;
+        private boolean activo;
 	private ArrayList<PesoSubcriterio> pesosSubcriterio;
 	private ArrayList<PesoCriterio> pesosCriterio;
 	private ArrayList<PuestoTrabajo> puestosTrabajo;
@@ -21,6 +22,14 @@ public class Area{
 		this.colaboradores = new ArrayList<Colaborador>();
 	};
 
+        public boolean getActivo(){
+            return this.activo;
+        }
+        
+        public void setActivo(boolean activo){
+            this.activo = activo;
+        }
+        
 	public int getIdArea(){
 		return this.idArea;
 	};
@@ -100,6 +109,9 @@ public class Area{
 	public void agregarCupo(){
 
 	};
-
+        
+        
+        
+        
 }
 

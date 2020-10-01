@@ -5,6 +5,7 @@ public class PuestoTrabajo{
 	private int idPuestoTrabajo;
 	private String nombre;
 	private String descripcion;
+        private boolean activo;
 	private ArrayList<PesoSubcriterio> pesosSubcriterio;
 	private ArrayList<PesoCriterio> pesosCriterio;
 	private ArrayList<Area> areas;
@@ -17,6 +18,15 @@ public class PuestoTrabajo{
 		this.colaboradores = new ArrayList<Colaborador>();
 	};
 
+        public void setActivo(boolean activo) {
+            this.activo = activo;
+        }
+
+        public boolean getActivo(){
+            return this.activo;
+        }
+        
+        
 	public int getIdPuestoTrabajo(){
 		return this.idPuestoTrabajo;
 	};

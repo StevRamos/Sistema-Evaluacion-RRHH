@@ -86,16 +86,29 @@ public class AreaMySQL implements AreaDAO{
 	}
 	@Override
 	public ArrayList<Area> listar(){
-		ArrayList<Area> area = new ArrayList<>();
+		ArrayList<Area> areas = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+                        
+                        String sql = "{call LISTAR_AREAS()}";
+			cs = con.prepareCall(sql);
+                        
+                        rs = cs.executeQuery(sql);
+                        while(rs.next()){
+                            Area area = new Area();
+                            area.setIdArea(rs.getInt("id_Area"));
+                            area.setNombre(rs.getString("nombre"));
+                            area.setDescripcion(rs.getString("descripcion"));
+                            area.setActivo(rs.getBoolean("activo"));
+                            areas.add(area);
+                        }
                         
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}finally{
 			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
 		}
-		return area;
+		return areas;
 	}
 }

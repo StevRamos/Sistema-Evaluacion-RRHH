@@ -23,11 +23,21 @@ public class ObjetivoMySQL implements ObjetivoDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call INSERTAR_OBJETIVO(?,?,?,?,?,?)}";
 			cs = con.prepareCall(sql);
-
+                        
+                        cs.setInt("FID_COLABORADOR",objetivo.getColaborador().getIdColaborador());
+                        cs.setString("_DESCRIPCION",objetivo.getDescripcion());
+                        cs.setDouble("_META",objetivo.getMeta());
+                        cs.setString("_UNIDADMEDIDA",String.valueOf(objetivo.getUnidadMedida()));
+                        cs.setDouble("_PESO",objetivo.getPeso());
+                        cs.registerOutParameter("_ID_OBJETIVO", java.sql.Types.INTEGER);
+                        
 			cs.executeUpdate();
-			resultado = 1;
+                        
+                        objetivo.setIdObjetivo(cs.getInt("_ID_OBJETIVO"));
+                        
+                        resultado = 1;
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}finally{
@@ -41,9 +51,23 @@ public class ObjetivoMySQL implements ObjetivoDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ACTUALIZAR_OBJETIVO(?,?,?,?,?,?,?,?,?,?,?)}";
 			cs = con.prepareCall(sql);
-
+                        
+                        
+                        cs.setInt("_ID_OBJETIVO",objetivo.getIdObjetivo());
+                        cs.setString("_DESCRIPCION",objetivo.getDescripcion());
+                        cs.setDouble("_META",objetivo.getMeta());
+                        cs.setString("_UNIDADMEDIDA",String.valueOf(objetivo.getUnidadMedida()));
+                        cs.setDouble("_PESO",objetivo.getPeso());
+                        cs.setBoolean("_ESTADO",objetivo.getEstado());
+                        cs.setString("_OBSERVACION",objetivo.getObservacion());
+                        cs.setDouble("_NOTAAUTOEVAL",objetivo.getNotaAutoEval());
+                        cs.setDouble("_NOTAPREVIA",objetivo.getNotaPrevia());
+                        cs.setDouble("_NOTAFINAL",objetivo.getNotaFinal());
+                        cs.setInt("_ID_EVALUACION",objetivo.getEvaluacion().getIdEvaluacion());
+                        
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
@@ -59,9 +83,12 @@ public class ObjetivoMySQL implements ObjetivoDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ELIMINAR_OBJETIVO(?)}";
 			cs = con.prepareCall(sql);
-
+                        
+                        cs.setInt("_ID_OBJETIVO",idObjetivo);
+                        
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){

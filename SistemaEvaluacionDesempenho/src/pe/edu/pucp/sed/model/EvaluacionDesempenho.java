@@ -7,7 +7,7 @@ public class EvaluacionDesempenho extends Evaluacion{
 	private double notaPreviaComp;
 	private double notaFinalComp;
 	private String observacionesObj;
-	private double notaAutoEvalOb;
+	private double notaAutoEvalObj;
 	private double notaPreviaObj;
 	private double notaFinalObj;
 	private ArrayList<Objetivo> objetivos;
@@ -56,12 +56,12 @@ public class EvaluacionDesempenho extends Evaluacion{
 		this.observacionesObj = observacionesObj;
 	};
 
-	public double getNotaAutoEvalOb(){
-		return this.notaAutoEvalOb;
+	public double getNotaAutoEvalObj(){
+		return this.notaAutoEvalObj;
 	};
 
-	public void setNotaAutoEvalOb( double notaAutoEvalOb ){
-		this.notaAutoEvalOb = notaAutoEvalOb;
+	public void setNotaAutoEvalObj( double notaAutoEvalObj ){
+		this.notaAutoEvalObj = notaAutoEvalObj;
 	};
 
 	public double getNotaPreviaObj(){

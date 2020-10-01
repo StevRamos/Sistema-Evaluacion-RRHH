@@ -1,4 +1,4 @@
-package pe.edu.pucp.sed.mysql;
+    package pe.edu.pucp.sed.mysql;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
@@ -23,10 +23,16 @@ public class ItemPDIMySQL implements ItemPDIDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call INSERTAR_ITEM_PDI(?,?)}";
 			cs = con.prepareCall(sql);
-
+                        
+                        cs.setString("_NOMBRE",itemPDI.getNombre());
+                        cs.registerOutParameter("_ID_ITEM", java.sql.Types.INTEGER);
+                        
 			cs.executeUpdate();
+                        
+                        itemPDI.setIdItemPDI(cs.getInt("_ID_ITEM"));
+                        
 			resultado = 1;
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
@@ -41,9 +47,13 @@ public class ItemPDIMySQL implements ItemPDIDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ACTUALIZAR_ITEM_PDI(?,?)}";
 			cs = con.prepareCall(sql);
 
+                        cs.setString("_NOMBRE",itemPDI.getNombre());
+                        cs.setInt("_ID_ITEM",itemPDI.getIdItemPDI());
+                        
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
@@ -59,9 +69,11 @@ public class ItemPDIMySQL implements ItemPDIDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ELIMINAR_ITEM_PDI(?)}";
 			cs = con.prepareCall(sql);
-
+                        
+                        cs.setInt("_ID_ITEM_PDI",idItemPDI);
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){

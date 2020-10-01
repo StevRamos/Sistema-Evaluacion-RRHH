@@ -23,10 +23,18 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call INSERTAR_LINEA_EVALUACION(?,?,?,?)}";
 			cs = con.prepareCall(sql);
-
+                        
+                        cs.setInt("_ID_PESO_CRITERIO",lineaEvaluacion.getPeso().getIdPesoCriterio());
+                        cs.setInt("_ID_EVALUACION",lineaEvaluacion.getEvaluacion().getIdEvaluacion());
+                        cs.setInt("_ID_ITEM",lineaEvaluacion.getItemPDI().getIdItemPDI());
+                        cs.registerOutParameter("_ID_LINEA_EVALUACION", java.sql.Types.INTEGER);
+                        
 			cs.executeUpdate();
+                        
+                        lineaEvaluacion.setIdLineaEvaluacion(cs.getInt("_ID_LINEA_EVALUACION"));
+                     ;
 			resultado = 1;
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
@@ -41,9 +49,15 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ACTUALIZAR_LINEA_EVALUACION(?,?,?,?)}";
 			cs = con.prepareCall(sql);
 
+                        cs.setDouble("_NOTA_AUTO",lineaEvaluacion.getNotaAutoEval());
+                        cs.setDouble("_NOTA_PREV",lineaEvaluacion.getNotaPrevia());
+                        cs.setDouble("_NOTA_FINAL",lineaEvaluacion.getNotaFinal());
+                        cs.setInt("_ID_LINEA_EVALUACION",lineaEvaluacion.getIdLineaEvaluacion());
+                        
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
@@ -59,9 +73,12 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ELIMINAR_LINEA_EVAL(?)}";
 			cs = con.prepareCall(sql);
 
+                        cs.setInt("_ID_LINEA_EVAL",idLineaEvaluacion);
+                            
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
@@ -78,6 +95,7 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
+                        
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}finally{
