@@ -581,3 +581,19 @@ ENGINE = InnoDB;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+-- Modificaciones
+
+ALTER TABLE `db_sed`.`Colaboradores` 
+DROP FOREIGN KEY `fk_Colaboradores_Colaboradores1`;
+ALTER TABLE `db_sed`.`Colaboradores` 
+CHANGE COLUMN `id_Jefe` `id_Jefe` INT NULL ;
+ALTER TABLE `db_sed`.`Colaboradores` 
+ADD CONSTRAINT `fk_Colaboradores_Colaboradores1`
+  FOREIGN KEY (`id_Jefe`)
+  REFERENCES `db_sed`.`Colaboradores` (`id_Colaborador`);
+
+
+ALTER TABLE `db_sed`.`Cupos` 
+CHANGE COLUMN `num_Cupos` `num_Cupos` INT NULL DEFAULT NULL ;
