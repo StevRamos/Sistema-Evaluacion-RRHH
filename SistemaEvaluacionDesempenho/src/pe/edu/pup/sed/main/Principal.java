@@ -135,10 +135,10 @@ public class Principal {
         //if(daoPuestoTrabajo.insertar(puestoTrabajo) == 1)
          //   System.out.println("Se ha insertado un puestoTrabajo");
         
-        ArrayList<PuestoTrabajo> puestosTrabajo = daoPuestoTrabajo.listar();
-        for(PuestoTrabajo a : puestosTrabajo){
-            System.out.println(a.getIdPuestoTrabajo()+ " - " + a.getNombre());
-        }
+        //ArrayList<PuestoTrabajo> puestosTrabajo = daoPuestoTrabajo.listar();
+        //for(PuestoTrabajo a : puestosTrabajo){
+         //   System.out.println(a.getIdPuestoTrabajo()+ " - " + a.getNombre());
+        //}
    
     
     }
