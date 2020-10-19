@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaEDInterfaces
 {
-    public partial class frmInicioSesion : Form
+    public partial class frmEvAutoevaluacion : Form
     {
-        public frmInicioSesion()
+        public frmEvAutoevaluacion()
         {
             InitializeComponent();
         }

@@ -53,17 +53,107 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAdmCalibrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmCalibrar.Designer.cs">
+      <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestComp.Designer.cs">
+      <DependentUpon>frmAdmGestComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestCron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestCron.Designer.cs">
+      <DependentUpon>frmAdmGestCron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestPot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestPot.Designer.cs">
+      <DependentUpon>frmAdmGestPot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestRangos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestRangos.Designer.cs">
+      <DependentUpon>frmAdmGestRangos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmSeguimiento.Designer.cs">
+      <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvAutoevaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvAutoevaluacion.Designer.cs">
+      <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvFeedback.Designer.cs">
+      <DependentUpon>frmEvFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisResultados.Designer.cs">
+      <DependentUpon>frmEvMisResultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadores.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisEvaluaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisEvaluaciones.Designer.cs">
+      <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadores.Designer.cs">
+      <DependentUpon>frmHisMisTrabajadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInicioSesion.cs">
+    <Compile Include="frmPlanMisObjetivos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInicioSesion.Designer.cs">
-      <DependentUpon>frmInicioSesion.cs</DependentUpon>
+    <Compile Include="frmPlanMisObjetivos.Designer.cs">
+      <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanValidarObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanValidarObjetivos.Designer.cs">
+      <DependentUpon>frmPlanValidarObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRep9Box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRep9Box.Designer.cs">
+      <DependentUpon>frmRep9Box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRepPDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRepPDI.Designer.cs">
+      <DependentUpon>frmRepPDI.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -77,11 +167,56 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmAdmCalibrar.resx">
+      <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestComp.resx">
+      <DependentUpon>frmAdmGestComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestCron.resx">
+      <DependentUpon>frmAdmGestCron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestPot.resx">
+      <DependentUpon>frmAdmGestPot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestRangos.resx">
+      <DependentUpon>frmAdmGestRangos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmSeguimiento.resx">
+      <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvAutoevaluacion.resx">
+      <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvFeedback.resx">
+      <DependentUpon>frmEvFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisResultados.resx">
+      <DependentUpon>frmEvMisResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadores.resx">
+      <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisEvaluaciones.resx">
+      <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisTrabajadores.resx">
+      <DependentUpon>frmHisMisTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInicioSesion.resx">
-      <DependentUpon>frmInicioSesion.cs</DependentUpon>
+    <EmbeddedResource Include="frmPlanMisObjetivos.resx">
+      <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanValidarObjetivos.resx">
+      <DependentUpon>frmPlanValidarObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRep9Box.resx">
+      <DependentUpon>frmRep9Box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRepPDI.resx">
+      <DependentUpon>frmRepPDI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,9 +225,19 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Iconos\administracion.png" />
+    <Content Include="Iconos\casa.png" />
+    <Content Include="Iconos\cheque %281%29.png" />
+    <Content Include="Iconos\cheque.png" />
+    <Content Include="Iconos\evaluacion %281%29.png" />
     <Content Include="Iconos\evaluacion.png" />
+    <Content Include="Iconos\flecha-hacia-arriba.png" />
     <Content Include="Iconos\historial-medico.png" />
     <Content Include="Iconos\planificacion.png" />
+    <Content Include="Iconos\reportes.png" />
+    <Content Include="Iconos\usuario.png" />
+    <None Include="Iconos\PUCP.png" />
+    <None Include="Iconos\PUCPLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

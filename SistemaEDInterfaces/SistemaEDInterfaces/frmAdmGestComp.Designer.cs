@@ -1,6 +1,6 @@
 ﻿namespace SistemaEDInterfaces
 {
-    partial class frmInicioSesion
+    partial class frmAdmGestComp
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,14 @@
         {
             this.SuspendLayout();
             // 
-            // frmInicioSesion
+            // frmAdmGestComp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(971, 550);
-            this.Name = "frmInicioSesion";
-            this.Text = "frmInicioSesion";
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.Name = "frmAdmGestComp";
+            this.Text = "frmAdmGestComp";
             this.ResumeLayout(false);
 
         }
