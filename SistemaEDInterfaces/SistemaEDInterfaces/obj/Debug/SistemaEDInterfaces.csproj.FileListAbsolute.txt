@@ -1,0 +1,12 @@
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.exe.config
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.exe
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.pdb
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csprojAssemblyReference.cache
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmInicio.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.GenerateResource.cache
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.exe
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.pdb
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmInicioSesion.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.Properties.Resources.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.CopyComplete
