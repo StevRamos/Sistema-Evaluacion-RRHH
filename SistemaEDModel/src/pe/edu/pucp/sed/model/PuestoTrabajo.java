@@ -8,7 +8,7 @@ public class PuestoTrabajo{
 	private ArrayList<PesoCriterio> pesosCriterio;
 
 	public PuestoTrabajo(){
-		this.pesosCriterio = new ArrayList<PesoCriterio>();
+		this.pesosCriterio = new ArrayList<>();
 	};
 
 	public int getIdPuestoTrabajo(){

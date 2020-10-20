@@ -9,7 +9,7 @@ public class Criterio{
 	private ArrayList<Criterio> criterios;
 
 	public Criterio(){
-		this.criterios = new ArrayList<Criterio>();
+		this.criterios = new ArrayList<>();
                 this.criterioPadre = new Criterio();
 	};
 

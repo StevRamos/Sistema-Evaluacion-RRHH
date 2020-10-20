@@ -8,8 +8,8 @@ public class ItemPDI{
 	private ArrayList<ItemPDIPeriodo> rangos;
 
 	public ItemPDI(){
-		this.lineasEvaluacion = new ArrayList<LineaEvaluacion>();
-		this.rangos = new ArrayList<ItemPDIPeriodo>();
+		this.lineasEvaluacion = new ArrayList<>();
+		this.rangos = new ArrayList<>();
 	};
 
 	public int getIdItemPDI(){

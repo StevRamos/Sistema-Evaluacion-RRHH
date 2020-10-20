@@ -9,8 +9,8 @@ public class Gerencia{
 	private ArrayList<Colaborador> colaboradores;
 
 	public Gerencia(){
-		this.configuracionFechas = new ArrayList<GerenciaPeriodo>();
-		this.colaboradores = new ArrayList<Colaborador>();
+		this.configuracionFechas = new ArrayList<>();
+		this.colaboradores = new ArrayList<>();
 	};
 
 	public int getIdGerencia(){

@@ -14,7 +14,7 @@ public class Evaluacion{
 	private Periodo periodo;
 
 	public Evaluacion(){
-		this.lineasEvaluacion = new ArrayList<LineaEvaluacion>();
+		this.lineasEvaluacion = new ArrayList<>();
                 this.colaborador = new Colaborador();
                 this.periodo = new Periodo();
 	};
