@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaEDInterfaces
 {
-    public partial class frmPlanAgregarObjetivo : Form
+    public partial class frmAdmGestPuestos : Form
     {
-        public frmPlanAgregarObjetivo()
+        public frmAdmGestPuestos()
         {
             InitializeComponent();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            this.Close(); 
         }
     }
 }

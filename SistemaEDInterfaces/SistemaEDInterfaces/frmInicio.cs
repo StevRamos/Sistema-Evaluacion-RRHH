@@ -100,6 +100,7 @@ namespace SistemaEDInterfaces
             
         }
 
+        //Menu Principal
         private void btnPlanificacion_Click(object sender, EventArgs e)
         {
             mostrarSubmenu(panelPlanificacionSubmenu);
@@ -130,6 +131,7 @@ namespace SistemaEDInterfaces
             
         }
 
+        //Submenu de Planificacion
         private void btnPlanMisObjetivos_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnPlanificacion,btnPlanMisObjetivos);
@@ -142,6 +144,7 @@ namespace SistemaEDInterfaces
             abrirFormularioHijo(new frmPlanValidarObjetivos());
         }
 
+        //Submenu de Evaluacion
         private void btnEvAutoevaluacion_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnEvaluacion, btnEvAutoevaluacion);
@@ -166,6 +169,7 @@ namespace SistemaEDInterfaces
             abrirFormularioHijo(new frmEvMisResultados());
         }
 
+        //Submenu de Historial
         private void btnHisMisEvaluaciones_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnHistorialEv, btnHisMisEvaluaciones);
@@ -178,6 +182,7 @@ namespace SistemaEDInterfaces
             abrirFormularioHijo(new frmHisMisTrabajadores());
         }
 
+        //Submenu de Administracion
         private void btnAdmGestCron_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestCron);
@@ -214,6 +219,37 @@ namespace SistemaEDInterfaces
             abrirFormularioHijo(new frmAdmCalibrar());
         }
 
+        private void btnGestGerencias_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnGestGerencias);
+            abrirFormularioHijo(new frmAdmGestGer());
+        }
+
+        private void btnAdmGestSubcomp_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestSubcomp);
+            abrirFormularioHijo(new frmAdmGestSubcomp());
+        }
+
+        private void btnAdmGestSubpot_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestSubpot);
+            abrirFormularioHijo(new frmAdmGestSubpot());
+        }
+
+        private void btnGestColaboradores_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnGestColaboradores);
+            abrirFormularioHijo(new frmAdmGestColab());
+        }
+
+        private void btnGestPuestos_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnGestPuestos);
+            abrirFormularioHijo(new frmAdmGestPuestos());
+        }
+
+        //Submenu de Reportes
         private void btnRep9Box_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnReportes, btnRep9Box);
@@ -226,6 +262,7 @@ namespace SistemaEDInterfaces
             abrirFormularioHijo(new frmRepPDI());
         }
 
+        //Otros
         private void btnInicio_Click(object sender, EventArgs e)
         {
             if (formularioHijoActual != null)
@@ -251,5 +288,7 @@ namespace SistemaEDInterfaces
             
             btnMenuCuenta.Image = Properties.Resources.flecha_hacia_arriba;
         }
+
+        
     }
 }

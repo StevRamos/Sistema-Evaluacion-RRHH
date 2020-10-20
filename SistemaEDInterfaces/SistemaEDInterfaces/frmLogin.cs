@@ -67,8 +67,7 @@ namespace SistemaEDInterfaces
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-
-            
+            this.Hide();
             frmInicio Inicio = new frmInicio();
             Inicio.ShowDialog();
             this.Close();
