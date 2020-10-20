@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class GerenciaPeriodo{
 	private Gerencia gerencia;
-	private Periodo geriodo;
+	private Periodo periodo;
 	private Date fechaInicioPlan;
 	private Date fechaFinPlan;
 	private Date fechaInicioEval;
@@ -12,7 +12,12 @@ public class GerenciaPeriodo{
 	private Date fechaInicioPDI;
 	private Date fechaFinPDI;
 	private String diaNotifacion;
-
+        
+        public GerenciaPeriodo(){
+            this.gerencia = new Gerencia();
+            this.periodo = new Periodo();
+        }
+        
 	public Gerencia getGerencia(){
 		return this.gerencia;
 	};
@@ -21,12 +26,12 @@ public class GerenciaPeriodo{
 		this.gerencia = gerencia;
 	};
 
-	public Periodo getGeriodo(){
-		return this.geriodo;
+	public Periodo getPeriodo(){
+		return this.periodo;
 	};
 
-	public void setGeriodo( Periodo geriodo ){
-		this.geriodo = geriodo;
+	public void setPeriodo( Periodo periodo ){
+		this.periodo = periodo;
 	};
 
 	public Date getFechaInicioPlan(){

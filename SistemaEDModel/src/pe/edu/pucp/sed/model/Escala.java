@@ -11,10 +11,10 @@ public class Escala{
 	private ArrayList<EscalaPeriodo> rangos;
 
 	public Escala(){
-		this.evaluacionesSinCalibrar = new ArrayList<Evaluacion>();
-		this.evaluacionesFinales = new ArrayList<Evaluacion>();
-		this.evaluacionesPreCupos = new ArrayList<Evaluacion>();
-		this.rangos = new ArrayList<EscalaPeriodo>();
+		this.evaluacionesSinCalibrar = new ArrayList<>();
+		this.evaluacionesFinales = new ArrayList<>();
+		this.evaluacionesPreCupos = new ArrayList<>();
+		this.rangos = new ArrayList<>();
 	};
 
 	public int getIdEscala(){

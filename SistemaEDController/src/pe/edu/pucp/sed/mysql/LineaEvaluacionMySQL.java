@@ -26,7 +26,7 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 			String sql = "{call INSERTAR_LINEA_EVALUACION(?,?,?,?)}";
 			cs = con.prepareCall(sql);
                         
-                        cs.setInt("_ID_PESO_CRITERIO",lineaEvaluacion.getPeso().getIdPesoCriterio());
+                        cs.setInt("_ID_PESO_CRITERIO",lineaEvaluacion.getPesoCriterio().getIdPesoCriterio());
                         cs.setInt("_ID_EVALUACION",lineaEvaluacion.getEvaluacion().getIdEvaluacion());
                         cs.setInt("_ID_ITEM",lineaEvaluacion.getItemPDI().getIdItemPDI());
                         cs.registerOutParameter("_ID_LINEA_EVALUACION", java.sql.Types.INTEGER);

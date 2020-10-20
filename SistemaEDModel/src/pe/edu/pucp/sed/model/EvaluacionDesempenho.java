@@ -1,7 +1,7 @@
 package pe.edu.pucp.sed.model;
 
 import java.util.ArrayList;
-public class EvaluacionDesempenho{
+public class EvaluacionDesempenho extends Evaluacion{
 	private String observacionesComp;
 	private double notaAutoEvalComp;
 	private double notaPreviaComp;
@@ -14,7 +14,8 @@ public class EvaluacionDesempenho{
 	private ArrayList<Objetivo> objetivos;
 
 	public EvaluacionDesempenho(){
-		this.objetivos = new ArrayList<Objetivo>();
+                super();
+		this.objetivos = new ArrayList<>();
 	};
 
 	public String getObservacionesComp(){

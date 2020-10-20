@@ -2,23 +2,23 @@ package pe.edu.pucp.sed.model;
 
 import java.util.ArrayList;
 public class Gerencia{
-	private int idArea;
+	private int idGerencia;
 	private String nombre;
 	private String descripcion;
 	private ArrayList<GerenciaPeriodo> configuracionFechas;
 	private ArrayList<Colaborador> colaboradores;
 
 	public Gerencia(){
-		this.configuracionFechas = new ArrayList<GerenciaPeriodo>();
-		this.colaboradores = new ArrayList<Colaborador>();
+		this.configuracionFechas = new ArrayList<>();
+		this.colaboradores = new ArrayList<>();
 	};
 
-	public int getIdArea(){
-		return this.idArea;
+	public int getIdGerencia(){
+		return this.idGerencia;
 	};
 
-	public void setIdArea( int idArea ){
-		this.idArea = idArea;
+	public void setIdGerencia( int idGerencia ){
+		this.idGerencia = idGerencia;
 	};
 
 	public String getNombre(){

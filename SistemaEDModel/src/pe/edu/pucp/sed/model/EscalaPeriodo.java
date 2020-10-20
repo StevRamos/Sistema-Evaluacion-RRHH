@@ -6,6 +6,11 @@ public class EscalaPeriodo{
 	private Escala escala;
 	private Periodo periodo;
 
+        public EscalaPeriodo(){
+            this.escala = new Escala();
+            this.periodo = new Periodo();
+        }
+        
 	public double getNotaMax(){
 		return this.notaMax;
 	};

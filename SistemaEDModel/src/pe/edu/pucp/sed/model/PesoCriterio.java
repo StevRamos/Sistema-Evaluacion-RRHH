@@ -10,7 +10,10 @@ public class PesoCriterio{
 	private Criterio criterio;
 
 	public PesoCriterio(){
-		this.lineasEvaluacion = new ArrayList<LineaEvaluacion>();
+		this.lineasEvaluacion = new ArrayList<>();
+                this.periodo = new Periodo();
+                this.puestoTrabajo = new PuestoTrabajo();
+                this.criterio = new Criterio();
 	};
 
 	public int getIdPesoCriterio(){

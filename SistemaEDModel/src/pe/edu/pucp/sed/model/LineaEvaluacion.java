@@ -13,7 +13,10 @@ public class LineaEvaluacion{
 	private PesoCriterio pesoCriterio;
 
 	public LineaEvaluacion(){
-		this.sublineasEvaluacion = new ArrayList<LineaEvaluacion>();
+		this.sublineasEvaluacion = new ArrayList<>();
+                this.evaluacion = new Evaluacion();
+                this.itemPDI = new ItemPDI();
+                this.pesoCriterio = new PesoCriterio();
 	};
 
 	public int getIdLineaEvaluacion(){

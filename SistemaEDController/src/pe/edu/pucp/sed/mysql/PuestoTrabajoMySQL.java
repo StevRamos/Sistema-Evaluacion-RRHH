@@ -102,7 +102,7 @@ public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
                             puestoTrabajo.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
                             puestoTrabajo.setNombre(rs.getString("nombre"));
                             puestoTrabajo.setDescripcion(rs.getString("descripcion"));
-                            puestoTrabajo.setActivo(rs.getBoolean("activo"));
+                            //puestoTrabajo.setActivo(rs.getBoolean("activo"));
                             puestosTrabajo.add(puestoTrabajo);
                         }
 		}catch(Exception ex){

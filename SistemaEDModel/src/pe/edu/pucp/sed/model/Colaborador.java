@@ -13,7 +13,7 @@ public class Colaborador{
 	private String telefono;
 	private Date fechaNac;
 	private String contrasena;
-	private estadoCuenta estadoCuenta;
+	private EstadoCuenta estadoCuenta;
 	private boolean esAdmin;
 	private ArrayList<Objetivo> objetivos;
 	private ArrayList<Evaluacion> evaluaciones;
@@ -23,9 +23,12 @@ public class Colaborador{
 	private ArrayList<Colaborador> subordinados;
 
 	public Colaborador(){
-		this.objetivos = new ArrayList<Objetivo>();
-		this.evaluaciones = new ArrayList<Evaluacion>();
-		this.subordinados = new ArrayList<Colaborador>();
+		this.objetivos = new ArrayList<>();
+		this.evaluaciones = new ArrayList<>();
+		this.subordinados = new ArrayList<>();
+                this.puestoTrabajo = new PuestoTrabajo();
+                this.gerencia = new Gerencia();
+                this.jefe = new Colaborador();
 	};
 
 	public int getIdColaborador(){
@@ -100,11 +103,11 @@ public class Colaborador{
 		this.contrasena = contrasena;
 	};
 
-	public estadoCuenta getEstadoCuenta(){
+	public EstadoCuenta getEstadoCuenta(){
 		return this.estadoCuenta;
 	};
 
-	public void setEstadoCuenta( estadoCuenta estadoCuenta ){
+	public void setEstadoCuenta( EstadoCuenta estadoCuenta ){
 		this.estadoCuenta = estadoCuenta;
 	};
 

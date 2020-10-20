@@ -9,12 +9,14 @@ public class Evaluacion{
 	private boolean tipo;
 	private EstadoEvaluacion estado;
 	private int estadoPDI;
-	private ArrayList<LineaEvaluacion> lineasEvauacion;
+	private ArrayList<LineaEvaluacion> lineasEvaluacion;
 	private Colaborador colaborador;
 	private Periodo periodo;
 
 	public Evaluacion(){
-		this.lineasEvauacion = new ArrayList<LineaEvaluacion>();
+		this.lineasEvaluacion = new ArrayList<>();
+                this.colaborador = new Colaborador();
+                this.periodo = new Periodo();
 	};
 
 	public int getIdEvaluacion(){
@@ -73,12 +75,12 @@ public class Evaluacion{
 		this.estadoPDI = estadoPDI;
 	};
 
-	public ArrayList<LineaEvaluacion> getLineasEvauacion(){
-		return this.lineasEvauacion;
+	public ArrayList<LineaEvaluacion> getLineasEvaluacion(){
+		return this.lineasEvaluacion;
 	};
 
-	public void setLineasEvauacion( LineaEvaluacion lineasEvauacion ){
-		this.lineasEvauacion.add(lineasEvauacion);
+	public void setLineasEvaluacion( LineaEvaluacion lineasEvaluacion ){
+		this.lineasEvaluacion.add(lineasEvaluacion);
 	};
 
 	public Colaborador getColaborador(){

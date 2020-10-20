@@ -10,7 +10,7 @@ public class Periodo{
 	private Date fechaFin;
 	private double pesoEvalObj;
 	private double pesoEvalComp;
-	private EstadoPeriodos estado;
+	private EstadoPeriodo estado;
 	private Time horaNotificacion;
 	private ArrayList<Evaluacion> evaluaciones;
 	private ArrayList<PesoCriterio> pesosCriterio;
@@ -20,12 +20,12 @@ public class Periodo{
 	private ArrayList<Objetivo> objetivos;
 
 	public Periodo(){
-		this.evaluaciones = new ArrayList<Evaluacion>();
-		this.pesosCriterio = new ArrayList<PesoCriterio>();
-		this.rangosPDI = new ArrayList<ItemPDIPeriodo>();
-		this.configuracionFechas = new ArrayList<GerenciaPeriodo>();
-		this.escalas = new ArrayList<EscalaPeriodo>();
-		this.objetivos = new ArrayList<Objetivo>();
+		this.evaluaciones = new ArrayList<>();
+		this.pesosCriterio = new ArrayList<>();
+		this.rangosPDI = new ArrayList<>();
+		this.configuracionFechas = new ArrayList<>();
+		this.escalas = new ArrayList<>();
+		this.objetivos = new ArrayList<>();
 	};
 
 	public int getIdPeriodo(){
@@ -68,11 +68,11 @@ public class Periodo{
 		this.pesoEvalComp = pesoEvalComp;
 	};
 
-	public EstadoPeriodos getEstado(){
+	public EstadoPeriodo getEstado(){
 		return this.estado;
 	};
 
-	public void setEstado( EstadoPeriodos estado ){
+	public void setEstado( EstadoPeriodo estado ){
 		this.estado = estado;
 	};
 
