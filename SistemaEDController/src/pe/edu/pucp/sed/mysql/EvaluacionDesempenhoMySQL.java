@@ -52,8 +52,8 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             cs = con.prepareCall(sql);
 
             cs.setInt("_ID_EVALUACION",evaluacionDesempenho.getIdEvaluacion());
-            cs.setInt("_ID_ESCALASINCALIBRAR",evaluacionDesempenho.getEscalaSinCalibrar().getIdEscala());
-            cs.setInt("_ID_ESCALAFINAL",evaluacionDesempenho.getEscalaFinal().getIdEscala());
+            //cs.setInt("_ID_ESCALASINCALIBRAR",evaluacionDesempenho.getEscalaSinCalibrar().getIdEscala());
+            //cs.setInt("_ID_ESCALAFINAL",evaluacionDesempenho.getEscalaFinal().getIdEscala());
             cs.setString("_OBSERVACIONESCOMP",evaluacionDesempenho.getObservacionesComp());
             cs.setDouble("_NOTAAUTOEVALCOMP",evaluacionDesempenho.getNotaAutoEvalComp());
             cs.setDouble("_NOTAPREVIACOMP",evaluacionDesempenho.getNotaPreviaComp());

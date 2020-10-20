@@ -26,6 +26,9 @@ public class Colaborador{
 		this.objetivos = new ArrayList<Objetivo>();
 		this.evaluaciones = new ArrayList<Evaluacion>();
 		this.subordinados = new ArrayList<Colaborador>();
+                this.puestoTrabajo = new PuestoTrabajo();
+                this.gerencia = new Gerencia();
+                this.jefe = new Colaborador();
 	};
 
 	public int getIdColaborador(){

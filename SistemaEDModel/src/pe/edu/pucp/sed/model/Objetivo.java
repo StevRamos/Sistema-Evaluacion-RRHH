@@ -18,7 +18,13 @@ public class Objetivo{
 	private Colaborador colaborador;
 	private EvaluacionDesempenho evaluacion;
 	private Periodo periodo;
-
+        
+        public Objetivo(){
+            this.colaborador = new Colaborador();
+            this.evaluacion = new EvaluacionDesempenho();
+            this.periodo = new Periodo();
+        }
+        
 	public int getIdObjetivo(){
 		return this.idObjetivo;
 	};

@@ -10,6 +10,7 @@ public class Criterio{
 
 	public Criterio(){
 		this.criterios = new ArrayList<Criterio>();
+                this.criterioPadre = new Criterio();
 	};
 
 	public int getIdCriterio(){

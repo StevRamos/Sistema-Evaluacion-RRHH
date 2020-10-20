@@ -20,12 +20,12 @@ public class Periodo{
 	private ArrayList<Objetivo> objetivos;
 
 	public Periodo(){
-		this.evaluaciones = new ArrayList<Evaluacion>();
-		this.pesosCriterio = new ArrayList<PesoCriterio>();
-		this.rangosPDI = new ArrayList<ItemPDIPeriodo>();
-		this.configuracionFechas = new ArrayList<GerenciaPeriodo>();
-		this.escalas = new ArrayList<EscalaPeriodo>();
-		this.objetivos = new ArrayList<Objetivo>();
+		this.evaluaciones = new ArrayList<>();
+		this.pesosCriterio = new ArrayList<>();
+		this.rangosPDI = new ArrayList<>();
+		this.configuracionFechas = new ArrayList<>();
+		this.escalas = new ArrayList<>();
+		this.objetivos = new ArrayList<>();
 	};
 
 	public int getIdPeriodo(){
