@@ -10,7 +10,7 @@ public class Periodo{
 	private Date fechaFin;
 	private double pesoEvalObj;
 	private double pesoEvalComp;
-	private EstadoPeriodos estado;
+	private EstadoPeriodo estado;
 	private Time horaNotificacion;
 	private ArrayList<Evaluacion> evaluaciones;
 	private ArrayList<PesoCriterio> pesosCriterio;
@@ -68,11 +68,11 @@ public class Periodo{
 		this.pesoEvalComp = pesoEvalComp;
 	};
 
-	public EstadoPeriodos getEstado(){
+	public EstadoPeriodo getEstado(){
 		return this.estado;
 	};
 
-	public void setEstado( EstadoPeriodos estado ){
+	public void setEstado( EstadoPeriodo estado ){
 		this.estado = estado;
 	};
 

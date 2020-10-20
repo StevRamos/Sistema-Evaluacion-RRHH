@@ -13,7 +13,7 @@ public class Colaborador{
 	private String telefono;
 	private Date fechaNac;
 	private String contrasena;
-	private estadoCuenta estadoCuenta;
+	private EstadoCuenta estadoCuenta;
 	private boolean esAdmin;
 	private ArrayList<Objetivo> objetivos;
 	private ArrayList<Evaluacion> evaluaciones;
@@ -100,11 +100,11 @@ public class Colaborador{
 		this.contrasena = contrasena;
 	};
 
-	public estadoCuenta getEstadoCuenta(){
+	public EstadoCuenta getEstadoCuenta(){
 		return this.estadoCuenta;
 	};
 
-	public void setEstadoCuenta( estadoCuenta estadoCuenta ){
+	public void setEstadoCuenta( EstadoCuenta estadoCuenta ){
 		this.estadoCuenta = estadoCuenta;
 	};
 
