@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaEDInterfaces
 {
-    public partial class Login : Form
+    public partial class frmLogin : Form
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -67,8 +67,11 @@ namespace SistemaEDInterfaces
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
+
+            
             frmInicio Inicio = new frmInicio();
             Inicio.ShowDialog();
+            this.Close();
         }
     }
 }

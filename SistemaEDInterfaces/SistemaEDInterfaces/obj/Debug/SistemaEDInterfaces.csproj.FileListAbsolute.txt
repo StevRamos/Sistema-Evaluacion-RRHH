@@ -53,3 +53,5 @@ C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces
 C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.exe
 C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.pdb
 C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csprojAssemblyReference.cache
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmLogin.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanAgregarObjetivo.resources

@@ -42,6 +42,7 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
@@ -131,6 +132,12 @@
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlanAgregarObjetivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanAgregarObjetivo.Designer.cs">
+      <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlanMisObjetivos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,11 +162,11 @@
     <Compile Include="frmRepPDI.Designer.cs">
       <DependentUpon>frmRepPDI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -212,6 +219,9 @@
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanAgregarObjetivo.resx">
+      <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPlanMisObjetivos.resx">
       <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,8 +234,8 @@
     <EmbeddedResource Include="frmRepPDI.resx">
       <DependentUpon>frmRepPDI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
