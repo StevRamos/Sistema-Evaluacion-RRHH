@@ -10,14 +10,85 @@ using System.Windows.Forms;
 
 namespace SistemaEDInterfaces
 {
+   
+    
     public partial class frmInicio : Form
     {
-
-        private Form formularioHijoActual; 
+        List<Form>formulariosActuales = new List<Form>();
         public frmInicio()
         {
+            Global.formPrincipal = this;
             InitializeComponent();
             customizeDesign();
+        }
+
+
+
+
+        public void abrirFormularioHijo(bool cerrarPadre, Form formularioHijo)
+        {
+            if (cerrarPadre)
+            {
+                int n = formulariosActuales.Count - 1;
+                if (n >= 0)
+                {
+                    if (formulariosActuales[n] != null)
+                    {
+                        formulariosActuales[n].Close();
+                        formulariosActuales.RemoveAt(n);
+                    }
+                }
+             
+            }
+            formulariosActuales.Add(formularioHijo);
+            formularioHijo.TopLevel = false;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Dock = DockStyle.Fill;
+            panelContenedor.Controls.Add(formularioHijo);
+            panelContenedor.Tag = formularioHijo;
+            formularioHijo.BringToFront();
+            formularioHijo.Show();
+        }
+
+        public void cerrarFormularioHijo()
+        {
+            int n = formulariosActuales.Count - 1;
+            if (n >= 1)
+            {
+                if (formulariosActuales[n] != null)
+                {
+                    formulariosActuales[n].Close();
+                    formulariosActuales.RemoveAt(n);
+                }
+            }
+        }
+
+        //public void cerrarFormularioHijoYabrirPadre()
+        //{
+        //    int n = formulariosActuales.Count - 1;
+        //    if (n >= 1)
+        //    {
+        //        if (formulariosActuales[n] != null)
+        //        {
+        //            formulariosActuales[n].Close();
+        //            formulariosActuales.RemoveAt(n);
+        //        }
+        //        Form formularioActual = formulariosActuales[n - 1];
+        //        formularioActual.TopLevel = false;
+        //        panelContenedor.Tag = formularioActual;
+        //        formularioActual.BringToFront();
+        //        formularioActual.Show(); 
+        //    }
+            
+        //}
+
+        public void cerrarFormulariosActuales()
+        {
+            foreach(Form f in formulariosActuales)
+            {
+                f.Close(); 
+            }
+            formulariosActuales.Clear(); 
         }
 
 
@@ -71,22 +142,7 @@ namespace SistemaEDInterfaces
             lblTituloBarraSuperior.Text = btnPadre.Text + " ➜ " + btnHijo.Text;
         }
 
-        private void abrirFormularioHijo(Form formularioHijo)
-        {
-            if (formularioHijoActual != null)
-            {
-                formularioHijoActual.Close();
-            }
-            formularioHijoActual = formularioHijo;
-            formularioHijo.TopLevel = false;
-            formularioHijo.FormBorderStyle = FormBorderStyle.None;
-            formularioHijo.Dock = DockStyle.Fill;
-            panelContenedor.Controls.Add(formularioHijo);
-            panelContenedor.Tag = formularioHijo;
-            formularioHijo.BringToFront();
-            formularioHijo.Show();
-
-        }
+        
         private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
@@ -100,6 +156,7 @@ namespace SistemaEDInterfaces
             
         }
 
+        //Menu Principal
         private void btnPlanificacion_Click(object sender, EventArgs e)
         {
             mostrarSubmenu(panelPlanificacionSubmenu);
@@ -130,108 +187,163 @@ namespace SistemaEDInterfaces
             
         }
 
+        //Submenu de Planificacion
         private void btnPlanMisObjetivos_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnPlanificacion,btnPlanMisObjetivos);
-            abrirFormularioHijo(new frmPlanMisObjetivos()); 
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmPlanMisObjetivos());
         }
 
         private void btnPlanValidarObjetivos_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnPlanificacion, btnPlanValidarObjetivos);
-            abrirFormularioHijo(new frmPlanValidarObjetivos());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmPlanValidarObjetivos());
         }
 
+        //Submenu de Evaluacion
         private void btnEvAutoevaluacion_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnEvaluacion, btnEvAutoevaluacion);
-            abrirFormularioHijo(new frmEvAutoevaluacion());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false,new frmEvAutoevaluacion());
         }
 
         private void btnEvMisTrabajadores_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnEvaluacion, btnEvMisTrabajadores);
-            abrirFormularioHijo(new frmEvMisTrabajadores());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmEvMisTrabajadores());
         }
 
         private void btnEvFeedback_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnEvaluacion, btnEvFeedback);
-            abrirFormularioHijo(new frmEvFeedback());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmEvFeedback());
         }
 
         private void btnEvMisResultados_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnEvaluacion, btnEvMisResultados);
-            abrirFormularioHijo(new frmEvMisResultados());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmEvMisResultados());
         }
 
+        //Submenu de Historial
         private void btnHisMisEvaluaciones_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnHistorialEv, btnHisMisEvaluaciones);
-            abrirFormularioHijo(new frmHisMisEvaluaciones());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmHisMisEvaluaciones());
         }
 
         private void btnHisMisTrabajadores_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnHistorialEv, btnHisMisTrabajadores);
-            abrirFormularioHijo(new frmHisMisTrabajadores());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmHisMisTrabajadores());
         }
 
+        //Submenu de Administracion
         private void btnAdmGestCron_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestCron);
-            abrirFormularioHijo(new frmAdmGestCron());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestCron());
         }
 
         private void btnAdmGestComp_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestComp);
-            abrirFormularioHijo(new frmAdmGestComp());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestComp());
         }
 
         private void btnAdmGestPot_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestPot);
-            abrirFormularioHijo(new frmAdmGestPot());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestPot());
         }
 
         private void btnAdmGestRangos_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestRangos);
-            abrirFormularioHijo(new frmAdmGestRangos());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestRangos());
         }
 
         private void btnAdmSeguimiento_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnAdministracion, btnAdmSeguimiento);
-            abrirFormularioHijo(new frmAdmSeguimiento());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmSeguimiento());
         }
 
         private void btnAdmCalibrar_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnAdministracion, btnAdmCalibrar);
-            abrirFormularioHijo(new frmAdmCalibrar());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmCalibrar());
+
         }
 
+        private void btnGestGerencias_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnGestGerencias);
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestGer());
+        }
+
+        private void btnAdmGestSubcomp_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestSubcomp);
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestSubcomp());
+        }
+
+        private void btnAdmGestSubpot_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnAdmGestSubpot);
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestSubpot());
+        }
+
+        private void btnGestColaboradores_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnGestColaboradores);
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestColab());
+        }
+
+        private void btnGestPuestos_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnAdministracion, btnGestPuestos);
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmAdmGestPuestos());
+        }
+
+        //Submenu de Reportes
         private void btnRep9Box_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnReportes, btnRep9Box);
-            abrirFormularioHijo(new frmRep9Box());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmRep9Box());
         }
 
         private void btnRepPDI_Click(object sender, EventArgs e)
         {
             cambiarTituloBarraSuperior(btnReportes, btnRepPDI);
-            abrirFormularioHijo(new frmRepPDI());
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmRepPDI());
         }
 
+        //Otros
         private void btnInicio_Click(object sender, EventArgs e)
         {
-            if (formularioHijoActual != null)
-            {
-                formularioHijoActual.Close();
-            }
+            cerrarFormulariosActuales();
             lblTituloBarraSuperior.Text = "Inicio";
             
         }
@@ -251,5 +363,7 @@ namespace SistemaEDInterfaces
             
             btnMenuCuenta.Image = Properties.Resources.flecha_hacia_arriba;
         }
+
+        
     }
 }

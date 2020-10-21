@@ -6,6 +6,11 @@ public class ItemPDIPeriodo{
 	private ItemPDI itemPDI;
 	private Periodo periodo;
 
+        public ItemPDIPeriodo(){
+            this.itemPDI = new ItemPDI();
+            this.periodo = new Periodo();
+        }
+        
 	public double getNotaMin(){
 		return this.notaMin;
 	};

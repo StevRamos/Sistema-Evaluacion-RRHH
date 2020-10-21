@@ -33,6 +33,7 @@
             this.panelReportesSubmenu = new System.Windows.Forms.Panel();
             this.btnRepPDI = new System.Windows.Forms.Button();
             this.btnRep9Box = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
             this.panelAdmSubmenu = new System.Windows.Forms.Panel();
             this.btnAdmCalibrar = new System.Windows.Forms.Button();
             this.btnAdmSeguimiento = new System.Windows.Forms.Button();
@@ -40,33 +41,37 @@
             this.btnAdmGestPot = new System.Windows.Forms.Button();
             this.btnAdmGestComp = new System.Windows.Forms.Button();
             this.btnAdmGestCron = new System.Windows.Forms.Button();
+            this.btnAdministracion = new System.Windows.Forms.Button();
             this.panelHistorialSubmenu = new System.Windows.Forms.Panel();
             this.btnHisMisTrabajadores = new System.Windows.Forms.Button();
             this.btnHisMisEvaluaciones = new System.Windows.Forms.Button();
+            this.btnHistorialEv = new System.Windows.Forms.Button();
             this.panelEvaluacionSubmenu = new System.Windows.Forms.Panel();
             this.btnEvMisResultados = new System.Windows.Forms.Button();
             this.btnEvFeedback = new System.Windows.Forms.Button();
             this.btnEvMisTrabajadores = new System.Windows.Forms.Button();
             this.btnEvAutoevaluacion = new System.Windows.Forms.Button();
+            this.btnEvaluacion = new System.Windows.Forms.Button();
             this.panelPlanificacionSubmenu = new System.Windows.Forms.Panel();
             this.btnPlanValidarObjetivos = new System.Windows.Forms.Button();
             this.btnPlanMisObjetivos = new System.Windows.Forms.Button();
+            this.btnPlanificacion = new System.Windows.Forms.Button();
             this.panelLogo = new System.Windows.Forms.Panel();
+            this.btnInicio = new System.Windows.Forms.PictureBox();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
+            this.btnLblNombreColab = new System.Windows.Forms.Button();
+            this.btnMenuCuenta = new System.Windows.Forms.Button();
             this.lblTituloBarraSuperior = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.lblInicioFechaActual = new System.Windows.Forms.Label();
             this.lblInicioHoraActual = new System.Windows.Forms.Label();
-            this.timerFechaHoraActual = new System.Windows.Forms.Timer(this.components);
             this.pbLogoPUCPInicio = new System.Windows.Forms.PictureBox();
-            this.btnMenuCuenta = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
-            this.btnAdministracion = new System.Windows.Forms.Button();
-            this.btnHistorialEv = new System.Windows.Forms.Button();
-            this.btnEvaluacion = new System.Windows.Forms.Button();
-            this.btnPlanificacion = new System.Windows.Forms.Button();
-            this.btnInicio = new System.Windows.Forms.PictureBox();
-            this.btnLblNombreColab = new System.Windows.Forms.Button();
+            this.timerFechaHoraActual = new System.Windows.Forms.Timer(this.components);
+            this.btnAdmGestSubcomp = new System.Windows.Forms.Button();
+            this.btnAdmGestSubpot = new System.Windows.Forms.Button();
+            this.btnGestColaboradores = new System.Windows.Forms.Button();
+            this.btnGestPuestos = new System.Windows.Forms.Button();
+            this.btnGestGerencias = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelReportesSubmenu.SuspendLayout();
             this.panelAdmSubmenu.SuspendLayout();
@@ -74,10 +79,10 @@
             this.panelEvaluacionSubmenu.SuspendLayout();
             this.panelPlanificacionSubmenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.panelBarraSuperior.SuspendLayout();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoPUCPInicio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -108,9 +113,9 @@
             this.panelReportesSubmenu.Controls.Add(this.btnRepPDI);
             this.panelReportesSubmenu.Controls.Add(this.btnRep9Box);
             this.panelReportesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelReportesSubmenu.Location = new System.Drawing.Point(0, 1005);
+            this.panelReportesSubmenu.Location = new System.Drawing.Point(0, 1223);
             this.panelReportesSubmenu.Name = "panelReportesSubmenu";
-            this.panelReportesSubmenu.Size = new System.Drawing.Size(244, 86);
+            this.panelReportesSubmenu.Size = new System.Drawing.Size(244, 83);
             this.panelReportesSubmenu.TabIndex = 10;
             // 
             // btnRepPDI
@@ -147,19 +152,43 @@
             this.btnRep9Box.UseVisualStyleBackColor = true;
             this.btnRep9Box.Click += new System.EventHandler(this.btnRep9Box_Click);
             // 
+            // btnReportes
+            // 
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportes.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnReportes.Image = global::SistemaEDInterfaces.Properties.Resources.reportes;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 1178);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Size = new System.Drawing.Size(244, 45);
+            this.btnReportes.TabIndex = 9;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            // 
             // panelAdmSubmenu
             // 
             this.panelAdmSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(27)))), ((int)(((byte)(62)))));
+            this.panelAdmSubmenu.Controls.Add(this.btnGestGerencias);
+            this.panelAdmSubmenu.Controls.Add(this.btnGestPuestos);
+            this.panelAdmSubmenu.Controls.Add(this.btnGestColaboradores);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmCalibrar);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmSeguimiento);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestRangos);
+            this.panelAdmSubmenu.Controls.Add(this.btnAdmGestSubpot);
+            this.panelAdmSubmenu.Controls.Add(this.btnAdmGestSubcomp);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestPot);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestComp);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestCron);
             this.panelAdmSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdmSubmenu.Location = new System.Drawing.Point(0, 715);
+            this.panelAdmSubmenu.Location = new System.Drawing.Point(0, 703);
             this.panelAdmSubmenu.Name = "panelAdmSubmenu";
-            this.panelAdmSubmenu.Size = new System.Drawing.Size(244, 245);
+            this.panelAdmSubmenu.Size = new System.Drawing.Size(244, 475);
             this.panelAdmSubmenu.TabIndex = 8;
             // 
             // btnAdmCalibrar
@@ -169,7 +198,7 @@
             this.btnAdmCalibrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmCalibrar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmCalibrar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdmCalibrar.Location = new System.Drawing.Point(0, 200);
+            this.btnAdmCalibrar.Location = new System.Drawing.Point(0, 293);
             this.btnAdmCalibrar.Name = "btnAdmCalibrar";
             this.btnAdmCalibrar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAdmCalibrar.Size = new System.Drawing.Size(244, 40);
@@ -186,7 +215,7 @@
             this.btnAdmSeguimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmSeguimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmSeguimiento.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdmSeguimiento.Location = new System.Drawing.Point(0, 160);
+            this.btnAdmSeguimiento.Location = new System.Drawing.Point(0, 253);
             this.btnAdmSeguimiento.Name = "btnAdmSeguimiento";
             this.btnAdmSeguimiento.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAdmSeguimiento.Size = new System.Drawing.Size(244, 40);
@@ -203,7 +232,7 @@
             this.btnAdmGestRangos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmGestRangos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmGestRangos.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdmGestRangos.Location = new System.Drawing.Point(0, 120);
+            this.btnAdmGestRangos.Location = new System.Drawing.Point(0, 213);
             this.btnAdmGestRangos.Name = "btnAdmGestRangos";
             this.btnAdmGestRangos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAdmGestRangos.Size = new System.Drawing.Size(244, 40);
@@ -264,15 +293,34 @@
             this.btnAdmGestCron.UseVisualStyleBackColor = true;
             this.btnAdmGestCron.Click += new System.EventHandler(this.btnAdmGestCron_Click);
             // 
+            // btnAdministracion
+            // 
+            this.btnAdministracion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdministracion.FlatAppearance.BorderSize = 0;
+            this.btnAdministracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdministracion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdministracion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdministracion.Image = global::SistemaEDInterfaces.Properties.Resources.administracion;
+            this.btnAdministracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdministracion.Location = new System.Drawing.Point(0, 658);
+            this.btnAdministracion.Name = "btnAdministracion";
+            this.btnAdministracion.Size = new System.Drawing.Size(244, 45);
+            this.btnAdministracion.TabIndex = 7;
+            this.btnAdministracion.Text = "Administración";
+            this.btnAdministracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdministracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdministracion.UseVisualStyleBackColor = true;
+            this.btnAdministracion.Click += new System.EventHandler(this.btnAdministracion_Click);
+            // 
             // panelHistorialSubmenu
             // 
             this.panelHistorialSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(27)))), ((int)(((byte)(62)))));
             this.panelHistorialSubmenu.Controls.Add(this.btnHisMisTrabajadores);
             this.panelHistorialSubmenu.Controls.Add(this.btnHisMisEvaluaciones);
             this.panelHistorialSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelHistorialSubmenu.Location = new System.Drawing.Point(0, 584);
+            this.panelHistorialSubmenu.Location = new System.Drawing.Point(0, 578);
             this.panelHistorialSubmenu.Name = "panelHistorialSubmenu";
-            this.panelHistorialSubmenu.Size = new System.Drawing.Size(244, 86);
+            this.panelHistorialSubmenu.Size = new System.Drawing.Size(244, 80);
             this.panelHistorialSubmenu.TabIndex = 6;
             // 
             // btnHisMisTrabajadores
@@ -309,6 +357,25 @@
             this.btnHisMisEvaluaciones.UseVisualStyleBackColor = true;
             this.btnHisMisEvaluaciones.Click += new System.EventHandler(this.btnHisMisEvaluaciones_Click);
             // 
+            // btnHistorialEv
+            // 
+            this.btnHistorialEv.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHistorialEv.FlatAppearance.BorderSize = 0;
+            this.btnHistorialEv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHistorialEv.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHistorialEv.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnHistorialEv.Image = global::SistemaEDInterfaces.Properties.Resources.historial_medico;
+            this.btnHistorialEv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistorialEv.Location = new System.Drawing.Point(0, 533);
+            this.btnHistorialEv.Name = "btnHistorialEv";
+            this.btnHistorialEv.Size = new System.Drawing.Size(244, 45);
+            this.btnHistorialEv.TabIndex = 5;
+            this.btnHistorialEv.Text = " Historial Evaluaciones";
+            this.btnHistorialEv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHistorialEv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnHistorialEv.UseVisualStyleBackColor = true;
+            this.btnHistorialEv.Click += new System.EventHandler(this.btnHistorialEv_Click);
+            // 
             // panelEvaluacionSubmenu
             // 
             this.panelEvaluacionSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(27)))), ((int)(((byte)(62)))));
@@ -319,7 +386,7 @@
             this.panelEvaluacionSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEvaluacionSubmenu.Location = new System.Drawing.Point(0, 373);
             this.panelEvaluacionSubmenu.Name = "panelEvaluacionSubmenu";
-            this.panelEvaluacionSubmenu.Size = new System.Drawing.Size(244, 166);
+            this.panelEvaluacionSubmenu.Size = new System.Drawing.Size(244, 160);
             this.panelEvaluacionSubmenu.TabIndex = 4;
             // 
             // btnEvMisResultados
@@ -390,6 +457,25 @@
             this.btnEvAutoevaluacion.UseVisualStyleBackColor = true;
             this.btnEvAutoevaluacion.Click += new System.EventHandler(this.btnEvAutoevaluacion_Click);
             // 
+            // btnEvaluacion
+            // 
+            this.btnEvaluacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEvaluacion.FlatAppearance.BorderSize = 0;
+            this.btnEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEvaluacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEvaluacion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnEvaluacion.Image = global::SistemaEDInterfaces.Properties.Resources.evaluacion;
+            this.btnEvaluacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvaluacion.Location = new System.Drawing.Point(0, 328);
+            this.btnEvaluacion.Name = "btnEvaluacion";
+            this.btnEvaluacion.Size = new System.Drawing.Size(244, 45);
+            this.btnEvaluacion.TabIndex = 3;
+            this.btnEvaluacion.Text = " Evaluación";
+            this.btnEvaluacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEvaluacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEvaluacion.UseVisualStyleBackColor = true;
+            this.btnEvaluacion.Click += new System.EventHandler(this.btnEvaluacion_Click);
+            // 
             // panelPlanificacionSubmenu
             // 
             this.panelPlanificacionSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(27)))), ((int)(((byte)(62)))));
@@ -435,6 +521,25 @@
             this.btnPlanMisObjetivos.UseVisualStyleBackColor = true;
             this.btnPlanMisObjetivos.Click += new System.EventHandler(this.btnPlanMisObjetivos_Click);
             // 
+            // btnPlanificacion
+            // 
+            this.btnPlanificacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlanificacion.FlatAppearance.BorderSize = 0;
+            this.btnPlanificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlanificacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlanificacion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnPlanificacion.Image = global::SistemaEDInterfaces.Properties.Resources.planificacion;
+            this.btnPlanificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlanificacion.Location = new System.Drawing.Point(0, 200);
+            this.btnPlanificacion.Name = "btnPlanificacion";
+            this.btnPlanificacion.Size = new System.Drawing.Size(244, 45);
+            this.btnPlanificacion.TabIndex = 1;
+            this.btnPlanificacion.Text = " Planificación";
+            this.btnPlanificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlanificacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnPlanificacion.UseVisualStyleBackColor = true;
+            this.btnPlanificacion.Click += new System.EventHandler(this.btnPlanificacion_Click);
+            // 
             // panelLogo
             // 
             this.panelLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
@@ -444,6 +549,19 @@
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(244, 200);
             this.panelLogo.TabIndex = 0;
+            // 
+            // btnInicio
+            // 
+            this.btnInicio.BackgroundImage = global::SistemaEDInterfaces.Properties.Resources.PUCP;
+            this.btnInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnInicio.Location = new System.Drawing.Point(0, 0);
+            this.btnInicio.Name = "btnInicio";
+            this.btnInicio.Size = new System.Drawing.Size(244, 200);
+            this.btnInicio.TabIndex = 0;
+            this.btnInicio.TabStop = false;
+            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
             // 
             // panelBarraSuperior
             // 
@@ -456,6 +574,45 @@
             this.panelBarraSuperior.Name = "panelBarraSuperior";
             this.panelBarraSuperior.Size = new System.Drawing.Size(1123, 67);
             this.panelBarraSuperior.TabIndex = 2;
+            // 
+            // btnLblNombreColab
+            // 
+            this.btnLblNombreColab.AutoSize = true;
+            this.btnLblNombreColab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnLblNombreColab.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLblNombreColab.FlatAppearance.BorderSize = 0;
+            this.btnLblNombreColab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnLblNombreColab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnLblNombreColab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLblNombreColab.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLblNombreColab.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnLblNombreColab.Image = global::SistemaEDInterfaces.Properties.Resources.usuario;
+            this.btnLblNombreColab.Location = new System.Drawing.Point(836, 0);
+            this.btnLblNombreColab.Name = "btnLblNombreColab";
+            this.btnLblNombreColab.Size = new System.Drawing.Size(234, 67);
+            this.btnLblNombreColab.TabIndex = 6;
+            this.btnLblNombreColab.Text = "Nombre de Colaborador";
+            this.btnLblNombreColab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLblNombreColab.UseVisualStyleBackColor = false;
+            // 
+            // btnMenuCuenta
+            // 
+            this.btnMenuCuenta.AutoSize = true;
+            this.btnMenuCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnMenuCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMenuCuenta.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMenuCuenta.FlatAppearance.BorderSize = 0;
+            this.btnMenuCuenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnMenuCuenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnMenuCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMenuCuenta.Image = global::SistemaEDInterfaces.Properties.Resources.cheque__1_;
+            this.btnMenuCuenta.Location = new System.Drawing.Point(1070, 0);
+            this.btnMenuCuenta.Name = "btnMenuCuenta";
+            this.btnMenuCuenta.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btnMenuCuenta.Size = new System.Drawing.Size(53, 67);
+            this.btnMenuCuenta.TabIndex = 5;
+            this.btnMenuCuenta.UseVisualStyleBackColor = false;
+            this.btnMenuCuenta.Click += new System.EventHandler(this.btnMenuCuenta_Click);
             // 
             // lblTituloBarraSuperior
             // 
@@ -504,11 +661,6 @@
             this.lblInicioHoraActual.Text = "Hora Actual";
             this.lblInicioHoraActual.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // timerFechaHoraActual
-            // 
-            this.timerFechaHoraActual.Enabled = true;
-            this.timerFechaHoraActual.Tick += new System.EventHandler(this.timerFechaHoraActual_Tick);
-            // 
             // pbLogoPUCPInicio
             // 
             this.pbLogoPUCPInicio.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -520,152 +672,95 @@
             this.pbLogoPUCPInicio.TabIndex = 0;
             this.pbLogoPUCPInicio.TabStop = false;
             // 
-            // btnMenuCuenta
+            // timerFechaHoraActual
             // 
-            this.btnMenuCuenta.AutoSize = true;
-            this.btnMenuCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnMenuCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuCuenta.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMenuCuenta.FlatAppearance.BorderSize = 0;
-            this.btnMenuCuenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnMenuCuenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnMenuCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuCuenta.Image = global::SistemaEDInterfaces.Properties.Resources.cheque__1_;
-            this.btnMenuCuenta.Location = new System.Drawing.Point(1070, 0);
-            this.btnMenuCuenta.Name = "btnMenuCuenta";
-            this.btnMenuCuenta.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btnMenuCuenta.Size = new System.Drawing.Size(53, 67);
-            this.btnMenuCuenta.TabIndex = 5;
-            this.btnMenuCuenta.UseVisualStyleBackColor = false;
-            this.btnMenuCuenta.Click += new System.EventHandler(this.btnMenuCuenta_Click);
+            this.timerFechaHoraActual.Enabled = true;
+            this.timerFechaHoraActual.Tick += new System.EventHandler(this.timerFechaHoraActual_Tick);
             // 
-            // btnReportes
+            // btnAdmGestSubcomp
             // 
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReportes.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnReportes.Image = global::SistemaEDInterfaces.Properties.Resources.reportes;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 960);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Size = new System.Drawing.Size(244, 45);
-            this.btnReportes.TabIndex = 9;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReportes.UseVisualStyleBackColor = true;
-            this.btnReportes.Click += new System.EventHandler(this.btnReportes_Click);
+            this.btnAdmGestSubcomp.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdmGestSubcomp.FlatAppearance.BorderSize = 0;
+            this.btnAdmGestSubcomp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmGestSubcomp.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmGestSubcomp.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdmGestSubcomp.Location = new System.Drawing.Point(0, 120);
+            this.btnAdmGestSubcomp.Name = "btnAdmGestSubcomp";
+            this.btnAdmGestSubcomp.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAdmGestSubcomp.Size = new System.Drawing.Size(244, 53);
+            this.btnAdmGestSubcomp.TabIndex = 9;
+            this.btnAdmGestSubcomp.Text = "Gestionar Subcompetencias";
+            this.btnAdmGestSubcomp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmGestSubcomp.UseVisualStyleBackColor = true;
+            this.btnAdmGestSubcomp.Click += new System.EventHandler(this.btnAdmGestSubcomp_Click);
             // 
-            // btnAdministracion
+            // btnAdmGestSubpot
             // 
-            this.btnAdministracion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdministracion.FlatAppearance.BorderSize = 0;
-            this.btnAdministracion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdministracion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdministracion.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdministracion.Image = global::SistemaEDInterfaces.Properties.Resources.administracion;
-            this.btnAdministracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdministracion.Location = new System.Drawing.Point(0, 670);
-            this.btnAdministracion.Name = "btnAdministracion";
-            this.btnAdministracion.Size = new System.Drawing.Size(244, 45);
-            this.btnAdministracion.TabIndex = 7;
-            this.btnAdministracion.Text = "Administración";
-            this.btnAdministracion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdministracion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdministracion.UseVisualStyleBackColor = true;
-            this.btnAdministracion.Click += new System.EventHandler(this.btnAdministracion_Click);
+            this.btnAdmGestSubpot.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdmGestSubpot.FlatAppearance.BorderSize = 0;
+            this.btnAdmGestSubpot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmGestSubpot.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmGestSubpot.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnAdmGestSubpot.Location = new System.Drawing.Point(0, 173);
+            this.btnAdmGestSubpot.Name = "btnAdmGestSubpot";
+            this.btnAdmGestSubpot.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnAdmGestSubpot.Size = new System.Drawing.Size(244, 40);
+            this.btnAdmGestSubpot.TabIndex = 10;
+            this.btnAdmGestSubpot.Text = "Gestionar Subpotenciales";
+            this.btnAdmGestSubpot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmGestSubpot.UseVisualStyleBackColor = true;
+            this.btnAdmGestSubpot.Click += new System.EventHandler(this.btnAdmGestSubpot_Click);
             // 
-            // btnHistorialEv
+            // btnGestColaboradores
             // 
-            this.btnHistorialEv.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHistorialEv.FlatAppearance.BorderSize = 0;
-            this.btnHistorialEv.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHistorialEv.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHistorialEv.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnHistorialEv.Image = global::SistemaEDInterfaces.Properties.Resources.historial_medico;
-            this.btnHistorialEv.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistorialEv.Location = new System.Drawing.Point(0, 539);
-            this.btnHistorialEv.Name = "btnHistorialEv";
-            this.btnHistorialEv.Size = new System.Drawing.Size(244, 45);
-            this.btnHistorialEv.TabIndex = 5;
-            this.btnHistorialEv.Text = " Historial Evaluaciones";
-            this.btnHistorialEv.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistorialEv.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHistorialEv.UseVisualStyleBackColor = true;
-            this.btnHistorialEv.Click += new System.EventHandler(this.btnHistorialEv_Click);
+            this.btnGestColaboradores.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestColaboradores.FlatAppearance.BorderSize = 0;
+            this.btnGestColaboradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestColaboradores.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestColaboradores.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGestColaboradores.Location = new System.Drawing.Point(0, 333);
+            this.btnGestColaboradores.Name = "btnGestColaboradores";
+            this.btnGestColaboradores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnGestColaboradores.Size = new System.Drawing.Size(244, 40);
+            this.btnGestColaboradores.TabIndex = 11;
+            this.btnGestColaboradores.Text = "Gestionar Colaboradores";
+            this.btnGestColaboradores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestColaboradores.UseVisualStyleBackColor = true;
+            this.btnGestColaboradores.Click += new System.EventHandler(this.btnGestColaboradores_Click);
             // 
-            // btnEvaluacion
+            // btnGestPuestos
             // 
-            this.btnEvaluacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEvaluacion.FlatAppearance.BorderSize = 0;
-            this.btnEvaluacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEvaluacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEvaluacion.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnEvaluacion.Image = global::SistemaEDInterfaces.Properties.Resources.evaluacion;
-            this.btnEvaluacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEvaluacion.Location = new System.Drawing.Point(0, 328);
-            this.btnEvaluacion.Name = "btnEvaluacion";
-            this.btnEvaluacion.Size = new System.Drawing.Size(244, 45);
-            this.btnEvaluacion.TabIndex = 3;
-            this.btnEvaluacion.Text = " Evaluación";
-            this.btnEvaluacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEvaluacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEvaluacion.UseVisualStyleBackColor = true;
-            this.btnEvaluacion.Click += new System.EventHandler(this.btnEvaluacion_Click);
+            this.btnGestPuestos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestPuestos.FlatAppearance.BorderSize = 0;
+            this.btnGestPuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestPuestos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestPuestos.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGestPuestos.Location = new System.Drawing.Point(0, 373);
+            this.btnGestPuestos.Name = "btnGestPuestos";
+            this.btnGestPuestos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnGestPuestos.Size = new System.Drawing.Size(244, 51);
+            this.btnGestPuestos.TabIndex = 12;
+            this.btnGestPuestos.Text = "Gestionar Puestos De Trabajo";
+            this.btnGestPuestos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestPuestos.UseVisualStyleBackColor = true;
+            this.btnGestPuestos.Click += new System.EventHandler(this.btnGestPuestos_Click);
             // 
-            // btnPlanificacion
+            // btnGestGerencias
             // 
-            this.btnPlanificacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlanificacion.FlatAppearance.BorderSize = 0;
-            this.btnPlanificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlanificacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPlanificacion.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnPlanificacion.Image = global::SistemaEDInterfaces.Properties.Resources.planificacion;
-            this.btnPlanificacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlanificacion.Location = new System.Drawing.Point(0, 200);
-            this.btnPlanificacion.Name = "btnPlanificacion";
-            this.btnPlanificacion.Size = new System.Drawing.Size(244, 45);
-            this.btnPlanificacion.TabIndex = 1;
-            this.btnPlanificacion.Text = " Planificación";
-            this.btnPlanificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlanificacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnPlanificacion.UseVisualStyleBackColor = true;
-            this.btnPlanificacion.Click += new System.EventHandler(this.btnPlanificacion_Click);
-            // 
-            // btnInicio
-            // 
-            this.btnInicio.BackgroundImage = global::SistemaEDInterfaces.Properties.Resources.PUCP;
-            this.btnInicio.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnInicio.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnInicio.Location = new System.Drawing.Point(0, 0);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(244, 200);
-            this.btnInicio.TabIndex = 0;
-            this.btnInicio.TabStop = false;
-            this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
-            // 
-            // btnLblNombreColab
-            // 
-            this.btnLblNombreColab.AutoSize = true;
-            this.btnLblNombreColab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnLblNombreColab.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnLblNombreColab.FlatAppearance.BorderSize = 0;
-            this.btnLblNombreColab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnLblNombreColab.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnLblNombreColab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLblNombreColab.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLblNombreColab.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnLblNombreColab.Image = global::SistemaEDInterfaces.Properties.Resources.usuario;
-            this.btnLblNombreColab.Location = new System.Drawing.Point(836, 0);
-            this.btnLblNombreColab.Name = "btnLblNombreColab";
-            this.btnLblNombreColab.Size = new System.Drawing.Size(234, 67);
-            this.btnLblNombreColab.TabIndex = 6;
-            this.btnLblNombreColab.Text = "Nombre de Colaborador";
-            this.btnLblNombreColab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLblNombreColab.UseVisualStyleBackColor = false;
+            this.btnGestGerencias.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestGerencias.FlatAppearance.BorderSize = 0;
+            this.btnGestGerencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestGerencias.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestGerencias.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnGestGerencias.Location = new System.Drawing.Point(0, 424);
+            this.btnGestGerencias.Name = "btnGestGerencias";
+            this.btnGestGerencias.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnGestGerencias.Size = new System.Drawing.Size(244, 51);
+            this.btnGestGerencias.TabIndex = 13;
+            this.btnGestGerencias.Text = "Gestionar Gerencias";
+            this.btnGestGerencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestGerencias.UseVisualStyleBackColor = true;
+            this.btnGestGerencias.Click += new System.EventHandler(this.btnGestGerencias_Click);
             // 
             // frmInicio
             // 
@@ -677,6 +772,7 @@
             this.Controls.Add(this.panelMenu);
             this.MinimumSize = new System.Drawing.Size(1400, 900);
             this.Name = "frmInicio";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInicio";
             this.Load += new System.EventHandler(this.frmInicio_Load);
             this.panelMenu.ResumeLayout(false);
@@ -686,12 +782,12 @@
             this.panelEvaluacionSubmenu.ResumeLayout(false);
             this.panelPlanificacionSubmenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             this.panelBarraSuperior.ResumeLayout(false);
             this.panelBarraSuperior.PerformLayout();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogoPUCPInicio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnInicio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -735,5 +831,10 @@
         private System.Windows.Forms.Timer timerFechaHoraActual;
         private System.Windows.Forms.Button btnMenuCuenta;
         private System.Windows.Forms.Button btnLblNombreColab;
+        private System.Windows.Forms.Button btnAdmGestSubpot;
+        private System.Windows.Forms.Button btnAdmGestSubcomp;
+        private System.Windows.Forms.Button btnGestGerencias;
+        private System.Windows.Forms.Button btnGestPuestos;
+        private System.Windows.Forms.Button btnGestColaboradores;
     }
 }

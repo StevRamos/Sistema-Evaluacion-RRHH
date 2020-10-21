@@ -2,7 +2,6 @@ C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evalu
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.exe
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.pdb
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csprojAssemblyReference.cache
-C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmInicio.resources
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.GenerateResource.cache
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.exe
@@ -55,6 +54,7 @@ C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces
 C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csprojAssemblyReference.cache
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmLogin.resources
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanAgregarObjetivo.resources
+<<<<<<< HEAD
 D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.exe.config
 D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.exe
 D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.pdb
@@ -84,3 +84,16 @@ D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\S
 D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.CopyComplete
 D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.exe
 D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.pdb
+=======
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestColab.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestGer.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestPuestos.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestSubcomp.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestSubpot.resources
+C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmInicio.resources
+>>>>>>> e339ab695eb8b8e9ade0926aa10db9bec156eaa8
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestColab.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestGer.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestPuestos.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestSubcomp.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestSubpot.resources

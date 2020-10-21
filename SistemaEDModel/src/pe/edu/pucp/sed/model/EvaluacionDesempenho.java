@@ -15,7 +15,7 @@ public class EvaluacionDesempenho extends Evaluacion{
 
 	public EvaluacionDesempenho(){
                 super();
-		this.objetivos = new ArrayList<Objetivo>();
+		this.objetivos = new ArrayList<>();
 	};
 
 	public String getObservacionesComp(){

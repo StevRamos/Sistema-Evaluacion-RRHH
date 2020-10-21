@@ -9,6 +9,6 @@ package pe.edu.pucp.sed.model;
  *
  * @author stevramos
  */
-enum Estado{
+enum EstadoCuenta{
   ACTIVO, INACTIVO, ELIMINADA
 }

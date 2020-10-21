@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pe.edu.pup.sed.main;
+package pe.edu.pucp.sed.main;
 
 import java.text.SimpleDateFormat;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
 import pe.edu.pucp.sed.dao.EscalaDAO;
-import pe.edu.pucp.sed.dao.EvaluacionPotencialDAO;
+//import pe.edu.pucp.sed.dao.EvaluacionPotencialDAO;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
 import pe.edu.pucp.sed.model.Colaborador;
 import pe.edu.pucp.sed.model.Escala;
-import pe.edu.pucp.sed.model.EvaluacionPotencial;
+//import pe.edu.pucp.sed.model.EvaluacionPotencial;
 import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
 import pe.edu.pucp.sed.mysql.EscalaMySQL;
-import pe.edu.pucp.sed.mysql.EvaluacionPotencialMySQL;
+//import pe.edu.pucp.sed.mysql.EvaluacionPotencialMySQL;
 import pe.edu.pucp.sed.mysql.PeriodoMySQL;
 
 /**
