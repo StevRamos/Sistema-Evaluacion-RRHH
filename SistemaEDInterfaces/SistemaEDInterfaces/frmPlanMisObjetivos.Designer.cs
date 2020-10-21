@@ -52,13 +52,11 @@
             this.lblMisObjetivos.AutoSize = true;
             this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblMisObjetivos.Location = new System.Drawing.Point(16, 11);
-            this.lblMisObjetivos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
-            this.lblMisObjetivos.Size = new System.Drawing.Size(415, 70);
+            this.lblMisObjetivos.Size = new System.Drawing.Size(333, 56);
             this.lblMisObjetivos.TabIndex = 0;
             this.lblMisObjetivos.Text = "Mis Objetivos";
-            this.lblMisObjetivos.Click += new System.EventHandler(this.lblMisObjetivos_Click);
             // 
             // dgvMisObjetivos
             // 
@@ -87,8 +85,7 @@
             this.Peso,
             this.Estado});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
-            this.dgvMisObjetivos.Location = new System.Drawing.Point(29, 132);
-            this.dgvMisObjetivos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvMisObjetivos.Location = new System.Drawing.Point(22, 107);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
             this.dgvMisObjetivos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -100,26 +97,17 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMisObjetivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMisObjetivos.RowHeadersVisible = false;
-<<<<<<< HEAD
-            this.dgvMisObjetivos.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvMisObjetivos.RowsDefaultCellStyle = dataGridViewCellStyle6;
-=======
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvMisObjetivos.RowsDefaultCellStyle = dataGridViewCellStyle3;
->>>>>>> e339ab695eb8b8e9ade0926aa10db9bec156eaa8
             this.dgvMisObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMisObjetivos.Size = new System.Drawing.Size(1431, 591);
+            this.dgvMisObjetivos.Size = new System.Drawing.Size(1073, 480);
             this.dgvMisObjetivos.TabIndex = 1;
             // 
             // Numero
             // 
             this.Numero.HeaderText = "Numero";
-            this.Numero.MinimumWidth = 6;
             this.Numero.Name = "Numero";
             this.Numero.ReadOnly = true;
             this.Numero.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -129,7 +117,6 @@
             // Descripcion
             // 
             this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.MinimumWidth = 6;
             this.Descripcion.Name = "Descripcion";
             this.Descripcion.ReadOnly = true;
             this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
@@ -138,36 +125,20 @@
             // Peso
             // 
             this.Peso.HeaderText = "Peso";
-            this.Peso.MinimumWidth = 6;
             this.Peso.Name = "Peso";
             this.Peso.ReadOnly = true;
             this.Peso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Peso.Width = 125;
             // 
             // Estado
             // 
             this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-<<<<<<< HEAD
-            this.Estado.Width = 125;
-            // 
-            // Opciones
-            // 
-            this.Opciones.HeaderText = "Opciones";
-            this.Opciones.MinimumWidth = 6;
-            this.Opciones.Name = "Opciones";
-            this.Opciones.ReadOnly = true;
-            this.Opciones.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Opciones.Width = 125;
-=======
             this.Estado.Width = 200;
->>>>>>> e339ab695eb8b8e9ade0926aa10db9bec156eaa8
             // 
             // btnEnviar
             // 
@@ -175,14 +146,9 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.btnEnviar.Location = new System.Drawing.Point(29, 854);
-            this.btnEnviar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
             this.btnEnviar.Location = new System.Drawing.Point(22, 610);
->>>>>>> e339ab695eb8b8e9ade0926aa10db9bec156eaa8
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(211, 32);
+            this.btnEnviar.Size = new System.Drawing.Size(158, 26);
             this.btnEnviar.TabIndex = 2;
             this.btnEnviar.Text = "Enviar para revisión";
             this.btnEnviar.UseVisualStyleBackColor = false;
@@ -194,14 +160,9 @@
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.btnAgregar.Location = new System.Drawing.Point(29, 751);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
             this.btnAgregar.Location = new System.Drawing.Point(609, 610);
->>>>>>> e339ab695eb8b8e9ade0926aa10db9bec156eaa8
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(211, 32);
+            this.btnAgregar.Size = new System.Drawing.Size(158, 26);
             this.btnAgregar.TabIndex = 3;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -214,14 +175,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.btnEditar.Location = new System.Drawing.Point(980, 751);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
             this.btnEditar.Location = new System.Drawing.Point(773, 610);
->>>>>>> e339ab695eb8b8e9ade0926aa10db9bec156eaa8
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(211, 32);
+            this.btnEditar.Size = new System.Drawing.Size(158, 26);
             this.btnEditar.TabIndex = 4;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -233,10 +189,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(1249, 751);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(937, 610);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(211, 32);
+            this.btnEliminar.Size = new System.Drawing.Size(158, 26);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -265,22 +220,11 @@
             // 
             // frmPlanMisObjetivos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-<<<<<<< HEAD
-            this.ClientSize = new System.Drawing.Size(1476, 929);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.dgvMisObjetivos);
-            this.Controls.Add(this.lblMisObjetivos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-=======
             this.ClientSize = new System.Drawing.Size(1107, 755);
             this.Controls.Add(this.panelContenedor);
->>>>>>> e339ab695eb8b8e9ade0926aa10db9bec156eaa8
             this.Name = "frmPlanMisObjetivos";
             this.Text = "frmPlanMisObjetivos";
             this.Load += new System.EventHandler(this.frmPlanMisObjetivos_Load);

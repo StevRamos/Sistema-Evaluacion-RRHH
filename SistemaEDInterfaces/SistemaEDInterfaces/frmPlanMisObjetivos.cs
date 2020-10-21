@@ -46,10 +46,5 @@ namespace SistemaEDInterfaces
            // frmPlanAgregarObjetivo form = new frmPlanAgregarObjetivo();
             //form.ShowDialog();
         }
-
-        private void lblMisObjetivos_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

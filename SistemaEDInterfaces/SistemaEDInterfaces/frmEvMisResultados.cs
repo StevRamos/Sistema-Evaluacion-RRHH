@@ -16,5 +16,15 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.abrirFormularioHijo(false,new frmEvMisResultadosCompetencias());
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.abrirFormularioHijo(false,new frmEvMisResultadosPotenciales());
+        }
     }
 }

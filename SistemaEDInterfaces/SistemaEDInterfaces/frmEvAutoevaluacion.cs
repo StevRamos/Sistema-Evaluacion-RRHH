@@ -16,5 +16,10 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.abrirFormularioHijo(false, new frmEvAutoevaluacionComp());
+        }
     }
 }

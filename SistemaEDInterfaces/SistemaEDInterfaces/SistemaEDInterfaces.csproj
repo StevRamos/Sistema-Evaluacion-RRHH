@@ -126,6 +126,12 @@
     <Compile Include="frmEvAutoevaluacion.Designer.cs">
       <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEvAutoevaluacionComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvAutoevaluacionComp.Designer.cs">
+      <DependentUpon>frmEvAutoevaluacionComp.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEvFeedback.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,11 +144,41 @@
     <Compile Include="frmEvMisResultados.Designer.cs">
       <DependentUpon>frmEvMisResultados.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEvMisResultadosCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisResultadosCompetencias.Designer.cs">
+      <DependentUpon>frmEvMisResultadosCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisResultadosPotenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisResultadosPotenciales.Designer.cs">
+      <DependentUpon>frmEvMisResultadosPotenciales.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEvMisTrabajadores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEvMisTrabajadores.Designer.cs">
       <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresCompetencias.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresEvaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresEvaluacion.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresEvaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPotenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPotenciales.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
     </Compile>
     <Compile Include="frmHisMisEvaluaciones.cs">
       <SubType>Form</SubType>
@@ -247,14 +283,32 @@
     <EmbeddedResource Include="frmEvAutoevaluacion.resx">
       <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEvAutoevaluacionComp.resx">
+      <DependentUpon>frmEvAutoevaluacionComp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEvFeedback.resx">
       <DependentUpon>frmEvFeedback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvMisResultados.resx">
       <DependentUpon>frmEvMisResultados.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisResultadosCompetencias.resx">
+      <DependentUpon>frmEvMisResultadosCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisResultadosPotenciales.resx">
+      <DependentUpon>frmEvMisResultadosPotenciales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEvMisTrabajadores.resx">
       <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresCompetencias.resx">
+      <DependentUpon>frmEvMisTrabajadoresCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresEvaluacion.resx">
+      <DependentUpon>frmEvMisTrabajadoresEvaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresPotenciales.resx">
+      <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHisMisEvaluaciones.resx">
       <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
@@ -294,7 +348,6 @@
     <Content Include="Iconos\casa.png" />
     <Content Include="Iconos\cheque %281%29.png" />
     <Content Include="Iconos\cheque.png" />
-    <Content Include="Iconos\editar %281%29.png" />
     <Content Include="Iconos\evaluacion %281%29.png" />
     <Content Include="Iconos\evaluacion.png" />
     <Content Include="Iconos\flecha-hacia-arriba.png" />

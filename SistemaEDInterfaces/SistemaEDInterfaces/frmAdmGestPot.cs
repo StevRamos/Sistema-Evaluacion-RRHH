@@ -16,10 +16,5 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
-
-        private void lblGestionarComp_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
