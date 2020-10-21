@@ -12,10 +12,11 @@ namespace SistemaEDInterfaces
 {
     public partial class frmPlanMisObjetivos : Form
     {
+        
         public frmPlanMisObjetivos()
         {
             InitializeComponent();
-            agregarDatosDummyDGV(); 
+            
         }
 
 
@@ -33,13 +34,17 @@ namespace SistemaEDInterfaces
         }
         private void frmPlanMisObjetivos_Load(object sender, EventArgs e)
         {
-
+            agregarDatosDummyDGV();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            frmPlanAgregarObjetivo form = new frmPlanAgregarObjetivo();
-            form.ShowDialog();
+            
+              Global.formPrincipal.abrirFormularioHijo(false,new frmPlanAgregarObjetivo());
+
+             //Global.abrirFormularioHijo(panelContenedor, formularioHijoActual, new frmPlanAgregarObjetivo());
+           // frmPlanAgregarObjetivo form = new frmPlanAgregarObjetivo();
+            //form.ShowDialog();
         }
     }
 }
