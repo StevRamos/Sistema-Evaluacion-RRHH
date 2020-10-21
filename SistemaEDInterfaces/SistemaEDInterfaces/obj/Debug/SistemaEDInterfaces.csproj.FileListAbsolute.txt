@@ -55,3 +55,32 @@ C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces
 C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csprojAssemblyReference.cache
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmLogin.resources
 C:\Users\User\Desktop\PUCPC\2020-2\LP2\Tarea Academica\Repositorio\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanAgregarObjetivo.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.exe.config
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.exe
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\bin\Debug\SistemaEDInterfaces.pdb
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csprojAssemblyReference.cache
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmCalibrar.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestComp.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestCron.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestPot.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestRangos.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmSeguimiento.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmEvAutoevaluacion.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmEvFeedback.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmEvMisResultados.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmEvMisTrabajadores.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmHisMisEvaluaciones.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmHisMisTrabajadores.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmInicio.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanAgregarObjetivo.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanMisObjetivos.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanValidarObjetivos.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmRep9Box.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmRepPDI.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmLogin.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.Properties.Resources.resources
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.GenerateResource.cache
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.CoreCompileInputs.cache
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.csproj.CopyComplete
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.exe
+D:\CICLO8\LP2\TareaAcademica\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.pdb

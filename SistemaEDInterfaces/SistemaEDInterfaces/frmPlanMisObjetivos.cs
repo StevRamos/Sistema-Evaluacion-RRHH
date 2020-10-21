@@ -16,5 +16,10 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void lblMisObjetivos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
