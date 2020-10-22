@@ -11,3 +11,5 @@
 /SistemaEDModel/dist/
 /SistemaED/dist/
 /SistemaEDController/dist/
+/SistemaEDInterfaces/obj/
+/SistemaEDInterfaces/bin/

@@ -46,5 +46,10 @@ namespace SistemaEDInterfaces
            // frmPlanAgregarObjetivo form = new frmPlanAgregarObjetivo();
             //form.ShowDialog();
         }
+
+        private void dgvMisObjetivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
