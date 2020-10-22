@@ -16,5 +16,17 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void btnGestColabCargaMav_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmAdmGestColabCargaMav();
+            formulario.Show();
+        }
+
+        private void btnGestColabVerDetalle_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmAdmGestColabVerDetalle();
+            formulario.Show();
+        }
     }
 }

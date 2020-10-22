@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace SistemaEDInterfaces
 {
-    public partial class frmAdmGestPuestos : Form
+    public partial class frmAdmGestPotAdd : Form
     {
-        public frmAdmGestPuestos()
+        public frmAdmGestPotAdd()
         {
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void btnAddGuardarPot_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("El potencial se agregó exitosamente");
+            this.Close();
         }
 
-        private void btnGestCargoCargaMav_Click(object sender, EventArgs e)
+        private void btnAddRegresarPot_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmAdmGestCargoCargaMav();
-            formulario.Show();
+            this.Close();
         }
     }
 }

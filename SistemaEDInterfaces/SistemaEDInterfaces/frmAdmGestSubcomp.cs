@@ -16,5 +16,16 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void btnGestCrearSubCom_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.abrirFormularioHijo(false, new frmAdmGestSubComAdd());
+        }
+
+        private void btnCargarMasivaSubCom_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmAdmGestSubComCrgMav();
+            formulario.Show();
+        }
     }
 }

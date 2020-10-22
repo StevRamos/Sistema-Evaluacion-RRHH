@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace SistemaEDInterfaces
 {
-    public partial class frmAdmGestGer : Form
+    public partial class frmAdmGestColabVerDetalle : Form
     {
-        public frmAdmGestGer()
+        public frmAdmGestColabVerDetalle()
         {
             InitializeComponent();
         }
 
-        private void btnGestGerCargaMav_Click(object sender, EventArgs e)
+        private void btnGestColabDetaRegre_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmAdmGestGerenCargaMav();
-            formulario.Show();
+            this.Close();
         }
     }
 }
