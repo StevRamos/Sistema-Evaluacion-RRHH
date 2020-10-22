@@ -60,11 +60,41 @@
     <Compile Include="frmAdmCalibrar.Designer.cs">
       <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmGestCargoCargaMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestCargoCargaMav.Designer.cs">
+      <DependentUpon>frmAdmGestCargoCargaMav.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmGestColab.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdmGestColab.Designer.cs">
       <DependentUpon>frmAdmGestColab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestColabCargaMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestColabCargaMav.Designer.cs">
+      <DependentUpon>frmAdmGestColabCargaMav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestColabVerDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestColabVerDetalle.Designer.cs">
+      <DependentUpon>frmAdmGestColabVerDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestComAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestComAdd.Designer.cs">
+      <DependentUpon>frmAdmGestComAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestComCrgMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestComCrgMav.Designer.cs">
+      <DependentUpon>frmAdmGestComCrgMav.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmGestComp.cs">
       <SubType>Form</SubType>
@@ -90,11 +120,29 @@
     <Compile Include="frmAdmGestGer.Designer.cs">
       <DependentUpon>frmAdmGestGer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmGestGerenCargaMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestGerenCargaMav.Designer.cs">
+      <DependentUpon>frmAdmGestGerenCargaMav.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmGestPot.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdmGestPot.Designer.cs">
       <DependentUpon>frmAdmGestPot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestPotAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestPotAdd.Designer.cs">
+      <DependentUpon>frmAdmGestPotAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestPotCrgMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestPotCrgMav.Designer.cs">
+      <DependentUpon>frmAdmGestPotCrgMav.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmGestPuestos.cs">
       <SubType>Form</SubType>
@@ -108,6 +156,24 @@
     <Compile Include="frmAdmGestRangos.Designer.cs">
       <DependentUpon>frmAdmGestRangos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmGestSubComAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubComAdd.Designer.cs">
+      <DependentUpon>frmAdmGestSubComAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubComBuscarCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubComBuscarCom.Designer.cs">
+      <DependentUpon>frmAdmGestSubComBuscarCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubComCrgMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubComCrgMav.Designer.cs">
+      <DependentUpon>frmAdmGestSubComCrgMav.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmGestSubcomp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +185,24 @@
     </Compile>
     <Compile Include="frmAdmGestSubpot.Designer.cs">
       <DependentUpon>frmAdmGestSubpot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotAdd.Designer.cs">
+      <DependentUpon>frmAdmGestSubPotAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotBuscarPot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotBuscarPot.Designer.cs">
+      <DependentUpon>frmAdmGestSubPotBuscarPot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotCrgMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotCrgMav.Designer.cs">
+      <DependentUpon>frmAdmGestSubPotCrgMav.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmSeguimiento.cs">
       <SubType>Form</SubType>
@@ -340,8 +424,23 @@
     <EmbeddedResource Include="frmAdmCalibrar.resx">
       <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestCargoCargaMav.resx">
+      <DependentUpon>frmAdmGestCargoCargaMav.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestColab.resx">
       <DependentUpon>frmAdmGestColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestColabCargaMav.resx">
+      <DependentUpon>frmAdmGestColabCargaMav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestColabVerDetalle.resx">
+      <DependentUpon>frmAdmGestColabVerDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestComAdd.resx">
+      <DependentUpon>frmAdmGestComAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestComCrgMav.resx">
+      <DependentUpon>frmAdmGestComCrgMav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestComp.resx">
       <DependentUpon>frmAdmGestComp.cs</DependentUpon>
@@ -355,8 +454,17 @@
     <EmbeddedResource Include="frmAdmGestGer.resx">
       <DependentUpon>frmAdmGestGer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestGerenCargaMav.resx">
+      <DependentUpon>frmAdmGestGerenCargaMav.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestPot.resx">
       <DependentUpon>frmAdmGestPot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestPotAdd.resx">
+      <DependentUpon>frmAdmGestPotAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestPotCrgMav.resx">
+      <DependentUpon>frmAdmGestPotCrgMav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestPuestos.resx">
       <DependentUpon>frmAdmGestPuestos.cs</DependentUpon>
@@ -364,11 +472,29 @@
     <EmbeddedResource Include="frmAdmGestRangos.resx">
       <DependentUpon>frmAdmGestRangos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubComAdd.resx">
+      <DependentUpon>frmAdmGestSubComAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubComBuscarCom.resx">
+      <DependentUpon>frmAdmGestSubComBuscarCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubComCrgMav.resx">
+      <DependentUpon>frmAdmGestSubComCrgMav.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestSubcomp.resx">
       <DependentUpon>frmAdmGestSubcomp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestSubpot.resx">
       <DependentUpon>frmAdmGestSubpot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubPotAdd.resx">
+      <DependentUpon>frmAdmGestSubPotAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubPotBuscarPot.resx">
+      <DependentUpon>frmAdmGestSubPotBuscarPot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubPotCrgMav.resx">
+      <DependentUpon>frmAdmGestSubPotCrgMav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmSeguimiento.resx">
       <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
