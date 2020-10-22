@@ -16,5 +16,70 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestCronVerDetalle());
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Se eliminaran todos los datos relacionados al periodo seleccionado.",
+                                            "Mensaje de advertencia",
+                                            MessageBoxButtons.OKCancel,
+                                            MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                foreach (DataGridViewRow row in dgvPeriodos.SelectedRows)
+                {
+                    dgvPeriodos.Rows.RemoveAt(row.Index);
+                    //Eliminar de la BD 
+                }
+
+            }
+        }
+
+        public void agregarDatosDummyDGV()
+        {
+            int rowId1 = dgvPeriodos.Rows.Add();
+
+            DataGridViewRow row1 = dgvPeriodos.Rows[rowId1];
+
+            row1.Cells["ID"].Value = "1";
+            row1.Cells["Nombre"].Value = "Periodo 2019-1";
+            row1.Cells["FechaInicio"].Value = "01/01/2019";
+            row1.Cells["FechaFin"].Value = "31/06/2019";
+            row1.Cells["Estado"].Value = "Finalizado";
+
+            int rowId2 = dgvPeriodos.Rows.Add();
+
+            DataGridViewRow row2 = dgvPeriodos.Rows[rowId2];
+
+            row2.Cells["ID"].Value = "2";
+            row2.Cells["Nombre"].Value = "Periodo 2019-2";
+            row2.Cells["FechaInicio"].Value = "01/07/2019";
+            row2.Cells["FechaFin"].Value = "30/12/2019";
+            row2.Cells["Estado"].Value = "Finalizado";
+
+            int rowId3 = dgvPeriodos.Rows.Add();
+
+            DataGridViewRow row3 = dgvPeriodos.Rows[rowId3];
+
+            row3.Cells["ID"].Value = "3";
+            row3.Cells["Nombre"].Value = "Periodo 2020";
+            row3.Cells["FechaInicio"].Value = "01/01/2020";
+            row3.Cells["FechaFin"].Value = "31/12/2020";
+            row3.Cells["Estado"].Value = "En proceso";
+
+        }
+        private void frmAdmGestCron_Load(object sender, EventArgs e)
+        {
+            agregarDatosDummyDGV();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestCronAgregarPeriodo());
+        }
     }
 }

@@ -12,20 +12,18 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestRangos : Form
     {
-        bool datosGuardados; 
+        //bool datosGuardados; 
         public frmAdmGestRangos()
         {
             InitializeComponent();
         }
 
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Se guardaron los cambios realizados.",
+                "Mensaje de información",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void txtAMin_Leave(object sender, EventArgs e)

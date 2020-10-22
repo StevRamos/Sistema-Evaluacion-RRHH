@@ -73,7 +73,6 @@
             this.lblOportunidad = new System.Windows.Forms.Label();
             this.lblFortaleza = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.lblGhost1 = new System.Windows.Forms.Label();
             this.lblGhost2 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -561,20 +560,6 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnRegresar
-            // 
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(22, 825);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
-            this.btnRegresar.TabIndex = 62;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
             // lblGhost1
             // 
             this.lblGhost1.AutoSize = true;
@@ -871,7 +856,6 @@
             this.Controls.Add(this.lblGhost2);
             this.Controls.Add(this.lblGhost1);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.txtDebilidadMax);
             this.Controls.Add(this.txtOportunidadMax);
             this.Controls.Add(this.txtFortalezaMax);
@@ -970,7 +954,6 @@
         private System.Windows.Forms.Label lblOportunidad;
         private System.Windows.Forms.Label lblFortaleza;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Label lblGhost1;
         private System.Windows.Forms.Label lblGhost2;
         private System.Windows.Forms.Label label22;

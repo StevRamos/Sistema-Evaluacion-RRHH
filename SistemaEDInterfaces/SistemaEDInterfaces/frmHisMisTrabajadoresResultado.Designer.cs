@@ -242,9 +242,9 @@
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
-            this.lblMisObjetivos.Size = new System.Drawing.Size(364, 56);
+            this.lblMisObjetivos.Size = new System.Drawing.Size(275, 56);
             this.lblMisObjetivos.TabIndex = 37;
-            this.lblMisObjetivos.Text = "Mis Resultados";
+            this.lblMisObjetivos.Text = "Resultados";
             // 
             // textBox1
             // 

@@ -31,6 +31,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEditarObjetivos = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -54,14 +60,30 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.dgvPeriodos = new System.Windows.Forms.DataGridView();
+            this.dgvPlanificacion = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPeriodos)).BeginInit();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvEvaluaciones = new System.Windows.Forms.DataGridView();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dgvPDI = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.IDev = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreEv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicioEv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFinEv = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEvaluaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPDI)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEditarObjetivos
@@ -78,15 +100,15 @@
             // txtEstado
             // 
             this.txtEstado.Enabled = false;
-            this.txtEstado.Location = new System.Drawing.Point(666, 118);
+            this.txtEstado.Location = new System.Drawing.Point(666, 190);
             this.txtEstado.Name = "txtEstado";
-            this.txtEstado.Size = new System.Drawing.Size(193, 20);
+            this.txtEstado.Size = new System.Drawing.Size(200, 20);
             this.txtEstado.TabIndex = 61;
             // 
             // txtNombre
             // 
             this.txtNombre.Enabled = false;
-            this.txtNombre.Location = new System.Drawing.Point(290, 174);
+            this.txtNombre.Location = new System.Drawing.Point(290, 190);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(193, 20);
             this.txtNombre.TabIndex = 59;
@@ -95,7 +117,7 @@
             // 
             this.lblFechaFormulacion.AutoSize = true;
             this.lblFechaFormulacion.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFormulacion.Location = new System.Drawing.Point(29, 166);
+            this.lblFechaFormulacion.Location = new System.Drawing.Point(29, 182);
             this.lblFechaFormulacion.Name = "lblFechaFormulacion";
             this.lblFechaFormulacion.Size = new System.Drawing.Size(100, 24);
             this.lblFechaFormulacion.TabIndex = 55;
@@ -105,7 +127,7 @@
             // 
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.Location = new System.Drawing.Point(500, 112);
+            this.lblEstado.Location = new System.Drawing.Point(500, 186);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(83, 24);
             this.lblEstado.TabIndex = 54;
@@ -115,7 +137,7 @@
             // 
             this.lblMeta.AutoSize = true;
             this.lblMeta.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMeta.Location = new System.Drawing.Point(29, 216);
+            this.lblMeta.Location = new System.Drawing.Point(29, 232);
             this.lblMeta.Name = "lblMeta";
             this.lblMeta.Size = new System.Drawing.Size(172, 24);
             this.lblMeta.TabIndex = 53;
@@ -124,7 +146,7 @@
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(290, 118);
+            this.txtID.Location = new System.Drawing.Point(290, 134);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(193, 20);
             this.txtID.TabIndex = 50;
@@ -133,7 +155,7 @@
             // 
             this.lblIDObjetivo.AutoSize = true;
             this.lblIDObjetivo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDObjetivo.Location = new System.Drawing.Point(29, 114);
+            this.lblIDObjetivo.Location = new System.Drawing.Point(29, 130);
             this.lblIDObjetivo.Name = "lblIDObjetivo";
             this.lblIDObjetivo.Size = new System.Drawing.Size(36, 24);
             this.lblIDObjetivo.TabIndex = 49;
@@ -143,7 +165,7 @@
             // 
             this.lblUnidadMedida.AutoSize = true;
             this.lblUnidadMedida.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidadMedida.Location = new System.Drawing.Point(500, 220);
+            this.lblUnidadMedida.Location = new System.Drawing.Point(500, 236);
             this.lblUnidadMedida.Name = "lblUnidadMedida";
             this.lblUnidadMedida.Size = new System.Drawing.Size(146, 24);
             this.lblUnidadMedida.TabIndex = 48;
@@ -202,19 +224,19 @@
             // 
             // txtPesoDesempenho
             // 
-            this.txtPesoDesempenho.Enabled = false;
             this.txtPesoDesempenho.Location = new System.Drawing.Point(342, 365);
             this.txtPesoDesempenho.Name = "txtPesoDesempenho";
             this.txtPesoDesempenho.Size = new System.Drawing.Size(84, 20);
             this.txtPesoDesempenho.TabIndex = 68;
+            this.txtPesoDesempenho.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPesoPotencial
             // 
-            this.txtPesoPotencial.Enabled = false;
             this.txtPesoPotencial.Location = new System.Drawing.Point(342, 424);
             this.txtPesoPotencial.Name = "txtPesoPotencial";
             this.txtPesoPotencial.Size = new System.Drawing.Size(84, 20);
             this.txtPesoPotencial.TabIndex = 69;
+            this.txtPesoPotencial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -229,7 +251,6 @@
             // 
             // txtDia
             // 
-            this.txtDia.Enabled = false;
             this.txtDia.Location = new System.Drawing.Point(666, 365);
             this.txtDia.Name = "txtDia";
             this.txtDia.Size = new System.Drawing.Size(193, 20);
@@ -237,7 +258,6 @@
             // 
             // txtHora
             // 
-            this.txtHora.Enabled = false;
             this.txtHora.Location = new System.Drawing.Point(666, 424);
             this.txtHora.Name = "txtHora";
             this.txtHora.Size = new System.Drawing.Size(193, 20);
@@ -267,28 +287,28 @@
             // 
             // dtpFechaFin
             // 
-            this.dtpFechaFin.Location = new System.Drawing.Point(666, 224);
+            this.dtpFechaFin.Location = new System.Drawing.Point(666, 240);
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaFin.TabIndex = 88;
             // 
             // dtpFechaInicio
             // 
-            this.dtpFechaInicio.Location = new System.Drawing.Point(290, 223);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(290, 239);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
             this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaInicio.TabIndex = 89;
             // 
-            // dgvPeriodos
+            // dgvPlanificacion
             // 
-            this.dgvPeriodos.AllowUserToAddRows = false;
-            this.dgvPeriodos.AllowUserToDeleteRows = false;
-            this.dgvPeriodos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.dgvPlanificacion.AllowUserToAddRows = false;
+            this.dgvPlanificacion.AllowUserToDeleteRows = false;
+            this.dgvPlanificacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPeriodos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvPeriodos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPeriodos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPeriodos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPlanificacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPlanificacion.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPlanificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPlanificacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -296,19 +316,18 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPeriodos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPeriodos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPeriodos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvPlanificacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPlanificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlanificacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre,
             this.FechaInicio,
-            this.FechaFin,
-            this.Estado});
-            this.dgvPeriodos.EnableHeadersVisualStyles = false;
-            this.dgvPeriodos.Location = new System.Drawing.Point(22, 552);
-            this.dgvPeriodos.MultiSelect = false;
-            this.dgvPeriodos.Name = "dgvPeriodos";
-            this.dgvPeriodos.ReadOnly = true;
+            this.FechaFin});
+            this.dgvPlanificacion.EnableHeadersVisualStyles = false;
+            this.dgvPlanificacion.Location = new System.Drawing.Point(33, 545);
+            this.dgvPlanificacion.MultiSelect = false;
+            this.dgvPlanificacion.Name = "dgvPlanificacion";
+            this.dgvPlanificacion.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -316,16 +335,27 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPeriodos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPeriodos.RowHeadersVisible = false;
+            this.dgvPlanificacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPlanificacion.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPeriodos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPeriodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPeriodos.Size = new System.Drawing.Size(1073, 480);
-            this.dgvPeriodos.TabIndex = 90;
+            this.dgvPlanificacion.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPlanificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPlanificacion.Size = new System.Drawing.Size(935, 294);
+            this.dgvPlanificacion.TabIndex = 90;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label8.Location = new System.Drawing.Point(28, 500);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(475, 25);
+            this.label8.TabIndex = 91;
+            this.label8.Text = "Cronograma para Planificación de Objetivos:";
             // 
             // ID
             // 
@@ -367,32 +397,258 @@
             this.FechaFin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.FechaFin.Width = 200;
             // 
-            // Estado
+            // label9
             // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label9.Location = new System.Drawing.Point(28, 873);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(345, 25);
+            this.label9.TabIndex = 92;
+            this.label9.Text = "Cronograma para Evaluaciones:";
             // 
-            // label8
+            // dgvEvaluaciones
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label8.Location = new System.Drawing.Point(17, 499);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(287, 25);
-            this.label8.TabIndex = 91;
-            this.label8.Text = "Cronograma por gerencia:";
+            this.dgvEvaluaciones.AllowUserToAddRows = false;
+            this.dgvEvaluaciones.AllowUserToDeleteRows = false;
+            this.dgvEvaluaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvEvaluaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvEvaluaciones.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEvaluaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvEvaluaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEvaluaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvEvaluaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEvaluaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IDev,
+            this.NombreEv,
+            this.FechaInicioEv,
+            this.FechaFinEv});
+            this.dgvEvaluaciones.EnableHeadersVisualStyles = false;
+            this.dgvEvaluaciones.Location = new System.Drawing.Point(33, 927);
+            this.dgvEvaluaciones.MultiSelect = false;
+            this.dgvEvaluaciones.Name = "dgvEvaluaciones";
+            this.dgvEvaluaciones.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEvaluaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvEvaluaciones.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvEvaluaciones.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvEvaluaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvEvaluaciones.Size = new System.Drawing.Size(923, 294);
+            this.dgvEvaluaciones.TabIndex = 93;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label10.Location = new System.Drawing.Point(28, 1246);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(649, 25);
+            this.label10.TabIndex = 94;
+            this.label10.Text = "Cronograma para llenado de Plan de Desarrollo Integral (PDI):";
+            // 
+            // dgvPDI
+            // 
+            this.dgvPDI.AllowUserToAddRows = false;
+            this.dgvPDI.AllowUserToDeleteRows = false;
+            this.dgvPDI.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPDI.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPDI.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPDI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPDI.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPDI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvPDI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPDI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8});
+            this.dgvPDI.EnableHeadersVisualStyles = false;
+            this.dgvPDI.Location = new System.Drawing.Point(33, 1297);
+            this.dgvPDI.MultiSelect = false;
+            this.dgvPDI.Name = "dgvPDI";
+            this.dgvPDI.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPDI.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvPDI.RowHeadersVisible = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPDI.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPDI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPDI.Size = new System.Drawing.Size(935, 294);
+            this.dgvPDI.TabIndex = 95;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn5.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn6.Width = 450;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "FechaInicio";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Fecha de Inicio";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn7.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "FechaFin";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Fecha de Fin";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn8.Width = 200;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label11.Location = new System.Drawing.Point(28, 92);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(196, 25);
+            this.label11.TabIndex = 96;
+            this.label11.Text = "Datos del Periodo:";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(920, 91);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(158, 26);
+            this.btnGuardar.TabIndex = 97;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Location = new System.Drawing.Point(726, 91);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
+            this.btnRegresar.TabIndex = 99;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // IDev
+            // 
+            this.IDev.DataPropertyName = "IDEv";
+            this.IDev.HeaderText = "ID";
+            this.IDev.Name = "IDev";
+            this.IDev.ReadOnly = true;
+            this.IDev.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.IDev.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.IDev.Width = 70;
+            // 
+            // NombreEv
+            // 
+            this.NombreEv.DataPropertyName = "Nombre";
+            this.NombreEv.HeaderText = "Nombre";
+            this.NombreEv.Name = "NombreEv";
+            this.NombreEv.ReadOnly = true;
+            this.NombreEv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.NombreEv.Width = 450;
+            // 
+            // FechaInicioEv
+            // 
+            this.FechaInicioEv.DataPropertyName = "FechaInicio";
+            this.FechaInicioEv.HeaderText = "Fecha de Inicio";
+            this.FechaInicioEv.Name = "FechaInicioEv";
+            this.FechaInicioEv.ReadOnly = true;
+            this.FechaInicioEv.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FechaInicioEv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.FechaInicioEv.Width = 200;
+            // 
+            // FechaFinEv
+            // 
+            this.FechaFinEv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FechaFinEv.DataPropertyName = "FechaFin";
+            this.FechaFinEv.HeaderText = "Fecha de Fin";
+            this.FechaFinEv.Name = "FechaFinEv";
+            this.FechaFinEv.ReadOnly = true;
+            this.FechaFinEv.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FechaFinEv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.FechaFinEv.Width = 200;
             // 
             // frmAdmGestCronVerDetalle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.AutoScrollMargin = new System.Drawing.Size(0, 30);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1124, 749);
+            this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.dgvPDI);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dgvEvaluaciones);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dgvPeriodos);
+            this.Controls.Add(this.dgvPlanificacion);
             this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.label7);
@@ -418,7 +674,10 @@
             this.Controls.Add(this.lblEditarObjetivos);
             this.Name = "frmAdmGestCronVerDetalle";
             this.Text = "frmAdmGestCronVerDetalle";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPeriodos)).EndInit();
+            this.Load += new System.EventHandler(this.frmAdmGestCronVerDetalle_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEvaluaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPDI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,12 +708,26 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
-        private System.Windows.Forms.DataGridView dgvPeriodos;
+        private System.Windows.Forms.DataGridView dgvPlanificacion;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvEvaluaciones;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.DataGridView dgvPDI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IDev;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicioEv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaFinEv;
     }
 }

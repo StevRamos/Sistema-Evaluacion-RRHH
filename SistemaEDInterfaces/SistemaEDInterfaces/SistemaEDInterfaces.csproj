@@ -108,6 +108,12 @@
     <Compile Include="frmAdmGestCron.Designer.cs">
       <DependentUpon>frmAdmGestCron.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmGestCronAgregarPeriodo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestCronAgregarPeriodo.Designer.cs">
+      <DependentUpon>frmAdmGestCronAgregarPeriodo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmGestCronVerDetalle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -448,6 +454,9 @@
     <EmbeddedResource Include="frmAdmGestCron.resx">
       <DependentUpon>frmAdmGestCron.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestCronAgregarPeriodo.resx">
+      <DependentUpon>frmAdmGestCronAgregarPeriodo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestCronVerDetalle.resx">
       <DependentUpon>frmAdmGestCronVerDetalle.cs</DependentUpon>
     </EmbeddedResource>
@@ -615,6 +624,7 @@
     <Content Include="Iconos\historial-medico.png" />
     <Content Include="Iconos\planificacion.png" />
     <Content Include="Iconos\reportes.png" />
+    <Content Include="Iconos\salida.png" />
     <Content Include="Iconos\usuario.png" />
     <None Include="Iconos\PUCP.png" />
     <None Include="Iconos\PUCPLogo.png" />

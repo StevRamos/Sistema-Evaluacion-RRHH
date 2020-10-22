@@ -558,9 +558,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 150);
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1107, 749);
+            this.ClientSize = new System.Drawing.Size(1107, 755);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);

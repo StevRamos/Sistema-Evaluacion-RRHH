@@ -39,7 +39,6 @@
             this.btnGestPuestos = new System.Windows.Forms.Button();
             this.btnGestColaboradores = new System.Windows.Forms.Button();
             this.btnAdmCalibrar = new System.Windows.Forms.Button();
-            this.btnAdmSeguimiento = new System.Windows.Forms.Button();
             this.btnAdmGestRangos = new System.Windows.Forms.Button();
             this.btnAdmGestSubpot = new System.Windows.Forms.Button();
             this.btnAdmGestSubcomp = new System.Windows.Forms.Button();
@@ -65,7 +64,7 @@
             this.btnInicio = new System.Windows.Forms.PictureBox();
             this.panelBarraSuperior = new System.Windows.Forms.Panel();
             this.btnLblNombreColab = new System.Windows.Forms.Button();
-            this.btnMenuCuenta = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.lblTituloBarraSuperior = new System.Windows.Forms.Label();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.lblInicioFechaActual = new System.Windows.Forms.Label();
@@ -113,7 +112,7 @@
             this.panelReportesSubmenu.Controls.Add(this.btnRepPDI);
             this.panelReportesSubmenu.Controls.Add(this.btnRep9Box);
             this.panelReportesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelReportesSubmenu.Location = new System.Drawing.Point(0, 1223);
+            this.panelReportesSubmenu.Location = new System.Drawing.Point(0, 1191);
             this.panelReportesSubmenu.Name = "panelReportesSubmenu";
             this.panelReportesSubmenu.Size = new System.Drawing.Size(244, 83);
             this.panelReportesSubmenu.TabIndex = 10;
@@ -161,7 +160,7 @@
             this.btnReportes.ForeColor = System.Drawing.SystemColors.Control;
             this.btnReportes.Image = global::SistemaEDInterfaces.Properties.Resources.reportes;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 1178);
+            this.btnReportes.Location = new System.Drawing.Point(0, 1146);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(244, 45);
             this.btnReportes.TabIndex = 9;
@@ -178,7 +177,6 @@
             this.panelAdmSubmenu.Controls.Add(this.btnGestPuestos);
             this.panelAdmSubmenu.Controls.Add(this.btnGestColaboradores);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmCalibrar);
-            this.panelAdmSubmenu.Controls.Add(this.btnAdmSeguimiento);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestRangos);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestSubpot);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestSubcomp);
@@ -188,7 +186,7 @@
             this.panelAdmSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelAdmSubmenu.Location = new System.Drawing.Point(0, 703);
             this.panelAdmSubmenu.Name = "panelAdmSubmenu";
-            this.panelAdmSubmenu.Size = new System.Drawing.Size(244, 475);
+            this.panelAdmSubmenu.Size = new System.Drawing.Size(244, 443);
             this.panelAdmSubmenu.TabIndex = 8;
             // 
             // btnGestGerencias
@@ -198,7 +196,7 @@
             this.btnGestGerencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestGerencias.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestGerencias.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGestGerencias.Location = new System.Drawing.Point(0, 424);
+            this.btnGestGerencias.Location = new System.Drawing.Point(0, 384);
             this.btnGestGerencias.Name = "btnGestGerencias";
             this.btnGestGerencias.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnGestGerencias.Size = new System.Drawing.Size(244, 51);
@@ -215,7 +213,7 @@
             this.btnGestPuestos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestPuestos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestPuestos.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGestPuestos.Location = new System.Drawing.Point(0, 373);
+            this.btnGestPuestos.Location = new System.Drawing.Point(0, 333);
             this.btnGestPuestos.Name = "btnGestPuestos";
             this.btnGestPuestos.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnGestPuestos.Size = new System.Drawing.Size(244, 51);
@@ -232,7 +230,7 @@
             this.btnGestColaboradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestColaboradores.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestColaboradores.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnGestColaboradores.Location = new System.Drawing.Point(0, 333);
+            this.btnGestColaboradores.Location = new System.Drawing.Point(0, 293);
             this.btnGestColaboradores.Name = "btnGestColaboradores";
             this.btnGestColaboradores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnGestColaboradores.Size = new System.Drawing.Size(244, 40);
@@ -249,7 +247,7 @@
             this.btnAdmCalibrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdmCalibrar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdmCalibrar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdmCalibrar.Location = new System.Drawing.Point(0, 293);
+            this.btnAdmCalibrar.Location = new System.Drawing.Point(0, 253);
             this.btnAdmCalibrar.Name = "btnAdmCalibrar";
             this.btnAdmCalibrar.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAdmCalibrar.Size = new System.Drawing.Size(244, 40);
@@ -258,23 +256,6 @@
             this.btnAdmCalibrar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAdmCalibrar.UseVisualStyleBackColor = true;
             this.btnAdmCalibrar.Click += new System.EventHandler(this.btnAdmCalibrar_Click);
-            // 
-            // btnAdmSeguimiento
-            // 
-            this.btnAdmSeguimiento.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdmSeguimiento.FlatAppearance.BorderSize = 0;
-            this.btnAdmSeguimiento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmSeguimiento.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmSeguimiento.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnAdmSeguimiento.Location = new System.Drawing.Point(0, 253);
-            this.btnAdmSeguimiento.Name = "btnAdmSeguimiento";
-            this.btnAdmSeguimiento.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnAdmSeguimiento.Size = new System.Drawing.Size(244, 40);
-            this.btnAdmSeguimiento.TabIndex = 6;
-            this.btnAdmSeguimiento.Text = "Seguimiento";
-            this.btnAdmSeguimiento.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmSeguimiento.UseVisualStyleBackColor = true;
-            this.btnAdmSeguimiento.Click += new System.EventHandler(this.btnAdmSeguimiento_Click);
             // 
             // btnAdmGestRangos
             // 
@@ -652,7 +633,7 @@
             // 
             this.panelBarraSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
             this.panelBarraSuperior.Controls.Add(this.btnLblNombreColab);
-            this.panelBarraSuperior.Controls.Add(this.btnMenuCuenta);
+            this.panelBarraSuperior.Controls.Add(this.btnLogOut);
             this.panelBarraSuperior.Controls.Add(this.lblTituloBarraSuperior);
             this.panelBarraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraSuperior.Location = new System.Drawing.Point(261, 0);
@@ -680,24 +661,25 @@
             this.btnLblNombreColab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLblNombreColab.UseVisualStyleBackColor = false;
             // 
-            // btnMenuCuenta
+            // btnLogOut
             // 
-            this.btnMenuCuenta.AutoSize = true;
-            this.btnMenuCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnMenuCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMenuCuenta.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMenuCuenta.FlatAppearance.BorderSize = 0;
-            this.btnMenuCuenta.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnMenuCuenta.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
-            this.btnMenuCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMenuCuenta.Image = global::SistemaEDInterfaces.Properties.Resources.cheque__1_;
-            this.btnMenuCuenta.Location = new System.Drawing.Point(1070, 0);
-            this.btnMenuCuenta.Name = "btnMenuCuenta";
-            this.btnMenuCuenta.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
-            this.btnMenuCuenta.Size = new System.Drawing.Size(53, 67);
-            this.btnMenuCuenta.TabIndex = 5;
-            this.btnMenuCuenta.UseVisualStyleBackColor = false;
-            this.btnMenuCuenta.Click += new System.EventHandler(this.btnMenuCuenta_Click);
+            this.btnLogOut.AutoSize = true;
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnLogOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnLogOut.FlatAppearance.BorderSize = 0;
+            this.btnLogOut.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnLogOut.Image = global::SistemaEDInterfaces.Properties.Resources.salida;
+            this.btnLogOut.Location = new System.Drawing.Point(1070, 0);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
+            this.btnLogOut.Size = new System.Drawing.Size(53, 67);
+            this.btnLogOut.TabIndex = 5;
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // lblTituloBarraSuperior
             // 
@@ -806,7 +788,6 @@
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Panel panelAdmSubmenu;
         private System.Windows.Forms.Button btnAdmCalibrar;
-        private System.Windows.Forms.Button btnAdmSeguimiento;
         private System.Windows.Forms.Button btnAdmGestRangos;
         private System.Windows.Forms.Button btnAdmGestPot;
         private System.Windows.Forms.Button btnAdmGestComp;
@@ -829,7 +810,7 @@
         private System.Windows.Forms.Label lblInicioFechaActual;
         private System.Windows.Forms.Label lblInicioHoraActual;
         private System.Windows.Forms.Timer timerFechaHoraActual;
-        private System.Windows.Forms.Button btnMenuCuenta;
+        private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnLblNombreColab;
         private System.Windows.Forms.Button btnAdmGestSubpot;
         private System.Windows.Forms.Button btnAdmGestSubcomp;

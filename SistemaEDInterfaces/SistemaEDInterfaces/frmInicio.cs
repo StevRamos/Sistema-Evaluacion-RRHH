@@ -275,12 +275,12 @@ namespace SistemaEDInterfaces
             abrirFormularioHijo(false, new frmAdmGestRangos());
         }
 
-        private void btnAdmSeguimiento_Click(object sender, EventArgs e)
-        {
-            cambiarTituloBarraSuperior(btnAdministracion, btnAdmSeguimiento);
-            cerrarFormulariosActuales();
-            abrirFormularioHijo(false, new frmAdmSeguimiento());
-        }
+        //private void btnAdmSeguimiento_Click(object sender, EventArgs e)
+        //{
+        //    cambiarTituloBarraSuperior(btnAdministracion, btnAdmSeguimiento);
+        //    cerrarFormulariosActuales();
+        //    abrirFormularioHijo(false, new frmAdmSeguimiento());
+        //}
 
         private void btnAdmCalibrar_Click(object sender, EventArgs e)
         {
@@ -358,10 +358,24 @@ namespace SistemaEDInterfaces
 
 
 
-        private void btnMenuCuenta_Click(object sender, EventArgs e)
+        private void btnLogout_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("¿Desea cerrar la sesion?",
+                                               "Mensaje de confirmacion",
+                                               MessageBoxButtons.YesNo,
+                                               MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                frmLogin login = new frmLogin();
+                login.ShowDialog();
+                cerrarFormulariosActuales();
+                this.Close();
+
+            }
+                
             
-            btnMenuCuenta.Image = Properties.Resources.flecha_hacia_arriba;
+
         }
 
         
