@@ -6,16 +6,21 @@
 package pe.edu.pucp.sed.main;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
 import pe.edu.pucp.sed.dao.EscalaDAO;
+import pe.edu.pucp.sed.dao.GerenciaDAO;
 //import pe.edu.pucp.sed.dao.EvaluacionPotencialDAO;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
 import pe.edu.pucp.sed.model.Colaborador;
 import pe.edu.pucp.sed.model.Escala;
+import pe.edu.pucp.sed.model.EstadoCuenta;
+import pe.edu.pucp.sed.model.Gerencia;
 //import pe.edu.pucp.sed.model.EvaluacionPotencial;
 import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
 import pe.edu.pucp.sed.mysql.EscalaMySQL;
+import pe.edu.pucp.sed.mysql.GerenciaMySQL;
 //import pe.edu.pucp.sed.mysql.EvaluacionPotencialMySQL;
 import pe.edu.pucp.sed.mysql.PeriodoMySQL;
 
@@ -27,39 +32,43 @@ public class Principal {
     public static void main(String[] args){
         
 //Colaboradores        
-        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+       // SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 //        
-        ColaboradorDAO daoColab = new ColaboradorMySQL();
-        Colaborador jefe = new Colaborador();
-        jefe.setIdColaborador(1);
-//        Colaborador col1 = new Colaborador();
+       // ColaboradorDAO daoColab = new ColaboradorMySQL();
+      //  Colaborador jefe = new Colaborador();
+      //  jefe.setIdColaborador(1);
+      //  Colaborador col1 = new Colaborador();
 ////        
-//        try{
-//            col1.setIdColaborador(6);
-//            col1.setNombres("Jorge Baca");
-//            col1.setApellidos("Baca Saenz");
-//            col1.setDireccion("PUCP");
-//            col1.setCorreo("jorge.baca@pucp.edu.pe");
-//            col1.setTelefono("997328619");
-//            col1.setFechaNac(formato.parse("18-04-2000"));
-//            col1.setDni("1234678");
-//            col1.setJefe(jefe);
-//        }catch(Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//        if(daoColab.insertar(col1) == 1)
-//            System.out.println("Se ha insertado un empleado");
-//        
-//        if(daoColab.actualizar(col1) == 1)
-//            System.out.println("Se ha actualizado un empleado");
-//        
-//        
-//
-//        if(daoColab.eliminar(col1.getIdColaborador()) == 1)
-//            System.out.println("Se ha eliminado un empleado");
+       // try{
+        //    col1.setIdColaborador(1);
+        //    col1.setNombres("Diego");
+        //    col1.setApellidos("Rodriguez");
+        //    col1.setDireccion("PUCP");
+        //    col1.setCorreo("diego.baca@pucp.edu.pe");
+         //   col1.setTelefono("5457848");
+        //    col1.setFechaNac(formato.parse("18-04-2000"));
+         //   col1.setDni("7446446");
+         //   col1.setContrasena("1515010");
+         //   col1.setEsAdmin(false);
+         //   col1.setJefe(jefe);
+        //    col1.setEstadoCuenta(EstadoCuenta.ACTIVO);
+       // }catch(Exception ex){
+       //     System.out.println(ex.getMessage());
+      // }
+        //if(daoColab.insertar(col1) == 1)
+          //  System.out.println("Se ha insertado un empleado");
         
-//        for(Colaborador c : daoColab.listar())
-//            System.out.println(c.getNombres());
+          //se actualiza correo u otro campo pero nombres no
+        //if(daoColab.actualizar(col1) == 1)
+          //  System.out.println("Se ha actualizado un empleado");
+        
+        
+
+       // if(daoColab.eliminar(col1.getIdColaborador()) == 1)
+         //   System.out.println("Se ha eliminado un empleado");
+        
+      //  for(Colaborador c : daoColab.listar())
+         //   System.out.println(c.getNombres() +" " +c.getCorreo());
         
 //Escala
 //        EscalaDAO daoEsc = new EscalaMySQL();
@@ -94,31 +103,33 @@ public class Principal {
 //        if(daoEp.insertar(ep) == 1)
 //            System.out.println("Se ha insertado una evaluacion potencial");        
         
-// AreaDAO daoArea = new AreaMySQL();
-       // Area area = new Area();
-        
-     
-       // try{
-       //     area.setIdArea(1);
-  //          area.setNombre("Tontos");
-  //          area.setDescripcion("area de tontos");
+        GerenciaDAO daoGerencia = new GerenciaMySQL();
+       Gerencia gerencia = new Gerencia();
+       
+
+             
+       try{
+            gerencia.setIdGerencia(4);
+           gerencia.setNombre("COE ANALYTICS");
+           gerencia.setDescripcion("area de ciencia de datos");
             
-   //     }catch(Exception ex){
-    //        System.out.println(ex.getMessage());
-    //    }
-   //     if(daoArea.eliminar(3) == 1)
-   //         System.out.println("Se ha eliminado un area");
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+       }
+       //if(daoGerencia.eliminar(3) == 1)
+         //  System.out.println("Se ha eliminado un gerencia");
+       
+       if(daoGerencia.actualizar(gerencia) == 1)
+           System.out.println("Se ha actualizado un gerencia");
         
-//        if(daoArea.actualizar(area) == 1)
-//            System.out.println("Se ha actualizado un area");
+        //if(daoGerencia.insertar(gerencia) == 1)
+           // System.out.println("Se ha insertado un gerencia");
         
-       // if(daoArea.insertar(area) == 1)
-         //   System.out.println("Se ha insertado un area");
-        
-       // ArrayList<Area> areas = daoArea.listar();
-        //for(Area a : areas){
-         //   System.out.println(a.getIdArea() + " - " + a.getNombre());
-        //}
+        //ArrayList<Gerencia> gerencias = daoGerencia.listar();
+        for(Gerencia a : daoGerencia.listar()){
+            System.out.println(a.getIdGerencia()+ " - " + a.getNombre()
+                                +" - " +a.getDescripcion());
+        }
         
         
        //CriterioDAO daoCriterio = new CriterioMySQL();

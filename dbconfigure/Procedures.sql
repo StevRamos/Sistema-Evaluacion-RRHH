@@ -591,7 +591,7 @@ CREATE PROCEDURE INSERTAR_COLABORADOR(
 )
 BEGIN 
 	INSERT INTO Colaboradores(dni,nombres,apellidos,direccion,correo,
-	telefono,fechaNac,id_Jefe, constraseña, estadoCuenta,esAdmin) 
+	telefono,fechaNac,id_Jefe, contraseña, estadoCuenta,esAdmin) 
     VALUES(_DNI,_NOMBRES,_APELLIDOS,_DIRECCION,_CORREO,_TELEFONO,
 	_FECHANAC,_ID_JEFE,_CONTRASEÑA,_ESTADOCUENTA,_ESADMIN); 
     SET _ID_COLABORADOR = @@last_insert_id; 
