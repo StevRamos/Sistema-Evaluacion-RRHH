@@ -78,6 +78,12 @@
     <Compile Include="frmAdmGestCron.Designer.cs">
       <DependentUpon>frmAdmGestCron.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmGestCronVerDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestCronVerDetalle.designer.cs">
+      <DependentUpon>frmAdmGestCronVerDetalle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmGestGer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestCron.resx">
       <DependentUpon>frmAdmGestCron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestCronVerDetalle.resx">
+      <DependentUpon>frmAdmGestCronVerDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestGer.resx">
       <DependentUpon>frmAdmGestGer.cs</DependentUpon>

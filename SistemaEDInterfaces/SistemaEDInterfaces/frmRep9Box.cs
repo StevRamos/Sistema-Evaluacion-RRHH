@@ -16,5 +16,10 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void flowLayoutPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

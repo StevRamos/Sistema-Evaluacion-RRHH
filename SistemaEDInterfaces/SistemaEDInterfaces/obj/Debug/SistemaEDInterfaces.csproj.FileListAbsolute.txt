@@ -106,3 +106,4 @@ C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces
 C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanEditarObjetivo.resources
 C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanRealizarRevision.resources
 C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmPlanVerDetalle.resources
+C:\Users\USUARIO\Desktop\Trabajo LP2\Sistema-Evaluacion-RRHH\SistemaEDInterfaces\SistemaEDInterfaces\obj\Debug\SistemaEDInterfaces.frmAdmGestCronVerDetalle.resources
