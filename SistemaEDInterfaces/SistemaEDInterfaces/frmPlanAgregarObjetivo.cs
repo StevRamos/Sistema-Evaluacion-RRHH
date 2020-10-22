@@ -17,8 +17,12 @@ namespace SistemaEDInterfaces
             InitializeComponent();
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Nuevo objetivo registrado correctamente.",
+                "Mensaje de confirmacion",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
             this.Close(); 
         }
     }

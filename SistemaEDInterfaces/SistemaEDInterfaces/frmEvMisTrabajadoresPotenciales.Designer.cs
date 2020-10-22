@@ -33,13 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dgvMisObjetivos = new System.Windows.Forms.DataGridView();
-            this.lblMisObjetivos = new System.Windows.Forms.Label();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblMisObjetivos = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,31 +102,6 @@
             this.dgvMisObjetivos.Size = new System.Drawing.Size(951, 433);
             this.dgvMisObjetivos.TabIndex = 13;
             // 
-            // lblMisObjetivos
-            // 
-            this.lblMisObjetivos.AutoSize = true;
-            this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblMisObjetivos.Location = new System.Drawing.Point(38, 24);
-            this.lblMisObjetivos.Name = "lblMisObjetivos";
-            this.lblMisObjetivos.Size = new System.Drawing.Size(295, 56);
-            this.lblMisObjetivos.TabIndex = 12;
-            this.lblMisObjetivos.Text = "Potenciales";
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(841, 37);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
-            this.btnRegresar.TabIndex = 16;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
             // numero
             // 
             this.numero.HeaderText = "Número";
@@ -154,6 +129,31 @@
             this.nota3.HeaderText = "Nota ";
             this.nota3.Name = "nota3";
             this.nota3.Width = 150;
+            // 
+            // lblMisObjetivos
+            // 
+            this.lblMisObjetivos.AutoSize = true;
+            this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
+            this.lblMisObjetivos.Name = "lblMisObjetivos";
+            this.lblMisObjetivos.Size = new System.Drawing.Size(295, 56);
+            this.lblMisObjetivos.TabIndex = 12;
+            this.lblMisObjetivos.Text = "Potenciales";
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Location = new System.Drawing.Point(841, 37);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
+            this.btnRegresar.TabIndex = 16;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // frmEvMisTrabajadoresPotenciales
             // 

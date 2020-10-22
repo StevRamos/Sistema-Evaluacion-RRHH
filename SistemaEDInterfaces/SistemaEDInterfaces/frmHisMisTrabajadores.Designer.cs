@@ -161,7 +161,7 @@
             this.lblMisObjetivos.AutoSize = true;
             this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblMisObjetivos.Location = new System.Drawing.Point(63, 27);
+            this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
             this.lblMisObjetivos.Size = new System.Drawing.Size(615, 56);
             this.lblMisObjetivos.TabIndex = 6;

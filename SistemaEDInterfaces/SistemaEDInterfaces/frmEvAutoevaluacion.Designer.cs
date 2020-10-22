@@ -38,20 +38,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblMisObjetivos = new System.Windows.Forms.Label();
             this.dgvMisObjetivos = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peso2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.meta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.lblMisObjetivos.AutoSize = true;
             this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblMisObjetivos.Location = new System.Drawing.Point(14, 37);
+            this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
             this.lblMisObjetivos.Size = new System.Drawing.Size(394, 56);
             this.lblMisObjetivos.TabIndex = 4;
@@ -133,6 +133,44 @@
             this.dgvMisObjetivos.Size = new System.Drawing.Size(1054, 280);
             this.dgvMisObjetivos.TabIndex = 5;
             // 
+            // numero
+            // 
+            this.numero.HeaderText = "Número";
+            this.numero.Name = "numero";
+            this.numero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.numero.Width = 70;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.descripcion.Width = 500;
+            // 
+            // meta
+            // 
+            this.meta.HeaderText = "Meta";
+            this.meta.Name = "meta";
+            // 
+            // unidadMedida
+            // 
+            this.unidadMedida.HeaderText = "UnidadMedida";
+            this.unidadMedida.Name = "unidadMedida";
+            this.unidadMedida.Width = 200;
+            // 
+            // peso
+            // 
+            this.peso.HeaderText = "Peso";
+            this.peso.Name = "peso";
+            this.peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // nota
+            // 
+            this.nota.HeaderText = "Nota Autoevaluación";
+            this.nota.Name = "nota";
+            this.nota.Width = 150;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -178,34 +216,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1024, 323);
             this.dataGridView1.TabIndex = 6;
             // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(890, 510);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(158, 26);
-            this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(890, 1023);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(158, 26);
-            this.btnSeleccionar.TabIndex = 8;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = false;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Número";
@@ -238,43 +248,33 @@
             this.nota2.Name = "nota2";
             this.nota2.Width = 150;
             // 
-            // numero
+            // btnGuardar
             // 
-            this.numero.HeaderText = "Número";
-            this.numero.Name = "numero";
-            this.numero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.numero.Width = 70;
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(890, 510);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(158, 26);
+            this.btnGuardar.TabIndex = 7;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // descripcion
+            // btnSeleccionar
             // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.descripcion.Width = 500;
-            // 
-            // meta
-            // 
-            this.meta.HeaderText = "Meta";
-            this.meta.Name = "meta";
-            // 
-            // unidadMedida
-            // 
-            this.unidadMedida.HeaderText = "UnidadMedida";
-            this.unidadMedida.Name = "unidadMedida";
-            this.unidadMedida.Width = 200;
-            // 
-            // peso
-            // 
-            this.peso.HeaderText = "Peso";
-            this.peso.Name = "peso";
-            this.peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // nota
-            // 
-            this.nota.HeaderText = "Nota Autoevaluación";
-            this.nota.Name = "nota";
-            this.nota.Width = 150;
+            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionar.Location = new System.Drawing.Point(890, 1023);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(158, 26);
+            this.btnSeleccionar.TabIndex = 8;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // frmEvAutoevaluacion
             // 

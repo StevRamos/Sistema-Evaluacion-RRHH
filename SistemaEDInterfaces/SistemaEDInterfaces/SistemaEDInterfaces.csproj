@@ -264,17 +264,41 @@
     <Compile Include="frmPlanAgregarObjetivo.Designer.cs">
       <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlanAgregarObservacionObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanAgregarObservacionObj.Designer.cs">
+      <DependentUpon>frmPlanAgregarObservacionObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanEditarObjetivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanEditarObjetivo.Designer.cs">
+      <DependentUpon>frmPlanEditarObjetivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlanMisObjetivos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPlanMisObjetivos.Designer.cs">
       <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPlanRealizarRevision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanRealizarRevision.Designer.cs">
+      <DependentUpon>frmPlanRealizarRevision.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlanValidarObjetivos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPlanValidarObjetivos.Designer.cs">
       <DependentUpon>frmPlanValidarObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanVerDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanVerDetalle.Designer.cs">
+      <DependentUpon>frmPlanVerDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRep9Box.cs">
       <SubType>Form</SubType>
@@ -412,11 +436,23 @@
     <EmbeddedResource Include="frmPlanAgregarObjetivo.resx">
       <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanAgregarObservacionObj.resx">
+      <DependentUpon>frmPlanAgregarObservacionObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanEditarObjetivo.resx">
+      <DependentUpon>frmPlanEditarObjetivo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPlanMisObjetivos.resx">
       <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanRealizarRevision.resx">
+      <DependentUpon>frmPlanRealizarRevision.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPlanValidarObjetivos.resx">
       <DependentUpon>frmPlanValidarObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanVerDetalle.resx">
+      <DependentUpon>frmPlanVerDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRep9Box.resx">
       <DependentUpon>frmRep9Box.cs</DependentUpon>

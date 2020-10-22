@@ -39,6 +39,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMisObjetivos = new System.Windows.Forms.Label();
             this.dgvMisObjetivos = new System.Windows.Forms.DataGridView();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaP1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaF1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -70,14 +78,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.meta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notaP1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notaF1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -88,7 +88,7 @@
             this.lblMisObjetivos.AutoSize = true;
             this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblMisObjetivos.Location = new System.Drawing.Point(40, 26);
+            this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
             this.lblMisObjetivos.Size = new System.Drawing.Size(364, 56);
             this.lblMisObjetivos.TabIndex = 7;
@@ -142,6 +142,64 @@
             this.dgvMisObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMisObjetivos.Size = new System.Drawing.Size(1024, 223);
             this.dgvMisObjetivos.TabIndex = 9;
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "Número";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            this.numero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.numero.Width = 70;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.descripcion.Width = 500;
+            // 
+            // meta
+            // 
+            this.meta.HeaderText = "Meta";
+            this.meta.Name = "meta";
+            this.meta.ReadOnly = true;
+            // 
+            // unidadMedida
+            // 
+            this.unidadMedida.HeaderText = "UnidadMedida";
+            this.unidadMedida.Name = "unidadMedida";
+            this.unidadMedida.ReadOnly = true;
+            this.unidadMedida.Width = 200;
+            // 
+            // peso
+            // 
+            this.peso.HeaderText = "Peso";
+            this.peso.Name = "peso";
+            this.peso.ReadOnly = true;
+            this.peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // nota
+            // 
+            this.nota.HeaderText = "Nota Autoevaluación";
+            this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
+            this.nota.Width = 150;
+            // 
+            // notaP1
+            // 
+            this.notaP1.HeaderText = "Nota Previa";
+            this.notaP1.Name = "notaP1";
+            this.notaP1.ReadOnly = true;
+            this.notaP1.Width = 150;
+            // 
+            // notaF1
+            // 
+            this.notaF1.HeaderText = "Nota Final";
+            this.notaF1.Name = "notaF1";
+            this.notaF1.ReadOnly = true;
+            this.notaF1.Width = 150;
             // 
             // label1
             // 
@@ -478,64 +536,6 @@
             this.label9.Size = new System.Drawing.Size(280, 25);
             this.label9.TabIndex = 28;
             this.label9.Text = "Calificación de Potencial:";
-            // 
-            // numero
-            // 
-            this.numero.HeaderText = "Número";
-            this.numero.Name = "numero";
-            this.numero.ReadOnly = true;
-            this.numero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.numero.Width = 70;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.descripcion.Width = 500;
-            // 
-            // meta
-            // 
-            this.meta.HeaderText = "Meta";
-            this.meta.Name = "meta";
-            this.meta.ReadOnly = true;
-            // 
-            // unidadMedida
-            // 
-            this.unidadMedida.HeaderText = "UnidadMedida";
-            this.unidadMedida.Name = "unidadMedida";
-            this.unidadMedida.ReadOnly = true;
-            this.unidadMedida.Width = 200;
-            // 
-            // peso
-            // 
-            this.peso.HeaderText = "Peso";
-            this.peso.Name = "peso";
-            this.peso.ReadOnly = true;
-            this.peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // nota
-            // 
-            this.nota.HeaderText = "Nota Autoevaluación";
-            this.nota.Name = "nota";
-            this.nota.ReadOnly = true;
-            this.nota.Width = 150;
-            // 
-            // notaP1
-            // 
-            this.notaP1.HeaderText = "Nota Previa";
-            this.notaP1.Name = "notaP1";
-            this.notaP1.ReadOnly = true;
-            this.notaP1.Width = 150;
-            // 
-            // notaF1
-            // 
-            this.notaF1.HeaderText = "Nota Final";
-            this.notaF1.Name = "notaF1";
-            this.notaF1.ReadOnly = true;
-            this.notaF1.Width = 150;
             // 
             // frmEvMisResultados
             // 
