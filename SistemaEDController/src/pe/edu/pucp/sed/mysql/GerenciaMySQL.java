@@ -23,16 +23,16 @@ public class GerenciaMySQL implements GerenciaDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call INSERTAR_AREA(?,?,?)}";
+			String sql = "{call INSERTAR_GERENCIA(?,?,?)}";
 			cs = con.prepareCall(sql);
                         
                         cs.setString("_NOMBRE",gerencia.getNombre());
                         cs.setString("_DESCRIPCION",gerencia.getDescripcion());
-                        cs.registerOutParameter("_ID_AREA", java.sql.Types.INTEGER);
+                        cs.registerOutParameter("_ID_GERENCIA", java.sql.Types.INTEGER);
                         
 			cs.executeUpdate();
                         
-                        gerencia.setIdGerencia(cs.getInt("_ID_AREA"));
+                        gerencia.setIdGerencia(cs.getInt("_ID_GERENCIA"));
                         
 			resultado = 1;
 		}catch(Exception ex){
@@ -48,11 +48,11 @@ public class GerenciaMySQL implements GerenciaDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ACTUALIZAR_AREA(?,?)}";
+			String sql = "{call ACTUALIZAR_GERENCIA(?,?)}";
 			cs = con.prepareCall(sql);
 
                         cs.setString("_DESCRIPCION",gerencia.getDescripcion());
-                        cs.setInt("_ID_AREA",gerencia.getIdGerencia());
+                        cs.setInt("_ID_GERENCIA",gerencia.getIdGerencia());
                         
                         
 			cs.executeUpdate();
@@ -70,10 +70,10 @@ public class GerenciaMySQL implements GerenciaDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ELIMINAR_AREA(?)}";
+			String sql = "{call ELIMINAR_GERENCIA(?)}";
 			cs = con.prepareCall(sql);
                         
-                        cs.setInt("_ID_AREA",idGerencia);
+                        cs.setInt("_ID_GERENCIA",idGerencia);
                         
 			cs.executeUpdate();
 			resultado = 1;
@@ -91,13 +91,13 @@ public class GerenciaMySQL implements GerenciaDAO{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
                         
-                        String sql = "{call LISTAR_AREAS()}";
+                        String sql = "{call LISTAR_GERENCIAS()}";
 			cs = con.prepareCall(sql);
                         
                         rs = cs.executeQuery(sql);
                         while(rs.next()){
                             Gerencia gerencia = new Gerencia();
-                            gerencia.setIdGerencia(rs.getInt("id_Area"));
+                            gerencia.setIdGerencia(rs.getInt("id_Gerencias"));
                             gerencia.setNombre(rs.getString("nombre"));
                             gerencia.setDescripcion(rs.getString("descripcion"));
                             gerencias.add(gerencia);

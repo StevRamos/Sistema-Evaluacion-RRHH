@@ -48,7 +48,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?)}";
+            String sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
 
             cs.setInt("_ID_EVALUACION",evaluacionDesempenho.getIdEvaluacion());
@@ -97,30 +97,41 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
     }
     @Override
     public ArrayList<EvaluacionDesempenho> listar(){
-        ArrayList<EvaluacionDesempenho> evaluacionDesempenhos = new ArrayList<>();
-  //      try{
-    //        Class.forName("com.mysql.cj.jdbc.Driver");
-     //       con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+        ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
-       //     String sql = "{call LISTAR_EVALUACIONDESEMPENHO()}";
-	//		cs = con.prepareCall(sql);
+            String sql = "{call LISTAR_EVALUACIONDESEMPENHO()}";
+                cs = con.prepareCall(sql);
                         
-     //       rs = cs.executeQuery(sql);
-//            while(rs.next()){
-//                EvaluacionDesempenho evaluacionDesempenho = new EvaluacionDesempenho();
-//                evaluacionDesempenho.setIdEvaluacion(rs.getInt("id_Evaluacion"));
-//                evaluacionDesempenho.getColaborador(rs.getString("id_Colaborador"));
-//                evaluacionDesempenho.setDescripcion(rs.getString("id_Periodo"));
-//                evaluacionDesempenho.setActivo(rs.getBoolean("id_EscalaSinCalibrar"));
-//                evaluacionDesempenho.add(area);
-          //  }
+            rs = cs.executeQuery(sql);
+            while(rs.next()){
+                EvaluacionDesempenho evaluacionDesempenho = new EvaluacionDesempenho();
+                evaluacionDesempenho.setIdEvaluacion(rs.getInt("id_Evaluacion"));
+                //evaluacionDesempenho.getColaborador(rs.getString("id_Colaborador"));
+                //evaluacionDesempenho.setDescripcion(rs.getString("id_Periodo"));
+                evaluacionDesempenho.setObservacionesComp(rs.getString("observacionesComp"));
+                evaluacionDesempenho.setObservacionesObj(rs.getString("observacionesObj"));
+                
+                evaluacionDesempenho.setNotaAutoEvalComp(rs.getDouble("notaAutoEvalComp"));
+                evaluacionDesempenho.setNotaPreviaComp(rs.getDouble("notaPreviaComp"));
+                evaluacionDesempenho.setNotaFinalComp(rs.getDouble("notaFinalComp"));
+
+                evaluacionDesempenho.setNotaAutoEvalObj(rs.getDouble("notaAutoEvalObj"));
+                evaluacionDesempenho.setNotaPreviaObj(rs.getDouble("notaPreviaObj"));
+                evaluacionDesempenho.setNotaFinalObj(rs.getDouble("notaFinalObj"));
+                
+                
+                evaluacionesDesempenho.add(evaluacionDesempenho);
+            }
             
             
-        //}catch(Exception ex){
-       //     System.out.println(ex.getMessage());
-     //   }finally{
-          //  try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
-        //}
-        return evaluacionDesempenhos;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return evaluacionesDesempenho;
     }
 }

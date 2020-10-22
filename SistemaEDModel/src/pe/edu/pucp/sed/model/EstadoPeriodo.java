@@ -5,10 +5,37 @@
  */
 package pe.edu.pucp.sed.model;
 
+import java.util.HashMap;
+
 /**
  *
  * @author stevramos
  */
-enum EstadoPeriodo {
-    ACTIVO, INACTIVO
+
+public enum EstadoPeriodo{
+  ACTIVO(1), INACTIVO(2), ELIMINADA(3);
+
+  private int value;
+  private static HashMap map = new HashMap<>();
+
+  private EstadoPeriodo(int value) {
+      this.value = value;
+  }
+
+  static {
+      for (EstadoPeriodo Type : EstadoPeriodo.values()) {
+          map.put(Type.value, Type);
+      }
+  }
+
+  public static EstadoPeriodo valueOf(int Type) {
+      return (EstadoPeriodo) map.get(Type);
+  }
+
+  public int getValue() {
+      return value;
+  }
+
 }
+
+

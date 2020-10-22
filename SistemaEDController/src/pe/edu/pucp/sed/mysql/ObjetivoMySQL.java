@@ -100,16 +100,33 @@ public class ObjetivoMySQL implements ObjetivoDAO{
 	}
 	@Override
 	public ArrayList<Objetivo> listar(){
-		ArrayList<Objetivo> objetivo = new ArrayList<>();
+		ArrayList<Objetivo> objetivos = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-
+                        String sql = "{call LISTAR_OBJETIVOS()}";
+			cs = con.prepareCall(sql);
+                        
+                        rs = cs.executeQuery(sql);
+                        while(rs.next()){
+                            Objetivo objetivo = new Objetivo();
+                            objetivo.setIdObjetivo(rs.getInt("id_Objetivo"));
+                            objetivo.setDescripcion(rs.getString("descripcion"));
+                            //objetivo.setEstado(rs.getBoolean("estado"));
+                            //objetivo.setFechaFormulacion(rs.getDate("fechaFormulacion"));
+                            //objetivo.setFechaAprobacion(rs.getDate("fechaAprobacion"));
+                            objetivo.setMeta(rs.getDouble("meta"));
+                            objetivo.setUnidadMedida(rs.getString("unidadMedida").charAt(0));
+                            objetivo.setPeso(rs.getDouble("peso"));
+                            
+                            objetivos.add(objetivo);
+                        }
+                        
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}finally{
 			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
 		}
-		return objetivo;
+		return objetivos;
 	}
 }
