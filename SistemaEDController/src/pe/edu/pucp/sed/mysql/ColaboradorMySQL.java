@@ -62,6 +62,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
             String sql = "{call ACTUALIZAR_COLABORADOR(?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
+            //System.out.println(colaborador.getIdColaborador());
             cs.setInt("_ID_COLABORADOR", colaborador.getIdColaborador());
              cs.setString("_DIRECCION", colaborador.getDireccion());
             cs.setString("_CORREO", colaborador.getCorreo());
