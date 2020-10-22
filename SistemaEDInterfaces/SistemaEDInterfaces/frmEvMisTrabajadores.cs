@@ -19,7 +19,7 @@ namespace SistemaEDInterfaces
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(false,new frmEvMisTrabajadoresOpciones());
+            Global.formPrincipal.abrirFormularioHijo(false,new frmEvMisTrabajadoresEvaluacion());
         }
     }
 }

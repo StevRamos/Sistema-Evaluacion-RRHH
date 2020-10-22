@@ -16,5 +16,11 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void btnGestGerCargaMav_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmAdmGestGerenCargaMav();
+            formulario.Show();
+        }
     }
 }

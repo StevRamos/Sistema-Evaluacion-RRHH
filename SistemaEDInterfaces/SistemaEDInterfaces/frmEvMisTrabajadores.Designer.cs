@@ -49,7 +49,7 @@
             this.lblMisObjetivos.AutoSize = true;
             this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
+            this.lblMisObjetivos.Location = new System.Drawing.Point(23, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
             this.lblMisObjetivos.Size = new System.Drawing.Size(418, 56);
             this.lblMisObjetivos.TabIndex = 1;
@@ -138,17 +138,15 @@
             // 
             // notaDesempeño
             // 
-            this.notaDesempeño.HeaderText = "Nota Evaluación Desempeño";
+            this.notaDesempeño.HeaderText = "Nota Desempeño";
             this.notaDesempeño.Name = "notaDesempeño";
             this.notaDesempeño.ReadOnly = true;
-            this.notaDesempeño.Width = 150;
             // 
             // notaPotencial
             // 
-            this.notaPotencial.HeaderText = "Nota Evaluación Potencial";
+            this.notaPotencial.HeaderText = "Nota Potencial";
             this.notaPotencial.Name = "notaPotencial";
             this.notaPotencial.ReadOnly = true;
-            this.notaPotencial.Width = 150;
             // 
             // btnSeleccionar
             // 
@@ -186,7 +184,6 @@
 
         private System.Windows.Forms.Label lblMisObjetivos;
         private System.Windows.Forms.DataGridView dgvMisObjetivos;
-        private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
@@ -194,5 +191,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn puesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaDesempeño;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaPotencial;
+        private System.Windows.Forms.Button btnSeleccionar;
     }
 }

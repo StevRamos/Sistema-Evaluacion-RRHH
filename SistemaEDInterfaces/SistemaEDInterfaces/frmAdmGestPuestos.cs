@@ -16,5 +16,16 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGestCargoCargaMav_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmAdmGestCargoCargaMav();
+            formulario.Show();
+        }
     }
 }

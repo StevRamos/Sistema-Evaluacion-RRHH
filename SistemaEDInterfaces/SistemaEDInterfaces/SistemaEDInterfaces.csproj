@@ -60,11 +60,35 @@
     <Compile Include="frmAdmCalibrar.Designer.cs">
       <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmGestCargoCargaMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestCargoCargaMav.Designer.cs">
+      <DependentUpon>frmAdmGestCargoCargaMav.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmGestColab.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdmGestColab.Designer.cs">
       <DependentUpon>frmAdmGestColab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestColabCargaMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestColabCargaMav.Designer.cs">
+      <DependentUpon>frmAdmGestColabCargaMav.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestColabVerDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestColabVerDetalle.Designer.cs">
+      <DependentUpon>frmAdmGestColabVerDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestComCrgMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestComCrgMav.Designer.cs">
+      <DependentUpon>frmAdmGestComCrgMav.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmGestComp.cs">
       <SubType>Form</SubType>
@@ -78,23 +102,35 @@
     <Compile Include="frmAdmGestCron.Designer.cs">
       <DependentUpon>frmAdmGestCron.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAdmGestCronVerDetalle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAdmGestCronVerDetalle.designer.cs">
-      <DependentUpon>frmAdmGestCronVerDetalle.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmAdmGestGer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdmGestGer.Designer.cs">
       <DependentUpon>frmAdmGestGer.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmGestGerenCargaMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestGerenCargaMav.Designer.cs">
+      <DependentUpon>frmAdmGestGerenCargaMav.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmGestPot.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdmGestPot.Designer.cs">
       <DependentUpon>frmAdmGestPot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestPotAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestPotAdd.Designer.cs">
+      <DependentUpon>frmAdmGestPotAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestPotCrgMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestPotCrgMav.Designer.cs">
+      <DependentUpon>frmAdmGestPotCrgMav.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmGestPuestos.cs">
       <SubType>Form</SubType>
@@ -108,6 +144,30 @@
     <Compile Include="frmAdmGestRangos.Designer.cs">
       <DependentUpon>frmAdmGestRangos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAdmGestComAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestComAdd.Designer.cs">
+      <DependentUpon>frmAdmGestComAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubComAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubComAdd.Designer.cs">
+      <DependentUpon>frmAdmGestSubComAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubComBuscarCom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubComBuscarCom.Designer.cs">
+      <DependentUpon>frmAdmGestSubComBuscarCom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubComCrgMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubComCrgMav.Designer.cs">
+      <DependentUpon>frmAdmGestSubComCrgMav.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAdmGestSubcomp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +179,24 @@
     </Compile>
     <Compile Include="frmAdmGestSubpot.Designer.cs">
       <DependentUpon>frmAdmGestSubpot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotAdd.Designer.cs">
+      <DependentUpon>frmAdmGestSubPotAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotBuscarPot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotBuscarPot.Designer.cs">
+      <DependentUpon>frmAdmGestSubPotBuscarPot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotCrgMav.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubPotCrgMav.Designer.cs">
+      <DependentUpon>frmAdmGestSubPotCrgMav.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmSeguimiento.cs">
       <SubType>Form</SubType>
@@ -168,35 +246,17 @@
     <Compile Include="frmEvMisTrabajadores.Designer.cs">
       <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresFinalCompetencias.cs">
+    <Compile Include="frmEvMisTrabajadoresCompetencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresFinalCompetencias.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresFinalCompetencias.cs</DependentUpon>
+    <Compile Include="frmEvMisTrabajadoresCompetencias.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresCompetencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresPreviaCompetencias.cs">
+    <Compile Include="frmEvMisTrabajadoresEvaluacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresPreviaCompetencias.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresPreviaCompetencias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresEvPotencial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresEvPotencial.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresEvPotencial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresFinal.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresFinal.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresFinal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresOpciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresOpciones.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresOpciones.cs</DependentUpon>
+    <Compile Include="frmEvMisTrabajadoresEvaluacion.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresEvaluacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEvMisTrabajadoresPotenciales.cs">
       <SubType>Form</SubType>
@@ -204,59 +264,17 @@
     <Compile Include="frmEvMisTrabajadoresPotenciales.Designer.cs">
       <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresPrevia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresPrevia.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresPrevia.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHisMisEvaluaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHisMisEvaluaciones.Designer.cs">
       <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHisMisEvaluacionesResultado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHisMisEvaluacionesResultado.Designer.cs">
-      <DependentUpon>frmHisMisEvaluacionesResultado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHisMisEvaluacionesResultadoC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHisMisEvaluacionesResultadoC.Designer.cs">
-      <DependentUpon>frmHisMisEvaluacionesResultadoC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHisMisEvaluacionesResultadoP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHisMisEvaluacionesResultadoP.Designer.cs">
-      <DependentUpon>frmHisMisEvaluacionesResultadoP.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmHisMisTrabajadores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHisMisTrabajadores.Designer.cs">
       <DependentUpon>frmHisMisTrabajadores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHisMisTrabajadoresResultado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHisMisTrabajadoresResultado.Designer.cs">
-      <DependentUpon>frmHisMisTrabajadoresResultado.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHisMisTrabajadoresResultadoC.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHisMisTrabajadoresResultadoC.Designer.cs">
-      <DependentUpon>frmHisMisTrabajadoresResultadoC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmHisMisTrabajadoresResultadoP.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmHisMisTrabajadoresResultadoP.Designer.cs">
-      <DependentUpon>frmHisMisTrabajadoresResultadoP.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
@@ -270,41 +288,17 @@
     <Compile Include="frmPlanAgregarObjetivo.Designer.cs">
       <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPlanAgregarObservacionObj.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPlanAgregarObservacionObj.Designer.cs">
-      <DependentUpon>frmPlanAgregarObservacionObj.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPlanEditarObjetivo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPlanEditarObjetivo.Designer.cs">
-      <DependentUpon>frmPlanEditarObjetivo.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPlanMisObjetivos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPlanMisObjetivos.Designer.cs">
       <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPlanRealizarRevision.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPlanRealizarRevision.Designer.cs">
-      <DependentUpon>frmPlanRealizarRevision.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPlanValidarObjetivos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPlanValidarObjetivos.Designer.cs">
       <DependentUpon>frmPlanValidarObjetivos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPlanVerDetalle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPlanVerDetalle.Designer.cs">
-      <DependentUpon>frmPlanVerDetalle.cs</DependentUpon>
     </Compile>
     <Compile Include="frmRep9Box.cs">
       <SubType>Form</SubType>
@@ -340,8 +334,20 @@
     <EmbeddedResource Include="frmAdmCalibrar.resx">
       <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestCargoCargaMav.resx">
+      <DependentUpon>frmAdmGestCargoCargaMav.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestColab.resx">
       <DependentUpon>frmAdmGestColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestColabCargaMav.resx">
+      <DependentUpon>frmAdmGestColabCargaMav.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestColabVerDetalle.resx">
+      <DependentUpon>frmAdmGestColabVerDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestComCrgMav.resx">
+      <DependentUpon>frmAdmGestComCrgMav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestComp.resx">
       <DependentUpon>frmAdmGestComp.cs</DependentUpon>
@@ -349,14 +355,20 @@
     <EmbeddedResource Include="frmAdmGestCron.resx">
       <DependentUpon>frmAdmGestCron.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAdmGestCronVerDetalle.resx">
-      <DependentUpon>frmAdmGestCronVerDetalle.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestGer.resx">
       <DependentUpon>frmAdmGestGer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestGerenCargaMav.resx">
+      <DependentUpon>frmAdmGestGerenCargaMav.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestPot.resx">
       <DependentUpon>frmAdmGestPot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestPotAdd.resx">
+      <DependentUpon>frmAdmGestPotAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestPotCrgMav.resx">
+      <DependentUpon>frmAdmGestPotCrgMav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestPuestos.resx">
       <DependentUpon>frmAdmGestPuestos.cs</DependentUpon>
@@ -364,11 +376,32 @@
     <EmbeddedResource Include="frmAdmGestRangos.resx">
       <DependentUpon>frmAdmGestRangos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestComAdd.resx">
+      <DependentUpon>frmAdmGestComAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubComAdd.resx">
+      <DependentUpon>frmAdmGestSubComAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubComBuscarCom.resx">
+      <DependentUpon>frmAdmGestSubComBuscarCom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubComCrgMav.resx">
+      <DependentUpon>frmAdmGestSubComCrgMav.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestSubcomp.resx">
       <DependentUpon>frmAdmGestSubcomp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmGestSubpot.resx">
       <DependentUpon>frmAdmGestSubpot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubPotAdd.resx">
+      <DependentUpon>frmAdmGestSubPotAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubPotBuscarPot.resx">
+      <DependentUpon>frmAdmGestSubPotBuscarPot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubPotCrgMav.resx">
+      <DependentUpon>frmAdmGestSubPotCrgMav.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdmSeguimiento.resx">
       <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
@@ -394,50 +427,20 @@
     <EmbeddedResource Include="frmEvMisTrabajadores.resx">
       <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresFinalCompetencias.resx">
-      <DependentUpon>frmEvMisTrabajadoresFinalCompetencias.cs</DependentUpon>
+    <EmbeddedResource Include="frmEvMisTrabajadoresCompetencias.resx">
+      <DependentUpon>frmEvMisTrabajadoresCompetencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresPreviaCompetencias.resx">
-      <DependentUpon>frmEvMisTrabajadoresPreviaCompetencias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresEvPotencial.resx">
-      <DependentUpon>frmEvMisTrabajadoresEvPotencial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresFinal.resx">
-      <DependentUpon>frmEvMisTrabajadoresFinal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresOpciones.resx">
-      <DependentUpon>frmEvMisTrabajadoresOpciones.cs</DependentUpon>
+    <EmbeddedResource Include="frmEvMisTrabajadoresEvaluacion.resx">
+      <DependentUpon>frmEvMisTrabajadoresEvaluacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvMisTrabajadoresPotenciales.resx">
       <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresPrevia.resx">
-      <DependentUpon>frmEvMisTrabajadoresPrevia.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmHisMisEvaluaciones.resx">
       <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHisMisEvaluacionesResultado.resx">
-      <DependentUpon>frmHisMisEvaluacionesResultado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHisMisEvaluacionesResultadoC.resx">
-      <DependentUpon>frmHisMisEvaluacionesResultadoC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHisMisEvaluacionesResultadoP.resx">
-      <DependentUpon>frmHisMisEvaluacionesResultadoP.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmHisMisTrabajadores.resx">
       <DependentUpon>frmHisMisTrabajadores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHisMisTrabajadoresResultado.resx">
-      <DependentUpon>frmHisMisTrabajadoresResultado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHisMisTrabajadoresResultadoC.resx">
-      <DependentUpon>frmHisMisTrabajadoresResultadoC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmHisMisTrabajadoresResultadoP.resx">
-      <DependentUpon>frmHisMisTrabajadoresResultadoP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
@@ -445,23 +448,11 @@
     <EmbeddedResource Include="frmPlanAgregarObjetivo.resx">
       <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPlanAgregarObservacionObj.resx">
-      <DependentUpon>frmPlanAgregarObservacionObj.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPlanEditarObjetivo.resx">
-      <DependentUpon>frmPlanEditarObjetivo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPlanMisObjetivos.resx">
       <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPlanRealizarRevision.resx">
-      <DependentUpon>frmPlanRealizarRevision.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPlanValidarObjetivos.resx">
       <DependentUpon>frmPlanValidarObjetivos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPlanVerDetalle.resx">
-      <DependentUpon>frmPlanVerDetalle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRep9Box.resx">
       <DependentUpon>frmRep9Box.cs</DependentUpon>

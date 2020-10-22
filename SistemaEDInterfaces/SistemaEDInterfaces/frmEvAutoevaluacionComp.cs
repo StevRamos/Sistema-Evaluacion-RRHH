@@ -16,17 +16,5 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
-
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            Global.formPrincipal.cerrarFormularioHijo();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Se ha registrado correctamente",
-                "Mensaje Informativo", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-        }
     }
 }

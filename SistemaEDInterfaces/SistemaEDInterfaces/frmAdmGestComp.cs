@@ -16,5 +16,17 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+
+        private void btnCrearCompetencia_Click_1(object sender, EventArgs e)
+        {
+            Global.formPrincipal.abrirFormularioHijo(false, new frmAdmGestComAdd());
+        }
+
+        private void btnCargarMasivaCom_Click_1(object sender, EventArgs e)
+        {
+            Form formulario = new frmAdmGestComCrgMav();
+            formulario.Show();
+        }
     }
 }

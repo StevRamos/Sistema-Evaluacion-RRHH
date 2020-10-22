@@ -39,7 +39,7 @@
             this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
+            this.btnEnviar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +48,7 @@
             this.lblMisObjetivos.AutoSize = true;
             this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
+            this.lblMisObjetivos.Location = new System.Drawing.Point(64, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
             this.lblMisObjetivos.Size = new System.Drawing.Size(370, 56);
             this.lblMisObjetivos.TabIndex = 5;
@@ -82,6 +82,7 @@
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
             this.dgvMisObjetivos.Location = new System.Drawing.Point(54, 90);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
+            this.dgvMisObjetivos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -101,30 +102,35 @@
             // 
             // numero
             // 
-            this.numero.HeaderText = "Número";
+            this.numero.HeaderText = "Numero";
             this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
             // 
             // nombre
             // 
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             this.nombre.Width = 200;
             // 
             // descripcion
             // 
-            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.HeaderText = "Descripcion";
             this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
             this.descripcion.Width = 400;
             // 
             // peso
             // 
             this.peso.HeaderText = "Peso";
             this.peso.Name = "peso";
+            this.peso.ReadOnly = true;
             // 
             // nota
             // 
             this.nota.HeaderText = "Nota AutoEvaluación";
             this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
             this.nota.Width = 150;
             // 
             // btnGuardar
@@ -133,27 +139,25 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(837, 544);
+            this.btnGuardar.Location = new System.Drawing.Point(641, 546);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(158, 26);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnRegresar
+            // btnEnviar
             // 
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(837, 38);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
-            this.btnRegresar.TabIndex = 10;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnviar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.ForeColor = System.Drawing.Color.White;
+            this.btnEnviar.Location = new System.Drawing.Point(863, 546);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(158, 26);
+            this.btnEnviar.TabIndex = 9;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = false;
             // 
             // frmEvAutoevaluacionComp
             // 
@@ -161,7 +165,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
-            this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.dgvMisObjetivos);
             this.Controls.Add(this.lblMisObjetivos);
@@ -177,12 +181,12 @@
 
         private System.Windows.Forms.Label lblMisObjetivos;
         private System.Windows.Forms.DataGridView dgvMisObjetivos;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnEnviar;
     }
 }

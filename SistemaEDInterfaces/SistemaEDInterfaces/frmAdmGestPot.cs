@@ -16,5 +16,21 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCrearPotencial_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.abrirFormularioHijo(false, new frmAdmGestPotAdd());
+        }
+
+        private void btnCargarMasivaPot_Click(object sender, EventArgs e)
+        {
+            Form formulario = new frmAdmGestPotCrgMav();
+            formulario.Show();
+        }
     }
 }
