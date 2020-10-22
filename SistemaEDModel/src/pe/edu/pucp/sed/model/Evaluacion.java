@@ -8,6 +8,9 @@ public class Evaluacion{
 	private double notaFinal;
 	private boolean tipo;
 	private EstadoEvaluacion estado;
+        private Escala escalaPreCupos;
+        private Escala escalaSinCalibrar;
+        private Escala escalaFinal;
 	private int estadoPDI;
 	private ArrayList<LineaEvaluacion> lineasEvaluacion;
 	private Colaborador colaborador;
@@ -17,7 +20,37 @@ public class Evaluacion{
 		this.lineasEvaluacion = new ArrayList<>();
                 this.colaborador = new Colaborador();
                 this.periodo = new Periodo();
+                this.escalaFinal = new Escala();
+                this.escalaPreCupos = new Escala();
+                this.escalaSinCalibrar = new Escala();
 	};
+
+    public Escala getEscalaPreCupos() {
+        return escalaPreCupos;
+    }
+
+    public void setEscalaPreCupos(Escala escalaPreCupos) {
+        this.escalaPreCupos = escalaPreCupos;
+    }
+
+    public Escala getEscalaSinCalibrar() {
+        return escalaSinCalibrar;
+    }
+
+    public void setEscalaSinCalibrar(Escala escalaSinCalibrar) {
+        this.escalaSinCalibrar = escalaSinCalibrar;
+    }
+
+    public Escala getEscalaFinal() {
+        return escalaFinal;
+    }
+
+    public void setEscalaFinal(Escala escalaFinal) {
+        this.escalaFinal = escalaFinal;
+    }
+        
+        
+        
 
 	public int getIdEvaluacion(){
 		return this.idEvaluacion;

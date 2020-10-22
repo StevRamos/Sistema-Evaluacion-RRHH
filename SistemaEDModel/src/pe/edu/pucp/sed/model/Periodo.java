@@ -8,6 +8,7 @@ public class Periodo{
 	private int idPeriodo;
 	private Date fechaInicio;
 	private Date fechaFin;
+	private Date diaNotificacion;
 	private double pesoEvalObj;
 	private double pesoEvalComp;
 	private EstadoPeriodo estado;
@@ -28,6 +29,16 @@ public class Periodo{
 		this.objetivos = new ArrayList<>();
 	};
 
+        public void setDiaNotificacion(Date diaNotificacion) {
+            this.diaNotificacion = diaNotificacion;
+        }
+
+        public Date getDiaNotificacion() {
+            return diaNotificacion;
+        }
+
+
+        
 	public int getIdPeriodo(){
 		return this.idPeriodo;
 	};

@@ -23,11 +23,12 @@ public class CriterioMySQL implements CriterioDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call INSERTAR_CRITERIO(?,?,?,?)}";
+			String sql = "{call INSERTAR_CRITERIO(?,?,?,?,?)}";
 			cs = con.prepareCall(sql);
                         
+                        cs.setInt("_ID_CRITERIOPADRE", criterio.getCriterioPadre().getIdCriterio());
                         cs.setString("_NOMBRE",criterio.getNombre());
-                        //cs.setString("_DESCRIPCION",criterio.getDescripcion());
+                        cs.setString("_DESCRIPCION",criterio.getDescripcion());
                         cs.setInt("_TIPO",criterio.getTipo());
                         cs.registerOutParameter("_ID_CRITERIO", java.sql.Types.INTEGER);
                         
@@ -51,7 +52,7 @@ public class CriterioMySQL implements CriterioDAO{
 			String sql = "{call ACTUALIZAR_CRITERIO(?,?)}";
 			cs = con.prepareCall(sql);
                         
-                        //cs.setString("_DESCRIPCION",criterio.getDescripcion());
+                        cs.setString("_DESCRIPCION",criterio.getDescripcion());
                         cs.setInt("_ID_CRITERIO",criterio.getIdCriterio());
                         
                         
@@ -100,7 +101,7 @@ public class CriterioMySQL implements CriterioDAO{
                             Criterio criterio = new Criterio();
                             criterio.setIdCriterio(rs.getInt("id_Criterio"));
                             criterio.setNombre(rs.getString("nombre"));
-                            //criterio.setDescripcion(rs.getString("descripcion"));
+                            criterio.setDescripcion(rs.getString("descripcion"));
                             //criterio.setEsVigente(rs.getBoolean("esVigente"));
                             criterio.setTipo(rs.getInt("tipo"));
                             criterios.add(criterio);

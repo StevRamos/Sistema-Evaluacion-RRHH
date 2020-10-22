@@ -49,12 +49,13 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ACTUALIZAR_LINEA_EVALUACION(?,?,?,?)}";
+			String sql = "{call ACTUALIZAR_LINEA_EVALUACION(?,?,?,?,?)}";
 			cs = con.prepareCall(sql);
 
                         cs.setDouble("_NOTA_AUTO",lineaEvaluacion.getNotaAutoEval());
                         cs.setDouble("_NOTA_PREV",lineaEvaluacion.getNotaPrevia());
                         cs.setDouble("_NOTA_FINAL",lineaEvaluacion.getNotaFinal());
+                        cs.setString("_ACCIONES",lineaEvaluacion.getAccionesAtomar());
                         cs.setInt("_ID_LINEA_EVALUACION",lineaEvaluacion.getIdLineaEvaluacion());
                         
                         
@@ -90,17 +91,31 @@ public class LineaEvaluacionMySQL implements LineaEvaluacionDAO{
 	}
 	@Override
 	public ArrayList<LineaEvaluacion> listar(){
-		ArrayList<LineaEvaluacion> lineaEvaluacion = new ArrayList<>();
+		ArrayList<LineaEvaluacion> lineasEvaluacion = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
+                        String sql = "{call LISTAR_LINEA_EVAL()}";
+			cs = con.prepareCall(sql);
+                        
+                        rs = cs.executeQuery(sql);
+                        while(rs.next()){
+                            LineaEvaluacion lineaEvaluacion = new LineaEvaluacion();
+                            lineaEvaluacion.setIdLineaEvaluacion(rs.getInt("id_LineasEvaluacion"));
+                            lineaEvaluacion.setNotaAutoEval(rs.getInt("notaAutoEval"));
+                            lineaEvaluacion.setNotaPrevia(rs.getInt("notaPrevia"));
+                            lineaEvaluacion.setNotaFinal(rs.getInt("notaFinal"));
+                            lineaEvaluacion.setAccionesAtomar(rs.getString("accionesAtomar"));
+
+                            lineasEvaluacion.add(lineaEvaluacion);
+                        }
                         
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}finally{
 			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
 		}
-		return lineaEvaluacion;
+		return lineasEvaluacion;
 	}
 }

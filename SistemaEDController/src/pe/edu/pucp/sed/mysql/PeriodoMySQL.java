@@ -24,13 +24,16 @@ public class PeriodoMySQL implements PeriodoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call INSERTAR_PERIODO(?,?,?,?,?)}";
+            String sql = "{call INSERTAR_PERIODO(?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             cs.registerOutParameter("_ID_PERIODO", java.sql.Types.INTEGER);
             cs.setDate("_FECHA_INICIO", 
                    new java.sql.Date(periodo.getFechaInicio().getTime()));
             cs.setDate("_FECHA_FIN", 
                    new java.sql.Date(periodo.getFechaFin().getTime()));
+            cs.setDate("_DIA_NOTIFICACION", 
+                   new java.sql.Date(periodo.getDiaNotificacion().getTime()));
+            cs.setTime("_HORA_NOTIFICACION", periodo.getHoraNotificacion());
             cs.setDouble("_PESO_EVAL_OBJ", periodo.getPesoEvalObj());
             cs.setDouble("_PESO_EVAL_COMP", periodo.getPesoEvalComp());
             cs.executeUpdate();
@@ -50,12 +53,12 @@ public class PeriodoMySQL implements PeriodoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call ACTULIZAR_PERIODO(?,?,?)}";
+            String sql = "{call ACTUALIZAR_PERIODO(?,?,?)}";
             cs = con.prepareCall(sql);
             cs.setInt("_ID_PERIODO", periodo.getIdPeriodo());
-            cs.setDate("_FECHA_INICIO", 
+            cs.setDate("_NEW_INI", 
                    new java.sql.Date(periodo.getFechaInicio().getTime()));
-            cs.setDate("_FECHA_FIN", 
+            cs.setDate("_NEW_FIN", 
                    new java.sql.Date(periodo.getFechaFin().getTime()));
             cs.executeUpdate();
             resultado = 1;
@@ -104,6 +107,8 @@ public class PeriodoMySQL implements PeriodoDAO{
                 per.setFechaFin(formato.parse(rs.getDate("fechaFin").toString()));
                 per.setPesoEvalObj(rs.getDouble("pesoEvalObj"));
                 per.setPesoEvalComp(rs.getDouble("pesoEvalComp"));
+                per.setDiaNotificacion(rs.getDate("diaNotificacion"));
+                per.setHoraNotificacion(rs.getTime("horaNotificacion"));
                 
                 periodos.add(per);
             }

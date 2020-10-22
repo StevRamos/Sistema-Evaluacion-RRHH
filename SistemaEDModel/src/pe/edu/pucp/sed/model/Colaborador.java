@@ -103,8 +103,8 @@ public class Colaborador{
 		this.contrasena = contrasena;
 	};
 
-	public EstadoCuenta getEstadoCuenta(){
-		return this.estadoCuenta;
+	public int getEstadoCuenta(){
+		return this.estadoCuenta.getValue();
 	};
 
 	public void setEstadoCuenta( EstadoCuenta estadoCuenta ){

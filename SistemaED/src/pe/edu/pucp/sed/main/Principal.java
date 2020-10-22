@@ -29,9 +29,9 @@ public class Principal {
 //Colaboradores        
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 //        
-//        ColaboradorDAO daoColab = new ColaboradorMySQL();
-//        Colaborador jefe = new Colaborador();
-//        jefe.setIdColaborador(1);
+        ColaboradorDAO daoColab = new ColaboradorMySQL();
+        Colaborador jefe = new Colaborador();
+        jefe.setIdColaborador(1);
 //        Colaborador col1 = new Colaborador();
 ////        
 //        try{
