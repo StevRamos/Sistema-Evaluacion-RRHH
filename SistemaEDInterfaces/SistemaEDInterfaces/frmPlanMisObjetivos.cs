@@ -106,10 +106,5 @@ namespace SistemaEDInterfaces
             }
                 
         }
-
-        private void dgvMisObjetivos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
