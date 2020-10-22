@@ -21,5 +21,12 @@ namespace SistemaEDInterfaces
         {
             Global.formPrincipal.abrirFormularioHijo(false, new frmEvAutoevaluacionComp());
         }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se ha registrado correctamente",
+                "Mensaje Informativo", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
     }
 }

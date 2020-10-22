@@ -162,17 +162,35 @@
     <Compile Include="frmEvMisTrabajadores.Designer.cs">
       <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresCompetencias.cs">
+    <Compile Include="frmEvMisTrabajadoresFinalCompetencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresCompetencias.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresCompetencias.cs</DependentUpon>
+    <Compile Include="frmEvMisTrabajadoresFinalCompetencias.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresFinalCompetencias.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresEvaluacion.cs">
+    <Compile Include="frmEvMisTrabajadoresPreviaCompetencias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresEvaluacion.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresEvaluacion.cs</DependentUpon>
+    <Compile Include="frmEvMisTrabajadoresPreviaCompetencias.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresPreviaCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresEvPotencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresEvPotencial.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresEvPotencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresFinal.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresOpciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresOpciones.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresOpciones.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEvMisTrabajadoresPotenciales.cs">
       <SubType>Form</SubType>
@@ -180,17 +198,59 @@
     <Compile Include="frmEvMisTrabajadoresPotenciales.Designer.cs">
       <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEvMisTrabajadoresPrevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPrevia.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresPrevia.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHisMisEvaluaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHisMisEvaluaciones.Designer.cs">
       <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultado.Designer.cs">
+      <DependentUpon>frmHisMisEvaluacionesResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultadoC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultadoC.Designer.cs">
+      <DependentUpon>frmHisMisEvaluacionesResultadoC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultadoP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultadoP.Designer.cs">
+      <DependentUpon>frmHisMisEvaluacionesResultadoP.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHisMisTrabajadores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmHisMisTrabajadores.Designer.cs">
       <DependentUpon>frmHisMisTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultado.Designer.cs">
+      <DependentUpon>frmHisMisTrabajadoresResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultadoC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultadoC.Designer.cs">
+      <DependentUpon>frmHisMisTrabajadoresResultadoC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultadoP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultadoP.Designer.cs">
+      <DependentUpon>frmHisMisTrabajadoresResultadoP.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInicio.cs">
       <SubType>Form</SubType>
@@ -301,20 +361,50 @@
     <EmbeddedResource Include="frmEvMisTrabajadores.resx">
       <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresCompetencias.resx">
-      <DependentUpon>frmEvMisTrabajadoresCompetencias.cs</DependentUpon>
+    <EmbeddedResource Include="frmEvMisTrabajadoresFinalCompetencias.resx">
+      <DependentUpon>frmEvMisTrabajadoresFinalCompetencias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresEvaluacion.resx">
-      <DependentUpon>frmEvMisTrabajadoresEvaluacion.cs</DependentUpon>
+    <EmbeddedResource Include="frmEvMisTrabajadoresPreviaCompetencias.resx">
+      <DependentUpon>frmEvMisTrabajadoresPreviaCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresEvPotencial.resx">
+      <DependentUpon>frmEvMisTrabajadoresEvPotencial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresFinal.resx">
+      <DependentUpon>frmEvMisTrabajadoresFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresOpciones.resx">
+      <DependentUpon>frmEvMisTrabajadoresOpciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvMisTrabajadoresPotenciales.resx">
       <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresPrevia.resx">
+      <DependentUpon>frmEvMisTrabajadoresPrevia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHisMisEvaluaciones.resx">
       <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisEvaluacionesResultado.resx">
+      <DependentUpon>frmHisMisEvaluacionesResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisEvaluacionesResultadoC.resx">
+      <DependentUpon>frmHisMisEvaluacionesResultadoC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisEvaluacionesResultadoP.resx">
+      <DependentUpon>frmHisMisEvaluacionesResultadoP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHisMisTrabajadores.resx">
       <DependentUpon>frmHisMisTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisTrabajadoresResultado.resx">
+      <DependentUpon>frmHisMisTrabajadoresResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisTrabajadoresResultadoC.resx">
+      <DependentUpon>frmHisMisTrabajadoresResultadoC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisTrabajadoresResultadoP.resx">
+      <DependentUpon>frmHisMisTrabajadoresResultadoP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>

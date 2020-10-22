@@ -39,13 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMisObjetivos = new System.Windows.Forms.Label();
             this.dgvMisObjetivos = new System.Windows.Forms.DataGridView();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.meta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -56,13 +49,13 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaP2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaF2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,6 +66,18 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.meta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaP1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notaF1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -115,10 +120,12 @@
             this.unidadMedida,
             this.peso,
             this.nota,
-            this.observacion});
+            this.notaP1,
+            this.notaF1});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
             this.dgvMisObjetivos.Location = new System.Drawing.Point(39, 158);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
+            this.dgvMisObjetivos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,49 +142,6 @@
             this.dgvMisObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMisObjetivos.Size = new System.Drawing.Size(1024, 223);
             this.dgvMisObjetivos.TabIndex = 9;
-            // 
-            // numero
-            // 
-            this.numero.HeaderText = "Numero";
-            this.numero.Name = "numero";
-            this.numero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.numero.Width = 70;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.descripcion.Width = 500;
-            // 
-            // meta
-            // 
-            this.meta.HeaderText = "Meta";
-            this.meta.Name = "meta";
-            // 
-            // unidadMedida
-            // 
-            this.unidadMedida.HeaderText = "UnidadMedida";
-            this.unidadMedida.Name = "unidadMedida";
-            this.unidadMedida.Width = 200;
-            // 
-            // peso
-            // 
-            this.peso.HeaderText = "Peso";
-            this.peso.Name = "peso";
-            this.peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // nota
-            // 
-            this.nota.HeaderText = "Nota";
-            this.nota.Name = "nota";
-            // 
-            // observacion
-            // 
-            this.observacion.HeaderText = "Observacion";
-            this.observacion.Name = "observacion";
-            this.observacion.Width = 400;
             // 
             // label1
             // 
@@ -210,7 +174,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(46, 492);
+            this.label3.Location = new System.Drawing.Point(46, 496);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 25);
             this.label3.TabIndex = 12;
@@ -240,10 +204,13 @@
             this.nombre,
             this.dataGridViewTextBoxColumn2,
             this.peso2,
-            this.nota2});
+            this.nota2,
+            this.notaP2,
+            this.notaF2});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(39, 549);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -263,8 +230,9 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Numero";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Número";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.dataGridViewTextBoxColumn1.Width = 70;
@@ -273,12 +241,14 @@
             // 
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
             this.nombre.Width = 300;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Descripcion";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Descripción";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.dataGridViewTextBoxColumn2.Width = 500;
             // 
@@ -286,11 +256,28 @@
             // 
             this.peso2.HeaderText = "Peso";
             this.peso2.Name = "peso2";
+            this.peso2.ReadOnly = true;
             // 
             // nota2
             // 
-            this.nota2.HeaderText = "Nota";
+            this.nota2.HeaderText = "Nota Autoevaluación";
             this.nota2.Name = "nota2";
+            this.nota2.ReadOnly = true;
+            this.nota2.Width = 150;
+            // 
+            // notaP2
+            // 
+            this.notaP2.HeaderText = "Nota Previa";
+            this.notaP2.Name = "notaP2";
+            this.notaP2.ReadOnly = true;
+            this.notaP2.Width = 150;
+            // 
+            // notaF2
+            // 
+            this.notaF2.HeaderText = "Nota Final";
+            this.notaF2.Name = "notaF2";
+            this.notaF2.ReadOnly = true;
+            this.notaF2.Width = 150;
             // 
             // btnSeleccionar
             // 
@@ -340,28 +327,11 @@
             this.textBox3.Size = new System.Drawing.Size(109, 20);
             this.textBox3.TabIndex = 18;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(222, 946);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 25);
-            this.label6.TabIndex = 19;
-            this.label6.Text = "Escala:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(364, 951);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(109, 20);
-            this.textBox4.TabIndex = 20;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(46, 1019);
+            this.label7.Location = new System.Drawing.Point(45, 1005);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(135, 25);
             this.label7.TabIndex = 21;
@@ -393,7 +363,7 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.dataGridView2.EnableHeadersVisualStyles = false;
-            this.dataGridView2.Location = new System.Drawing.Point(51, 1082);
+            this.dataGridView2.Location = new System.Drawing.Point(50, 1047);
             this.dataGridView2.Name = "dataGridView2";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
@@ -409,7 +379,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1024, 279);
+            this.dataGridView2.Size = new System.Drawing.Size(1024, 320);
             this.dataGridView2.TabIndex = 22;
             // 
             // dataGridViewTextBoxColumn3
@@ -440,8 +410,9 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Nota";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Nota Final";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 150;
             // 
             // textBox5
             // 
@@ -474,6 +445,98 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(932, 31);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(109, 20);
+            this.textBox4.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(614, 26);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(299, 25);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Calificación de Desempeño";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(932, 79);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(109, 20);
+            this.textBox6.TabIndex = 29;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(614, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(280, 25);
+            this.label9.TabIndex = 28;
+            this.label9.Text = "Calificación de Potencial:";
+            // 
+            // numero
+            // 
+            this.numero.HeaderText = "Número";
+            this.numero.Name = "numero";
+            this.numero.ReadOnly = true;
+            this.numero.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.numero.Width = 70;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.descripcion.Width = 500;
+            // 
+            // meta
+            // 
+            this.meta.HeaderText = "Meta";
+            this.meta.Name = "meta";
+            this.meta.ReadOnly = true;
+            // 
+            // unidadMedida
+            // 
+            this.unidadMedida.HeaderText = "UnidadMedida";
+            this.unidadMedida.Name = "unidadMedida";
+            this.unidadMedida.ReadOnly = true;
+            this.unidadMedida.Width = 200;
+            // 
+            // peso
+            // 
+            this.peso.HeaderText = "Peso";
+            this.peso.Name = "peso";
+            this.peso.ReadOnly = true;
+            this.peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // nota
+            // 
+            this.nota.HeaderText = "Nota Autoevaluación";
+            this.nota.Name = "nota";
+            this.nota.ReadOnly = true;
+            this.nota.Width = 150;
+            // 
+            // notaP1
+            // 
+            this.notaP1.HeaderText = "Nota Previa";
+            this.notaP1.Name = "notaP1";
+            this.notaP1.ReadOnly = true;
+            this.notaP1.Width = 150;
+            // 
+            // notaF1
+            // 
+            this.notaF1.HeaderText = "Nota Final";
+            this.notaF1.Name = "notaF1";
+            this.notaF1.ReadOnly = true;
+            this.notaF1.Width = 150;
+            // 
             // frmEvMisResultados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,13 +546,15 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox2);
@@ -519,36 +584,41 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn peso2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notaP2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notaF2;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn meta;
         private System.Windows.Forms.DataGridViewTextBoxColumn unidadMedida;
         private System.Windows.Forms.DataGridViewTextBoxColumn peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observacion;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn peso2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota2;
-        private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notaP1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notaF1;
     }
 }

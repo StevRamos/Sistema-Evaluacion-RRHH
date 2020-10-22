@@ -31,15 +31,41 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.lblMisObjetivos = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.dgvMisObjetivos = new System.Windows.Forms.DataGridView();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblMisObjetivos = new System.Windows.Forms.Label();
+            this.nota3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             this.SuspendLayout();
+            // 
+            // lblMisObjetivos
+            // 
+            this.lblMisObjetivos.AutoSize = true;
+            this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblMisObjetivos.Location = new System.Drawing.Point(25, 25);
+            this.lblMisObjetivos.Name = "lblMisObjetivos";
+            this.lblMisObjetivos.Size = new System.Drawing.Size(295, 56);
+            this.lblMisObjetivos.TabIndex = 14;
+            this.lblMisObjetivos.Text = "Potenciales";
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Location = new System.Drawing.Point(837, 41);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
+            this.btnRegresar.TabIndex = 16;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // dgvMisObjetivos
             // 
@@ -65,11 +91,10 @@
             this.nombre,
             this.descripcion,
             this.peso,
-            this.nota});
+            this.nota3});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
-            this.dgvMisObjetivos.Location = new System.Drawing.Point(35, 114);
+            this.dgvMisObjetivos.Location = new System.Drawing.Point(35, 120);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
-            this.dgvMisObjetivos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -84,52 +109,36 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvMisObjetivos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMisObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMisObjetivos.Size = new System.Drawing.Size(960, 433);
-            this.dgvMisObjetivos.TabIndex = 15;
+            this.dgvMisObjetivos.Size = new System.Drawing.Size(951, 433);
+            this.dgvMisObjetivos.TabIndex = 17;
             // 
             // numero
             // 
-            this.numero.HeaderText = "Numero";
+            this.numero.HeaderText = "Número";
             this.numero.Name = "numero";
-            this.numero.ReadOnly = true;
             // 
             // nombre
             // 
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
             this.nombre.Width = 200;
             // 
             // descripcion
             // 
-            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.HeaderText = "Descripción";
             this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
             this.descripcion.Width = 400;
             // 
             // peso
             // 
             this.peso.HeaderText = "Peso";
             this.peso.Name = "peso";
-            this.peso.ReadOnly = true;
             // 
-            // nota
+            // nota3
             // 
-            this.nota.HeaderText = "Nota ";
-            this.nota.Name = "nota";
-            this.nota.ReadOnly = true;
-            this.nota.Width = 150;
-            // 
-            // lblMisObjetivos
-            // 
-            this.lblMisObjetivos.AutoSize = true;
-            this.lblMisObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblMisObjetivos.Location = new System.Drawing.Point(25, 25);
-            this.lblMisObjetivos.Name = "lblMisObjetivos";
-            this.lblMisObjetivos.Size = new System.Drawing.Size(295, 56);
-            this.lblMisObjetivos.TabIndex = 14;
-            this.lblMisObjetivos.Text = "Potenciales";
+            this.nota3.HeaderText = "Nota Final";
+            this.nota3.Name = "nota3";
+            this.nota3.Width = 150;
             // 
             // frmEvMisResultadosPotenciales
             // 
@@ -138,6 +147,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
             this.Controls.Add(this.dgvMisObjetivos);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.lblMisObjetivos);
             this.Name = "frmEvMisResultadosPotenciales";
             this.Text = "frmEvMisResultadosPotenciales";
@@ -148,13 +158,13 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Label lblMisObjetivos;
+        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.DataGridView dgvMisObjetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn peso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
-        private System.Windows.Forms.Label lblMisObjetivos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota3;
     }
 }
