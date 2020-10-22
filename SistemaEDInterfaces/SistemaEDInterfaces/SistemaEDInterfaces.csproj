@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7FEA27BB-94A5-4D04-BA4D-D4764060537D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemaEDInterfaces</RootNamespace>
+    <AssemblyName>SistemaEDInterfaces</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\..\..\..\..\..\Documents\Bunifu\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frmAdmCalibrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmCalibrar.Designer.cs">
+      <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestColab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestColab.Designer.cs">
+      <DependentUpon>frmAdmGestColab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestComp.Designer.cs">
+      <DependentUpon>frmAdmGestComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestCron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestCron.Designer.cs">
+      <DependentUpon>frmAdmGestCron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestCronVerDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestCronVerDetalle.designer.cs">
+      <DependentUpon>frmAdmGestCronVerDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestGer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestGer.Designer.cs">
+      <DependentUpon>frmAdmGestGer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestPot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestPot.Designer.cs">
+      <DependentUpon>frmAdmGestPot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestPuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestPuestos.Designer.cs">
+      <DependentUpon>frmAdmGestPuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestRangos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestRangos.Designer.cs">
+      <DependentUpon>frmAdmGestRangos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubcomp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubcomp.Designer.cs">
+      <DependentUpon>frmAdmGestSubcomp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmGestSubpot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmGestSubpot.Designer.cs">
+      <DependentUpon>frmAdmGestSubpot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdmSeguimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdmSeguimiento.Designer.cs">
+      <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvAutoevaluacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvAutoevaluacion.Designer.cs">
+      <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvAutoevaluacionComp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvAutoevaluacionComp.Designer.cs">
+      <DependentUpon>frmEvAutoevaluacionComp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvFeedback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvFeedback.Designer.cs">
+      <DependentUpon>frmEvFeedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisResultados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisResultados.Designer.cs">
+      <DependentUpon>frmEvMisResultados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisResultadosCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisResultadosCompetencias.Designer.cs">
+      <DependentUpon>frmEvMisResultadosCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisResultadosPotenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisResultadosPotenciales.Designer.cs">
+      <DependentUpon>frmEvMisResultadosPotenciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadores.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresFinalCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresFinalCompetencias.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresFinalCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPreviaCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPreviaCompetencias.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresPreviaCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresEvPotencial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresEvPotencial.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresEvPotencial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresFinal.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresFinal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresOpciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresOpciones.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresOpciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPotenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPotenciales.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPrevia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvMisTrabajadoresPrevia.Designer.cs">
+      <DependentUpon>frmEvMisTrabajadoresPrevia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisEvaluaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisEvaluaciones.Designer.cs">
+      <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultado.Designer.cs">
+      <DependentUpon>frmHisMisEvaluacionesResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultadoC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultadoC.Designer.cs">
+      <DependentUpon>frmHisMisEvaluacionesResultadoC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultadoP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisEvaluacionesResultadoP.Designer.cs">
+      <DependentUpon>frmHisMisEvaluacionesResultadoP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadores.Designer.cs">
+      <DependentUpon>frmHisMisTrabajadores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultado.Designer.cs">
+      <DependentUpon>frmHisMisTrabajadoresResultado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultadoC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultadoC.Designer.cs">
+      <DependentUpon>frmHisMisTrabajadoresResultadoC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultadoP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHisMisTrabajadoresResultadoP.Designer.cs">
+      <DependentUpon>frmHisMisTrabajadoresResultadoP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicio.Designer.cs">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanAgregarObjetivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanAgregarObjetivo.Designer.cs">
+      <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanAgregarObservacionObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanAgregarObservacionObj.Designer.cs">
+      <DependentUpon>frmPlanAgregarObservacionObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanEditarObjetivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanEditarObjetivo.Designer.cs">
+      <DependentUpon>frmPlanEditarObjetivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanMisObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanMisObjetivos.Designer.cs">
+      <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanRealizarRevision.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanRealizarRevision.Designer.cs">
+      <DependentUpon>frmPlanRealizarRevision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanValidarObjetivos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanValidarObjetivos.Designer.cs">
+      <DependentUpon>frmPlanValidarObjetivos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPlanVerDetalle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPlanVerDetalle.Designer.cs">
+      <DependentUpon>frmPlanVerDetalle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRep9Box.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRep9Box.Designer.cs">
+      <DependentUpon>frmRep9Box.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRepPDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRepPDI.Designer.cs">
+      <DependentUpon>frmRepPDI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmAdmCalibrar.resx">
+      <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestColab.resx">
+      <DependentUpon>frmAdmGestColab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestComp.resx">
+      <DependentUpon>frmAdmGestComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestCron.resx">
+      <DependentUpon>frmAdmGestCron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestCronVerDetalle.resx">
+      <DependentUpon>frmAdmGestCronVerDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestGer.resx">
+      <DependentUpon>frmAdmGestGer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestPot.resx">
+      <DependentUpon>frmAdmGestPot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestPuestos.resx">
+      <DependentUpon>frmAdmGestPuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestRangos.resx">
+      <DependentUpon>frmAdmGestRangos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubcomp.resx">
+      <DependentUpon>frmAdmGestSubcomp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmGestSubpot.resx">
+      <DependentUpon>frmAdmGestSubpot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdmSeguimiento.resx">
+      <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvAutoevaluacion.resx">
+      <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvAutoevaluacionComp.resx">
+      <DependentUpon>frmEvAutoevaluacionComp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvFeedback.resx">
+      <DependentUpon>frmEvFeedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisResultados.resx">
+      <DependentUpon>frmEvMisResultados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisResultadosCompetencias.resx">
+      <DependentUpon>frmEvMisResultadosCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisResultadosPotenciales.resx">
+      <DependentUpon>frmEvMisResultadosPotenciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadores.resx">
+      <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresFinalCompetencias.resx">
+      <DependentUpon>frmEvMisTrabajadoresFinalCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresPreviaCompetencias.resx">
+      <DependentUpon>frmEvMisTrabajadoresPreviaCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresEvPotencial.resx">
+      <DependentUpon>frmEvMisTrabajadoresEvPotencial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresFinal.resx">
+      <DependentUpon>frmEvMisTrabajadoresFinal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresOpciones.resx">
+      <DependentUpon>frmEvMisTrabajadoresOpciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresPotenciales.resx">
+      <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvMisTrabajadoresPrevia.resx">
+      <DependentUpon>frmEvMisTrabajadoresPrevia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisEvaluaciones.resx">
+      <DependentUpon>frmHisMisEvaluaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisEvaluacionesResultado.resx">
+      <DependentUpon>frmHisMisEvaluacionesResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisEvaluacionesResultadoC.resx">
+      <DependentUpon>frmHisMisEvaluacionesResultadoC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisEvaluacionesResultadoP.resx">
+      <DependentUpon>frmHisMisEvaluacionesResultadoP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisTrabajadores.resx">
+      <DependentUpon>frmHisMisTrabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisTrabajadoresResultado.resx">
+      <DependentUpon>frmHisMisTrabajadoresResultado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisTrabajadoresResultadoC.resx">
+      <DependentUpon>frmHisMisTrabajadoresResultadoC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHisMisTrabajadoresResultadoP.resx">
+      <DependentUpon>frmHisMisTrabajadoresResultadoP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicio.resx">
+      <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanAgregarObjetivo.resx">
+      <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanAgregarObservacionObj.resx">
+      <DependentUpon>frmPlanAgregarObservacionObj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanEditarObjetivo.resx">
+      <DependentUpon>frmPlanEditarObjetivo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanMisObjetivos.resx">
+      <DependentUpon>frmPlanMisObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanRealizarRevision.resx">
+      <DependentUpon>frmPlanRealizarRevision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanValidarObjetivos.resx">
+      <DependentUpon>frmPlanValidarObjetivos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPlanVerDetalle.resx">
+      <DependentUpon>frmPlanVerDetalle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRep9Box.resx">
+      <DependentUpon>frmRep9Box.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRepPDI.resx">
+      <DependentUpon>frmRepPDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Iconos\administracion.png" />
+    <Content Include="Iconos\casa.png" />
+    <Content Include="Iconos\cheque %281%29.png" />
+    <Content Include="Iconos\cheque.png" />
+    <Content Include="Iconos\evaluacion %281%29.png" />
+    <Content Include="Iconos\evaluacion.png" />
+    <Content Include="Iconos\flecha-hacia-arriba.png" />
+    <Content Include="Iconos\historial-medico.png" />
+    <Content Include="Iconos\planificacion.png" />
+    <Content Include="Iconos\reportes.png" />
+    <Content Include="Iconos\usuario.png" />
+    <None Include="Iconos\PUCP.png" />
+    <None Include="Iconos\PUCPLogo.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
