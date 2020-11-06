@@ -52,5 +52,35 @@ namespace SistemaEDInterfaces
         {
             this.Close();
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGestComSelecComPesos_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog buscar = new OpenFileDialog();
+            if (buscar.ShowDialog() == DialogResult.OK)
+            {
+                txtNomArchCompePesosMav.Text = buscar.FileName;
+            }
+        }
+
+        private void btnRegreCargMavCompePesos_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCargarCompetMasiva_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se cargaron los archivos exitosamente");
+            this.Close();
+        }
     }
 }
