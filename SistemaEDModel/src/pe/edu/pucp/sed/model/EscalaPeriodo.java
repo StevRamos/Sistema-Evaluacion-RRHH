@@ -3,6 +3,7 @@ package pe.edu.pucp.sed.model;
 public class EscalaPeriodo{
 	private double notaMax;
 	private double notaMin;
+	private double porcentajeCupos;
 	private Escala escala;
 	private Periodo periodo;
 
@@ -25,6 +26,14 @@ public class EscalaPeriodo{
 
 	public void setNotaMin( double notaMin ){
 		this.notaMin = notaMin;
+	};
+	
+	public double getPorcentajeCupos(){
+		return this.porcentajeCupos;
+	};
+
+	public void setPorcentajeCupos( double porcentajeCupos ){
+		this.porcentajeCupos = porcentajeCupos;
 	};
 
 	public Escala getEscala(){
