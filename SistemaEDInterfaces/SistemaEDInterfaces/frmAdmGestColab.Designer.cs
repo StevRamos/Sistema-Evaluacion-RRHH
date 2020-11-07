@@ -36,11 +36,6 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnGestColabCargaMav = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnGestColabVerDetalle = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI_JEFE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +44,12 @@
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnGestColabCargaMav = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnGestColabVerDetalle = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,65 +142,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(1431, 591);
             this.dataGridView1.TabIndex = 41;
             // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(882, 97);
-            this.label2.TabIndex = 40;
-            this.label2.Text = "Gestionar Colaboradores";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnGestColabCargaMav
-            // 
-            this.btnGestColabCargaMav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnGestColabCargaMav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestColabCargaMav.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestColabCargaMav.ForeColor = System.Drawing.Color.White;
-            this.btnGestColabCargaMav.Location = new System.Drawing.Point(25, 155);
-            this.btnGestColabCargaMav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGestColabCargaMav.Name = "btnGestColabCargaMav";
-            this.btnGestColabCargaMav.Size = new System.Drawing.Size(251, 32);
-            this.btnGestColabCargaMav.TabIndex = 39;
-            this.btnGestColabCargaMav.Text = " Cargar Masivamente";
-            this.btnGestColabCargaMav.UseVisualStyleBackColor = false;
-            this.btnGestColabCargaMav.Click += new System.EventHandler(this.btnGestColabCargaMav_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1240, 130);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(39, 19);
-            this.label1.TabIndex = 47;
-            this.label1.Text = "DNI";
-            // 
-            // btnGestColabVerDetalle
-            // 
-            this.btnGestColabVerDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnGestColabVerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestColabVerDetalle.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestColabVerDetalle.ForeColor = System.Drawing.Color.White;
-            this.btnGestColabVerDetalle.Location = new System.Drawing.Point(338, 154);
-            this.btnGestColabVerDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGestColabVerDetalle.Name = "btnGestColabVerDetalle";
-            this.btnGestColabVerDetalle.Size = new System.Drawing.Size(251, 32);
-            this.btnGestColabVerDetalle.TabIndex = 49;
-            this.btnGestColabVerDetalle.Text = "Ver Detalle Colaborador";
-            this.btnGestColabVerDetalle.UseVisualStyleBackColor = false;
-            this.btnGestColabVerDetalle.Click += new System.EventHandler(this.btnGestColabVerDetalle_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(1244, 165);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 22);
-            this.textBox1.TabIndex = 50;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "ID";
@@ -264,12 +206,86 @@
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 125;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(882, 97);
+            this.label2.TabIndex = 40;
+            this.label2.Text = "Gestionar Colaboradores";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnGestColabCargaMav
+            // 
+            this.btnGestColabCargaMav.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnGestColabCargaMav.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestColabCargaMav.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestColabCargaMav.ForeColor = System.Drawing.Color.White;
+            this.btnGestColabCargaMav.Location = new System.Drawing.Point(25, 155);
+            this.btnGestColabCargaMav.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGestColabCargaMav.Name = "btnGestColabCargaMav";
+            this.btnGestColabCargaMav.Size = new System.Drawing.Size(251, 32);
+            this.btnGestColabCargaMav.TabIndex = 39;
+            this.btnGestColabCargaMav.Text = " Cargar Masivamente";
+            this.btnGestColabCargaMav.UseVisualStyleBackColor = false;
+            this.btnGestColabCargaMav.Click += new System.EventHandler(this.btnGestColabCargaMav_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(1240, 130);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(39, 19);
+            this.label1.TabIndex = 47;
+            this.label1.Text = "DNI";
+            // 
+            // btnGestColabVerDetalle
+            // 
+            this.btnGestColabVerDetalle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnGestColabVerDetalle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestColabVerDetalle.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestColabVerDetalle.ForeColor = System.Drawing.Color.White;
+            this.btnGestColabVerDetalle.Location = new System.Drawing.Point(338, 154);
+            this.btnGestColabVerDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGestColabVerDetalle.Name = "btnGestColabVerDetalle";
+            this.btnGestColabVerDetalle.Size = new System.Drawing.Size(251, 32);
+            this.btnGestColabVerDetalle.TabIndex = 49;
+            this.btnGestColabVerDetalle.Text = "Ver Detalle Colaborador";
+            this.btnGestColabVerDetalle.UseVisualStyleBackColor = false;
+            this.btnGestColabVerDetalle.Click += new System.EventHandler(this.btnGestColabVerDetalle_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(1244, 165);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(224, 22);
+            this.textBox1.TabIndex = 50;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(25, 854);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(251, 32);
+            this.button1.TabIndex = 51;
+            this.button1.Text = "Desactivar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frmAdmGestColab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1476, 929);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnGestColabVerDetalle);
             this.Controls.Add(this.label1);
@@ -309,5 +325,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.Button button1;
     }
 }
