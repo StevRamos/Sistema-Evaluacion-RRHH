@@ -378,6 +378,11 @@ namespace SistemaEDInterfaces
 
         }
 
-        
+        private void btnLblNombreColab_Click(object sender, EventArgs e)
+        {
+            lblTituloBarraSuperior.Text = "Mi perfil";
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmPerfilColaborador());
+        }
     }
 }

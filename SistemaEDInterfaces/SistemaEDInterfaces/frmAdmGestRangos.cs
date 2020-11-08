@@ -65,5 +65,10 @@ namespace SistemaEDInterfaces
         {
             txtDebilidadMax.Text = txtOportunidadMin.Text;
         }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

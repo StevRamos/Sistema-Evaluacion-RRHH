@@ -82,7 +82,7 @@ namespace SistemaEDInterfaces
                             MessageBoxIcon.Information); 
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void btnVerDetalle_Click(object sender, EventArgs e)
         {
             Global.formPrincipal.abrirFormularioHijo(false,new frmPlanEditarObjetivo()); 
             

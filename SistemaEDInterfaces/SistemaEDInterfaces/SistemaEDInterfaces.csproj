@@ -354,6 +354,12 @@
     <Compile Include="frmInicio.Designer.cs">
       <DependentUpon>frmInicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPerfilColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPerfilColaborador.Designer.cs">
+      <DependentUpon>frmPerfilColaborador.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPlanAgregarObjetivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -576,6 +582,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicio.resx">
       <DependentUpon>frmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPerfilColaborador.resx">
+      <DependentUpon>frmPerfilColaborador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPlanAgregarObjetivo.resx">
       <DependentUpon>frmPlanAgregarObjetivo.cs</DependentUpon>

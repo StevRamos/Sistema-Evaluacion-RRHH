@@ -645,6 +645,7 @@
             // 
             this.btnLblNombreColab.AutoSize = true;
             this.btnLblNombreColab.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
+            this.btnLblNombreColab.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLblNombreColab.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnLblNombreColab.FlatAppearance.BorderSize = 0;
             this.btnLblNombreColab.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
@@ -660,6 +661,7 @@
             this.btnLblNombreColab.Text = "Nombre de Colaborador";
             this.btnLblNombreColab.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnLblNombreColab.UseVisualStyleBackColor = false;
+            this.btnLblNombreColab.Click += new System.EventHandler(this.btnLblNombreColab_Click);
             // 
             // btnLogOut
             // 

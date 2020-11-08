@@ -17,14 +17,32 @@ namespace SistemaEDInterfaces
             InitializeComponent();
         }
 
+        void cambiarEstadoComponentes(int estado)
+        {
+            if (estado == 1)
+            {
+                txtBoxDescripcion.Enabled = true;
+                txtPeso.Enabled = true;
+                txtMeta.Enabled = true;
+                txtUnidadMedida.Enabled = true; 
+            }
+            else
+            {
+                txtBoxDescripcion.Enabled = false;
+                txtPeso.Enabled = false;
+                txtMeta.Enabled = false;
+                txtUnidadMedida.Enabled = false;
+            }
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            cambiarEstadoComponentes(2);
             MessageBox.Show("Se guardaron los cambios.",
                 "Mensaje de confirmacion",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
             
-            Global.formPrincipal.cerrarFormularioHijo();
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -39,9 +57,15 @@ namespace SistemaEDInterfaces
 
         }
 
+        
         private void txtUnidadMedida_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            cambiarEstadoComponentes(1); 
         }
     }
 }

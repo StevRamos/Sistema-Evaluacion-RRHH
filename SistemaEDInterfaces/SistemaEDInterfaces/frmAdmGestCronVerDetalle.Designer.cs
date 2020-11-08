@@ -37,6 +37,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEditarObjetivos = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -60,14 +63,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.dgvPlanificacion = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dgvEvaluaciones = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.dgvPDI = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,13 +72,28 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.IDev = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreEv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaInicioEv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaFinEv = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEvaluaciones)).BeginInit();
+            this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvPlanificacion = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dgvCronEvFinal = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dgvCronEvPrevia = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPDI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvFinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvPrevia)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEditarObjetivos
@@ -299,168 +309,12 @@
             this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaInicio.TabIndex = 89;
             // 
-            // dgvPlanificacion
-            // 
-            this.dgvPlanificacion.AllowUserToAddRows = false;
-            this.dgvPlanificacion.AllowUserToDeleteRows = false;
-            this.dgvPlanificacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvPlanificacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvPlanificacion.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPlanificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPlanificacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlanificacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvPlanificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPlanificacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nombre,
-            this.FechaInicio,
-            this.FechaFin});
-            this.dgvPlanificacion.EnableHeadersVisualStyles = false;
-            this.dgvPlanificacion.Location = new System.Drawing.Point(33, 545);
-            this.dgvPlanificacion.MultiSelect = false;
-            this.dgvPlanificacion.Name = "dgvPlanificacion";
-            this.dgvPlanificacion.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPlanificacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPlanificacion.RowHeadersVisible = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPlanificacion.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPlanificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlanificacion.Size = new System.Drawing.Size(935, 294);
-            this.dgvPlanificacion.TabIndex = 90;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label8.Location = new System.Drawing.Point(28, 500);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(475, 25);
-            this.label8.TabIndex = 91;
-            this.label8.Text = "Cronograma para Planificación de Objetivos:";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ID.Width = 70;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Nombre.Width = 450;
-            // 
-            // FechaInicio
-            // 
-            this.FechaInicio.DataPropertyName = "FechaInicio";
-            this.FechaInicio.HeaderText = "Fecha de Inicio";
-            this.FechaInicio.Name = "FechaInicio";
-            this.FechaInicio.ReadOnly = true;
-            this.FechaInicio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FechaInicio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.FechaInicio.Width = 200;
-            // 
-            // FechaFin
-            // 
-            this.FechaFin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FechaFin.DataPropertyName = "FechaFin";
-            this.FechaFin.HeaderText = "Fecha de Fin";
-            this.FechaFin.Name = "FechaFin";
-            this.FechaFin.ReadOnly = true;
-            this.FechaFin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FechaFin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.FechaFin.Width = 200;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label9.Location = new System.Drawing.Point(28, 873);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(345, 25);
-            this.label9.TabIndex = 92;
-            this.label9.Text = "Cronograma para Evaluaciones:";
-            // 
-            // dgvEvaluaciones
-            // 
-            this.dgvEvaluaciones.AllowUserToAddRows = false;
-            this.dgvEvaluaciones.AllowUserToDeleteRows = false;
-            this.dgvEvaluaciones.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEvaluaciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvEvaluaciones.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEvaluaciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvEvaluaciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEvaluaciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvEvaluaciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEvaluaciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IDev,
-            this.NombreEv,
-            this.FechaInicioEv,
-            this.FechaFinEv});
-            this.dgvEvaluaciones.EnableHeadersVisualStyles = false;
-            this.dgvEvaluaciones.Location = new System.Drawing.Point(33, 927);
-            this.dgvEvaluaciones.MultiSelect = false;
-            this.dgvEvaluaciones.Name = "dgvEvaluaciones";
-            this.dgvEvaluaciones.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEvaluaciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvEvaluaciones.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvEvaluaciones.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvEvaluaciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEvaluaciones.Size = new System.Drawing.Size(923, 294);
-            this.dgvEvaluaciones.TabIndex = 93;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label10.Location = new System.Drawing.Point(28, 1246);
+            this.label10.Location = new System.Drawing.Point(28, 1581);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(649, 25);
             this.label10.TabIndex = 94;
@@ -476,14 +330,14 @@
             this.dgvPDI.BackgroundColor = System.Drawing.Color.White;
             this.dgvPDI.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPDI.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPDI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPDI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPDI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPDI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
@@ -491,26 +345,26 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.dgvPDI.EnableHeadersVisualStyles = false;
-            this.dgvPDI.Location = new System.Drawing.Point(33, 1297);
+            this.dgvPDI.Location = new System.Drawing.Point(33, 1632);
             this.dgvPDI.MultiSelect = false;
             this.dgvPDI.Name = "dgvPDI";
             this.dgvPDI.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPDI.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPDI.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPDI.RowHeadersVisible = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPDI.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPDI.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPDI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPDI.Size = new System.Drawing.Size(935, 294);
+            this.dgvPDI.Size = new System.Drawing.Size(921, 294);
             this.dgvPDI.TabIndex = 95;
             // 
             // dataGridViewTextBoxColumn5
@@ -592,45 +446,299 @@
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // IDev
+            // FechaFin
             // 
-            this.IDev.DataPropertyName = "IDEv";
-            this.IDev.HeaderText = "ID";
-            this.IDev.Name = "IDev";
-            this.IDev.ReadOnly = true;
-            this.IDev.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IDev.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.IDev.Width = 70;
+            this.FechaFin.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.FechaFin.DataPropertyName = "FechaFin";
+            this.FechaFin.HeaderText = "Fecha de Fin";
+            this.FechaFin.Name = "FechaFin";
+            this.FechaFin.ReadOnly = true;
+            this.FechaFin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FechaFin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.FechaFin.Width = 200;
             // 
-            // NombreEv
+            // FechaInicio
             // 
-            this.NombreEv.DataPropertyName = "Nombre";
-            this.NombreEv.HeaderText = "Nombre";
-            this.NombreEv.Name = "NombreEv";
-            this.NombreEv.ReadOnly = true;
-            this.NombreEv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.NombreEv.Width = 450;
+            this.FechaInicio.DataPropertyName = "FechaInicio";
+            this.FechaInicio.HeaderText = "Fecha de Inicio";
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.ReadOnly = true;
+            this.FechaInicio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.FechaInicio.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.FechaInicio.Width = 200;
             // 
-            // FechaInicioEv
+            // Nombre
             // 
-            this.FechaInicioEv.DataPropertyName = "FechaInicio";
-            this.FechaInicioEv.HeaderText = "Fecha de Inicio";
-            this.FechaInicioEv.Name = "FechaInicioEv";
-            this.FechaInicioEv.ReadOnly = true;
-            this.FechaInicioEv.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FechaInicioEv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.FechaInicioEv.Width = 200;
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Nombre.Width = 450;
             // 
-            // FechaFinEv
+            // ID
             // 
-            this.FechaFinEv.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.FechaFinEv.DataPropertyName = "FechaFin";
-            this.FechaFinEv.HeaderText = "Fecha de Fin";
-            this.FechaFinEv.Name = "FechaFinEv";
-            this.FechaFinEv.ReadOnly = true;
-            this.FechaFinEv.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.FechaFinEv.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.FechaFinEv.Width = 200;
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ID.Width = 70;
+            // 
+            // dgvPlanificacion
+            // 
+            this.dgvPlanificacion.AllowUserToAddRows = false;
+            this.dgvPlanificacion.AllowUserToDeleteRows = false;
+            this.dgvPlanificacion.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvPlanificacion.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPlanificacion.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPlanificacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvPlanificacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanificacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvPlanificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPlanificacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Nombre,
+            this.FechaInicio,
+            this.FechaFin});
+            this.dgvPlanificacion.EnableHeadersVisualStyles = false;
+            this.dgvPlanificacion.Location = new System.Drawing.Point(33, 545);
+            this.dgvPlanificacion.MultiSelect = false;
+            this.dgvPlanificacion.Name = "dgvPlanificacion";
+            this.dgvPlanificacion.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPlanificacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPlanificacion.RowHeadersVisible = false;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvPlanificacion.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPlanificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPlanificacion.Size = new System.Drawing.Size(931, 294);
+            this.dgvPlanificacion.TabIndex = 90;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label8.Location = new System.Drawing.Point(28, 500);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(475, 25);
+            this.label8.TabIndex = 91;
+            this.label8.Text = "Cronograma para Planificación de Objetivos:";
+            // 
+            // dgvCronEvFinal
+            // 
+            this.dgvCronEvFinal.AllowUserToAddRows = false;
+            this.dgvCronEvFinal.AllowUserToDeleteRows = false;
+            this.dgvCronEvFinal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCronEvFinal.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCronEvFinal.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCronEvFinal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCronEvFinal.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCronEvFinal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvCronEvFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCronEvFinal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
+            this.dgvCronEvFinal.EnableHeadersVisualStyles = false;
+            this.dgvCronEvFinal.Location = new System.Drawing.Point(33, 1237);
+            this.dgvCronEvFinal.MultiSelect = false;
+            this.dgvCronEvFinal.Name = "dgvCronEvFinal";
+            this.dgvCronEvFinal.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCronEvFinal.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvCronEvFinal.RowHeadersVisible = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCronEvFinal.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvCronEvFinal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCronEvFinal.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronEvFinal.TabIndex = 134;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn9.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn9.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn10.Width = 450;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "FechaInicio";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Fecha de Inicio";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            this.dataGridViewTextBoxColumn11.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn11.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn11.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "FechaFin";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Fecha de Fin";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            this.dataGridViewTextBoxColumn12.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn12.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn12.Width = 200;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label12.Location = new System.Drawing.Point(28, 1195);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(376, 25);
+            this.label12.TabIndex = 133;
+            this.label12.Text = "Cronograma para Evaluacion Final:";
+            // 
+            // dgvCronEvPrevia
+            // 
+            this.dgvCronEvPrevia.AllowUserToAddRows = false;
+            this.dgvCronEvPrevia.AllowUserToDeleteRows = false;
+            this.dgvCronEvPrevia.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCronEvPrevia.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCronEvPrevia.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCronEvPrevia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCronEvPrevia.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCronEvPrevia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.dgvCronEvPrevia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCronEvPrevia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dgvCronEvPrevia.EnableHeadersVisualStyles = false;
+            this.dgvCronEvPrevia.Location = new System.Drawing.Point(33, 889);
+            this.dgvCronEvPrevia.MultiSelect = false;
+            this.dgvCronEvPrevia.Name = "dgvCronEvPrevia";
+            this.dgvCronEvPrevia.ReadOnly = true;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCronEvPrevia.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvCronEvPrevia.RowHeadersVisible = false;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCronEvPrevia.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvCronEvPrevia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCronEvPrevia.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronEvPrevia.TabIndex = 132;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn1.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn2.Width = 450;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "FechaInicio";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha de Inicio";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn3.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "FechaFin";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Fecha de Fin";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn4.Width = 200;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label9.Location = new System.Drawing.Point(28, 847);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(565, 25);
+            this.label9.TabIndex = 131;
+            this.label9.Text = "Cronograma para Evaluacion Previa/Autoevaluacion:";
             // 
             // frmAdmGestCronVerDetalle
             // 
@@ -640,13 +748,15 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 30);
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.Controls.Add(this.dgvCronEvFinal);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.dgvCronEvPrevia);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dgvPDI);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dgvEvaluaciones);
-            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.dgvPlanificacion);
             this.Controls.Add(this.dtpFechaInicio);
@@ -675,9 +785,10 @@
             this.Name = "frmAdmGestCronVerDetalle";
             this.Text = "frmAdmGestCronVerDetalle";
             this.Load += new System.EventHandler(this.frmAdmGestCronVerDetalle_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEvaluaciones)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPDI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvFinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvPrevia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -708,14 +819,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
-        private System.Windows.Forms.DataGridView dgvPlanificacion;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.DataGridView dgvEvaluaciones;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.DataGridView dgvPDI;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
@@ -725,9 +828,23 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IDev;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreEv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicioEv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaFinEv;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridView dgvPlanificacion;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridView dgvCronEvFinal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.DataGridView dgvCronEvPrevia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Label label9;
     }
 }

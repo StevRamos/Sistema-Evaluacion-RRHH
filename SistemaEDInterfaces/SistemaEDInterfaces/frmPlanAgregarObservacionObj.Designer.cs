@@ -89,6 +89,8 @@
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtObservaciones);
             this.Controls.Add(this.lblObservaciones);
+            this.MaximumSize = new System.Drawing.Size(458, 312);
+            this.MinimumSize = new System.Drawing.Size(458, 312);
             this.Name = "frmPlanAgregarObservacionObj";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Observaciones";

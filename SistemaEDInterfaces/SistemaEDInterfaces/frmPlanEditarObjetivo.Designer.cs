@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblEditarObjetivos = new System.Windows.Forms.Label();
+            this.lblObjetivo = new System.Windows.Forms.Label();
             this.txtMeta = new System.Windows.Forms.TextBox();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lblID = new System.Windows.Forms.Label();
@@ -49,21 +49,23 @@
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblEditarObjetivos
+            // lblObjetivo
             // 
-            this.lblEditarObjetivos.AutoSize = true;
-            this.lblEditarObjetivos.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblEditarObjetivos.Location = new System.Drawing.Point(12, 9);
-            this.lblEditarObjetivos.Name = "lblEditarObjetivos";
-            this.lblEditarObjetivos.Size = new System.Drawing.Size(366, 56);
-            this.lblEditarObjetivos.TabIndex = 1;
-            this.lblEditarObjetivos.Text = "Editar Objetivo";
+            this.lblObjetivo.AutoSize = true;
+            this.lblObjetivo.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObjetivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblObjetivo.Location = new System.Drawing.Point(12, 9);
+            this.lblObjetivo.Name = "lblObjetivo";
+            this.lblObjetivo.Size = new System.Drawing.Size(223, 56);
+            this.lblObjetivo.TabIndex = 1;
+            this.lblObjetivo.Text = "Objetivo";
             // 
             // txtMeta
             // 
+            this.txtMeta.Enabled = false;
             this.txtMeta.Location = new System.Drawing.Point(289, 224);
             this.txtMeta.Name = "txtMeta";
             this.txtMeta.Size = new System.Drawing.Size(193, 20);
@@ -169,6 +171,7 @@
             // 
             // txtPeso
             // 
+            this.txtPeso.Enabled = false;
             this.txtPeso.Location = new System.Drawing.Point(289, 269);
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(193, 20);
@@ -176,6 +179,7 @@
             // 
             // txtUnidadMedida
             // 
+            this.txtUnidadMedida.Enabled = false;
             this.txtUnidadMedida.Location = new System.Drawing.Point(760, 226);
             this.txtUnidadMedida.Name = "txtUnidadMedida";
             this.txtUnidadMedida.Size = new System.Drawing.Size(193, 20);
@@ -193,6 +197,7 @@
             // txtBoxDescripcion
             // 
             this.txtBoxDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBoxDescripcion.Enabled = false;
             this.txtBoxDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxDescripcion.Location = new System.Drawing.Point(32, 361);
             this.txtBoxDescripcion.MaxLength = 200;
@@ -257,12 +262,27 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(503, 587);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(158, 26);
+            this.btnEditar.TabIndex = 29;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
             // frmPlanEditarObjetivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.txtEstado);
@@ -283,7 +303,7 @@
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.lblID);
             this.Controls.Add(this.lblUnidadMedida);
-            this.Controls.Add(this.lblEditarObjetivos);
+            this.Controls.Add(this.lblObjetivo);
             this.Name = "frmPlanEditarObjetivo";
             this.Text = "frmPlanEditarObjetivo";
             this.ResumeLayout(false);
@@ -293,7 +313,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblEditarObjetivos;
+        private System.Windows.Forms.Label lblObjetivo;
         private System.Windows.Forms.TextBox txtMeta;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label lblID;
@@ -314,5 +334,6 @@
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

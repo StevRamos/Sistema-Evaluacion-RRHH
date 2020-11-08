@@ -97,6 +97,23 @@
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
+            this.lblCupos = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.txtCuposE = new System.Windows.Forms.TextBox();
+            this.txtCuposD = new System.Windows.Forms.TextBox();
+            this.txtCuposC = new System.Windows.Forms.TextBox();
+            this.txtCuposB = new System.Windows.Forms.TextBox();
+            this.txtCuposA = new System.Windows.Forms.TextBox();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblGestionarRangos
@@ -824,6 +841,178 @@
             this.label43.TabIndex = 85;
             this.label43.Text = "%";
             // 
+            // lblCupos
+            // 
+            this.lblCupos.AutoSize = true;
+            this.lblCupos.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCupos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblCupos.Location = new System.Drawing.Point(592, 375);
+            this.lblCupos.Name = "lblCupos";
+            this.lblCupos.Size = new System.Drawing.Size(83, 25);
+            this.lblCupos.TabIndex = 88;
+            this.lblCupos.Text = "Cupos:";
+            this.lblCupos.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label12.Location = new System.Drawing.Point(850, 693);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(27, 26);
+            this.label12.TabIndex = 103;
+            this.label12.Text = "%";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label19.Location = new System.Drawing.Point(850, 633);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(27, 26);
+            this.label19.TabIndex = 102;
+            this.label19.Text = "%";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label20.Location = new System.Drawing.Point(850, 573);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(27, 26);
+            this.label20.TabIndex = 101;
+            this.label20.Text = "%";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label21.Location = new System.Drawing.Point(850, 513);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(27, 26);
+            this.label21.TabIndex = 100;
+            this.label21.Text = "%";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label44.Location = new System.Drawing.Point(850, 453);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(27, 26);
+            this.label44.TabIndex = 99;
+            this.label44.Text = "%";
+            // 
+            // txtCuposE
+            // 
+            this.txtCuposE.Location = new System.Drawing.Point(730, 693);
+            this.txtCuposE.Name = "txtCuposE";
+            this.txtCuposE.Size = new System.Drawing.Size(110, 20);
+            this.txtCuposE.TabIndex = 98;
+            this.txtCuposE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtCuposD
+            // 
+            this.txtCuposD.Location = new System.Drawing.Point(730, 633);
+            this.txtCuposD.Name = "txtCuposD";
+            this.txtCuposD.Size = new System.Drawing.Size(110, 20);
+            this.txtCuposD.TabIndex = 97;
+            this.txtCuposD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtCuposC
+            // 
+            this.txtCuposC.Location = new System.Drawing.Point(730, 573);
+            this.txtCuposC.Name = "txtCuposC";
+            this.txtCuposC.Size = new System.Drawing.Size(110, 20);
+            this.txtCuposC.TabIndex = 96;
+            this.txtCuposC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtCuposB
+            // 
+            this.txtCuposB.Location = new System.Drawing.Point(730, 513);
+            this.txtCuposB.Name = "txtCuposB";
+            this.txtCuposB.Size = new System.Drawing.Size(110, 20);
+            this.txtCuposB.TabIndex = 95;
+            this.txtCuposB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtCuposA
+            // 
+            this.txtCuposA.Location = new System.Drawing.Point(730, 453);
+            this.txtCuposA.Name = "txtCuposA";
+            this.txtCuposA.Size = new System.Drawing.Size(110, 20);
+            this.txtCuposA.TabIndex = 94;
+            this.txtCuposA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label45.Location = new System.Drawing.Point(592, 693);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(23, 25);
+            this.label45.TabIndex = 93;
+            this.label45.Text = "E";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label46.Location = new System.Drawing.Point(592, 573);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(28, 25);
+            this.label46.TabIndex = 92;
+            this.label46.Text = "C";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label47.Location = new System.Drawing.Point(592, 633);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(27, 25);
+            this.label47.TabIndex = 91;
+            this.label47.Text = "D";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label48.Location = new System.Drawing.Point(592, 513);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(24, 25);
+            this.label48.TabIndex = 90;
+            this.label48.Text = "B";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label49.Location = new System.Drawing.Point(592, 453);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(28, 25);
+            this.label49.TabIndex = 89;
+            this.label49.Text = "A";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label50.Location = new System.Drawing.Point(594, 412);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(0, 18);
+            this.label50.TabIndex = 104;
+            // 
             // frmAdmGestRangos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -831,6 +1020,23 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1124, 755);
+            this.Controls.Add(this.label50);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label44);
+            this.Controls.Add(this.txtCuposE);
+            this.Controls.Add(this.txtCuposD);
+            this.Controls.Add(this.txtCuposC);
+            this.Controls.Add(this.txtCuposB);
+            this.Controls.Add(this.txtCuposA);
+            this.Controls.Add(this.label45);
+            this.Controls.Add(this.label46);
+            this.Controls.Add(this.label47);
+            this.Controls.Add(this.label48);
+            this.Controls.Add(this.label49);
+            this.Controls.Add(this.lblCupos);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label43);
@@ -978,5 +1184,22 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label lblCupos;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox txtCuposE;
+        private System.Windows.Forms.TextBox txtCuposD;
+        private System.Windows.Forms.TextBox txtCuposC;
+        private System.Windows.Forms.TextBox txtCuposB;
+        private System.Windows.Forms.TextBox txtCuposA;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
     }
 }
