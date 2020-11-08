@@ -17,7 +17,19 @@ namespace SistemaEDInterfaces
             InitializeComponent();
         }
 
-        private void btnGestSubComSelecSubCom_Click(object sender, EventArgs e)
+
+
+        private void btnCargarSubComMasiva_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRegreCargMavSubComp_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGestSubComSelecSubCom_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog buscar = new OpenFileDialog();
             if (buscar.ShowDialog() == DialogResult.OK)
@@ -26,30 +38,23 @@ namespace SistemaEDInterfaces
             }
         }
 
-        private void btnCargarSubComMasiva_Click(object sender, EventArgs e)
+        private void btnGestSubComSelecPesos_Click(object sender, EventArgs e)
         {
-            //Accion para cargar los datos a la base de datos
-            if ((rdbActCargaMavSubCom.Checked || rdbInsCargaMavSubCom.Checked) && txtNomArchSubComMav.Text != "")
+            OpenFileDialog buscar = new OpenFileDialog();
+            if (buscar.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("El archivo se cargó correctamente");
-                this.Close();
-            }
-            else if ((rdbActCargaMavSubCom.Checked == false) && (rdbInsCargaMavSubCom.Checked == false) && txtNomArchSubComMav.Text != "")
-            {
-                MessageBox.Show("Elija la opción insertar o actualizar");
-            }
-            else if ((txtNomArchSubComMav.Text == "") && (rdbActCargaMavSubCom.Checked || rdbInsCargaMavSubCom.Checked))
-            {
-                MessageBox.Show("Inserte su archivo");
-            }
-            else if ((rdbActCargaMavSubCom.Checked == false || rdbInsCargaMavSubCom.Checked == false) && txtNomArchSubComMav.Text == "")
-            {
-                MessageBox.Show("Ingrese los datos");
+                txtNomArchSubComPesosMav.Text = buscar.FileName;
             }
         }
 
-        private void btnRegreCargMavSubComp_Click(object sender, EventArgs e)
+        private void btnRegreCargMavGestSubCom_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+
+        private void btnCargarMasivaGestSubCom_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se cargaron los archivos exitosamente");
             this.Close();
         }
     }

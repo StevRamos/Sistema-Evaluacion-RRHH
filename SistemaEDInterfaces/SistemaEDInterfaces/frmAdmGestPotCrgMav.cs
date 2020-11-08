@@ -17,6 +17,19 @@ namespace SistemaEDInterfaces
             InitializeComponent();
         }
 
+
+
+        private void btnRegreCargMavPot_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCargarMasivaGestPot_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se cargaron los archivos exitosamente");
+            this.Close();
+        }
+
         private void btnGestPotSelecPot_Click(object sender, EventArgs e)
         {
             OpenFileDialog buscar = new OpenFileDialog();
@@ -26,26 +39,13 @@ namespace SistemaEDInterfaces
             }
         }
 
-        private void btnCargarPotMasiva_Click(object sender, EventArgs e)
+        private void btnGestPotSelecPotPesos_Click(object sender, EventArgs e)
         {
-            
-            if ((rdbActCargaMavPot.Checked || rdbInsCargaMavPot.Checked) && txtNomArchPotMav.Text != "") {
-                MessageBox.Show("El archivo se cargó correctamente");
-                this.Close();
-            }
-            else if ((rdbActCargaMavPot.Checked == false) && (rdbInsCargaMavPot.Checked == false) && txtNomArchPotMav.Text != "")
+            OpenFileDialog buscar = new OpenFileDialog();
+            if (buscar.ShowDialog() == DialogResult.OK)
             {
-                MessageBox.Show("Elija la opción insertar o actualizar");
-            } else if ((txtNomArchPotMav.Text == "") && (rdbActCargaMavPot.Checked || rdbInsCargaMavPot.Checked))
-            {
-                MessageBox.Show("Inserte su archivo");
-            } else if ((rdbActCargaMavPot.Checked==false || rdbInsCargaMavPot.Checked==false) && txtNomArchPotMav.Text == "") {
-                MessageBox.Show("Ingrese los datos");
+                txtNomArchPotMavPesos.Text = buscar.FileName;
             }
-        }
-        private void btnRegreCargMavPot_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -35,12 +35,6 @@
             this.cmbGestSubComPeri = new System.Windows.Forms.ComboBox();
             this.txtGestNombrePot = new System.Windows.Forms.TextBox();
             this.dgvGestSubCom = new System.Windows.Forms.DataGridView();
-            this.btnCargarMasivaSubCom = new System.Windows.Forms.Button();
-            this.btnGestCrearSubCom = new System.Windows.Forms.Button();
-            this.lblGestSubComp = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscarPerioCom = new System.Windows.Forms.Label();
-            this.lblBuscarNomPot = new System.Windows.Forms.Label();
             this.Cod_Subcompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,6 +43,13 @@
             this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCargarMasivaSubCom = new System.Windows.Forms.Button();
+            this.btnGestCrearSubCom = new System.Windows.Forms.Button();
+            this.lblGestSubComp = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBuscarPerioCom = new System.Windows.Forms.Label();
+            this.lblBuscarNomPot = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestSubCom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -128,6 +129,62 @@
             this.dgvGestSubCom.Size = new System.Drawing.Size(1431, 591);
             this.dgvGestSubCom.TabIndex = 31;
             // 
+            // Cod_Subcompetencia
+            // 
+            this.Cod_Subcompetencia.HeaderText = "Código Subcompetencia";
+            this.Cod_Subcompetencia.MinimumWidth = 6;
+            this.Cod_Subcompetencia.Name = "Cod_Subcompetencia";
+            this.Cod_Subcompetencia.Width = 150;
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código Competencia";
+            this.Código.MinimumWidth = 6;
+            this.Código.Name = "Código";
+            this.Código.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 250;
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.MinimumWidth = 6;
+            this.Descripción.Name = "Descripción";
+            this.Descripción.Width = 550;
+            // 
+            // Cargo
+            // 
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.MinimumWidth = 6;
+            this.Cargo.Name = "Cargo";
+            this.Cargo.Width = 125;
+            // 
+            // Peso
+            // 
+            this.Peso.HeaderText = "Peso";
+            this.Peso.MinimumWidth = 6;
+            this.Peso.Name = "Peso";
+            this.Peso.Width = 125;
+            // 
+            // Periodo
+            // 
+            this.Periodo.HeaderText = "Periodo";
+            this.Periodo.MinimumWidth = 6;
+            this.Periodo.Name = "Periodo";
+            this.Periodo.Width = 125;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.Width = 125;
+            // 
             // btnCargarMasivaSubCom
             // 
             this.btnCargarMasivaSubCom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
@@ -203,61 +260,19 @@
             this.lblBuscarNomPot.TabIndex = 36;
             this.lblBuscarNomPot.Text = "Nombre Subcompetencia :";
             // 
-            // Cod_Subcompetencia
+            // button1
             // 
-            this.Cod_Subcompetencia.HeaderText = "Código Subcompetencia";
-            this.Cod_Subcompetencia.MinimumWidth = 6;
-            this.Cod_Subcompetencia.Name = "Cod_Subcompetencia";
-            this.Cod_Subcompetencia.Width = 150;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código Competencia";
-            this.Código.MinimumWidth = 6;
-            this.Código.Name = "Código";
-            this.Código.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 250;
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.MinimumWidth = 6;
-            this.Descripción.Name = "Descripción";
-            this.Descripción.Width = 550;
-            // 
-            // Cargo
-            // 
-            this.Cargo.HeaderText = "Cargo";
-            this.Cargo.MinimumWidth = 6;
-            this.Cargo.Name = "Cargo";
-            this.Cargo.Width = 125;
-            // 
-            // Peso
-            // 
-            this.Peso.HeaderText = "Peso";
-            this.Peso.MinimumWidth = 6;
-            this.Peso.Name = "Peso";
-            this.Peso.Width = 125;
-            // 
-            // Periodo
-            // 
-            this.Periodo.HeaderText = "Periodo";
-            this.Periodo.MinimumWidth = 6;
-            this.Periodo.Name = "Periodo";
-            this.Periodo.Width = 125;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.Width = 125;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(28, 854);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(260, 32);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // frmAdmGestSubcomp
             // 
@@ -265,6 +280,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1476, 929);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscarPerioCom);
             this.Controls.Add(this.lblBuscarNomPot);
@@ -305,5 +321,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Periodo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Button button1;
     }
 }
