@@ -34,11 +34,11 @@
             this.lblMisObjetivos = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.dgvPeriodos = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeriodos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(787, 621);
+            this.btnSeleccionar.Location = new System.Drawing.Point(864, 557);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(158, 26);
             this.btnSeleccionar.TabIndex = 6;
@@ -92,7 +92,7 @@
             this.FechaInicio,
             this.FechaFin});
             this.dgvPeriodos.EnableHeadersVisualStyles = false;
-            this.dgvPeriodos.Location = new System.Drawing.Point(22, 135);
+            this.dgvPeriodos.Location = new System.Drawing.Point(24, 135);
             this.dgvPeriodos.MultiSelect = false;
             this.dgvPeriodos.Name = "dgvPeriodos";
             this.dgvPeriodos.ReadOnly = true;
@@ -111,19 +111,8 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPeriodos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPeriodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPeriodos.Size = new System.Drawing.Size(1025, 480);
+            this.dgvPeriodos.Size = new System.Drawing.Size(1025, 378);
             this.dgvPeriodos.TabIndex = 32;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label1.Location = new System.Drawing.Point(18, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 23);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Seleccione un periodo:";
             // 
             // ID
             // 
@@ -164,6 +153,17 @@
             this.FechaFin.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.FechaFin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.FechaFin.Width = 200;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label1.Location = new System.Drawing.Point(18, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(223, 23);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Seleccione un periodo:";
             // 
             // frmHisMisEvaluaciones
             // 

@@ -57,6 +57,7 @@
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaP1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaF1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             this.SuspendLayout();
@@ -116,7 +117,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(913, 903);
+            this.btnSeleccionar.Location = new System.Drawing.Point(913, 871);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(158, 26);
             this.btnSeleccionar.TabIndex = 31;
@@ -254,7 +255,7 @@
             this.notaP1,
             this.notaF1});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
-            this.dgvMisObjetivos.Location = new System.Drawing.Point(47, 180);
+            this.dgvMisObjetivos.Location = new System.Drawing.Point(24, 180);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
@@ -323,15 +324,29 @@
             this.notaF1.Name = "notaF1";
             this.notaF1.Width = 150;
             // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizar.Location = new System.Drawing.Point(913, 924);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(158, 26);
+            this.btnFinalizar.TabIndex = 34;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
             // frmEvMisTrabajadoresFinal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 150);
-            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
+            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.dgvMisObjetivos);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSeleccionar);
@@ -373,5 +388,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaP1;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaF1;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }

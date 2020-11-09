@@ -17,7 +17,7 @@ namespace SistemaEDInterfaces
             InitializeComponent();
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
+        private void btnSeleccionar_Click_1(object sender, EventArgs e)
         {
             Global.formPrincipal.abrirFormularioHijo(false, new frmHisMisTrabajadoresResultado());
         }

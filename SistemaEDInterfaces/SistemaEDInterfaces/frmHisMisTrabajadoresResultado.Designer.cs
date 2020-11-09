@@ -113,7 +113,7 @@
             this.notaP1,
             this.notaF1});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
-            this.dgvMisObjetivos.Location = new System.Drawing.Point(40, 178);
+            this.dgvMisObjetivos.Location = new System.Drawing.Point(24, 178);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
             this.dgvMisObjetivos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

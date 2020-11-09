@@ -175,7 +175,7 @@
             this.notaP1,
             this.notaF1});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
-            this.dgvMisObjetivos.Location = new System.Drawing.Point(39, 167);
+            this.dgvMisObjetivos.Location = new System.Drawing.Point(24, 167);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
             this.dgvMisObjetivos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -322,7 +322,7 @@
             this.notaP2,
             this.notaF2});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 532);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 532);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -559,7 +559,7 @@
             this.AutoScroll = true;
             this.AutoScrollMargin = new System.Drawing.Size(0, 150);
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.ClientSize = new System.Drawing.Size(1107, 749);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox5);

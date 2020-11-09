@@ -68,7 +68,7 @@
             this.peso,
             this.nota3});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
-            this.dgvMisObjetivos.Location = new System.Drawing.Point(45, 135);
+            this.dgvMisObjetivos.Location = new System.Drawing.Point(24, 135);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;

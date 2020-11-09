@@ -28,5 +28,12 @@ namespace SistemaEDInterfaces
                 "Mensaje Informativo", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se ha registrado correctamente la auotevaluación",
+                "Mensaje Informativo", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
     }
 }

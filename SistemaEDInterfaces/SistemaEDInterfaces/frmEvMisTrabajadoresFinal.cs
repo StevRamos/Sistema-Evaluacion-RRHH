@@ -33,5 +33,10 @@ namespace SistemaEDInterfaces
         {
             Global.formPrincipal.abrirFormularioHijo(false, new frmEvMisTrabajadoresFinalCompetencias());
         }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.cerrarFormularioHijo();
+        }
     }
 }

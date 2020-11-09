@@ -28,5 +28,11 @@ namespace SistemaEDInterfaces
                 "Mensaje Informativo", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
         }
+
+        private void btnFinalizar_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.cerrarFormularioHijo();
+        }
     }
+    
 }
