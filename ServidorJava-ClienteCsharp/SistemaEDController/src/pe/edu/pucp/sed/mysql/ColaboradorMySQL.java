@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
 import pe.edu.pucp.sed.model.Colaborador;
-import pe.edu.pucp.sed.model.EstadoCuenta;
 
 public class ColaboradorMySQL implements ColaboradorDAO{
 
