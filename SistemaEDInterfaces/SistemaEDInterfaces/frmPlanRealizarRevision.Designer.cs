@@ -335,6 +335,7 @@
             this.Controls.Add(this.dgvMisObjetivos);
             this.Name = "frmPlanRealizarRevision";
             this.Text = "frmPlanRealizarRevision";
+            this.Load += new System.EventHandler(this.frmPlanRealizarRevision_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).EndInit();
             this.panelDatosColaborador.ResumeLayout(false);
             this.panelDatosColaborador.PerformLayout();

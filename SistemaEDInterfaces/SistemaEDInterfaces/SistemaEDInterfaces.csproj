@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EstadoObjetivo.cs" />
     <Compile Include="frmAdmCalibrar.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -12,8 +12,12 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestCronVerDetalle : Form
     {
+        private PeriodoWS.periodo periodo;
+
+        public PeriodoWS.periodo Periodo { get => periodo; set => periodo = value; }
         public frmAdmGestCronVerDetalle()
         {
+
             InitializeComponent();
         }
 
@@ -49,8 +53,8 @@ namespace SistemaEDInterfaces
             txtEstado.Text = "En proceso";
             dtpFechaInicio.Value = new DateTime(2020,01,01);
             dtpFechaFin.Value = new DateTime(2020,12,30);
-            txtPesoDesempenho.Text = "50";
-            txtPesoPotencial.Text = "50";
+            txtPesoObjetivos.Text = "50";
+            txtPesoCompetencia.Text = "50";
 
             txtDia.Text = "Lunes";
             txtHora.Text = "07:00";
@@ -144,6 +148,16 @@ namespace SistemaEDInterfaces
         }
         private void frmAdmGestCronVerDetalle_Load(object sender, EventArgs e)
         {
+            txtID.Text = periodo.idPeriodo.ToString();
+            txtNombre.Text = periodo.nombre;
+            txtEstado.Text = periodo.estado;
+            dtpFechaInicio.Value = periodo.fechaInicio;
+            dtpFechaFin.Value = periodo.fechaFin;
+            txtPesoCompetencia.Text = periodo.pesoEvalComp.ToString();
+            txtPesoObjetivos.Text = periodo.pesoEvalObj.ToString(); 
+            //Falta llenar los DGV 
+
+
             llenarDatosDummy();
             
         }

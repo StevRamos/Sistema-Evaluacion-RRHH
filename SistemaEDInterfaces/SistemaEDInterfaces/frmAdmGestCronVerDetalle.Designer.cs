@@ -40,6 +40,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblEditarObjetivos = new System.Windows.Forms.Label();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
@@ -54,8 +57,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtPesoDesempenho = new System.Windows.Forms.TextBox();
-            this.txtPesoPotencial = new System.Windows.Forms.TextBox();
+            this.txtPesoObjetivos = new System.Windows.Forms.TextBox();
+            this.txtPesoCompetencia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDia = new System.Windows.Forms.TextBox();
             this.txtHora = new System.Windows.Forms.TextBox();
@@ -90,10 +93,17 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label9 = new System.Windows.Forms.Label();
+            this.dgvCalibNotas = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPDI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvPrevia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalibNotas)).BeginInit();
             this.SuspendLayout();
             // 
             // lblEditarObjetivos
@@ -187,9 +197,9 @@
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(29, 361);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 24);
+            this.label1.Size = new System.Drawing.Size(263, 24);
             this.label1.TabIndex = 62;
-            this.label1.Text = "Evaluacion de Desempeño:";
+            this.label1.Text = "Evaluacion de Objetivos:";
             // 
             // label2
             // 
@@ -197,9 +207,9 @@
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(29, 420);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(265, 24);
+            this.label2.Size = new System.Drawing.Size(314, 24);
             this.label2.TabIndex = 63;
-            this.label2.Text = "Evaluacion de Potencial:";
+            this.label2.Text = "Evaluacion de Competencia:";
             // 
             // label3
             // 
@@ -232,21 +242,21 @@
             this.label5.TabIndex = 66;
             this.label5.Text = "Pesos de Evaluaciones:";
             // 
-            // txtPesoDesempenho
+            // txtPesoObjetivos
             // 
-            this.txtPesoDesempenho.Location = new System.Drawing.Point(342, 365);
-            this.txtPesoDesempenho.Name = "txtPesoDesempenho";
-            this.txtPesoDesempenho.Size = new System.Drawing.Size(84, 20);
-            this.txtPesoDesempenho.TabIndex = 68;
-            this.txtPesoDesempenho.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPesoObjetivos.Location = new System.Drawing.Point(342, 365);
+            this.txtPesoObjetivos.Name = "txtPesoObjetivos";
+            this.txtPesoObjetivos.Size = new System.Drawing.Size(84, 20);
+            this.txtPesoObjetivos.TabIndex = 68;
+            this.txtPesoObjetivos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // txtPesoPotencial
+            // txtPesoCompetencia
             // 
-            this.txtPesoPotencial.Location = new System.Drawing.Point(342, 424);
-            this.txtPesoPotencial.Name = "txtPesoPotencial";
-            this.txtPesoPotencial.Size = new System.Drawing.Size(84, 20);
-            this.txtPesoPotencial.TabIndex = 69;
-            this.txtPesoPotencial.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtPesoCompetencia.Location = new System.Drawing.Point(342, 424);
+            this.txtPesoCompetencia.Name = "txtPesoCompetencia";
+            this.txtPesoCompetencia.Size = new System.Drawing.Size(84, 20);
+            this.txtPesoCompetencia.TabIndex = 69;
+            this.txtPesoCompetencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6
             // 
@@ -314,7 +324,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label10.Location = new System.Drawing.Point(28, 1581);
+            this.label10.Location = new System.Drawing.Point(28, 1949);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(649, 25);
             this.label10.TabIndex = 94;
@@ -345,7 +355,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.dgvPDI.EnableHeadersVisualStyles = false;
-            this.dgvPDI.Location = new System.Drawing.Point(33, 1632);
+            this.dgvPDI.Location = new System.Drawing.Point(33, 2000);
             this.dgvPDI.MultiSelect = false;
             this.dgvPDI.Name = "dgvPDI";
             this.dgvPDI.ReadOnly = true;
@@ -364,7 +374,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPDI.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPDI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPDI.Size = new System.Drawing.Size(921, 294);
+            this.dgvPDI.Size = new System.Drawing.Size(887, 294);
             this.dgvPDI.TabIndex = 95;
             // 
             // dataGridViewTextBoxColumn5
@@ -530,7 +540,7 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPlanificacion.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvPlanificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlanificacion.Size = new System.Drawing.Size(931, 294);
+            this.dgvPlanificacion.Size = new System.Drawing.Size(897, 294);
             this.dgvPlanificacion.TabIndex = 90;
             // 
             // label8
@@ -588,7 +598,7 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvFinal.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCronEvFinal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvFinal.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronEvFinal.Size = new System.Drawing.Size(887, 294);
             this.dgvCronEvFinal.TabIndex = 134;
             // 
             // dataGridViewTextBoxColumn9
@@ -638,9 +648,9 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             this.label12.Location = new System.Drawing.Point(28, 1195);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(376, 25);
+            this.label12.Size = new System.Drawing.Size(538, 25);
             this.label12.TabIndex = 133;
-            this.label12.Text = "Cronograma para Evaluacion Final:";
+            this.label12.Text = "Cronograma para Evaluacion Final de Desempeño:";
             // 
             // dgvCronEvPrevia
             // 
@@ -686,7 +696,7 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvPrevia.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvCronEvPrevia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvPrevia.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronEvPrevia.Size = new System.Drawing.Size(887, 294);
             this.dgvCronEvPrevia.TabIndex = 132;
             // 
             // dataGridViewTextBoxColumn1
@@ -736,9 +746,107 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             this.label9.Location = new System.Drawing.Point(28, 847);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(565, 25);
+            this.label9.Size = new System.Drawing.Size(727, 25);
             this.label9.TabIndex = 131;
-            this.label9.Text = "Cronograma para Evaluacion Previa/Autoevaluacion:";
+            this.label9.Text = "Cronograma para Evaluacion Previa/Autoevaluacion de Desempeño:";
+            // 
+            // dgvCalibNotas
+            // 
+            this.dgvCalibNotas.AllowUserToAddRows = false;
+            this.dgvCalibNotas.AllowUserToDeleteRows = false;
+            this.dgvCalibNotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCalibNotas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCalibNotas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCalibNotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCalibNotas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCalibNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvCalibNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCalibNotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16});
+            this.dgvCalibNotas.EnableHeadersVisualStyles = false;
+            this.dgvCalibNotas.Location = new System.Drawing.Point(33, 1620);
+            this.dgvCalibNotas.MultiSelect = false;
+            this.dgvCalibNotas.Name = "dgvCalibNotas";
+            this.dgvCalibNotas.ReadOnly = true;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCalibNotas.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvCalibNotas.RowHeadersVisible = false;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCalibNotas.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvCalibNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCalibNotas.Size = new System.Drawing.Size(887, 294);
+            this.dgvCalibNotas.TabIndex = 136;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn13.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn13.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn14.Width = 450;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "FechaInicio";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Fecha de Inicio";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn15.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "FechaFin";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Fecha de Fin";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn16.Width = 200;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label13.Location = new System.Drawing.Point(28, 1569);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(426, 25);
+            this.label13.TabIndex = 135;
+            this.label13.Text = "Cronograma para Calibración de Notas:";
             // 
             // frmAdmGestCronVerDetalle
             // 
@@ -748,6 +856,8 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 30);
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.Controls.Add(this.dgvCalibNotas);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.dgvCronEvFinal);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dgvCronEvPrevia);
@@ -766,8 +876,8 @@
             this.Controls.Add(this.txtHora);
             this.Controls.Add(this.txtDia);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtPesoPotencial);
-            this.Controls.Add(this.txtPesoDesempenho);
+            this.Controls.Add(this.txtPesoCompetencia);
+            this.Controls.Add(this.txtPesoObjetivos);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -789,6 +899,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvFinal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvPrevia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalibNotas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -810,8 +921,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtPesoDesempenho;
-        private System.Windows.Forms.TextBox txtPesoPotencial;
+        private System.Windows.Forms.TextBox txtPesoObjetivos;
+        private System.Windows.Forms.TextBox txtPesoCompetencia;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDia;
         private System.Windows.Forms.TextBox txtHora;
@@ -846,5 +957,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvCalibNotas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.Label label13;
     }
 }

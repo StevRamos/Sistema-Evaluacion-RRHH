@@ -42,14 +42,14 @@
             this.lblFechaAprobacion = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.txtUnidadMedida = new System.Windows.Forms.TextBox();
-            this.txtFechaFormulacion = new System.Windows.Forms.TextBox();
             this.txtBoxDescripcion = new System.Windows.Forms.RichTextBox();
-            this.txtFechaAprobacion = new System.Windows.Forms.TextBox();
             this.txtBoxObservacionJefe = new System.Windows.Forms.RichTextBox();
             this.txtEstado = new System.Windows.Forms.TextBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.dtpFechaFormulacion = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaAprobacion = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // lblObjetivo
@@ -186,14 +186,6 @@
             this.txtUnidadMedida.TabIndex = 21;
             this.txtUnidadMedida.TextChanged += new System.EventHandler(this.txtUnidadMedida_TextChanged);
             // 
-            // txtFechaFormulacion
-            // 
-            this.txtFechaFormulacion.Enabled = false;
-            this.txtFechaFormulacion.Location = new System.Drawing.Point(289, 174);
-            this.txtFechaFormulacion.Name = "txtFechaFormulacion";
-            this.txtFechaFormulacion.Size = new System.Drawing.Size(193, 20);
-            this.txtFechaFormulacion.TabIndex = 22;
-            // 
             // txtBoxDescripcion
             // 
             this.txtBoxDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -205,14 +197,6 @@
             this.txtBoxDescripcion.Size = new System.Drawing.Size(450, 156);
             this.txtBoxDescripcion.TabIndex = 23;
             this.txtBoxDescripcion.Text = "";
-            // 
-            // txtFechaAprobacion
-            // 
-            this.txtFechaAprobacion.Enabled = false;
-            this.txtFechaAprobacion.Location = new System.Drawing.Point(760, 172);
-            this.txtFechaAprobacion.Name = "txtFechaAprobacion";
-            this.txtFechaAprobacion.Size = new System.Drawing.Size(193, 20);
-            this.txtFechaAprobacion.TabIndex = 24;
             // 
             // txtBoxObservacionJefe
             // 
@@ -276,20 +260,36 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // dtpFechaFormulacion
+            // 
+            this.dtpFechaFormulacion.Enabled = false;
+            this.dtpFechaFormulacion.Location = new System.Drawing.Point(289, 172);
+            this.dtpFechaFormulacion.Name = "dtpFechaFormulacion";
+            this.dtpFechaFormulacion.Size = new System.Drawing.Size(193, 20);
+            this.dtpFechaFormulacion.TabIndex = 30;
+            // 
+            // dtpFechaAprobacion
+            // 
+            this.dtpFechaAprobacion.Enabled = false;
+            this.dtpFechaAprobacion.Location = new System.Drawing.Point(760, 172);
+            this.dtpFechaAprobacion.Name = "dtpFechaAprobacion";
+            this.dtpFechaAprobacion.Size = new System.Drawing.Size(193, 20);
+            this.dtpFechaAprobacion.TabIndex = 31;
+            // 
             // frmPlanEditarObjetivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.Controls.Add(this.dtpFechaAprobacion);
+            this.Controls.Add(this.dtpFechaFormulacion);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.txtEstado);
             this.Controls.Add(this.txtBoxObservacionJefe);
-            this.Controls.Add(this.txtFechaAprobacion);
             this.Controls.Add(this.txtBoxDescripcion);
-            this.Controls.Add(this.txtFechaFormulacion);
             this.Controls.Add(this.txtUnidadMedida);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.lblFechaAprobacion);
@@ -306,6 +306,7 @@
             this.Controls.Add(this.lblObjetivo);
             this.Name = "frmPlanEditarObjetivo";
             this.Text = "frmPlanEditarObjetivo";
+            this.Load += new System.EventHandler(this.frmPlanEditarObjetivo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,13 +328,13 @@
         private System.Windows.Forms.Label lblFechaAprobacion;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.TextBox txtUnidadMedida;
-        private System.Windows.Forms.TextBox txtFechaFormulacion;
         private System.Windows.Forms.RichTextBox txtBoxDescripcion;
-        private System.Windows.Forms.TextBox txtFechaAprobacion;
         private System.Windows.Forms.RichTextBox txtBoxObservacionJefe;
         private System.Windows.Forms.TextBox txtEstado;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.DateTimePicker dtpFechaFormulacion;
+        private System.Windows.Forms.DateTimePicker dtpFechaAprobacion;
     }
 }

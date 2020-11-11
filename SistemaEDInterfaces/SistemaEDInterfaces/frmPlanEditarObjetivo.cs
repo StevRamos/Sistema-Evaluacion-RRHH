@@ -12,9 +12,17 @@ namespace SistemaEDInterfaces
 {
     public partial class frmPlanEditarObjetivo : Form
     {
+        private ObjetivoWS.objetivo objetivo;
+
+        private ObjetivoWS.ObjetivoWSClient daoObjetivo;
+        
+        public ObjetivoWS.objetivo Objetivo { get => objetivo; set => objetivo = value; }
         public frmPlanEditarObjetivo()
         {
+            daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             InitializeComponent();
+            
+            
         }
 
         void cambiarEstadoComponentes(int estado)
@@ -38,11 +46,18 @@ namespace SistemaEDInterfaces
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             cambiarEstadoComponentes(2);
+            
+           
+            objetivo.meta = Double.Parse(txtMeta.Text); ;
+            objetivo.UnidadMedida = txtUnidadMedida.Text;
+            objetivo.peso = Double.Parse(txtPeso.Text);
+            objetivo.descripcion = txtBoxDescripcion.Text; 
+
+            daoObjetivo.actualizarObjetivo(objetivo);
             MessageBox.Show("Se guardaron los cambios.",
                 "Mensaje de confirmacion",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-            
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -52,7 +67,7 @@ namespace SistemaEDInterfaces
                                             MessageBoxButtons.YesNo,
                                             MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
-                Global.formPrincipal.cerrarFormularioHijo();
+                Global.formPrincipal.abrirFormularioHijo(true,new frmPlanMisObjetivos());
             
 
         }
@@ -65,7 +80,52 @@ namespace SistemaEDInterfaces
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            cambiarEstadoComponentes(1); 
+            if(objetivo.estado== EstadoObjetivo.Oculto || objetivo.estado == EstadoObjetivo.DenVisible)
+            {
+                cambiarEstadoComponentes(1);
+            }
+            else
+            {
+                MessageBox.Show("No puede editar el objetivo mientras se encuentra " +
+                                "esperando revisión o si se encuentra aprobado.",
+                "Mensaje de Informacion",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            }
+            
+        }
+
+        private void frmPlanEditarObjetivo_Load(object sender, EventArgs e)
+        {
+            txtID.Text = objetivo.idObjetivo.ToString();
+            switch (objetivo.estado)
+            {
+                case EstadoObjetivo.Oculto:
+                    txtEstado.Text = "Creado";
+                    break;
+                case EstadoObjetivo.EsperandoRevision:
+                    txtEstado.Text = "Esperando Revision";
+                    break;
+                case EstadoObjetivo.DenOculto:
+                    txtEstado.Text = "Esperando Revision";
+                    break;
+                case EstadoObjetivo.DenVisible:
+                    txtEstado.Text = "Denegado";
+                    break;
+                case EstadoObjetivo.AprobOculto:
+                    txtEstado.Text = "Esperando Revision";
+                    break;
+                case EstadoObjetivo.AprobVisible:
+                    txtEstado.Text = "Aprobado";
+                    break;
+            }
+            txtMeta.Text = objetivo.meta.ToString();
+            txtUnidadMedida.Text = objetivo.unidadMedida;
+            dtpFechaAprobacion.Value = objetivo.fechaAprobacion;
+            dtpFechaFormulacion.Value = objetivo.fechaFormulacion;
+            txtPeso.Text = objetivo.peso.ToString();
+            txtBoxDescripcion.Text = objetivo.descripcion;
+            txtBoxObservacionJefe.Text = objetivo.observacion;
         }
     }
 }
