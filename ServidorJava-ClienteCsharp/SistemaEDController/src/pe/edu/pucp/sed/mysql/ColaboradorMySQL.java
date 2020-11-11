@@ -39,9 +39,6 @@ public class ColaboradorMySQL implements ColaboradorDAO{
             cs.setDate("_FECHANAC", 
                     new java.sql.Date(colaborador.getFechaNac().getTime()));
             cs.setInt("_ID_JEFE", colaborador.getJefe().getIdColaborador());
-            cs.setString("_CONTRASEÑA", colaborador.getContrasena());
-            cs.setInt("_ESTADOCUENTA", colaborador.getEstadoCuenta());
-            cs.setBoolean("_ESADMIN", colaborador.getEsAdmin());
             
             cs.executeUpdate();
             colaborador.setIdColaborador(cs.getInt("_ID_COLABORADOR"));
@@ -120,8 +117,6 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 col.setCorreo(rs.getString("correo"));
                 col.setTelefono(rs.getString("telefono"));
                 col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
-                col.setContrasena(rs.getString("contraseña"));
-                col.setEsAdmin(rs.getBoolean("esAdmin"));
                 
                 colaboradores.add(col);
             }
@@ -132,4 +127,76 @@ public class ColaboradorMySQL implements ColaboradorDAO{
         }
         return colaboradores;
     }
+    
+    public ArrayList<Colaborador> listarColaboradoresXJefe( int idJefe ){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call LISTAR_COLABORADORES_X_JEFE(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_ID_JEFE", idJefe);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                Colaborador col = new Colaborador();
+                col.setIdColaborador(rs.getInt("id_Colaborador"));
+                col.getJefe().setIdColaborador(idJefe);
+                col.setDni(rs.getString("dni"));
+                col.setNombres(rs.getString("nombres"));
+                col.setApellidos(rs.getString("apellidos"));
+                col.setDireccion(rs.getString("direccion"));
+                col.setCorreo(rs.getString("correo"));
+                col.setTelefono(rs.getString("telefono"));
+                col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                col.getGerencia().setNombre(cs.getString(10));
+                col.getGerencia().setDescripcion(cs.getString(11));
+                col.getPuestoTrabajo().setNombre(cs.getString(12));
+                col.getPuestoTrabajo().setDescripcion(cs.getString(13));
+                
+                colaboradores.add(col);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return colaboradores;
+    }
+    
+    public Colaborador buscarJefe( int idJefe ){
+        Colaborador jefe = new Colaborador();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call BUSCAR_JEFE(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_COLABORADOR", idJefe);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                jefe.setIdColaborador(rs.getInt("id_Colaborador"));
+                jefe.getJefe().setIdColaborador(idJefe);
+                jefe.setDni(rs.getString("dni"));
+                jefe.setNombres(rs.getString("nombres"));
+                jefe.setApellidos(rs.getString("apellidos"));
+                jefe.setDireccion(rs.getString("direccion"));
+                jefe.setCorreo(rs.getString("correo"));
+                jefe.setTelefono(rs.getString("telefono"));
+                jefe.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                jefe.getGerencia().setNombre(cs.getString(10));
+                jefe.getGerencia().setDescripcion(cs.getString(11));
+                jefe.getPuestoTrabajo().setNombre(cs.getString(12));
+                jefe.getPuestoTrabajo().setDescripcion(cs.getString(13));
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return jefe;
+    }
+    
 }
