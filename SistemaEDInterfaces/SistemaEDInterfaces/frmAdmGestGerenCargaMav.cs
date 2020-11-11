@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,15 +13,52 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestGerenCargaMav : Form
     {
+        private GerenciaWS.GerenciaWSClient daoGerencia;
+        
         public frmAdmGestGerenCargaMav()
         {
+            daoGerencia = new GerenciaWS.ObjetivoWSClient();
             InitializeComponent();
         }
 
         private void btnCargarComMasiva_Click(object sender, EventArgs e)
         {
+            string[] lineas = File.ReadAllLines(txtNomArchGerenMav.Text);
+
             if ((rdbActCargaMavGer.Checked || rdbInsCargaMavGer.Checked) && txtNomArchGerenMav.Text != "")
             {
+
+                if (rdbActCargaMavGer.Checked!=false) {
+                    foreach (var linea in lineas)
+                    {
+                        var valores = linea.Split(';');
+                        GerenciaWS.Gerencia gerencia = new GerenciaWS.Gerencia;
+                        if (valores[0] != "no") {
+                            gerencia.setNombre = valores[0].ToString();
+                        } else {
+                            gerencia.setNombre = null;
+                        }
+                        if (valores[1] != "no") {
+                            gerencia.setDescripcion = valores[1].ToString();
+                        }
+                        else
+                        {
+                            gerencia.setDescripcion = null;
+                        }
+                        
+                        daoGerencia.actualizarGerencia(gerencia);
+                    }
+                } else if (rdbInsCargaMavGer.Checked!=false) {
+                    foreach (var linea in lineas)
+                    {
+                        var valores = linea.Split(';');
+                        GerenciaWS.Gerencia gerencia = new GerenciaWS.Gerencia;
+                        gerencia.setNombre = valores[0].ToString();
+                        gerencia.setDescripcion = valores[1].ToString();
+                        daoGerencia.insertarGerencia(gerencia);
+                    }
+                }
+
                 MessageBox.Show("El archivo se cargó correctamente");
                 this.Close();
             }

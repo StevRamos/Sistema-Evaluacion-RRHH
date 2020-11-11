@@ -25,9 +25,7 @@ namespace SistemaEDInterfaces
             dgvMisObjetivos.AutoGenerateColumns = false;
 
             dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
-            InitializeComponent();
-            
-            
+            InitializeComponent(); 
         }
 
 
