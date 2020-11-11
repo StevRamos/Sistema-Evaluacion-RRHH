@@ -22,5 +22,10 @@ namespace SistemaEDInterfaces
             Form formulario = new frmAdmGestGerenCargaMav();
             formulario.Show();
         }
+
+        private void frmAdmGestGer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
