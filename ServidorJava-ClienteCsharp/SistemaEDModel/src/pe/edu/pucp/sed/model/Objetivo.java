@@ -2,160 +2,226 @@ package pe.edu.pucp.sed.model;
 
 import java.util.Date;
 
-public class Objetivo{
-	private int idObjetivo;
-	private String descripcion;
-	private boolean estado;
-	private Date fechaFormulacion;
-	private Date fechaAprobacion;
-	private double meta;
-	private char unidadMedida;
-	private String observacion;
-	private double peso;
-	private double notaPrevia;
-	private double notaAutoEval;
-	private double notaFinal;
-	private Colaborador colaborador;
-	private EvaluacionDesempenho evaluacion;
-	private Periodo periodo;
-        
-        public Objetivo(){
-            this.colaborador = new Colaborador();
-            this.evaluacion = new EvaluacionDesempenho();
-            this.periodo = new Periodo();
-        }
-        
-	public int getIdObjetivo(){
-		return this.idObjetivo;
-	};
+public class Objetivo {
 
-	public void setIdObjetivo( int idObjetivo ){
-		this.idObjetivo = idObjetivo;
-	};
+    private int idObjetivo;
+    private String descripcion;
+    private boolean estado;
+    private Date fechaFormulacion;
+    private Date fechaAprobacion;
+    private double meta;
+    private String unidadMedida;
+    private String observacion;
+    private double peso;
+    private double notaPrevia;
+    private double notaAutoEval;
+    private double notaFinal;
+    private Colaborador colaborador;
+    private EvaluacionDesempenho evaluacion;
+    private Periodo periodo;
 
-	public String getDescripcion(){
-		return this.descripcion;
-	};
+    public Objetivo() {
+        this.colaborador = new Colaborador();
+        this.evaluacion = new EvaluacionDesempenho();
+        this.periodo = new Periodo();
+    }
 
-	public void setDescripcion( String descripcion ){
-		this.descripcion = descripcion;
-	};
+    public int getIdObjetivo() {
+        return this.idObjetivo;
+    }
 
-	public boolean getEstado(){
-		return this.estado;
-	};
+    ;
 
-	public void setEstado( boolean estado ){
-		this.estado = estado;
-	};
+	public void setIdObjetivo(int idObjetivo) {
+        this.idObjetivo = idObjetivo;
+    }
 
-	public Date getFechaFormulacion(){
-		return this.fechaFormulacion;
-	};
+    ;
 
-	public void setFechaFormulacion( Date fechaFormulacion ){
-		this.fechaFormulacion = fechaFormulacion;
-	};
+	public String getDescripcion() {
+        return this.descripcion;
+    }
 
-	public Date getFechaAprobacion(){
-		return this.fechaAprobacion;
-	};
+    ;
 
-	public void setFechaAprobacion( Date fechaAprobacion ){
-		this.fechaAprobacion = fechaAprobacion;
-	};
+	public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-	public double getMeta(){
-		return this.meta;
-	};
+    ;
 
-	public void setMeta( double meta ){
-		this.meta = meta;
-	};
+	public boolean getEstado() {
+        return this.estado;
+    }
 
-	public char getUnidadMedida(){
-		return this.unidadMedida;
-	};
+    ;
 
-	public void setUnidadMedida( char unidadMedida ){
-		this.unidadMedida = unidadMedida;
-	};
+	public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
 
-	public String getObservacion(){
-		return this.observacion;
-	};
+    ;
 
-	public void setObservacion( String observacion ){
-		this.observacion = observacion;
-	};
+	public Date getFechaFormulacion() {
+        return this.fechaFormulacion;
+    }
 
-	public double getPeso(){
-		return this.peso;
-	};
+    ;
 
-	public void setPeso( double peso ){
-		this.peso = peso;
-	};
+	public void setFechaFormulacion(Date fechaFormulacion) {
+        this.fechaFormulacion = fechaFormulacion;
+    }
 
-	public double getNotaPrevia(){
-		return this.notaPrevia;
-	};
+    ;
 
-	public void setNotaPrevia( double notaPrevia ){
-		this.notaPrevia = notaPrevia;
-	};
+	public Date getFechaAprobacion() {
+        return this.fechaAprobacion;
+    }
 
-	public double getNotaAutoEval(){
-		return this.notaAutoEval;
-	};
+    ;
 
-	public void setNotaAutoEval( double notaAutoEval ){
-		this.notaAutoEval = notaAutoEval;
-	};
+	public void setFechaAprobacion(Date fechaAprobacion) {
+        this.fechaAprobacion = fechaAprobacion;
+    }
 
-	public double getNotaFinal(){
-		return this.notaFinal;
-	};
+    ;
 
-	public void setNotaFinal( double notaFinal ){
-		this.notaFinal = notaFinal;
-	};
+	public double getMeta() {
+        return this.meta;
+    }
 
-	public Colaborador getColaborador(){
-		return this.colaborador;
-	};
+    ;
 
-	public void setColaborador( Colaborador colaborador ){
-		this.colaborador = colaborador;
-	};
+	public void setMeta(double meta) {
+        this.meta = meta;
+    }
 
-	public EvaluacionDesempenho getEvaluacion(){
-		return this.evaluacion;
-	};
+    ;
 
-	public void setEvaluacion( EvaluacionDesempenho evaluacion ){
-		this.evaluacion = evaluacion;
-	};
+	public String getUnidadMedida() {
+        return this.unidadMedida;
+    }
 
-	public Periodo getPeriodo(){
-		return this.periodo;
-	};
+    ;
 
-	public void setPeriodo( Periodo periodo ){
-		this.periodo = periodo;
-	};
+	public void setUnidadMedida(String unidadMedida) {
+        this.unidadMedida = unidadMedida;
+    }
 
-	public void mostrarDatos(){
+    ;
 
-	};
+	public String getObservacion() {
+        return this.observacion;
+    }
 
-	public void denegar(){
+    ;
 
-	};
+	public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
 
-	public void aprobar(){
+    ;
 
-	};
+	public double getPeso() {
+        return this.peso;
+    }
+
+    ;
+
+	public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    ;
+
+	public double getNotaPrevia() {
+        return this.notaPrevia;
+    }
+
+    ;
+
+	public void setNotaPrevia(double notaPrevia) {
+        this.notaPrevia = notaPrevia;
+    }
+
+    ;
+
+	public double getNotaAutoEval() {
+        return this.notaAutoEval;
+    }
+
+    ;
+
+	public void setNotaAutoEval(double notaAutoEval) {
+        this.notaAutoEval = notaAutoEval;
+    }
+
+    ;
+
+	public double getNotaFinal() {
+        return this.notaFinal;
+    }
+
+    ;
+
+	public void setNotaFinal(double notaFinal) {
+        this.notaFinal = notaFinal;
+    }
+
+    ;
+
+	public Colaborador getColaborador() {
+        return this.colaborador;
+    }
+
+    ;
+
+	public void setColaborador(Colaborador colaborador) {
+        this.colaborador = colaborador;
+    }
+
+    ;
+
+	public EvaluacionDesempenho getEvaluacion() {
+        return this.evaluacion;
+    }
+
+    ;
+
+	public void setEvaluacion(EvaluacionDesempenho evaluacion) {
+        this.evaluacion = evaluacion;
+    }
+
+    ;
+
+	public Periodo getPeriodo() {
+        return this.periodo;
+    }
+
+    ;
+
+	public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
+    }
+
+    ;
+
+	public void mostrarDatos() {
+
+    }
+
+    ;
+
+	public void denegar() {
+
+    }
+
+    ;
+
+	public void aprobar() {
+
+    }
+;
 
 }
 
