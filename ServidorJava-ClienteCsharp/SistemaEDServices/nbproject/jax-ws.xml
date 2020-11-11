@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="ExampleWS">
-      <implementation-class>pe.edu.pucp.sed.services.ExampleWS</implementation-class>
-    </service>
     <service name="ColaboradorWS">
       <implementation-class>pe.edu.pucp.sed.services.ColaboradorWS</implementation-class>
+    </service>
+    <service name="PeriodoWS">
+      <implementation-class>pe.edu.pucp.sed.services.PeriodoWS</implementation-class>
+    </service>
+    <service name="ObjetivoWS">
+      <implementation-class>pe.edu.pucp.sed.services.ObjetivoWS</implementation-class>
+    </service>
+    <service name="GerenciaWS">
+      <implementation-class>pe.edu.pucp.sed.services.GerenciaWS</implementation-class>
+    </service>
+    <service name="PuestoTrabajoWS">
+      <implementation-class>pe.edu.pucp.sed.services.PuestoTrabajoWS</implementation-class>
     </service>
   </services>
   <clients/>

@@ -13,6 +13,7 @@ public class Periodo{
 	private double pesoEvalComp;
 	private EstadoPeriodo estado;
 	private Time horaNotificacion;
+        private String nombre;
 	private ArrayList<Evaluacion> evaluaciones;
 	private ArrayList<PesoCriterio> pesosCriterio;
 	private ArrayList<ItemPDIPeriodo> rangosPDI;
@@ -146,6 +147,16 @@ public class Periodo{
 	public void finalizar(){
 
 	};
+
+        public String getNombre() {
+            return nombre;
+        }
+
+        public void setNombre(String nombre) {
+            this.nombre = nombre;
+        }
+
+      
 
 }
 

@@ -5,6 +5,8 @@
  */
 package pe.edu.pucp.sed.main;
 
+import java.sql.Time;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
@@ -29,7 +31,7 @@ import pe.edu.pucp.sed.mysql.PeriodoMySQL;
  * @author Jorge Miguel Baca
  */
 public class Principal {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ParseException{
         
 //Colaboradores        
        // SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
@@ -103,33 +105,33 @@ public class Principal {
 //        if(daoEp.insertar(ep) == 1)
 //            System.out.println("Se ha insertado una evaluacion potencial");        
         
-        GerenciaDAO daoGerencia = new GerenciaMySQL();
-       Gerencia gerencia = new Gerencia();
+  //      GerenciaDAO daoGerencia = new GerenciaMySQL();
+//       Gerencia gerencia = new Gerencia();
        
 
              
-       try{
-            gerencia.setIdGerencia(4);
-           gerencia.setNombre("COE ANALYTICS");
-           gerencia.setDescripcion("area de ciencia de datos");
+    //   try{
+        //    gerencia.setIdGerencia(4);
+       //    gerencia.setNombre("COE ANALYTICS");
+        //   gerencia.setDescripcion("area de ciencia de datos");
             
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-       }
+    //    }catch(Exception ex){
+  //         System.out.println(ex.getMessage());
+   //    }
        //if(daoGerencia.eliminar(3) == 1)
          //  System.out.println("Se ha eliminado un gerencia");
        
-       if(daoGerencia.actualizar(gerencia) == 1)
-           System.out.println("Se ha actualizado un gerencia");
+      // if(daoGerencia.actualizar(gerencia) == 1)
+    //       System.out.println("Se ha actualizado un gerencia");
         
         //if(daoGerencia.insertar(gerencia) == 1)
            // System.out.println("Se ha insertado un gerencia");
         
         //ArrayList<Gerencia> gerencias = daoGerencia.listar();
-        for(Gerencia a : daoGerencia.listar()){
-            System.out.println(a.getIdGerencia()+ " - " + a.getNombre()
-                                +" - " +a.getDescripcion());
-        }
+//        for(Gerencia a : daoGerencia.listar()){
+ //           System.out.println(a.getIdGerencia()+ " - " + a.getNombre()
+ //                               +" - " +a.getDescripcion());
+  //      }
         
         
        //CriterioDAO daoCriterio = new CriterioMySQL();
@@ -212,22 +214,24 @@ public class Principal {
 //            System.out.println(a.getIdPuestoTrabajo()+ " - " + a.getNombre());
 //        }
     
-//    Periodo per = new Periodo();
-//    
-//    
-//    try{
-//        per.setFechaInicio(formato.parse("18-04-2000"));
-//        per.setFechaFin(formato.parse("18-04-2001"));
-//        per.setPesoEvalObj(0.5);
-//        per.setPesoEvalComp(0.5);
-//    }catch(Exception ex){
-//        System.out.println(ex.getMessage());
-//    }
-//    
-//    PeriodoDAO perDAO = new PeriodoMySQL();
+    ArrayList<Periodo> periodos = new ArrayList<>();
     
-//    if(perDAO.insertar(per) == 1)
-//        System.out.println("Se ha ingresaro un Periodo");
+    Periodo per = new Periodo();
+    per.setNombre("periodo prueba 2");
+    per.setPesoEvalComp(0.7);
+    per.setPesoEvalObj(0.3);
+    per.setFechaFin(new SimpleDateFormat("yyyy-MM-dd").parse("2016-05-12"));
+    per.setFechaInicio(new SimpleDateFormat("yyyy-MM-dd").parse("2014-02-12"));
+    per.setDiaNotificacion(new SimpleDateFormat("yyyy-MM-dd").parse("2015-01-12"));
+    per.setHoraNotificacion(new java.sql.Time((new SimpleDateFormat("hh:mm:ss").parse("12:00:00")).getTime()));
+    
+    
+    PeriodoDAO daoPeriodo = new PeriodoMySQL();
+    
+    System.out.println("entra aqui");
+    
+   // if(daoPeriodo.insertar(per) == 1)
+    //    System.out.println("Se ha ingresaro un Periodo");
 //    try{
 //        per.setFechaFin(formato.parse("18-10-2000"));
 //    }catch(Exception ex){
@@ -240,9 +244,15 @@ public class Principal {
 //    if(perDAO.eliminar(per.getIdPeriodo()) == 1)
 //        System.out.println("Se ha eliminado un Periodo");
     
-//    for(Periodo p : perDAO.listar()){
-//            System.out.println(p.getFechaInicio()+ " - " + p.getFechaFin());
-//        }
+    try {
+            periodos = daoPeriodo.listar();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    
+      for(Periodo p : daoPeriodo.listar()){
+        System.out.println(p.getNombre()+ " - " + p.getIdPeriodo() + " - " + p.getFechaInicio());
+    }
     
     }
 }

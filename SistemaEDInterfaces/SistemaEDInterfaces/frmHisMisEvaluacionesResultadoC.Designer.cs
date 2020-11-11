@@ -160,9 +160,9 @@
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
-            this.lblMisObjetivos.Size = new System.Drawing.Size(370, 56);
+            this.lblMisObjetivos.Size = new System.Drawing.Size(456, 56);
             this.lblMisObjetivos.TabIndex = 13;
-            this.lblMisObjetivos.Text = "Competencias";
+            this.lblMisObjetivos.Text = "SubCompetencias";
             // 
             // frmHisMisEvaluacionesResultadoC
             // 
