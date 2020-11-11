@@ -63,7 +63,7 @@ public class ColaboradorWS {
     }
     
         @WebMethod(operationName = "eliminarColaborador")
-    public int eliminarColaborador(@WebParam(name = "colaborador") int idColaborador){
+    public int eliminarColaborador(@WebParam(name = "idColaborador") int idColaborador){
         int resultado = 0;
         try{
             resultado =  daoColaborador.eliminar(idColaborador);
@@ -71,6 +71,32 @@ public class ColaboradorWS {
             System.out.println(ex.getMessage());
         }
         return resultado;
+    }
+ 
+    @WebMethod(operationName = "listarColaboradoresXJefe")
+    public ArrayList<Colaborador> listarColaboradoresXJefe(@WebParam(name = "idJefe") int idJefe){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        
+        try {
+            colaboradores = daoColaborador.listarColaboradoresXJefe(idJefe);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return colaboradores;
+    }
+    
+    @WebMethod(operationName = "buscarJefe")
+    public Colaborador buscarJefe(@WebParam(name = "idJefe") int idJefe){
+        Colaborador colaborador = new Colaborador();
+        
+        try {
+            colaborador = daoColaborador.buscarJefe(idJefe);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return colaborador;
     }
     
 }
