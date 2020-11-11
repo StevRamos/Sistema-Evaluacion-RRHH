@@ -24,8 +24,9 @@ public class PeriodoMySQL implements PeriodoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call INSERTAR_PERIODO(?,?,?,?,?,?,?)}";
+            String sql = "{call INSERTAR_PERIODO(?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
+            
             cs.registerOutParameter("_ID_PERIODO", java.sql.Types.INTEGER);
             cs.setDate("_FECHA_INICIO", 
                    new java.sql.Date(periodo.getFechaInicio().getTime()));
@@ -36,6 +37,7 @@ public class PeriodoMySQL implements PeriodoDAO{
             cs.setTime("_HORA_NOTIFICACION", periodo.getHoraNotificacion());
             cs.setDouble("_PESO_EVAL_OBJ", periodo.getPesoEvalObj());
             cs.setDouble("_PESO_EVAL_COMP", periodo.getPesoEvalComp());
+            cs.setString("_NOMBRE", periodo.getNombre());
             cs.executeUpdate();
             periodo.setIdPeriodo(cs.getInt("_ID_PERIODO"));
             resultado = 1;
@@ -103,12 +105,13 @@ public class PeriodoMySQL implements PeriodoDAO{
             while(rs.next()){
                 Periodo per = new Periodo();
                 per.setIdPeriodo(rs.getInt("id_Periodo"));
-                per.setFechaInicio(formato.parse(rs.getDate("fechaInicio").toString()));
-                per.setFechaFin(formato.parse(rs.getDate("fechaFin").toString()));
+                per.setFechaInicio(rs.getDate("fechaInicio"));
+                per.setFechaFin(rs.getDate("fechaFin"));
                 per.setPesoEvalObj(rs.getDouble("pesoEvalObj"));
                 per.setPesoEvalComp(rs.getDouble("pesoEvalComp"));
                 per.setDiaNotificacion(rs.getDate("diaNotificacion"));
                 per.setHoraNotificacion(rs.getTime("horaNotificacion"));
+                per.setNombre(rs.getString("nombre"));
                 
                 periodos.add(per);
             }
