@@ -12,20 +12,20 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestCron : Form
     {
-        //private PeriodoWS.PeriodoWSClient daoPeriodo; 
+        private PeriodoWS.PeriodoWSClient daoPeriodo; 
         public frmAdmGestCron()
         {
             InitializeComponent();
-            //daoPeriodo = new PeriodoWS.PeriodoWSClient();
+            daoPeriodo = new PeriodoWS.PeriodoWSClient();
             dgvPeriodos.AutoGenerateColumns = false;
-            //dgvPeriodos.DataSource = daoPeriodo.listarPeriodos(); 
+            dgvPeriodos.DataSource = daoPeriodo.listarPeriodos(); 
             
         }
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
             frmAdmGestCronVerDetalle form = new frmAdmGestCronVerDetalle();
-            //form.Periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
+            form.Periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
             Global.formPrincipal.abrirFormularioHijo(true, form);
         }
 
@@ -40,8 +40,8 @@ namespace SistemaEDInterfaces
                 foreach (DataGridViewRow row in dgvPeriodos.SelectedRows)
                 {
 
-                    //PeriodoWS.periodo periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
-                    //daoPeriodo.eliminarPeriodo(periodo); 
+                    PeriodoWS.periodo periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
+                    daoPeriodo.eliminar
                     dgvPeriodos.Rows.RemoveAt(row.Index);
                 }
 
