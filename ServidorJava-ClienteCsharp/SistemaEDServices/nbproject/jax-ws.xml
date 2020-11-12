@@ -16,6 +16,9 @@
     <service name="PuestoTrabajoWS">
       <implementation-class>pe.edu.pucp.sed.services.PuestoTrabajoWS</implementation-class>
     </service>
+    <service name="GerenciaPeriodoWS">
+      <implementation-class>pe.edu.pucp.sed.services.GerenciaPeriodoWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
