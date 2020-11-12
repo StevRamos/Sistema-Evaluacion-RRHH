@@ -1,0 +1,7 @@
+ColaboradorWS.java
+GerenciaPeriodoWS.java
+GerenciaWS.java
+ObjetivoWS.java
+PeriodoWS.java
+PuestoTrabajoWS.java
+webservicesSED.txt

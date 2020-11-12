@@ -64,7 +64,7 @@ public class ObjetivoMySQL implements ObjetivoDAO {
             cs.setDouble("_META", objetivo.getMeta());
             cs.setString("_UNIDADMEDIDA", String.valueOf(objetivo.getUnidadMedida()));
             cs.setDouble("_PESO", objetivo.getPeso());
-            cs.setBoolean("_ESTADO", objetivo.getEstado());
+            cs.setInt("_ESTADO", objetivo.getEstado());
             cs.setString("_OBSERVACION", objetivo.getObservacion());
             cs.setDouble("_NOTAAUTOEVAL", objetivo.getNotaAutoEval());
             cs.setDouble("_NOTAPREVIA", objetivo.getNotaPrevia());
@@ -126,7 +126,7 @@ public class ObjetivoMySQL implements ObjetivoDAO {
 //                objetivo.getColaborador().setIdColaborador(idColaborador);
                 objetivo.getEvaluacion().setIdEvaluacion(rs.getInt("id_Evaluacion"));
                 objetivo.setDescripcion(rs.getString("descripcion"));
-                //objetivo.setEstado(rs.getBoolean("estado"));
+                objetivo.setEstado(rs.getInt("estado"));
                 objetivo.setFechaFormulacion(rs.getDate("fechaFormulacion")); //posible error
                 objetivo.setFechaAprobacion(rs.getDate("fechaAprobacion")); //posible error
                 objetivo.setMeta(rs.getDouble("meta"));

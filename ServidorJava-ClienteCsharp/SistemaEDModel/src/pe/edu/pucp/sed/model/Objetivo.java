@@ -6,7 +6,7 @@ public class Objetivo {
 
     private int idObjetivo;
     private String descripcion;
-    private boolean estado;
+    private int estado;
     private Date fechaFormulacion;
     private Date fechaAprobacion;
     private double meta;
@@ -50,13 +50,13 @@ public class Objetivo {
 
     ;
 
-	public boolean getEstado() {
+	public int getEstado() {
         return this.estado;
     }
 
     ;
 
-	public void setEstado(boolean estado) {
+	public void setEstado(int estado) {
         this.estado = estado;
     }
 
