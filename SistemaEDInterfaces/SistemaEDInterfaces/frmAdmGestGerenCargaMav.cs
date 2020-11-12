@@ -17,8 +17,8 @@ namespace SistemaEDInterfaces
         
         public frmAdmGestGerenCargaMav()
         {
-            daoGerencia = new GerenciaWS.ObjetivoWSClient();
             InitializeComponent();
+            daoGerencia = new GerenciaWS.ObjetivoWSClient();
         }
 
         private void btnCargarComMasiva_Click(object sender, EventArgs e)
@@ -32,18 +32,22 @@ namespace SistemaEDInterfaces
                     foreach (var linea in lineas)
                     {
                         var valores = linea.Split(';');
-                        GerenciaWS.Gerencia gerencia = new GerenciaWS.Gerencia;
-                        if (valores[0] != "no") {
-                            gerencia.setNombre = valores[0].ToString();
-                        } else {
-                            gerencia.setNombre = null;
-                        }
+                        GerenciaWS.Gerencia gerencia = new GerenciaWS.Gerencia();
+                        
+                        int dato = int.Parse(valores[0].ToString);
+                        gerencia.setIdGerencia(dato);
+
                         if (valores[1] != "no") {
-                            gerencia.setDescripcion = valores[1].ToString();
+                            gerencia.setNombre(valores[0].ToString());
+                        } else {
+                            gerencia.setNombre("");
+                        }
+                        if (valores[2] != "no") {
+                            gerencia.setDescripcion(valores[1].ToString());
                         }
                         else
                         {
-                            gerencia.setDescripcion = null;
+                            gerencia.setDescripcion("");
                         }
                         
                         daoGerencia.actualizarGerencia(gerencia);
@@ -52,9 +56,9 @@ namespace SistemaEDInterfaces
                     foreach (var linea in lineas)
                     {
                         var valores = linea.Split(';');
-                        GerenciaWS.Gerencia gerencia = new GerenciaWS.Gerencia;
-                        gerencia.setNombre = valores[0].ToString();
-                        gerencia.setDescripcion = valores[1].ToString();
+                        GerenciaWS.Gerencia gerencia = new GerenciaWS.Gerencia();
+                        gerencia.setNombre(valores[0].ToString());
+                        gerencia.setDescripcion(valores[1].ToString());
                         daoGerencia.insertarGerencia(gerencia);
                     }
                 }
