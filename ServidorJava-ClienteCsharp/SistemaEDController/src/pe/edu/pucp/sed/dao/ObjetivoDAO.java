@@ -8,4 +8,5 @@ public interface ObjetivoDAO{
 	int actualizar(Objetivo objetivo);
 	int eliminar(int idObjetivo);
 	ArrayList<Objetivo> listar();
+        ArrayList<Objetivo> listarObjetivosXColaborador( int idColaborador );
 }

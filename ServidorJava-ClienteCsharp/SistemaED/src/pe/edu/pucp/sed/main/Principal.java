@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
 import pe.edu.pucp.sed.dao.EscalaDAO;
 import pe.edu.pucp.sed.dao.GerenciaDAO;
+import pe.edu.pucp.sed.dao.ObjetivoDAO;
 //import pe.edu.pucp.sed.dao.EvaluacionPotencialDAO;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
 import pe.edu.pucp.sed.dao.PuestoTrabajoDAO;
@@ -19,12 +20,14 @@ import pe.edu.pucp.sed.model.Colaborador;
 import pe.edu.pucp.sed.model.Escala;
 import pe.edu.pucp.sed.model.EstadoCuenta;
 import pe.edu.pucp.sed.model.Gerencia;
+import pe.edu.pucp.sed.model.Objetivo;
 //import pe.edu.pucp.sed.model.EvaluacionPotencial;
 import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.model.PuestoTrabajo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
 import pe.edu.pucp.sed.mysql.EscalaMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaMySQL;
+import pe.edu.pucp.sed.mysql.ObjetivoMySQL;
 //import pe.edu.pucp.sed.mysql.EvaluacionPotencialMySQL;
 import pe.edu.pucp.sed.mysql.PeriodoMySQL;
 import pe.edu.pucp.sed.mysql.PuestoTrabajoMySQL;
@@ -201,20 +204,20 @@ public class Principal {
         //    System.out.println(a.getIdItemPDI()+ " - " + a.getNombre());
         //}
 //        
-        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
-        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
-//        
-//     
-        try{
-            puestoTrabajo.setIdPuestoTrabajo(5);
-            puestoTrabajo.setNombre("DATA SCIENTIST LEAD");
-            puestoTrabajo.setDescripcion("halla la captura de valor dell modelo analitico");     
-        }catch(Exception ex){
-        System.out.println(ex.getMessage());
-        }
-//    
-    if(daoPuestoTrabajo.eliminar(4) == 1)
-            System.out.println("Se ha eliminado un puestoTrabajo");
+//        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
+//        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
+////        
+////     
+//        try{
+//            puestoTrabajo.setIdPuestoTrabajo(5);
+//            puestoTrabajo.setNombre("DATA SCIENTIST LEAD");
+//            puestoTrabajo.setDescripcion("halla la captura de valor dell modelo analitico");     
+//        }catch(Exception ex){
+//        System.out.println(ex.getMessage());
+//        }
+////    
+//    if(daoPuestoTrabajo.eliminar(4) == 1)
+//            System.out.println("Se ha eliminado un puestoTrabajo");
 //        
 //        if(daoPuestoTrabajo.actualizar(puestoTrabajo) == 1)
 //            System.out.println("Se ha actualizado un puestoTrabajo");
@@ -267,5 +270,12 @@ public class Principal {
 //        System.out.println(p.getNombre()+ " - " + p.getIdPeriodo() + " - " + p.getFechaInicio());
 //    }
 //    
+
+ObjetivoDAO daoObjetivo = new ObjetivoMySQL();
+    Objetivo o = new Objetivo();
+
+    for(Objetivo ob : daoObjetivo.listarObjetivosXColaborador(1))
+        System.out.println(ob.getIdObjetivo());
+
   }
 }

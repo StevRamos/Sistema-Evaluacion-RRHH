@@ -39,7 +39,7 @@ public class PuestoTrabajoWS{
     }
 
     @WebMethod(operationName = "eliminarPuestoTrabajo")
-    public int eliminarPuestoTrabajo(@WebParam(name = "puestoTrabajo") int idPuestoTrabajo){
+    public int eliminarPuestoTrabajo(@WebParam(name = "idPuestoTrabajo") int idPuestoTrabajo){
         int resultado = 0;
         try{
             resultado =  daoPuestoTrabajo.eliminar(idPuestoTrabajo);

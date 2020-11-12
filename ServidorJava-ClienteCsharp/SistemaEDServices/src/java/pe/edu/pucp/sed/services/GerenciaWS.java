@@ -50,7 +50,7 @@ public class GerenciaWS{
     }
 
     @WebMethod(operationName = "eliminarGerencia")
-    public int eliminarGerencia(@WebParam(name = "gerencia") int idGerencia){
+    public int eliminarGerencia(@WebParam(name = "idGerencia") int idGerencia){
         int resultado = 0;
         try{
             resultado =  daoGerencia.eliminar(idGerencia);
