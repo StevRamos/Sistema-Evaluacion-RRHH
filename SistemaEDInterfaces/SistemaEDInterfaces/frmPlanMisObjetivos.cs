@@ -27,7 +27,6 @@ namespace SistemaEDInterfaces
            // dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
             InitializeComponent();
             
-            
         }
 
 

@@ -7,5 +7,7 @@ public interface ColaboradorDAO{
 	int insertar(Colaborador colaborador);
 	int actualizar(Colaborador colaborador);
 	int eliminar(int idColaborador);
-	ArrayList<Colaborador> listar();
+	ArrayList<Colaborador> listar(int idPuestoTrabajo, String DNI);
+        ArrayList<Colaborador> listarColaboradoresXJefe(int idJefe);
+        Colaborador buscarJefe( int idJefe );
 }

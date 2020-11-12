@@ -2,93 +2,122 @@ package pe.edu.pucp.sed.model;
 
 import java.util.Date;
 
-public class GerenciaPeriodo{
-	private Gerencia gerencia;
-	private Periodo periodo;
-	private Date fechaInicioPlan;
-	private Date fechaFinPlan;
-	private Date fechaInicioEval;
-	private Date fechaFinEval;
-	private Date fechaInicioPDI;
-	private Date fechaFinPDI;
-	private String diaNotifacion;
-        
-        public GerenciaPeriodo(){
-            this.gerencia = new Gerencia();
-            this.periodo = new Periodo();
-        }
-        
-	public Gerencia getGerencia(){
-		return this.gerencia;
-	};
+public class GerenciaPeriodo {
 
-	public void setGerencia( Gerencia gerencia ){
-		this.gerencia = gerencia;
-	};
+    private Gerencia gerencia;
+    private Periodo periodo;
+    private Date fechaInicioPlan;
+    private Date fechaFinPlan;
+    private Date fechaInicioPDI;
+    private Date fechaFinPDI;
+    private Date fechaInicioEvalPrevD;
+    private Date fechaFinEvalPrevD;
+    private Date fechaInicioEvalFinD;
+    private Date fechaFinEvalFinD;
+    private Date fechaInicioCal;
+    private Date fechaFinCal;
 
-	public Periodo getPeriodo(){
-		return this.periodo;
-	};
+    public GerenciaPeriodo() {
+        this.gerencia = new Gerencia();
+        this.periodo = new Periodo();
+    }
 
-	public void setPeriodo( Periodo periodo ){
-		this.periodo = periodo;
-	};
+    public Gerencia getGerencia() {
+        return gerencia;
+    }
 
-	public Date getFechaInicioPlan(){
-		return this.fechaInicioPlan;
-	};
+    public Periodo getPeriodo() {
+        return periodo;
+    }
 
-	public void setFechaInicioPlan( Date fechaInicioPlan ){
-		this.fechaInicioPlan = fechaInicioPlan;
-	};
+    public Date getFechaInicioPlan() {
+        return fechaInicioPlan;
+    }
 
-	public Date getFechaFinPlan(){
-		return this.fechaFinPlan;
-	};
+    public Date getFechaFinPlan() {
+        return fechaFinPlan;
+    }
 
-	public void setFechaFinPlan( Date fechaFinPlan ){
-		this.fechaFinPlan = fechaFinPlan;
-	};
+    public Date getFechaInicioPDI() {
+        return fechaInicioPDI;
+    }
 
-	public Date getFechaInicioEval(){
-		return this.fechaInicioEval;
-	};
+    public Date getFechaFinPDI() {
+        return fechaFinPDI;
+    }
 
-	public void setFechaInicioEval( Date fechaInicioEval ){
-		this.fechaInicioEval = fechaInicioEval;
-	};
+    public Date getFechaInicioEvalPrevD() {
+        return fechaInicioEvalPrevD;
+    }
 
-	public Date getFechaFinEval(){
-		return this.fechaFinEval;
-	};
+    public Date getFechaFinEvalPrevD() {
+        return fechaFinEvalPrevD;
+    }
 
-	public void setFechaFinEval( Date fechaFinEval ){
-		this.fechaFinEval = fechaFinEval;
-	};
+    public Date getFechaInicioEvalFinD() {
+        return fechaInicioEvalFinD;
+    }
 
-	public Date getFechaInicioPDI(){
-		return this.fechaInicioPDI;
-	};
+    public Date getFechaFinEvalFinD() {
+        return fechaFinEvalFinD;
+    }
 
-	public void setFechaInicioPDI( Date fechaInicioPDI ){
-		this.fechaInicioPDI = fechaInicioPDI;
-	};
+    public Date getFechaInicioCal() {
+        return fechaInicioCal;
+    }
 
-	public Date getFechaFinPDI(){
-		return this.fechaFinPDI;
-	};
+    public Date getFechaFinCal() {
+        return fechaFinCal;
+    }
 
-	public void setFechaFinPDI( Date fechaFinPDI ){
-		this.fechaFinPDI = fechaFinPDI;
-	};
+    public void setGerencia(Gerencia gerencia) {
+        this.gerencia = gerencia;
+    }
 
-	public String getDiaNotifacion(){
-		return this.diaNotifacion;
-	};
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
+    }
 
-	public void setDiaNotifacion( String diaNotifacion ){
-		this.diaNotifacion = diaNotifacion;
-	};
+    public void setFechaInicioPlan(Date fechaInicioPlan) {
+        this.fechaInicioPlan = fechaInicioPlan;
+    }
 
+    public void setFechaFinPlan(Date fechaFinPlan) {
+        this.fechaFinPlan = fechaFinPlan;
+    }
+
+    public void setFechaInicioPDI(Date fechaInicioPDI) {
+        this.fechaInicioPDI = fechaInicioPDI;
+    }
+
+    public void setFechaFinPDI(Date fechaFinPDI) {
+        this.fechaFinPDI = fechaFinPDI;
+    }
+
+    public void setFechaInicioEvalPrevD(Date fechaInicioEvalPrevD) {
+        this.fechaInicioEvalPrevD = fechaInicioEvalPrevD;
+    }
+
+    public void setFechaFinEvalPrevD(Date fechaFinEvalPrevD) {
+        this.fechaFinEvalPrevD = fechaFinEvalPrevD;
+    }
+
+    public void setFechaInicioEvalFinD(Date fechaInicioEvalFinD) {
+        this.fechaInicioEvalFinD = fechaInicioEvalFinD;
+    }
+
+    public void setFechaFinEvalFinD(Date fechaFinEvalFinD) {
+        this.fechaFinEvalFinD = fechaFinEvalFinD;
+    }
+
+    public void setFechaInicioCal(Date fechaInicioCal) {
+        this.fechaInicioCal = fechaInicioCal;
+    }
+
+    public void setFechaFinCal(Date fechaFinCal) {
+        this.fechaFinCal = fechaFinCal;
+    }
+
+    
 }
 

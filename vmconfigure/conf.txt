@@ -7,8 +7,12 @@ in "C:\glassfish-5.0\glassfish5\bin"
 > asadmin start-domain        //inicializar glassfish
 > asadmin restart-domain 	//para reiniciar 
 > asadmin deploy C:\instaladores\SistemaEDServices.war //para desplegar la aplicacion con el war del proyecto
-
+> asadmin undeploy SistemaEDServices //para undesplegar la aplicacion con el war del proyecto
 
 to try the server:
 http://54.160.145.128:8080/SistemaEDServices/					//home
 http://54.160.145.128:8080/SistemaEDServices/ColaboradorWS?Tester                //tester for colaboradorws
+
+to reset the server:
+-undeploy
+-deploy
