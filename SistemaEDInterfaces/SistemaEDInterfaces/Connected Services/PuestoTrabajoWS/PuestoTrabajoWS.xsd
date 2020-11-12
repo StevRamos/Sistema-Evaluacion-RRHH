@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.sed.pucp.edu.pe/" targetNamespace="http://services.sed.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarPuestoTrabajo" type="tns:actualizarPuestoTrabajo" />
+  <xs:element name="actualizarPuestoTrabajoResponse" type="tns:actualizarPuestoTrabajoResponse" />
+  <xs:element name="eliminarPuestoTrabajo" type="tns:eliminarPuestoTrabajo" />
+  <xs:element name="eliminarPuestoTrabajoResponse" type="tns:eliminarPuestoTrabajoResponse" />
+  <xs:element name="insertarPuestoTrabajo" type="tns:insertarPuestoTrabajo" />
+  <xs:element name="insertarPuestoTrabajoResponse" type="tns:insertarPuestoTrabajoResponse" />
+  <xs:element name="listarPuestoTrabajos" type="tns:listarPuestoTrabajos" />
+  <xs:element name="listarPuestoTrabajosResponse" type="tns:listarPuestoTrabajosResponse" />
+  <xs:complexType name="insertarPuestoTrabajo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="puestoTrabajo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+      <xs:element name="idPuestoTrabajo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gerencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idGerencia" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="periodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diaNotificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoPeriodo" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaNotificacion" type="tns:time" />
+      <xs:element name="idPeriodo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="pesoEvalComp" type="xs:double" />
+      <xs:element name="pesoEvalObj" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="time">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarPuestoTrabajoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPuestoTrabajos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreGerencia" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPuestoTrabajosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:puestoTrabajo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPuestoTrabajo">
+    <xs:sequence>
+      <xs:element name="idPuestoTrabajo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPuestoTrabajoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarPuestoTrabajo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarPuestoTrabajoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="estadoPeriodo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVO" />
+      <xs:enumeration value="INACTIVO" />
+      <xs:enumeration value="ELIMINADA" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.sed.pucp.edu.pe/" targetNamespace="http://services.sed.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarGerencia" type="tns:actualizarGerencia" />
+  <xs:element name="actualizarGerenciaResponse" type="tns:actualizarGerenciaResponse" />
+  <xs:element name="eliminarGerencia" type="tns:eliminarGerencia" />
+  <xs:element name="eliminarGerenciaResponse" type="tns:eliminarGerenciaResponse" />
+  <xs:element name="insertarGerencia" type="tns:insertarGerencia" />
+  <xs:element name="insertarGerenciaPeriodo" type="tns:insertarGerenciaPeriodo" />
+  <xs:element name="insertarGerenciaPeriodoResponse" type="tns:insertarGerenciaPeriodoResponse" />
+  <xs:element name="insertarGerenciaResponse" type="tns:insertarGerenciaResponse" />
+  <xs:element name="listarGerencias" type="tns:listarGerencias" />
+  <xs:element name="listarGerenciasResponse" type="tns:listarGerenciasResponse" />
+  <xs:complexType name="insertarGerencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gerencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idGerencia" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="periodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diaNotificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoPeriodo" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaNotificacion" type="tns:time" />
+      <xs:element name="idPeriodo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="pesoEvalComp" type="xs:double" />
+      <xs:element name="pesoEvalObj" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="time">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="insertarGerenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarGerenciaPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarGerenciaPeriodoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarGerencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarGerenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarGerencia">
+    <xs:sequence>
+      <xs:element name="idGerencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarGerenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarGerencias">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarGerenciasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:gerencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="estadoPeriodo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ACTIVO" />
+      <xs:enumeration value="INACTIVO" />
+      <xs:enumeration value="ELIMINADA" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
