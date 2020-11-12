@@ -102,6 +102,7 @@ namespace SistemaEDInterfaces
         {
             
             txtID.Text = objetivo.idObjetivo.ToString();
+            txtEstado.Text = objetivo.estado.ToString();
             switch (objetivo.estado)
             {
                 case (int)EstadoObjetivo.Oculto:
@@ -125,7 +126,7 @@ namespace SistemaEDInterfaces
             }
             txtMeta.Text = objetivo.meta.ToString();
             txtUnidadMedida.Text = objetivo.unidadMedida;
-            dtpFechaAprobacion.Value = objetivo.fechaAprobacion;
+            //dtpFechaAprobacion.Value = objetivo.fechaAprobacion;
             dtpFechaFormulacion.Value = objetivo.fechaFormulacion;
             txtPeso.Text = objetivo.peso.ToString();
             txtBoxDescripcion.Text = objetivo.descripcion;

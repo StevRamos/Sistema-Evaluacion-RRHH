@@ -15,7 +15,7 @@ namespace SistemaEDInterfaces
 
         private ObjetivoWS.ObjetivoWSClient daoObjetivo;
         
-        private int idColaboradorLoggeado=1;
+        private int idColaboradorLoggeado;
 
         public int IdColaboradorLoggeado { get => idColaboradorLoggeado; set => idColaboradorLoggeado = value; }
 
@@ -24,8 +24,9 @@ namespace SistemaEDInterfaces
             InitializeComponent();
             daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             dgvMisObjetivos.AutoGenerateColumns = false;
-
-            dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado);
+            IdColaboradorLoggeado = 1; 
+            dgvMisObjetivos.DataSource = new BindingList<ObjetivoWS.objetivo> 
+                                        (daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado).ToArray());
             
             
         }
@@ -75,7 +76,8 @@ namespace SistemaEDInterfaces
             form.Objetivo.colaborador.idColaborador = idColaboradorLoggeado; 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado);
+                dgvMisObjetivos.DataSource = new BindingList<ObjetivoWS.objetivo>
+                                        (daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado).ToArray());
             }
         }
 
@@ -112,7 +114,11 @@ namespace SistemaEDInterfaces
             
             ObjetivoWS.objetivo objetivoSeleccionado =
                 (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem;
-
+            if(objetivoSeleccionado.estado==0)
+                MessageBox.Show("EL ESTADO ES 0.",
+                            "Mensaje de confirmacion",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
             frmPlanEditarObjetivo form = new frmPlanEditarObjetivo();
             form.Objetivo = objetivoSeleccionado; 
             Global.formPrincipal.abrirFormularioHijo(true,form); 
