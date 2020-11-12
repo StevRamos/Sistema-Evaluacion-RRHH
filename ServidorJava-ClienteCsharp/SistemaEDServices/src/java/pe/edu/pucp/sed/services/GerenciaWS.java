@@ -27,16 +27,7 @@ public class GerenciaWS{
         return resultado;
     }
     
-        @WebMethod(operationName = "insertarGerenciaPeriodo")
-    public int insertarGerenciaPeriodo(@WebParam(name = "gerencia") Gerencia gerencia){
-        int resultado = 0;
-        try{
-            resultado =  daoGerencia.insertarGerenciaPeriodo(gerencia);
-        }catch( Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
+
 
     @WebMethod(operationName = "actualizarGerencia")
     public int actualizarGerencia(@WebParam(name = "gerencia") Gerencia gerencia){
