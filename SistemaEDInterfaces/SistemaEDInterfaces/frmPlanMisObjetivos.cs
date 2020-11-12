@@ -13,7 +13,7 @@ namespace SistemaEDInterfaces
     public partial class frmPlanMisObjetivos : Form
     {
 
-        //private ObjetivoWS.ObjetivoWSClient daoObjetivo;
+        private ObjetivoWS.ObjetivoWSClient daoObjetivo;
         
         private int idColaboradorLoggeado;
 
@@ -21,10 +21,10 @@ namespace SistemaEDInterfaces
 
         public frmPlanMisObjetivos()
         {
-            //daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
+            daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             dgvMisObjetivos.AutoGenerateColumns = false;
 
-           // dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
+            dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
             InitializeComponent();
             
         }
