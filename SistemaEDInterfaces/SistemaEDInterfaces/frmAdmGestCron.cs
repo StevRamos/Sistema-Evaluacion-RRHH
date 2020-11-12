@@ -41,7 +41,7 @@ namespace SistemaEDInterfaces
                 {
 
                     PeriodoWS.periodo periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
-                    daoPeriodo.eliminar
+                    //daoPeriodo.eliminarPeriodo(periodo);
                     dgvPeriodos.Rows.RemoveAt(row.Index);
                 }
 
@@ -83,7 +83,7 @@ namespace SistemaEDInterfaces
         }
         private void frmAdmGestCron_Load(object sender, EventArgs e)
         {
-            agregarDatosDummyDGV();
+            //agregarDatosDummyDGV();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

@@ -95,6 +95,8 @@ namespace SistemaEDInterfaces
                         break; 
                 }
             }
+
+
         }
 
 
@@ -113,7 +115,7 @@ namespace SistemaEDInterfaces
 
             if (verificarSumaCupos())
             {
-
+                daoEscalaPeriodo.
                 MessageBox.Show("Se guardaron los cambios realizados.",
                 "Mensaje de información",
                 MessageBoxButtons.OK,
@@ -121,6 +123,8 @@ namespace SistemaEDInterfaces
             }
             else
             {
+
+
                 MessageBox.Show("Error: Los valores de cupos no suman 100%.",
                 "Error",
                 MessageBoxButtons.OK,
