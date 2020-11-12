@@ -14,6 +14,7 @@ import pe.edu.pucp.sed.dao.EscalaDAO;
 import pe.edu.pucp.sed.dao.GerenciaDAO;
 //import pe.edu.pucp.sed.dao.EvaluacionPotencialDAO;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
+import pe.edu.pucp.sed.dao.PuestoTrabajoDAO;
 import pe.edu.pucp.sed.model.Colaborador;
 import pe.edu.pucp.sed.model.Escala;
 import pe.edu.pucp.sed.model.EstadoCuenta;
@@ -26,6 +27,7 @@ import pe.edu.pucp.sed.mysql.EscalaMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaMySQL;
 //import pe.edu.pucp.sed.mysql.EvaluacionPotencialMySQL;
 import pe.edu.pucp.sed.mysql.PeriodoMySQL;
+import pe.edu.pucp.sed.mysql.PuestoTrabajoMySQL;
 
 /**
  *
@@ -115,22 +117,22 @@ public class Principal {
 //        
 //        if(daoEp.insertar(ep) == 1)
 //            System.out.println("Se ha insertado una evaluacion potencial");        
-        
-        GerenciaDAO daoGerencia = new GerenciaMySQL();
-       Gerencia gerencia = new Gerencia();
+//        
+//        GerenciaDAO daoGerencia = new GerenciaMySQL();
+//       Gerencia gerencia = new Gerencia();
        
 
              
-       try{
-           gerencia.setIdGerencia(5);
-           gerencia.setNombre("AREA DE cobros");
-           gerencia.setDescripcion("esta area se encarga de cobrar");
-            
-        }catch(Exception ex){
-           System.out.println(ex.getMessage());
-       }
-       if(daoGerencia.eliminar(5) == 1)
-           System.out.println("Se ha eliminado un gerencia");
+//       try{
+//           gerencia.setIdGerencia(5);
+//           gerencia.setNombre("AREA DE cobros");
+//           gerencia.setDescripcion("esta area se encarga de cobrar");
+//            
+//        }catch(Exception ex){
+//           System.out.println(ex.getMessage());
+//       }
+//       if(daoGerencia.eliminar(5) == 1)
+//           System.out.println("Se ha eliminado un gerencia");
        
 //       if(daoGerencia.actualizar(gerencia) == 1)
 //           System.out.println("Se ha actualizado un gerencia");
@@ -138,11 +140,11 @@ public class Principal {
 //        if(daoGerencia.insertar(gerencia) == 1)
 //            System.out.println("Se ha insertado un gerencia");
         
-        ArrayList<Gerencia> gerencias = daoGerencia.listar();
-        for(Gerencia a : daoGerencia.listar()){
-            System.out.println(a.getIdGerencia()+ " - " + a.getNombre()
-                                +" - " +a.getDescripcion());
-        }
+//        ArrayList<Gerencia> gerencias = daoGerencia.listar();
+//        for(Gerencia a : daoGerencia.listar()){
+//            System.out.println(a.getIdGerencia()+ " - " + a.getNombre()
+//                                +" - " +a.getDescripcion());
+//        }
         
         
        //CriterioDAO daoCriterio = new CriterioMySQL();
@@ -199,28 +201,28 @@ public class Principal {
         //    System.out.println(a.getIdItemPDI()+ " - " + a.getNombre());
         //}
 //        
-//        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
-//        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
+        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
+        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
 //        
 //     
-//        try{
-//            puestoTrabajo.setIdPuestoTrabajo(3);
-//            puestoTrabajo.setNombre("Senior Data Scientist");
-//            puestoTrabajo.setDescripcion("CREA MODELOS DE DEEP LEARNING");     
-//        }catch(Exception ex){
-//        System.out.println(ex.getMessage());
-//        }
+        try{
+            puestoTrabajo.setIdPuestoTrabajo(5);
+            puestoTrabajo.setNombre("DATA SCIENTIST LEAD");
+            puestoTrabajo.setDescripcion("halla la captura de valor dell modelo analitico");     
+        }catch(Exception ex){
+        System.out.println(ex.getMessage());
+        }
 //    
-//        if(daoPuestoTrabajo.eliminar(3) == 1)
-//            System.out.println("Se ha eliminado un puestoTrabajo");
+    if(daoPuestoTrabajo.eliminar(4) == 1)
+            System.out.println("Se ha eliminado un puestoTrabajo");
 //        
-//       // if(daoPuestoTrabajo.actualizar(puestoTrabajo) == 1)
-//         //   System.out.println("Se ha actualizado un puestoTrabajo");
+//        if(daoPuestoTrabajo.actualizar(puestoTrabajo) == 1)
+//            System.out.println("Se ha actualizado un puestoTrabajo");
+//         System.out.println("Se hQUEIER INSERTAR");
+//        if(daoPuestoTrabajo.insertar(puestoTrabajo) == 1)
+//            System.out.println("Se ha insertado un puestoTrabajo");
 //        
-//        //if(daoPuestoTrabajo.insertar(puestoTrabajo) == 1)
-//         //   System.out.println("Se ha insertado un puestoTrabajo");
-//        
-//        ArrayList<PuestoTrabajo> puestosTrabajo = daoPuestoTrabajo.listar();
+//        ArrayList<PuestoTrabajo> puestosTrabajo = daoPuestoTrabajo.listar("");
 //        for(PuestoTrabajo a : puestosTrabajo){
 //            System.out.println(a.getIdPuestoTrabajo()+ " - " + a.getNombre());
 //        }
