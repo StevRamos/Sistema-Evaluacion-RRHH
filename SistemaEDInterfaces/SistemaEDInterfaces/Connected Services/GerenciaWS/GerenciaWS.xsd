@@ -5,8 +5,6 @@
   <xs:element name="eliminarGerencia" type="tns:eliminarGerencia" />
   <xs:element name="eliminarGerenciaResponse" type="tns:eliminarGerenciaResponse" />
   <xs:element name="insertarGerencia" type="tns:insertarGerencia" />
-  <xs:element name="insertarGerenciaPeriodo" type="tns:insertarGerenciaPeriodo" />
-  <xs:element name="insertarGerenciaPeriodoResponse" type="tns:insertarGerenciaPeriodoResponse" />
   <xs:element name="insertarGerenciaResponse" type="tns:insertarGerenciaResponse" />
   <xs:element name="listarGerencias" type="tns:listarGerencias" />
   <xs:element name="listarGerenciasResponse" type="tns:listarGerenciasResponse" />
@@ -40,16 +38,6 @@
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="insertarGerenciaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarGerenciaPeriodo">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarGerenciaPeriodoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

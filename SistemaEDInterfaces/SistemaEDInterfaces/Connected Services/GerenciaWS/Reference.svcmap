@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0ffa48ef-b5b0-412a-96c0-fe81c2e27067" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="739d8956-ef36-4549-aff6-4ac2c13d192f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://54.160.145.128:8080/SistemaEDServices/GerenciaWS?WSDL " Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="GerenciaWS.wsdl" MetadataType="Wsdl" ID="376cb22e-cdf3-4e92-ab70-d85e8091f32a" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/GerenciaWS?WSDL" />
-    <MetadataFile FileName="GerenciaWS.xsd" MetadataType="Schema" ID="8e157afb-9a59-4531-afc4-4c9e070461ae" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/GerenciaWS?xsd=1" />
+    <MetadataFile FileName="GerenciaWS.wsdl" MetadataType="Wsdl" ID="b7e2f54b-d304-4bbe-844a-f9c7c23edf8d" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/GerenciaWS?WSDL" />
+    <MetadataFile FileName="GerenciaWS.xsd" MetadataType="Schema" ID="7eb778c5-d6da-4143-ac7d-275250ba11a1" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/GerenciaWS?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

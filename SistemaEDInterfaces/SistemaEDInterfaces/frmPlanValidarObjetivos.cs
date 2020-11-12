@@ -15,15 +15,16 @@ namespace SistemaEDInterfaces
         
         private ColaboradorWS.ColaboradorWSClient daoColaborador;
         
-        private int idColaboradorLoggeado;
+        private int idColaboradorLoggeado=1;
 
         public int IdColaboradorLoggeado { get => idColaboradorLoggeado; set => idColaboradorLoggeado = value; }
         
         public frmPlanValidarObjetivos()
         {
+            InitializeComponent();
             daoColaborador = new ColaboradorWS.ColaboradorWSClient();
             dgvListaTrabajadores.DataSource = daoColaborador.listarColaboradoresXJefe(IdColaboradorLoggeado); 
-            InitializeComponent();
+            
         }
 
         private void btnRealizarRevision_Click(object sender, EventArgs e)

@@ -20,6 +20,7 @@ namespace SistemaEDInterfaces
         public frmPlanAgregarObjetivo()
         {
             objetivo = new ObjetivoWS.objetivo();
+            objetivo.colaborador = new ObjetivoWS.colaborador(); 
             daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             InitializeComponent();
         }

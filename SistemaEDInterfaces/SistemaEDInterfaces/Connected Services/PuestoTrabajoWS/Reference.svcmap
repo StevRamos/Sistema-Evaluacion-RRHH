@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8e173dfc-2aae-41d8-adc4-f5a67cd12914" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9f777dc8-0db6-42b1-ab1d-1ee0d1c4ba99" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://54.160.145.128:8080/SistemaEDServices/PuestoTrabajoWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PuestoTrabajoWS.xsd" MetadataType="Schema" ID="a12056ab-0851-44d2-a10b-bd57de617134" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/PuestoTrabajoWS?xsd=1" />
-    <MetadataFile FileName="PuestoTrabajoWS.wsdl" MetadataType="Wsdl" ID="f96d071e-7f15-45fa-b95b-8cc500aaf612" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/PuestoTrabajoWS?WSDL" />
+    <MetadataFile FileName="PuestoTrabajoWS.xsd" MetadataType="Schema" ID="7eaa208a-c40a-4e72-bbd7-0b96b0fff308" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/PuestoTrabajoWS?xsd=1" />
+    <MetadataFile FileName="PuestoTrabajoWS.wsdl" MetadataType="Wsdl" ID="2ff87729-5d47-4666-ad97-100e24e152b8" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/PuestoTrabajoWS?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -18,7 +18,7 @@ namespace SistemaEDInterfaces
         private GerenciaPeriodoWS.GerenciaPeriodoWSClient daoGerenciaPeriodo;
 
         private PeriodoWS.PeriodoWSClient daoPeriodo; 
-        public PeriodoWS.periodo Periodo { get => periodo; set => periodo = value; }*/
+        public PeriodoWS.periodo Periodo { get => periodo; set => periodo = value; }
         
         
         public frmAdmGestCronVerDetalle()
@@ -41,10 +41,10 @@ namespace SistemaEDInterfaces
             periodo.fechaFin = dtpFechaFin.Value; 
             periodo.pesoEvalObj = Double.Parse(txtPesoObjetivos.Text);
             periodo.pesoEvalComp = Double.Parse(txtPesoCompetencia.Text);
-            periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
-            periodo.horaNotificacion = dtpHoraNotificacion.Value;
+            //periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
+            //periodo.horaNotificacion = dtpHoraNotificacion.Value;
 
-            daoPeriodo.actualizarPeriodo(periodo);
+            //daoPeriodo.actualizarPeriodo(periodo);
             MessageBox.Show("Se guardaron los cambios.",
                 "Mensaje de confirmacion",
                 MessageBoxButtons.OK,
@@ -191,6 +191,7 @@ namespace SistemaEDInterfaces
 
 
         //Funcion para actualizar las fechas de inicio/fin de una gerencia 
+        /*
         private void actualizarGP(int idGerencia, DateTime fechaInicio, DateTime fechaFin, Etapas etapa)
         {
             if (fechaInicio != null)
@@ -227,7 +228,8 @@ namespace SistemaEDInterfaces
             }
             if (fechaFin != null)
             {
-                for(GerenciaPeriodoWS.gerenciaPeriodo gp in periodo.configuracionFechas)
+
+                foreach(GerenciaPeriodoWS.gerenciaPeriodo gp in periodo.configuracionFechas)
                 {
                     if (gp.gerencia.idGerencia == idGerencia)
                     {
@@ -257,7 +259,7 @@ namespace SistemaEDInterfaces
             }
         }
 
-
+        */
         void mostrarFormularioFechaYActualizar(DataGridViewCellEventArgs e, Etapas etapa)
         {
             if (e.ColumnIndex == 2)
@@ -272,8 +274,8 @@ namespace SistemaEDInterfaces
                     if (etapa == Etapas.FinalD) dgvCronEvFinal.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
                     if (etapa == Etapas.Calibracion) dgvCalibNotas.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
                     if (etapa == Etapas.PDI) dgvPDI.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
-                    GerenciaPeriodoWS.gerenciaPeriodo gp = dgvPlanificacion.CurrentRow.DataBoundItem;
-                    actualizarGP(gp.gerencia.idGerencia, fecha, null, etapa);
+                    GerenciaPeriodoWS.gerenciaPeriodo gp = (GerenciaPeriodoWS.gerenciaPeriodo)dgvPlanificacion.CurrentRow.DataBoundItem;
+                    //actualizarGP(gp.gerencia.idGerencia, fecha, null, etapa);
                 }
 
             }
@@ -289,8 +291,8 @@ namespace SistemaEDInterfaces
                     if(etapa == Etapas.FinalD) dgvCronEvFinal.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
                     if(etapa == Etapas.Calibracion) dgvCalibNotas.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
                     if(etapa == Etapas.PDI) dgvPDI.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
-                    GerenciaPeriodoWS.gerenciaPeriodo gp = dgvPlanificacion.CurrentRow.DataBoundItem;
-                    actualizarGP(gp.gerencia.idGerencia, null, fecha, etapa);
+                    GerenciaPeriodoWS.gerenciaPeriodo gp = (GerenciaPeriodoWS.gerenciaPeriodo)dgvPlanificacion.CurrentRow.DataBoundItem;
+                    //actualizarGP(gp.gerencia.idGerencia, null, fecha, etapa);
                 }
             }
         }

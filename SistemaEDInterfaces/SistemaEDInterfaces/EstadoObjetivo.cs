@@ -8,7 +8,7 @@ namespace SistemaEDInterfaces
 {
 	public enum EstadoObjetivo
 	{
-		Oculto, EsperandoRevision, DenOculto, DenVisible, AprobOculto, AprobVisible, Eliminado
+		Eliminado, Oculto, EsperandoRevision, DenOculto, DenVisible, AprobOculto, AprobVisible
 
 	}
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="843468a3-09ff-4fe6-9b75-dea04adaea55" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="077a418e-4eaf-4c2e-8daf-86c68929f4cf" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://54.160.145.128:8080/SistemaEDServices/ObjetivoWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="ObjetivoWS.xsd" MetadataType="Schema" ID="b4e79b42-49af-427b-869c-42c6c36b6954" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/ObjetivoWS?xsd=1" />
-    <MetadataFile FileName="ObjetivoWS.wsdl" MetadataType="Wsdl" ID="00510ebc-02e1-4b67-b86a-f31e7e24c76b" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/ObjetivoWS?WSDL" />
+    <MetadataFile FileName="ObjetivoWS.xsd" MetadataType="Schema" ID="cd2f1c4a-344c-40ab-b463-4650576b59d3" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/ObjetivoWS?xsd=1" />
+    <MetadataFile FileName="ObjetivoWS.wsdl" MetadataType="Wsdl" ID="553b2b93-33b8-40e0-8ec8-2e1768cf15e8" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/ObjetivoWS?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

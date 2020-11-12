@@ -15,17 +15,18 @@ namespace SistemaEDInterfaces
 
         private ObjetivoWS.ObjetivoWSClient daoObjetivo;
         
-        private int idColaboradorLoggeado;
+        private int idColaboradorLoggeado=1;
 
         public int IdColaboradorLoggeado { get => idColaboradorLoggeado; set => idColaboradorLoggeado = value; }
 
         public frmPlanMisObjetivos()
         {
+            InitializeComponent();
             daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             dgvMisObjetivos.AutoGenerateColumns = false;
 
             dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado);
-            InitializeComponent();
+            
             
         }
 
@@ -64,7 +65,7 @@ namespace SistemaEDInterfaces
         }
         private void frmPlanMisObjetivos_Load(object sender, EventArgs e)
         {
-            agregarDatosDummyDGV();
+            //agregarDatosDummyDGV();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
