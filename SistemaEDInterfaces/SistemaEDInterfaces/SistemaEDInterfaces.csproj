@@ -56,6 +56,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ColaboradorWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\GerenciaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PeriodoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="EstadoObjetivo.cs" />
     <Compile Include="Etapas.cs" />
     <Compile Include="frmAdmCalibrar.cs">
@@ -638,6 +653,43 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ColaboradorWS\ColaboradorWS.wsdl" />
+    <None Include="Connected Services\ColaboradorWS\ColaboradorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.buscarJefeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.colaborador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.insertarColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GerenciaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\GerenciaWS\configuration.svcinfo" />
+    <None Include="Connected Services\GerenciaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
+    <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PeriodoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PeriodoWS\configuration.svcinfo" />
+    <None Include="Connected Services\PeriodoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Iconos\administracion.png" />
     <Content Include="Iconos\casa.png" />
     <Content Include="Iconos\cheque %281%29.png" />
@@ -650,8 +702,48 @@
     <Content Include="Iconos\reportes.png" />
     <Content Include="Iconos\salida.png" />
     <Content Include="Iconos\usuario.png" />
+    <None Include="Connected Services\GerenciaWS\GerenciaWS.wsdl" />
+    <None Include="Connected Services\GerenciaWS\GerenciaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GerenciaWS\SistemaEDInterfaces.GerenciaWS.actualizarGerenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GerenciaWS\SistemaEDInterfaces.GerenciaWS.eliminarGerenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GerenciaWS\SistemaEDInterfaces.GerenciaWS.gerencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GerenciaWS\SistemaEDInterfaces.GerenciaWS.insertarGerenciaPeriodoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GerenciaWS\SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GerenciaWS\SistemaEDInterfaces.GerenciaWS.listarGerenciasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PeriodoWS\PeriodoWS.wsdl" />
+    <None Include="Connected Services\PeriodoWS\PeriodoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.insertarPeriodoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.periodo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Iconos\PUCP.png" />
     <None Include="Iconos\PUCPLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ColaboradorWS\" />
+    <WCFMetadataStorage Include="Connected Services\GerenciaWS\" />
+    <WCFMetadataStorage Include="Connected Services\PeriodoWS\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
