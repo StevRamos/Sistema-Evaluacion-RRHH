@@ -18,14 +18,17 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
             daoGerencia = new GerenciaWS.GerenciaWSClient();
-            dgvGerencias.DataSource = daoGerencia.listarGerencias();
             dgvGerencias.AutoGenerateColumns = false;
+            dgvGerencias.DataSource = daoGerencia.listarGerencias();
         }
 
         private void btnGestGerCargaMav_Click(object sender, EventArgs e)
         {
             Form formulario = new frmAdmGestGerenCargaMav();
-            formulario.Show();
+            if (formulario.ShowDialog() == DialogResult.OK)
+            {
+                dgvGerencias.DataSource = daoGerencia.listarGerencias();
+            }
         }
 
         private void frmAdmGestGer_Load(object sender, EventArgs e)
@@ -45,7 +48,7 @@ namespace SistemaEDInterfaces
                 {
                     GerenciaWS.gerencia gerencia = (GerenciaWS.gerencia)dgvGerencias.CurrentRow.DataBoundItem;
                     daoGerencia.eliminarGerencia(gerencia.idGerencia);
-                    dgvGerencias.Rows.RemoveAt(row.Index);
+                    dgvGerencias.DataSource = daoGerencia.listarGerencias();
                 }
 
             }

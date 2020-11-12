@@ -32,7 +32,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineas)
                     {
-                        var valores = linea.Split(';');
+                        var valores = linea.Split(',');
                         GerenciaWS.gerencia gerencia = new GerenciaWS.gerencia();
 
                         int dato = int.Parse(valores[0].ToString());
@@ -41,7 +41,7 @@ namespace SistemaEDInterfaces
 
                         if (valores[1] != "no")
                         {
-                            gerencia.nombre = valores[0].ToString();
+                            gerencia.nombre = valores[1].ToString();
                         }
                         else
                         {
@@ -49,7 +49,7 @@ namespace SistemaEDInterfaces
                         }
                         if (valores[2] != "no")
                         {
-                            gerencia.descripcion = valores[1].ToString();
+                            gerencia.descripcion = valores[2].ToString();
                         }
                         else
                         {
@@ -63,7 +63,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineas)
                     {
-                        var valores = linea.Split(';');
+                        var valores = linea.Split(',');
                         GerenciaWS.gerencia gerencia = new GerenciaWS.gerencia();
                         gerencia.nombre = valores[0].ToString();
                         gerencia.descripcion = valores[1].ToString();
@@ -72,6 +72,7 @@ namespace SistemaEDInterfaces
                 }
 
                 MessageBox.Show("El archivo se cargó correctamente");
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else if ((rdbActCargaMavGer.Checked == false) && (rdbInsCargaMavGer.Checked == false) && txtNomArchGerenMav.Text != "")

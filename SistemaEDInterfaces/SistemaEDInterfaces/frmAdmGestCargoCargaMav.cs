@@ -38,7 +38,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineas)
                     {
-                        var valores = linea.Split(';');
+                        var valores = linea.Split(',');
                         PuestoTrabajoWS.puestoTrabajo puesto = new PuestoTrabajoWS.puestoTrabajo();
 
                         int dato = int.Parse(valores[0].ToString());
@@ -69,7 +69,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineas)
                     {
-                        var valores = linea.Split(';');
+                        var valores = linea.Split(',');
                         PuestoTrabajoWS.puestoTrabajo puesto = new PuestoTrabajoWS.puestoTrabajo();
                         puesto.nombre = valores[0].ToString();
                         puesto.descripcion = valores[1].ToString();
@@ -78,6 +78,7 @@ namespace SistemaEDInterfaces
                     }
                 }
                 MessageBox.Show("El archivo se cargó correctamente");
+                this.DialogResult = DialogResult.OK;
                 this.Close();
             }
             else if ((rdbActCargaMavCargo.Checked == false) && (rdbInsCargaMavCargo.Checked == false) && txtNomArchCargoMav.Text != "")
