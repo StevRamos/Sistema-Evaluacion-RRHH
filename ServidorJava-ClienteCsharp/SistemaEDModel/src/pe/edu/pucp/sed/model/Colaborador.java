@@ -17,17 +17,28 @@ public class Colaborador{
 	private PuestoTrabajo puestoTrabajo;
 	private Gerencia gerencia;
 	private Colaborador jefe;
+        private Periodo periodo;
 	private ArrayList<Colaborador> subordinados;
 
 	public Colaborador(){
 		this.objetivos = new ArrayList<>();
 		this.evaluaciones = new ArrayList<>();
 		this.subordinados = new ArrayList<>();
-                this.puestoTrabajo = new PuestoTrabajo();
-                this.gerencia = new Gerencia();
-                this.jefe = new Colaborador();
+                //this.puestoTrabajo = new PuestoTrabajo();
+                //this.gerencia = new Gerencia();
+                //this.jefe = new Colaborador();
 	};
 
+        public Periodo getPeriodo() {
+            return periodo;
+        }
+
+        public void setPeriodo(Periodo periodo) {
+            this.periodo = periodo;
+        }
+
+        
+        
 	public int getIdColaborador(){
 		return this.idColaborador;
 	};
