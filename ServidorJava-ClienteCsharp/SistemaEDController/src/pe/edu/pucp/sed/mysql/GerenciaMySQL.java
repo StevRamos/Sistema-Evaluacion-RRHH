@@ -33,6 +33,28 @@ public class GerenciaMySQL implements GerenciaDAO{
 			cs.executeUpdate();
                         
                         gerencia.setIdGerencia(cs.getInt("_ID_GERENCIA"));
+                                                
+			resultado = 1;
+		}catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}finally{
+			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+		}
+		return resultado;
+	}
+        
+        public int insertarGerenciaPeriodo(Gerencia gerencia){
+		int resultado = 0;
+		try{
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+			String sql = "{call INSERTAR_GERENCIA_PERIODO(?,?)}";
+			cs = con.prepareCall(sql);
+                        
+                        cs.setInt("_ID_PERIODO",gerencia.getPeriodo().getIdPeriodo());
+                        cs.setInt("_ID_GERENCIA",gerencia.getIdGerencia());
+                        
+			cs.executeUpdate();
                         
 			resultado = 1;
 		}catch(Exception ex){
@@ -42,16 +64,18 @@ public class GerenciaMySQL implements GerenciaDAO{
 		}
 		return resultado;
 	}
+        
 	@Override
 	public int actualizar(Gerencia gerencia){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ACTUALIZAR_GERENCIA(?,?)}";
+			String sql = "{call ACTUALIZAR_GERENCIA(?,?,?)}";
 			cs = con.prepareCall(sql);
 
                         cs.setString("_DESCRIPCION",gerencia.getDescripcion());
+                        cs.setString("_NOMBRE",gerencia.getNombre());
                         cs.setInt("_ID_GERENCIA",gerencia.getIdGerencia());
                         
                         
