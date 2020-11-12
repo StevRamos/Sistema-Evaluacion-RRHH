@@ -13,7 +13,7 @@ namespace SistemaEDInterfaces
     public partial class frmPlanMisObjetivos : Form
     {
 
-        private ObjetivoWS.ObjetivoWSClient daoObjetivo;
+        //private ObjetivoWS.ObjetivoWSClient daoObjetivo;
         
         private int idColaboradorLoggeado;
 
@@ -21,10 +21,10 @@ namespace SistemaEDInterfaces
 
         public frmPlanMisObjetivos()
         {
-            daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
+            //daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             dgvMisObjetivos.AutoGenerateColumns = false;
 
-            dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
+           // dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
             InitializeComponent();
             
             
@@ -72,10 +72,10 @@ namespace SistemaEDInterfaces
         {
            
             frmPlanAgregarObjetivo form = new frmPlanAgregarObjetivo();
-            form.Objetivo.colaborador.idColaborador = idColaboradorLoggeado; 
+            //form.Objetivo.colaborador.idColaborador = idColaboradorLoggeado; 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
+                //dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
             }
         }
 
@@ -91,6 +91,7 @@ namespace SistemaEDInterfaces
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            /*
             ObjetivoWS.objetivo objetivo;
             foreach (DataGridViewRow row in dgvMisObjetivos.Rows)
             {
@@ -98,7 +99,7 @@ namespace SistemaEDInterfaces
                 objetivo.estado = EstadoObjetivo.EsperandoRevision;
                 daoObjetivo.actualizarObjetivo(objetivo);
             }
-
+            */
             MessageBox.Show("Objetivos enviados para revision.",
                             "Mensaje de confirmacion",
                             MessageBoxButtons.OK,
@@ -107,19 +108,20 @@ namespace SistemaEDInterfaces
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
-
+            /*
             ObjetivoWS.objetivo objetivoSeleccionado =
                 (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem;
 
             frmPlanEditarObjetivo form = new frmPlanEditarObjetivo();
             form.Objetivo = objetivoSeleccionado; 
             Global.formPrincipal.abrirFormularioHijo(true,form); 
-            
+            */
             
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            /*
             var result = MessageBox.Show("Se eliminara el objetivo seleccionado.",
                                             "Mensaje de advertencia",
                                             MessageBoxButtons.OKCancel,
@@ -137,7 +139,7 @@ namespace SistemaEDInterfaces
 
                 }
 
-            }
+            }*/
                 
         }
     }

@@ -12,22 +12,43 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestCronVerDetalle : Form
     {
+        private DateTimePicker oDateTimePicker;
         private PeriodoWS.periodo periodo;
 
-        public PeriodoWS.periodo Periodo { get => periodo; set => periodo = value; }
+        private GerenciaPeriodoWS.GerenciaPeriodoWSClient daoGerenciaPeriodo;
+
+        private PeriodoWS.PeriodoWSClient daoPeriodo; 
+        public PeriodoWS.periodo Periodo { get => periodo; set => periodo = value; }*/
+        
+        
         public frmAdmGestCronVerDetalle()
         {
-
+            daoGerenciaPeriodo = new GerenciaPeriodoWS.GerenciaPeriodoWSClient();
+            daoPeriodo = new PeriodoWS.PeriodoWSClient(); 
             InitializeComponent();
+
+            
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            
+
+            periodo.nombre = txtNombre.Text;
+            periodo.fechaInicio = dtpFechaInicio.Value;
+            periodo.fechaFin = dtpFechaFin.Value; 
+            periodo.pesoEvalObj = Double.Parse(txtPesoObjetivos.Text);
+            periodo.pesoEvalComp = Double.Parse(txtPesoCompetencia.Text);
+            periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
+            periodo.horaNotificacion = dtpHoraNotificacion.Value;
+
+            daoPeriodo.actualizarPeriodo(periodo);
             MessageBox.Show("Se guardaron los cambios.",
                 "Mensaje de confirmacion",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
             Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestCron());
         }
 
@@ -55,9 +76,8 @@ namespace SistemaEDInterfaces
             dtpFechaFin.Value = new DateTime(2020,12,30);
             txtPesoObjetivos.Text = "50";
             txtPesoCompetencia.Text = "50";
-
-            txtDia.Text = "Lunes";
-            txtHora.Text = "07:00";
+            cboDiaNotificacion.SelectedIndex = 1; 
+            
 
             //// Planificacion 
             int rowId1 = dgvPlanificacion.Rows.Add();
@@ -68,9 +88,9 @@ namespace SistemaEDInterfaces
             row11.Cells["Nombre"].Value = "Gerencia de Finanzas";
             row11.Cells["FechaInicio"].Value = "20/01/2020";
             row11.Cells["FechaFin"].Value = "15/02/2020";
-
+            
             int rowId2 = dgvPlanificacion.Rows.Add();
-
+            /*
             DataGridViewRow row12 = dgvPlanificacion.Rows[rowId2];
 
             row12.Cells["ID"].Value = "2";
@@ -144,22 +164,159 @@ namespace SistemaEDInterfaces
             //row33.Cells["Nombre"].Value = "Gerencia de Producción";
             //row33.Cells["FechaInicio"].Value = "15/12/2020";
             //row33.Cells["FechaFin"].Value = "20/12/2020";
-
+            */
         }
         private void frmAdmGestCronVerDetalle_Load(object sender, EventArgs e)
         {
+            /*
             txtID.Text = periodo.idPeriodo.ToString();
             txtNombre.Text = periodo.nombre;
             txtEstado.Text = periodo.estado;
             dtpFechaInicio.Value = periodo.fechaInicio;
             dtpFechaFin.Value = periodo.fechaFin;
             txtPesoCompetencia.Text = periodo.pesoEvalComp.ToString();
-            txtPesoObjetivos.Text = periodo.pesoEvalObj.ToString(); 
-            //Falta llenar los DGV 
-
+            txtPesoObjetivos.Text = periodo.pesoEvalObj.ToString();
+            
+            //DGV 
+            periodo.configuracionFechas = daoGerenciaPeriodo.listarGerenciasPeriodoPorIdPeriodo(periodo.idPeriodo);
+            dgvPlanificacion.DataSource = periodo.configuracionFechas;
+            dgvCronEvPrevia.DataSource = periodo.configuracionFechas;
+            dgvCronEvFinal.DataSource = periodo.configuracionFechas;
+            dgvPDI.DataSource = periodo.configuracionFechas;
+            dgvCalibNotas.DataSource = periodo.configuracionFechas;*/
 
             llenarDatosDummy();
             
+        }
+
+
+        //Funcion para actualizar las fechas de inicio/fin de una gerencia 
+        private void actualizarGP(int idGerencia, DateTime fechaInicio, DateTime fechaFin, Etapas etapa)
+        {
+            if (fechaInicio != null)
+            {
+                foreach(GerenciaPeriodoWS.gerenciaPeriodo gp in periodo.configuracionFechas)
+                {
+                    if (gp.gerencia.idGerencia == idGerencia)
+                    {
+                        if (etapa == Etapas.Planificacion)
+                        {
+                            gp.fechaInicioPlan = fechaInicio;
+                        }
+                        else if (etapa == Etapas.PreviaD)
+                        {
+                            gp.fechaInicioEvalPrevD = fechaInicio;
+                        }
+                        else if (etapa == Etapas.FinalD)
+                        {
+                            gp.fechaInicioEvalFinD = fechaInicio;
+                        }
+                        else if (etapa == Etapas.Calibracion)
+                        {
+                            gp.fechaInicioCal = fechaInicio;
+                        }
+                        else if (etapa == Etapas.PDI)
+                        {
+                            gp.fechaInicioPDI = fechaInicio;
+                        }
+                        break;
+                    }
+                }
+
+
+            }
+            if (fechaFin != null)
+            {
+                for(GerenciaPeriodoWS.gerenciaPeriodo gp in periodo.configuracionFechas)
+                {
+                    if (gp.gerencia.idGerencia == idGerencia)
+                    {
+                        if (etapa == Etapas.Planificacion)
+                        {
+                            gp.fechaFinPlan = fechaFin;
+                        }
+                        else if (etapa == Etapas.PreviaD)
+                        {
+                            gp.fechaFinEvalPrevD = fechaFin;
+                        }
+                        else if (etapa == Etapas.FinalD)
+                        {
+                            gp.fechaFinEvalFinD = fechaFin;
+                        }
+                        else if (etapa == Etapas.Calibracion)
+                        {
+                            gp.fechaFinCal = fechaFin;
+                        }
+                        else if (etapa == Etapas.PDI)
+                        {
+                            gp.fechaFinPDI = fechaFin;
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+
+        void mostrarFormularioFechaYActualizar(DataGridViewCellEventArgs e, Etapas etapa)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                frmAdmGestCronVerDetalleFecha form = new frmAdmGestCronVerDetalleFecha();
+                form.Titulo = "Fecha de Inicio:";
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    DateTime fecha = form.FechaSeleccionada;
+                    if (etapa == Etapas.Planificacion) dgvPlanificacion.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
+                    if (etapa == Etapas.PreviaD) dgvCronEvPrevia.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
+                    if (etapa == Etapas.FinalD) dgvCronEvFinal.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
+                    if (etapa == Etapas.Calibracion) dgvCalibNotas.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
+                    if (etapa == Etapas.PDI) dgvPDI.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
+                    GerenciaPeriodoWS.gerenciaPeriodo gp = dgvPlanificacion.CurrentRow.DataBoundItem;
+                    actualizarGP(gp.gerencia.idGerencia, fecha, null, etapa);
+                }
+
+            }
+            else if (e.ColumnIndex == 3)
+            {
+                frmAdmGestCronVerDetalleFecha form = new frmAdmGestCronVerDetalleFecha();
+                form.Titulo = "Fecha de Fin:";
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    DateTime fecha = form.FechaSeleccionada;
+                    if (etapa == Etapas.Planificacion) dgvPlanificacion.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
+                    if(etapa == Etapas.PreviaD) dgvCronEvPrevia.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
+                    if(etapa == Etapas.FinalD) dgvCronEvFinal.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
+                    if(etapa == Etapas.Calibracion) dgvCalibNotas.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
+                    if(etapa == Etapas.PDI) dgvPDI.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
+                    GerenciaPeriodoWS.gerenciaPeriodo gp = dgvPlanificacion.CurrentRow.DataBoundItem;
+                    actualizarGP(gp.gerencia.idGerencia, null, fecha, etapa);
+                }
+            }
+        }
+        private void dgvPlanificacion_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex == 2 || e.ColumnIndex == 3)mostrarFormularioFechaYActualizar(e, Etapas.Planificacion);
+        }
+
+        private void dgvCronEvPrevia_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 3)mostrarFormularioFechaYActualizar(e, Etapas.PreviaD);
+        }
+
+        private void dgvCronEvFinal_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 3) mostrarFormularioFechaYActualizar(e, Etapas.FinalD);
+        }
+
+        private void dgvCalibNotas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 3) mostrarFormularioFechaYActualizar(e, Etapas.Calibracion);
+        }
+
+        private void dgvPDI_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 3) mostrarFormularioFechaYActualizar(e, Etapas.PDI);
         }
     }
 }

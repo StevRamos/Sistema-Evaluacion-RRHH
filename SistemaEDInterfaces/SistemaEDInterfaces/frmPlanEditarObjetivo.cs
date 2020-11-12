@@ -12,14 +12,16 @@ namespace SistemaEDInterfaces
 {
     public partial class frmPlanEditarObjetivo : Form
     {
+        /*
         private ObjetivoWS.objetivo objetivo;
 
         private ObjetivoWS.ObjetivoWSClient daoObjetivo;
         
         public ObjetivoWS.objetivo Objetivo { get => objetivo; set => objetivo = value; }
+        */
         public frmPlanEditarObjetivo()
         {
-            daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
+            //daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             InitializeComponent();
             
             
@@ -47,13 +49,13 @@ namespace SistemaEDInterfaces
         {
             cambiarEstadoComponentes(2);
             
-           
+           /*
             objetivo.meta = Double.Parse(txtMeta.Text); ;
             objetivo.UnidadMedida = txtUnidadMedida.Text;
             objetivo.peso = Double.Parse(txtPeso.Text);
             objetivo.descripcion = txtBoxDescripcion.Text; 
 
-            daoObjetivo.actualizarObjetivo(objetivo);
+            daoObjetivo.actualizarObjetivo(objetivo);*/
             MessageBox.Show("Se guardaron los cambios.",
                 "Mensaje de confirmacion",
                 MessageBoxButtons.OK,
@@ -80,6 +82,7 @@ namespace SistemaEDInterfaces
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            /*
             if(objetivo.estado== EstadoObjetivo.Oculto || objetivo.estado == EstadoObjetivo.DenVisible)
             {
                 cambiarEstadoComponentes(1);
@@ -92,11 +95,12 @@ namespace SistemaEDInterfaces
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
             }
-            
+            */
         }
 
         private void frmPlanEditarObjetivo_Load(object sender, EventArgs e)
         {
+            /*
             txtID.Text = objetivo.idObjetivo.ToString();
             switch (objetivo.estado)
             {
@@ -126,6 +130,7 @@ namespace SistemaEDInterfaces
             txtPeso.Text = objetivo.peso.ToString();
             txtBoxDescripcion.Text = objetivo.descripcion;
             txtBoxObservacionJefe.Text = objetivo.observacion;
+            */
         }
     }
 }

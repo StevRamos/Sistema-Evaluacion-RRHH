@@ -40,6 +40,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvCronPlanificacion = new System.Windows.Forms.DataGridView();
@@ -49,18 +52,10 @@
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.txtHora = new System.Windows.Forms.TextBox();
-            this.txtDia = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtPesoPotencial = new System.Windows.Forms.TextBox();
-            this.txtPesoDesempenho = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblFechaFormulacion = new System.Windows.Forms.Label();
             this.lblMeta = new System.Windows.Forms.Label();
@@ -86,10 +81,25 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
+            this.cboDiaNotificacion = new System.Windows.Forms.ComboBox();
+            this.dtpHoraNotificacion = new System.Windows.Forms.DateTimePicker();
+            this.dgvCalibNotas = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.txtPesoCompetencia = new System.Windows.Forms.TextBox();
+            this.txtPesoObjetivos = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronPlanificacion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronPDI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvPrevia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvFinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalibNotas)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -158,8 +168,9 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronPlanificacion.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCronPlanificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronPlanificacion.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronPlanificacion.Size = new System.Drawing.Size(946, 294);
             this.dgvCronPlanificacion.TabIndex = 120;
+            this.dgvCronPlanificacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCronPlanificacion_CellClick);
             // 
             // ID
             // 
@@ -205,7 +216,7 @@
             // 
             this.dtpFechaInicio.Location = new System.Drawing.Point(290, 203);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(193, 20);
             this.dtpFechaInicio.TabIndex = 119;
             // 
             // dtpFechaFin
@@ -214,42 +225,6 @@
             this.dtpFechaFin.Name = "dtpFechaFin";
             this.dtpFechaFin.Size = new System.Drawing.Size(200, 20);
             this.dtpFechaFin.TabIndex = 118;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label7.Location = new System.Drawing.Point(432, 325);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(27, 26);
-            this.label7.TabIndex = 117;
-            this.label7.Text = "%";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label43.Location = new System.Drawing.Point(432, 384);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(27, 26);
-            this.label43.TabIndex = 116;
-            this.label43.Text = "%";
-            // 
-            // txtHora
-            // 
-            this.txtHora.Location = new System.Drawing.Point(666, 384);
-            this.txtHora.Name = "txtHora";
-            this.txtHora.Size = new System.Drawing.Size(193, 20);
-            this.txtHora.TabIndex = 115;
-            // 
-            // txtDia
-            // 
-            this.txtDia.Location = new System.Drawing.Point(666, 325);
-            this.txtDia.Name = "txtDia";
-            this.txtDia.Size = new System.Drawing.Size(193, 20);
-            this.txtDia.TabIndex = 114;
             // 
             // label6
             // 
@@ -261,20 +236,6 @@
             this.label6.Size = new System.Drawing.Size(415, 25);
             this.label6.TabIndex = 113;
             this.label6.Text = "Configuración de notificación semanal:";
-            // 
-            // txtPesoPotencial
-            // 
-            this.txtPesoPotencial.Location = new System.Drawing.Point(342, 384);
-            this.txtPesoPotencial.Name = "txtPesoPotencial";
-            this.txtPesoPotencial.Size = new System.Drawing.Size(84, 20);
-            this.txtPesoPotencial.TabIndex = 112;
-            // 
-            // txtPesoDesempenho
-            // 
-            this.txtPesoDesempenho.Location = new System.Drawing.Point(342, 325);
-            this.txtPesoDesempenho.Name = "txtPesoDesempenho";
-            this.txtPesoDesempenho.Size = new System.Drawing.Size(84, 20);
-            this.txtPesoDesempenho.TabIndex = 111;
             // 
             // label5
             // 
@@ -306,26 +267,6 @@
             this.label3.Size = new System.Drawing.Size(50, 24);
             this.label3.TabIndex = 108;
             this.label3.Text = "Día:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(29, 380);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(265, 24);
-            this.label2.TabIndex = 107;
-            this.label2.Text = "Evaluacion de Potencial:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(29, 321);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(297, 24);
-            this.label1.TabIndex = 106;
-            this.label1.Text = "Evaluacion de Desempeño:";
             // 
             // txtNombre
             // 
@@ -400,7 +341,7 @@
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.dgvCronPDI.EnableHeadersVisualStyles = false;
-            this.dgvCronPDI.Location = new System.Drawing.Point(33, 1632);
+            this.dgvCronPDI.Location = new System.Drawing.Point(33, 1985);
             this.dgvCronPDI.MultiSelect = false;
             this.dgvCronPDI.Name = "dgvCronPDI";
             this.dgvCronPDI.ReadOnly = true;
@@ -419,8 +360,9 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronPDI.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCronPDI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronPDI.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronPDI.Size = new System.Drawing.Size(946, 294);
             this.dgvCronPDI.TabIndex = 126;
+            this.dgvCronPDI.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCronPDI_CellClick);
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -467,7 +409,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label10.Location = new System.Drawing.Point(28, 1581);
+            this.label10.Location = new System.Drawing.Point(28, 1934);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(649, 25);
             this.label10.TabIndex = 125;
@@ -517,8 +459,9 @@
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvPrevia.RowsDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvCronEvPrevia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvPrevia.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronEvPrevia.Size = new System.Drawing.Size(946, 294);
             this.dgvCronEvPrevia.TabIndex = 124;
+            this.dgvCronEvPrevia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCronEvPrevia_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -567,9 +510,9 @@
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             this.label9.Location = new System.Drawing.Point(28, 847);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(565, 25);
+            this.label9.Size = new System.Drawing.Size(727, 25);
             this.label9.TabIndex = 123;
-            this.label9.Text = "Cronograma para Evaluacion Previa/Autoevaluacion:";
+            this.label9.Text = "Cronograma para Evaluacion Previa/Autoevaluacion de Desempeño:";
             // 
             // btnRegresar
             // 
@@ -577,7 +520,7 @@
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(726, 91);
+            this.btnRegresar.Location = new System.Drawing.Point(792, 94);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(158, 26);
             this.btnRegresar.TabIndex = 128;
@@ -591,7 +534,7 @@
             this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegistrar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegistrar.ForeColor = System.Drawing.Color.White;
-            this.btnRegistrar.Location = new System.Drawing.Point(920, 91);
+            this.btnRegistrar.Location = new System.Drawing.Point(795, 2285);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(158, 26);
             this.btnRegistrar.TabIndex = 127;
@@ -643,8 +586,9 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvFinal.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvCronEvFinal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvFinal.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronEvFinal.Size = new System.Drawing.Size(946, 294);
             this.dgvCronEvFinal.TabIndex = 130;
+            this.dgvCronEvFinal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCronEvFinal_CellClick);
             // 
             // dataGridViewTextBoxColumn9
             // 
@@ -693,9 +637,191 @@
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             this.label12.Location = new System.Drawing.Point(28, 1195);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(376, 25);
+            this.label12.Size = new System.Drawing.Size(794, 25);
             this.label12.TabIndex = 129;
-            this.label12.Text = "Cronograma para Evaluacion Final:";
+            this.label12.Text = "Cronograma para Evaluacion Final de Desempeño/Evaluacion de Potencial:";
+            // 
+            // cboDiaNotificacion
+            // 
+            this.cboDiaNotificacion.FormattingEnabled = true;
+            this.cboDiaNotificacion.Items.AddRange(new object[] {
+            "Lunes",
+            "Martes",
+            "Miercoles",
+            "Jueves",
+            "Viernes",
+            "Sabado",
+            "Domingo"});
+            this.cboDiaNotificacion.Location = new System.Drawing.Point(666, 324);
+            this.cboDiaNotificacion.Name = "cboDiaNotificacion";
+            this.cboDiaNotificacion.Size = new System.Drawing.Size(193, 21);
+            this.cboDiaNotificacion.TabIndex = 138;
+            // 
+            // dtpHoraNotificacion
+            // 
+            this.dtpHoraNotificacion.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dtpHoraNotificacion.Location = new System.Drawing.Point(666, 384);
+            this.dtpHoraNotificacion.Name = "dtpHoraNotificacion";
+            this.dtpHoraNotificacion.ShowUpDown = true;
+            this.dtpHoraNotificacion.Size = new System.Drawing.Size(193, 20);
+            this.dtpHoraNotificacion.TabIndex = 139;
+            // 
+            // dgvCalibNotas
+            // 
+            this.dgvCalibNotas.AllowUserToAddRows = false;
+            this.dgvCalibNotas.AllowUserToDeleteRows = false;
+            this.dgvCalibNotas.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvCalibNotas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvCalibNotas.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCalibNotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCalibNotas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCalibNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvCalibNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCalibNotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dataGridViewTextBoxColumn16});
+            this.dgvCalibNotas.EnableHeadersVisualStyles = false;
+            this.dgvCalibNotas.Location = new System.Drawing.Point(33, 1594);
+            this.dgvCalibNotas.MultiSelect = false;
+            this.dgvCalibNotas.Name = "dgvCalibNotas";
+            this.dgvCalibNotas.ReadOnly = true;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCalibNotas.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvCalibNotas.RowHeadersVisible = false;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCalibNotas.RowsDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvCalibNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCalibNotas.Size = new System.Drawing.Size(946, 294);
+            this.dgvCalibNotas.TabIndex = 141;
+            this.dgvCalibNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalibNotas_CellClick);
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "ID";
+            this.dataGridViewTextBoxColumn13.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn13.Width = 70;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn14.Width = 450;
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "FechaInicio";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Fecha de Inicio";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            this.dataGridViewTextBoxColumn15.ReadOnly = true;
+            this.dataGridViewTextBoxColumn15.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn15.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn15.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "FechaFin";
+            this.dataGridViewTextBoxColumn16.HeaderText = "Fecha de Fin";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            this.dataGridViewTextBoxColumn16.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn16.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.dataGridViewTextBoxColumn16.Width = 200;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label13.Location = new System.Drawing.Point(28, 1543);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(426, 25);
+            this.label13.TabIndex = 140;
+            this.label13.Text = "Cronograma para Calibración de Notas:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label7.Location = new System.Drawing.Point(432, 326);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 26);
+            this.label7.TabIndex = 147;
+            this.label7.Text = "%";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label43.Location = new System.Drawing.Point(432, 385);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(27, 26);
+            this.label43.TabIndex = 146;
+            this.label43.Text = "%";
+            // 
+            // txtPesoCompetencia
+            // 
+            this.txtPesoCompetencia.Location = new System.Drawing.Point(342, 385);
+            this.txtPesoCompetencia.Name = "txtPesoCompetencia";
+            this.txtPesoCompetencia.Size = new System.Drawing.Size(84, 20);
+            this.txtPesoCompetencia.TabIndex = 145;
+            this.txtPesoCompetencia.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // txtPesoObjetivos
+            // 
+            this.txtPesoObjetivos.Location = new System.Drawing.Point(342, 326);
+            this.txtPesoObjetivos.Name = "txtPesoObjetivos";
+            this.txtPesoObjetivos.Size = new System.Drawing.Size(84, 20);
+            this.txtPesoObjetivos.TabIndex = 144;
+            this.txtPesoObjetivos.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(29, 381);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(314, 24);
+            this.label2.TabIndex = 143;
+            this.label2.Text = "Evaluacion de Competencia:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(29, 322);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(263, 24);
+            this.label1.TabIndex = 142;
+            this.label1.Text = "Evaluacion de Objetivos:";
             // 
             // frmAdmGestCronAgregarPeriodo
             // 
@@ -705,6 +831,16 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 30);
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label43);
+            this.Controls.Add(this.txtPesoCompetencia);
+            this.Controls.Add(this.txtPesoObjetivos);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dgvCalibNotas);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dtpHoraNotificacion);
+            this.Controls.Add(this.cboDiaNotificacion);
             this.Controls.Add(this.dgvCronEvFinal);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnRegresar);
@@ -718,18 +854,10 @@
             this.Controls.Add(this.dgvCronPlanificacion);
             this.Controls.Add(this.dtpFechaInicio);
             this.Controls.Add(this.dtpFechaFin);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label43);
-            this.Controls.Add(this.txtHora);
-            this.Controls.Add(this.txtDia);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtPesoPotencial);
-            this.Controls.Add(this.txtPesoDesempenho);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblFechaFormulacion);
             this.Controls.Add(this.lblMeta);
@@ -737,10 +865,12 @@
             this.Controls.Add(this.lblEditarObjetivos);
             this.Name = "frmAdmGestCronAgregarPeriodo";
             this.Text = "frmAdmGestCronAgregarPeriodo";
+            this.Load += new System.EventHandler(this.frmAdmGestCronAgregarPeriodo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronPlanificacion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronPDI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvPrevia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCronEvFinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCalibNotas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -757,18 +887,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
         private System.Windows.Forms.DateTimePicker dtpFechaInicio;
         private System.Windows.Forms.DateTimePicker dtpFechaFin;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox txtHora;
-        private System.Windows.Forms.TextBox txtDia;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtPesoPotencial;
-        private System.Windows.Forms.TextBox txtPesoDesempenho;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblFechaFormulacion;
         private System.Windows.Forms.Label lblMeta;
@@ -794,5 +916,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.ComboBox cboDiaNotificacion;
+        private System.Windows.Forms.DateTimePicker dtpHoraNotificacion;
+        private System.Windows.Forms.DataGridView dgvCalibNotas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox txtPesoCompetencia;
+        private System.Windows.Forms.TextBox txtPesoObjetivos;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
     }
 }

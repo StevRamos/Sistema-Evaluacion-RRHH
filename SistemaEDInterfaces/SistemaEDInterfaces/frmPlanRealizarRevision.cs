@@ -12,22 +12,24 @@ namespace SistemaEDInterfaces
 {
     public partial class frmPlanRealizarRevision : Form
     {
-
+        /*
         private ColaboradorWS.colaborador colaborador;
 
         private ObjetivoWS.ObjetivoWSClient daoObjetivo;
         public ColaboradorWS.colaborador Colaborador { get => colaborador; set => colaborador = value; }
+        */
         public frmPlanRealizarRevision()
         {
 
-            colaborador = new ColaboradorWS.colaborador();
-            daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
+            //colaborador = new ColaboradorWS.colaborador();
+            //daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             dgvMisObjetivos.AutoGenerateColumns = false;
             InitializeComponent();
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            /*
             ObjetivoWS.objetivo objetivo;
             foreach (DataGridViewRow row in dgvMisObjetivos.Rows)
             {
@@ -37,7 +39,7 @@ namespace SistemaEDInterfaces
 
                 daoObjetivo.actualizarObjetivo(objetivo);
             }
-
+            */
             MessageBox.Show("Validaciones enviadas a colaborador",
                                            "Mensaje de confirmacion",
                                            MessageBoxButtons.OK,
@@ -49,8 +51,10 @@ namespace SistemaEDInterfaces
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
             frmPlanVerDetalle form = new frmPlanVerDetalle();
+            /*
             form.Colaborador = Colaborador;
             form.Objetivo = (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem; 
+            */
             Global.formPrincipal.abrirFormularioHijo(true,form);
 
         }
@@ -70,6 +74,7 @@ namespace SistemaEDInterfaces
 
         private void frmPlanRealizarRevision_Load(object sender, EventArgs e)
         {
+            /*
             txtIDColab.Text = colaborador.idColaborador;
             txtNombreColab.Text = colaborador.nombres;
             txtDNI.Text = colaborador.dni.ToString();
@@ -77,6 +82,7 @@ namespace SistemaEDInterfaces
             txtCargo.Text = colaborador.puestoTrabajo.nombre;
 
             dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(colaborador.idColaborador);
+            */
         }
     }
 }

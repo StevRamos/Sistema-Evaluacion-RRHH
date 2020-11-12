@@ -12,6 +12,7 @@ namespace SistemaEDInterfaces
 {
     public partial class frmPlanVerDetalle : Form
     {
+        /*
         private ColaboradorWS.colaborador colaborador;
 
         private ObjetivoWS.ObjetivoWSClient daoObjetivo;
@@ -20,10 +21,11 @@ namespace SistemaEDInterfaces
 
         public ObjetivoWS.objetivo Objetivo { get => objetivo; set => objetivo = value; }
         public ColaboradorWS.colaborador Colaborador { get => colaborador; set => colaborador = value; }
+        */
         public frmPlanVerDetalle()
         {
-            colaborador = new ColaboradorWS.colaborador();
-            daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
+            //colaborador = new ColaboradorWS.colaborador();
+            //daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             InitializeComponent();
         }
 
@@ -40,6 +42,7 @@ namespace SistemaEDInterfaces
 
         private void btnRealizar_Click(object sender, EventArgs e)
         {
+            /*
             if (rbAprobar.Checked)
             {
                 var result = MessageBox.Show("¿Desea agregar un comentario?",
@@ -102,10 +105,12 @@ namespace SistemaEDInterfaces
                                             MessageBoxButtons.OK,
                                             MessageBoxIcon.Error);
             }
+            */
         }
 
         private void frmPlanVerDetalle_Load(object sender, EventArgs e)
         {
+            /*
             txtIDObjetivo.Text = objetivo.idObjetivo.ToString();
             switch (objetivo.estado)
             {
@@ -133,6 +138,7 @@ namespace SistemaEDInterfaces
             txtPeso.Text = objetivo.peso.ToString();
             txtBoxDescripcion.Text = objetivo.descripcion;
             txtBoxObservacionJefe.Text = objetivo.observacion;
+            */
         }
     }
 }
