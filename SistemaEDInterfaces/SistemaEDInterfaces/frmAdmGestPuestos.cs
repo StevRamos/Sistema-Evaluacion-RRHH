@@ -13,11 +13,14 @@ namespace SistemaEDInterfaces
     public partial class frmAdmGestPuestos : Form
     {
         private PuestoTrabajoWS.PuestoTrabajoWSWSClient daoPuestoTrabajo;
+        private GerenciaWS.GerenciaWSClient daoGerencia; 
         public frmAdmGestPuestos()
         {
             InitializeComponent();
             daoPuestoTrabajo = new PuestoTrabajoWS.PuestoTrabajoWSWSClient();
+            daoGerencia = new GerenciaWS.GerenciaWSClient(); 
             dgbCargos.DataSource = daoPuestoTrabajo.listarGerencias("");
+            cmbGestCargosNomGeren.DataSource = daoGerencia.listarGerencias(); 
             dgbCargos.AutoGenerateColumns = false;
         }
 
@@ -58,7 +61,9 @@ namespace SistemaEDInterfaces
 
         private void btnGestCargosBuscar_Click(object sender, EventArgs e)
         {
-            dgbCargos.DataSource = daoPuestoTrabajo.listarGerencias();
+            GerenciaWS.gerencia gerencia;
+            gerencia = (GerenciaWS.gerencia)cmbGestCargosNomGeren.SelectedItem;
+            dgbCargos.DataSource = daoPuestoTrabajo.listarPuestosTrabajo(gerencia.nombre);
         }
     }
 }
