@@ -14,11 +14,11 @@ namespace SistemaEDInterfaces
     public partial class frmAdmGestGerenCargaMav : Form
     {
         private GerenciaWS.GerenciaWSClient daoGerencia;
-        
+
         public frmAdmGestGerenCargaMav()
         {
             InitializeComponent();
-            daoGerencia = new GerenciaWS.ObjetivoWSClient();
+            daoGerencia = new GerenciaWS.GerenciaWSClient();
         }
 
         private void btnCargarComMasiva_Click(object sender, EventArgs e)
@@ -28,37 +28,45 @@ namespace SistemaEDInterfaces
             if ((rdbActCargaMavGer.Checked || rdbInsCargaMavGer.Checked) && txtNomArchGerenMav.Text != "")
             {
 
-                if (rdbActCargaMavGer.Checked!=false) {
+                if (rdbActCargaMavGer.Checked != false)
+                {
                     foreach (var linea in lineas)
                     {
                         var valores = linea.Split(';');
-                        GerenciaWS.Gerencia gerencia = new GerenciaWS.Gerencia();
-                        
-                        int dato = int.Parse(valores[0].ToString);
-                        gerencia.setIdGerencia(dato);
+                        GerenciaWS.gerencia gerencia = new GerenciaWS.gerencia();
 
-                        if (valores[1] != "no") {
-                            gerencia.setNombre(valores[0].ToString());
-                        } else {
-                            gerencia.setNombre("");
-                        }
-                        if (valores[2] != "no") {
-                            gerencia.setDescripcion(valores[1].ToString());
+                        int dato = int.Parse(valores[0].ToString());
+
+                        gerencia.idGerencia = dato;
+
+                        if (valores[1] != "no")
+                        {
+                            gerencia.nombre = valores[0].ToString();
                         }
                         else
                         {
-                            gerencia.setDescripcion("");
+                            gerencia.nombre = "";
                         }
-                        
+                        if (valores[2] != "no")
+                        {
+                            gerencia.descripcion = valores[1].ToString();
+                        }
+                        else
+                        {
+                            gerencia.descripcion = "";
+                        }
+
                         daoGerencia.actualizarGerencia(gerencia);
                     }
-                } else if (rdbInsCargaMavGer.Checked!=false) {
+                }
+                else if (rdbInsCargaMavGer.Checked != false)
+                {
                     foreach (var linea in lineas)
                     {
                         var valores = linea.Split(';');
-                        GerenciaWS.Gerencia gerencia = new GerenciaWS.Gerencia();
-                        gerencia.setNombre(valores[0].ToString());
-                        gerencia.setDescripcion(valores[1].ToString());
+                        GerenciaWS.gerencia gerencia = new GerenciaWS.gerencia();
+                        gerencia.nombre = valores[0].ToString();
+                        gerencia.descripcion = valores[1].ToString();
                         daoGerencia.insertarGerencia(gerencia);
                     }
                 }

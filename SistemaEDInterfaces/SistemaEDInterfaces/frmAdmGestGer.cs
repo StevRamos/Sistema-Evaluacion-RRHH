@@ -17,7 +17,7 @@ namespace SistemaEDInterfaces
         public frmAdmGestGer()
         {
             InitializeComponent();
-            daoGerencia = new GerenciaWS.ObjetivoWSClient();
+            daoGerencia = new GerenciaWS.GerenciaWSClient();
             dgvGerencias.DataSource = daoGerencia.listarGerencias();
             dgvGerencias.AutoGenerateColumns = false;
         }
@@ -39,15 +39,15 @@ namespace SistemaEDInterfaces
                                             "Mensaje de advertencia",
                                             MessageBoxButtons.OKCancel,
                                             MessageBoxIcon.Warning);
-            if (result == DialogResult.OK) {
+            if (result == DialogResult.OK)
+            {
                 foreach (DataGridViewRow row in dgvGerencias.SelectedRows)
                 {
-                    GerenciaWS.Gerencia gerencia = (GerenciaWS.Gerencia)dgvGerencias.CurrentRow.DataBoundItem;
-                    gerencia.estado = 0;
-                    daoGerencia.eliminarGerencia(gerencia);
+                    GerenciaWS.gerencia gerencia = (GerenciaWS.gerencia)dgvGerencias.CurrentRow.DataBoundItem;
+                    daoGerencia.eliminarGerencia(gerencia.idGerencia);
                     dgvGerencias.Rows.RemoveAt(row.Index);
                 }
-            
+
             }
         }
     }
