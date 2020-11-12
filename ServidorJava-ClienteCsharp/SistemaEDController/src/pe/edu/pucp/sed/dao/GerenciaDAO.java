@@ -5,6 +5,7 @@ import pe.edu.pucp.sed.model.Gerencia;
 
 public interface GerenciaDAO{
 	int insertar(Gerencia gerencia);
+        int insertarGerenciaPeriodo(Gerencia gerencia);
 	int actualizar(Gerencia gerencia);
 	int eliminar(int idGerencia);
 	ArrayList<Gerencia> listar();

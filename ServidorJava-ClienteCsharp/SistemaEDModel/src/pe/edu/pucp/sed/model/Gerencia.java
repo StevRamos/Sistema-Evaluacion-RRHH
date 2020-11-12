@@ -7,7 +7,8 @@ public class Gerencia{
 	private String descripcion;
 	private ArrayList<GerenciaPeriodo> configuracionFechas;
 	private ArrayList<Colaborador> colaboradores;
-
+        private Periodo periodo;
+        
 	public Gerencia(){
 		this.configuracionFechas = new ArrayList<>();
 		this.colaboradores = new ArrayList<>();
@@ -60,6 +61,17 @@ public class Gerencia{
 	public void agregarCupo(){
 
 	};
+
+    public Periodo getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
+    }
+        
+        
+    
 
 }
 

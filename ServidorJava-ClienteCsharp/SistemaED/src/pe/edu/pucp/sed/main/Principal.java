@@ -37,7 +37,7 @@ public class Principal {
 //Colaboradores        
    SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         
-        ColaboradorDAO daoColab = new ColaboradorMySQL();
+ //       ColaboradorDAO daoColab = new ColaboradorMySQL();
 //        Colaborador jefe = new Colaborador();
 //        jefe.setIdColaborador(1);
 //        Colaborador col1 = new Colaborador();
@@ -80,8 +80,8 @@ public class Principal {
    //     for(Colaborador c : daoColab.listarColaboradoresXJefe(1))
      //       System.out.println(c.getNombres() +" " +c.getCorreo());
      
-     Colaborador c = daoColab.buscarJefe(11);
-      System.out.println(c.getNombres() +" " +c.getCorreo());
+//     Colaborador c = daoColab.buscarJefe(11);
+//      System.out.println(c.getNombres() +" " +c.getCorreo());
         
 //Escala
 //        EscalaDAO daoEsc = new EscalaMySQL();
@@ -116,33 +116,33 @@ public class Principal {
 //        if(daoEp.insertar(ep) == 1)
 //            System.out.println("Se ha insertado una evaluacion potencial");        
         
-  //      GerenciaDAO daoGerencia = new GerenciaMySQL();
-//       Gerencia gerencia = new Gerencia();
+        GerenciaDAO daoGerencia = new GerenciaMySQL();
+       Gerencia gerencia = new Gerencia();
        
 
              
-    //   try{
-        //    gerencia.setIdGerencia(4);
-       //    gerencia.setNombre("COE ANALYTICS");
-        //   gerencia.setDescripcion("area de ciencia de datos");
+       try{
+           gerencia.setIdGerencia(5);
+           gerencia.setNombre("AREA DE cobros");
+           gerencia.setDescripcion("esta area se encarga de cobrar");
             
-    //    }catch(Exception ex){
-  //         System.out.println(ex.getMessage());
-   //    }
-       //if(daoGerencia.eliminar(3) == 1)
-         //  System.out.println("Se ha eliminado un gerencia");
+        }catch(Exception ex){
+           System.out.println(ex.getMessage());
+       }
+       if(daoGerencia.eliminar(5) == 1)
+           System.out.println("Se ha eliminado un gerencia");
        
-      // if(daoGerencia.actualizar(gerencia) == 1)
-    //       System.out.println("Se ha actualizado un gerencia");
+//       if(daoGerencia.actualizar(gerencia) == 1)
+//           System.out.println("Se ha actualizado un gerencia");
         
-        //if(daoGerencia.insertar(gerencia) == 1)
-           // System.out.println("Se ha insertado un gerencia");
+//        if(daoGerencia.insertar(gerencia) == 1)
+//            System.out.println("Se ha insertado un gerencia");
         
-        //ArrayList<Gerencia> gerencias = daoGerencia.listar();
-//        for(Gerencia a : daoGerencia.listar()){
- //           System.out.println(a.getIdGerencia()+ " - " + a.getNombre()
- //                               +" - " +a.getDescripcion());
-  //      }
+        ArrayList<Gerencia> gerencias = daoGerencia.listar();
+        for(Gerencia a : daoGerencia.listar()){
+            System.out.println(a.getIdGerencia()+ " - " + a.getNombre()
+                                +" - " +a.getDescripcion());
+        }
         
         
        //CriterioDAO daoCriterio = new CriterioMySQL();
