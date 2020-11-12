@@ -12,14 +12,14 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestPuestos : Form
     {
-        private PuestoTrabajoWS.PuestoTrabajoWSWSClient daoPuestoTrabajo;
+        private PuestoTrabajoWS.PuestoTrabajoWSClient daoPuestoTrabajo;
         private GerenciaWS.GerenciaWSClient daoGerencia; 
         public frmAdmGestPuestos()
         {
             InitializeComponent();
-            daoPuestoTrabajo = new PuestoTrabajoWS.PuestoTrabajoWSWSClient();
-            daoGerencia = new GerenciaWS.GerenciaWSClient(); 
-            dgbCargos.DataSource = daoPuestoTrabajo.listarGerencias("");
+            daoPuestoTrabajo = new PuestoTrabajoWS.PuestoTrabajoWSClient();
+            daoGerencia = new GerenciaWS.GerenciaWSClient();
+            dgbCargos.DataSource = daoPuestoTrabajo.listarPuestoTrabajos("");
             cmbGestCargosNomGeren.DataSource = daoGerencia.listarGerencias(); 
             dgbCargos.AutoGenerateColumns = false;
         }
@@ -50,9 +50,8 @@ namespace SistemaEDInterfaces
             {
                 foreach (DataGridViewRow row in dgbCargos.SelectedRows)
                 {
-                    PuestoTrabajoWS.PuestoTrabajo puesto = (PuestoTrabajoWS.PuestoTrabajo)dgvGerencias.CurrentRow.DataBoundItem;
-                    puesto.estado = 0;
-                    dgbCargos.eliminarPuestoTrabajo(puesto);
+                    PuestoTrabajoWS.puestoTrabajo puesto = (PuestoTrabajoWS.puestoTrabajo)dgbCargos.CurrentRow.DataBoundItem;
+                    daoPuestoTrabajo.eliminarPuestoTrabajo(puesto.idPuestoTrabajo);
                     dgbCargos.Rows.RemoveAt(row.Index);
                 }
 
@@ -63,7 +62,7 @@ namespace SistemaEDInterfaces
         {
             GerenciaWS.gerencia gerencia;
             gerencia = (GerenciaWS.gerencia)cmbGestCargosNomGeren.SelectedItem;
-            dgbCargos.DataSource = daoPuestoTrabajo.listarPuestosTrabajo(gerencia.nombre);
+            dgbCargos.DataSource = daoPuestoTrabajo.listarPuestoTrabajos(gerencia.nombre);
         }
     }
 }
