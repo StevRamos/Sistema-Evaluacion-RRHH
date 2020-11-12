@@ -39,28 +39,29 @@ namespace SistemaEDInterfaces
                     foreach (var linea in lineas)
                     {
                         var valores = linea.Split(';');
-                        PuestoTrabajoWS.PuestoTrabajo puesto = new PuestoTrabajoWS.PuestoTrabajo();
+                        PuestoTrabajoWS.puestoTrabajo puesto = new PuestoTrabajoWS.puestoTrabajo();
 
-                        int dato = int.Parse(valores[0].ToString);
-                        puesto.setIdPuestoTrabajo(dato);
+                        int dato = int.Parse(valores[0].ToString());
+                        
+                        puesto.idPuestoTrabajo = dato;
 
                         if (valores[1] != "no")
                         {
-                            puesto.setNombre = valores[1].ToString();
+                            puesto.nombre = valores[1].ToString();
                         }
                         else
                         {
-                            puesto.setNombre = "";
+                            puesto.nombre = "";
                         }
                         if (valores[2] != "no")
                         {
-                            puesto.setDescripcion = valores[2].ToString();
+                            puesto.descripcion = valores[2].ToString();
                         }
                         else
                         {
-                            puesto.setDescripcion = "";
+                            puesto.descripcion = "";
                         }
-
+                        
                         daoPuesto.actualizarPuestoTrabajo(puesto);
                     }
                 }
@@ -69,9 +70,10 @@ namespace SistemaEDInterfaces
                     foreach (var linea in lineas)
                     {
                         var valores = linea.Split(';');
-                        PuestoTrabajoWS.PuestoTrabajo puesto = new PuestoTrabajoWS.PuestoTrabajo();
-                        puesto.setNombre = valores[0].ToString();
-                        puesto.setDescripcion = valores[1].ToString();
+                        PuestoTrabajoWS.puestoTrabajo puesto = new PuestoTrabajoWS.puestoTrabajo();
+                        puesto.nombre = valores[0].ToString();
+                        puesto.descripcion = valores[1].ToString();
+                        
                         daoPuesto.insertarPuestoTrabajo(puesto);
                     }
                 }
