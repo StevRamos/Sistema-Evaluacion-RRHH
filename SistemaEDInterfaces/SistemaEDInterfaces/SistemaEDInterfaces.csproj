@@ -56,11 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Connected Services\ColaboradorWS\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="Connected Services\GerenciaWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -663,34 +658,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Connected Services\ColaboradorWS\ColaboradorWS.wsdl" />
-    <None Include="Connected Services\ColaboradorWS\ColaboradorWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.buscarJefeResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.colaborador.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.insertarColaboradorResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefeResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\GerenciaWS\configuration91.svcinfo" />
     <None Include="Connected Services\GerenciaWS\configuration.svcinfo" />
     <None Include="Connected Services\GerenciaWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
-    <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
-    <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -804,7 +774,6 @@
     <None Include="Iconos\PUCPLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ColaboradorWS\" />
     <WCFMetadataStorage Include="Connected Services\GerenciaWS\" />
     <WCFMetadataStorage Include="Connected Services\ObjetivoWS\" />
     <WCFMetadataStorage Include="Connected Services\PeriodoWS\" />

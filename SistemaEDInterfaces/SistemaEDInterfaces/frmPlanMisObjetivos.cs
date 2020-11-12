@@ -24,7 +24,7 @@ namespace SistemaEDInterfaces
             daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             dgvMisObjetivos.AutoGenerateColumns = false;
 
-            dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
+            dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado);
             InitializeComponent();
             
         }
@@ -71,10 +71,10 @@ namespace SistemaEDInterfaces
         {
            
             frmPlanAgregarObjetivo form = new frmPlanAgregarObjetivo();
-            //form.Objetivo.colaborador.idColaborador = idColaboradorLoggeado; 
+            form.Objetivo.colaborador.idColaborador = idColaboradorLoggeado; 
             if (form.ShowDialog() == DialogResult.OK)
             {
-                //dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosPorIdColab(IdColaboradorLoggeado);
+                dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado);
             }
         }
 
@@ -90,15 +90,16 @@ namespace SistemaEDInterfaces
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            /*
+            
             ObjetivoWS.objetivo objetivo;
             foreach (DataGridViewRow row in dgvMisObjetivos.Rows)
             {
+                
                 objetivo = (ObjetivoWS.objetivo)row.DataBoundItem;
-                objetivo.estado = EstadoObjetivo.EsperandoRevision;
+                objetivo.estado = (int)EstadoObjetivo.EsperandoRevision;
                 daoObjetivo.actualizarObjetivo(objetivo);
             }
-            */
+            
             MessageBox.Show("Objetivos enviados para revision.",
                             "Mensaje de confirmacion",
                             MessageBoxButtons.OK,
@@ -107,20 +108,20 @@ namespace SistemaEDInterfaces
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
-            /*
+            
             ObjetivoWS.objetivo objetivoSeleccionado =
                 (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem;
 
             frmPlanEditarObjetivo form = new frmPlanEditarObjetivo();
             form.Objetivo = objetivoSeleccionado; 
             Global.formPrincipal.abrirFormularioHijo(true,form); 
-            */
+            
             
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            /*
+            
             var result = MessageBox.Show("Se eliminara el objetivo seleccionado.",
                                             "Mensaje de advertencia",
                                             MessageBoxButtons.OKCancel,
@@ -131,14 +132,14 @@ namespace SistemaEDInterfaces
                 {
                     ObjetivoWS.objetivo objetivo = 
                         (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem;
-                    objetivo.estado = EstadoObjetivo.Eliminado;
-                    daoObjetivo.actualizarObjetivo(objetivo); 
+                    daoObjetivo.eliminarObjetivo(objetivo.idObjetivo); 
                     dgvMisObjetivos.Rows.RemoveAt(row.Index);
                     
 
                 }
 
-            }*/
+            }
+
                 
         }
     }

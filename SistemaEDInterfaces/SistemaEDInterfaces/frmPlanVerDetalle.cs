@@ -12,7 +12,7 @@ namespace SistemaEDInterfaces
 {
     public partial class frmPlanVerDetalle : Form
     {
-        /*
+        
         private ColaboradorWS.colaborador colaborador;
 
         private ObjetivoWS.ObjetivoWSClient daoObjetivo;
@@ -21,11 +21,11 @@ namespace SistemaEDInterfaces
 
         public ObjetivoWS.objetivo Objetivo { get => objetivo; set => objetivo = value; }
         public ColaboradorWS.colaborador Colaborador { get => colaborador; set => colaborador = value; }
-        */
+        
         public frmPlanVerDetalle()
         {
-            //colaborador = new ColaboradorWS.colaborador();
-            //daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
+            colaborador = new ColaboradorWS.colaborador();
+            daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             InitializeComponent();
         }
 
@@ -42,7 +42,7 @@ namespace SistemaEDInterfaces
 
         private void btnRealizar_Click(object sender, EventArgs e)
         {
-            /*
+            
             if (rbAprobar.Checked)
             {
                 var result = MessageBox.Show("¿Desea agregar un comentario?",
@@ -61,7 +61,7 @@ namespace SistemaEDInterfaces
                                                MessageBoxIcon.Information);
                             txtBoxObservacionJefe.Text = form.ObservacionesTextBox;
                         dtpFechaAprobacion.Value = DateTime.Now;
-                        objetivo.estado = EstadoObjetivo.AprobOculto;
+                        objetivo.estado = (int)EstadoObjetivo.AprobOculto;
                         objetivo.observacion = txtBoxObservacionJefe.Text;
                         objetivo.fechaAprobacion = dtpFechaAprobacion.Value;
                         daoObjetivo.actualizarObjetivo(objetivo);
@@ -75,7 +75,7 @@ namespace SistemaEDInterfaces
                                                MessageBoxButtons.OK,
                                                MessageBoxIcon.Information);
                     dtpFechaAprobacion.Value = DateTime.Now;
-                    objetivo.estado = EstadoObjetivo.AprobOculto;
+                    objetivo.estado = (int)EstadoObjetivo.AprobOculto;
                     objetivo.observacion = txtBoxObservacionJefe.Text;
                     objetivo.fechaAprobacion = dtpFechaAprobacion.Value;
                     daoObjetivo.actualizarObjetivo(objetivo);
@@ -93,7 +93,7 @@ namespace SistemaEDInterfaces
                                            MessageBoxButtons.OK,
                                            MessageBoxIcon.Information);
                     txtBoxObservacionJefe.Text = form.ObservacionesTextBox;
-                    objetivo.estado = EstadoObjetivo.DenOculto;
+                    objetivo.estado = (int)EstadoObjetivo.DenOculto;
                     objetivo.observacion = txtBoxObservacionJefe.Text;
                     daoObjetivo.actualizarObjetivo(objetivo);
                 }
@@ -105,29 +105,29 @@ namespace SistemaEDInterfaces
                                             MessageBoxButtons.OK,
                                             MessageBoxIcon.Error);
             }
-            */
+            
         }
 
         private void frmPlanVerDetalle_Load(object sender, EventArgs e)
         {
-            /*
+            
             txtIDObjetivo.Text = objetivo.idObjetivo.ToString();
             switch (objetivo.estado)
             {
                 
-                case EstadoObjetivo.EsperandoRevision:
+                case (int)EstadoObjetivo.EsperandoRevision:
                     txtEstado.Text = "Esperando Revision";
                     break;
-                case EstadoObjetivo.DenOculto:
+                case (int)EstadoObjetivo.DenOculto:
                     txtEstado.Text = "Denegado, no enviado";
                     break;
-                case EstadoObjetivo.DenVisible:
+                case (int)EstadoObjetivo.DenVisible:
                     txtEstado.Text = "Denegado, enviado";
                     break;
-                case EstadoObjetivo.AprobOculto:
+                case (int)EstadoObjetivo.AprobOculto:
                     txtEstado.Text = "Aprobado, no enviado";
                     break;
-                case EstadoObjetivo.AprobVisible:
+                case (int)EstadoObjetivo.AprobVisible:
                     txtEstado.Text = "Aprobado, enviado";
                     break;
             }
@@ -138,7 +138,7 @@ namespace SistemaEDInterfaces
             txtPeso.Text = objetivo.peso.ToString();
             txtBoxDescripcion.Text = objetivo.descripcion;
             txtBoxObservacionJefe.Text = objetivo.observacion;
-            */
+            
         }
     }
 }

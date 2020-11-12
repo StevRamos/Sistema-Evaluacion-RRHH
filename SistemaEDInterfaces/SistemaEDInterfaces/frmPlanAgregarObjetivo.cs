@@ -12,29 +12,29 @@ namespace SistemaEDInterfaces
 {
     public partial class frmPlanAgregarObjetivo : Form
     {
-        /*
+        
         private ObjetivoWS.objetivo objetivo;
         private ObjetivoWS.ObjetivoWSClient daoObjetivo;
 
-        public ObjetivoWS.objetivo Objetivo { get => objetivo; set => objetivo = value; }*/
+        public ObjetivoWS.objetivo Objetivo { get => objetivo; set => objetivo = value; }
         public frmPlanAgregarObjetivo()
         {
-            //objetivo = new ObjetivoWS.objetivo();
-            //daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
+            objetivo = new ObjetivoWS.objetivo();
+            daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             InitializeComponent();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            /*
+            
             objetivo.descripcion = txtDescripcion.Text;
             objetivo.peso = Double.Parse(txtPeso.Text);
             objetivo.meta = Double.Parse(txtMeta.Text);
             objetivo.unidadMedida = txtUnidadMedida.Text;
-            //objetivo.estado = EstadoObjetivo.Oculto;
-            //objetivo.fechaFormulacion = DateTime.Now;
+            objetivo.estado = (int)EstadoObjetivo.Oculto;
+            objetivo.fechaFormulacion = DateTime.Now;
 
-            int resultado = daoObjetivo.insertar(objetivo);
+            int resultado = daoObjetivo.insertarObjetivo(objetivo);
             if (resultado != 0)
             {
                 MessageBox.Show("Nuevo objetivo registrado correctamente.",
@@ -44,7 +44,7 @@ namespace SistemaEDInterfaces
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-                */
+                
             
         }
     }

@@ -13,16 +13,16 @@ namespace SistemaEDInterfaces
     public partial class frmAdmGestRangos : Form
     {
         //bool datosGuardados; 
-        private EscalaPeriodoWS.EscalaPeriodoWSClient daoEscalaPeriodo;
+        /*private EscalaPeriodoWS.EscalaPeriodoWSClient daoEscalaPeriodo;
         private ItemPDIPeriodoWS.ItemPDIPeriodoWSClient daoItemPDIPeriodo;
 
         private BindingList<ItemPDIPeriodoWS.itemPDIPeriodo> itemsPDIPeriodos;
-        private BindingList<EscalaPeriodoWS.escalaPeriodo> escalasPeriodos;
+        private BindingList<EscalaPeriodoWS.escalaPeriodo> escalasPeriodos;*/
         public frmAdmGestRangos()
         {
             InitializeComponent();
 
-            daoEscalaPeriodo = new EscalaPeriodoWS.EscalaPeriodoWSClient();
+            /*daoEscalaPeriodo = new EscalaPeriodoWS.EscalaPeriodoWSClient();
             daoItemPDIPeriodo = new ItemPDIPeriodoWS.ItemPDIPeriodoWSClient(); 
 
             escalasPeriodos =
@@ -95,7 +95,7 @@ namespace SistemaEDInterfaces
                         break; 
                 }
             }
-
+            */
 
         }
 
@@ -112,10 +112,10 @@ namespace SistemaEDInterfaces
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            
             if (verificarSumaCupos())
             {
-                daoEscalaPeriodo.
+                //daoEscalaPeriodo.
                 MessageBox.Show("Se guardaron los cambios realizados.",
                 "Mensaje de información",
                 MessageBoxButtons.OK,
