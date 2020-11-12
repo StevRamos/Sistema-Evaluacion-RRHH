@@ -39,7 +39,7 @@ public class ObjetivoWS{
     }
 
     @WebMethod(operationName = "eliminarObjetivo")
-    public int eliminarObjetivo(@WebParam(name = "objetivo") int idObjetivo){
+    public int eliminarObjetivo(@WebParam(name = "idObjetivo") int idObjetivo){
         int resultado = 0;
         try{
             resultado =  daoObjetivo.eliminar(idObjetivo);
@@ -54,6 +54,17 @@ public class ObjetivoWS{
         ArrayList<Objetivo> objetivos = new ArrayList<>();
         try{
             objetivos =  daoObjetivo.listar();
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return objetivos;
+    }
+    
+        @WebMethod(operationName = "listarObjetivosXColaborador")
+    public ArrayList<Objetivo> listarObjetivosXColaborador(@WebParam(name = "idColaborador") int idColaborador){
+        ArrayList<Objetivo> objetivos = new ArrayList<>();
+        try{
+            objetivos =  daoObjetivo.listarObjetivosXColaborador(idColaborador);
         }catch( Exception ex){
             System.out.println(ex.getMessage());
         }

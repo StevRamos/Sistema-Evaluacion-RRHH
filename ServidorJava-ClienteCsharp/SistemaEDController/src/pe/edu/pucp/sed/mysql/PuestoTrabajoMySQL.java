@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.PuestoTrabajoDAO;
+import pe.edu.pucp.sed.model.Gerencia;
 import pe.edu.pucp.sed.model.PuestoTrabajo;
 
 public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
@@ -48,10 +49,11 @@ public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ACTUALIZAR_PUESTO_TRABAJO(?,?)}";
+			String sql = "{call ACTUALIZAR_PUESTO_TRABAJO(?,?,?)}";
 			cs = con.prepareCall(sql);
 
                         cs.setString("_DESCRIPCION",puestoTrabajo.getDescripcion());
+                        cs.setString("_NOMBRE",puestoTrabajo.getNombre());
                         cs.setInt("_ID_PUESTO_TRABAJO",puestoTrabajo.getIdPuestoTrabajo());
                         
                         
@@ -86,24 +88,34 @@ public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
 		return resultado;
 	}
 	@Override
-	public ArrayList<PuestoTrabajo> listar(){
+	public ArrayList<PuestoTrabajo> listar(String nombreGerencia){
 		ArrayList<PuestoTrabajo> puestosTrabajo = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
                         
-                        String sql = "{call LISTAR_PUESTOS_TRABAJO()}";
-			cs = con.prepareCall(sql);
+                        String sql = "{call LISTAR_PUESTOS_TRABAJO(?)}";
+                        cs = con.prepareCall(sql);
+                        cs.setString("_NOMBRE_GERENCIA", nombreGerencia);
+                        rs = cs.executeQuery(); 
                         
-                        rs = cs.executeQuery(sql);
+                        
+                        System.out.println("Entra");
+                        
                         while(rs.next()){
+                            
+                            Gerencia ger = new Gerencia();
+                            ger.setNombre(rs.getString("nombreGerencia"));
+                            
                             PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
-                            puestoTrabajo.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
-                            puestoTrabajo.setNombre(rs.getString("nombre"));
+                            puestoTrabajo.setIdPuestoTrabajo(rs.getInt("idPuestoTrabajo"));
+                            puestoTrabajo.setNombre(rs.getString("nombrePuestoTrabajo"));
                             puestoTrabajo.setDescripcion(rs.getString("descripcion"));
-                            //puestoTrabajo.setActivo(rs.getBoolean("activo"));
+                           
+                            puestoTrabajo.setGerencia(ger);
                             puestosTrabajo.add(puestoTrabajo);
+                            
                         }
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());

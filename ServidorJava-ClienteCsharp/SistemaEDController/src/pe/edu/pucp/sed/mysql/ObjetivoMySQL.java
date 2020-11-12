@@ -119,17 +119,23 @@ public class ObjetivoMySQL implements ObjetivoDAO {
             String sql = "{call LISTAR_OBJETIVOS()}";
             cs = con.prepareCall(sql);
 
-            rs = cs.executeQuery(sql);
-            while (rs.next()) {
+            rs = cs.executeQuery();
+            while (rs.next()) {                
                 Objetivo objetivo = new Objetivo();
                 objetivo.setIdObjetivo(rs.getInt("id_Objetivo"));
+//                objetivo.getColaborador().setIdColaborador(idColaborador);
+                objetivo.getEvaluacion().setIdEvaluacion(rs.getInt("id_Evaluacion"));
                 objetivo.setDescripcion(rs.getString("descripcion"));
                 //objetivo.setEstado(rs.getBoolean("estado"));
-                objetivo.setFechaFormulacion(rs.getDate("fechaFormulacion")); //poible error
+                objetivo.setFechaFormulacion(rs.getDate("fechaFormulacion")); //posible error
                 objetivo.setFechaAprobacion(rs.getDate("fechaAprobacion")); //posible error
                 objetivo.setMeta(rs.getDouble("meta"));
                 objetivo.setUnidadMedida(rs.getString("unidadMedida"));
+                objetivo.setObservacion(rs.getString("observacion"));
                 objetivo.setPeso(rs.getDouble("peso"));
+                objetivo.setNotaPrevia(rs.getDouble("notaPrevia"));
+                objetivo.setNotaAutoEval(rs.getDouble("notaAutoEval"));
+                objetivo.setNotaFinal(rs.getDouble("notaFinal"));
 
                 objetivos.add(objetivo);
             }
@@ -146,16 +152,17 @@ public class ObjetivoMySQL implements ObjetivoDAO {
         return objetivos;
     }
     
+    @Override
     public ArrayList<Objetivo> listarObjetivosXColaborador( int idColaborador ) {
         ArrayList<Objetivo> objetivos = new ArrayList<>();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
-            String sql = "{call LISTAR_OBJETIVOS_X_COLABORADOR(?)}";
+            String sql = "{CALL LISTAR_OBJETIVOS_X_COLABORADOR(?)}";
             cs = con.prepareCall(sql);
-            cs.setInt("FID_COLABORADOR", idColaborador);
-            rs = cs.executeQuery(sql);
-            while (rs.next()) {
+            cs.setInt("_FID_COLABORADOR", idColaborador);
+            rs = cs.executeQuery();
+            while (rs.next()) {                
                 Objetivo objetivo = new Objetivo();
                 objetivo.setIdObjetivo(rs.getInt("id_Objetivo"));
                 objetivo.getColaborador().setIdColaborador(idColaborador);
@@ -165,12 +172,12 @@ public class ObjetivoMySQL implements ObjetivoDAO {
                 objetivo.setFechaFormulacion(rs.getDate("fechaFormulacion")); //posible error
                 objetivo.setFechaAprobacion(rs.getDate("fechaAprobacion")); //posible error
                 objetivo.setMeta(rs.getDouble("meta"));
-                objetivo.setUnidadMedida(cs.getString("unidadMedida"));
-                objetivo.setObservacion(cs.getString("observacion"));
-                objetivo.setPeso(cs.getDouble("peso"));
-                objetivo.setNotaPrevia(cs.getDouble("notaPrevia"));
-                objetivo.setNotaAutoEval(cs.getDouble("notaAutoEval"));
-                objetivo.setNotaFinal(cs.getDouble("notaFinal"));
+                objetivo.setUnidadMedida(rs.getString("unidadMedida"));
+                objetivo.setObservacion(rs.getString("observacion"));
+                objetivo.setPeso(rs.getDouble("peso"));
+                objetivo.setNotaPrevia(rs.getDouble("notaPrevia"));
+                objetivo.setNotaAutoEval(rs.getDouble("notaAutoEval"));
+                objetivo.setNotaFinal(rs.getDouble("notaFinal"));
 
                 objetivos.add(objetivo);
             }
@@ -186,5 +193,6 @@ public class ObjetivoMySQL implements ObjetivoDAO {
         }
         return objetivos;
     }
+    
     
 }

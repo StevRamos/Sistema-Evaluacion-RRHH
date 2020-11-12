@@ -6,6 +6,7 @@ public class PuestoTrabajo{
 	private String nombre;
 	private String descripcion;
 	private ArrayList<PesoCriterio> pesosCriterio;
+        private Gerencia gerencia;
 
 	public PuestoTrabajo(){
 		this.pesosCriterio = new ArrayList<>();
@@ -43,5 +44,14 @@ public class PuestoTrabajo{
 		this.pesosCriterio.add(pesosCriterio);
 	};
 
+    public Gerencia getGerencia() {
+        return gerencia;
+    }
+
+    public void setGerencia(Gerencia gerencia) {
+        this.gerencia = gerencia;
+    }
+
+            
 }
 

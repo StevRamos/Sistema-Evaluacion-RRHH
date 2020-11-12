@@ -39,7 +39,7 @@ public class PuestoTrabajoWS{
     }
 
     @WebMethod(operationName = "eliminarPuestoTrabajo")
-    public int eliminarPuestoTrabajo(@WebParam(name = "puestoTrabajo") int idPuestoTrabajo){
+    public int eliminarPuestoTrabajo(@WebParam(name = "idPuestoTrabajo") int idPuestoTrabajo){
         int resultado = 0;
         try{
             resultado =  daoPuestoTrabajo.eliminar(idPuestoTrabajo);
@@ -50,10 +50,10 @@ public class PuestoTrabajoWS{
     }
 
     @WebMethod(operationName = "listarPuestoTrabajos")
-    public ArrayList<PuestoTrabajo> listarPuestoTrabajos(){
+    public ArrayList<PuestoTrabajo> listarPuestoTrabajos(@WebParam(name = "nombreGerencia") String nombreGerencia){
         ArrayList<PuestoTrabajo> puestoTrabajos = new ArrayList<>();
         try{
-            puestoTrabajos =  daoPuestoTrabajo.listar();
+            puestoTrabajos =  daoPuestoTrabajo.listar(nombreGerencia);
         }catch( Exception ex){
             System.out.println(ex.getMessage());
         }
