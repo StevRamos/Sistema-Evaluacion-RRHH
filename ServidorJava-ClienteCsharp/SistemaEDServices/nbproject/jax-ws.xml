@@ -19,6 +19,9 @@
     <service name="GerenciaPeriodoWS">
       <implementation-class>pe.edu.pucp.sed.services.GerenciaPeriodoWS</implementation-class>
     </service>
+    <service name="UsuarioWS">
+      <implementation-class>pe.edu.pucp.sed.services.UsuarioWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

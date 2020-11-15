@@ -24,9 +24,9 @@ public class Colaborador{
 		this.objetivos = new ArrayList<>();
 		this.evaluaciones = new ArrayList<>();
 		this.subordinados = new ArrayList<>();
-                //this.puestoTrabajo = new PuestoTrabajo();
-                //this.gerencia = new Gerencia();
-                //this.jefe = new Colaborador();
+                this.puestoTrabajo = new PuestoTrabajo();
+                this.gerencia = new Gerencia();
+//                this.jefe = new Colaborador();
 	};
 
         public Periodo getPeriodo() {
