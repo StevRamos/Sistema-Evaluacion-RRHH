@@ -46,13 +46,17 @@ public class Gerencia{
 		this.configuracionFechas.add(configuracionFechas);
 	};
 
-	public ArrayList<Colaborador> getColaboradores(){
-		return this.colaboradores;
-	};
+    public ArrayList<Colaborador> getColaboradores() {
+        return colaboradores;
+    }
 
-	public void setColaboradores( Colaborador colaboradores ){
-		this.colaboradores.add(colaboradores);
-	};
+    public void setConfiguracionFechas(ArrayList<GerenciaPeriodo> configuracionFechas) {
+        this.configuracionFechas = configuracionFechas;
+    }
+
+    public void setColaboradores(ArrayList<Colaborador> colaboradores) {
+        this.colaboradores = colaboradores;
+    }
 
 	public void agregarColaborador(){
 

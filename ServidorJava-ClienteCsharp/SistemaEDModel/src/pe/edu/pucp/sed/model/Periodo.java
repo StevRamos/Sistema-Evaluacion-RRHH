@@ -3,6 +3,7 @@ package pe.edu.pucp.sed.model;
 import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Logger;
 
 public class Periodo{
 	private int idPeriodo;
@@ -120,13 +121,13 @@ public class Periodo{
 		this.rangosPDI.add(rangosPDI);
 	};
 
-	public ArrayList<GerenciaPeriodo> getConfiguracionFechas(){
-		return this.configuracionFechas;
-	};
+        public ArrayList<GerenciaPeriodo> getConfiguracionFechas() {
+            return configuracionFechas;
+        }
 
-	public void setConfiguracionFechas( GerenciaPeriodo configuracionFechas ){
-		this.configuracionFechas.add(configuracionFechas);
-	};
+        public void setConfiguracionFechas(ArrayList<GerenciaPeriodo> configuracionFechas) {
+            this.configuracionFechas = configuracionFechas;
+        }
 
 	public ArrayList<EscalaPeriodo> getEscalas(){
 		return this.escalas;
