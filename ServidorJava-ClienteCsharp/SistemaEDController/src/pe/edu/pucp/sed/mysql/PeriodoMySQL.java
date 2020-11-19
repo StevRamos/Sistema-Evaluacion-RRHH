@@ -159,16 +159,16 @@ public class PeriodoMySQL implements PeriodoDAO{
             rs.close();
             //falta acabar
             
-            cs = con.prepareCall(" call LISTAR_PESOSCRITERIO_X_ID_PERIODO() ");
-            rs = cs.executeQuery();
-            ArrayList<PesoCriterio> pesosCriterios = new ArrayList();
-            while(rs.next()){
-                PesoCriterio pc = new PesoCriterio();
-                pc.setIdPesoCriterio(rs.getInt("id_Criterio"));
-                pc.setPeso(rs.getDouble("peso"));
-                pesosCriterios.add(pc);
-            }
-            per.setPesosCriterio(pesosCriterios);
+//            cs = con.prepareCall(" call LISTAR_PESOSCRITERIO_X_ID_PERIODO() ");
+//            rs = cs.executeQuery();
+//            ArrayList<PesoCriterio> pesosCriterios = new ArrayList();
+//            while(rs.next()){
+//                PesoCriterio pc = new PesoCriterio();
+//                pc.setIdPesoCriterio(rs.getInt("id_Criterio"));
+//                pc.setPeso(rs.getDouble("peso"));
+//                pesosCriterios.add(pc);
+//            }
+//            per.setPesosCriterio(pesosCriterios);
             
         }catch(Exception ex){
             System.out.println(ex.getMessage());

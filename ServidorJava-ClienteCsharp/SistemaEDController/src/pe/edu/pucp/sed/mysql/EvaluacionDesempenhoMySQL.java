@@ -88,7 +88,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
-        }finally{
+        }finally{   
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado;

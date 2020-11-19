@@ -52,4 +52,14 @@ public class PeriodoWS {
         return resultado;
     }
     
+    @WebMethod(operationName = "obtenerPeriodo")
+    public Periodo obtenerPeriodo(){
+        Periodo periodo = new Periodo();        
+        try{
+            periodo = daoPeriodo.obtenerPeriodoActual();
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return periodo;
+    }
 }

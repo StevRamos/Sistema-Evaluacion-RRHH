@@ -5,9 +5,13 @@
  */
 package pe.edu.pucp.sed.services;
 
+import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
+import pe.edu.pucp.sed.model.EvaluacionDesempenho;
+import pe.edu.pucp.sed.mysql.EvaluacionDesempenhoMySQL;
 
 /**
  *
@@ -16,11 +20,32 @@ import javax.jws.WebParam;
 @WebService(serviceName = "EvaluacionDesempenhoWS")
 public class EvaluacionDesempenhoWS {
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    private EvaluacionDesempenhoDAO daoEvalDesempenho;
+    
+    public EvaluacionDesempenhoWS(){
+        daoEvalDesempenho = new EvaluacionDesempenhoMySQL();
+    }
+    
+    @WebMethod(operationName = "listarDesempenhoPorPeriodo")
+    public ArrayList<EvaluacionDesempenho> listarDesempenhoPorPeriodo(@WebParam(name = "idColaborador")int idColaborador,
+            @WebParam(name = "idPeriodo") int idPeriodo ) {
+        ArrayList<EvaluacionDesempenho> evaluacionDes = new ArrayList<>();
+        try{
+            evaluacionDes =  daoEvalDesempenho.listarDesempenhoPorPeriodo(idColaborador,idPeriodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return evaluacionDes;
+    }
+    
+    @WebMethod(operationName = "actualizarEvaluacionDesempenho")
+    public int actualizarEvaluacionDesempenho(@WebParam(name = "evalDes")EvaluacionDesempenho evalDes ) {
+        int resultado =0;
+        try{
+            resultado = daoEvalDesempenho.actualizarEvaluacionDesempenho(evalDes);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
     }
 }
