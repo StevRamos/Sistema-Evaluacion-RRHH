@@ -86,6 +86,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Correo.cs" />
     <Compile Include="EstadoObjetivo.cs" />
     <Compile Include="Etapas.cs" />
     <Compile Include="frmAdmCalibrar.cs">
