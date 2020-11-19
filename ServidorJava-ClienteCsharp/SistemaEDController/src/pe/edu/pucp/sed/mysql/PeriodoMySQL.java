@@ -18,7 +18,7 @@ public class PeriodoMySQL implements PeriodoDAO{
     PreparedStatement ps;
     ResultSet rs;
     CallableStatement cs;
-
+    
     @Override
     public int insertar(Periodo periodo){
         int resultado = 0;
