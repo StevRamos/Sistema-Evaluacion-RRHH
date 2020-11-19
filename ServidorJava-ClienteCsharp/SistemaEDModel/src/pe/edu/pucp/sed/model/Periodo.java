@@ -131,7 +131,7 @@ public class Periodo{
         return this.escalas;
     }
 
-<<<<<<< HEAD
+
     public void setEscalas(ArrayList<EscalaPeriodo> escalas) {
         this.escalas = escalas;
     }
@@ -139,15 +139,8 @@ public class Periodo{
     public ArrayList<Objetivo> getObjetivos() {
         return this.objetivos;
     }
-=======
-        public ArrayList<GerenciaPeriodo> getConfiguracionFechas() {
-            return configuracionFechas;
-        }
 
-        public void setConfiguracionFechas(ArrayList<GerenciaPeriodo> configuracionFechas) {
-            this.configuracionFechas = configuracionFechas;
-        }
->>>>>>> b3b46d9d7c1be2dbe87c7db71bdc114a0dfce5b7
+
 
     public void setObjetivos(ArrayList<Objetivo> objetivos) {
         this.objetivos = objetivos;

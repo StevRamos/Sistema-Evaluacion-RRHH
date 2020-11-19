@@ -22,6 +22,9 @@
     <service name="UsuarioWS">
       <implementation-class>pe.edu.pucp.sed.services.UsuarioWS</implementation-class>
     </service>
+    <service name="EvaluacionDesempenhoWS">
+      <implementation-class>pe.edu.pucp.sed.services.EvaluacionDesempenhoWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

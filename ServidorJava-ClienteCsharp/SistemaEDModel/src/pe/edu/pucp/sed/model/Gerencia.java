@@ -46,39 +46,30 @@ public class Gerencia{
 		this.configuracionFechas = configuracionFechas;
 	};
 
-    public ArrayList<Colaborador> getColaboradores() {
-        return colaboradores;
-    }
+        public ArrayList<Colaborador> getColaboradores() {
+            return colaboradores;
+        }
 
-<<<<<<< HEAD
 	public void setColaboradores( ArrayList<Colaborador> colaboradores ){
 		this.colaboradores = colaboradores;
 	};
-=======
-    public void setConfiguracionFechas(ArrayList<GerenciaPeriodo> configuracionFechas) {
-        this.configuracionFechas = configuracionFechas;
-    }
 
-    public void setColaboradores(ArrayList<Colaborador> colaboradores) {
-        this.colaboradores = colaboradores;
-    }
->>>>>>> b3b46d9d7c1be2dbe87c7db71bdc114a0dfce5b7
 
-	public void agregarColaborador(){
+        public void agregarColaborador(){
 
-	};
+        };
 
-	public void agregarCupo(){
+        public void agregarCupo(){
 
-	};
+        };
 
-    public Periodo getPeriodo() {
-        return periodo;
-    }
+        public Periodo getPeriodo() {
+            return periodo;
+        }
 
-    public void setPeriodo(Periodo periodo) {
-        this.periodo = periodo;
-    }
+        public void setPeriodo(Periodo periodo) {
+            this.periodo = periodo;
+        }
         
 }
 

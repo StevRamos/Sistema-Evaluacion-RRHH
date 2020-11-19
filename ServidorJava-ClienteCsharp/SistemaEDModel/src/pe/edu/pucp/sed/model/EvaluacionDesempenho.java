@@ -12,12 +12,33 @@ public class EvaluacionDesempenho extends Evaluacion{
     private double notaFinalObj;
     private double notaPrevia;
     private ArrayList<Objetivo> objetivos;
-
+    private int estadoAutoEval;
+    private int estadoPlanificacion;
+    
+    
     public EvaluacionDesempenho() {
         super();
         this.objetivos = new ArrayList<>();
     }
 
+    public int getEstadoAutoEval() {
+        return estadoAutoEval;
+    }
+
+    public int getEstadoPlanificacion() {
+        return estadoPlanificacion;
+    }
+
+    public void setEstadoAutoEval(int estadoAutoEval) {
+        this.estadoAutoEval = estadoAutoEval;
+    }
+
+    public void setEstadoPlanificacion(int estadoPlanificacion) {
+        this.estadoPlanificacion = estadoPlanificacion;
+    }
+
+    
+    
     public String getObservacionesComp() {
         return this.observacionesComp;
     }

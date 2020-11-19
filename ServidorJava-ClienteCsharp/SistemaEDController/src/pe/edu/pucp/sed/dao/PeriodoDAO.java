@@ -7,5 +7,6 @@ public interface PeriodoDAO{
 	int insertar(Periodo periodo);
 	int actualizar(Periodo periodo);
 	int eliminar(int idPeriodo);
+        Periodo obtenerPeriodoActual();
 	ArrayList<Periodo> listar();
 }
