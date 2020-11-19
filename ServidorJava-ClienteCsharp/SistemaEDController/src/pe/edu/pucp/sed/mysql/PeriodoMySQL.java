@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
 import pe.edu.pucp.sed.model.Periodo;
+import pe.edu.pucp.sed.model.PesoCriterio;
 
 public class PeriodoMySQL implements PeriodoDAO{
 
@@ -114,6 +115,17 @@ public class PeriodoMySQL implements PeriodoDAO{
                 per.setNombre(rs.getString("nombre"));
                 
                 periodos.add(per);
+            }
+            rs.close();
+            //falta acabar
+            for(Periodo p : periodos){
+                cs = con.prepareCall(" call LISTAR_PESOSCRITERIO_X_ID_PERIODO() ");
+                rs = cs.executeQuery();
+                while(rs.next()){
+                    PesoCriterio pc = new PesoCriterio();
+                    pc.setIdPesoCriterio(rs.getInt("id_Criterio"));
+                    pc.setPeso(rs.getDouble("peso"));
+                }
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());

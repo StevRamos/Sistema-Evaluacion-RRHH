@@ -44,8 +44,8 @@ public class PesoCriterio{
 		return this.lineasEvaluacion;
 	};
 
-	public void setLineasEvaluacion( LineaEvaluacion lineasEvaluacion ){
-		this.lineasEvaluacion.add(lineasEvaluacion);
+	public void setLineasEvaluacion( ArrayList<LineaEvaluacion> lineasEvaluacion ){
+		this.lineasEvaluacion = lineasEvaluacion;
 	};
 
 	public PuestoTrabajo getPuestoTrabajo(){

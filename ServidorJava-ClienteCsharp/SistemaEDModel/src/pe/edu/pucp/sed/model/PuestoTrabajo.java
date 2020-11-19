@@ -1,48 +1,50 @@
 package pe.edu.pucp.sed.model;
 
 import java.util.ArrayList;
-public class PuestoTrabajo{
-	private int idPuestoTrabajo;
-	private String nombre;
-	private String descripcion;
-	private ArrayList<PesoCriterio> pesosCriterio;
-        private Gerencia gerencia;
 
-	public PuestoTrabajo(){
-		this.pesosCriterio = new ArrayList<>();
-	};
+public class PuestoTrabajo {
 
-	public int getIdPuestoTrabajo(){
-		return this.idPuestoTrabajo;
-	};
+    private int idPuestoTrabajo;
+    private String nombre;
+    private String descripcion;
+    private ArrayList<PesoCriterio> pesosCriterio;
+    private Gerencia gerencia;
 
-	public void setIdPuestoTrabajo( int idPuestoTrabajo ){
-		this.idPuestoTrabajo = idPuestoTrabajo;
-	};
+    public PuestoTrabajo() {
+        this.pesosCriterio = new ArrayList<>();
+    }
 
-	public String getNombre(){
-		return this.nombre;
-	};
+    public int getIdPuestoTrabajo() {
+        return this.idPuestoTrabajo;
+    }
 
-	public void setNombre( String nombre ){
-		this.nombre = nombre;
-	};
+    public void setIdPuestoTrabajo(int idPuestoTrabajo) {
+        this.idPuestoTrabajo = idPuestoTrabajo;
+    }
 
-	public String getDescripcion(){
-		return this.descripcion;
-	};
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public void setDescripcion( String descripcion ){
-		this.descripcion = descripcion;
-	};
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public ArrayList<PesoCriterio> getPesosCriterio(){
-		return this.pesosCriterio;
-	};
+    public String getDescripcion() {
+        return this.descripcion;
+    }
 
-	public void setPesosCriterio( PesoCriterio pesosCriterio ){
-		this.pesosCriterio.add(pesosCriterio);
-	};
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public ArrayList<PesoCriterio> getPesosCriterio() {
+        return this.pesosCriterio;
+    }
+
+    public void setPesosCriterio(ArrayList<PesoCriterio> pesosCriterio) {
+        this.pesosCriterio = pesosCriterio;
+    }
 
     public Gerencia getGerencia() {
         return gerencia;

@@ -1,111 +1,115 @@
 package pe.edu.pucp.sed.model;
 
 import java.util.ArrayList;
-public class LineaEvaluacion{
-	private int idLineaEvaluacion;
-	private double notaFinal;
-	private double notaAutoEval;
-	private double notaPrevia;
-	private String accionesAtomar;
-	private ArrayList<LineaEvaluacion> sublineasEvaluacion;
-	private Evaluacion evaluacion;
-	private ItemPDI itemPDI;
-	private PesoCriterio pesoCriterio;
 
-	public LineaEvaluacion(){
-		this.sublineasEvaluacion = new ArrayList<>();
-                this.evaluacion = new Evaluacion();
-                this.itemPDI = new ItemPDI();
-                this.pesoCriterio = new PesoCriterio();
-	};
+public class LineaEvaluacion {
 
-	public int getIdLineaEvaluacion(){
-		return this.idLineaEvaluacion;
-	};
+    private int idLineaEvaluacion;
+    private double notaFinal;
+    private double notaAutoEval;
+    private double notaPrevia;
+    private String accionesAtomar;
+    private ArrayList<LineaEvaluacion> sublineasEvaluacion;
+    private Evaluacion evaluacion;
+    private ItemPDI itemPDI;
+    private PesoCriterio pesoCriterio;
 
-	public void setIdLineaEvaluacion( int idLineaEvaluacion ){
-		this.idLineaEvaluacion = idLineaEvaluacion;
-	};
+    public LineaEvaluacion() {
+        this.sublineasEvaluacion = new ArrayList<>();
+        this.evaluacion = new Evaluacion();
+        this.itemPDI = new ItemPDI();
+        this.pesoCriterio = new PesoCriterio();
+    }
 
-	public double getNotaFinal(){
-		return this.notaFinal;
-	};
+    public int getIdLineaEvaluacion() {
+        return this.idLineaEvaluacion;
+    }
 
-	public void setNotaFinal( double notaFinal ){
-		this.notaFinal = notaFinal;
-	};
+    public void setIdLineaEvaluacion(int idLineaEvaluacion) {
+        this.idLineaEvaluacion = idLineaEvaluacion;
+    }
 
-	public double getNotaAutoEval(){
-		return this.notaAutoEval;
-	};
+    public double getNotaFinal() {
+        return this.notaFinal;
+    }
 
-	public void setNotaAutoEval( double notaAutoEval ){
-		this.notaAutoEval = notaAutoEval;
-	};
+    public void setNotaFinal(double notaFinal) {
+        this.notaFinal = notaFinal;
+    }
 
-	public double getNotaPrevia(){
-		return this.notaPrevia;
-	};
+    public double getNotaAutoEval() {
+        return this.notaAutoEval;
+    }
 
-	public void setNotaPrevia( double notaPrevia ){
-		this.notaPrevia = notaPrevia;
-	};
+    public void setNotaAutoEval(double notaAutoEval) {
+        this.notaAutoEval = notaAutoEval;
+    }
 
-	public String getAccionesAtomar(){
-		return this.accionesAtomar;
-	};
+    public double getNotaPrevia() {
+        return this.notaPrevia;
+    }
 
-	public void setAccionesAtomar( String accionesAtomar ){
-		this.accionesAtomar = accionesAtomar;
-	};
+    public void setNotaPrevia(double notaPrevia) {
+        this.notaPrevia = notaPrevia;
+    }
 
-	public ArrayList<LineaEvaluacion> getSublineasEvaluacion(){
-		return this.sublineasEvaluacion;
-	};
+    public String getAccionesAtomar() {
+        return this.accionesAtomar;
+    }
 
-	public void setSublineasEvaluacion( LineaEvaluacion sublineasEvaluacion ){
-		this.sublineasEvaluacion.add(sublineasEvaluacion);
-	};
+    public void setAccionesAtomar(String accionesAtomar) {
+        this.accionesAtomar = accionesAtomar;
+    }
 
-	public Evaluacion getEvaluacion(){
-		return this.evaluacion;
-	};
+    public ArrayList<LineaEvaluacion> getSublineasEvaluacion() {
+        return this.sublineasEvaluacion;
+    }
 
-	public void setEvaluacion( Evaluacion evaluacion ){
-		this.evaluacion = evaluacion;
-	};
+    public void setSublineasEvaluacion(ArrayList<LineaEvaluacion> sublineasEvaluacion) {
+        this.sublineasEvaluacion = sublineasEvaluacion;
+    }
 
-	public ItemPDI getItemPDI(){
-		return this.itemPDI;
-	};
+    public Evaluacion getEvaluacion() {
+        return this.evaluacion;
+    }
 
-	public void setItemPDI( ItemPDI itemPDI ){
-		this.itemPDI = itemPDI;
-	};
+    ;
 
-	public PesoCriterio getPesoCriterio(){
-		return this.pesoCriterio;
-	};
+	public void setEvaluacion(Evaluacion evaluacion) {
+        this.evaluacion = evaluacion;
+    }
 
-	public void setPesoCriterio( PesoCriterio pesoCriterio ){
-		this.pesoCriterio = pesoCriterio;
-	};
+    public ItemPDI getItemPDI() {
+        return this.itemPDI;
+    }
 
-	public void calcularNotaAutoEval(){
+    public void setItemPDI(ItemPDI itemPDI) {
+        this.itemPDI = itemPDI;
+    }
 
-	};
+    public PesoCriterio getPesoCriterio() {
+        return this.pesoCriterio;
+    }
 
-	public void calcularNotaPrevia(){
+    public void setPesoCriterio(PesoCriterio pesoCriterio) {
+        this.pesoCriterio = pesoCriterio;
+    }
 
-	};
+    public void calcularNotaAutoEval() {
 
-	public void calcularNotaFinal(){
+    }
 
-	};
+    public void calcularNotaPrevia() {
 
-	public void mostrarDatos(){
+    }
 
-	};
+    public void calcularNotaFinal() {
+
+    }
+
+    public void mostrarDatos() {
+
+    }
 
 }
 

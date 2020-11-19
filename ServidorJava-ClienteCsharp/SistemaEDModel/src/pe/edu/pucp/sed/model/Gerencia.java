@@ -42,16 +42,16 @@ public class Gerencia{
 		return this.configuracionFechas;
 	};
 
-	public void setConfiguracionFechas( GerenciaPeriodo configuracionFechas ){
-		this.configuracionFechas.add(configuracionFechas);
+	public void setConfiguracionFechas( ArrayList<GerenciaPeriodo> configuracionFechas ){
+		this.configuracionFechas = configuracionFechas;
 	};
 
 	public ArrayList<Colaborador> getColaboradores(){
 		return this.colaboradores;
 	};
 
-	public void setColaboradores( Colaborador colaboradores ){
-		this.colaboradores.add(colaboradores);
+	public void setColaboradores( ArrayList<Colaborador> colaboradores ){
+		this.colaboradores = colaboradores;
 	};
 
 	public void agregarColaborador(){
@@ -70,8 +70,5 @@ public class Gerencia{
         this.periodo = periodo;
     }
         
-        
-    
-
 }
 
