@@ -31,6 +31,18 @@ public class Periodo{
         this.objetivos = new ArrayList<>();
     }
 
+    public Periodo(Periodo per){
+        idPeriodo = per.getIdPeriodo();
+        fechaInicio = per.getFechaInicio();
+        fechaFin = per.getFechaFin();
+        diaNotificacion = per.getDiaNotificacion();
+        pesoEvalObj = per.getPesoEvalObj();
+        pesoEvalComp = per.getPesoEvalComp();
+        estado = per.getEstado();
+        horaNotificacion = per.getHoraNotificacion();
+        nombre = per.getNombre();
+    }
+
     public void setDiaNotificacion(Date diaNotificacion) {
         this.diaNotificacion = diaNotificacion;
     }

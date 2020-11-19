@@ -138,15 +138,16 @@ public class PeriodoMySQL implements PeriodoDAO{
     @Override
     public Periodo obtenerPeriodoActual() {
         Periodo per = new Periodo();
+        int resultado = 0;
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call LISTAR_PERIODO()}";
+            String sql = "{call OBTENER_PERIODO_ACTUAL()}";
             cs = con.prepareCall(sql);
             rs = cs.executeQuery(); 
-
+            rs.next();
             per.setIdPeriodo(rs.getInt("id_Periodo"));
             per.setFechaInicio(rs.getDate("fechaInicio"));
             per.setFechaFin(rs.getDate("fechaFin"));
@@ -155,7 +156,7 @@ public class PeriodoMySQL implements PeriodoDAO{
             per.setDiaNotificacion(rs.getDate("diaNotificacion"));
             per.setHoraNotificacion(rs.getTime("horaNotificacion"));
             per.setNombre(rs.getString("nombre"));
-     
+            resultado =1;
             rs.close();
             //falta acabar
             
