@@ -303,17 +303,17 @@ public class Principal {
 //        System.out.println(per.getIdPeriodo());
 //        System.out.println("-----");
 
-          EvaluacionDesempenhoDAO daoEvalDes = new EvaluacionDesempenhoMySQL();
-          EvaluacionDesempenho evalDes = new EvaluacionDesempenho();
-//          ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
-//          evaluacionesDesempenho = daoEvalDes.listarDesempenhoPorPeriodo(1,1);
-//          for (EvaluacionDesempenho eval : evaluacionesDesempenho){
-//              System.out.println(eval.getIdEvaluacion());
-//          }
-
-         evalDes.setIdEvaluacion(1);
-         evalDes.setEstadoPlanificacion(1);
-         int resultado = daoEvalDes.actualizarEvaluacionDesempenho(evalDes);
-         System.out.println(resultado);
+//          EvaluacionDesempenhoDAO daoEvalDes = new EvaluacionDesempenhoMySQL();
+//          EvaluacionDesempenho evalDes = new EvaluacionDesempenho();
+////          ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
+////          evaluacionesDesempenho = daoEvalDes.listarDesempenhoPorPeriodo(1,1);
+////          for (EvaluacionDesempenho eval : evaluacionesDesempenho){
+////              System.out.println(eval.getIdEvaluacion());
+////          }
+//
+//         evalDes.setIdEvaluacion(1);
+//         evalDes.setEstadoPlanificacion(1);
+//         int resultado = daoEvalDes.actualizarEvaluacionDesempenho(evalDes);
+//         System.out.println(resultado);
     }
 }
