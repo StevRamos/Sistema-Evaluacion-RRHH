@@ -38,6 +38,7 @@ namespace SistemaEDInterfaces
             {
                 btnAgregar.Enabled = false;
                 btnEliminar.Enabled = false;
+                btnEnviar.Enabled = false;
             }
             objetivos = new BindingList<ObjetivoWS.objetivo>
                                         (daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado).ToArray());
@@ -171,6 +172,9 @@ namespace SistemaEDInterfaces
                                 "Mensaje de confirmacion",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
+                    btnAgregar.Enabled = false;
+                    btnEliminar.Enabled = false;
+                    btnEnviar.Enabled = false; 
                 }
                 else
                 {

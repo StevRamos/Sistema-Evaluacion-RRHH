@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEDInterfaces.EvaluacionDesempenhoWS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +13,19 @@ namespace SistemaEDInterfaces
 {
     public partial class frmPlanRealizarRevision : Form
     {
-        
+        private EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient daoEvaluacionDesempenho; 
+        private EvaluacionDesempenhoWS.evaluacionDesempenho evaluacionDesempenho; 
+
         private ColaboradorWS.colaborador colaborador;
 
         private ObjetivoWS.ObjetivoWSClient daoObjetivo;
         public ColaboradorWS.colaborador Colaborador { get => colaborador; set => colaborador = value; }
-        
+        public evaluacionDesempenho EvaluacionDesempenho { get => evaluacionDesempenho; set => evaluacionDesempenho = value; }
+
         public frmPlanRealizarRevision()
         {
-
+            daoEvaluacionDesempenho = new EvaluacionDesempenhoWSClient(); 
+            evaluacionDesempenho = new evaluacionDesempenho();
             colaborador = new ColaboradorWS.colaborador();
             daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             
@@ -30,32 +35,48 @@ namespace SistemaEDInterfaces
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
-            
-            ObjetivoWS.objetivo objetivo;
-            foreach (DataGridViewRow row in dgvMisObjetivos.Rows)
-            {
-                objetivo = (ObjetivoWS.objetivo)row.DataBoundItem;
-                //if(objetivo.estado == (int)EstadoObjetivo.AprobOculto)objetivo.estado = (int)EstadoObjetivo.AprobVisible;
-                //if (objetivo.estado == (int)EstadoObjetivo.DenOculto) objetivo.estado = (int)EstadoObjetivo.DenVisible;
 
-                daoObjetivo.actualizarObjetivo(objetivo);
-            }
-            
-            MessageBox.Show("Validaciones enviadas a colaborador",
+            evaluacionDesempenho.estadoPlanificacion = (int)EstadoPlanificacion.OcultoParaJefe;
+            if (daoEvaluacionDesempenho.actualizarEvaluacionDesempenho(evaluacionDesempenho) != 0)
+            {
+                //Enviar correo
+
+                //////////////////
+                MessageBox.Show("Validaciones enviadas a colaborador",
                                            "Mensaje de confirmacion",
                                            MessageBoxButtons.OK,
                                            MessageBoxIcon.Information);
+
+            }
+            else
+            {
+                evaluacionDesempenho.estadoPlanificacion = (int) EstadoPlanificacion.OcultoParaColaborador;
+                MessageBox.Show("Ocurrio un error al enviar validaciones.",
+                                           "Mensaje de error",
+                                           MessageBoxButtons.OK,
+                                           MessageBoxIcon.Error);
+            }
+            
+            
+            
 
             Global.formPrincipal.abrirFormularioHijo(true,new frmPlanValidarObjetivos());
         }
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
+            if(dgvMisObjetivos.CurrentCell == null)
+            {
+                MessageBox.Show("Debe seleccionar un objetivo.",
+                                   "Mensaje de error",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                return;
+            }
             frmPlanVerDetalle form = new frmPlanVerDetalle();
-           
             form.Colaborador = Colaborador;
-            form.Objetivo = (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem; 
-            
+            form.Objetivo = (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem;
+            form.EvaluacionDesempenho = evaluacionDesempenho;
             Global.formPrincipal.abrirFormularioHijo(true,form);
 
         }
@@ -81,6 +102,7 @@ namespace SistemaEDInterfaces
             txtDNI.Text = colaborador.dni.ToString();
             txtGerencia.Text = colaborador.gerencia.nombre;
             txtCargo.Text = colaborador.puestoTrabajo.nombre;
+            
             dgvMisObjetivos.AutoGenerateColumns = false;
             dgvMisObjetivos.DataSource = new BindingList<ObjetivoWS.objetivo>
                 (daoObjetivo.listarObjetivosXColaborador(colaborador.idColaborador).ToArray());
