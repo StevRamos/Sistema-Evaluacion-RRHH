@@ -36,7 +36,6 @@ namespace SistemaEDInterfaces
             catch (System.Net.Mail.SmtpException ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.ReadLine();
             }
         }
     }
