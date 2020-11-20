@@ -23,6 +23,7 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
             daoColaborador = new ColaboradorWS.ColaboradorWSClient();
+            dgvListaTrabajadores.AutoGenerateColumns = false; 
             dgvListaTrabajadores.DataSource = daoColaborador.listarColaboradoresXJefe(IdColaboradorLoggeado); 
             
         }
