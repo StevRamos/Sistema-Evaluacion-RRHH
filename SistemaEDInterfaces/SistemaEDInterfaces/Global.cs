@@ -9,5 +9,7 @@ namespace SistemaEDInterfaces
     public static class Global
     {
         public static frmInicio formPrincipal;
+        public static PeriodoWS.periodo periodoActual;
+        public static ColaboradorWS.colaborador colaboradorLoggeado;
     }
 }

@@ -35,8 +35,8 @@ namespace SistemaEDInterfaces
             foreach (DataGridViewRow row in dgvMisObjetivos.Rows)
             {
                 objetivo = (ObjetivoWS.objetivo)row.DataBoundItem;
-                if(objetivo.estado == (int)EstadoObjetivo.AprobOculto)objetivo.estado = (int)EstadoObjetivo.AprobVisible;
-                if (objetivo.estado == (int)EstadoObjetivo.DenOculto) objetivo.estado = (int)EstadoObjetivo.DenVisible;
+                //if(objetivo.estado == (int)EstadoObjetivo.AprobOculto)objetivo.estado = (int)EstadoObjetivo.AprobVisible;
+                //if (objetivo.estado == (int)EstadoObjetivo.DenOculto) objetivo.estado = (int)EstadoObjetivo.DenVisible;
 
                 daoObjetivo.actualizarObjetivo(objetivo);
             }

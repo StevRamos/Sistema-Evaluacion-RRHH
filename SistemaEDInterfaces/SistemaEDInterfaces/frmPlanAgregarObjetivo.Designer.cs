@@ -39,6 +39,10 @@
             this.lblMaxCaracteres = new System.Windows.Forms.Label();
             this.lblPeso = new System.Windows.Forms.Label();
             this.txtPeso = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblRegistrarObjetivo
@@ -85,9 +89,11 @@
             // txtMeta
             // 
             this.txtMeta.Location = new System.Drawing.Point(246, 113);
+            this.txtMeta.MaxLength = 50;
             this.txtMeta.Name = "txtMeta";
             this.txtMeta.Size = new System.Drawing.Size(193, 20);
             this.txtMeta.TabIndex = 6;
+            this.txtMeta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMeta_KeyPress);
             // 
             // txtDescripcion
             // 
@@ -103,6 +109,7 @@
             // txtUnidadMedida
             // 
             this.txtUnidadMedida.Location = new System.Drawing.Point(246, 171);
+            this.txtUnidadMedida.MaxLength = 50;
             this.txtUnidadMedida.Name = "txtUnidadMedida";
             this.txtUnidadMedida.Size = new System.Drawing.Size(193, 20);
             this.txtUnidadMedida.TabIndex = 8;
@@ -144,9 +151,52 @@
             // txtPeso
             // 
             this.txtPeso.Location = new System.Drawing.Point(246, 225);
+            this.txtPeso.MaxLength = 50;
             this.txtPeso.Name = "txtPeso";
-            this.txtPeso.Size = new System.Drawing.Size(193, 20);
+            this.txtPeso.Size = new System.Drawing.Size(160, 20);
             this.txtPeso.TabIndex = 12;
+            this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(243, 136);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 17);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Ejm. : 2000.00";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(243, 194);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 17);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Ejm. : Laptops Vendidas";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(243, 248);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(61, 17);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Ejm. : 25";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label33.Location = new System.Drawing.Point(412, 219);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(27, 26);
+            this.label33.TabIndex = 78;
+            this.label33.Text = "%";
             // 
             // frmPlanAgregarObjetivo
             // 
@@ -154,6 +204,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(465, 542);
+            this.Controls.Add(this.label33);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.lblPeso);
             this.Controls.Add(this.lblMaxCaracteres);
@@ -165,6 +219,8 @@
             this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblUnidadMedida);
             this.Controls.Add(this.lblRegistrarObjetivo);
+            this.MaximumSize = new System.Drawing.Size(481, 581);
+            this.MinimumSize = new System.Drawing.Size(481, 581);
             this.Name = "frmPlanAgregarObjetivo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Agregar Nuevo Objetivo";
@@ -186,5 +242,9 @@
         private System.Windows.Forms.Label lblMaxCaracteres;
         private System.Windows.Forms.Label lblPeso;
         private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label33;
     }
 }
