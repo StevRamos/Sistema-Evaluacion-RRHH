@@ -168,7 +168,7 @@ public class ObjetivoMySQL implements ObjetivoDAO {
                 objetivo.getColaborador().setIdColaborador(idColaborador);
                 objetivo.getEvaluacion().setIdEvaluacion(rs.getInt("id_Evaluacion"));
                 objetivo.setDescripcion(rs.getString("descripcion"));
-                //objetivo.setEstado(rs.getBoolean("estado"));
+                objetivo.setEstado(rs.getInt("estado"));
                 objetivo.setFechaFormulacion(rs.getDate("fechaFormulacion")); //posible error
                 objetivo.setFechaAprobacion(rs.getDate("fechaAprobacion")); //posible error
                 objetivo.setMeta(rs.getDouble("meta"));

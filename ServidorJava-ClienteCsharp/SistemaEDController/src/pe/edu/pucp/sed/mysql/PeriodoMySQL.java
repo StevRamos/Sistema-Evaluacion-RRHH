@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
 import pe.edu.pucp.sed.model.Periodo;
+import pe.edu.pucp.sed.model.PesoCriterio;
 
 public class PeriodoMySQL implements PeriodoDAO{
 
@@ -17,7 +18,7 @@ public class PeriodoMySQL implements PeriodoDAO{
     PreparedStatement ps;
     ResultSet rs;
     CallableStatement cs;
-
+    
     @Override
     public int insertar(Periodo periodo){
         int resultado = 0;
@@ -115,11 +116,66 @@ public class PeriodoMySQL implements PeriodoDAO{
                 
                 periodos.add(per);
             }
+            rs.close();
+            //falta acabar
+            for(Periodo p : periodos){
+                cs = con.prepareCall(" call LISTAR_PESOSCRITERIO_X_ID_PERIODO() ");
+                rs = cs.executeQuery();
+                while(rs.next()){
+                    PesoCriterio pc = new PesoCriterio();
+                    pc.setIdPesoCriterio(rs.getInt("id_Criterio"));
+                    pc.setPeso(rs.getDouble("peso"));
+                }
+            }
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return periodos;
+    }
+
+    @Override
+    public Periodo obtenerPeriodoActual() {
+        Periodo per = new Periodo();
+        int resultado = 0;
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call OBTENER_PERIODO_ACTUAL()}";
+            cs = con.prepareCall(sql);
+            rs = cs.executeQuery(); 
+            rs.next();
+            per.setIdPeriodo(rs.getInt("id_Periodo"));
+            per.setFechaInicio(rs.getDate("fechaInicio"));
+            per.setFechaFin(rs.getDate("fechaFin"));
+            per.setPesoEvalObj(rs.getDouble("pesoEvalObj"));
+            per.setPesoEvalComp(rs.getDouble("pesoEvalComp"));
+            per.setDiaNotificacion(rs.getDate("diaNotificacion"));
+            per.setHoraNotificacion(rs.getTime("horaNotificacion"));
+            per.setNombre(rs.getString("nombre"));
+            resultado =1;
+            rs.close();
+            //falta acabar
+            
+//            cs = con.prepareCall(" call LISTAR_PESOSCRITERIO_X_ID_PERIODO() ");
+//            rs = cs.executeQuery();
+//            ArrayList<PesoCriterio> pesosCriterios = new ArrayList();
+//            while(rs.next()){
+//                PesoCriterio pc = new PesoCriterio();
+//                pc.setIdPesoCriterio(rs.getInt("id_Criterio"));
+//                pc.setPeso(rs.getDouble("peso"));
+//                pesosCriterios.add(pc);
+//            }
+//            per.setPesosCriterio(pesosCriterios);
+            
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return per;
     }
 }

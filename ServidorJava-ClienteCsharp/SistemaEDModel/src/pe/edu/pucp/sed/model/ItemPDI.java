@@ -1,48 +1,50 @@
 package pe.edu.pucp.sed.model;
 
 import java.util.ArrayList;
-public class ItemPDI{
-	private int idItemPDI;
-	private String nombre;
-	private ArrayList<LineaEvaluacion> lineasEvaluacion;
-	private ArrayList<ItemPDIPeriodo> rangos;
 
-	public ItemPDI(){
-		this.lineasEvaluacion = new ArrayList<>();
-		this.rangos = new ArrayList<>();
-	};
+public class ItemPDI {
 
-	public int getIdItemPDI(){
-		return this.idItemPDI;
-	};
+    private int idItemPDI;
+    private String nombre;
+    private ArrayList<LineaEvaluacion> lineasEvaluacion;
+    private ArrayList<ItemPDIPeriodo> rangos;
 
-	public void setIdItemPDI( int idItemPDI ){
-		this.idItemPDI = idItemPDI;
-	};
+    public ItemPDI() {
+        this.lineasEvaluacion = new ArrayList<>();
+        this.rangos = new ArrayList<>();
+    }
 
-	public String getNombre(){
-		return this.nombre;
-	};
+    public int getIdItemPDI() {
+        return this.idItemPDI;
+    }
 
-	public void setNombre( String nombre ){
-		this.nombre = nombre;
-	};
+    public void setIdItemPDI(int idItemPDI) {
+        this.idItemPDI = idItemPDI;
+    }
 
-	public ArrayList<LineaEvaluacion> getLineasEvaluacion(){
-		return this.lineasEvaluacion;
-	};
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public void setLineasEvaluacion( LineaEvaluacion lineasEvaluacion ){
-		this.lineasEvaluacion.add(lineasEvaluacion);
-	};
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public ArrayList<ItemPDIPeriodo> getRangos(){
-		return this.rangos;
-	};
+    public ArrayList<LineaEvaluacion> getLineasEvaluacion() {
+        return this.lineasEvaluacion;
+    }
 
-	public void setRangos( ItemPDIPeriodo rangos ){
-		this.rangos.add(rangos);
-	};
+    public void setLineasEvaluacion(ArrayList<LineaEvaluacion> lineasEvaluacion) {
+        this.lineasEvaluacion = lineasEvaluacion;
+    }
+
+    public ArrayList<ItemPDIPeriodo> getRangos() {
+        return this.rangos;
+    }
+
+    public void setRangos(ArrayList<ItemPDIPeriodo>  rangos) {
+        this.rangos = rangos;
+    }
 
 }
 

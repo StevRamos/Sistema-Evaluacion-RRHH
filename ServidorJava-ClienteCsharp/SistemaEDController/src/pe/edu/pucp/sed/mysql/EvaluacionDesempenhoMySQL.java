@@ -84,17 +84,17 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             cs = con.prepareCall(sql);
 
             cs.setInt("_ID_EVALUACION",idEvaluacionDesempenho);
-                        
-            
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
-        }finally{
+        }finally{   
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return resultado;
     }
+    
+    
     @Override
     public ArrayList<EvaluacionDesempenho> listar(){
         ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
@@ -103,7 +103,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
             String sql = "{call LISTAR_EVALUACIONDESEMPENHO()}";
-                cs = con.prepareCall(sql);
+            cs = con.prepareCall(sql);
                         
             rs = cs.executeQuery(sql);
             while(rs.next()){
@@ -121,8 +121,70 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                 evaluacionDesempenho.setNotaAutoEvalObj(rs.getDouble("notaAutoEvalObj"));
                 evaluacionDesempenho.setNotaPreviaObj(rs.getDouble("notaPreviaObj"));
                 evaluacionDesempenho.setNotaFinalObj(rs.getDouble("notaFinalObj"));
+                evaluacionDesempenho.setEstadoAutoEval(rs.getInt("estadoAutoEval"));
+                evaluacionDesempenho.setEstadoPlanificacion(rs.getInt("estadoPlanificacion"));                
                 
+                evaluacionesDesempenho.add(evaluacionDesempenho);
+            }
+            
+            
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return evaluacionesDesempenho;
+    }
+
+    @Override
+    public int actualizarEvaluacionDesempenho(EvaluacionDesempenho evaluacionDesempenho) {
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ACTUALIZAR_ESTADO_EVALUACION_DESEMPENHO(?,?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_ID_EVALUACION",evaluacionDesempenho.getIdEvaluacion());
+            cs.setInt("_ESTADOPLANIFICACION",evaluacionDesempenho.getEstadoPlanificacion());         
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado; 
+    }
+
+    @Override
+    public ArrayList<EvaluacionDesempenho> listarDesempenhoPorPeriodo(int idColaborador, int idPeriodo) {
+        ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+
+            String sql = "{call LISTAR_EVAL_DESEMPENHO_POR_PERIODO(?,?)}";
+            
+            cs = con.prepareCall(sql);
+            cs.setInt("_ID_COLABORADOR",idColaborador);
+            cs.setInt("_ID_PERIODO",idPeriodo);
+            
+            rs = cs.executeQuery();
+            while(rs.next()){
+                EvaluacionDesempenho evaluacionDesempenho = new EvaluacionDesempenho();
+                evaluacionDesempenho.setIdEvaluacion(rs.getInt("id_Evaluacion"));
+                evaluacionDesempenho.setObservacionesComp(rs.getString("observacionesComp"));
+                evaluacionDesempenho.setObservacionesObj(rs.getString("observacionesObj"));
                 
+                evaluacionDesempenho.setNotaAutoEvalComp(rs.getDouble("notaAutoEvalComp"));
+                evaluacionDesempenho.setNotaPreviaComp(rs.getDouble("notaPreviaComp"));
+                evaluacionDesempenho.setNotaFinalComp(rs.getDouble("notaFinalComp"));
+
+                evaluacionDesempenho.setNotaAutoEvalObj(rs.getDouble("notaAutoEvalObj"));
+                evaluacionDesempenho.setNotaPreviaObj(rs.getDouble("notaPreviaObj"));
+                evaluacionDesempenho.setNotaFinalObj(rs.getDouble("notaFinalObj"));
+                evaluacionDesempenho.setEstadoAutoEval(rs.getInt("estadoAutoEval"));
+                evaluacionDesempenho.setEstadoPlanificacion(rs.getInt("estadoPlanificacion"));
                 evaluacionesDesempenho.add(evaluacionDesempenho);
             }
             
