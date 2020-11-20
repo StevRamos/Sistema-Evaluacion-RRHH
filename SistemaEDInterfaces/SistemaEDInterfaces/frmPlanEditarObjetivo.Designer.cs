@@ -67,9 +67,11 @@
             // 
             this.txtMeta.Enabled = false;
             this.txtMeta.Location = new System.Drawing.Point(289, 224);
+            this.txtMeta.MaxLength = 50;
             this.txtMeta.Name = "txtMeta";
             this.txtMeta.Size = new System.Drawing.Size(193, 20);
             this.txtMeta.TabIndex = 12;
+            this.txtMeta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMeta_KeyPress);
             // 
             // txtID
             // 
@@ -173,18 +175,22 @@
             // 
             this.txtPeso.Enabled = false;
             this.txtPeso.Location = new System.Drawing.Point(289, 269);
+            this.txtPeso.MaxLength = 50;
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(193, 20);
             this.txtPeso.TabIndex = 20;
+            this.txtPeso.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPeso_KeyPress);
             // 
             // txtUnidadMedida
             // 
             this.txtUnidadMedida.Enabled = false;
             this.txtUnidadMedida.Location = new System.Drawing.Point(760, 226);
+            this.txtUnidadMedida.MaxLength = 50;
             this.txtUnidadMedida.Name = "txtUnidadMedida";
             this.txtUnidadMedida.Size = new System.Drawing.Size(193, 20);
             this.txtUnidadMedida.TabIndex = 21;
             this.txtUnidadMedida.TextChanged += new System.EventHandler(this.txtUnidadMedida_TextChanged);
+            this.txtUnidadMedida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUnidadMedida_KeyPress);
             // 
             // txtBoxDescripcion
             // 

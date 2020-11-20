@@ -42,7 +42,7 @@ namespace SistemaEDInterfaces
 
         private void btnRealizar_Click(object sender, EventArgs e)
         {
-            
+            /*
             if (rbAprobar.Checked)
             {
                 var result = MessageBox.Show("¿Desea agregar un comentario?",
@@ -104,13 +104,13 @@ namespace SistemaEDInterfaces
                                             "Mensaje de error",
                                             MessageBoxButtons.OK,
                                             MessageBoxIcon.Error);
-            }
+            }*/
             
         }
 
         private void frmPlanVerDetalle_Load(object sender, EventArgs e)
         {
-            
+            /*
             txtIDObjetivo.Text = objetivo.idObjetivo.ToString();
             switch (objetivo.estado)
             {
@@ -138,7 +138,8 @@ namespace SistemaEDInterfaces
             txtPeso.Text = objetivo.peso.ToString();
             txtBoxDescripcion.Text = objetivo.descripcion;
             txtBoxObservacionJefe.Text = objetivo.observacion;
-            
+            /
+            */
         }
     }
 }

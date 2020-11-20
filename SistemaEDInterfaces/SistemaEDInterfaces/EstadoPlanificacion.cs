@@ -6,10 +6,8 @@ using System.Threading.Tasks;
 
 namespace SistemaEDInterfaces
 {
-	public enum EstadoObjetivo
-	{
-		Eliminado, EsperandoRevision, Aprobado, Denegado
-
-	}
-
+    public enum EstadoPlanificacion
+    {
+        OcultoParaJefe, OcultoParaColaborador
+    }
 }

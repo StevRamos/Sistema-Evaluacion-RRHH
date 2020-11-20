@@ -15,9 +15,12 @@ namespace SistemaEDInterfaces
     public partial class frmInicio : Form
     {
         List<Form>formulariosActuales = new List<Form>();
+        PeriodoWS.PeriodoWSClient daoPeriodo;
         public frmInicio()
         {
             Global.formPrincipal = this;
+            daoPeriodo = new PeriodoWS.PeriodoWSClient();
+            Global.periodoActual = daoPeriodo.obtenerPeriodo();
             InitializeComponent();
             customizeDesign();
         }
