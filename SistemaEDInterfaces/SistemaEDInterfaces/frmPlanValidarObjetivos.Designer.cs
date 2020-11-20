@@ -33,10 +33,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblValidarObjetivos = new System.Windows.Forms.Label();
             this.dgvListaTrabajadores = new System.Windows.Forms.DataGridView();
-            this.btnRealizarRevision = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRealizarRevision = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTrabajadores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,20 +97,6 @@
             this.dgvListaTrabajadores.Size = new System.Drawing.Size(1073, 480);
             this.dgvListaTrabajadores.TabIndex = 2;
             // 
-            // btnRealizarRevision
-            // 
-            this.btnRealizarRevision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnRealizarRevision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRealizarRevision.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRealizarRevision.ForeColor = System.Drawing.Color.White;
-            this.btnRealizarRevision.Location = new System.Drawing.Point(17, 623);
-            this.btnRealizarRevision.Name = "btnRealizarRevision";
-            this.btnRealizarRevision.Size = new System.Drawing.Size(158, 26);
-            this.btnRealizarRevision.TabIndex = 28;
-            this.btnRealizarRevision.Text = "Realizar Revisión";
-            this.btnRealizarRevision.UseVisualStyleBackColor = false;
-            this.btnRealizarRevision.Click += new System.EventHandler(this.btnRealizarRevision_Click);
-            // 
             // ID
             // 
             this.ID.DataPropertyName = "idColaborador";
@@ -138,6 +124,20 @@
             this.DNI.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.DNI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             // 
+            // btnRealizarRevision
+            // 
+            this.btnRealizarRevision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnRealizarRevision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRealizarRevision.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRealizarRevision.ForeColor = System.Drawing.Color.White;
+            this.btnRealizarRevision.Location = new System.Drawing.Point(17, 623);
+            this.btnRealizarRevision.Name = "btnRealizarRevision";
+            this.btnRealizarRevision.Size = new System.Drawing.Size(158, 26);
+            this.btnRealizarRevision.TabIndex = 28;
+            this.btnRealizarRevision.Text = "Realizar Revisión";
+            this.btnRealizarRevision.UseVisualStyleBackColor = false;
+            this.btnRealizarRevision.Click += new System.EventHandler(this.btnRealizarRevision_Click);
+            // 
             // frmPlanValidarObjetivos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,6 +149,7 @@
             this.Controls.Add(this.lblValidarObjetivos);
             this.Name = "frmPlanValidarObjetivos";
             this.Text = "frmPlanValidarObjetivos";
+            this.Load += new System.EventHandler(this.frmPlanValidarObjetivos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaTrabajadores)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -13,8 +13,9 @@ namespace SistemaEDInterfaces
     public partial class frmPlanAgregarObservacionObj : Form
     {
         private bool seRealizoRegistro=false;
-        private string observacionesTextBox; 
+        private string observacionesTextBox;
 
+        public string ObservacionesTextBox { get => observacionesTextBox; set => observacionesTextBox = value; }
 
         public frmPlanAgregarObservacionObj()
         {
@@ -22,13 +23,32 @@ namespace SistemaEDInterfaces
             InitializeComponent();
         }
 
-        public string ObservacionesTextBox { get => observacionesTextBox; set => observacionesTextBox = value; }
+        
 
+        private int realizarValidacion()
+        {
+            int valido = 1;
+
+            if (txtObservaciones.Text.Length == 0)
+            {
+                MessageBox.Show("Debe agregar un comentario",
+                                               "Mensaje de error",
+                                               MessageBoxButtons.OK,
+                                               MessageBoxIcon.Error);
+                valido = 0;
+            }
+            return valido; 
+
+        }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            seRealizoRegistro = true;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            if (realizarValidacion() == 1)
+            {
+                seRealizoRegistro = true;
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+            
             
             
         }
