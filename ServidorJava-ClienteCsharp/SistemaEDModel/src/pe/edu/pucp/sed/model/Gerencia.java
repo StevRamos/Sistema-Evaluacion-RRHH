@@ -2,74 +2,74 @@ package pe.edu.pucp.sed.model;
 
 import java.util.ArrayList;
 public class Gerencia{
-	private int idGerencia;
-	private String nombre;
-	private String descripcion;
-	private ArrayList<GerenciaPeriodo> configuracionFechas;
-	private ArrayList<Colaborador> colaboradores;
-        private Periodo periodo;
-        
-	public Gerencia(){
-		this.configuracionFechas = new ArrayList<>();
-		this.colaboradores = new ArrayList<>();
-	};
+    private int idGerencia;
+    private String nombre;
+    private String descripcion;
+    private ArrayList<GerenciaPeriodo> configuracionFechas;
+    private ArrayList<Colaborador> colaboradores;
+    private Periodo periodo;
 
-	public int getIdGerencia(){
-		return this.idGerencia;
-	};
+    public Gerencia() {
+        this.configuracionFechas = new ArrayList<>();
+        this.colaboradores = new ArrayList<>();
+        this.periodo = new Periodo();
+    }
 
-	public void setIdGerencia( int idGerencia ){
-		this.idGerencia = idGerencia;
-	};
+    public int getIdGerencia() {
+        return this.idGerencia;
+    }
 
-	public String getNombre(){
-		return this.nombre;
-	};
+    public void setIdGerencia(int idGerencia) {
+        this.idGerencia = idGerencia;
+    }
 
-	public void setNombre( String nombre ){
-		this.nombre = nombre;
-	};
+    public String getNombre() {
+        return this.nombre;
+    }
 
-	public String getDescripcion(){
-		return this.descripcion;
-	};
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public void setDescripcion( String descripcion ){
-		this.descripcion = descripcion;
-	};
+    public String getDescripcion() {
+        return this.descripcion;
+    }
 
-	public ArrayList<GerenciaPeriodo> getConfiguracionFechas(){
-		return this.configuracionFechas;
-	};
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-	public void setConfiguracionFechas( ArrayList<GerenciaPeriodo> configuracionFechas ){
-		this.configuracionFechas = configuracionFechas;
-	};
+    public ArrayList<GerenciaPeriodo> getConfiguracionFechas() {
+        return this.configuracionFechas;
+    }
 
-        public ArrayList<Colaborador> getColaboradores() {
-            return colaboradores;
-        }
+    public void setConfiguracionFechas(ArrayList<GerenciaPeriodo> configuracionFechas) {
+        this.configuracionFechas = configuracionFechas;
+    }
 
-	public void setColaboradores( ArrayList<Colaborador> colaboradores ){
-		this.colaboradores = colaboradores;
-	};
+    public ArrayList<Colaborador> getColaboradores() {
+        return colaboradores;
+    }
 
+    public void setColaboradores(ArrayList<Colaborador> colaboradores) {
+        this.colaboradores = colaboradores;
+    }
 
-        public void agregarColaborador(){
+    public void agregarColaborador() {
 
-        };
+    }
 
-        public void agregarCupo(){
+    public void agregarCupo() {
 
-        };
+    }
 
-        public Periodo getPeriodo() {
-            return periodo;
-        }
+    public Periodo getPeriodo() {
+        return periodo;
+    }
 
-        public void setPeriodo(Periodo periodo) {
-            this.periodo = periodo;
-        }
-        
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
+    }
+
 }
 

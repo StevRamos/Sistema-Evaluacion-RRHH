@@ -59,4 +59,15 @@ public class PuestoTrabajoWS{
         }
         return puestoTrabajos;
     }
+    
+    @WebMethod(operationName = "listarPuestoTrabajosXColaborador")
+    public ArrayList<PuestoTrabajo> listarXColaborador(@WebParam(name = "idColaborador") int idColaborador){
+        ArrayList<PuestoTrabajo> puestoTrabajos = new ArrayList<>();
+        try{
+            puestoTrabajos =  daoPuestoTrabajo.listarXColaborador(idColaborador);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return puestoTrabajos;
+    }
 }

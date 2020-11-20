@@ -30,123 +30,83 @@ public class Objetivo {
         return this.idObjetivo;
     }
 
-    ;
-
-	public void setIdObjetivo(int idObjetivo) {
+    public void setIdObjetivo(int idObjetivo) {
         this.idObjetivo = idObjetivo;
     }
 
-    ;
-
-	public String getDescripcion() {
+    public String getDescripcion() {
         return this.descripcion;
     }
 
-    ;
-
-	public void setDescripcion(String descripcion) {
+    public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
 
-    ;
-
-	public int getEstado() {
+    public int getEstado() {
         return this.estado;
     }
 
-    ;
-
-	public void setEstado(int estado) {
+    public void setEstado(int estado) {
         this.estado = estado;
     }
 
-    ;
-
-	public Date getFechaFormulacion() {
+    public Date getFechaFormulacion() {
         return this.fechaFormulacion;
     }
 
-    ;
-
-	public void setFechaFormulacion(Date fechaFormulacion) {
+    public void setFechaFormulacion(Date fechaFormulacion) {
         this.fechaFormulacion = fechaFormulacion;
     }
 
-    ;
-
-	public Date getFechaAprobacion() {
+    public Date getFechaAprobacion() {
         return this.fechaAprobacion;
     }
 
-    ;
-
-	public void setFechaAprobacion(Date fechaAprobacion) {
+    public void setFechaAprobacion(Date fechaAprobacion) {
         this.fechaAprobacion = fechaAprobacion;
     }
 
-    ;
-
-	public double getMeta() {
+    public double getMeta() {
         return this.meta;
     }
 
-    ;
-
-	public void setMeta(double meta) {
+    public void setMeta(double meta) {
         this.meta = meta;
     }
 
-    ;
-
-	public String getUnidadMedida() {
+    public String getUnidadMedida() {
         return this.unidadMedida;
     }
 
-    ;
-
-	public void setUnidadMedida(String unidadMedida) {
+    public void setUnidadMedida(String unidadMedida) {
         this.unidadMedida = unidadMedida;
     }
 
-    ;
-
-	public String getObservacion() {
+    public String getObservacion() {
         return this.observacion;
     }
 
-    ;
-
-	public void setObservacion(String observacion) {
+    public void setObservacion(String observacion) {
         this.observacion = observacion;
     }
 
-    ;
-
-	public double getPeso() {
+    public double getPeso() {
         return this.peso;
     }
 
-    ;
-
-	public void setPeso(double peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
-    ;
-
-	public double getNotaPrevia() {
+    public double getNotaPrevia() {
         return this.notaPrevia;
     }
 
-    ;
-
-	public void setNotaPrevia(double notaPrevia) {
+    public void setNotaPrevia(double notaPrevia) {
         this.notaPrevia = notaPrevia;
     }
 
-    ;
-
-	public double getNotaAutoEval() {
+    public double getNotaAutoEval() {
         return this.notaAutoEval;
     }
 
@@ -156,71 +116,48 @@ public class Objetivo {
         this.notaAutoEval = notaAutoEval;
     }
 
-    ;
-
-	public double getNotaFinal() {
+    public double getNotaFinal() {
         return this.notaFinal;
     }
 
-    ;
-
-	public void setNotaFinal(double notaFinal) {
+    public void setNotaFinal(double notaFinal) {
         this.notaFinal = notaFinal;
     }
 
-    ;
-
-	public Colaborador getColaborador() {
+    public Colaborador getColaborador() {
         return this.colaborador;
     }
 
-    ;
-
-	public void setColaborador(Colaborador colaborador) {
+    public void setColaborador(Colaborador colaborador) {
         this.colaborador = colaborador;
     }
 
-    ;
-
-	public EvaluacionDesempenho getEvaluacion() {
+    public EvaluacionDesempenho getEvaluacion() {
         return this.evaluacion;
     }
 
-    ;
-
-	public void setEvaluacion(EvaluacionDesempenho evaluacion) {
+    public void setEvaluacion(EvaluacionDesempenho evaluacion) {
         this.evaluacion = evaluacion;
     }
 
-    ;
-
-	public Periodo getPeriodo() {
+    public Periodo getPeriodo() {
         return this.periodo;
     }
 
-    ;
-
-	public void setPeriodo(Periodo periodo) {
+    public void setPeriodo(Periodo periodo) {
         this.periodo = periodo;
     }
 
-    ;
-
-	public void mostrarDatos() {
+    public void mostrarDatos() {
 
     }
 
-    ;
-
-	public void denegar() {
+    public void denegar() {
 
     }
 
-    ;
-
-	public void aprobar() {
+    public void aprobar() {
 
     }
-;
 
 }
