@@ -8,4 +8,5 @@ public interface PuestoTrabajoDAO{
 	int actualizar(PuestoTrabajo puestoTrabajo);
 	int eliminar(int idPuestoTrabajo);
 	ArrayList<PuestoTrabajo> listar(String nombreGerencia);
+        ArrayList<PuestoTrabajo> listarXColaborador(int idColaborador);
 }

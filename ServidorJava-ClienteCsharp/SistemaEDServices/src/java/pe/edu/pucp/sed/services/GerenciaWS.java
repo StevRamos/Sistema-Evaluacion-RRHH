@@ -61,4 +61,16 @@ public class GerenciaWS{
         }
         return gerencias;
     }
+    
+    @WebMethod(operationName = "listarGerenciasXColaborador")
+    public ArrayList<Gerencia> listarGerenciasXColaborador(@WebParam(name = "idColaborador") 
+            int idColaborador){
+        ArrayList<Gerencia> gerencias = new ArrayList<>();
+        try{
+            gerencias =  daoGerencia.listarXColaborador(idColaborador);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return gerencias;
+    }
 }

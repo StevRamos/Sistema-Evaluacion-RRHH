@@ -9,4 +9,5 @@ public interface GerenciaDAO{
 	int actualizar(Gerencia gerencia);
 	int eliminar(int idGerencia);
 	ArrayList<Gerencia> listar();
+	ArrayList<Gerencia> listarXColaborador(int idColaborador);
 }

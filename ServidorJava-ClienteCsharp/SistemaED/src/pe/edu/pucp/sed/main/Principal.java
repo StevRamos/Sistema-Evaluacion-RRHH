@@ -132,7 +132,11 @@ public class Principal {
 //        GerenciaDAO daoGerencia = new GerenciaMySQL();
 //       Gerencia gerencia = new Gerencia();
        
-
+//        for(Gerencia g : daoGerencia.listarXColaborador(11)){
+//            System.out.println(g.getIdGerencia()+ " - " + g.getNombre()
+//                                +" - " +g.getDescripcion());
+//            System.out.println(g.getPeriodo().getIdPeriodo());
+//        }
              
 //       try{
 //           gerencia.setIdGerencia(5);
@@ -214,6 +218,9 @@ public class Principal {
 //        
 //        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
 //        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
+//        
+//        for(PuestoTrabajo pt : daoPuestoTrabajo.listar("Sistemas") )
+//            System.out.println(pt.getNombre());
 ////        
 ////     
 //        try{
