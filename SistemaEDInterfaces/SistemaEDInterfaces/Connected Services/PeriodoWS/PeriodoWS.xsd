@@ -11,6 +11,7 @@
   </xs:complexType>
   <xs:complexType name="periodo">
     <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="configuracionFechas" nillable="true" type="tns:gerenciaPeriodo" />
       <xs:element minOccurs="0" name="diaNotificacion" type="xs:dateTime" />
       <xs:element minOccurs="0" name="estado" type="tns:estadoPeriodo" />
       <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
@@ -20,6 +21,56 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element name="pesoEvalComp" type="xs:double" />
       <xs:element name="pesoEvalObj" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gerenciaPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaFinCal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinEvalFinD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinEvalPrevD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinPDI" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinPlan" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioCal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioEvalFinD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioEvalPrevD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioPDI" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioPlan" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gerencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="colaboradores" nillable="true" type="tns:colaborador" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="configuracionFechas" nillable="true" type="tns:gerenciaPeriodo" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idGerencia" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="colaborador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaNac" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+      <xs:element name="idColaborador" type="xs:int" />
+      <xs:element minOccurs="0" name="jefe" type="tns:colaborador" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+      <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="puestoTrabajo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+      <xs:element name="idPuestoTrabajo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="time">

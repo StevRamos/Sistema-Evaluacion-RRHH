@@ -31,9 +31,10 @@ namespace SistemaEDInterfaces
 
         private void btnCargarCargoMasiva_Click(object sender, EventArgs e)
         {
-            string[] lineas = File.ReadAllLines(txtNomArchCargoMav.Text);
+            
             if ((rdbActCargaMavCargo.Checked || rdbInsCargaMavCargo.Checked) && txtNomArchCargoMav.Text != "")
             {
+                string[] lineas = File.ReadAllLines(txtNomArchCargoMav.Text);
                 if (rdbActCargaMavCargo.Checked != false)
                 {
                     foreach (var linea in lineas)

@@ -166,10 +166,10 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             String sql = "{call LISTAR_EVAL_DESEMPENHO_POR_PERIODO(?,?)}";
             
             cs = con.prepareCall(sql);
-            cs.setInt(1,idColaborador);
-            cs.setInt(2,idPeriodo);
+            cs.setInt("_ID_COLABORADOR",idColaborador);
+            cs.setInt("_ID_PERIODO",idPeriodo);
             
-            rs = cs.executeQuery(sql);
+            rs = cs.executeQuery();
             while(rs.next()){
                 EvaluacionDesempenho evaluacionDesempenho = new EvaluacionDesempenho();
                 evaluacionDesempenho.setIdEvaluacion(rs.getInt("id_Evaluacion"));

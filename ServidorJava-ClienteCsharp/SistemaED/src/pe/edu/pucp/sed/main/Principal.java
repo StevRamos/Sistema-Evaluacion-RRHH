@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
 import pe.edu.pucp.sed.dao.EscalaDAO;
+import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
 import pe.edu.pucp.sed.dao.GerenciaDAO;
 import pe.edu.pucp.sed.dao.GerenciaPeriodoDAO;
 import pe.edu.pucp.sed.dao.ObjetivoDAO;
@@ -21,6 +22,7 @@ import pe.edu.pucp.sed.dao.UsuarioDAO;
 import pe.edu.pucp.sed.model.Colaborador;
 import pe.edu.pucp.sed.model.Escala;
 import pe.edu.pucp.sed.model.EstadoCuenta;
+import pe.edu.pucp.sed.model.EvaluacionDesempenho;
 import pe.edu.pucp.sed.model.Gerencia;
 import pe.edu.pucp.sed.model.GerenciaPeriodo;
 import pe.edu.pucp.sed.model.Objetivo;
@@ -29,6 +31,7 @@ import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.model.PuestoTrabajo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
 import pe.edu.pucp.sed.mysql.EscalaMySQL;
+import pe.edu.pucp.sed.mysql.EvaluacionDesempenhoMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaPeriodoMySQL;
 import pe.edu.pucp.sed.mysql.ObjetivoMySQL;
@@ -301,6 +304,23 @@ public class Principal {
 //        System.out.println(c.getNombres() + " " + c.getApellidos());
 //        System.out.println(c.getGerencia().getNombre());
 //        System.out.println(c.getPuestoTrabajo().getNombre());
+//        PeriodoDAO daoperiodo = new PeriodoMySQL();
+//        Periodo per = new Periodo();
+//        per = daoperiodo.obtenerPeriodoActual();
+//        System.out.println(per.getIdPeriodo());
+//        System.out.println("-----");
 
+//          EvaluacionDesempenhoDAO daoEvalDes = new EvaluacionDesempenhoMySQL();
+//          EvaluacionDesempenho evalDes = new EvaluacionDesempenho();
+////          ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
+////          evaluacionesDesempenho = daoEvalDes.listarDesempenhoPorPeriodo(1,1);
+////          for (EvaluacionDesempenho eval : evaluacionesDesempenho){
+////              System.out.println(eval.getIdEvaluacion());
+////          }
+//
+//         evalDes.setIdEvaluacion(1);
+//         evalDes.setEstadoPlanificacion(1);
+//         int resultado = daoEvalDes.actualizarEvaluacionDesempenho(evalDes);
+//         System.out.println(resultado);
     }
 }

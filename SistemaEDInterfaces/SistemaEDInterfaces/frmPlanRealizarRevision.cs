@@ -23,7 +23,8 @@ namespace SistemaEDInterfaces
 
             colaborador = new ColaboradorWS.colaborador();
             daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
-            dgvMisObjetivos.AutoGenerateColumns = false;
+            
+            
             InitializeComponent();
         }
 
@@ -80,9 +81,10 @@ namespace SistemaEDInterfaces
             txtDNI.Text = colaborador.dni.ToString();
             txtGerencia.Text = colaborador.gerencia.nombre;
             txtCargo.Text = colaborador.puestoTrabajo.nombre;
+            dgvMisObjetivos.AutoGenerateColumns = false;
+            dgvMisObjetivos.DataSource = new BindingList<ObjetivoWS.objetivo>
+                (daoObjetivo.listarObjetivosXColaborador(colaborador.idColaborador).ToArray());
 
-            dgvMisObjetivos.DataSource = daoObjetivo.listarObjetivosXColaborador(colaborador.idColaborador);
-            
         }
     }
 }

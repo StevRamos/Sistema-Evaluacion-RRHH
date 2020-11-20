@@ -49,17 +49,29 @@ namespace SistemaEDInterfaces
         {
             cambiarEstadoComponentes(2);
             
-           
-            objetivo.meta = Double.Parse(txtMeta.Text); ;
-            objetivo.unidadMedida = txtUnidadMedida.Text;
-            objetivo.peso = Double.Parse(txtPeso.Text);
-            objetivo.descripcion = txtBoxDescripcion.Text; 
+           if(objetivo.estado == (int)EstadoObjetivo.Oculto
+                || objetivo.estado == (int)EstadoObjetivo.DenVisible)
+            {
+                objetivo.meta = Double.Parse(txtMeta.Text); ;
+                objetivo.unidadMedida = txtUnidadMedida.Text;
+                objetivo.peso = Double.Parse(txtPeso.Text);
+                objetivo.descripcion = txtBoxDescripcion.Text;
 
-            daoObjetivo.actualizarObjetivo(objetivo);
-            MessageBox.Show("Se guardaron los cambios.",
-                "Mensaje de confirmacion",
+                daoObjetivo.actualizarObjetivo(objetivo);
+                MessageBox.Show("Se guardaron los cambios.",
+                    "Mensaje de confirmacion",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No puede editar el objetivo mientras se encuentra " +
+                                "esperando revisión o si se encuentra aprobado.",
+                "Mensaje de Informacion",
                 MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
+            }
+            
         }
 
         private void btnAtras_Click(object sender, EventArgs e)

@@ -114,11 +114,7 @@ namespace SistemaEDInterfaces
             
             ObjetivoWS.objetivo objetivoSeleccionado =
                 (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem;
-            if(objetivoSeleccionado.estado==0)
-                MessageBox.Show("EL ESTADO ES 0.",
-                            "Mensaje de confirmacion",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Information);
+           
             frmPlanEditarObjetivo form = new frmPlanEditarObjetivo();
             form.Objetivo = objetivoSeleccionado; 
             Global.formPrincipal.abrirFormularioHijo(true,form); 
@@ -137,11 +133,25 @@ namespace SistemaEDInterfaces
             {
                 foreach (DataGridViewRow row in dgvMisObjetivos.SelectedRows)
                 {
+                    
                     ObjetivoWS.objetivo objetivo = 
                         (ObjetivoWS.objetivo)dgvMisObjetivos.CurrentRow.DataBoundItem;
-                    daoObjetivo.eliminarObjetivo(objetivo.idObjetivo); 
-                    dgvMisObjetivos.Rows.RemoveAt(row.Index);
-                    
+                    if(objetivo.estado == (int)EstadoObjetivo.Oculto || 
+                       objetivo.estado == (int)EstadoObjetivo.DenVisible)
+                    {
+                        daoObjetivo.eliminarObjetivo(objetivo.idObjetivo);
+                        //dgvMisObjetivos.Rows.RemoveAt(row.Index);
+                        dgvMisObjetivos.DataSource = new BindingList<ObjetivoWS.objetivo>
+                                            (daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado).ToArray());
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puede editar el objetivo mientras se encuentra " +
+                                "esperando revisión o si se encuentra aprobado.",
+                        "Mensaje de Informacion",
+                             MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
 
                 }
 

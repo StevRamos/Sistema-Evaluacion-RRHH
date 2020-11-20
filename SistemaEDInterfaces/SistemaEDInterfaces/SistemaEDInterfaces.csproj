@@ -747,12 +747,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ObjetivoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\ObjetivoWS\configuration.svcinfo" />
-    <None Include="Connected Services\ObjetivoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
@@ -762,6 +756,12 @@
     <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ObjetivoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ObjetivoWS\configuration.svcinfo" />
+    <None Include="Connected Services\ObjetivoWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
