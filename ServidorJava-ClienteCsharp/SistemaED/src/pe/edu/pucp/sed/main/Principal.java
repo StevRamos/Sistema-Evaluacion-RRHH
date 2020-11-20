@@ -9,6 +9,7 @@ import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
 import pe.edu.pucp.sed.dao.EscalaDAO;
 import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
@@ -322,5 +323,24 @@ public class Principal {
 //         evalDes.setEstadoPlanificacion(1);
 //         int resultado = daoEvalDes.actualizarEvaluacionDesempenho(evalDes);
 //         System.out.println(resultado);
+
+        ObjetivoDAO daoObjetivo = new ObjetivoMySQL();
+        Objetivo object = new Objetivo();
+        ArrayList<Objetivo> miobjects = new ArrayList<>();
+        miobjects = daoObjetivo.listarObjetivosXColaborador(1);
+        
+        Date date = new Date();
+        
+        for (Objetivo o : miobjects){
+            if (o.getIdObjetivo()==11){
+                daoObjetivo.actualizar(o);
+            }else if (o.getIdObjetivo() == 8){
+                o.setFechaAprobacion(date);
+                daoObjetivo.actualizar(o);
+            }
+        }
+        
+        //object.setIdObjetivo(11);
+        //object.setFechaAprobacion();
     }
 }

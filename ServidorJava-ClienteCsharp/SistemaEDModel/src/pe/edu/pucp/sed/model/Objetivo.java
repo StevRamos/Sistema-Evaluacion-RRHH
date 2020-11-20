@@ -24,6 +24,7 @@ public class Objetivo {
         this.colaborador = new Colaborador();
         this.evaluacion = new EvaluacionDesempenho();
         this.periodo = new Periodo();
+        this.fechaAprobacion = new Date(0L);        
     }
 
     public int getIdObjetivo() {
