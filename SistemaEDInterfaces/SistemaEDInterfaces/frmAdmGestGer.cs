@@ -50,7 +50,6 @@ namespace SistemaEDInterfaces
                     daoGerencia.eliminarGerencia(gerencia.idGerencia);
                     dgvGerencias.DataSource = daoGerencia.listarGerencias();
                 }
-
             }
         }
     }
