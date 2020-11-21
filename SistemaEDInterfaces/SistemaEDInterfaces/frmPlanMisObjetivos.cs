@@ -34,7 +34,7 @@ namespace SistemaEDInterfaces
             evaluaciones = new BindingList<EvaluacionDesempenhoWS.evaluacionDesempenho>
                 (daoEvaluacionDesempenho.listarDesempenhoPorPeriodo(IdColaboradorLoggeado, Global.periodoActual.idPeriodo).ToArray());
             evaluacionDesempenho = evaluaciones.ElementAt(0);
-            if(evaluacionDesempenho.estadoPlanificacion == (int)EstadoPlanificacion.OcultoParaColaborador)
+            if (evaluacionDesempenho.estadoPlanificacion == (int)EstadoPlanificacion.OcultoParaColaborador)
             {
                 btnAgregar.Enabled = false;
                 btnEliminar.Enabled = false;
@@ -42,7 +42,7 @@ namespace SistemaEDInterfaces
             }
             objetivos = new BindingList<ObjetivoWS.objetivo>
                                         (daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado).ToArray());
-            dgvMisObjetivos.DataSource = objetivos;
+            if(objetivos!=null)dgvMisObjetivos.DataSource = objetivos;
             calcularSumaPesoObjetivos();
 
         }
@@ -50,7 +50,7 @@ namespace SistemaEDInterfaces
 
         private void calcularSumaPesoObjetivos()
         {
-            sumaPesoObjetivos = 0; 
+            sumaPesoObjetivos = 0;
             foreach (ObjetivoWS.objetivo o in objetivos)
             {
                 sumaPesoObjetivos += o.peso;
@@ -93,7 +93,8 @@ namespace SistemaEDInterfaces
             this.Cursor = Cursors.WaitCursor;
         }
 
-        private void terminarEspera() {
+        private void terminarEspera()
+        {
             this.Cursor = Cursors.Default;
         }
         private void frmPlanMisObjetivos_Load(object sender, EventArgs e)
@@ -116,12 +117,12 @@ namespace SistemaEDInterfaces
             form.SumaPesoObjetivos = sumaPesoObjetivos;
             if (form.ShowDialog() == DialogResult.OK)
             {
-                iniciarEspera(); 
+                iniciarEspera();
                 sumaPesoObjetivos = form.SumaPesoObjetivos;
                 objetivos = new BindingList<ObjetivoWS.objetivo>
                                         (daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado).ToArray());
                 dgvMisObjetivos.DataSource = objetivos;
-                terminarEspera(); 
+                terminarEspera();
             }
         }
 
@@ -162,19 +163,24 @@ namespace SistemaEDInterfaces
             }
             else
             {
+                iniciarEspera();
                 evaluacionDesempenho.estadoPlanificacion = (int)EstadoPlanificacion.OcultoParaColaborador;
                 if (daoEvaluacionDesempenho.actualizarEvaluacionDesempenho(evaluacionDesempenho) == 1)
                 {
                     //Enviar correo//
-
+                    Correo.enviarCorreo("rodriguez.diego@pucp.edu.pe",
+                                         Mensaje.TituloRegistroObjetivos("Jorge Baca"),
+                                         Mensaje.CuerpoRegistroObjetivos("Jorge Baca", "Jorge Baca", 123456789));
                     ////////////////////////////////////////////
+                    terminarEspera();
                     MessageBox.Show("Objetivos enviados para revision.",
                                 "Mensaje de confirmacion",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
                     btnAgregar.Enabled = false;
                     btnEliminar.Enabled = false;
-                    btnEnviar.Enabled = false; 
+                    btnEnviar.Enabled = false;
+
                 }
                 else
                 {
@@ -197,7 +203,7 @@ namespace SistemaEDInterfaces
                                    "Mensaje de error",
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
-                return; 
+                return;
             }
 
             ObjetivoWS.objetivo objetivoSeleccionado =
@@ -206,7 +212,7 @@ namespace SistemaEDInterfaces
             frmPlanEditarObjetivo form = new frmPlanEditarObjetivo();
             form.Objetivo = objetivoSeleccionado;
             form.EvaluacionDesempenho = evaluacionDesempenho;
-            form.SumaPesoObjetivos = sumaPesoObjetivos; 
+            form.SumaPesoObjetivos = sumaPesoObjetivos;
             Global.formPrincipal.abrirFormularioHijo(true, form);
 
         }

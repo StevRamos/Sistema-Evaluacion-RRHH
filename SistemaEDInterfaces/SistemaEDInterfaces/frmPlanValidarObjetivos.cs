@@ -14,7 +14,7 @@ namespace SistemaEDInterfaces
     {
         private ColaboradorWS.colaborador colaboradorSeleccionado; 
         private ColaboradorWS.ColaboradorWSClient daoColaborador;
-        
+        private BindingList<ObjetivoWS.objetivo> objetivos; 
         private int idColaboradorLoggeado=1;
 
         private EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient daoEvaluacionDesempenho; 
@@ -25,10 +25,11 @@ namespace SistemaEDInterfaces
             InitializeComponent();
             daoEvaluacionDesempenho = new EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient(); 
             daoColaborador = new ColaboradorWS.ColaboradorWSClient();
-            dgvListaTrabajadores.AutoGenerateColumns = false; 
-            dgvListaTrabajadores.DataSource = new BindingList<ColaboradorWS.colaborador>
-                (daoColaborador.listarColaboradoresXJefe(IdColaboradorLoggeado).ToArray()); 
-            
+            dgvListaTrabajadores.AutoGenerateColumns = false;
+            BindingList < ColaboradorWS.colaborador > colaboradores
+                = new BindingList<ColaboradorWS.colaborador>
+                (daoColaborador.listarColaboradoresXJefe(IdColaboradorLoggeado).ToArray());
+            if(colaboradores!=null)dgvListaTrabajadores.DataSource = colaboradores; 
         }
 
         private void iniciarEspera()
@@ -43,11 +44,22 @@ namespace SistemaEDInterfaces
 
         private void btnRealizarRevision_Click(object sender, EventArgs e)
         {
-            
-            iniciarEspera(); 
-            BindingList<EvaluacionDesempenhoWS.evaluacionDesempenho> evaluaciones;
-            EvaluacionDesempenhoWS.evaluacionDesempenho evaluacionDesempenho;
+
+            iniciarEspera();
+
+            if (dgvListaTrabajadores.CurrentCell == null)
+            {
+                MessageBox.Show("Debe seleccionar un objetivo.",
+                                      "Mensaje de error",
+                                      MessageBoxButtons.OK,
+                                      MessageBoxIcon.Error);
+                return;
+
+            }
             colaboradorSeleccionado = (ColaboradorWS.colaborador)dgvListaTrabajadores.CurrentRow.DataBoundItem;
+
+            BindingList <EvaluacionDesempenhoWS.evaluacionDesempenho> evaluaciones;
+            EvaluacionDesempenhoWS.evaluacionDesempenho evaluacionDesempenho;
             evaluaciones = new BindingList<EvaluacionDesempenhoWS.evaluacionDesempenho>
                 (daoEvaluacionDesempenho.listarDesempenhoPorPeriodo(colaboradorSeleccionado.idColaborador,
                                                                     Global.periodoActual.idPeriodo).ToArray());
