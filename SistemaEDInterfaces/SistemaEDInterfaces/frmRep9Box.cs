@@ -25,15 +25,15 @@ namespace SistemaEDInterfaces
             //    daoColaborador.listarColaboradoresXJefe(
             //        Global.colaboradorLoggeado.idColaborador).ToList());
 
-            colaboradores = new BindingList<ColaboradorWS.colaborador>(daoColaborador.listarColaboradoresXJefe(1).ToList()); //pa cambiar el harcodeo
+            //colaboradores = new BindingList<ColaboradorWS.colaborador>(daoColaborador.listarColaboradoresXJefe(1).ToList()); //pa cambiar el harcodeo
 
-            foreach (ColaboradorWS.colaborador colaborador in colaboradores)
-            {
-                BtnColaborador btnColab = new BtnColaborador();
-                btnColab.setNombre(colaborador.nombres + " " + colaborador.apellidos);
-                this.nineBox.insertarBtnColaborador(btnColab);
+            //foreach (ColaboradorWS.colaborador colaborador in colaboradores)
+            //{
+            //    BtnColaborador btnColab = new BtnColaborador();
+            //    btnColab.setNombre(colaborador.nombres + " " + colaborador.apellidos);
+            //    this.nineBox.insertarBtnColaborador(btnColab);
 
-            }
+            //}
 
         }
 
