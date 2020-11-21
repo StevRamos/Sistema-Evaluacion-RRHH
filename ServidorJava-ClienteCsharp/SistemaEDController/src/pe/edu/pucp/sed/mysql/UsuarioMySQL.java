@@ -89,6 +89,8 @@ public class UsuarioMySQL implements UsuarioDAO{
             col.getPuestoTrabajo().setNombre(rs.getString("nombrePuestoTrabajo"));
             col.getPuestoTrabajo().setDescripcion(rs.getString("descripcionPuestoTrabajo"));
             
+            col.setNivelAcceso(rs.getInt("nivelAcceso"));
+            
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{

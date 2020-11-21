@@ -12,7 +12,6 @@ namespace SistemaEDInterfaces
 {
     public partial class BtnColaborador : UserControl
     {
-
         private bool clicked = false;
         private FlowLayoutPanel contenedor;
 
@@ -30,7 +29,7 @@ namespace SistemaEDInterfaces
             if (e.Button == MouseButtons.Left)
             {
                 Clicked = true;
-                this.contenedor.DoDragDrop(this , DragDropEffects.Move);
+                this.contenedor.DoDragDrop(this, DragDropEffects.Move);
             }
 
         }

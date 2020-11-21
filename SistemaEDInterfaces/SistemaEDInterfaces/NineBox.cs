@@ -7,20 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace SistemaEDInterfaces
 {
-    public partial class _9Box : UserControl
+    public partial class NineBox : UserControl
     {
+
         private BtnColaborador colaboradorSeleccionado;
         private BindingList<BtnColaborador> colaboradores;
 
-        public _9Box()
+        public NineBox()
         {
             InitializeComponent();
 
-            InitializeFlowLayoutPanels(3,5);
+            this.tlp9Box.Size = new Size(940, 500);
+
+            InitializeFlowLayoutPanels(3, 5);
 
             colaboradores = new BindingList<BtnColaborador>();
 
@@ -66,7 +68,7 @@ namespace SistemaEDInterfaces
             foreach (BtnColaborador c in colaboradores)
                 if (c.Clicked)
                     colaboradorSeleccionado = c;
-            FlowLayoutPanel org = (FlowLayoutPanel) colaboradorSeleccionado.Contenedor;
+            FlowLayoutPanel org = (FlowLayoutPanel)colaboradorSeleccionado.Contenedor;
 
             if (org.Name != panel.Name)
             {
@@ -93,7 +95,7 @@ namespace SistemaEDInterfaces
             this.tlp9Box.ColumnCount = columns;
 
             for (int i = 0; i < rows; i++)
-                this.tlp9Box.RowStyles.Add(new RowStyle(SizeType.Absolute, 
+                this.tlp9Box.RowStyles.Add(new RowStyle(SizeType.Absolute,
                     size.Height / rows));
 
             for (int j = 0; j < columns; j++)
@@ -108,18 +110,18 @@ namespace SistemaEDInterfaces
 
         public void setPanelsColor(Color c)
         {
-            this.tlp9Box.Controls.OfType<Control>().Where(p => p is FlowLayoutPanel).ToList().ForEach( panel => {
+            this.tlp9Box.Controls.OfType<Control>().Where(p => p is FlowLayoutPanel).ToList().ForEach(panel => {
                 panel.BackColor = c;
             });
         }
 
         public void insertarBtnColaborador(BtnColaborador btn, int column = 0, int row = 0)
         {
-            Control panel = this.tlp9Box.GetControlFromPosition(column,row);
+            Control panel = this.tlp9Box.GetControlFromPosition(column, row);
             if (panel != null && !colaboradores.Contains(btn))
             {
                 panel.Controls.Add(btn);
-                btn.Contenedor = (FlowLayoutPanel) panel;
+                btn.Contenedor = (FlowLayoutPanel)panel;
                 colaboradores.Add(btn);
             }
         }
@@ -133,6 +135,5 @@ namespace SistemaEDInterfaces
                 colaboradores.Remove(btn);
             }
         }
-
     }
 }

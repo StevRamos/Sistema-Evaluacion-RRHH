@@ -34,7 +34,7 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(3, 0);
+            this.lblNombre.Location = new System.Drawing.Point(30, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 0;
@@ -44,9 +44,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.Controls.Add(this.lblNombre);
             this.Name = "BtnColaborador";
-            this.Size = new System.Drawing.Size(109, 21);
+            this.Size = new System.Drawing.Size(159, 21);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BtnColaborador_MouseDown);
             this.ResumeLayout(false);
             this.PerformLayout();

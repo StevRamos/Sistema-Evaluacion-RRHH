@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BtnColaborador.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="BtnColaborador.Designer.cs">
+      <DependentUpon>BtnColaborador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ColaboradorWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +97,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Correo.cs" />
     <Compile Include="EstadoObjetivo.cs" />
     <Compile Include="EstadoPlanificacion.cs" />
     <Compile Include="Etapas.cs" />
@@ -467,6 +474,12 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
+    <Compile Include="NineBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NineBox.Designer.cs">
+      <DependentUpon>NineBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -479,6 +492,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BtnColaborador.resx">
+      <DependentUpon>BtnColaborador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmCalibrar.resx">
       <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -697,7 +713,13 @@
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.actualizarEvaluacionDesempenhoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.evaluacionDesempenho.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.listarDesempenhoPorPeriodoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GerenciaPeriodoWS\GerenciaPeriodoWS.wsdl" />
@@ -762,6 +784,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ObjetivoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ObjetivoWS\configuration.svcinfo" />
+    <None Include="Connected Services\ObjetivoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
@@ -771,12 +799,6 @@
     <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\ObjetivoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\ObjetivoWS\configuration.svcinfo" />
-    <None Include="Connected Services\ObjetivoWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

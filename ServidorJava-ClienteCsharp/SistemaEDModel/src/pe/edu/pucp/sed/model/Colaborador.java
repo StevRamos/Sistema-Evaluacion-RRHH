@@ -20,6 +20,7 @@ public class Colaborador {
     private Colaborador jefe;
     private Periodo periodo;
     private ArrayList<Colaborador> subordinados;
+    private int nivelAcceso;
 
     public Colaborador() {
         this.objetivos = new ArrayList<>();
@@ -148,6 +149,14 @@ public class Colaborador {
 
     public void setSubordinados(ArrayList<Colaborador>  subordinados) {
         this.subordinados = subordinados;
+    }
+    
+    public int getNivelAcceso() {
+        return nivelAcceso;
+    }
+
+    public void setNivelAcceso(int nivelAcceso) {
+        this.nivelAcceso = nivelAcceso;
     }
 
     public void crearUsuario() {

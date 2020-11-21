@@ -1,6 +1,6 @@
 ﻿namespace SistemaEDInterfaces
 {
-    partial class _9Box
+    partial class NineBox
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
