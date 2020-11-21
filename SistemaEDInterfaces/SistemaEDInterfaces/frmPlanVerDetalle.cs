@@ -81,7 +81,7 @@ namespace SistemaEDInterfaces
                         txtBoxObservacionJefe.Text = form.ObservacionesTextBox;
                         lblFechaAprobacion.Show();
                         dtpFechaAprobacion.Show();
-                        dtpFechaAprobacion.Value = DateTime.Now;
+                        dtpFechaAprobacion.Value = objetivo.fechaAprobacion;
                     }
                 }
                 else
@@ -106,7 +106,7 @@ namespace SistemaEDInterfaces
                     txtEstado.Text = "Aprobado";
                     lblFechaAprobacion.Show();
                     dtpFechaAprobacion.Show(); 
-                    dtpFechaAprobacion.Value = DateTime.Now;
+                    dtpFechaAprobacion.Value = objetivo.fechaAprobacion;
                 }
 
             }
