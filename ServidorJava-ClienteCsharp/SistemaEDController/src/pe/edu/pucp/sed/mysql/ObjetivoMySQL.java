@@ -13,7 +13,6 @@ import pe.edu.pucp.sed.dao.ObjetivoDAO;
 import pe.edu.pucp.sed.model.Objetivo;
 
 public class ObjetivoMySQL implements ObjetivoDAO {
-
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
@@ -58,7 +57,7 @@ public class ObjetivoMySQL implements ObjetivoDAO {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
-            String sql = "{call ACTUALIZAR_OBJETIVO(?,?,?,?,?,?,?,?,?,?,?,null)}";
+            String sql = "{call ACTUALIZAR_OBJETIVO(?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
 
             cs.setInt("_ID_OBJETIVO", objetivo.getIdObjetivo());
@@ -73,12 +72,12 @@ public class ObjetivoMySQL implements ObjetivoDAO {
             cs.setDouble("_NOTAFINAL", objetivo.getNotaFinal());
             cs.setInt("_ID_EVALUACION", objetivo.getEvaluacion().getIdEvaluacion());
             SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
-           //Date d1 = new java.util.Date(sdformat.parse("1970-01-01"));
-            //if (objetivo.getFechaAprobacion().compareTo(new (sdformat.parse("1970-01-01")))==0){
-            //    cs.setDate("_FECHA_APROBACION" , null);
-           // }else{
-            //    cs.setDate("_FECHA_APROBACION" , new java.sql.Date(objetivo.getFechaAprobacion().getTime()));
-            //}
+           
+            if (objetivo.getFechaAprobacion().compareTo(sdformat.parse("1970-01-01"))==0){
+                cs.setDate("_FECHA_APROBACION" , null);
+            }else{
+                cs.setDate("_FECHA_APROBACION" , new java.sql.Date(objetivo.getFechaAprobacion().getTime()));
+            }
             cs.executeUpdate();
             resultado = 1;
         } catch (Exception ex) {
