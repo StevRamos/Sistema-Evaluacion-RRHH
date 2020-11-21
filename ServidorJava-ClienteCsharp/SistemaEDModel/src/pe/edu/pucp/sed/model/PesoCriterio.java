@@ -16,6 +16,54 @@ public class PesoCriterio{
                 this.criterio = new Criterio();
 	};
 
+        public String getDescripcion() {
+            return this.criterio.getDescripcion();
+        }
+        
+        public void setDescripcion(String descripcion) {
+            this.criterio.setDescripcion(descripcion);
+        }
+        
+        public int getIdCriterio() {
+           return this.criterio.getIdCriterio();
+       }
+
+        public void setIdCriterio(int idCriterio) {
+            this.criterio.setIdCriterio(idCriterio);
+        }
+        
+        public String getNombre() {
+            return this.criterio.getNombre();
+        }
+
+        public void setNombre(String nombre) {
+            this.criterio.setNombre(nombre);
+        }
+
+        public Criterio getCriterioPadre() {
+            return this.criterio.getCriterioPadre();
+        }
+
+        public void setCriterioPadre(Criterio criterioPadre) {
+            this.criterio.setCriterioPadre(criterioPadre);
+        }
+
+        public int getIdPuestoTrabajo() {
+            return this.puestoTrabajo.getIdPuestoTrabajo();
+        }
+
+        public void setIdPuestoTrabajo(int idPuestoTrabajo) {
+            this.puestoTrabajo.setIdPuestoTrabajo(idPuestoTrabajo);
+        }
+
+        public String getNombrePuestoTrabajo() {
+            return this.puestoTrabajo.getNombre();
+        }
+
+        public void setNombrePuestoTrabajo(String nombre) {
+            this.puestoTrabajo.setNombre(nombre);
+        }
+        
 	public int getIdPesoCriterio(){
 		return this.idPesoCriterio;
 	};
@@ -39,6 +87,22 @@ public class PesoCriterio{
 	public void setPeriodo( Periodo periodo ){
 		this.periodo = periodo;
 	};
+        
+        public int getIdPeriodo() {
+            return this.periodo.getIdPeriodo();
+        }
+
+        public void setIdPeriodo(int idPeriodo) {
+            this.periodo.setIdPeriodo(idPeriodo);
+        }
+
+        public String getNombrePeriodo() {
+            return periodo.getNombre();
+        }
+
+        public void setNombrePeriodo(String nombre) {
+            this.periodo.setNombre(nombre);
+        }
 
 	public ArrayList<LineaEvaluacion> getLineasEvaluacion(){
 		return this.lineasEvaluacion;

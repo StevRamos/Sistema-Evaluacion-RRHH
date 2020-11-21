@@ -11,10 +11,11 @@ using System.Net.Mime;
 
 namespace SistemaEDInterfaces
 {
-    class Correo
+    public static class Correo
     {
-        public void enviarCorreo(string correo, string titulo, string cuerpo)
+        public static int enviarCorreo(string correo, string titulo, string cuerpo)
         {
+            int resultado = 0; 
             System.Net.Mail.MailMessage msg = new System.Net.Mail.MailMessage();
             msg.To.Add(correo);
             msg.From = new MailAddress("proyectopucp2020@gmail.com", "Sistema de Evaluación", System.Text.Encoding.UTF8);
@@ -32,11 +33,13 @@ namespace SistemaEDInterfaces
             try
             {
                 client.Send(msg);
+                resultado = 1; 
             }
             catch (System.Net.Mail.SmtpException ex)
             {
                 Console.WriteLine(ex.Message);
             }
+            return resultado; 
         }
     }
 }

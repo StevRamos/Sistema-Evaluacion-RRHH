@@ -162,7 +162,7 @@ namespace SistemaEDInterfaces
 
         private void frmPlanEditarObjetivo_Load(object sender, EventArgs e)
         {
-
+            
             switch (objetivo.estado)
             {
                 case (int)EstadoObjetivo.EsperandoRevision:

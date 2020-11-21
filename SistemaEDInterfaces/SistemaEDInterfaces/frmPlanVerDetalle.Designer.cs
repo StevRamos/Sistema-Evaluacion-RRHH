@@ -422,6 +422,7 @@
             // 
             // dtpFechaFormulacion
             // 
+            this.dtpFechaFormulacion.Enabled = false;
             this.dtpFechaFormulacion.Location = new System.Drawing.Point(303, 263);
             this.dtpFechaFormulacion.Name = "dtpFechaFormulacion";
             this.dtpFechaFormulacion.Size = new System.Drawing.Size(193, 20);
@@ -429,6 +430,7 @@
             // 
             // dtpFechaAprobacion
             // 
+            this.dtpFechaAprobacion.Enabled = false;
             this.dtpFechaAprobacion.Location = new System.Drawing.Point(774, 263);
             this.dtpFechaAprobacion.Name = "dtpFechaAprobacion";
             this.dtpFechaAprobacion.Size = new System.Drawing.Size(193, 20);

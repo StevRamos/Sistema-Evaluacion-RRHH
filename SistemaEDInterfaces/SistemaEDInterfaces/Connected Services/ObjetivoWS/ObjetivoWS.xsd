@@ -219,22 +219,22 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="insertarObjetivo">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="objetivo" type="tns:objetivo" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarObjetivoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="eliminarObjetivo">
     <xs:sequence>
       <xs:element name="idObjetivo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarObjetivoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarObjetivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objetivo" type="tns:objetivo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarObjetivoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
