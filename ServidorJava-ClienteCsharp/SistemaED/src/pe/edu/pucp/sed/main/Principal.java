@@ -324,21 +324,21 @@ public class Principal {
 //         int resultado = daoEvalDes.actualizarEvaluacionDesempenho(evalDes);
 //         System.out.println(resultado);
 
-//        ObjetivoDAO daoObjetivo = new ObjetivoMySQL();
-//        Objetivo object = new Objetivo();
-//        ArrayList<Objetivo> miobjects = new ArrayList<>();
-//        miobjects = daoObjetivo.listarObjetivosXColaborador(1);
-//        
-//        Date date = new Date();
-//        
-//        for (Objetivo o : miobjects){
-//            if (o.getIdObjetivo()==11){
-//                daoObjetivo.actualizar(o);
-//            }else if (o.getIdObjetivo() == 8){
-//                o.setFechaAprobacion(date);
-//                daoObjetivo.actualizar(o);
-//            }
-//        }
+        ObjetivoDAO daoObjetivo = new ObjetivoMySQL();
+        Objetivo object = new Objetivo();
+        ArrayList<Objetivo> miobjects = new ArrayList<>();
+        miobjects = daoObjetivo.listarObjetivosXColaborador(1);
+        
+        Date date = new Date();
+        
+        for (Objetivo o : miobjects){
+              if (o.getIdObjetivo()==7){
+                  o.setFechaAprobacion(date);
+                  daoObjetivo.actualizar(o);
+              }else if (o.getIdObjetivo()==8){
+                  daoObjetivo.actualizar(o);
+              }
+        }
         
         //object.setIdObjetivo(11);
         //object.setFechaAprobacion();
