@@ -18,41 +18,69 @@ namespace SistemaEDInterfaces
 
         private GerenciaWS.GerenciaWSClient daoGerencia;
 
+        private BindingList<PeriodoWS.gerenciaPeriodo> gerenciasPeriodos;
+
         private GerenciaPeriodoWS.GerenciaPeriodoWSClient daoGerenciaPeriodo;
         public frmAdmGestCronAgregarPeriodo()
         {
             InitializeComponent();
-            /*
+
             periodo = new PeriodoWS.periodo();
-            
+
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
             daoGerencia = new GerenciaWS.GerenciaWSClient();
-            daoGerenciaPeriodo = new GerenciaPeriodoWS.GerenciaPeriodoWSClient();
-            BindingList<GerenciaWS.gerencia> gerencias = new BindingList<GerenciaWS.gerencia> 
-                                                            (daoGerencia.listarGerencias().ToArray());
-
-            periodo.configuracionFechas = new BindingList<GerenciaPeriodosWS.gerenciaPeriodo>();
-            foreach (GerenciaWS.gerencia g in gerencias)
-            {
-                GerenciaPeriodoWS.gerenciaPeriodo gp = new GerenciaPeriodoWS.gerenciaPeriodo();
-                gp.gerencia = g;
-                gp.periodo = periodo; 
-                periodo.configuracionFechas.Add(gp); 
-            }
             
-            dgvCronPlanificacion.AutoGenerateColumns = false;
-            dgvCronEvPrevia.AutoGenerateColumns = false;
-            dgvCronEvFinal.AutoGenerateColumns = false;
-            dgvCronPDI.AutoGenerateColumns = false;
-            dgvCalibNotas.AutoGenerateColumns = false;
-
-            //Interesante sera ver como saldran en el dgv las fechas que ahorita estan en nulo
-            dgvCronPlanificacion.DataSource = periodo.configuracionFechas; 
-            dgvCronEvPrevia.DataSource = periodo.configuracionFechas; 
-            dgvCronEvFinal.DataSource = periodo.configuracionFechas; 
-            dgvCronPDI.DataSource = periodo.configuracionFechas; 
-            dgvCalibNotas.DataSource = periodo.configuracionFechas; */
         }
+
+        private int realizarValidaciones()
+        {
+            int valido = 1;
+            double pesoEvalObj = Double.Parse(txtPesoObjetivos.Text);
+            double pesoEvalComp = Double.Parse(txtPesoCompetencia.Text);
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("Debe ingresar un nombre para el periodo",
+                                            "Mensaje de error",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                return 0;
+            }
+            if (pesoEvalComp > 100 || pesoEvalComp < 0)
+            {
+                MessageBox.Show("El peso para la evaluación de competencia debe estar entre 0 y 100",
+                                            "Mensaje de error",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                return 0;
+            }
+            if (pesoEvalObj > 100 || pesoEvalObj < 0)
+            {
+                MessageBox.Show("El peso para la evaluación de objetivos debe estar entre 0 y 100",
+                                            "Mensaje de error",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                return 0;
+            }
+            if ((pesoEvalObj + pesoEvalComp) != 100)
+            {
+                MessageBox.Show("Los pesos de la evaluacion de objetivos y la evaluacion de competencias deben sumar 100",
+                                            "Mensaje de error",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                return 0;
+            }
+            if (cboDiaNotificacion.SelectedItem == null)
+            {
+                MessageBox.Show("Debe seleccionar un día para la notificación semanal.",
+                                            "Mensaje de error",
+                                            MessageBoxButtons.OK,
+                                            MessageBoxIcon.Error);
+                return 0;
+            }
+
+            return valido;
+        }
+
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -66,99 +94,123 @@ namespace SistemaEDInterfaces
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            if (realizarValidaciones() == 0)
+            {
+                return;
+            }
             periodo.nombre = txtNombre.Text;
             periodo.fechaInicio = dtpFechaInicio.Value;
             periodo.fechaFin = dtpFechaFin.Value;
-            periodo.pesoEvalObj = Double.Parse(txtPesoObjetivos.Text);
-            periodo.pesoEvalComp = Double.Parse(txtPesoCompetencia.Text);
-            //periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
-            //periodo.horaNotificacion = dtpHoraNotificacion.Value ;
-            //daoPeriodo.registrarPeriodo(periodo);
-            MessageBox.Show("Se registro un nuevo periodo.",
-                "Mensaje de confirmacion",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            periodo.fechaFinSpecified = true;
+            periodo.fechaInicioSpecified = true; 
+            periodo.pesoEvalObj = (Double.Parse(txtPesoObjetivos.Text))/100;
+            periodo.pesoEvalComp = (Double.Parse(txtPesoCompetencia.Text))/100;
+            //periodo.diaNotificacion = cboDiaNotificacion.SelectedItem;
+            //periodo.horaNotificacion = dtpHoraNotificacion.Value.ToString("hh:mm:ss") ;
+            periodo.configuracionFechas = gerenciasPeriodos.ToArray();
+            if (daoPeriodo.insertarPeriodo(periodo) != 0)
+            {
 
-            Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestCron());
+                MessageBox.Show("Se registro un nuevo periodo.",
+                   "Mensaje de confirmacion",
+                   MessageBoxButtons.OK,
+                   MessageBoxIcon.Information);
+                Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestCron());
+
+
+            }
+            else
+            {
+                MessageBox.Show("Ocurrio un error al registrar, intentelo de nuevo.",
+                                                   "Mensaje de error",
+                                                   MessageBoxButtons.OK,
+                                                   MessageBoxIcon.Error);
+            }
         }
-
         private void frmAdmGestCronAgregarPeriodo_Load(object sender, EventArgs e)
         {
+            BindingList<GerenciaWS.gerencia> gerencias = new BindingList<GerenciaWS.gerencia>
+                                                            (daoGerencia.listarGerencias().ToArray());
 
+            //Crear la lista de gerenciaXperiodos
+            gerenciasPeriodos = new BindingList<PeriodoWS.gerenciaPeriodo>();
+
+            foreach (GerenciaWS.gerencia g in gerencias)
+            {
+                PeriodoWS.gerenciaPeriodo gp = new PeriodoWS.gerenciaPeriodo();
+                gp.gerencia = new PeriodoWS.gerencia();
+                gp.gerencia.nombre = g.nombre;
+                gp.gerencia.idGerencia = g.idGerencia;
+
+                gp.fechaInicioPlan = DateTime.Now;
+                gp.fechaFinPlan = DateTime.Now;
+                gp.fechaInicioEvalPrevD = DateTime.Now;
+                gp.fechaFinEvalPrevD = DateTime.Now;
+                gp.fechaInicioEvalFinD = DateTime.Now;
+                gp.fechaFinEvalFinD = DateTime.Now;
+                gp.fechaInicioCal = DateTime.Now;
+                gp.fechaFinCal = DateTime.Now;
+                gp.fechaInicioPDI = DateTime.Now;
+                gp.fechaFinPDI = DateTime.Now;
+                gp.periodo.idPeriodo = periodo.idPeriodo;
+
+                gp.fechaInicioPlanSpecified = true;
+                gp.fechaFinPlanSpecified = true;
+                gp.fechaInicioEvalPrevDSpecified = true;
+                gp.fechaFinEvalPrevDSpecified = true;
+                gp.fechaInicioEvalFinDSpecified = true;
+                gp.fechaFinEvalFinDSpecified = true;
+                gp.fechaInicioCalSpecified = true;
+                gp.fechaFinCalSpecified = true;
+                gp.fechaInicioPDISpecified = true;
+                gp.fechaFinPDISpecified = true;
+
+                gerenciasPeriodos.Add(gp);
+            }
+
+            dgvCronPlanificacion.AutoGenerateColumns = false;
+            dgvCronEvPrevia.AutoGenerateColumns = false;
+            dgvCronEvFinal.AutoGenerateColumns = false;
+            dgvCronPDI.AutoGenerateColumns = false;
+            dgvCalibNotas.AutoGenerateColumns = false;
+
+            //Interesante sera ver como saldran en el dgv las fechas que ahorita estan en nulo
+            dgvCronPlanificacion.DataSource = gerenciasPeriodos;
+            dgvCronEvPrevia.DataSource = gerenciasPeriodos;
+            dgvCronEvFinal.DataSource = gerenciasPeriodos;
+            dgvCronPDI.DataSource = gerenciasPeriodos;
+            dgvCalibNotas.DataSource = gerenciasPeriodos;
         }
-
-        //Funcion para actualizar las fechas de inicio/fin de una gerencia 
-        /*
-        private void actualizarGP(int idGerencia, DateTime fechaInicio, DateTime fechaFin, Etapas etapa)
+        private void iniciarEspera()
         {
-            if (fechaInicio != null)
-            {
-                foreach(GerenciaPeriodoWS.gerenciaPeriodo gp in periodo.configuracionFechas)
-                {
-                    if (gp.gerencia.idGerencia == idGerencia)
-                    {
-                        if (etapa == Etapas.Planificacion)
-                        {
-                            gp.fechaInicioPlan = fechaInicio;
-                        }
-                        else if (etapa == Etapas.PreviaD)
-                        {
-                            gp.fechaInicioEvalPrevD = fechaInicio;
-                        }
-                        else if (etapa == Etapas.FinalD)
-                        {
-                            gp.fechaInicioEvalFinD = fechaInicio;
-                        }
-                        else if (etapa == Etapas.Calibracion)
-                        {
-                            gp.fechaInicioCal = fechaInicio;
-                        }
-                        else if (etapa == Etapas.PDI)
-                        {
-                            gp.fechaInicioPDI = fechaInicio;
-                        }
-                        break;
-                    }
-                }
-
-
-            }
-            if (fechaFin != null)
-            {
-                foreach(GerenciaPeriodoWS.gerenciaPeriodo gp in periodo.configuracionFechas)
-                {
-                    if (gp.gerencia.idGerencia == idGerencia)
-                    {
-                        if (etapa == Etapas.Planificacion)
-                        {
-                            gp.fechaFinPlan = fechaFin;
-                        }
-                        else if (etapa == Etapas.PreviaD)
-                        {
-                            gp.fechaFinEvalPrevD = fechaFin;
-                        }
-                        else if (etapa == Etapas.FinalD)
-                        {
-                            gp.fechaFinEvalFinD = fechaFin;
-                        }
-                        else if (etapa == Etapas.Calibracion)
-                        {
-                            gp.fechaFinCal = fechaFin;
-                        }
-                        else if (etapa == Etapas.PDI)
-                        {
-                            gp.fechaFinPDI = fechaFin;
-                        }
-                        break;
-                    }
-                }
-            }
+            this.Cursor = Cursors.WaitCursor;
         }
-        */
-        
+
+        private void terminarEspera()
+        {
+            this.Cursor = Cursors.Default;
+        }
+        //Funcion para actualizar las fechas de inicio/fin de una gerencia 
+
+        private void actualizarGP(PeriodoWS.gerenciaPeriodo g)
+        {
+
+            for (int i = 0; i < gerenciasPeriodos.Count(); i++)
+            {
+                if (gerenciasPeriodos[i].gerencia.idGerencia == g.gerencia.idGerencia)
+                {
+                    gerenciasPeriodos[i] = g;
+                }
+            }
+
+        }
+
+
 
         void mostrarFormularioFechaYActualizar(DataGridViewCellEventArgs e, Etapas etapa)
         {
+            PeriodoWS.gerenciaPeriodo gp = new PeriodoWS.gerenciaPeriodo();
+
             if (e.ColumnIndex == 2)
             {
                 frmAdmGestCronVerDetalleFecha form = new frmAdmGestCronVerDetalleFecha();
@@ -166,13 +218,41 @@ namespace SistemaEDInterfaces
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime fecha = form.FechaSeleccionada;
-                    if (etapa == Etapas.Planificacion) dgvCronPlanificacion.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
-                    if (etapa == Etapas.PreviaD) dgvCronEvPrevia.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
-                    if (etapa == Etapas.FinalD) dgvCronEvFinal.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
-                    if (etapa == Etapas.Calibracion) dgvCalibNotas.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
-                    if (etapa == Etapas.PDI) dgvCronPDI.CurrentRow.Cells["FechaInicio"].Value = fecha.ToString("dd/MM/yyyy");
-                    GerenciaPeriodoWS.gerenciaPeriodo gp = (GerenciaPeriodoWS.gerenciaPeriodo)dgvCronPlanificacion.CurrentRow.DataBoundItem;
-                    //actualizarGP(gp.gerencia.idGerencia, fecha, null, etapa);
+
+
+                    if (etapa == Etapas.Planificacion)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCronPlanificacion.CurrentRow.DataBoundItem;
+                        gp.fechaInicioPlan = fecha;
+
+                    }
+                    else if (etapa == Etapas.PreviaD)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCronEvPrevia.CurrentRow.DataBoundItem;
+                        gp.fechaInicioEvalPrevD = fecha;
+                    }
+                    else if (etapa == Etapas.FinalD)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCronEvFinal.CurrentRow.DataBoundItem;
+                        gp.fechaInicioEvalFinD = fecha;
+                    }
+                    else if (etapa == Etapas.Calibracion)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCalibNotas.CurrentRow.DataBoundItem;
+                        gp.fechaInicioCal = fecha;
+                    }
+                    else if (etapa == Etapas.PDI)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCronPDI.CurrentRow.DataBoundItem;
+                        gp.fechaInicioPDI = fecha;
+                    }
+
+                    actualizarGP(gp);
+                    dgvCronPlanificacion.DataSource = gerenciasPeriodos;
+                    dgvCronEvPrevia.DataSource = gerenciasPeriodos;
+                    dgvCronEvFinal.DataSource = gerenciasPeriodos;
+                    dgvCronPDI.DataSource = gerenciasPeriodos;
+                    dgvCalibNotas.DataSource = gerenciasPeriodos;
                 }
 
             }
@@ -183,13 +263,38 @@ namespace SistemaEDInterfaces
                 if (form.ShowDialog() == DialogResult.OK)
                 {
                     DateTime fecha = form.FechaSeleccionada;
-                    if (etapa == Etapas.Planificacion) dgvCronPlanificacion.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
-                    if (etapa == Etapas.PreviaD) dgvCronEvPrevia.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
-                    if (etapa == Etapas.FinalD) dgvCronEvFinal.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
-                    if (etapa == Etapas.Calibracion) dgvCalibNotas.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
-                    if (etapa == Etapas.PDI) dgvCronPDI.CurrentRow.Cells["FechaFin"].Value = fecha.ToString("dd/MM/yyyy");
-                    GerenciaPeriodoWS.gerenciaPeriodo gp = (GerenciaPeriodoWS.gerenciaPeriodo)dgvCronPlanificacion.CurrentRow.DataBoundItem;
-                    //actualizarGP(gp.gerencia.idGerencia, null, fecha, etapa);
+
+                    if (etapa == Etapas.Planificacion)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCronPlanificacion.CurrentRow.DataBoundItem;
+                        gp.fechaFinPlan = fecha;
+                    }
+                    else if (etapa == Etapas.PreviaD)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCronEvPrevia.CurrentRow.DataBoundItem;
+                        gp.fechaFinEvalPrevD = fecha;
+                    }
+                    else if (etapa == Etapas.FinalD)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCronEvFinal.CurrentRow.DataBoundItem;
+                        gp.fechaFinEvalFinD = fecha;
+                    }
+                    else if (etapa == Etapas.Calibracion)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCalibNotas.CurrentRow.DataBoundItem;
+                        gp.fechaFinCal = fecha;
+                    }
+                    else if (etapa == Etapas.PDI)
+                    {
+                        gp = (PeriodoWS.gerenciaPeriodo)dgvCronPDI.CurrentRow.DataBoundItem;
+                        gp.fechaFinPDI = fecha;
+                    }
+                    actualizarGP(gp);
+                    dgvCronPlanificacion.DataSource = gerenciasPeriodos;
+                    dgvCronEvPrevia.DataSource = gerenciasPeriodos;
+                    dgvCronEvFinal.DataSource = gerenciasPeriodos;
+                    dgvCronPDI.DataSource = gerenciasPeriodos;
+                    dgvCalibNotas.DataSource = gerenciasPeriodos;
                 }
             }
         }

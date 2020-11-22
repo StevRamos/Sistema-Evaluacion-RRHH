@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblRegistrarObjetivo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtDescripcion = new System.Windows.Forms.RichTextBox();
             this.btnRegresarAddCom = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtPeso = new System.Windows.Forms.TextBox();
+            this.txtPeriodo = new System.Windows.Forms.TextBox();
+            this.cmbPuestos = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(304, 108);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 20);
-            this.textBox2.TabIndex = 14;
+            this.txtNombre.Location = new System.Drawing.Point(304, 108);
+            this.txtNombre.MaxLength = 50;
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(193, 20);
+            this.txtNombre.TabIndex = 14;
             // 
             // label1
             // 
@@ -106,16 +107,16 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // richTextBox1
+            // txtDescripcion
             // 
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(22, 288);
-            this.richTextBox1.MaxLength = 200;
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(460, 165);
-            this.richTextBox1.TabIndex = 15;
-            this.richTextBox1.Text = "";
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(22, 288);
+            this.txtDescripcion.MaxLength = 200;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(460, 165);
+            this.txtDescripcion.TabIndex = 15;
+            this.txtDescripcion.Text = "";
             // 
             // btnRegresarAddCom
             // 
@@ -161,51 +162,52 @@
             this.label7.TabIndex = 21;
             this.label7.Text = "Periodo:";
             // 
-            // textBox4
+            // txtPeso
             // 
-            this.textBox4.Location = new System.Drawing.Point(753, 180);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 20);
-            this.textBox4.TabIndex = 23;
+            this.txtPeso.Location = new System.Drawing.Point(753, 180);
+            this.txtPeso.Name = "txtPeso";
+            this.txtPeso.Size = new System.Drawing.Size(193, 20);
+            this.txtPeso.TabIndex = 23;
             // 
-            // textBox5
+            // txtPeriodo
             // 
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(304, 176);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(193, 20);
-            this.textBox5.TabIndex = 24;
+            this.txtPeriodo.Enabled = false;
+            this.txtPeriodo.Location = new System.Drawing.Point(304, 176);
+            this.txtPeriodo.Name = "txtPeriodo";
+            this.txtPeriodo.Size = new System.Drawing.Size(193, 20);
+            this.txtPeriodo.TabIndex = 24;
             // 
-            // comboBox1
+            // cmbPuestos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(753, 111);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(193, 21);
-            this.comboBox1.TabIndex = 25;
+            this.cmbPuestos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPuestos.FormattingEnabled = true;
+            this.cmbPuestos.Location = new System.Drawing.Point(753, 111);
+            this.cmbPuestos.Name = "cmbPuestos";
+            this.cmbPuestos.Size = new System.Drawing.Size(193, 21);
+            this.cmbPuestos.TabIndex = 25;
             // 
-            // frmAdmGestSubComAdd
+            // frmAdmGestComAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1058, 579);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.cmbPuestos);
+            this.Controls.Add(this.txtPeriodo);
+            this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnRegresarAddCom);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblRegistrarObjetivo);
             this.DoubleBuffered = true;
-            this.Name = "frmAdmGestSubComAdd";
+            this.Name = "frmAdmGestComAdd";
             this.Text = "frmAdmGestSubComAdd";
             this.Load += new System.EventHandler(this.frmAdmGestSubComAdd_Load);
             this.ResumeLayout(false);
@@ -215,19 +217,19 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblRegistrarObjetivo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtDescripcion;
         private System.Windows.Forms.Button btnRegresarAddCom;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtPeso;
+        private System.Windows.Forms.TextBox txtPeriodo;
+        private System.Windows.Forms.ComboBox cmbPuestos;
     }
 }

@@ -12,9 +12,14 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestSubComBuscarCom : Form
     {
+        //CriterioWS.CriterioWSClient daoCriterio; 
+        //CriterioWS.criterio competencia;
+        //public CriterioWS.criterio Competencia { get => competencia; set => competencia = value; }
         public frmAdmGestSubComBuscarCom()
         {
             InitializeComponent();
+            //daoCriterio = new CriterioWS.CriterioWSClient();
+            dgvCompetencias.AutoGenerateColumns = false; 
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -22,14 +27,15 @@ namespace SistemaEDInterfaces
 
         }
 
-        private void btnObtCodCom_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("El proceso fue realizado con éxito");
-            this.Close();
+            //dgvCompetencias.DataSource = daoCriterio.listarCriterios((int)TipoCriterio.Competencia, txtNombreComp.Text); 
         }
 
-        private void btnRegresarAddCom_Click(object sender, EventArgs e)
+        private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            //competencia = (CriterioWS.criterio)dgvCompetencias.CurrentRow.DataBoundItem;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 

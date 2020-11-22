@@ -17,13 +17,13 @@ namespace SistemaEDInterfaces
             InitializeComponent();
         }
 
-        private void btnObtenerPotInAddSubpot_Click(object sender, EventArgs e)
+        private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Proceso fue realizado con éxito");
             this.Close();
         }
 
-        private void btnRegresarBuscPotInAddSubpot_Click(object sender, EventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
             this.Close();
         }

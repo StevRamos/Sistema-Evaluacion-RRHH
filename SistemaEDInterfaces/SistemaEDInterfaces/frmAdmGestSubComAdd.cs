@@ -12,9 +12,14 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestSubComAdd : Form
     {
+        //CriterioWS.CriterioWSClient daoCriterio;
+        //CriterioWS.criterio competencia;
+
+        //public CriterioWS.criterio Competencia { get => competencia; set => competencia = value; }
         public frmAdmGestSubComAdd()
         {
             InitializeComponent();
+            //daoCriterio = new CriterioWS.CriterioWSClient();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -37,6 +42,11 @@ namespace SistemaEDInterfaces
         {
             Form formulario = new frmAdmGestSubComBuscarCom();
             formulario.Show();
+            if(formulario.DialogResult == DialogResult.OK)
+            {
+                //competencia = formulario.Competencia;
+                //txtComp.Text = competencia.nombre; 
+            }
         }
     }
 }

@@ -34,39 +34,40 @@
             this.txtGestNombrePot = new System.Windows.Forms.TextBox();
             this.lblBuscarNomPot = new System.Windows.Forms.Label();
             this.dgvGestPot = new System.Windows.Forms.DataGridView();
-            this.lblGestionarPotencial = new System.Windows.Forms.Label();
-            this.btnCargarMasivaPot = new System.Windows.Forms.Button();
-            this.btnCrearPotencial = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.txtBuscarPerioPot = new System.Windows.Forms.Label();
-            this.lblCargoPot = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblGestionarPotencial = new System.Windows.Forms.Label();
+            this.btnCargarMasivaPot = new System.Windows.Forms.Button();
+            this.btnCrearPotencial = new System.Windows.Forms.Button();
+            this.cmbPeriodo = new System.Windows.Forms.ComboBox();
+            this.cmbPuestos = new System.Windows.Forms.ComboBox();
+            this.txtBuscarPerioPot = new System.Windows.Forms.Label();
+            this.lblCargoPot = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestPot)).BeginInit();
             this.SuspendLayout();
             // 
             // txtGestNombrePot
             // 
-            this.txtGestNombrePot.Location = new System.Drawing.Point(1295, 165);
-            this.txtGestNombrePot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGestNombrePot.Location = new System.Drawing.Point(971, 134);
+            this.txtGestNombrePot.Margin = new System.Windows.Forms.Padding(2);
             this.txtGestNombrePot.Name = "txtGestNombrePot";
-            this.txtGestNombrePot.Size = new System.Drawing.Size(199, 22);
+            this.txtGestNombrePot.Size = new System.Drawing.Size(150, 20);
             this.txtGestNombrePot.TabIndex = 17;
             // 
             // lblBuscarNomPot
             // 
             this.lblBuscarNomPot.AutoSize = true;
             this.lblBuscarNomPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarNomPot.Location = new System.Drawing.Point(1293, 130);
+            this.lblBuscarNomPot.Location = new System.Drawing.Point(970, 106);
+            this.lblBuscarNomPot.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscarNomPot.Name = "lblBuscarNomPot";
-            this.lblBuscarNomPot.Size = new System.Drawing.Size(167, 19);
+            this.lblBuscarNomPot.Size = new System.Drawing.Size(139, 17);
             this.lblBuscarNomPot.TabIndex = 16;
             this.lblBuscarNomPot.Text = "Nombre Potencial :";
             // 
@@ -74,7 +75,6 @@
             // 
             this.dgvGestPot.AllowUserToAddRows = false;
             this.dgvGestPot.AllowUserToDeleteRows = false;
-            this.dgvGestPot.AllowUserToResizeColumns = false;
             this.dgvGestPot.AllowUserToResizeRows = false;
             this.dgvGestPot.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvGestPot.BackgroundColor = System.Drawing.Color.White;
@@ -90,15 +90,15 @@
             this.dgvGestPot.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGestPot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGestPot.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Código,
+            this.Id,
             this.Nombre,
             this.Descripción,
             this.Cargo,
             this.Peso,
             this.Periodo});
             this.dgvGestPot.EnableHeadersVisualStyles = false;
-            this.dgvGestPot.Location = new System.Drawing.Point(32, 252);
-            this.dgvGestPot.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvGestPot.Location = new System.Drawing.Point(24, 205);
+            this.dgvGestPot.MultiSelect = false;
             this.dgvGestPot.Name = "dgvGestPot";
             this.dgvGestPot.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -112,129 +112,21 @@
             this.dgvGestPot.RowHeadersVisible = false;
             this.dgvGestPot.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvGestPot.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGestPot.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestPot.Size = new System.Drawing.Size(1431, 591);
+            this.dgvGestPot.Size = new System.Drawing.Size(1073, 480);
             this.dgvGestPot.TabIndex = 15;
             // 
-            // lblGestionarPotencial
+            // Id
             // 
-            this.lblGestionarPotencial.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionarPotencial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblGestionarPotencial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblGestionarPotencial.Location = new System.Drawing.Point(16, 11);
-            this.lblGestionarPotencial.Name = "lblGestionarPotencial";
-            this.lblGestionarPotencial.Size = new System.Drawing.Size(943, 97);
-            this.lblGestionarPotencial.TabIndex = 14;
-            this.lblGestionarPotencial.Text = "Gestionar Potenciales";
-            this.lblGestionarPotencial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnCargarMasivaPot
-            // 
-            this.btnCargarMasivaPot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnCargarMasivaPot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarMasivaPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarMasivaPot.ForeColor = System.Drawing.Color.White;
-            this.btnCargarMasivaPot.Location = new System.Drawing.Point(391, 158);
-            this.btnCargarMasivaPot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCargarMasivaPot.Name = "btnCargarMasivaPot";
-            this.btnCargarMasivaPot.Size = new System.Drawing.Size(251, 32);
-            this.btnCargarMasivaPot.TabIndex = 13;
-            this.btnCargarMasivaPot.Text = " Cargar Masivamente";
-            this.btnCargarMasivaPot.UseVisualStyleBackColor = false;
-            this.btnCargarMasivaPot.Click += new System.EventHandler(this.btnCargarMasivaPot_Click);
-            // 
-            // btnCrearPotencial
-            // 
-            this.btnCrearPotencial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnCrearPotencial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearPotencial.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearPotencial.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCrearPotencial.Location = new System.Drawing.Point(32, 158);
-            this.btnCrearPotencial.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCrearPotencial.Name = "btnCrearPotencial";
-            this.btnCrearPotencial.Size = new System.Drawing.Size(251, 32);
-            this.btnCrearPotencial.TabIndex = 12;
-            this.btnCrearPotencial.Text = " Crear Potencial +";
-            this.btnCrearPotencial.UseVisualStyleBackColor = false;
-            this.btnCrearPotencial.Click += new System.EventHandler(this.btnCrearPotencial_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1037, 164);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(219, 24);
-            this.comboBox1.TabIndex = 18;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(776, 164);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(208, 24);
-            this.comboBox2.TabIndex = 19;
-            // 
-            // txtBuscarPerioPot
-            // 
-            this.txtBuscarPerioPot.AutoSize = true;
-            this.txtBuscarPerioPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarPerioPot.Location = new System.Drawing.Point(1033, 130);
-            this.txtBuscarPerioPot.Name = "txtBuscarPerioPot";
-            this.txtBuscarPerioPot.Size = new System.Drawing.Size(77, 19);
-            this.txtBuscarPerioPot.TabIndex = 20;
-            this.txtBuscarPerioPot.Text = "Periodo:";
-            this.txtBuscarPerioPot.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblCargoPot
-            // 
-            this.lblCargoPot.AutoSize = true;
-            this.lblCargoPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCargoPot.Location = new System.Drawing.Point(772, 130);
-            this.lblCargoPot.Name = "lblCargoPot";
-            this.lblCargoPot.Size = new System.Drawing.Size(60, 19);
-            this.lblCargoPot.TabIndex = 21;
-            this.lblCargoPot.Text = "Cargo";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(32, 854);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(251, 32);
-            this.button1.TabIndex = 22;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1294, 202);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 32);
-            this.button2.TabIndex = 50;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = false;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código";
-            this.Código.MinimumWidth = 6;
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Width = 125;
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 125;
             // 
             // Nombre
             // 
@@ -276,25 +168,136 @@
             this.Periodo.ReadOnly = true;
             this.Periodo.Width = 125;
             // 
+            // lblGestionarPotencial
+            // 
+            this.lblGestionarPotencial.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionarPotencial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblGestionarPotencial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGestionarPotencial.Location = new System.Drawing.Point(12, 9);
+            this.lblGestionarPotencial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGestionarPotencial.Name = "lblGestionarPotencial";
+            this.lblGestionarPotencial.Size = new System.Drawing.Size(707, 79);
+            this.lblGestionarPotencial.TabIndex = 14;
+            this.lblGestionarPotencial.Text = "Gestionar Potenciales";
+            this.lblGestionarPotencial.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnCargarMasivaPot
+            // 
+            this.btnCargarMasivaPot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnCargarMasivaPot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarMasivaPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarMasivaPot.ForeColor = System.Drawing.Color.White;
+            this.btnCargarMasivaPot.Location = new System.Drawing.Point(293, 128);
+            this.btnCargarMasivaPot.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCargarMasivaPot.Name = "btnCargarMasivaPot";
+            this.btnCargarMasivaPot.Size = new System.Drawing.Size(188, 26);
+            this.btnCargarMasivaPot.TabIndex = 13;
+            this.btnCargarMasivaPot.Text = " Cargar Masivamente";
+            this.btnCargarMasivaPot.UseVisualStyleBackColor = false;
+            this.btnCargarMasivaPot.Click += new System.EventHandler(this.btnCargarMasivaPot_Click);
+            // 
+            // btnCrearPotencial
+            // 
+            this.btnCrearPotencial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnCrearPotencial.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearPotencial.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearPotencial.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCrearPotencial.Location = new System.Drawing.Point(24, 128);
+            this.btnCrearPotencial.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrearPotencial.Name = "btnCrearPotencial";
+            this.btnCrearPotencial.Size = new System.Drawing.Size(188, 26);
+            this.btnCrearPotencial.TabIndex = 12;
+            this.btnCrearPotencial.Text = " Crear Potencial +";
+            this.btnCrearPotencial.UseVisualStyleBackColor = false;
+            this.btnCrearPotencial.Click += new System.EventHandler(this.btnCrearPotencial_Click);
+            // 
+            // cmbPeriodo
+            // 
+            this.cmbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPeriodo.FormattingEnabled = true;
+            this.cmbPeriodo.Location = new System.Drawing.Point(778, 133);
+            this.cmbPeriodo.Name = "cmbPeriodo";
+            this.cmbPeriodo.Size = new System.Drawing.Size(165, 21);
+            this.cmbPeriodo.TabIndex = 18;
+            // 
+            // cmbPuestos
+            // 
+            this.cmbPuestos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPuestos.FormattingEnabled = true;
+            this.cmbPuestos.Location = new System.Drawing.Point(582, 133);
+            this.cmbPuestos.Name = "cmbPuestos";
+            this.cmbPuestos.Size = new System.Drawing.Size(157, 21);
+            this.cmbPuestos.TabIndex = 19;
+            // 
+            // txtBuscarPerioPot
+            // 
+            this.txtBuscarPerioPot.AutoSize = true;
+            this.txtBuscarPerioPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscarPerioPot.Location = new System.Drawing.Point(775, 106);
+            this.txtBuscarPerioPot.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.txtBuscarPerioPot.Name = "txtBuscarPerioPot";
+            this.txtBuscarPerioPot.Size = new System.Drawing.Size(64, 17);
+            this.txtBuscarPerioPot.TabIndex = 20;
+            this.txtBuscarPerioPot.Text = "Periodo:";
+            this.txtBuscarPerioPot.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // lblCargoPot
+            // 
+            this.lblCargoPot.AutoSize = true;
+            this.lblCargoPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCargoPot.Location = new System.Drawing.Point(579, 106);
+            this.lblCargoPot.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCargoPot.Name = "lblCargoPot";
+            this.lblCargoPot.Size = new System.Drawing.Size(50, 17);
+            this.lblCargoPot.TabIndex = 21;
+            this.lblCargoPot.Text = "Cargo";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(24, 694);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(188, 26);
+            this.btnEliminar.TabIndex = 22;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(970, 164);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(150, 26);
+            this.btnBuscar.TabIndex = 50;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            // 
             // frmAdmGestPot
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1544, 906);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1158, 736);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblCargoPot);
             this.Controls.Add(this.txtBuscarPerioPot);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbPuestos);
+            this.Controls.Add(this.cmbPeriodo);
             this.Controls.Add(this.txtGestNombrePot);
             this.Controls.Add(this.lblBuscarNomPot);
             this.Controls.Add(this.dgvGestPot);
             this.Controls.Add(this.lblGestionarPotencial);
             this.Controls.Add(this.btnCargarMasivaPot);
             this.Controls.Add(this.btnCrearPotencial);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAdmGestPot";
             this.Text = "frmAdmGestPot";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestPot)).EndInit();
@@ -311,13 +314,13 @@
         private System.Windows.Forms.Label lblGestionarPotencial;
         private System.Windows.Forms.Button btnCargarMasivaPot;
         private System.Windows.Forms.Button btnCrearPotencial;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbPeriodo;
+        private System.Windows.Forms.ComboBox cmbPuestos;
         private System.Windows.Forms.Label txtBuscarPerioPot;
         private System.Windows.Forms.Label lblCargoPot;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Código;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;

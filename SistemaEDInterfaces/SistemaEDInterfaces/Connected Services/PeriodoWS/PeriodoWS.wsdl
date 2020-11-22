@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/PeriodoWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+  <message name="obtenerPeriodo">
+    <part name="parameters" element="tns:obtenerPeriodo" />
+  </message>
+  <message name="obtenerPeriodoResponse">
+    <part name="parameters" element="tns:obtenerPeriodoResponse" />
+  </message>
   <message name="listarPeriodos">
     <part name="parameters" element="tns:listarPeriodos" />
   </message>
@@ -17,13 +23,11 @@
   <message name="insertarPeriodoResponse">
     <part name="parameters" element="tns:insertarPeriodoResponse" />
   </message>
-  <message name="obtenerPeriodo">
-    <part name="parameters" element="tns:obtenerPeriodo" />
-  </message>
-  <message name="obtenerPeriodoResponse">
-    <part name="parameters" element="tns:obtenerPeriodoResponse" />
-  </message>
   <portType name="PeriodoWS">
+    <operation name="obtenerPeriodo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoRequest" message="tns:obtenerPeriodo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoResponse" message="tns:obtenerPeriodoResponse" />
+    </operation>
     <operation name="listarPeriodos">
       <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosRequest" message="tns:listarPeriodos" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosResponse" message="tns:listarPeriodosResponse" />
@@ -32,13 +36,18 @@
       <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/insertarPeriodoRequest" message="tns:insertarPeriodo" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/insertarPeriodoResponse" message="tns:insertarPeriodoResponse" />
     </operation>
-    <operation name="obtenerPeriodo">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoRequest" message="tns:obtenerPeriodo" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoResponse" message="tns:obtenerPeriodoResponse" />
-    </operation>
   </portType>
   <binding name="PeriodoWSPortBinding" type="tns:PeriodoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="obtenerPeriodo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarPeriodos">
       <soap:operation soapAction="" />
       <input>
@@ -49,15 +58,6 @@
       </output>
     </operation>
     <operation name="insertarPeriodo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="obtenerPeriodo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

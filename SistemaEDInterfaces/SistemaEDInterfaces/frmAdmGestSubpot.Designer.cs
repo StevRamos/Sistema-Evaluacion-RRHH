@@ -34,15 +34,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBuscarPerioCom = new System.Windows.Forms.Label();
             this.lblBuscarNomPot = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbPuestos = new System.Windows.Forms.ComboBox();
+            this.cmbPeriodos = new System.Windows.Forms.ComboBox();
             this.txtGestNombrePot = new System.Windows.Forms.TextBox();
             this.dgvGestCompetencias = new System.Windows.Forms.DataGridView();
-            this.lblGestionarComp = new System.Windows.Forms.Label();
-            this.btnCargarMasivaSubPot = new System.Windows.Forms.Button();
-            this.btnCrearCompetencia = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.Cod_Subcompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +45,11 @@
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblGestionarComp = new System.Windows.Forms.Label();
+            this.btnCargarMasivaSubPot = new System.Windows.Forms.Button();
+            this.btnCrearCompetencia = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestCompetencias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,9 +58,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(709, 127);
+            this.label1.Location = new System.Drawing.Point(532, 103);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 19);
+            this.label1.Size = new System.Drawing.Size(58, 17);
             this.label1.TabIndex = 48;
             this.label1.Text = "Cargo :";
             // 
@@ -69,9 +70,10 @@
             this.txtBuscarPerioCom.AutoSize = true;
             this.txtBuscarPerioCom.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarPerioCom.ForeColor = System.Drawing.Color.Black;
-            this.txtBuscarPerioCom.Location = new System.Drawing.Point(971, 127);
+            this.txtBuscarPerioCom.Location = new System.Drawing.Point(728, 103);
+            this.txtBuscarPerioCom.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.txtBuscarPerioCom.Name = "txtBuscarPerioCom";
-            this.txtBuscarPerioCom.Size = new System.Drawing.Size(82, 19);
+            this.txtBuscarPerioCom.Size = new System.Drawing.Size(68, 17);
             this.txtBuscarPerioCom.TabIndex = 47;
             this.txtBuscarPerioCom.Text = "Periodo :";
             // 
@@ -80,43 +82,43 @@
             this.lblBuscarNomPot.AutoSize = true;
             this.lblBuscarNomPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscarNomPot.ForeColor = System.Drawing.Color.Black;
-            this.lblBuscarNomPot.Location = new System.Drawing.Point(1228, 127);
+            this.lblBuscarNomPot.Location = new System.Drawing.Point(921, 103);
+            this.lblBuscarNomPot.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscarNomPot.Name = "lblBuscarNomPot";
-            this.lblBuscarNomPot.Size = new System.Drawing.Size(198, 19);
+            this.lblBuscarNomPot.Size = new System.Drawing.Size(164, 17);
             this.lblBuscarNomPot.TabIndex = 46;
             this.lblBuscarNomPot.Text = "Nombre Subpotencial :";
             // 
-            // comboBox2
+            // cmbPuestos
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(713, 165);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(208, 24);
-            this.comboBox2.TabIndex = 45;
+            this.cmbPuestos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPuestos.FormattingEnabled = true;
+            this.cmbPuestos.Location = new System.Drawing.Point(535, 134);
+            this.cmbPuestos.Name = "cmbPuestos";
+            this.cmbPuestos.Size = new System.Drawing.Size(157, 21);
+            this.cmbPuestos.TabIndex = 45;
             // 
-            // comboBox1
+            // cmbPeriodos
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(975, 165);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(219, 24);
-            this.comboBox1.TabIndex = 44;
+            this.cmbPeriodos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPeriodos.FormattingEnabled = true;
+            this.cmbPeriodos.Location = new System.Drawing.Point(731, 134);
+            this.cmbPeriodos.Name = "cmbPeriodos";
+            this.cmbPeriodos.Size = new System.Drawing.Size(165, 21);
+            this.cmbPeriodos.TabIndex = 44;
             // 
             // txtGestNombrePot
             // 
-            this.txtGestNombrePot.Location = new System.Drawing.Point(1232, 166);
-            this.txtGestNombrePot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGestNombrePot.Location = new System.Drawing.Point(924, 135);
+            this.txtGestNombrePot.Margin = new System.Windows.Forms.Padding(2);
             this.txtGestNombrePot.Name = "txtGestNombrePot";
-            this.txtGestNombrePot.Size = new System.Drawing.Size(200, 22);
+            this.txtGestNombrePot.Size = new System.Drawing.Size(151, 20);
             this.txtGestNombrePot.TabIndex = 43;
             // 
             // dgvGestCompetencias
             // 
             this.dgvGestCompetencias.AllowUserToAddRows = false;
             this.dgvGestCompetencias.AllowUserToDeleteRows = false;
-            this.dgvGestCompetencias.AllowUserToResizeColumns = false;
             this.dgvGestCompetencias.AllowUserToResizeRows = false;
             this.dgvGestCompetencias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvGestCompetencias.BackgroundColor = System.Drawing.Color.White;
@@ -140,8 +142,8 @@
             this.Peso,
             this.Periodo});
             this.dgvGestCompetencias.EnableHeadersVisualStyles = false;
-            this.dgvGestCompetencias.Location = new System.Drawing.Point(28, 251);
-            this.dgvGestCompetencias.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvGestCompetencias.Location = new System.Drawing.Point(21, 204);
+            this.dgvGestCompetencias.MultiSelect = false;
             this.dgvGestCompetencias.Name = "dgvGestCompetencias";
             this.dgvGestCompetencias.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -155,82 +157,13 @@
             this.dgvGestCompetencias.RowHeadersVisible = false;
             this.dgvGestCompetencias.RowHeadersWidth = 51;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvGestCompetencias.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGestCompetencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestCompetencias.Size = new System.Drawing.Size(1431, 591);
+            this.dgvGestCompetencias.Size = new System.Drawing.Size(1073, 480);
             this.dgvGestCompetencias.TabIndex = 42;
-            // 
-            // lblGestionarComp
-            // 
-            this.lblGestionarComp.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionarComp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblGestionarComp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblGestionarComp.Location = new System.Drawing.Point(16, 11);
-            this.lblGestionarComp.Name = "lblGestionarComp";
-            this.lblGestionarComp.Size = new System.Drawing.Size(935, 97);
-            this.lblGestionarComp.TabIndex = 41;
-            this.lblGestionarComp.Text = "Gestionar Subpotenciales";
-            this.lblGestionarComp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnCargarMasivaSubPot
-            // 
-            this.btnCargarMasivaSubPot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnCargarMasivaSubPot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCargarMasivaSubPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargarMasivaSubPot.ForeColor = System.Drawing.Color.White;
-            this.btnCargarMasivaSubPot.Location = new System.Drawing.Point(361, 159);
-            this.btnCargarMasivaSubPot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCargarMasivaSubPot.Name = "btnCargarMasivaSubPot";
-            this.btnCargarMasivaSubPot.Size = new System.Drawing.Size(271, 32);
-            this.btnCargarMasivaSubPot.TabIndex = 40;
-            this.btnCargarMasivaSubPot.Text = " Cargar Masivamente";
-            this.btnCargarMasivaSubPot.UseVisualStyleBackColor = false;
-            this.btnCargarMasivaSubPot.Click += new System.EventHandler(this.btnCargarMasivaSubPot_Click);
-            // 
-            // btnCrearCompetencia
-            // 
-            this.btnCrearCompetencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnCrearCompetencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCrearCompetencia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCrearCompetencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCrearCompetencia.Location = new System.Drawing.Point(28, 159);
-            this.btnCrearCompetencia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnCrearCompetencia.Name = "btnCrearCompetencia";
-            this.btnCrearCompetencia.Size = new System.Drawing.Size(272, 32);
-            this.btnCrearCompetencia.TabIndex = 39;
-            this.btnCrearCompetencia.Text = " Crear Subpotencial +";
-            this.btnCrearCompetencia.UseVisualStyleBackColor = false;
-            this.btnCrearCompetencia.Click += new System.EventHandler(this.btnCrearCompetencia_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(28, 854);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(272, 32);
-            this.button1.TabIndex = 50;
-            this.button1.Text = "Eliminar";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(1232, 205);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(200, 32);
-            this.button2.TabIndex = 51;
-            this.button2.Text = "Buscar";
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // Cod_Subcompetencia
             // 
@@ -288,25 +221,95 @@
             this.Periodo.ReadOnly = true;
             this.Periodo.Width = 125;
             // 
+            // lblGestionarComp
+            // 
+            this.lblGestionarComp.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionarComp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblGestionarComp.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblGestionarComp.Location = new System.Drawing.Point(12, 9);
+            this.lblGestionarComp.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGestionarComp.Name = "lblGestionarComp";
+            this.lblGestionarComp.Size = new System.Drawing.Size(701, 79);
+            this.lblGestionarComp.TabIndex = 41;
+            this.lblGestionarComp.Text = "Gestionar Subpotenciales";
+            this.lblGestionarComp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnCargarMasivaSubPot
+            // 
+            this.btnCargarMasivaSubPot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnCargarMasivaSubPot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarMasivaSubPot.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarMasivaSubPot.ForeColor = System.Drawing.Color.White;
+            this.btnCargarMasivaSubPot.Location = new System.Drawing.Point(271, 129);
+            this.btnCargarMasivaSubPot.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCargarMasivaSubPot.Name = "btnCargarMasivaSubPot";
+            this.btnCargarMasivaSubPot.Size = new System.Drawing.Size(203, 26);
+            this.btnCargarMasivaSubPot.TabIndex = 40;
+            this.btnCargarMasivaSubPot.Text = " Cargar Masivamente";
+            this.btnCargarMasivaSubPot.UseVisualStyleBackColor = false;
+            this.btnCargarMasivaSubPot.Click += new System.EventHandler(this.btnCargarMasivaSubPot_Click);
+            // 
+            // btnCrearCompetencia
+            // 
+            this.btnCrearCompetencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnCrearCompetencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCrearCompetencia.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCrearCompetencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnCrearCompetencia.Location = new System.Drawing.Point(21, 129);
+            this.btnCrearCompetencia.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCrearCompetencia.Name = "btnCrearCompetencia";
+            this.btnCrearCompetencia.Size = new System.Drawing.Size(204, 26);
+            this.btnCrearCompetencia.TabIndex = 39;
+            this.btnCrearCompetencia.Text = " Crear Subpotencial +";
+            this.btnCrearCompetencia.UseVisualStyleBackColor = false;
+            this.btnCrearCompetencia.Click += new System.EventHandler(this.btnCrearCompetencia_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(21, 694);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(204, 26);
+            this.button1.TabIndex = 50;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(924, 167);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(150, 26);
+            this.button2.TabIndex = 51;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
             // frmAdmGestSubpot
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1476, 929);
+            this.ClientSize = new System.Drawing.Size(1107, 755);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtBuscarPerioCom);
             this.Controls.Add(this.lblBuscarNomPot);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbPuestos);
+            this.Controls.Add(this.cmbPeriodos);
             this.Controls.Add(this.txtGestNombrePot);
             this.Controls.Add(this.dgvGestCompetencias);
             this.Controls.Add(this.lblGestionarComp);
             this.Controls.Add(this.btnCargarMasivaSubPot);
             this.Controls.Add(this.btnCrearCompetencia);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmAdmGestSubpot";
             this.Text = "frmAdmGestSubpot";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestCompetencias)).EndInit();
@@ -320,8 +323,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label txtBuscarPerioCom;
         private System.Windows.Forms.Label lblBuscarNomPot;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbPuestos;
+        private System.Windows.Forms.ComboBox cmbPeriodos;
         private System.Windows.Forms.TextBox txtGestNombrePot;
         private System.Windows.Forms.DataGridView dgvGestCompetencias;
         private System.Windows.Forms.Label lblGestionarComp;

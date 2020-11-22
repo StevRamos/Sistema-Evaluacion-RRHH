@@ -12,18 +12,26 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestCron : Form
     {
-        private PeriodoWS.PeriodoWSClient daoPeriodo; 
+        private PeriodoWS.PeriodoWSClient daoPeriodo;
         public frmAdmGestCron()
         {
             InitializeComponent();
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
             dgvPeriodos.AutoGenerateColumns = false;
-            dgvPeriodos.DataSource = daoPeriodo.listarPeriodos(); 
-            
+            dgvPeriodos.DataSource = daoPeriodo.listarPeriodos();
+
         }
 
         private void btnVerDetalle_Click(object sender, EventArgs e)
         {
+            if (dgvPeriodos.CurrentCell == null)
+            {
+                MessageBox.Show("Debe seleccionar un periodo.",
+                               "Mensaje de error",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
             frmAdmGestCronVerDetalle form = new frmAdmGestCronVerDetalle();
             form.Periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
             Global.formPrincipal.abrirFormularioHijo(true, form);
@@ -31,19 +39,41 @@ namespace SistemaEDInterfaces
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            var result = MessageBox.Show("Se eliminaran todos los datos relacionados al periodo seleccionado.",
+
+            if (dgvPeriodos.CurrentCell == null)
+            {
+                MessageBox.Show("Debe seleccionar un periodo.",
+                               "Mensaje de error",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+
+            var result = MessageBox.Show("Se eliminara el periodo seleccionado.",
                                             "Mensaje de advertencia",
                                             MessageBoxButtons.OKCancel,
                                             MessageBoxIcon.Warning);
             if (result == DialogResult.OK)
             {
-                foreach (DataGridViewRow row in dgvPeriodos.SelectedRows)
-                {
 
-                    PeriodoWS.periodo periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
-                    //daoPeriodo.eliminarPeriodo(periodo);
-                    dgvPeriodos.Rows.RemoveAt(row.Index);
+
+                PeriodoWS.periodo periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
+                /*
+                if (daoPeriodo.eliminarPeriodo(periodo) != 0)
+                {
+                    MessageBox.Show("Se elimino el periodo.",
+                               "Mensaje de información",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Information);
                 }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error, intentelo de nuevo.",
+                               "Mensaje de error",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                }
+                */
 
             }
         }

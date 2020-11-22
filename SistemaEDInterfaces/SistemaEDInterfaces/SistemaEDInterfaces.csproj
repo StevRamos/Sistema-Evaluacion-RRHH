@@ -92,6 +92,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\PesoCriterioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\PuestoTrabajoWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -488,6 +493,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TipoCriterio.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -782,6 +788,25 @@
     <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.obtenerPeriodoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PesoCriterioWS\PesoCriterioWS.wsdl" />
+    <None Include="Connected Services\PesoCriterioWS\PesoCriterioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\SistemaEDInterfaces.PesoCriterioWS.actualizarPesoCriterioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\SistemaEDInterfaces.PesoCriterioWS.eliminarPesoCriterioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\SistemaEDInterfaces.PesoCriterioWS.insertarPesoCriterioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\SistemaEDInterfaces.PesoCriterioWS.listarPesosCriteriosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\SistemaEDInterfaces.PesoCriterioWS.pesoCriterio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PuestoTrabajoWS\configuration91.svcinfo" />
     <None Include="Connected Services\PuestoTrabajoWS\configuration.svcinfo" />
     <None Include="Connected Services\PuestoTrabajoWS\Reference.svcmap">
@@ -809,6 +834,12 @@
     <None Include="Connected Services\EvaluacionDesempenhoWS\configuration91.svcinfo" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\configuration.svcinfo" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
+    <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -888,6 +919,7 @@
     <WCFMetadataStorage Include="Connected Services\GerenciaWS\" />
     <WCFMetadataStorage Include="Connected Services\ObjetivoWS\" />
     <WCFMetadataStorage Include="Connected Services\PeriodoWS\" />
+    <WCFMetadataStorage Include="Connected Services\PesoCriterioWS\" />
     <WCFMetadataStorage Include="Connected Services\PuestoTrabajoWS\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
