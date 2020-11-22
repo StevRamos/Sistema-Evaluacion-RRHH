@@ -56,9 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BtnColaborador.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
+    <Compile Include="BtnColaborador.cs" />
     <Compile Include="BtnColaborador.Designer.cs">
       <DependentUpon>BtnColaborador.cs</DependentUpon>
     </Compile>
@@ -474,16 +472,13 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
-<<<<<<< HEAD
+    <Compile Include="Mensaje.cs" />
     <Compile Include="NineBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="NineBox.Designer.cs">
       <DependentUpon>NineBox.cs</DependentUpon>
     </Compile>
-=======
-    <Compile Include="Mensaje.cs" />
->>>>>>> c88ae687960904dbfb6aa17cd08456ad2c1d5ba9
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -794,6 +789,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\EvaluacionDesempenhoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EvaluacionDesempenhoWS\configuration.svcinfo" />
+    <None Include="Connected Services\EvaluacionDesempenhoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
@@ -803,12 +804,6 @@
     <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\EvaluacionDesempenhoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\EvaluacionDesempenhoWS\configuration.svcinfo" />
-    <None Include="Connected Services\EvaluacionDesempenhoWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

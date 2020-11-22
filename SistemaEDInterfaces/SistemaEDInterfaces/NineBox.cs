@@ -12,7 +12,6 @@ namespace SistemaEDInterfaces
 {
     public partial class NineBox : UserControl
     {
-
         private BtnColaborador colaboradorSeleccionado;
         private BindingList<BtnColaborador> colaboradores;
 
@@ -135,5 +134,6 @@ namespace SistemaEDInterfaces
                 colaboradores.Remove(btn);
             }
         }
+
     }
 }
