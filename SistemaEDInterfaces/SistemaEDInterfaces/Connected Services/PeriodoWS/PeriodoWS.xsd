@@ -67,6 +67,7 @@
       <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
       <xs:element name="idColaborador" type="xs:int" />
       <xs:element minOccurs="0" name="jefe" type="tns:colaborador" />
+      <xs:element name="nivelAcceso" type="xs:int" />
       <xs:element minOccurs="0" name="nombres" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="objetivos" nillable="true" type="tns:objetivo" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
@@ -144,8 +145,16 @@
   <xs:complexType name="pesoCriterio">
     <xs:sequence>
       <xs:element minOccurs="0" name="criterio" type="tns:criterio" />
+      <xs:element minOccurs="0" name="criterioPadre" type="tns:criterio" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idCriterio" type="xs:int" />
+      <xs:element name="idPeriodo" type="xs:int" />
       <xs:element name="idPesoCriterio" type="xs:int" />
+      <xs:element name="idPuestoTrabajo" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrePeriodo" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrePuestoTrabajo" type="xs:string" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
       <xs:element name="peso" type="xs:double" />
       <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />

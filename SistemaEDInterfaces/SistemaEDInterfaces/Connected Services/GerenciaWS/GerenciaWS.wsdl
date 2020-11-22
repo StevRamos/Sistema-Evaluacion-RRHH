@@ -5,12 +5,6 @@
       <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/GerenciaWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="insertarGerencia">
-    <part name="parameters" element="tns:insertarGerencia" />
-  </message>
-  <message name="insertarGerenciaResponse">
-    <part name="parameters" element="tns:insertarGerenciaResponse" />
-  </message>
   <message name="eliminarGerencia">
     <part name="parameters" element="tns:eliminarGerencia" />
   </message>
@@ -23,17 +17,25 @@
   <message name="listarGerenciasResponse">
     <part name="parameters" element="tns:listarGerenciasResponse" />
   </message>
+  <message name="insertarGerencia">
+    <part name="parameters" element="tns:insertarGerencia" />
+  </message>
+  <message name="insertarGerenciaResponse">
+    <part name="parameters" element="tns:insertarGerenciaResponse" />
+  </message>
   <message name="actualizarGerencia">
     <part name="parameters" element="tns:actualizarGerencia" />
   </message>
   <message name="actualizarGerenciaResponse">
     <part name="parameters" element="tns:actualizarGerenciaResponse" />
   </message>
+  <message name="listarGerenciasXColaborador">
+    <part name="parameters" element="tns:listarGerenciasXColaborador" />
+  </message>
+  <message name="listarGerenciasXColaboradorResponse">
+    <part name="parameters" element="tns:listarGerenciasXColaboradorResponse" />
+  </message>
   <portType name="GerenciaWS">
-    <operation name="insertarGerencia">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaRequest" message="tns:insertarGerencia" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaResponse" message="tns:insertarGerenciaResponse" />
-    </operation>
     <operation name="eliminarGerencia">
       <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/eliminarGerenciaRequest" message="tns:eliminarGerencia" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/eliminarGerenciaResponse" message="tns:eliminarGerenciaResponse" />
@@ -42,22 +44,21 @@
       <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasRequest" message="tns:listarGerencias" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasResponse" message="tns:listarGerenciasResponse" />
     </operation>
+    <operation name="insertarGerencia">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaRequest" message="tns:insertarGerencia" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaResponse" message="tns:insertarGerenciaResponse" />
+    </operation>
     <operation name="actualizarGerencia">
       <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/actualizarGerenciaRequest" message="tns:actualizarGerencia" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/actualizarGerenciaResponse" message="tns:actualizarGerenciaResponse" />
     </operation>
+    <operation name="listarGerenciasXColaborador">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorRequest" message="tns:listarGerenciasXColaborador" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorResponse" message="tns:listarGerenciasXColaboradorResponse" />
+    </operation>
   </portType>
   <binding name="GerenciaWSPortBinding" type="tns:GerenciaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarGerencia">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="eliminarGerencia">
       <soap:operation soapAction="" />
       <input>
@@ -76,7 +77,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="insertarGerencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="actualizarGerencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarGerenciasXColaborador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
