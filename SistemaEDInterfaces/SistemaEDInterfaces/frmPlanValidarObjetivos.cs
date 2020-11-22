@@ -14,7 +14,6 @@ namespace SistemaEDInterfaces
     {
         private ColaboradorWS.colaborador colaboradorSeleccionado; 
         private ColaboradorWS.ColaboradorWSClient daoColaborador;
-        private BindingList<ObjetivoWS.objetivo> objetivos; 
         private int idColaboradorLoggeado=1;
 
         private EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient daoEvaluacionDesempenho; 

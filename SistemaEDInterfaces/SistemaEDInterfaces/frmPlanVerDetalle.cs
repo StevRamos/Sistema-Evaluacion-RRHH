@@ -62,6 +62,7 @@ namespace SistemaEDInterfaces
                         objetivo.estado = (int)EstadoObjetivo.Aprobado;
                         objetivo.observacion = form.ObservacionesTextBox;
                         objetivo.fechaAprobacion = DateTime.Now;
+                        objetivo.fechaAprobacionSpecified = true; 
                         if (daoObjetivo.actualizarObjetivo(objetivo) != 0)
                         {
                             MessageBox.Show("Se aprobó el objetivo.",
@@ -88,6 +89,7 @@ namespace SistemaEDInterfaces
                 {
                     objetivo.estado = (int)EstadoObjetivo.Aprobado;
                     objetivo.fechaAprobacion = DateTime.Now;
+                    objetivo.fechaAprobacionSpecified = true;
                     if (daoObjetivo.actualizarObjetivo(objetivo) != 0)
                     {
                         MessageBox.Show("Se aprobó el objetivo.",

@@ -16,6 +16,15 @@ namespace SistemaEDInterfaces.PeriodoWS {
     public interface PeriodoWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosRequest", ReplyAction="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse listarPeriodos(SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosRequest", ReplyAction="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosResponse")]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse> listarPeriodosAsync(SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PeriodoWS/insertarPeriodoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PeriodoWS/insertarPeriodoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -32,15 +41,6 @@ namespace SistemaEDInterfaces.PeriodoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoResponse")]
         System.Threading.Tasks.Task<SistemaEDInterfaces.PeriodoWS.obtenerPeriodoResponse> obtenerPeriodoAsync(SistemaEDInterfaces.PeriodoWS.obtenerPeriodoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosRequest", ReplyAction="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse listarPeriodos(SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosRequest", ReplyAction="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosResponse")]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse> listarPeriodosAsync(SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest request);
     }
     
     /// <remarks/>
@@ -783,6 +783,8 @@ namespace SistemaEDInterfaces.PeriodoWS {
         
         private colaborador jefeField;
         
+        private int nivelAccesoField;
+        
         private string nombresField;
         
         private objetivo[] objetivosField;
@@ -917,6 +919,18 @@ namespace SistemaEDInterfaces.PeriodoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public int nivelAcceso {
+            get {
+                return this.nivelAccesoField;
+            }
+            set {
+                this.nivelAccesoField = value;
+                this.RaisePropertyChanged("nivelAcceso");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public string nombres {
             get {
                 return this.nombresField;
@@ -928,7 +942,7 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("objetivos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute("objetivos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=11)]
         public objetivo[] objetivos {
             get {
                 return this.objetivosField;
@@ -940,7 +954,7 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public periodo periodo {
             get {
                 return this.periodoField;
@@ -952,7 +966,7 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public puestoTrabajo puestoTrabajo {
             get {
                 return this.puestoTrabajoField;
@@ -964,7 +978,7 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("subordinados", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute("subordinados", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
         public colaborador[] subordinados {
             get {
                 return this.subordinadosField;
@@ -976,7 +990,7 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public string telefono {
             get {
                 return this.telefonoField;
@@ -1965,9 +1979,25 @@ namespace SistemaEDInterfaces.PeriodoWS {
         
         private criterio criterioField;
         
+        private criterio criterioPadreField;
+        
+        private string descripcionField;
+        
+        private int idCriterioField;
+        
+        private int idPeriodoField;
+        
         private int idPesoCriterioField;
         
+        private int idPuestoTrabajoField;
+        
         private lineaEvaluacion[] lineasEvaluacionField;
+        
+        private string nombreField;
+        
+        private string nombrePeriodoField;
+        
+        private string nombrePuestoTrabajoField;
         
         private periodo periodoField;
         
@@ -1989,6 +2019,54 @@ namespace SistemaEDInterfaces.PeriodoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public criterio criterioPadre {
+            get {
+                return this.criterioPadreField;
+            }
+            set {
+                this.criterioPadreField = value;
+                this.RaisePropertyChanged("criterioPadre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                this.descripcionField = value;
+                this.RaisePropertyChanged("descripcion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public int idCriterio {
+            get {
+                return this.idCriterioField;
+            }
+            set {
+                this.idCriterioField = value;
+                this.RaisePropertyChanged("idCriterio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public int idPeriodo {
+            get {
+                return this.idPeriodoField;
+            }
+            set {
+                this.idPeriodoField = value;
+                this.RaisePropertyChanged("idPeriodo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public int idPesoCriterio {
             get {
                 return this.idPesoCriterioField;
@@ -2000,7 +2078,19 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("lineasEvaluacion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public int idPuestoTrabajo {
+            get {
+                return this.idPuestoTrabajoField;
+            }
+            set {
+                this.idPuestoTrabajoField = value;
+                this.RaisePropertyChanged("idPuestoTrabajo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("lineasEvaluacion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=7)]
         public lineaEvaluacion[] lineasEvaluacion {
             get {
                 return this.lineasEvaluacionField;
@@ -2012,7 +2102,43 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+                this.RaisePropertyChanged("nombre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public string nombrePeriodo {
+            get {
+                return this.nombrePeriodoField;
+            }
+            set {
+                this.nombrePeriodoField = value;
+                this.RaisePropertyChanged("nombrePeriodo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string nombrePuestoTrabajo {
+            get {
+                return this.nombrePuestoTrabajoField;
+            }
+            set {
+                this.nombrePuestoTrabajoField = value;
+                this.RaisePropertyChanged("nombrePuestoTrabajo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public periodo periodo {
             get {
                 return this.periodoField;
@@ -2024,7 +2150,7 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public double peso {
             get {
                 return this.pesoField;
@@ -2036,7 +2162,7 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public puestoTrabajo puestoTrabajo {
             get {
                 return this.puestoTrabajoField;
@@ -2486,6 +2612,34 @@ namespace SistemaEDInterfaces.PeriodoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPeriodos", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPeriodosRequest {
+        
+        public listarPeriodosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPeriodosResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPeriodosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SistemaEDInterfaces.PeriodoWS.periodo[] @return;
+        
+        public listarPeriodosResponse() {
+        }
+        
+        public listarPeriodosResponse(SistemaEDInterfaces.PeriodoWS.periodo[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPeriodo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarPeriodoRequest {
         
@@ -2547,34 +2701,6 @@ namespace SistemaEDInterfaces.PeriodoWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPeriodos", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPeriodosRequest {
-        
-        public listarPeriodosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPeriodosResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPeriodosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SistemaEDInterfaces.PeriodoWS.periodo[] @return;
-        
-        public listarPeriodosResponse() {
-        }
-        
-        public listarPeriodosResponse(SistemaEDInterfaces.PeriodoWS.periodo[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PeriodoWSChannel : SistemaEDInterfaces.PeriodoWS.PeriodoWS, System.ServiceModel.IClientChannel {
     }
@@ -2600,6 +2726,27 @@ namespace SistemaEDInterfaces.PeriodoWS {
         
         public PeriodoWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse SistemaEDInterfaces.PeriodoWS.PeriodoWS.listarPeriodos(SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest request) {
+            return base.Channel.listarPeriodos(request);
+        }
+        
+        public SistemaEDInterfaces.PeriodoWS.periodo[] listarPeriodos() {
+            SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest inValue = new SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest();
+            SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse retVal = ((SistemaEDInterfaces.PeriodoWS.PeriodoWS)(this)).listarPeriodos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse> SistemaEDInterfaces.PeriodoWS.PeriodoWS.listarPeriodosAsync(SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest request) {
+            return base.Channel.listarPeriodosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse> listarPeriodosAsync() {
+            SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest inValue = new SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest();
+            return ((SistemaEDInterfaces.PeriodoWS.PeriodoWS)(this)).listarPeriodosAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2644,27 +2791,6 @@ namespace SistemaEDInterfaces.PeriodoWS {
         public System.Threading.Tasks.Task<SistemaEDInterfaces.PeriodoWS.obtenerPeriodoResponse> obtenerPeriodoAsync() {
             SistemaEDInterfaces.PeriodoWS.obtenerPeriodoRequest inValue = new SistemaEDInterfaces.PeriodoWS.obtenerPeriodoRequest();
             return ((SistemaEDInterfaces.PeriodoWS.PeriodoWS)(this)).obtenerPeriodoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse SistemaEDInterfaces.PeriodoWS.PeriodoWS.listarPeriodos(SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest request) {
-            return base.Channel.listarPeriodos(request);
-        }
-        
-        public SistemaEDInterfaces.PeriodoWS.periodo[] listarPeriodos() {
-            SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest inValue = new SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest();
-            SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse retVal = ((SistemaEDInterfaces.PeriodoWS.PeriodoWS)(this)).listarPeriodos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse> SistemaEDInterfaces.PeriodoWS.PeriodoWS.listarPeriodosAsync(SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest request) {
-            return base.Channel.listarPeriodosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse> listarPeriodosAsync() {
-            SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest inValue = new SistemaEDInterfaces.PeriodoWS.listarPeriodosRequest();
-            return ((SistemaEDInterfaces.PeriodoWS.PeriodoWS)(this)).listarPeriodosAsync(inValue);
         }
     }
 }

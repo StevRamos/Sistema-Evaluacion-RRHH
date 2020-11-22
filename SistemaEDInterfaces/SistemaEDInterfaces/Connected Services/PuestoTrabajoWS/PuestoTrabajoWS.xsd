@@ -8,6 +8,8 @@
   <xs:element name="insertarPuestoTrabajoResponse" type="tns:insertarPuestoTrabajoResponse" />
   <xs:element name="listarPuestoTrabajos" type="tns:listarPuestoTrabajos" />
   <xs:element name="listarPuestoTrabajosResponse" type="tns:listarPuestoTrabajosResponse" />
+  <xs:element name="listarPuestoTrabajosXColaborador" type="tns:listarPuestoTrabajosXColaborador" />
+  <xs:element name="listarPuestoTrabajosXColaboradorResponse" type="tns:listarPuestoTrabajosXColaboradorResponse" />
   <xs:complexType name="insertarPuestoTrabajo">
     <xs:sequence>
       <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
@@ -43,6 +45,7 @@
       <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
       <xs:element name="idColaborador" type="xs:int" />
       <xs:element minOccurs="0" name="jefe" type="tns:colaborador" />
+      <xs:element name="nivelAcceso" type="xs:int" />
       <xs:element minOccurs="0" name="nombres" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="objetivos" nillable="true" type="tns:objetivo" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
@@ -168,8 +171,16 @@
   <xs:complexType name="pesoCriterio">
     <xs:sequence>
       <xs:element minOccurs="0" name="criterio" type="tns:criterio" />
+      <xs:element minOccurs="0" name="criterioPadre" type="tns:criterio" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idCriterio" type="xs:int" />
+      <xs:element name="idPeriodo" type="xs:int" />
       <xs:element name="idPesoCriterio" type="xs:int" />
+      <xs:element name="idPuestoTrabajo" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrePeriodo" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrePuestoTrabajo" type="xs:string" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
       <xs:element name="peso" type="xs:double" />
       <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
@@ -225,6 +236,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarPuestoTrabajosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:puestoTrabajo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPuestoTrabajosXColaborador">
+    <xs:sequence>
+      <xs:element name="idColaborador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPuestoTrabajosXColaboradorResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:puestoTrabajo" />
     </xs:sequence>

@@ -207,7 +207,7 @@
             // Estado
             // 
             this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Estado.DataPropertyName = "estado";
+            this.Estado.DataPropertyName = "descripcionEstado";
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;

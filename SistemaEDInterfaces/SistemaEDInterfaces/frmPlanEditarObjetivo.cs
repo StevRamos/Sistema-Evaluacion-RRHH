@@ -15,7 +15,9 @@ namespace SistemaEDInterfaces
     {
         private bool seRealizaronCambios; 
 
-        private double sumaPesoObjetivos; 
+        private double sumaPesoObjetivos;
+
+        private double pesoAnterior; 
 
         private int estado;
 
@@ -83,7 +85,7 @@ namespace SistemaEDInterfaces
             {
                 //Validar la suma de pesos
 
-                if ((sumaPesoObjetivos + peso) > 100 || (sumaPesoObjetivos + peso) < 0)
+                if ((sumaPesoObjetivos -pesoAnterior + peso) > 100 || (sumaPesoObjetivos -pesoAnterior + peso) < 0)
                 {
                     MessageBox.Show("Los pesos de los objetivos no pueden sumar mas de 100",
                     "Mensaje de error",
@@ -162,7 +164,8 @@ namespace SistemaEDInterfaces
 
         private void frmPlanEditarObjetivo_Load(object sender, EventArgs e)
         {
-            
+            //Guardar el peso anterior para hacer la validacion al final 
+            pesoAnterior = objetivo.peso; 
             switch (objetivo.estado)
             {
                 case (int)EstadoObjetivo.EsperandoRevision:

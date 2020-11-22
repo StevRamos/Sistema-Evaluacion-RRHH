@@ -16,6 +16,24 @@ namespace SistemaEDInterfaces.ObjetivoWS {
     public interface ObjetivoWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse listarObjetivosXColaborador(SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorResponse")]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse> listarObjetivosXColaboradorAsync(SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse actualizarObjetivo(SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoResponse")]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse> actualizarObjetivoAsync(SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/eliminarObjetivoRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/eliminarObjetivoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -41,60 +59,6 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosResponse")]
         System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.listarObjetivosResponse> listarObjetivosAsync(SistemaEDInterfaces.ObjetivoWS.listarObjetivosRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse actualizarObjetivo(SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoResponse")]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse> actualizarObjetivoAsync(SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse listarObjetivosXColaborador(SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorRequest", ReplyAction="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorResponse")]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse> listarObjetivosXColaboradorAsync(SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarObjetivo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarObjetivoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idObjetivo;
-        
-        public eliminarObjetivoRequest() {
-        }
-        
-        public eliminarObjetivoRequest(int idObjetivo) {
-            this.idObjetivo = idObjetivo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarObjetivoResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarObjetivoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarObjetivoResponse() {
-        }
-        
-        public eliminarObjetivoResponse(int @return) {
-            this.@return = @return;
-        }
     }
     
     /// <remarks/>
@@ -108,6 +72,8 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         private colaborador colaboradorField;
         
         private string descripcionField;
+        
+        private string descripcionEstadoField;
         
         private int estadoField;
         
@@ -165,6 +131,18 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string descripcionEstado {
+            get {
+                return this.descripcionEstadoField;
+            }
+            set {
+                this.descripcionEstadoField = value;
+                this.RaisePropertyChanged("descripcionEstado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public int estado {
             get {
                 return this.estadoField;
@@ -176,7 +154,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public evaluacionDesempenho evaluacion {
             get {
                 return this.evaluacionField;
@@ -188,7 +166,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public System.DateTime fechaAprobacion {
             get {
                 return this.fechaAprobacionField;
@@ -212,7 +190,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public System.DateTime fechaFormulacion {
             get {
                 return this.fechaFormulacionField;
@@ -236,7 +214,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
         public int idObjetivo {
             get {
                 return this.idObjetivoField;
@@ -248,7 +226,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public double meta {
             get {
                 return this.metaField;
@@ -260,7 +238,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public double notaAutoEval {
             get {
                 return this.notaAutoEvalField;
@@ -272,7 +250,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public double notaFinal {
             get {
                 return this.notaFinalField;
@@ -284,7 +262,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public double notaPrevia {
             get {
                 return this.notaPreviaField;
@@ -296,7 +274,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public string observacion {
             get {
                 return this.observacionField;
@@ -308,7 +286,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public periodo periodo {
             get {
                 return this.periodoField;
@@ -320,7 +298,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
         public double peso {
             get {
                 return this.pesoField;
@@ -332,7 +310,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public string unidadMedida {
             get {
                 return this.unidadMedidaField;
@@ -380,6 +358,8 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         private int idColaboradorField;
         
         private colaborador jefeField;
+        
+        private int nivelAccesoField;
         
         private string nombresField;
         
@@ -515,6 +495,18 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public int nivelAcceso {
+            get {
+                return this.nivelAccesoField;
+            }
+            set {
+                this.nivelAccesoField = value;
+                this.RaisePropertyChanged("nivelAcceso");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public string nombres {
             get {
                 return this.nombresField;
@@ -526,7 +518,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("objetivos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=10)]
+        [System.Xml.Serialization.XmlElementAttribute("objetivos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=11)]
         public objetivo[] objetivos {
             get {
                 return this.objetivosField;
@@ -538,7 +530,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public periodo periodo {
             get {
                 return this.periodoField;
@@ -550,7 +542,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public puestoTrabajo puestoTrabajo {
             get {
                 return this.puestoTrabajoField;
@@ -562,7 +554,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("subordinados", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute("subordinados", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
         public colaborador[] subordinados {
             get {
                 return this.subordinadosField;
@@ -574,7 +566,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public string telefono {
             get {
                 return this.telefonoField;
@@ -1824,9 +1816,25 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         
         private criterio criterioField;
         
+        private criterio criterioPadreField;
+        
+        private string descripcionField;
+        
+        private int idCriterioField;
+        
+        private int idPeriodoField;
+        
         private int idPesoCriterioField;
         
+        private int idPuestoTrabajoField;
+        
         private lineaEvaluacion[] lineasEvaluacionField;
+        
+        private string nombreCriterioField;
+        
+        private string nombrePeriodoField;
+        
+        private string nombrePuestoTrabajoField;
         
         private periodo periodoField;
         
@@ -1848,6 +1856,54 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public criterio criterioPadre {
+            get {
+                return this.criterioPadreField;
+            }
+            set {
+                this.criterioPadreField = value;
+                this.RaisePropertyChanged("criterioPadre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                this.descripcionField = value;
+                this.RaisePropertyChanged("descripcion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public int idCriterio {
+            get {
+                return this.idCriterioField;
+            }
+            set {
+                this.idCriterioField = value;
+                this.RaisePropertyChanged("idCriterio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public int idPeriodo {
+            get {
+                return this.idPeriodoField;
+            }
+            set {
+                this.idPeriodoField = value;
+                this.RaisePropertyChanged("idPeriodo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public int idPesoCriterio {
             get {
                 return this.idPesoCriterioField;
@@ -1859,7 +1915,19 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("lineasEvaluacion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public int idPuestoTrabajo {
+            get {
+                return this.idPuestoTrabajoField;
+            }
+            set {
+                this.idPuestoTrabajoField = value;
+                this.RaisePropertyChanged("idPuestoTrabajo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("lineasEvaluacion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=7)]
         public lineaEvaluacion[] lineasEvaluacion {
             get {
                 return this.lineasEvaluacionField;
@@ -1871,7 +1939,43 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public string nombreCriterio {
+            get {
+                return this.nombreCriterioField;
+            }
+            set {
+                this.nombreCriterioField = value;
+                this.RaisePropertyChanged("nombreCriterio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public string nombrePeriodo {
+            get {
+                return this.nombrePeriodoField;
+            }
+            set {
+                this.nombrePeriodoField = value;
+                this.RaisePropertyChanged("nombrePeriodo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string nombrePuestoTrabajo {
+            get {
+                return this.nombrePuestoTrabajoField;
+            }
+            set {
+                this.nombrePuestoTrabajoField = value;
+                this.RaisePropertyChanged("nombrePuestoTrabajo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public periodo periodo {
             get {
                 return this.periodoField;
@@ -1883,7 +1987,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public double peso {
             get {
                 return this.pesoField;
@@ -1895,7 +1999,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
         public puestoTrabajo puestoTrabajo {
             get {
                 return this.puestoTrabajoField;
@@ -2540,6 +2644,114 @@ namespace SistemaEDInterfaces.ObjetivoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarObjetivosXColaborador", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarObjetivosXColaboradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idColaborador;
+        
+        public listarObjetivosXColaboradorRequest() {
+        }
+        
+        public listarObjetivosXColaboradorRequest(int idColaborador) {
+            this.idColaborador = idColaborador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarObjetivosXColaboradorResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarObjetivosXColaboradorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SistemaEDInterfaces.ObjetivoWS.objetivo[] @return;
+        
+        public listarObjetivosXColaboradorResponse() {
+        }
+        
+        public listarObjetivosXColaboradorResponse(SistemaEDInterfaces.ObjetivoWS.objetivo[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarObjetivo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarObjetivoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SistemaEDInterfaces.ObjetivoWS.objetivo objetivo;
+        
+        public actualizarObjetivoRequest() {
+        }
+        
+        public actualizarObjetivoRequest(SistemaEDInterfaces.ObjetivoWS.objetivo objetivo) {
+            this.objetivo = objetivo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarObjetivoResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarObjetivoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public actualizarObjetivoResponse() {
+        }
+        
+        public actualizarObjetivoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarObjetivo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarObjetivoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idObjetivo;
+        
+        public eliminarObjetivoRequest() {
+        }
+        
+        public eliminarObjetivoRequest(int idObjetivo) {
+            this.idObjetivo = idObjetivo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarObjetivoResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarObjetivoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarObjetivoResponse() {
+        }
+        
+        public eliminarObjetivoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarObjetivo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarObjetivoRequest {
         
@@ -2601,78 +2813,6 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarObjetivo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarObjetivoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SistemaEDInterfaces.ObjetivoWS.objetivo objetivo;
-        
-        public actualizarObjetivoRequest() {
-        }
-        
-        public actualizarObjetivoRequest(SistemaEDInterfaces.ObjetivoWS.objetivo objetivo) {
-            this.objetivo = objetivo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarObjetivoResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarObjetivoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public actualizarObjetivoResponse() {
-        }
-        
-        public actualizarObjetivoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarObjetivosXColaborador", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarObjetivosXColaboradorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idColaborador;
-        
-        public listarObjetivosXColaboradorRequest() {
-        }
-        
-        public listarObjetivosXColaboradorRequest(int idColaborador) {
-            this.idColaborador = idColaborador;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarObjetivosXColaboradorResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarObjetivosXColaboradorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SistemaEDInterfaces.ObjetivoWS.objetivo[] @return;
-        
-        public listarObjetivosXColaboradorResponse() {
-        }
-        
-        public listarObjetivosXColaboradorResponse(SistemaEDInterfaces.ObjetivoWS.objetivo[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ObjetivoWSChannel : SistemaEDInterfaces.ObjetivoWS.ObjetivoWS, System.ServiceModel.IClientChannel {
     }
@@ -2698,6 +2838,52 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         
         public ObjetivoWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse SistemaEDInterfaces.ObjetivoWS.ObjetivoWS.listarObjetivosXColaborador(SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest request) {
+            return base.Channel.listarObjetivosXColaborador(request);
+        }
+        
+        public SistemaEDInterfaces.ObjetivoWS.objetivo[] listarObjetivosXColaborador(int idColaborador) {
+            SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest inValue = new SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest();
+            inValue.idColaborador = idColaborador;
+            SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse retVal = ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).listarObjetivosXColaborador(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse> SistemaEDInterfaces.ObjetivoWS.ObjetivoWS.listarObjetivosXColaboradorAsync(SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest request) {
+            return base.Channel.listarObjetivosXColaboradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse> listarObjetivosXColaboradorAsync(int idColaborador) {
+            SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest inValue = new SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest();
+            inValue.idColaborador = idColaborador;
+            return ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).listarObjetivosXColaboradorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse SistemaEDInterfaces.ObjetivoWS.ObjetivoWS.actualizarObjetivo(SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest request) {
+            return base.Channel.actualizarObjetivo(request);
+        }
+        
+        public int actualizarObjetivo(SistemaEDInterfaces.ObjetivoWS.objetivo objetivo) {
+            SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest inValue = new SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest();
+            inValue.objetivo = objetivo;
+            SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse retVal = ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).actualizarObjetivo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse> SistemaEDInterfaces.ObjetivoWS.ObjetivoWS.actualizarObjetivoAsync(SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest request) {
+            return base.Channel.actualizarObjetivoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse> actualizarObjetivoAsync(SistemaEDInterfaces.ObjetivoWS.objetivo objetivo) {
+            SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest inValue = new SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest();
+            inValue.objetivo = objetivo;
+            return ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).actualizarObjetivoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2765,52 +2951,6 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         public System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.listarObjetivosResponse> listarObjetivosAsync() {
             SistemaEDInterfaces.ObjetivoWS.listarObjetivosRequest inValue = new SistemaEDInterfaces.ObjetivoWS.listarObjetivosRequest();
             return ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).listarObjetivosAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse SistemaEDInterfaces.ObjetivoWS.ObjetivoWS.actualizarObjetivo(SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest request) {
-            return base.Channel.actualizarObjetivo(request);
-        }
-        
-        public int actualizarObjetivo(SistemaEDInterfaces.ObjetivoWS.objetivo objetivo) {
-            SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest inValue = new SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest();
-            inValue.objetivo = objetivo;
-            SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse retVal = ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).actualizarObjetivo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse> SistemaEDInterfaces.ObjetivoWS.ObjetivoWS.actualizarObjetivoAsync(SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest request) {
-            return base.Channel.actualizarObjetivoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoResponse> actualizarObjetivoAsync(SistemaEDInterfaces.ObjetivoWS.objetivo objetivo) {
-            SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest inValue = new SistemaEDInterfaces.ObjetivoWS.actualizarObjetivoRequest();
-            inValue.objetivo = objetivo;
-            return ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).actualizarObjetivoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse SistemaEDInterfaces.ObjetivoWS.ObjetivoWS.listarObjetivosXColaborador(SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest request) {
-            return base.Channel.listarObjetivosXColaborador(request);
-        }
-        
-        public SistemaEDInterfaces.ObjetivoWS.objetivo[] listarObjetivosXColaborador(int idColaborador) {
-            SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest inValue = new SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest();
-            inValue.idColaborador = idColaborador;
-            SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse retVal = ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).listarObjetivosXColaborador(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse> SistemaEDInterfaces.ObjetivoWS.ObjetivoWS.listarObjetivosXColaboradorAsync(SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest request) {
-            return base.Channel.listarObjetivosXColaboradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorResponse> listarObjetivosXColaboradorAsync(int idColaborador) {
-            SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest inValue = new SistemaEDInterfaces.ObjetivoWS.listarObjetivosXColaboradorRequest();
-            inValue.idColaborador = idColaborador;
-            return ((SistemaEDInterfaces.ObjetivoWS.ObjetivoWS)(this)).listarObjetivosXColaboradorAsync(inValue);
         }
     }
 }
