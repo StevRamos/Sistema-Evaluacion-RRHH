@@ -25,6 +25,12 @@
     <service name="EvaluacionDesempenhoWS">
       <implementation-class>pe.edu.pucp.sed.services.EvaluacionDesempenhoWS</implementation-class>
     </service>
+    <service name="CriterioWS">
+      <implementation-class>pe.edu.pucp.sed.services.CriterioWS</implementation-class>
+    </service>
+    <service name="PesoCriterioWS">
+      <implementation-class>pe.edu.pucp.sed.services.PesoCriterioWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

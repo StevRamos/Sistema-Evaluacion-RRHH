@@ -18,6 +18,7 @@ import pe.edu.pucp.sed.dao.GerenciaPeriodoDAO;
 import pe.edu.pucp.sed.dao.ObjetivoDAO;
 //import pe.edu.pucp.sed.dao.EvaluacionPotencialDAO;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
+import pe.edu.pucp.sed.dao.PesoCriterioDAO;
 import pe.edu.pucp.sed.dao.PuestoTrabajoDAO;
 import pe.edu.pucp.sed.dao.UsuarioDAO;
 import pe.edu.pucp.sed.model.Colaborador;
@@ -29,6 +30,7 @@ import pe.edu.pucp.sed.model.GerenciaPeriodo;
 import pe.edu.pucp.sed.model.Objetivo;
 //import pe.edu.pucp.sed.model.EvaluacionPotencial;
 import pe.edu.pucp.sed.model.Periodo;
+import pe.edu.pucp.sed.model.PesoCriterio;
 import pe.edu.pucp.sed.model.PuestoTrabajo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
 import pe.edu.pucp.sed.mysql.EscalaMySQL;
@@ -38,6 +40,7 @@ import pe.edu.pucp.sed.mysql.GerenciaPeriodoMySQL;
 import pe.edu.pucp.sed.mysql.ObjetivoMySQL;
 //import pe.edu.pucp.sed.mysql.EvaluacionPotencialMySQL;
 import pe.edu.pucp.sed.mysql.PeriodoMySQL;
+import pe.edu.pucp.sed.mysql.PesoCriterioMySQL;
 import pe.edu.pucp.sed.mysql.PuestoTrabajoMySQL;
 import pe.edu.pucp.sed.mysql.UsuarioMySQL;
 
@@ -324,23 +327,45 @@ public class Principal {
 //         int resultado = daoEvalDes.actualizarEvaluacionDesempenho(evalDes);
 //         System.out.println(resultado);
 
-        ObjetivoDAO daoObjetivo = new ObjetivoMySQL();
-        Objetivo object = new Objetivo();
-        ArrayList<Objetivo> miobjects = new ArrayList<>();
-        miobjects = daoObjetivo.listarObjetivosXColaborador(1);
-        
-        Date date = new Date();
-        
-        for (Objetivo o : miobjects){
-              if (o.getIdObjetivo()==7){
-                  o.setFechaAprobacion(date);
-                  daoObjetivo.actualizar(o);
-              }else if (o.getIdObjetivo()==8){
-                  daoObjetivo.actualizar(o);
-              }
-        }
+//        ObjetivoDAO daoObjetivo = new ObjetivoMySQL();
+//        Objetivo object = new Objetivo();
+//        ArrayList<Objetivo> miobjects = new ArrayList<>();
+//        miobjects = daoObjetivo.listarObjetivosXColaborador(1);
+//        
+//        Date date = new Date();
+//        
+//        for (Objetivo o : miobjects){
+//              if (o.getIdObjetivo()==7){
+//                  o.setFechaAprobacion(date);
+//                  daoObjetivo.actualizar(o);
+//              }else if (o.getIdObjetivo()==8){
+//                  daoObjetivo.actualizar(o);
+//              }
+//        }
         
         //object.setIdObjetivo(11);
         //object.setFechaAprobacion();
+        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
+        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
+//        pesoscriterio = daopesocriterio.listar(0,"","","");
+//        for (PesoCriterio p : pesoscriterio){
+//            System.out.println(p.getIdPesoCriterio());
+//        }
+        
+//        PesoCriterio peso = new PesoCriterio();
+//        peso.setNombreCriterio("Analisis de probl");
+//        peso.setPeso(0.1);
+//        peso.setNombrePuestoTrabajo("Administrador");
+//        peso.setNombrePeriodo("Periodo 2020-2");
+//        daopesocriterio.actualizar(peso);
+        
+        PesoCriterio peso1 = new PesoCriterio();
+        peso1.setNombrePeriodo("Periodo 2020-2");
+        peso1.setIdCriterio(2);
+        peso1.setNombrePuestoTrabajo("Administrador");
+        peso1.setNombreCriterio("Liderazgo");
+        peso1.setPeso(0.7);
+//        daopesocriterio.insertar(peso1);
+        daopesocriterio.eliminar(peso1);
     }
 }

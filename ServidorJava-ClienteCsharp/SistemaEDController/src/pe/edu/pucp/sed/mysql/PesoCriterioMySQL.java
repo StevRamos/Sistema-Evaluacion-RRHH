@@ -23,14 +23,13 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-                        String sql = "{call INSERTAR_PESO_CRITERIO(?,?,?,?,?)}";
+                        String sql = "{call INSERTAR_PESO_CRITERIO_STR(?,?,?,?,?)}";
                         cs = con.prepareCall(sql);
                         cs.registerOutParameter("_ID_PESO_CRITERIO", java.sql.Types.INTEGER);
-                        cs.setInt("_ID_PERIODO", pesoCriterio.getPeriodo().getIdPeriodo());
-                        cs.setInt("_ID_PUESTO_TRABAJO",pesoCriterio.getPuestoTrabajo().getIdPuestoTrabajo());
-                        cs.setInt("_ID_CRITERIO",pesoCriterio.getCriterio().getIdCriterio());
+                        cs.setString("_NOMBRE_PERIODO",pesoCriterio.getNombrePeriodo());
+                        cs.setString("_NOMBRE_PUESTO_TRABAJO",pesoCriterio.getNombrePuestoTrabajo());
+                        cs.setString("_NOMBRE_CRITERIO",pesoCriterio.getNombreCriterio());
                         cs.setDouble("_PESO", pesoCriterio.getPeso());
-                        
                         cs.executeUpdate();
                         pesoCriterio.setIdPesoCriterio(cs.getInt("_ID_PESO_CRITERIO"));
                         resultado = 1;
@@ -47,10 +46,13 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
-
-			cs.executeUpdate();
+			String sql = "{call ACTUALIZAR_PESO_CRITERIO_STR(?,?,?,?)}";
+                        cs = con.prepareCall(sql);
+                        cs.setString("_NOMBRE_PERIODO",pesoCriterio.getNombrePeriodo());
+                        cs.setString("_NOMBRE_PUESTO_TRABAJO",pesoCriterio.getNombrePuestoTrabajo());
+                        cs.setString("_NOMBRE_CRITERIO",pesoCriterio.getNombreCriterio());
+                        cs.setDouble("_PESO", pesoCriterio.getPeso());
+                        cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
@@ -60,14 +62,16 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
 		return resultado;
 	}
 	@Override
-	public int eliminar(int idPesoCriterio){
+	public int eliminar(PesoCriterio pesoCriterio){
 		int resultado = 0;
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ()}";
+			String sql = "{call ELIMINAR_PESOCOMPETENCIA_DE_COMPETENCIA(?,?,?)}";
 			cs = con.prepareCall(sql);
-
+                        cs.setInt("_ID_CRITERIO",pesoCriterio.getIdCriterio());
+                        cs.setString("_NOMBRE_CARGO",pesoCriterio.getNombrePuestoTrabajo());
+                        cs.setString("_NOMBRE_PERIODO",pesoCriterio.getNombrePeriodo());
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
@@ -78,18 +82,41 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
 		return resultado;
 	}
 	@Override
-	public ArrayList<PesoCriterio> listar(){
+	public ArrayList<PesoCriterio> listar(int tipo,String nomcargo,String nomPeriodo,String nomCompetencia){
 		ArrayList<PesoCriterio> pesoCriterios = new ArrayList<>();
 		try{
-			Class.forName("com.mysql.cj.jdbc.Driver");
-			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
-			String sql = "{call ()}";
-			cs = con.prepareCall(sql);
+                    if (tipo==0){
+                        String sql = "{call LISTAR_COMPETENCIAS(?,?,?)}";
+                        cs = con.prepareCall(sql);
+                        cs.setString("_NOMBRE_CARGO",nomcargo);
+                        cs.setString("_NOMBRE_PERIODO",nomPeriodo);
+                        cs.setString("_NOMBRE_COMPETENCIA",nomCompetencia);
+                        rs = cs.executeQuery();
+                        while(rs.next()){
+                            PesoCriterio pesocriterio = new PesoCriterio();
+                            pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
+                            pesocriterio.setIdPeriodo(rs.getInt("id_Periodo"));
+                            pesocriterio.setNombrePeriodo(rs.getString("periodo"));
+                            pesocriterio.setIdCriterio(rs.getInt("id_Criterio"));
+                            pesocriterio.setNombreCriterio(rs.getString("nombre"));
+                            pesocriterio.setDescripcion(rs.getString("descripcion"));
+                            pesocriterio.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                            pesocriterio.setNombrePuestoTrabajo(rs.getString("cargo"));
+                            pesocriterio.setPeso(rs.getDouble("peso"));
+                            pesoCriterios.add(pesocriterio);
+                        }
+                    }else if (tipo ==1){
 
-			rs = cs.executeQuery();
-			while(rs.next()){
-			}
+                    }else if (tipo == 2){
+
+                    }else if (tipo==3){
+
+                    }
+                    return pesoCriterios;
+                            
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}finally{

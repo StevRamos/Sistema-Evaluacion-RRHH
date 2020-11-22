@@ -73,10 +73,10 @@ public class ObjetivoMySQL implements ObjetivoDAO {
             cs.setInt("_ID_EVALUACION", objetivo.getEvaluacion().getIdEvaluacion());
             SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd");
            
-            if (objetivo.getFechaAprobacion().compareTo(sdformat.parse("1970-01-01"))==0){
-                cs.setDate("_FECHA_APROBACION" , null);
-            }else{
+            if (objetivo.getEstado()==2){    
                 cs.setDate("_FECHA_APROBACION" , new java.sql.Date(objetivo.getFechaAprobacion().getTime()));
+            }else{
+                cs.setDate("_FECHA_APROBACION" , null);
             }
             cs.executeUpdate();
             resultado = 1;

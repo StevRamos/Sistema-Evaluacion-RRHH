@@ -32,11 +32,11 @@ public class PesoCriterio{
             this.criterio.setIdCriterio(idCriterio);
         }
         
-        public String getNombre() {
+        public String getNombreCriterio() {
             return this.criterio.getNombre();
         }
 
-        public void setNombre(String nombre) {
+        public void setNombreCriterio(String nombre) {
             this.criterio.setNombre(nombre);
         }
 

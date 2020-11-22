@@ -11,7 +11,7 @@ public class Criterio{
 
     public Criterio() {
         this.criterios = new ArrayList<>();
-        this.criterioPadre = new Criterio();
+        //this.criterioPadre = new Criterio();
     }
 
     public String getDescripcion() {
