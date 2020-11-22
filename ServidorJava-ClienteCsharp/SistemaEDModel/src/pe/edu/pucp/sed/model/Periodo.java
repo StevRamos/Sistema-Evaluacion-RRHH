@@ -9,7 +9,7 @@ public class Periodo{
     private int idPeriodo;
     private Date fechaInicio;
     private Date fechaFin;
-    private Date diaNotificacion;
+    private String diaNotificacion;
     private double pesoEvalObj;
     private double pesoEvalComp;
     private EstadoPeriodo estado;
@@ -43,11 +43,11 @@ public class Periodo{
         nombre = per.getNombre();
     }
 
-    public void setDiaNotificacion(Date diaNotificacion) {
+    public void setDiaNotificacion(String diaNotificacion) {
         this.diaNotificacion = diaNotificacion;
     }
 
-    public Date getDiaNotificacion() {
+    public String getDiaNotificacion() {
         return diaNotificacion;
     }
 
