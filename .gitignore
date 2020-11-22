@@ -1,20 +1,44 @@
-/SistemaEvaluacionDesempenho/nbproject/private/
-/SistemaEvaluacionDesempenho/build/
-/SistemaEvaluacionDesempenho/dist/
-/ServidorJava-ClienteCsharp/SistemaEDController/nbproject/private/
-/ServidorJava-ClienteCsharp/SistemaEDModel/nbproject/private/
-/ServidorJava-ClienteCsharp/SisstemaED/nbproject/private/
+
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
 /ServidorJava-ClienteCsharp/SistemaED/nbproject/private/
+/ServidorJava-ClienteCsharp/SistemaEDModel/nbproject/private/
+/ServidorJava-ClienteCsharp/SistemaEDController/nbproject/private/
+/ServidorJava-ClienteCsharp/SistemaEDServices/nbproject/private/
+/ServidorJava-ClienteCsharp/SistemaED/dist/
+/ServidorJava-ClienteCsharp/SistemaEDModel/dist/
+/ServidorJava-ClienteCsharp/SistemaEDController/dist/
+/ServidorJava-ClienteCsharp/SistemaEDServices/dist/
+/ServidorJava-ClienteCsharp/SistemaED/build/
 /ServidorJava-ClienteCsharp/SistemaEDModel/build/
 /ServidorJava-ClienteCsharp/SistemaEDController/build/
-/ServidorJava-ClienteCsharp/SistemaED/build/
-/ServidorJava-ClienteCsharp/SistemaEDModel/dist/
-/ServidorJava-ClienteCsharp/SistemaED/dist/
-/ServidorJava-ClienteCsharp/SistemaEDController/dist/
+/ServidorJava-ClienteCsharp/SistemaEDServices/build/
+!/ServidorJava-ClienteCsharp/SistemaED/src/java/pe/edu/pucp/sed/lib/mysql-connector-java-8.0.21.jar
+!/ServidorJava-ClienteCsharp/SistemaEDModel/src/java/pe/edu/pucp/sed/lib/mysql-connector-java-8.0.21.jar
+!/ServidorJava-ClienteCsharp/SistemaEDController/src/java/pe/edu/pucp/sed/lib/mysql-connector-java-8.0.21.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/mysql-connector-java-8.0.21.jar
+
+
 /SistemaEDInterfaces/SistemaEDInterfaces/obj/
 /SistemaEDInterfaces/SistemaEDInterfaces/bin/
 /SistemaEDInterfaces/.vs/SistemaEDInterfaces/v16/
-/ServidorJava-ClienteCsharp/SistemaEDServices/nbproject/private/
-/ServidorJava-ClienteCsharp/SistemaEDServices/dist/
-/ServidorJava-ClienteCsharp/SistemaEDServices/build/
 /SistemaEDInterfaces/SistemaEDInterfaces/Connected Services/
