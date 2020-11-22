@@ -264,4 +264,31 @@ public class ColaboradorMySQL implements ColaboradorDAO{
         return jefe;
     }
     
+    @Override
+    public ArrayList<Colaborador> listarJefeXGerenciaXPeriodoActual( int idGerencia ){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call LISTAR_JEFE_X_GERENCIA_X_PERIODO_ACTUAL(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_GERENCIA", idGerencia);
+            rs = cs.executeQuery(); 
+            while(rs.next()){               
+                Colaborador col = new Colaborador();
+                col.setIdColaborador(rs.getInt("id_Colaborador"));
+                col.setNombres(rs.getString("nombres"));
+                col.setApellidos(rs.getString("apellidos"));
+                
+                colaboradores.add(col);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return colaboradores;
+    }
+    
 }

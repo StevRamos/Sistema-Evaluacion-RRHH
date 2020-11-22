@@ -8,19 +8,9 @@ public class Criterio{
     private int tipo;
     private Criterio criterioPadre;
     private ArrayList<Criterio> criterios;
-    private ArrayList<PesoCriterio> pesoscriterios;
 
-    public ArrayList<PesoCriterio> getPesoscriterios() {
-        return pesoscriterios;
-    }
-
-    public void setPesoscriterios(ArrayList<PesoCriterio> pesoscriterios) {
-        this.pesoscriterios = pesoscriterios;
-    }
-    
     public Criterio() {
         this.criterios = new ArrayList<>();
-        this.pesoscriterios = new ArrayList<>();
         //this.criterioPadre = new Criterio();
     }
 

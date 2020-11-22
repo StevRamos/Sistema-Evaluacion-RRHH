@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.CriterioDAO;
 import pe.edu.pucp.sed.model.Criterio;
-import pe.edu.pucp.sed.model.PesoCriterio;
 
 public class CriterioMySQL implements CriterioDAO{
+
 	Connection con;
 	PreparedStatement ps;
 	ResultSet rs;
@@ -51,9 +51,11 @@ public class CriterioMySQL implements CriterioDAO{
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 			String sql = "{call ACTUALIZAR_CRITERIO(?,?)}";
 			cs = con.prepareCall(sql);
+                        
                         cs.setString("_DESCRIPCION",criterio.getDescripcion());
                         cs.setInt("_ID_CRITERIO",criterio.getIdCriterio());
-                        cs.setString("_NOMBRE_CRITERIO", criterio.getNombre());
+                        
+                        
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
@@ -118,9 +120,9 @@ public class CriterioMySQL implements CriterioDAO{
             try{
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-                con.setAutoCommit(false);
+                String sql = "{call INSERTAR_CRITERIO_INDIVIDIAL(?,?,?,?,?)}";
                 
-                String sql = "{call INSERTAR_CRITERIO_INDIVIDIAL(?,?,?,?,?)}";   
+                
                 cs = con.prepareCall(sql);
                 cs.registerOutParameter("_ID_CRITERIO", java.sql.Types.INTEGER);
                 if (criterio.getCriterioPadre().getIdCriterio()==-1){
@@ -131,41 +133,15 @@ public class CriterioMySQL implements CriterioDAO{
                 cs.setString("_NOMBRE",criterio.getNombre());
                 cs.setString("_DESCRIPCION",criterio.getDescripcion());
                 cs.setInt("_TIPO",criterio.getTipo());
-                
+
                 cs.executeUpdate();
 
                 criterio.setIdCriterio(cs.getInt("_ID_CRITERIO"));
-                
-                for(PesoCriterio pc: criterio.getPesoscriterios()){
-                    sql = "{call INSERTAR_PESO_CRITERIO_STR(?,?,?,?,?)}";     
-                    cs = con.prepareCall(sql);
-                    cs.registerOutParameter("_ID_PESO_CRITERIO", java.sql.Types.INTEGER);
-                    cs.setString("_NOMBRE_PERIODO",pc.getNombrePeriodo());
-                    cs.setString("_NOMBRE_PUESTO_TRABAJO",pc.getNombrePuestoTrabajo());
-                    cs.setString("_NOMBRE_CRITERIO",pc.getNombreCriterio());
-                    cs.setDouble("_PESO", pc.getPeso());
-                    cs.executeUpdate();
-                    pc.setIdPesoCriterio(cs.getInt("_ID_PESO_CRITERIO"));
-                }
-                con.commit();
-                System.out.println("8888888");
                 resultado = 1;
             }catch(Exception ex){
-                try{
-                    con.rollback();
-                }catch(Exception exR){
-                    System.out.println(exR.getMessage());
-                }
-                System.out.println("*******");
-                System.out.println(ex.getMessage());
-            }finally{
-                try{
-                    con.setAutoCommit(true);
-                    con.close();
-                }catch(Exception ex){
                     System.out.println(ex.getMessage());
-                }
-                System.out.println("--------");
+            }finally{
+                    try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
             }
             return resultado;
         }

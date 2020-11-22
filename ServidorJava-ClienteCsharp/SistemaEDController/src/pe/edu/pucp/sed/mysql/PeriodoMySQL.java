@@ -33,7 +33,8 @@ public class PeriodoMySQL implements PeriodoDAO{
                    new java.sql.Date(periodo.getFechaInicio().getTime()));
             cs.setDate("_FECHA_FIN", 
                    new java.sql.Date(periodo.getFechaFin().getTime()));
-            cs.setString("_DIA_NOTIFICACION",periodo.getDiaNotificacion());
+            cs.setDate("_DIA_NOTIFICACION", 
+                   new java.sql.Date(periodo.getDiaNotificacion().getTime()));
             cs.setTime("_HORA_NOTIFICACION", periodo.getHoraNotificacion());
             cs.setDouble("_PESO_EVAL_OBJ", periodo.getPesoEvalObj());
             cs.setDouble("_PESO_EVAL_COMP", periodo.getPesoEvalComp());
@@ -109,7 +110,7 @@ public class PeriodoMySQL implements PeriodoDAO{
                 per.setFechaFin(rs.getDate("fechaFin"));
                 per.setPesoEvalObj(rs.getDouble("pesoEvalObj"));
                 per.setPesoEvalComp(rs.getDouble("pesoEvalComp"));
-                per.setDiaNotificacion(rs.getString("diaNotificacion"));
+                per.setDiaNotificacion(rs.getDate("diaNotificacion"));
                 per.setHoraNotificacion(rs.getTime("horaNotificacion"));
                 per.setNombre(rs.getString("nombre"));
                 
@@ -152,7 +153,7 @@ public class PeriodoMySQL implements PeriodoDAO{
             per.setFechaFin(rs.getDate("fechaFin"));
             per.setPesoEvalObj(rs.getDouble("pesoEvalObj"));
             per.setPesoEvalComp(rs.getDouble("pesoEvalComp"));
-            per.setDiaNotificacion(rs.getString("diaNotificacion"));
+            per.setDiaNotificacion(rs.getDate("diaNotificacion"));
             per.setHoraNotificacion(rs.getTime("horaNotificacion"));
             per.setNombre(rs.getString("nombre"));
             resultado =1;

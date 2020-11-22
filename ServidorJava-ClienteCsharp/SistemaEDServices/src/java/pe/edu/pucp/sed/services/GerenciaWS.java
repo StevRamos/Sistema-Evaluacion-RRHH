@@ -73,4 +73,16 @@ public class GerenciaWS{
         }
         return gerencias;
     }
+    
+    @WebMethod(operationName = "listarXPeriodoActual")
+    public ArrayList<Gerencia> listarXPeriodoActual(){
+        ArrayList<Gerencia> gerencias = new ArrayList<>();
+        try{
+            gerencias =  daoGerencia.listarXPeriodoActual();
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return gerencias;
+    }
+    
 }

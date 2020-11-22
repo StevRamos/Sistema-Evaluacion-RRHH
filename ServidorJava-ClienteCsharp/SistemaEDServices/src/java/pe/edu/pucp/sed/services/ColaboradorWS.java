@@ -101,4 +101,17 @@ public class ColaboradorWS {
         return colaborador;
     }
     
+    @WebMethod(operationName = "listarJefeXGerenciaXPeriodoActual")
+    public ArrayList<Colaborador> listarJefeXGerenciaXPeriodoActual(@WebParam(name = "idGerencia") int idGerencia){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        
+        try {
+            colaboradores = daoColaborador.listarJefeXGerenciaXPeriodoActual(idGerencia);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return colaboradores;
+    }
+    
 }

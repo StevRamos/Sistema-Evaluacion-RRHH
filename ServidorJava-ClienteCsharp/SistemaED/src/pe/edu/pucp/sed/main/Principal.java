@@ -11,7 +11,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
-import pe.edu.pucp.sed.dao.CriterioDAO;
 import pe.edu.pucp.sed.dao.EscalaDAO;
 import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
 import pe.edu.pucp.sed.dao.GerenciaDAO;
@@ -23,7 +22,6 @@ import pe.edu.pucp.sed.dao.PesoCriterioDAO;
 import pe.edu.pucp.sed.dao.PuestoTrabajoDAO;
 import pe.edu.pucp.sed.dao.UsuarioDAO;
 import pe.edu.pucp.sed.model.Colaborador;
-import pe.edu.pucp.sed.model.Criterio;
 import pe.edu.pucp.sed.model.Escala;
 import pe.edu.pucp.sed.model.EstadoCuenta;
 import pe.edu.pucp.sed.model.EvaluacionDesempenho;
@@ -35,7 +33,6 @@ import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.model.PesoCriterio;
 import pe.edu.pucp.sed.model.PuestoTrabajo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
-import pe.edu.pucp.sed.mysql.CriterioMySQL;
 import pe.edu.pucp.sed.mysql.EscalaMySQL;
 import pe.edu.pucp.sed.mysql.EvaluacionDesempenhoMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaMySQL;
@@ -348,8 +345,8 @@ public class Principal {
         
         //object.setIdObjetivo(11);
         //object.setFechaAprobacion();
-//        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
-//        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
+        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
+        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
 //        pesoscriterio = daopesocriterio.listar(0,"","","");
 //        for (PesoCriterio p : pesoscriterio){
 //            System.out.println(p.getIdPesoCriterio());
@@ -362,31 +359,13 @@ public class Principal {
 //        peso.setNombrePeriodo("Periodo 2020-2");
 //        daopesocriterio.actualizar(peso);
         
-//        PesoCriterio peso1 = new PesoCriterio();
-//        peso1.setNombrePeriodo("Periodo 2020-2");
-//        peso1.setIdCriterio(2);
-//        peso1.setNombrePuestoTrabajo("Administrador");
-//        peso1.setNombreCriterio("Liderazgo");
-//        peso1.setPeso(0.7);
-////        daopesocriterio.insertar(peso1);
-//        daopesocriterio.eliminar(peso1);
-
-//        CriterioDAO daocriterio = new CriterioMySQL();
-//        Criterio criterio = new Criterio();
-//        Criterio criterioPadre = new Criterio();
-//        criterioPadre.setIdCriterio(-1);
-//        criterio.setNombre("milibro");
-//        criterio.setDescripcion("lunadepluton");
-//        criterio.setTipo(0);
-//        criterio.setCriterioPadre(criterioPadre);
-//        
-//        PesoCriterio pc  = new PesoCriterio();
-//        pc.setNombrePuestoTrabajo("ANALISTA DE DATOS");
-//        pc.setNombrePeriodo("Periodo 2020-2");
-//        pc.setNombreCriterio("milibro");
-//        pc.setPeso(0.25);
-//        criterio.getPesoscriterios().add(pc);
-//        daocriterio.insertar_individual(criterio);
-        
+        PesoCriterio peso1 = new PesoCriterio();
+        peso1.setNombrePeriodo("Periodo 2020-2");
+        peso1.setIdCriterio(2);
+        peso1.setNombrePuestoTrabajo("Administrador");
+        peso1.setNombreCriterio("Liderazgo");
+        peso1.setPeso(0.7);
+//        daopesocriterio.insertar(peso1);
+        daopesocriterio.eliminar(peso1);
     }
 }
