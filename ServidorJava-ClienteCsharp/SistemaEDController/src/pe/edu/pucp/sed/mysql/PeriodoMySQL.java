@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
+import pe.edu.pucp.sed.model.GerenciaPeriodo;
 import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.model.PesoCriterio;
 
@@ -177,4 +178,49 @@ public class PeriodoMySQL implements PeriodoDAO{
         }
         return per;
     }
+
+    @Override
+    public Periodo listarGerenciaPeriodo(Periodo periodo) {
+        ArrayList<GerenciaPeriodo> gerenciasPeriodo = new ArrayList<>();
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call LISTAR_GERENCIA_PERIODO_X_PERIODO(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_PERIODO", periodo.getIdPeriodo());
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                GerenciaPeriodo gerPer = new GerenciaPeriodo();
+                gerPer.setPeriodo(periodo);
+                
+                gerPer.getGerencia().setIdGerencia(rs.getInt("id_Gerencias"));
+                gerPer.getGerencia().setNombre(rs.getString("nombre"));
+                gerPer.getGerencia().setDescripcion(rs.getString("descripcion"));
+                
+                gerPer.setFechaFinCal(rs.getDate("fechaFinCal"));
+                gerPer.setFechaFinEvalFinD(rs.getDate("fechaFinEvalFinD"));
+                gerPer.setFechaFinEvalPrevD(rs.getDate("fechaFinEvalPrevD"));
+                gerPer.setFechaFinPDI(rs.getDate("fechaFinPDI"));
+                gerPer.setFechaFinPlan(rs.getDate("fechaFinPlan"));
+                gerPer.setFechaInicioCal(rs.getDate("fechaInicioCal"));
+                gerPer.setFechaInicioEvalFinD(rs.getDate("fechaInicioEvalFinD"));
+                gerPer.setFechaInicioEvalPrevD(rs.getDate("fechaInicioEvalPrevD"));
+                gerPer.setFechaInicioPDI(rs.getDate("fechaInicioPDI"));
+                gerPer.setFechaInicioPlan(rs.getDate("fechaInicioPlan"));
+                
+                gerenciasPeriodo.add(gerPer);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        
+        periodo.setConfiguracionFechas(gerenciasPeriodo);
+        
+        return periodo;        
+    }
+   
+    
 }

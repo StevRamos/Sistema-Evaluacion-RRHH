@@ -1,6 +1,7 @@
 package pe.edu.pucp.sed.dao;
 
 import java.util.ArrayList;
+import pe.edu.pucp.sed.model.GerenciaPeriodo;
 import pe.edu.pucp.sed.model.Periodo;
 
 public interface PeriodoDAO{
@@ -9,4 +10,5 @@ public interface PeriodoDAO{
 	int eliminar(int idPeriodo);
         Periodo obtenerPeriodoActual();
 	ArrayList<Periodo> listar();
+        Periodo listarGerenciaPeriodo(Periodo Periodo);
 }

@@ -62,4 +62,16 @@ public class PeriodoWS {
         }
         return periodo;
     }
+    
+    @WebMethod(operationName = "listarGerenciaPeriodo")
+    public Periodo listarGerenciaPeriodo(@WebParam(name = "periodo") Periodo periodo){
+        Periodo periodonew = new Periodo();        
+        try{
+            periodonew = daoPeriodo.listarGerenciaPeriodo(periodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return periodonew;
+    }
+    
 }
