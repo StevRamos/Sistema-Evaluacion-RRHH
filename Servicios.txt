@@ -1,0 +1,4 @@
+http://54.160.145.128:8080/SistemaEDServices/ColaboradorWS?WSDL
+http://54.160.145.128:8080/SistemaEDServices/GerenciaPeriodoWS?WSDL
+http://54.160.145.128:8080/SistemaEDServices/PesoCriterioWS?WSDL
+http://54.160.145.128:8080/SistemaEDServices/EvaluacionDesempenhoWS?WSDL
