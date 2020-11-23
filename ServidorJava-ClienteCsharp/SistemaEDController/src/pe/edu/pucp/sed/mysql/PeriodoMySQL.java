@@ -9,7 +9,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
+import pe.edu.pucp.sed.model.EscalaPeriodo;
 import pe.edu.pucp.sed.model.GerenciaPeriodo;
+import pe.edu.pucp.sed.model.ItemPDIPeriodo;
 import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.model.PesoCriterio;
 
@@ -51,6 +53,24 @@ public class PeriodoMySQL implements PeriodoDAO{
                 cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
                 cs.executeUpdate();
             }
+            
+            for(EscalaPeriodo escalas : periodo.getEscalas()){
+                sql = "{call REGISTRAR_ESCALA_PERIODO_INI(?,?)}";
+                cs = con.prepareCall(sql);
+                cs.setInt("_ID_PERIODO", escalas.getPeriodo().getIdPeriodo());
+                cs.setInt("_ID_ESCALA", escalas.getEscala().getIdEscala());
+                cs.executeUpdate();
+            }
+                      
+            for(ItemPDIPeriodo rangosPDI : periodo.getRangosPDI()){
+                sql = "{call INSERTAR_ITEM_PDI_PERIODOS(?)}";
+                cs = con.prepareCall(sql);
+                cs.setInt("_ID_PERIODO", rangosPDI.getPeriodo().getIdPeriodo());
+                cs.executeUpdate();
+            }
+            
+            
+            
             con.commit();
             
             
