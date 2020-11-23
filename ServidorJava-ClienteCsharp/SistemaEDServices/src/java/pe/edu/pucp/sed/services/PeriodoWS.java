@@ -52,6 +52,28 @@ public class PeriodoWS {
         return resultado;
     }
     
+    @WebMethod(operationName = "actualizarPeriodo")
+    public int actualizarPeriodo(@WebParam(name = "periodo") Periodo periodo){
+        int resultado = 0;
+        try{
+            resultado =  daoPeriodo.actualizar(periodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "eliminarPeriodo")
+    public int eliminarPeriodo(@WebParam(name = "periodo") Periodo periodo){
+        int resultado = 0;
+        try{
+            resultado =  daoPeriodo.eliminar(periodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
     @WebMethod(operationName = "obtenerPeriodo")
     public Periodo obtenerPeriodo(){
         Periodo periodo = new Periodo();        

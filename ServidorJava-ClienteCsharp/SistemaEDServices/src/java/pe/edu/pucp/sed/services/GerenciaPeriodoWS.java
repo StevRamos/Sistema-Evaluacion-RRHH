@@ -16,38 +16,38 @@ public class GerenciaPeriodoWS{
         daoGerenciaPeriodo = new GerenciaPeriodoMySQL();
     }
 
-    @WebMethod(operationName = "insertarGerenciaPeriodo")
-    public int insertarGerenciaPeriodo(@WebParam(name = "gerenciaPeriodo") GerenciaPeriodo gerenciaPeriodo){
-        int resultado = 0;
-        try{
-            resultado =  daoGerenciaPeriodo.insertar(gerenciaPeriodo);
-        }catch( Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-
-    @WebMethod(operationName = "actualizarGerenciaPeriodo")
-    public int actualizarGerenciaPeriodo(@WebParam(name = "gerenciaPeriodo") GerenciaPeriodo gerenciaPeriodo){
-        int resultado = 0;
-        try{
-            resultado =  daoGerenciaPeriodo.actualizar(gerenciaPeriodo);
-        }catch( Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
-
-    @WebMethod(operationName = "eliminarGerenciaPeriodo")
-    public int eliminarGerenciaPeriodo(@WebParam(name = "gerenciaPeriodo") GerenciaPeriodo gerenciaPeriodo){
-        int resultado = 0;
-        try{
-            resultado =  daoGerenciaPeriodo.eliminar(gerenciaPeriodo);
-        }catch( Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return resultado;
-    }
+//    @WebMethod(operationName = "insertarGerenciaPeriodo")
+//    public int insertarGerenciaPeriodo(@WebParam(name = "gerenciaPeriodo") GerenciaPeriodo gerenciaPeriodo){
+//        int resultado = 0;
+//        try{
+//            resultado =  daoGerenciaPeriodo.insertar(gerenciaPeriodo);
+//        }catch( Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return resultado;
+//    }
+//
+//    @WebMethod(operationName = "actualizarGerenciaPeriodo")
+//    public int actualizarGerenciaPeriodo(@WebParam(name = "gerenciaPeriodo") GerenciaPeriodo gerenciaPeriodo){
+//        int resultado = 0;
+//        try{
+//            resultado =  daoGerenciaPeriodo.actualizar(gerenciaPeriodo);
+//        }catch( Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return resultado;
+//    }
+//
+//    @WebMethod(operationName = "eliminarGerenciaPeriodo")
+//    public int eliminarGerenciaPeriodo(@WebParam(name = "gerenciaPeriodo") GerenciaPeriodo gerenciaPeriodo){
+//        int resultado = 0;
+//        try{
+//            resultado =  daoGerenciaPeriodo.eliminar(gerenciaPeriodo);
+//        }catch( Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return resultado;
+//    }
 
     @WebMethod(operationName = "listarXPeriodo")
     public ArrayList<GerenciaPeriodo> listarXPeriodo(@WebParam(name = "idPeriodo") int idPeriodo){

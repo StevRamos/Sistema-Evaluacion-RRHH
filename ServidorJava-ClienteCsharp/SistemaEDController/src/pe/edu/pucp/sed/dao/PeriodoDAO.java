@@ -7,8 +7,8 @@ import pe.edu.pucp.sed.model.Periodo;
 public interface PeriodoDAO{
 	int insertar(Periodo periodo);
 	int actualizar(Periodo periodo);
-	int eliminar(int idPeriodo);
+	int eliminar(Periodo periodo);
         Periodo obtenerPeriodoActual();
 	ArrayList<Periodo> listar();
-        Periodo listarGerenciaPeriodo(Periodo Periodo);
+        Periodo listarGerenciaPeriodo(Periodo periodo);
 }

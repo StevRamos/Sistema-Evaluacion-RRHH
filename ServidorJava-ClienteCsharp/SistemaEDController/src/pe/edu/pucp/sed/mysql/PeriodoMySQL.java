@@ -26,6 +26,7 @@ public class PeriodoMySQL implements PeriodoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            con.setAutoCommit(false);
             String sql = "{call INSERTAR_PERIODO(?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             
@@ -41,13 +42,35 @@ public class PeriodoMySQL implements PeriodoDAO{
             cs.setString("_NOMBRE", periodo.getNombre());
             cs.executeUpdate();
             periodo.setIdPeriodo(cs.getInt("_ID_PERIODO"));
-            resultado = 1;
+            
+            
+            for(GerenciaPeriodo gPer : periodo.getConfiguracionFechas()){
+                sql = "{call INSERTAR_GERENCIA_PERIODO(?,?)}";
+                cs = con.prepareCall(sql);
+                cs.setInt("_ID_PERIODO", gPer.getPeriodo().getIdPeriodo());
+                cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
+                cs.executeUpdate();
+            }
+            con.commit();
+            
+            
+            resultado = periodo.getIdPeriodo();
         }catch(Exception ex){
+            try{
+                con.rollback();
+            }catch(Exception exR){
+                System.out.println(exR.getMessage());
+            }
             System.out.println(ex.getMessage());
         }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
         }
-        return resultado;
+        return resultado;  
     }
     
     @Override
@@ -56,6 +79,7 @@ public class PeriodoMySQL implements PeriodoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            con.setAutoCommit(false);
             String sql = "{call ACTUALIZAR_PERIODO(?,?,?)}";
             cs = con.prepareCall(sql);
             cs.setInt("_ID_PERIODO", periodo.getIdPeriodo());
@@ -64,30 +88,97 @@ public class PeriodoMySQL implements PeriodoDAO{
             cs.setDate("_NEW_FIN", 
                    new java.sql.Date(periodo.getFechaFin().getTime()));
             cs.executeUpdate();
+            
+            
+            for(GerenciaPeriodo gPer : periodo.getConfiguracionFechas()){
+                sql = "{call ACTUALIZAR_GERENCIA_PERIODO(?,?,?,?,?,?,?,?,?,?,?,?)}";
+                cs = con.prepareCall(sql);
+                cs.setInt("_ID_PERIODO", gPer.getPeriodo().getIdPeriodo());
+                cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
+
+                cs.setDate("_FECHA_INICIO_PLAN", 
+                       new java.sql.Date(gPer.getFechaInicioPlan().getTime()));
+                cs.setDate("_FECHA_FIN_PLAN", 
+                       new java.sql.Date(gPer.getFechaFinPlan().getTime()));
+                cs.setDate("_FECHA_INICIO_PDI", 
+                       new java.sql.Date(gPer.getFechaInicioPDI().getTime()));
+                cs.setDate("_FECHA_FIN_PDI", 
+                       new java.sql.Date(gPer.getFechaFinPDI().getTime()));
+                cs.setDate("_FECHA_INICIO_EVAL_PREVD", 
+                       new java.sql.Date(gPer.getFechaInicioEvalPrevD().getTime()));
+                cs.setDate("_FECHA_FIN_EVAL_PREVD", 
+                       new java.sql.Date(gPer.getFechaFinEvalPrevD().getTime()));
+                cs.setDate("_FECHA_INICIO_EVAL_FIND", 
+                       new java.sql.Date(gPer.getFechaInicioEvalFinD().getTime()));
+                cs.setDate("_FECHA_FIN_EVAL_FIND", 
+                       new java.sql.Date(gPer.getFechaFinEvalFinD().getTime()));
+                cs.setDate("_FECHA_INICIO_CAL", 
+                       new java.sql.Date(gPer.getFechaInicioCal().getTime()));
+                cs.setDate("_FECHA_FIN_CAL", 
+                       new java.sql.Date(gPer.getFechaFinCal().getTime()));
+
+                cs.executeUpdate();
+            }
+            con.commit();
+            
             resultado = 1;
         }catch(Exception ex){
+            try{
+                con.rollback();
+            }catch(Exception exR){
+                System.out.println(exR.getMessage());
+            }
             System.out.println(ex.getMessage());
         }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
         }
-        return resultado;
+        return resultado;  
     }
     
     @Override
-    public int eliminar(int idPeriodo){
+    public int eliminar(Periodo periodo){
         int resultado = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            con.setAutoCommit(false);
             String sql = "{call ELIMINAR_PERIODO(?)}";
             cs = con.prepareCall(sql);
-            cs.setInt("_ID_PERIODO", idPeriodo);   
+            cs.setInt("_ID_PERIODO", periodo.getIdPeriodo());   
             cs.executeUpdate();
+            
+            
+            for(GerenciaPeriodo gPer : periodo.getConfiguracionFechas()){
+                sql = "{call ELIMINAR_GERENCIA_PERIODO(?,?)}";
+                cs = con.prepareCall(sql);
+                cs.setInt("_ID_PERIODO", gPer.getPeriodo().getIdPeriodo());
+                cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
+                cs.executeUpdate();
+            }
+            
+            
+            
+            con.commit();
             resultado = 1;
         }catch(Exception ex){
+            try{
+                con.rollback();
+            }catch(Exception exR){
+                System.out.println(exR.getMessage());
+            }
             System.out.println(ex.getMessage());
         }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
         }
         return resultado;
     }
