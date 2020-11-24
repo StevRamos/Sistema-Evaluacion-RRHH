@@ -344,14 +344,13 @@ public class Principal {
 //        }
         
         //object.setIdObjetivo(11);
-        //object.setFechaAprobacion();
-//        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
-//        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
-//        pesoscriterio = daopesocriterio.listar(0,"","","");
-//        for (PesoCriterio p : pesoscriterio){
-//            System.out.println(p.getIdPesoCriterio());
-//        }
-        
+        //object.setFechaAprobacion(); 
+        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
+        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
+        pesoscriterio = daopesocriterio.listar(2,"","","");
+        for (PesoCriterio p : pesoscriterio){
+            System.out.println(p.getIdPesoCriterio());
+        }
 //        PesoCriterio peso = new PesoCriterio();
 //        peso.setNombreCriterio("Analisis de probl");
 //        peso.setPeso(0.1);

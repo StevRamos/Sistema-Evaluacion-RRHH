@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.PesoCriterioDAO;
+import pe.edu.pucp.sed.model.Criterio;
 import pe.edu.pucp.sed.model.PesoCriterio;
 
 public class PesoCriterioMySQL implements PesoCriterioDAO{
@@ -109,11 +110,71 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
                             pesoCriterios.add(pesocriterio);
                         }
                     }else if (tipo ==1){
-
+                        String sql = "{call LISTAR_POTENCIALES(?,?,?)}";
+                        cs = con.prepareCall(sql);
+                        cs.setString("_NOMBRE_CARGO",nomcargo);
+                        cs.setString("_NOMBRE_PERIODO",nomPeriodo);
+                        cs.setString("_NOMBRE_POTENCIAL",nomCompetencia);
+                        rs = cs.executeQuery();
+                        while(rs.next()){
+                            PesoCriterio pesocriterio = new PesoCriterio();
+                            pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
+                            pesocriterio.setIdPeriodo(rs.getInt("id_Periodo"));
+                            pesocriterio.setNombrePeriodo(rs.getString("periodo"));
+                            pesocriterio.setIdCriterio(rs.getInt("id_Criterio"));
+                            pesocriterio.setNombreCriterio(rs.getString("nombre"));
+                            pesocriterio.setDescripcion(rs.getString("descripcion"));
+                            pesocriterio.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                            pesocriterio.setNombrePuestoTrabajo(rs.getString("cargo"));
+                            pesocriterio.setPeso(rs.getDouble("peso"));
+                            pesoCriterios.add(pesocriterio);
+                        }
                     }else if (tipo == 2){
-
+                        String sql = "{call LISTAR_SUBCOMPETENCIAS(?,?,?)}";
+                        cs = con.prepareCall(sql);
+                        cs.setString("_NOMBRE_CARGO",nomcargo);
+                        cs.setString("_NOMBRE_PERIODO",nomPeriodo);
+                        cs.setString("_NOMBRE_SUBCOMPETENCIA",nomCompetencia);
+                        rs = cs.executeQuery();
+                        while(rs.next()){
+                            PesoCriterio pesocriterio = new PesoCriterio();
+                            pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
+                            pesocriterio.setIdPeriodo(rs.getInt("id_Periodo"));
+                            pesocriterio.setNombrePeriodo(rs.getString("periodo"));
+                            pesocriterio.setIdCriterio(rs.getInt("id_Criterio"));
+                            pesocriterio.setNombreCriterio(rs.getString("nombre"));
+                            Criterio criteriopadre = new Criterio();
+                            criteriopadre.setIdCriterio(rs.getInt("id_CriterioPadre"));
+                            pesocriterio.getCriterio().setCriterioPadre(criteriopadre);
+                            pesocriterio.setDescripcion(rs.getString("descripcion"));
+                            pesocriterio.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                            pesocriterio.setNombrePuestoTrabajo(rs.getString("cargo"));
+                            pesocriterio.setPeso(rs.getDouble("peso"));
+                            pesoCriterios.add(pesocriterio);
+                        }
                     }else if (tipo==3){
-
+                        String sql = "{call LISTAR_SUBPOTENCIALES(?,?,?)}";
+                        cs = con.prepareCall(sql);
+                        cs.setString("_NOMBRE_CARGO",nomcargo);
+                        cs.setString("_NOMBRE_PERIODO",nomPeriodo);
+                        cs.setString("_NOMBRE_SUBPOTENCIALES",nomCompetencia);
+                        rs = cs.executeQuery();
+                        while(rs.next()){
+                            PesoCriterio pesocriterio = new PesoCriterio();
+                            pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
+                            pesocriterio.setIdPeriodo(rs.getInt("id_Periodo"));
+                            pesocriterio.setNombrePeriodo(rs.getString("periodo"));
+                            pesocriterio.setIdCriterio(rs.getInt("id_Criterio"));
+                            pesocriterio.setNombreCriterio(rs.getString("nombre"));
+                            Criterio criteriopadre = new Criterio();
+                            criteriopadre.setIdCriterio(rs.getInt("id_CriterioPadre"));
+                            pesocriterio.getCriterio().setCriterioPadre(criteriopadre);
+                            pesocriterio.setDescripcion(rs.getString("descripcion"));
+                            pesocriterio.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                            pesocriterio.setNombrePuestoTrabajo(rs.getString("cargo"));
+                            pesocriterio.setPeso(rs.getDouble("peso"));
+                            pesoCriterios.add(pesocriterio);
+                        }
                     }
                     return pesoCriterios;
                             
