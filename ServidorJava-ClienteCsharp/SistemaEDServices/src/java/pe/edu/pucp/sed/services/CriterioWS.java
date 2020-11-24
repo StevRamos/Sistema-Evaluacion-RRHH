@@ -48,7 +48,7 @@ public class CriterioWS {
     }
 
 
-    @WebMethod(operationName = "actualizarPesoCriterio")
+    @WebMethod(operationName = "actualizarCriterio")
     public int actualizarCriterio(@WebParam(name = "criterio") Criterio criterio){
         int resultado = 0;
         try{

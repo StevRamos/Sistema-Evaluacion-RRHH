@@ -68,11 +68,9 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ELIMINAR_PESOCOMPETENCIA_DE_COMPETENCIA(?,?,?)}";
+			String sql = "{call ELIMINAR_PESO_CRITERIO(?)}";
 			cs = con.prepareCall(sql);
-                        cs.setInt("_ID_CRITERIO",pesoCriterio.getIdCriterio());
-                        cs.setString("_NOMBRE_CARGO",pesoCriterio.getNombrePuestoTrabajo());
-                        cs.setString("_NOMBRE_PERIODO",pesoCriterio.getNombrePeriodo());
+                        cs.setInt("_ID_PESO_CRITERIO",pesoCriterio.getIdPesoCriterio());
 			cs.executeUpdate();
 			resultado = 1;
 		}catch(Exception ex){
