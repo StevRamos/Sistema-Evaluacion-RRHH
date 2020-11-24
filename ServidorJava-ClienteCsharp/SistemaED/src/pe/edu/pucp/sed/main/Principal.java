@@ -220,11 +220,11 @@ public class Principal {
         //    System.out.println(a.getIdItemPDI()+ " - " + a.getNombre());
         //}
 //        
-//        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
+        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
 //        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
 //        
-//        for(PuestoTrabajo pt : daoPuestoTrabajo.listar("Sistemas") )
-//            System.out.println(pt.getNombre());
+        for(PuestoTrabajo pt : daoPuestoTrabajo.listar("") )
+            System.out.println(pt.getNombre());
 ////        
 ////     
 //        try{
@@ -345,8 +345,8 @@ public class Principal {
         
         //object.setIdObjetivo(11);
         //object.setFechaAprobacion();
-        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
-        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
+//        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
+//        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
 //        pesoscriterio = daopesocriterio.listar(0,"","","");
 //        for (PesoCriterio p : pesoscriterio){
 //            System.out.println(p.getIdPesoCriterio());
@@ -359,13 +359,13 @@ public class Principal {
 //        peso.setNombrePeriodo("Periodo 2020-2");
 //        daopesocriterio.actualizar(peso);
         
-        PesoCriterio peso1 = new PesoCriterio();
-        peso1.setNombrePeriodo("Periodo 2020-2");
-        peso1.setIdCriterio(2);
-        peso1.setNombrePuestoTrabajo("Administrador");
-        peso1.setNombreCriterio("Liderazgo");
-        peso1.setPeso(0.7);
+//        PesoCriterio peso1 = new PesoCriterio();
+//        peso1.setNombrePeriodo("Periodo 2020-2");
+//        peso1.setIdCriterio(2);
+//        peso1.setNombrePuestoTrabajo("Administrador");
+//        peso1.setNombreCriterio("Liderazgo");
+//        peso1.setPeso(0.7);
 //        daopesocriterio.insertar(peso1);
-        daopesocriterio.eliminar(peso1);
+//        daopesocriterio.eliminar(peso1);
     }
 }

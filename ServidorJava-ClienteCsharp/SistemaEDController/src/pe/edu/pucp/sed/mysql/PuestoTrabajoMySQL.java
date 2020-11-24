@@ -115,12 +115,27 @@ public class PuestoTrabajoMySQL implements PuestoTrabajoDAO{
             while (rs.next()) {
 
                 Gerencia ger = new Gerencia();
-                ger.setNombre(rs.getString("nombreGerencia"));
-
                 PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
-                puestoTrabajo.setIdPuestoTrabajo(rs.getInt("idPuestoTrabajo"));
-                puestoTrabajo.setNombre(rs.getString("nombrePuestoTrabajo"));
-                puestoTrabajo.setDescripcion(rs.getString("descripcion"));
+                
+                //esto genera error porque la query no da los mismos rsultados siempre
+                try{
+                    ger.setNombre(rs.getString("nombreGerencia"));
+                    puestoTrabajo.setIdPuestoTrabajo(rs.getInt("idPuestoTrabajo"));
+                    puestoTrabajo.setNombre(rs.getString("nombrePuestoTrabajo"));
+                    puestoTrabajo.setDescripcion(rs.getString("descripcion"));
+                }
+                catch(Exception ex){
+                    try{
+                        ger.setNombre("");
+                        puestoTrabajo.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                        puestoTrabajo.setNombre(rs.getString("nombre"));
+                        puestoTrabajo.setDescripcion(rs.getString("descripcion"));
+                    }
+                    catch(Exception e){
+                        System.out.println(e.getMessage());
+                    }
+                }
+                    
 
                 puestoTrabajo.setGerencia(ger);
                 puestosTrabajo.add(puestoTrabajo);
