@@ -85,16 +85,18 @@ public class CriterioMySQL implements CriterioDAO{
 		return resultado;
 	}
 	@Override
-	public ArrayList<Criterio> listar(){
+	public ArrayList<Criterio> listar(int tipo,String nombrecriterio){
 		ArrayList<Criterio> criterios = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
                         
-                        String sql = "{call LISTAR_CRITERIOS()}";
+                        String sql = "{call LISTAR_CRITERIO(?,?)}";
 			cs = con.prepareCall(sql);
-                        
-                        rs = cs.executeQuery(sql);
+                        cs.setInt("_TIPO",tipo);
+                        cs.setString("_NOMBRE",nombrecriterio);
+
+                        rs = cs.executeQuery();
                         while(rs.next()){
                             Criterio criterio = new Criterio();
                             criterio.setIdCriterio(rs.getInt("id_Criterio"));

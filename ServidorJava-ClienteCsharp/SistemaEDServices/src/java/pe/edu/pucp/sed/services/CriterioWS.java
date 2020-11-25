@@ -60,10 +60,10 @@ public class CriterioWS {
     }
     
     @WebMethod(operationName = "listar")
-    public ArrayList<Criterio> listar() {
+    public ArrayList<Criterio> listar(int tipo,String nombrecriterio) {
         ArrayList<Criterio> criterios = new ArrayList();
         try{
-            criterios = daoCriterio.listar();
+            criterios = daoCriterio.listar(tipo,nombrecriterio);
         }catch( Exception ex){
             System.out.println(ex.getMessage());
         }
