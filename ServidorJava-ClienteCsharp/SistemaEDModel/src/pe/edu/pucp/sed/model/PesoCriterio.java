@@ -15,7 +15,24 @@ public class PesoCriterio{
                 this.puestoTrabajo = new PuestoTrabajo();
                 this.criterio = new Criterio();
 	};
+        
 
+        public int getIdCriterioPadre() {
+           return this.criterio.getCriterioPadre().getIdCriterio();
+        }
+
+        public void setIdCriterioPadre(int idCriterio) {
+            this.criterio.getCriterioPadre().setIdCriterio(idCriterio);
+        }
+        
+        public String getNombrePadre() {
+            return this.criterio.getCriterioPadre().getNombre();
+        }        
+        
+        public void setNombrePadre(String nombre) {
+            this.criterio.getCriterioPadre().setNombre(nombre);
+        }
+        
         public String getDescripcion() {
             return this.criterio.getDescripcion();
         }

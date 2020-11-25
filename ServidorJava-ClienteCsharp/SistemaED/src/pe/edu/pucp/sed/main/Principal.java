@@ -347,7 +347,7 @@ public class Principal {
         //object.setFechaAprobacion(); 
         PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
         ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
-        pesoscriterio = daopesocriterio.listar(2,"","","");
+        pesoscriterio = daopesocriterio.listar(0,"","","");
         for (PesoCriterio p : pesoscriterio){
             System.out.println(p.getIdPesoCriterio());
         }
