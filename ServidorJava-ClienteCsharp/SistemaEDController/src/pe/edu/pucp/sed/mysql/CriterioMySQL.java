@@ -49,7 +49,7 @@ public class CriterioMySQL implements CriterioDAO{
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-			String sql = "{call ACTUALIZAR_CRITERIO(?,?)}";
+			String sql = "{call ACTUALIZAR_CRITERIO(?,?,?)}";
 			cs = con.prepareCall(sql);
                         cs.setString("_DESCRIPCION",criterio.getDescripcion());
                         cs.setInt("_ID_CRITERIO",criterio.getIdCriterio());
