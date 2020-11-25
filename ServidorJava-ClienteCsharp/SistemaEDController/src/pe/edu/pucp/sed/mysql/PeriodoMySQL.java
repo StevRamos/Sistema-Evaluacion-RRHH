@@ -55,17 +55,22 @@ public class PeriodoMySQL implements PeriodoDAO{
             }
             
             for(EscalaPeriodo escalas : periodo.getEscalas()){
-                sql = "{call REGISTRAR_ESCALA_PERIODO_INI(?,?)}";
+                sql = "{call REGISTRAR_ESCALA_PERIODO_INI(?,?,?,?,?)}";
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", escalas.getPeriodo().getIdPeriodo());
                 cs.setInt("_ID_ESCALA", escalas.getEscala().getIdEscala());
+                cs.setDouble("_NOTAMAX", escalas.getNotaMax());
+                cs.setDouble("_NOTAMIN", escalas.getNotaMin());
+                cs.setDouble("_PORCENTAJECUPOS", escalas.getPorcentajeCupos());
                 cs.executeUpdate();
             }
                       
             for(ItemPDIPeriodo rangosPDI : periodo.getRangosPDI()){
-                sql = "{call INSERTAR_ITEM_PDI_PERIODOS(?)}";
+                sql = "{call INSERTAR_ITEM_PDI_PERIODOS(?,?,?)}";
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", rangosPDI.getPeriodo().getIdPeriodo());
+                cs.setDouble("_NOTAMIN", rangosPDI.getNotaMin());
+                cs.setDouble("_NOTAMAX", rangosPDI.getNotaMax());
                 cs.executeUpdate();
             }
             
@@ -332,6 +337,48 @@ public class PeriodoMySQL implements PeriodoDAO{
         
         return periodo;        
     }
+
+    @Override
+    public ArrayList<GerenciaPeriodo> listarGerenciaPeriodoPorId(int idPeriodo) {
+        ArrayList<GerenciaPeriodo> gerenciasPeriodo = new ArrayList<>();
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call LISTAR_GERENCIA_PERIODO_X_PERIODO(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_PERIODO", idPeriodo);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                GerenciaPeriodo gerPer = new GerenciaPeriodo();
+                gerPer.getPeriodo().setIdPeriodo(idPeriodo);
+                
+                gerPer.getGerencia().setIdGerencia(rs.getInt("id_Gerencias"));
+                gerPer.getGerencia().setNombre(rs.getString("nombre"));
+                gerPer.getGerencia().setDescripcion(rs.getString("descripcion"));
+                
+                gerPer.setFechaFinCal(rs.getDate("fechaFinCal"));
+                gerPer.setFechaFinEvalFinD(rs.getDate("fechaFinEvalFinD"));
+                gerPer.setFechaFinEvalPrevD(rs.getDate("fechaFinEvalPrevD"));
+                gerPer.setFechaFinPDI(rs.getDate("fechaFinPDI"));
+                gerPer.setFechaFinPlan(rs.getDate("fechaFinPlan"));
+                gerPer.setFechaInicioCal(rs.getDate("fechaInicioCal"));
+                gerPer.setFechaInicioEvalFinD(rs.getDate("fechaInicioEvalFinD"));
+                gerPer.setFechaInicioEvalPrevD(rs.getDate("fechaInicioEvalPrevD"));
+                gerPer.setFechaInicioPDI(rs.getDate("fechaInicioPDI"));
+                gerPer.setFechaInicioPlan(rs.getDate("fechaInicioPlan"));
+                
+                gerenciasPeriodo.add(gerPer);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return gerenciasPeriodo;
+    }
    
+    
+    
     
 }

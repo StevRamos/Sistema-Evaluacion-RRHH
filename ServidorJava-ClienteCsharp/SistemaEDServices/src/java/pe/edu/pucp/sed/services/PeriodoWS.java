@@ -10,6 +10,7 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
+import pe.edu.pucp.sed.model.GerenciaPeriodo;
 import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.mysql.PeriodoMySQL;
 
@@ -94,6 +95,17 @@ public class PeriodoWS {
             System.out.println(ex.getMessage());
         }
         return periodonew;
+    }
+    
+    @WebMethod(operationName = "listarGerenciaPeriodoPorId")
+    public ArrayList<GerenciaPeriodo> listarGerenciaPeriodoPorId(@WebParam(name = "idPeriodo") int idPeriodo){
+        ArrayList<GerenciaPeriodo> gerenciasPeriodo = new ArrayList<>();      
+        try{
+            gerenciasPeriodo = daoPeriodo.listarGerenciaPeriodoPorId(idPeriodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return gerenciasPeriodo;
     }
     
 }

@@ -11,4 +11,5 @@ public interface PeriodoDAO{
         Periodo obtenerPeriodoActual();
 	ArrayList<Periodo> listar();
         Periodo listarGerenciaPeriodo(Periodo periodo);
+        ArrayList<GerenciaPeriodo> listarGerenciaPeriodoPorId(int idPeriodo);
 }
