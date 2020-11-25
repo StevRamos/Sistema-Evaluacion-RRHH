@@ -135,5 +135,12 @@ namespace SistemaEDInterfaces
             }
         }
 
+        public void SetDrop(bool drop)
+        {
+            this.tlp9Box.Controls.OfType<Control>().Where(p => p is FlowLayoutPanel).ToList().ForEach(panel => {
+                panel.AllowDrop = drop;
+            });
+        }
+
     }
 }
