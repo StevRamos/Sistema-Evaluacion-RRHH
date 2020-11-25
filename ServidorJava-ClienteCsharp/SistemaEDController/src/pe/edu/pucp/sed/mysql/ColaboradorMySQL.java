@@ -32,6 +32,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            con.setAutoCommit(false);
             String sql = "{call INSERTAR_COLABORADOR(?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             cs.registerOutParameter("_ID_COLABORADOR", java.sql.Types.INTEGER);
@@ -58,11 +59,33 @@ public class ColaboradorMySQL implements ColaboradorDAO{
             
             cs.executeUpdate();
             
+            
+            colaborador.getUsuario().setIdUsuario(colaborador.getIdColaborador());
+            
+            sql = "{call INSERTAR_USUARIO(?,?,?)}";
+            cs = con.prepareCall(sql);
+            
+            cs.setInt("_FID_USUARIO", colaborador.getUsuario().getIdUsuario());
+            cs.setString("_CONTRASENHA", colaborador.getUsuario().getContrasenha());
+            cs.setInt("_NIVEL_ACCESO", colaborador.getUsuario().getNivelAcceso());
+            cs.executeUpdate();
+            
+            con.commit();
             resultado = 1;
         }catch(Exception ex){
+            try{
+                con.rollback();
+            }catch(Exception exR){
+                System.out.println(exR.getMessage());
+            }
             System.out.println(ex.getMessage());
         }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
         }
         return resultado;
     }
@@ -73,7 +96,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call ACTUALIZAR_COLABORADOR(?,?,?,?,?,?)}";
+            String sql = "{call ACTUALIZAR_COLABORADOR(?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             //System.out.println(colaborador.getIdColaborador());
             cs.setInt("_ID_COLABORADOR", colaborador.getIdColaborador());
@@ -83,6 +106,11 @@ public class ColaboradorMySQL implements ColaboradorDAO{
             cs.setDate("_FECHANAC", 
                     new java.sql.Date(colaborador.getFechaNac().getTime()));
             cs.setInt("_ID_JEFE", colaborador.getJefe().getIdColaborador());
+            cs.setInt("_ID_PUESTO_TRABAJO", colaborador.getPuestoTrabajo().getIdPuestoTrabajo());
+            cs.setInt("_ID_GERENCIA", colaborador.getGerencia().getIdGerencia());
+            
+            
+            
             cs.executeUpdate();
             resultado = 1;
         }catch(Exception ex){

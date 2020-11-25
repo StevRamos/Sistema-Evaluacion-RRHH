@@ -53,27 +53,27 @@ public class ColaboradorWS {
         return resultado;
     }
     
-//    @WebMethod(operationName = "actualizarColaborador")
-//    public int actualizarColaborador(@WebParam(name = "colaborador") Colaborador colaborador){
-//        int resultado = 0;
-//        try{
-//            resultado =  daoColaborador.actualizar(colaborador);
-//        }catch( Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//        return resultado;
-//    }
+    @WebMethod(operationName = "actualizarColaborador")
+    public int actualizarColaborador(@WebParam(name = "colaborador") Colaborador colaborador){
+        int resultado = 0;
+        try{
+            resultado =  daoColaborador.actualizar(colaborador);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
     
-//        @WebMethod(operationName = "eliminarColaborador")
-//    public int eliminarColaborador(@WebParam(name = "idColaborador") int idColaborador){
-//        int resultado = 0;
-//        try{
-//            resultado =  daoColaborador.eliminar(idColaborador);
-//        }catch( Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//        return resultado;
-//    }
+        @WebMethod(operationName = "eliminarColaborador")
+    public int eliminarColaborador(@WebParam(name = "idColaborador") int idColaborador){
+        int resultado = 0;
+        try{
+            resultado =  daoColaborador.eliminar(idColaborador);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
  
     @WebMethod(operationName = "listarColaboradoresXJefe")
     public ArrayList<Colaborador> listarColaboradoresXJefe(@WebParam(name = "idJefe") int idJefe){
