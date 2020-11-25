@@ -26,6 +26,7 @@ namespace SistemaEDInterfaces
             InitializeComponent();
             daoObjetivo = new ObjetivoWS.ObjetivoWSClient();
             daoEvaluacionDesempenho = new EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient();
+            objetivos = new BindingList<ObjetivoWS.objetivo>(); 
             dgvMisObjetivos.AutoGenerateColumns = false;
             IdColaboradorLoggeado = 1;
 
@@ -40,9 +41,12 @@ namespace SistemaEDInterfaces
                 btnEliminar.Enabled = false;
                 btnEnviar.Enabled = false;
             }
-            objetivos = new BindingList<ObjetivoWS.objetivo>
-                                        (daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado).ToArray());
-            if(objetivos!=null)dgvMisObjetivos.DataSource = objetivos;
+            ObjetivoWS.objetivo[] lista = daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado);
+            if (lista != null) {
+                objetivos = new BindingList<ObjetivoWS.objetivo>(lista);
+                dgvMisObjetivos.DataSource = objetivos;
+                
+            }
             calcularSumaPesoObjetivos();
 
         }
