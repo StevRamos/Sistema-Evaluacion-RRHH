@@ -706,10 +706,16 @@
     <None Include="Connected Services\ColaboradorWS\ColaboradorWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.actualizarColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.buscarJefeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.colaborador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.eliminarColaboradorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.insertarColaboradorResponse.datasource">
@@ -719,6 +725,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarJefeXGerenciaXPeriodoActualResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\CriterioWS\CriterioWS.wsdl" />
@@ -757,16 +766,7 @@
     <None Include="Connected Services\GerenciaPeriodoWS\GerenciaPeriodoWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\GerenciaPeriodoWS\SistemaEDInterfaces.GerenciaPeriodoWS.actualizarGerenciaPeriodoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GerenciaPeriodoWS\SistemaEDInterfaces.GerenciaPeriodoWS.eliminarGerenciaPeriodoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\GerenciaPeriodoWS\SistemaEDInterfaces.GerenciaPeriodoWS.gerenciaPeriodo.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\GerenciaPeriodoWS\SistemaEDInterfaces.GerenciaPeriodoWS.insertarGerenciaPeriodoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GerenciaPeriodoWS\SistemaEDInterfaces.GerenciaPeriodoWS.listarXPeriodoResponse.datasource">
@@ -852,12 +852,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
-    <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
@@ -867,6 +861,12 @@
     <None Include="Connected Services\EvaluacionDesempenhoWS\configuration91.svcinfo" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\configuration.svcinfo" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
+    <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

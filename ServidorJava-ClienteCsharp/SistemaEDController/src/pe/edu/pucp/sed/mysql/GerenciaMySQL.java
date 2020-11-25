@@ -189,4 +189,38 @@ public class GerenciaMySQL implements GerenciaDAO{
         }
         return gerencias;
     }
+    
+    @Override
+    public ArrayList<Gerencia> listarXPeriodoActual() {
+        ArrayList<Gerencia> gerencias = new ArrayList<>();
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            String sql = "{call LISTAR_GERENCIA_X_PERIODO_ACTUAL()}";
+            cs = con.prepareCall(sql);
+            rs = cs.executeQuery();
+            while (rs.next()) {
+                Gerencia gp = new Gerencia();
+                
+                gp.setIdGerencia(rs.getInt("id_Gerencias"));
+                gp.setNombre(rs.getString("nombre"));
+                gp.setDescripcion(rs.getString("descripcion"));
+                
+                gerencias.add(gp);
+            }         
+            
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                con.close();
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+        }
+        return gerencias;
+    }
+    
 }

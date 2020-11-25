@@ -10,4 +10,5 @@ public interface ColaboradorDAO{
 	ArrayList<Colaborador> listar(int idPuestoTrabajo, String DNI);
         ArrayList<Colaborador> listarColaboradoresXJefe(int idJefe);
         Colaborador buscarJefe( int idJefe );
+        ArrayList<Colaborador> listarJefeXGerenciaXPeriodoActual(int idGerencia);
 }
