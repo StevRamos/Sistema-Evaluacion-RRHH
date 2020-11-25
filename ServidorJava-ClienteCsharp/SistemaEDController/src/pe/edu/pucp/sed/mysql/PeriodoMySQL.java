@@ -380,17 +380,141 @@ public class PeriodoMySQL implements PeriodoDAO{
 
     @Override
     public ArrayList<EscalaPeriodo> listarEscalaPeriodo(int idPeriodo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<EscalaPeriodo> escalasPeriodo = new ArrayList<>();
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call LISTAR_ESCALA_PERIODO(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_PERIODO", idPeriodo);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                EscalaPeriodo escPer = new EscalaPeriodo();
+                
+                escPer.getPeriodo().setIdPeriodo(rs.getInt("id_Periodo"));
+                escPer.getPeriodo().setFechaInicio(rs.getDate("fechaInicio"));
+                escPer.getPeriodo().setFechaFin(rs.getDate("fechaFin"));
+                escPer.getPeriodo().setPesoEvalObj(rs.getDouble("pesoEvalObj"));
+                escPer.getPeriodo().setPesoEvalComp(rs.getDouble("pesoEvalComp"));
+                escPer.getPeriodo().setDiaNotificacion(rs.getString("diaNotificacion"));
+                escPer.getPeriodo().setHoraNotificacion(rs.getTime("horaNotificacion"));
+                escPer.getPeriodo().setNombre(rs.getString("nombrePeriodo"));
+                
+                escPer.getEscala().setIdEscala(rs.getInt("id_Escala"));
+                escPer.getEscala().setNombre(rs.getString("nombreEscala"));
+                escPer.getEscala().setTipo(rs.getBoolean("tipo"));
+                
+                escPer.setNotaMax(rs.getDouble("notaMax"));
+                escPer.setNotaMin(rs.getDouble("notaMin"));
+                escPer.setPorcentajeCupos(rs.getDouble("porcentajeCupos"));
+                
+                escalasPeriodo.add(escPer);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return escalasPeriodo;
     }
 
     @Override
     public ArrayList<ItemPDIPeriodo> listarItemPDIPeriodo(int idPeriodo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<ItemPDIPeriodo> itemsPeriodo = new ArrayList<>();
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call LISTAR_ITEM_PDI_PERIODOS(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_PERIODO", idPeriodo);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                ItemPDIPeriodo iPer = new ItemPDIPeriodo();
+                
+                iPer.getPeriodo().setIdPeriodo(rs.getInt("id_Periodo"));
+                iPer.getPeriodo().setFechaInicio(rs.getDate("fechaInicio"));
+                iPer.getPeriodo().setFechaFin(rs.getDate("fechaFin"));
+                iPer.getPeriodo().setPesoEvalObj(rs.getDouble("pesoEvalObj"));
+                iPer.getPeriodo().setPesoEvalComp(rs.getDouble("pesoEvalComp"));
+                iPer.getPeriodo().setDiaNotificacion(rs.getString("diaNotificacion"));
+                iPer.getPeriodo().setHoraNotificacion(rs.getTime("horaNotificacion"));
+                iPer.getPeriodo().setNombre(rs.getString("nombrePeriodo"));
+                
+                iPer.getItemPDI().setIdItemPDI(rs.getInt("id_ItemPDI"));
+                iPer.getItemPDI().setNombre(rs.getString("nombreItemPDI"));
+                
+                iPer.setNotaMax(rs.getDouble("notaMax"));
+                iPer.setNotaMin(rs.getDouble("notaMin"));
+                
+                itemsPeriodo.add(iPer);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return itemsPeriodo;
+    
     }
 
     @Override
     public int actualizarRangos(Periodo periodo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int resultado = 0;
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            con.setAutoCommit(false);
+            String sql;
+            
+            for(EscalaPeriodo escalas : periodo.getEscalas()){
+                sql = "{call ACTUALIZAR_ESCALA_PERIODO(?,?,?,?,?)}";
+                cs = con.prepareCall(sql);
+                cs.setInt("_ID_PERIODO", escalas.getPeriodo().getIdPeriodo());
+                cs.setInt("_ID_ESCALA", escalas.getEscala().getIdEscala());
+                cs.setDouble("_NOTAMAX", escalas.getNotaMax());
+                cs.setDouble("_NOTAMIN", escalas.getNotaMin());
+                cs.setDouble("_PORCENTAJECUPOS", escalas.getPorcentajeCupos());
+                cs.executeUpdate();
+            }
+                      
+            for(ItemPDIPeriodo rangosPDI : periodo.getRangosPDI()){
+                sql = "{call ACTUALIZAR_ITEM_PDI_PERIODOS(?,?,?,?)}";
+                cs = con.prepareCall(sql);
+                cs.setInt("_ID_PERIODO", rangosPDI.getPeriodo().getIdPeriodo());
+                cs.setInt("_ID_ITEMPDI", rangosPDI.getItemPDI().getIdItemPDI());
+                cs.setDouble("_NOTAMIN", rangosPDI.getNotaMin());
+                cs.setDouble("_NOTAMAX", rangosPDI.getNotaMax());
+                cs.executeUpdate();
+            }
+            
+            
+            
+            con.commit();
+            
+            
+            resultado = 1;
+        }catch(Exception ex){
+            try{
+                con.rollback();
+            }catch(Exception exR){
+                System.out.println(exR.getMessage());
+            }
+            System.out.println(ex.getMessage());
+        }finally{
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
+        }
+    
+    
+    
+    return resultado;
     }
    
     
