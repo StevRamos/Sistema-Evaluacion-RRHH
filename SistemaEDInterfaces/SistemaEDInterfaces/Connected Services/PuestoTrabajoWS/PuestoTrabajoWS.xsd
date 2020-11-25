@@ -94,7 +94,7 @@
   <xs:complexType name="periodo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="configuracionFechas" nillable="true" type="tns:gerenciaPeriodo" />
-      <xs:element minOccurs="0" name="diaNotificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="diaNotificacion" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="escalas" nillable="true" type="tns:escalaPeriodo" />
       <xs:element minOccurs="0" name="estado" type="tns:estadoPeriodo" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluaciones" nillable="true" type="tns:evaluacion" />
@@ -133,6 +133,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionEstado" type="xs:string" />
       <xs:element name="estado" type="xs:int" />
       <xs:element minOccurs="0" name="evaluacion" type="tns:evaluacionDesempenho" />
       <xs:element minOccurs="0" name="fechaAprobacion" type="xs:dateTime" />
@@ -178,7 +179,7 @@
       <xs:element name="idPesoCriterio" type="xs:int" />
       <xs:element name="idPuestoTrabajo" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreCriterio" type="xs:string" />
       <xs:element minOccurs="0" name="nombrePeriodo" type="xs:string" />
       <xs:element minOccurs="0" name="nombrePuestoTrabajo" type="xs:string" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />

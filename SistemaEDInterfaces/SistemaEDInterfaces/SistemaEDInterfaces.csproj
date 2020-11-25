@@ -716,6 +716,9 @@
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarJefeXGerenciaXPeriodoActualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.wsdl" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.xsd">
       <SubType>Designer</SubType>
@@ -819,15 +822,15 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
-    <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
+    <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
