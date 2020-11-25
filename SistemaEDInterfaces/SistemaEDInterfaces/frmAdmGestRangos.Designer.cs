@@ -211,6 +211,7 @@
             this.txtAMin.Size = new System.Drawing.Size(110, 20);
             this.txtAMin.TabIndex = 22;
             this.txtAMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAMin_KeyPress);
             this.txtAMin.Leave += new System.EventHandler(this.txtAMin_Leave);
             // 
             // label5
@@ -231,6 +232,7 @@
             this.txtBMin.Size = new System.Drawing.Size(110, 20);
             this.txtBMin.TabIndex = 24;
             this.txtBMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtBMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBMin_KeyPress);
             this.txtBMin.Leave += new System.EventHandler(this.txtBMin_Leave);
             // 
             // txtCMin
@@ -240,6 +242,7 @@
             this.txtCMin.Size = new System.Drawing.Size(110, 20);
             this.txtCMin.TabIndex = 25;
             this.txtCMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMin_KeyPress);
             this.txtCMin.Leave += new System.EventHandler(this.txtCMin_Leave);
             // 
             // txtDMin
@@ -249,6 +252,7 @@
             this.txtDMin.Size = new System.Drawing.Size(110, 20);
             this.txtDMin.TabIndex = 26;
             this.txtDMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtDMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDMin_KeyPress);
             this.txtDMin.Leave += new System.EventHandler(this.txtDMin_Leave);
             // 
             // txtEMin
@@ -374,6 +378,7 @@
             this.txtMedioMin.Size = new System.Drawing.Size(110, 20);
             this.txtMedioMin.TabIndex = 42;
             this.txtMedioMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtMedioMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMedioMin_KeyPress);
             this.txtMedioMin.Leave += new System.EventHandler(this.txtMedioMin_Leave);
             // 
             // label11
@@ -394,6 +399,7 @@
             this.txtAltoMin.Size = new System.Drawing.Size(110, 20);
             this.txtAltoMin.TabIndex = 40;
             this.txtAltoMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtAltoMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAltoMin_KeyPress);
             this.txtAltoMin.Leave += new System.EventHandler(this.txtAltoMin_Leave);
             // 
             // label13
@@ -507,6 +513,7 @@
             this.txtOportunidadMin.Size = new System.Drawing.Size(110, 20);
             this.txtOportunidadMin.TabIndex = 56;
             this.txtOportunidadMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtOportunidadMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtOportunidadMin_KeyPress);
             this.txtOportunidadMin.Leave += new System.EventHandler(this.txtOportunidadMin_Leave);
             // 
             // label18
@@ -527,6 +534,7 @@
             this.txtFortalezaMin.Size = new System.Drawing.Size(110, 20);
             this.txtFortalezaMin.TabIndex = 54;
             this.txtFortalezaMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtFortalezaMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFortalezaMin_KeyPress);
             this.txtFortalezaMin.Leave += new System.EventHandler(this.txtFortalezaMin_Leave);
             // 
             // lblDebilidad
@@ -915,6 +923,7 @@
             this.txtCuposE.Size = new System.Drawing.Size(110, 20);
             this.txtCuposE.TabIndex = 98;
             this.txtCuposE.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCuposE.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuposE_KeyPress);
             // 
             // txtCuposD
             // 
@@ -923,6 +932,7 @@
             this.txtCuposD.Size = new System.Drawing.Size(110, 20);
             this.txtCuposD.TabIndex = 97;
             this.txtCuposD.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCuposD.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuposD_KeyPress);
             // 
             // txtCuposC
             // 
@@ -931,6 +941,7 @@
             this.txtCuposC.Size = new System.Drawing.Size(110, 20);
             this.txtCuposC.TabIndex = 96;
             this.txtCuposC.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCuposC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuposC_KeyPress);
             // 
             // txtCuposB
             // 
@@ -939,6 +950,7 @@
             this.txtCuposB.Size = new System.Drawing.Size(110, 20);
             this.txtCuposB.TabIndex = 95;
             this.txtCuposB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCuposB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuposB_KeyPress);
             // 
             // txtCuposA
             // 
@@ -947,6 +959,7 @@
             this.txtCuposA.Size = new System.Drawing.Size(110, 20);
             this.txtCuposA.TabIndex = 94;
             this.txtCuposA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtCuposA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuposA_KeyPress);
             // 
             // label45
             // 
@@ -1019,7 +1032,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1124, 755);
+            this.ClientSize = new System.Drawing.Size(1141, 755);
             this.Controls.Add(this.label50);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label19);

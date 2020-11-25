@@ -13,18 +13,17 @@ namespace SistemaEDInterfaces
     public partial class frmAdmGestComAdd : Form
     {
         private PuestoTrabajoWS.PuestoTrabajoWSClient daoPuestoTrabajo;
-        //private CriterioWS.CriterioWSClient daoCriterio;
-        //private CriterioWS.criterio criterio; 
+        private CriterioWS.CriterioWSClient daoCriterio;
+        private CriterioWS.criterio criterio; 
         public frmAdmGestComAdd()
         {
             
             InitializeComponent();
             daoPuestoTrabajo = new PuestoTrabajoWS.PuestoTrabajoWSClient();
-            /*
             daoCriterio = new CriterioWS.CriterioWSClient();
             criterio = new CriterioWS.criterio(); 
 
-            */
+            
             txtPeriodo.Text =  Global.periodoActual.nombre;
             
             cmbPuestos.DataSource = daoPuestoTrabajo.listarPuestoTrabajos("");
@@ -40,35 +39,97 @@ namespace SistemaEDInterfaces
 
         }
 
+        private int realizarValidaciones()
+        {
+
+            int valido = 1;
+            double peso = Double.Parse(txtPeso.Text);
+            if (peso>100 || peso<0)
+            {
+                MessageBox.Show("El peso de la competencia debe estar entre 0 y 100.",
+                                      "Mensaje de error",
+                                      MessageBoxButtons.OK,
+                                      MessageBoxIcon.Error);
+                return 0 ;
+            }
+            return valido; 
+
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            /*
+            Global.iniciarEspera(this);
+            //Realizar validacion 
+            int resultadoVal = realizarValidaciones();
+
+            if (resultadoVal == 0)
+            {
+                Global.terminarEspera(this);
+                return; 
+            }
+            
+            //Obtener datos del criterio 
             criterio.nombre = txtNombre.Text;
-            criterio.descripcion = txtDescripcion.Text; 
-            criterio.pesosCriterios = new BindingList<CriterioWS.pesoCriterio> ();
+            criterio.descripcion = txtDescripcion.Text;
+            criterio.tipo = (int)TipoCriterio.Competencia;
+            criterio.criterioPadre = new CriterioWS.criterio();
+            criterio.criterioPadre.idCriterio = -1;
 
+            //Agregando el pesoCriterio
+            BindingList<CriterioWS.pesoCriterio> pesos = new BindingList<CriterioWS.pesoCriterio>();
             CriterioWS.pesoCriterio pesoCriterio = new CriterioWS.pesoCriterio();
-
             //Obteniendo cargo 
-
-            PesoCriterioWS.puestoTrabajo puesto = (PesoCriterioWS.puestoTrabajo)cmbPuestos.SelectedItem;
-            PesoCriterioWS.periodo periodo = new PesoCriterioWS.periodo();
-
-            periodo.idPeriodo = Global.periodoActual.idPeriodo; 
-
+            PuestoTrabajoWS.puestoTrabajo puesto = (PuestoTrabajoWS.puestoTrabajo)cmbPuestos.SelectedItem;
+            pesoCriterio.puestoTrabajo = new CriterioWS.puestoTrabajo();
+            pesoCriterio.puestoTrabajo.idPuestoTrabajo = puesto.idPuestoTrabajo;
+            pesoCriterio.puestoTrabajo.nombre = puesto.nombre; 
             pesoCriterio.peso = Double.Parse(txtPeso.Text);
-            pesoCriterio.periodo = new PesoCriterioWS.periodo(); 
-            pesoCriterio.puesto = new PesoCriterioWS.puestoTrabajo(); 
-            pesoCriterio.
-            //criterio.pesosCriterios; 
-            */
-            MessageBox.Show("La competencia se registro exitosamente");
-            this.Close();
+            pesoCriterio.criterio = new CriterioWS.criterio();
+            pesoCriterio.criterio.nombre = criterio.nombre; 
+            //Obteniendo periodo
+            pesoCriterio.periodo = new CriterioWS.periodo();
+            pesoCriterio.periodo.idPeriodo = Global.periodoActual.idPeriodo;
+            pesoCriterio.periodo.nombre = Global.periodoActual.nombre;
+
+            pesos.Add(pesoCriterio); 
+            
+            criterio.pesoscriterios = pesos.ToArray();
+
+            int resultado = daoCriterio.insertarIndividual(criterio);
+            Global.terminarEspera(this);
+            if (resultado == 0)
+            {
+
+                MessageBox.Show("Ocurrió un error, intentelo nuevamente.",
+                                   "Mensaje de error",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                return; 
+            }
+            MessageBox.Show("La competencia se registró exitosamente.",
+                                   "Mensaje de confirmación",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Information);
+            Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestComp());
+
         }
 
         private void btnRegresarAddCom_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestComp());
+            var result = MessageBox.Show("¿Esta seguro que desea regresar? No se realizará el registro",
+                "Mensaje de información",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+            if(result == DialogResult.Yes)
+            {
+                Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestComp());
+            }
+            
+        }
+
+        private void txtPeso_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Global.restringirADecimal(sender, e); 
         }
     }
 }

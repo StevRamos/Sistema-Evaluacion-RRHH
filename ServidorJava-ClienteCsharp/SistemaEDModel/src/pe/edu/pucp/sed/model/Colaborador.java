@@ -21,6 +21,7 @@ public class Colaborador {
     private Periodo periodo;
     private ArrayList<Colaborador> subordinados;
     private int nivelAcceso;
+    private Usuario usuario;
 
     public Colaborador() {
         this.objetivos = new ArrayList<>();
@@ -28,6 +29,7 @@ public class Colaborador {
         this.subordinados = new ArrayList<>();
         this.puestoTrabajo = new PuestoTrabajo();
         this.gerencia = new Gerencia();
+        this.usuario = new Usuario();
 //                this.jefe = new Colaborador();
     }
 
@@ -159,6 +161,16 @@ public class Colaborador {
         this.nivelAcceso = nivelAcceso;
     }
 
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    
+    
     public void crearUsuario() {
 
     }

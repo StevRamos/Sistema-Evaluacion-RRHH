@@ -178,7 +178,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronPlanificacion.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvCronPlanificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronPlanificacion.Size = new System.Drawing.Size(955, 294);
+            this.dgvCronPlanificacion.Size = new System.Drawing.Size(938, 294);
             this.dgvCronPlanificacion.TabIndex = 120;
             this.dgvCronPlanificacion.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCronPlanificacion_CellClick);
             // 
@@ -375,7 +375,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronPDI.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCronPDI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronPDI.Size = new System.Drawing.Size(955, 294);
+            this.dgvCronPDI.Size = new System.Drawing.Size(938, 294);
             this.dgvCronPDI.TabIndex = 126;
             this.dgvCronPDI.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCronPDI_CellClick);
             // 
@@ -478,7 +478,7 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvPrevia.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvCronEvPrevia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvPrevia.Size = new System.Drawing.Size(955, 294);
+            this.dgvCronEvPrevia.Size = new System.Drawing.Size(938, 294);
             this.dgvCronEvPrevia.TabIndex = 124;
             this.dgvCronEvPrevia.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCronEvPrevia_CellClick);
             // 
@@ -609,7 +609,7 @@
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvFinal.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvCronEvFinal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvFinal.Size = new System.Drawing.Size(955, 294);
+            this.dgvCronEvFinal.Size = new System.Drawing.Size(938, 294);
             this.dgvCronEvFinal.TabIndex = 130;
             this.dgvCronEvFinal.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCronEvFinal_CellClick);
             // 
@@ -738,7 +738,7 @@
             dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCalibNotas.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvCalibNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCalibNotas.Size = new System.Drawing.Size(955, 294);
+            this.dgvCalibNotas.Size = new System.Drawing.Size(938, 294);
             this.dgvCalibNotas.TabIndex = 141;
             this.dgvCalibNotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCalibNotas_CellClick);
             // 

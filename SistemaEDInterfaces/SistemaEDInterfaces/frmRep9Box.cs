@@ -19,6 +19,8 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
 
+            this.nineBox.SetDrop(false);
+
             ColaboradorWS.ColaboradorWSClient daoColaborador = new ColaboradorWS.ColaboradorWSClient();
 
             //colaboradores = new BindingList<ColaboradorWS.colaborador>(

@@ -482,7 +482,7 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPlanificacion.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlanificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlanificacion.Size = new System.Drawing.Size(955, 294);
+            this.dgvPlanificacion.Size = new System.Drawing.Size(921, 294);
             this.dgvPlanificacion.TabIndex = 139;
             // 
             // ID
@@ -573,7 +573,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvPrevia.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCronEvPrevia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvPrevia.Size = new System.Drawing.Size(955, 294);
+            this.dgvCronEvPrevia.Size = new System.Drawing.Size(921, 294);
             this.dgvCronEvPrevia.TabIndex = 140;
             // 
             // dataGridViewTextBoxColumn1
@@ -664,7 +664,7 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvFinal.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvCronEvFinal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvFinal.Size = new System.Drawing.Size(955, 294);
+            this.dgvCronEvFinal.Size = new System.Drawing.Size(921, 294);
             this.dgvCronEvFinal.TabIndex = 141;
             // 
             // dataGridViewTextBoxColumn9
@@ -755,7 +755,7 @@
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCalibNotas.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvCalibNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCalibNotas.Size = new System.Drawing.Size(955, 294);
+            this.dgvCalibNotas.Size = new System.Drawing.Size(921, 294);
             this.dgvCalibNotas.TabIndex = 142;
             // 
             // dataGridViewTextBoxColumn13
@@ -846,7 +846,7 @@
             dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPDI.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvPDI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPDI.Size = new System.Drawing.Size(955, 294);
+            this.dgvPDI.Size = new System.Drawing.Size(921, 294);
             this.dgvPDI.TabIndex = 143;
             // 
             // dataGridViewTextBoxColumn5

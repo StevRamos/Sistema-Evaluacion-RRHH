@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.sed.pucp.edu.pe/" targetNamespace="http://services.sed.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarPeriodo" type="tns:actualizarPeriodo" />
+  <xs:element name="actualizarPeriodoResponse" type="tns:actualizarPeriodoResponse" />
+  <xs:element name="eliminarPeriodo" type="tns:eliminarPeriodo" />
+  <xs:element name="eliminarPeriodoResponse" type="tns:eliminarPeriodoResponse" />
   <xs:element name="insertarPeriodo" type="tns:insertarPeriodo" />
   <xs:element name="insertarPeriodoResponse" type="tns:insertarPeriodoResponse" />
+  <xs:element name="listarGerenciaPeriodo" type="tns:listarGerenciaPeriodo" />
+  <xs:element name="listarGerenciaPeriodoResponse" type="tns:listarGerenciaPeriodoResponse" />
   <xs:element name="listarPeriodos" type="tns:listarPeriodos" />
   <xs:element name="listarPeriodosResponse" type="tns:listarPeriodosResponse" />
   <xs:element name="obtenerPeriodo" type="tns:obtenerPeriodo" />
@@ -14,7 +20,7 @@
   <xs:complexType name="periodo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="configuracionFechas" nillable="true" type="tns:gerenciaPeriodo" />
-      <xs:element minOccurs="0" name="diaNotificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="diaNotificacion" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="escalas" nillable="true" type="tns:escalaPeriodo" />
       <xs:element minOccurs="0" name="estado" type="tns:estadoPeriodo" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluaciones" nillable="true" type="tns:evaluacion" />
@@ -235,12 +241,42 @@
       <xs:element minOccurs="0" name="return" type="tns:periodo" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="actualizarPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarPeriodoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarPeriodos">
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarPeriodosResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarGerenciaPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarGerenciaPeriodoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarPeriodoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:simpleType name="estadoEvaluacion">

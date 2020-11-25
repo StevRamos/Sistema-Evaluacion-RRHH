@@ -31,17 +31,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cmbPuestos = new System.Windows.Forms.ComboBox();
             this.cmbPeriodos = new System.Windows.Forms.ComboBox();
-            this.txtGestNombrePot = new System.Windows.Forms.TextBox();
+            this.txtSubcomp = new System.Windows.Forms.TextBox();
             this.dgvGestSubCom = new System.Windows.Forms.DataGridView();
-            this.IdSubComp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdCompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCargarMasivaSubCom = new System.Windows.Forms.Button();
             this.btnGestCrearSubCom = new System.Windows.Forms.Button();
             this.lblGestSubComp = new System.Windows.Forms.Label();
@@ -50,6 +44,14 @@
             this.lblBuscarNomPot = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.IdCompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdSubComp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestSubCom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,13 +73,13 @@
             this.cmbPeriodos.Size = new System.Drawing.Size(165, 21);
             this.cmbPeriodos.TabIndex = 34;
             // 
-            // txtGestNombrePot
+            // txtSubcomp
             // 
-            this.txtGestNombrePot.Location = new System.Drawing.Point(925, 135);
-            this.txtGestNombrePot.Margin = new System.Windows.Forms.Padding(2);
-            this.txtGestNombrePot.Name = "txtGestNombrePot";
-            this.txtGestNombrePot.Size = new System.Drawing.Size(150, 20);
-            this.txtGestNombrePot.TabIndex = 33;
+            this.txtSubcomp.Location = new System.Drawing.Point(925, 135);
+            this.txtSubcomp.Margin = new System.Windows.Forms.Padding(2);
+            this.txtSubcomp.Name = "txtSubcomp";
+            this.txtSubcomp.Size = new System.Drawing.Size(150, 20);
+            this.txtSubcomp.TabIndex = 33;
             // 
             // dgvGestSubCom
             // 
@@ -98,92 +100,46 @@
             this.dgvGestSubCom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGestSubCom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGestSubCom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdSubComp,
             this.IdCompetencia,
+            this.NombreCompetencia,
+            this.IdSubComp,
             this.Nombre,
             this.Descripción,
             this.Cargo,
             this.Peso,
             this.Periodo});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvGestSubCom.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvGestSubCom.EnableHeadersVisualStyles = false;
             this.dgvGestSubCom.Location = new System.Drawing.Point(22, 202);
             this.dgvGestSubCom.MultiSelect = false;
             this.dgvGestSubCom.Name = "dgvGestSubCom";
             this.dgvGestSubCom.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGestSubCom.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvGestSubCom.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGestSubCom.RowHeadersVisible = false;
             this.dgvGestSubCom.RowHeadersWidth = 51;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvGestSubCom.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvGestSubCom.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvGestSubCom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGestSubCom.Size = new System.Drawing.Size(1073, 480);
             this.dgvGestSubCom.TabIndex = 31;
-            // 
-            // IdSubComp
-            // 
-            this.IdSubComp.HeaderText = "Id Subcompetencia";
-            this.IdSubComp.MinimumWidth = 6;
-            this.IdSubComp.Name = "IdSubComp";
-            this.IdSubComp.ReadOnly = true;
-            this.IdSubComp.Width = 150;
-            // 
-            // IdCompetencia
-            // 
-            this.IdCompetencia.HeaderText = "Id Competencia";
-            this.IdCompetencia.MinimumWidth = 6;
-            this.IdCompetencia.Name = "IdCompetencia";
-            this.IdCompetencia.ReadOnly = true;
-            this.IdCompetencia.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.MinimumWidth = 6;
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
-            this.Descripción.Width = 625;
-            // 
-            // Cargo
-            // 
-            this.Cargo.HeaderText = "Cargo";
-            this.Cargo.MinimumWidth = 6;
-            this.Cargo.Name = "Cargo";
-            this.Cargo.ReadOnly = true;
-            this.Cargo.Width = 125;
-            // 
-            // Peso
-            // 
-            this.Peso.HeaderText = "Peso";
-            this.Peso.MinimumWidth = 6;
-            this.Peso.Name = "Peso";
-            this.Peso.ReadOnly = true;
-            this.Peso.Width = 125;
-            // 
-            // Periodo
-            // 
-            this.Periodo.HeaderText = "Periodo";
-            this.Periodo.MinimumWidth = 6;
-            this.Periodo.Name = "Periodo";
-            this.Periodo.ReadOnly = true;
-            this.Periodo.Width = 125;
             // 
             // btnCargarMasivaSubCom
             // 
@@ -277,6 +233,7 @@
             this.btnEliminar.TabIndex = 49;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnBuscar
             // 
@@ -291,6 +248,78 @@
             this.btnBuscar.TabIndex = 51;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // IdCompetencia
+            // 
+            this.IdCompetencia.DataPropertyName = "idCriterioPadre";
+            this.IdCompetencia.HeaderText = "Id Competencia";
+            this.IdCompetencia.MinimumWidth = 6;
+            this.IdCompetencia.Name = "IdCompetencia";
+            this.IdCompetencia.ReadOnly = true;
+            this.IdCompetencia.Width = 125;
+            // 
+            // NombreCompetencia
+            // 
+            this.NombreCompetencia.DataPropertyName = "nombreCriterioPadre";
+            this.NombreCompetencia.HeaderText = "Nombre Competencia";
+            this.NombreCompetencia.Name = "NombreCompetencia";
+            this.NombreCompetencia.ReadOnly = true;
+            this.NombreCompetencia.Width = 250;
+            // 
+            // IdSubComp
+            // 
+            this.IdSubComp.DataPropertyName = "idCriterio";
+            this.IdSubComp.HeaderText = "Id Subcompetencia";
+            this.IdSubComp.MinimumWidth = 6;
+            this.IdSubComp.Name = "IdSubComp";
+            this.IdSubComp.ReadOnly = true;
+            this.IdSubComp.Width = 150;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombreCriterio";
+            this.Nombre.HeaderText = "Nombre Subcompetencia";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
+            // 
+            // Descripción
+            // 
+            this.Descripción.DataPropertyName = "descripcion";
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.MinimumWidth = 6;
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            this.Descripción.Width = 625;
+            // 
+            // Cargo
+            // 
+            this.Cargo.DataPropertyName = "nombrePuestoTrabajo";
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.MinimumWidth = 6;
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
+            this.Cargo.Width = 125;
+            // 
+            // Peso
+            // 
+            this.Peso.DataPropertyName = "peso";
+            this.Peso.HeaderText = "Peso";
+            this.Peso.MinimumWidth = 6;
+            this.Peso.Name = "Peso";
+            this.Peso.ReadOnly = true;
+            this.Peso.Width = 125;
+            // 
+            // Periodo
+            // 
+            this.Periodo.DataPropertyName = "nombrePeriodo";
+            this.Periodo.HeaderText = "Periodo";
+            this.Periodo.MinimumWidth = 6;
+            this.Periodo.Name = "Periodo";
+            this.Periodo.ReadOnly = true;
+            this.Periodo.Width = 125;
             // 
             // frmAdmGestSubcomp
             // 
@@ -305,7 +334,7 @@
             this.Controls.Add(this.lblBuscarNomPot);
             this.Controls.Add(this.cmbPuestos);
             this.Controls.Add(this.cmbPeriodos);
-            this.Controls.Add(this.txtGestNombrePot);
+            this.Controls.Add(this.txtSubcomp);
             this.Controls.Add(this.dgvGestSubCom);
             this.Controls.Add(this.lblGestSubComp);
             this.Controls.Add(this.btnCargarMasivaSubCom);
@@ -323,7 +352,7 @@
 
         private System.Windows.Forms.ComboBox cmbPuestos;
         private System.Windows.Forms.ComboBox cmbPeriodos;
-        private System.Windows.Forms.TextBox txtGestNombrePot;
+        private System.Windows.Forms.TextBox txtSubcomp;
         private System.Windows.Forms.DataGridView dgvGestSubCom;
         private System.Windows.Forms.Button btnCargarMasivaSubCom;
         private System.Windows.Forms.Button btnGestCrearSubCom;
@@ -333,8 +362,9 @@
         private System.Windows.Forms.Label lblBuscarNomPot;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdSubComp;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdCompetencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompetencia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSubComp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;

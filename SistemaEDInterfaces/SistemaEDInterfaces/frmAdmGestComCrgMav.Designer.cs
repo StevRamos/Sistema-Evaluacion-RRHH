@@ -89,7 +89,7 @@
             this.txtNomArchComMav.Enabled = false;
             this.txtNomArchComMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomArchComMav.Location = new System.Drawing.Point(375, 61);
-            this.txtNomArchComMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomArchComMav.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomArchComMav.Name = "txtNomArchComMav";
             this.txtNomArchComMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchComMav.TabIndex = 69;
@@ -109,7 +109,7 @@
             this.rdbInsCargaMavCom.AutoSize = true;
             this.rdbInsCargaMavCom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbInsCargaMavCom.Location = new System.Drawing.Point(375, 122);
-            this.rdbInsCargaMavCom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbInsCargaMavCom.Margin = new System.Windows.Forms.Padding(2);
             this.rdbInsCargaMavCom.Name = "rdbInsCargaMavCom";
             this.rdbInsCargaMavCom.Size = new System.Drawing.Size(87, 25);
             this.rdbInsCargaMavCom.TabIndex = 71;
@@ -122,7 +122,7 @@
             this.rdbActCargaMavCom.AutoSize = true;
             this.rdbActCargaMavCom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbActCargaMavCom.Location = new System.Drawing.Point(687, 122);
-            this.rdbActCargaMavCom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbActCargaMavCom.Margin = new System.Windows.Forms.Padding(2);
             this.rdbActCargaMavCom.Name = "rdbActCargaMavCom";
             this.rdbActCargaMavCom.Size = new System.Drawing.Size(108, 25);
             this.rdbActCargaMavCom.TabIndex = 72;
@@ -140,9 +140,9 @@
             this.gbCompetencias.Controls.Add(this.label1);
             this.gbCompetencias.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbCompetencias.Location = new System.Drawing.Point(19, 83);
-            this.gbCompetencias.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbCompetencias.Margin = new System.Windows.Forms.Padding(2);
             this.gbCompetencias.Name = "gbCompetencias";
-            this.gbCompetencias.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbCompetencias.Padding = new System.Windows.Forms.Padding(2);
             this.gbCompetencias.Size = new System.Drawing.Size(979, 170);
             this.gbCompetencias.TabIndex = 73;
             this.gbCompetencias.TabStop = false;
@@ -159,9 +159,9 @@
             this.gbPesosCompetencia.Controls.Add(this.label4);
             this.gbPesosCompetencia.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPesosCompetencia.Location = new System.Drawing.Point(19, 268);
-            this.gbPesosCompetencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbPesosCompetencia.Margin = new System.Windows.Forms.Padding(2);
             this.gbPesosCompetencia.Name = "gbPesosCompetencia";
-            this.gbPesosCompetencia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbPesosCompetencia.Padding = new System.Windows.Forms.Padding(2);
             this.gbPesosCompetencia.Size = new System.Drawing.Size(979, 170);
             this.gbPesosCompetencia.TabIndex = 74;
             this.gbPesosCompetencia.TabStop = false;
@@ -186,7 +186,7 @@
             this.txtNomArchCompePesosMav.Enabled = false;
             this.txtNomArchCompePesosMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomArchCompePesosMav.Location = new System.Drawing.Point(375, 61);
-            this.txtNomArchCompePesosMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomArchCompePesosMav.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomArchCompePesosMav.Name = "txtNomArchCompePesosMav";
             this.txtNomArchCompePesosMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchCompePesosMav.TabIndex = 69;
@@ -196,7 +196,7 @@
             this.rdbActCargaMavCompePesos.AutoSize = true;
             this.rdbActCargaMavCompePesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbActCargaMavCompePesos.Location = new System.Drawing.Point(687, 122);
-            this.rdbActCargaMavCompePesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbActCargaMavCompePesos.Margin = new System.Windows.Forms.Padding(2);
             this.rdbActCargaMavCompePesos.Name = "rdbActCargaMavCompePesos";
             this.rdbActCargaMavCompePesos.Size = new System.Drawing.Size(108, 25);
             this.rdbActCargaMavCompePesos.TabIndex = 72;
@@ -219,7 +219,7 @@
             this.rdbInsCargaMavCompePesos.AutoSize = true;
             this.rdbInsCargaMavCompePesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbInsCargaMavCompePesos.Location = new System.Drawing.Point(375, 122);
-            this.rdbInsCargaMavCompePesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbInsCargaMavCompePesos.Margin = new System.Windows.Forms.Padding(2);
             this.rdbInsCargaMavCompePesos.Name = "rdbInsCargaMavCompePesos";
             this.rdbInsCargaMavCompePesos.Size = new System.Drawing.Size(87, 25);
             this.rdbInsCargaMavCompePesos.TabIndex = 71;
@@ -263,6 +263,7 @@
             this.btnCargarCompetMasiva.TabIndex = 65;
             this.btnCargarCompetMasiva.Text = "Cargar Archivo";
             this.btnCargarCompetMasiva.UseVisualStyleBackColor = false;
+            this.btnCargarCompetMasiva.Click += new System.EventHandler(this.btnCargarCompetMasiva_Click);
             // 
             // frmAdmGestComCrgMav
             // 
@@ -275,7 +276,7 @@
             this.Controls.Add(this.gbCompetencias);
             this.Controls.Add(this.btnRegreCargMavCompePesos);
             this.Controls.Add(this.btnCargarCompetMasiva);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1033, 566);
             this.MinimumSize = new System.Drawing.Size(1033, 566);
             this.Name = "frmAdmGestComCrgMav";
