@@ -67,6 +67,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\CriterioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\EvaluacionDesempenhoWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -716,6 +721,25 @@
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CriterioWS\CriterioWS.wsdl" />
+    <None Include="Connected Services\CriterioWS\CriterioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CriterioWS\SistemaEDInterfaces.CriterioWS.actualizarCriterioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CriterioWS\SistemaEDInterfaces.CriterioWS.criterio.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CriterioWS\SistemaEDInterfaces.CriterioWS.insertarIndividualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CriterioWS\SistemaEDInterfaces.CriterioWS.insertarMasivoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CriterioWS\SistemaEDInterfaces.CriterioWS.listarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.wsdl" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.xsd">
       <SubType>Designer</SubType>
@@ -785,6 +809,15 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.actualizarPeriodoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.eliminarPeriodoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.listarGerenciaPeriodoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.obtenerPeriodoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -840,6 +873,12 @@
     <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
     <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
     <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\CriterioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\CriterioWS\configuration.svcinfo" />
+    <None Include="Connected Services\CriterioWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -914,6 +953,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ColaboradorWS\" />
+    <WCFMetadataStorage Include="Connected Services\CriterioWS\" />
     <WCFMetadataStorage Include="Connected Services\EvaluacionDesempenhoWS\" />
     <WCFMetadataStorage Include="Connected Services\GerenciaPeriodoWS\" />
     <WCFMetadataStorage Include="Connected Services\GerenciaWS\" />

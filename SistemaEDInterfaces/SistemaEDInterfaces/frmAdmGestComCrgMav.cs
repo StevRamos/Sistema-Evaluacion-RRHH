@@ -8,14 +8,20 @@ using System.Text;
 //using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestComCrgMav : Form
     {
+        CriterioWS.CriterioWSClient daoCriterio;
+        PesoCriterioWS.PesoCriterioWSClient daoPesoCriterio; 
+
         public frmAdmGestComCrgMav()
         {
             InitializeComponent();
+            daoCriterio = new CriterioWS.CriterioWSClient();
+            daoPesoCriterio = new PesoCriterioWS.PesoCriterioWSClient(); 
         }
 
         private void btnGestComSelecCom_Click(object sender, EventArgs e)
@@ -26,38 +32,40 @@ namespace SistemaEDInterfaces
             }
         }
 
-        private void btnCargarComMasiva_Click(object sender, EventArgs e)
+
+        private int realizarValidaciones()
         {
+            int valido = 1;
+
             //Accion para cargar los datos a la base de datos
-            if ((rdbActCargaMavCom.Checked || rdbInsCargaMavCom.Checked) && txtNomArchComMav.Text != "")
+            if (!(rdbActCargaMavCom.Checked) && !(rdbInsCargaMavCom.Checked) && txtNomArchComMav.Text != "")
             {
-                MessageBox.Show("El archivo se cargó correctamente");
-                this.Close();
+                MessageBox.Show("Debe seleccionar si desea insertar o actualizar competencias.",
+                                   "Mensaje de error",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                return 0; 
             }
-            else if ((rdbActCargaMavCom.Checked == false) && (rdbInsCargaMavCom.Checked == false) && txtNomArchComMav.Text != "")
+            else if (!(rdbActCargaMavCompePesos.Checked) && !(rdbInsCargaMavCompePesos.Checked) && txtNomArchCompePesosMav.Text != "")
             {
-                MessageBox.Show("Elija la opción insertar o actualizar");
+                MessageBox.Show("Debe seleccionar si desea insertar o actualizar pesos.",
+                                   "Mensaje de error",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                return 0;
             }
-            else if ((txtNomArchComMav.Text == "") && (rdbActCargaMavCom.Checked || rdbInsCargaMavCom.Checked))
+            else if ((txtNomArchComMav.Text == "") && (txtNomArchCompePesosMav.Text == ""))
             {
-                MessageBox.Show("Inserte su archivo");
+                MessageBox.Show("No ha insertado ningun archivo.",
+                                   "Mensaje de error",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                return 0;
             }
-            else if ((rdbActCargaMavCom.Checked == false || rdbInsCargaMavCom.Checked == false) && txtNomArchComMav.Text == "")
-            {
-                MessageBox.Show("Ingrese los datos");
-            }
+            return valido; 
+
+
         }
-
-        private void btnRegreCargMavComp_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -79,8 +87,155 @@ namespace SistemaEDInterfaces
 
         private void btnCargarCompetMasiva_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se cargaron los archivos exitosamente");
-            this.Close();
+            Global.iniciarEspera(this); 
+            int resultadoVal = realizarValidaciones();
+            if (resultadoVal == 0) 
+            {
+                Global.terminarEspera(this); 
+                return; 
+            }
+
+            if (txtNomArchComMav.Text != "")
+            {
+
+                string[] lineasCompetencias = File.ReadAllLines(txtNomArchComMav.Text);
+
+                //Para Actualizar: 
+                if (rdbActCargaMavCom.Checked)
+                {
+                    foreach (var linea in lineasCompetencias)
+                    {
+                        var valores = linea.Split(',');
+
+                        CriterioWS.criterio criterio = new CriterioWS.criterio();
+                        int id = Int32.Parse(valores[0]);
+                        String nombre = valores[1];
+                        String descripcion = valores[2];
+                        criterio.idCriterio = id;
+
+                        if (nombre != "no")
+                        {
+
+                            //Se actualiza
+                            criterio.nombre = nombre;
+                        }
+                        else
+                        {
+                            //No se actualiza 
+                            criterio.nombre = "";
+                        }
+
+                        if (descripcion != "no")
+                        {
+                            //Se actualiza
+                            criterio.descripcion = descripcion;
+                        }
+                        else
+                        {
+                            //No se actualiza
+                            criterio.descripcion = "";
+                        }
+
+                        if (daoCriterio.actualizarCriterio(criterio) == 0)
+                        {
+                            MessageBox.Show("hubo un error");
+                        }
+                    }
+                }
+                //Para insertar
+                else if (rdbInsCargaMavCom.Checked)
+                {
+                    foreach (var linea in lineasCompetencias)
+                    {
+                        var valores = linea.Split(',');
+
+                        CriterioWS.criterio criterio = new CriterioWS.criterio();
+                        int id = int.Parse(valores[0]);
+                        String nombre = valores[1];
+                        String descripcion = valores[2];
+                        criterio.idCriterio = id;
+                        criterio.nombre = nombre;
+                        criterio.descripcion = descripcion;
+                        criterio.tipo = (int)TipoCriterio.Competencia;
+                        criterio.criterioPadre = new CriterioWS.criterio();
+                        criterio.criterioPadre.idCriterio = -1;
+
+                        daoCriterio.insertarMasivo(criterio);
+                    }
+                }
+
+            }
+
+
+            if (txtNomArchCompePesosMav.Text != "")
+            {
+                string[] lineasPesos = File.ReadAllLines(txtNomArchCompePesosMav.Text);
+
+                //Para actualizar
+                if (rdbActCargaMavCompePesos.Checked)
+                {
+                    foreach (var linea in lineasPesos)
+                    {
+                        var valores = linea.Split(',');
+
+                        PesoCriterioWS.pesoCriterio pesoCriterio = new PesoCriterioWS.pesoCriterio();
+
+                        String nombreCriterio = valores[0];
+                        String nombrePuesto = valores[1];
+                        String nombrePeriodo = valores[2];
+                        double peso = Double.Parse(valores[3]);
+
+                        pesoCriterio.criterio = new PesoCriterioWS.criterio();
+                        pesoCriterio.criterio.nombre = nombreCriterio;
+                        pesoCriterio.puestoTrabajo = new PesoCriterioWS.puestoTrabajo();
+                        pesoCriterio.puestoTrabajo.nombre = nombrePuesto;
+                        pesoCriterio.periodo = new PesoCriterioWS.periodo();
+                        pesoCriterio.periodo.nombre = nombrePeriodo;
+                        pesoCriterio.peso = peso;
+
+                        daoPesoCriterio.actualizarPesoCriterio(pesoCriterio);
+
+
+                    }
+
+                }
+                //Para insertar 
+                if (rdbInsCargaMavCompePesos.Checked)
+                {
+                    foreach (var linea in lineasPesos)
+                    {
+                        var valores = linea.Split(',');
+
+                        PesoCriterioWS.pesoCriterio pesoCriterio = new PesoCriterioWS.pesoCriterio();
+
+                        String nombreCriterio = valores[0];
+                        String nombrePuesto = valores[1];
+                        String nombrePeriodo = valores[2];
+                        double peso = Double.Parse(valores[3]);
+
+                        pesoCriterio.criterio = new PesoCriterioWS.criterio();
+                        pesoCriterio.criterio.nombre = nombreCriterio;
+                        pesoCriterio.puestoTrabajo = new PesoCriterioWS.puestoTrabajo();
+                        pesoCriterio.puestoTrabajo.nombre = nombrePuesto;
+                        pesoCriterio.periodo = new PesoCriterioWS.periodo();
+                        pesoCriterio.periodo.nombre = nombrePeriodo;
+                        pesoCriterio.peso = peso;
+
+                        daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
+
+
+                    }
+
+                }
+            }
+
+
+            //Falta realizar validacion para ver si se insertaron/actualizarion correctamente las competencias/pesos 
+            Global.terminarEspera(this);
+            MessageBox.Show("Se procesaron correctamente los archivos.",
+                                   "Mensaje de confirmación",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Information);
         }
     }
 }
