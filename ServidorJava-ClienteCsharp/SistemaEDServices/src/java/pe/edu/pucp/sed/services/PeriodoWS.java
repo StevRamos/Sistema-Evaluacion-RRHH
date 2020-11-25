@@ -10,7 +10,9 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
+import pe.edu.pucp.sed.model.EscalaPeriodo;
 import pe.edu.pucp.sed.model.GerenciaPeriodo;
+import pe.edu.pucp.sed.model.ItemPDIPeriodo;
 import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.mysql.PeriodoMySQL;
 
@@ -106,6 +108,41 @@ public class PeriodoWS {
             System.out.println(ex.getMessage());
         }
         return gerenciasPeriodo;
+    }
+    
+    @WebMethod(operationName = "listarEscalaPeriodo")
+    public ArrayList<EscalaPeriodo> listarEscalaPeriodo(@WebParam(name = "idPeriodo") int idPeriodo){
+        ArrayList<EscalaPeriodo> escalasPeriodo = new ArrayList<>();      
+        try{
+            escalasPeriodo = daoPeriodo.listarEscalaPeriodo(idPeriodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return escalasPeriodo;
+    }
+    
+    
+    @WebMethod(operationName = "listarItemPDIPeriodo")
+    public ArrayList<ItemPDIPeriodo> listarItemPDIPeriodo(@WebParam(name = "idPeriodo") int idPeriodo){
+        ArrayList<ItemPDIPeriodo> itemsPDIPeriodo = new ArrayList<>();      
+        try{
+            itemsPDIPeriodo = daoPeriodo.listarItemPDIPeriodo(idPeriodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return itemsPDIPeriodo;
+    }
+    
+    
+    @WebMethod(operationName = "actualizarRangos")
+    public int actualizarRangos(@WebParam(name = "periodo") Periodo periodo){
+        int resultado = 0;
+        try{
+            resultado =  daoPeriodo.actualizarRangos(periodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
     }
     
 }
