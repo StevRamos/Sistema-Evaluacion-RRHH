@@ -58,13 +58,15 @@ namespace SistemaEDInterfaces
 
 
                 PeriodoWS.periodo periodo = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem;
-                /*
+                //periodo= daoPeriodo.listarGerenciaPeriodo(periodo);
+                //periodo.configuracionFechas = new BindingList<PeriodoWS.gerenciaPeriodo>().ToArray();
                 if (daoPeriodo.eliminarPeriodo(periodo) != 0)
                 {
                     MessageBox.Show("Se elimino el periodo.",
                                "Mensaje de información",
                                MessageBoxButtons.OK,
                                MessageBoxIcon.Information);
+                    dgvPeriodos.DataSource = daoPeriodo.listarPeriodos();
                 }
                 else
                 {
@@ -73,7 +75,7 @@ namespace SistemaEDInterfaces
                                MessageBoxButtons.OK,
                                MessageBoxIcon.Error);
                 }
-                */
+                
 
             }
         }

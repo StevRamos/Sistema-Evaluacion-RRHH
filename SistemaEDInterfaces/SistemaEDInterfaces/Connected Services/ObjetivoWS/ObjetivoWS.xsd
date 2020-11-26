@@ -22,7 +22,6 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
-      <xs:element minOccurs="0" name="descripcionEstado" type="xs:string" />
       <xs:element name="estado" type="xs:int" />
       <xs:element minOccurs="0" name="evaluacion" type="tns:evaluacionDesempenho" />
       <xs:element minOccurs="0" name="fechaAprobacion" type="xs:dateTime" />
@@ -49,7 +48,6 @@
       <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
       <xs:element name="idColaborador" type="xs:int" />
       <xs:element minOccurs="0" name="jefe" type="tns:colaborador" />
-      <xs:element name="nivelAcceso" type="xs:int" />
       <xs:element minOccurs="0" name="nombres" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="objetivos" nillable="true" type="tns:objetivo" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />

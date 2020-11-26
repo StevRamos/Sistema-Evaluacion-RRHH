@@ -200,8 +200,6 @@ namespace SistemaEDInterfaces.GerenciaWS {
         
         private colaborador jefeField;
         
-        private int nivelAccesoField;
-        
         private string nombresField;
         
         private objetivo[] objetivosField;
@@ -338,18 +336,6 @@ namespace SistemaEDInterfaces.GerenciaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
-        public int nivelAcceso {
-            get {
-                return this.nivelAccesoField;
-            }
-            set {
-                this.nivelAccesoField = value;
-                this.RaisePropertyChanged("nivelAcceso");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
         public string nombres {
             get {
                 return this.nombresField;
@@ -361,7 +347,7 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("objetivos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=11)]
+        [System.Xml.Serialization.XmlElementAttribute("objetivos", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=10)]
         public objetivo[] objetivos {
             get {
                 return this.objetivosField;
@@ -373,7 +359,7 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
         public periodo periodo {
             get {
                 return this.periodoField;
@@ -385,7 +371,7 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
         public puestoTrabajo puestoTrabajo {
             get {
                 return this.puestoTrabajoField;
@@ -397,7 +383,7 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("subordinados", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute("subordinados", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=13)]
         public colaborador[] subordinados {
             get {
                 return this.subordinadosField;
@@ -409,7 +395,7 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
         public string telefono {
             get {
                 return this.telefonoField;
@@ -421,7 +407,7 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
         public usuario usuario {
             get {
                 return this.usuarioField;

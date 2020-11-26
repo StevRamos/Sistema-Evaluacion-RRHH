@@ -85,28 +85,28 @@
             this.cboDiaNotificacion = new System.Windows.Forms.ComboBox();
             this.dtpHoraNotificacion = new System.Windows.Forms.DateTimePicker();
             this.dgvPlanificacion = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCronEvPrevia = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCronEvFinal = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvCalibNotas = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvPDI = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPlanificacion)).BeginInit();
@@ -458,8 +458,8 @@
             this.dgvPlanificacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPlanificacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPlanificacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nombre,
+            this.ID1,
+            this.Nombre1,
             this.FechaInicio,
             this.FechaFin});
             this.dgvPlanificacion.EnableHeadersVisualStyles = false;
@@ -478,31 +478,31 @@
             this.dgvPlanificacion.RowHeadersVisible = false;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.LightGray;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPlanificacion.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvPlanificacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPlanificacion.Size = new System.Drawing.Size(921, 294);
+            this.dgvPlanificacion.Size = new System.Drawing.Size(870, 294);
             this.dgvPlanificacion.TabIndex = 139;
+            this.dgvPlanificacion.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPlanificacion_CellFormatting);
             // 
-            // ID
+            // ID1
             // 
-            this.ID.DataPropertyName = "idGerencia";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ID.Width = 70;
+            this.ID1.HeaderText = "ID";
+            this.ID1.Name = "ID1";
+            this.ID1.ReadOnly = true;
+            this.ID1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ID1.Width = 70;
             // 
-            // Nombre
+            // Nombre1
             // 
-            this.Nombre.DataPropertyName = "nombreGerencia";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Nombre.Width = 450;
+            this.Nombre1.HeaderText = "Nombre";
+            this.Nombre1.Name = "Nombre1";
+            this.Nombre1.ReadOnly = true;
+            this.Nombre1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Nombre1.Width = 450;
             // 
             // FechaInicio
             // 
@@ -549,8 +549,8 @@
             this.dgvCronEvPrevia.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvCronEvPrevia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCronEvPrevia.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
+            this.ID2,
+            this.Nombre2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.dgvCronEvPrevia.EnableHeadersVisualStyles = false;
@@ -573,27 +573,26 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvPrevia.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvCronEvPrevia.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvPrevia.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronEvPrevia.Size = new System.Drawing.Size(870, 294);
             this.dgvCronEvPrevia.TabIndex = 140;
+            this.dgvCronEvPrevia.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCronEvPrevia_CellFormatting);
             // 
-            // dataGridViewTextBoxColumn1
+            // ID2
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "idGerencia";
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn1.Width = 70;
+            this.ID2.HeaderText = "ID";
+            this.ID2.Name = "ID2";
+            this.ID2.ReadOnly = true;
+            this.ID2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ID2.Width = 70;
             // 
-            // dataGridViewTextBoxColumn2
+            // Nombre2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombreGerencia";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn2.Width = 450;
+            this.Nombre2.HeaderText = "Nombre";
+            this.Nombre2.Name = "Nombre2";
+            this.Nombre2.ReadOnly = true;
+            this.Nombre2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Nombre2.Width = 450;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -640,8 +639,8 @@
             this.dgvCronEvFinal.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvCronEvFinal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCronEvFinal.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
+            this.ID3,
+            this.Nombre3,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.dgvCronEvFinal.EnableHeadersVisualStyles = false;
@@ -664,27 +663,26 @@
             dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCronEvFinal.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvCronEvFinal.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCronEvFinal.Size = new System.Drawing.Size(921, 294);
+            this.dgvCronEvFinal.Size = new System.Drawing.Size(870, 294);
             this.dgvCronEvFinal.TabIndex = 141;
+            this.dgvCronEvFinal.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCronEvFinal_CellFormatting);
             // 
-            // dataGridViewTextBoxColumn9
+            // ID3
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "idGerencia";
-            this.dataGridViewTextBoxColumn9.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn9.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn9.Width = 70;
+            this.ID3.HeaderText = "ID";
+            this.ID3.Name = "ID3";
+            this.ID3.ReadOnly = true;
+            this.ID3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ID3.Width = 70;
             // 
-            // dataGridViewTextBoxColumn10
+            // Nombre3
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "nombreGerencia";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn10.Width = 450;
+            this.Nombre3.HeaderText = "Nombre";
+            this.Nombre3.Name = "Nombre3";
+            this.Nombre3.ReadOnly = true;
+            this.Nombre3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Nombre3.Width = 450;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -731,8 +729,8 @@
             this.dgvCalibNotas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvCalibNotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCalibNotas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
+            this.ID4,
+            this.Nombre4,
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
             this.dgvCalibNotas.EnableHeadersVisualStyles = false;
@@ -755,27 +753,26 @@
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCalibNotas.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvCalibNotas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCalibNotas.Size = new System.Drawing.Size(921, 294);
+            this.dgvCalibNotas.Size = new System.Drawing.Size(870, 294);
             this.dgvCalibNotas.TabIndex = 142;
+            this.dgvCalibNotas.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCalibNotas_CellFormatting);
             // 
-            // dataGridViewTextBoxColumn13
+            // ID4
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "idGerencia";
-            this.dataGridViewTextBoxColumn13.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            this.dataGridViewTextBoxColumn13.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn13.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn13.Width = 70;
+            this.ID4.HeaderText = "ID";
+            this.ID4.Name = "ID4";
+            this.ID4.ReadOnly = true;
+            this.ID4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ID4.Width = 70;
             // 
-            // dataGridViewTextBoxColumn14
+            // Nombre4
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "nombreGerencia";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            this.dataGridViewTextBoxColumn14.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn14.Width = 450;
+            this.Nombre4.HeaderText = "Nombre";
+            this.Nombre4.Name = "Nombre4";
+            this.Nombre4.ReadOnly = true;
+            this.Nombre4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Nombre4.Width = 450;
             // 
             // dataGridViewTextBoxColumn15
             // 
@@ -822,8 +819,8 @@
             this.dgvPDI.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvPDI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPDI.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
+            this.ID5,
+            this.Nombre5,
             this.dataGridViewTextBoxColumn7,
             this.dataGridViewTextBoxColumn8});
             this.dgvPDI.EnableHeadersVisualStyles = false;
@@ -846,27 +843,26 @@
             dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPDI.RowsDefaultCellStyle = dataGridViewCellStyle25;
             this.dgvPDI.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPDI.Size = new System.Drawing.Size(921, 294);
+            this.dgvPDI.Size = new System.Drawing.Size(870, 294);
             this.dgvPDI.TabIndex = 143;
+            this.dgvPDI.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPDI_CellFormatting);
             // 
-            // dataGridViewTextBoxColumn5
+            // ID5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "idGerencia";
-            this.dataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn5.Width = 70;
+            this.ID5.HeaderText = "ID";
+            this.ID5.Name = "ID5";
+            this.ID5.ReadOnly = true;
+            this.ID5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.ID5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.ID5.Width = 70;
             // 
-            // dataGridViewTextBoxColumn6
+            // Nombre5
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "nombreGerencia";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.dataGridViewTextBoxColumn6.Width = 450;
+            this.Nombre5.HeaderText = "Nombre";
+            this.Nombre5.Name = "Nombre5";
+            this.Nombre5.ReadOnly = true;
+            this.Nombre5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Nombre5.Width = 450;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -984,28 +980,28 @@
         private System.Windows.Forms.ComboBox cboDiaNotificacion;
         private System.Windows.Forms.DateTimePicker dtpHoraNotificacion;
         private System.Windows.Forms.DataGridView dgvPlanificacion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridView dgvCronEvPrevia;
+        private System.Windows.Forms.DataGridView dgvCronEvFinal;
+        private System.Windows.Forms.DataGridView dgvCalibNotas;
+        private System.Windows.Forms.DataGridView dgvPDI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre1;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
-        private System.Windows.Forms.DataGridView dgvCronEvPrevia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridView dgvCronEvFinal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridView dgvCalibNotas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridView dgvPDI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
     }

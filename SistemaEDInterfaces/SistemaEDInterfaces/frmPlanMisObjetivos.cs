@@ -248,10 +248,17 @@ namespace SistemaEDInterfaces
                 {
                     sumaPesoObjetivos -= objetivo.peso;
                     daoObjetivo.eliminarObjetivo(objetivo.idObjetivo);
-                    objetivos = new BindingList<ObjetivoWS.objetivo>
-                                        (daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado).ToArray());
+                    ObjetivoWS.objetivo[] lista = daoObjetivo.listarObjetivosXColaborador(IdColaboradorLoggeado);
+                    if (lista != null)
+                    {
+                        objetivos = new BindingList<ObjetivoWS.objetivo>(lista);
+                        
+                    }
+                    else
+                    {
+                        objetivos = new BindingList<ObjetivoWS.objetivo>();
+                    }
                     dgvMisObjetivos.DataSource = objetivos;
-
                 }
                 else
                 {
@@ -265,6 +272,24 @@ namespace SistemaEDInterfaces
             }
 
 
+        }
+
+        private void dgvMisObjetivos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            ObjetivoWS.objetivo data = dgvMisObjetivos.Rows[e.RowIndex].DataBoundItem as ObjetivoWS.objetivo;
+
+            if (data.estado == (int)EstadoObjetivo.EsperandoRevision)
+            {
+                dgvMisObjetivos.Rows[e.RowIndex].Cells["Estado"].Value = "Esperando revision";
+            }
+            else if(data.estado == (int)EstadoObjetivo.Denegado)
+            {
+                dgvMisObjetivos.Rows[e.RowIndex].Cells["Estado"].Value = "Denegado";
+            }
+            else if(data.estado == (int)EstadoObjetivo.Aprobado)
+            {
+                dgvMisObjetivos.Rows[e.RowIndex].Cells["Estado"].Value = "Aprobado";
+            }
         }
     }
 }

@@ -27,11 +27,11 @@ namespace SistemaEDInterfaces
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
             periodo = Global.periodoActual; 
 
-            /*escalasPeriodos =
-               new BindingList<PeriodoWS.escalaPeriodo>(daoPeriodo.listarEscalaPeriodos().ToArray());
+            escalasPeriodos =
+               new BindingList<PeriodoWS.escalaPeriodo>(daoPeriodo.listarEscalaPeriodo(periodo.idPeriodo).ToArray());
 
             itemsPDIPeriodos 
-                = new BindingList<PeriodoWS.itemPDIPeriodo>(daoPeriodo.listarItemsPDIPeriodos().ToArray());
+                = new BindingList<PeriodoWS.itemPDIPeriodo>(daoPeriodo.listarItemPDIPeriodo(periodo.idPeriodo).ToArray());
 
             foreach(PeriodoWS.escalaPeriodo ep in escalasPeriodos)
             {
@@ -83,22 +83,22 @@ namespace SistemaEDInterfaces
             {
                 switch (ip.itemPDI.nombre)
                 {
-                    case "Fortaleza":
+                    case "FORTALEZAS":
                         txtFortalezaMax.Text = ip.notaMax.ToString();
                         txtFortalezaMin.Text = ip.notaMin.ToString();
                         break;
-                    case "Oportunidad de Mejora":
+                    case "OPORTUNIDADES DE MEJORA":
                         txtOportunidadMax.Text = ip.notaMax.ToString();
                         txtOportunidadMin.Text = ip.notaMin.ToString();
                         break;
-                    case "Debilidad":
+                    case "DEBILIDADES":
                         txtDebilidadMax.Text = ip.notaMax.ToString();
                         txtDebilidadMin.Text = ip.notaMin.ToString();
                         break; 
                 }
             }
             
-            */
+            
         }
 
         private int mostrarMensajeErrorPeso()
@@ -159,7 +159,7 @@ namespace SistemaEDInterfaces
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            /*
+            
             iniciarEspera();
             
             
@@ -172,7 +172,8 @@ namespace SistemaEDInterfaces
             actualizarEscalaPeriodo();
             actualizarPDI();
             periodo.escalas = escalasPeriodos.ToArray();
-            periodo.rangosPDI = itemsPDIPeriodos.ToArray(); 
+            periodo.rangosPDI = itemsPDIPeriodos.ToArray();
+            //int resultado = 0;
             int resultado = daoPeriodo.actualizarRangos(periodo);
             terminarEspera(); 
             if (resultado == 0)
@@ -183,7 +184,7 @@ namespace SistemaEDInterfaces
                 MessageBoxIcon.Error);
                 return;
             }
-            */
+            
             MessageBox.Show("Se guardaron los cambios realizados.",
                 "Mensaje de información",
                 MessageBoxButtons.OK,
@@ -256,15 +257,15 @@ namespace SistemaEDInterfaces
             {
                 switch (itemsPDIPeriodos[i].itemPDI.nombre)
                 {
-                    case "Fortaleza":
+                    case "FORTALEZAS":
                         itemsPDIPeriodos[i].notaMax = Double.Parse(txtFortalezaMax.Text);
                         itemsPDIPeriodos[i].notaMin = Double.Parse(txtFortalezaMin.Text); 
                         break;
-                    case "Oportunidad de Mejora":
+                    case "OPORTUNIDADES DE MEJORA":
                         itemsPDIPeriodos[i].notaMax = Double.Parse(txtOportunidadMax.Text);
                         itemsPDIPeriodos[i].notaMin = Double.Parse(txtOportunidadMin.Text);
                         break;
-                    case "Debilidad":
+                    case "DEBILIDADES":
                         itemsPDIPeriodos[i].notaMax = Double.Parse(txtDebilidadMax.Text);
                         itemsPDIPeriodos[i].notaMin = Double.Parse(txtDebilidadMin.Text);
                         break;

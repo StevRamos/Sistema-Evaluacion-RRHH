@@ -97,40 +97,44 @@ namespace SistemaEDInterfaces
             periodo.fechaFinSpecified = true; 
             periodo.pesoEvalObj = (Double.Parse(txtPesoObjetivos.Text))/100;
             periodo.pesoEvalComp = (Double.Parse(txtPesoCompetencia.Text))/100;
-            //periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
+            periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
             //periodo.horaNotificacion = dtpHoraNotificacion.Value;
 
             //Specified de GerenciasPeriodos
-            for (int i = 0; i < periodo.configuracionFechas.Count(); i++)
+            if (periodo.configuracionFechas != null)
             {
-                periodo.configuracionFechas[i].fechaInicioPlanSpecified = true;
-                periodo.configuracionFechas[i].fechaFinPlanSpecified = true;
-                periodo.configuracionFechas[i].fechaInicioEvalPrevDSpecified = true;
-                periodo.configuracionFechas[i].fechaFinEvalPrevDSpecified = true;
-                periodo.configuracionFechas[i].fechaInicioEvalFinDSpecified = true;
-                periodo.configuracionFechas[i].fechaFinEvalFinDSpecified = true; 
-                periodo.configuracionFechas[i].fechaInicioCalSpecified = true;
-                periodo.configuracionFechas[i].fechaFinCalSpecified = true;
-                periodo.configuracionFechas[i].fechaInicioPDISpecified = true;
-                periodo.configuracionFechas[i].fechaFinPDISpecified = true;
-                
-            }
+                for (int i = 0; i < periodo.configuracionFechas.Count(); i++)
+                {
+                    periodo.configuracionFechas[i].fechaInicioPlanSpecified = true;
+                    periodo.configuracionFechas[i].fechaFinPlanSpecified = true;
+                    periodo.configuracionFechas[i].fechaInicioEvalPrevDSpecified = true;
+                    periodo.configuracionFechas[i].fechaFinEvalPrevDSpecified = true;
+                    periodo.configuracionFechas[i].fechaInicioEvalFinDSpecified = true;
+                    periodo.configuracionFechas[i].fechaFinEvalFinDSpecified = true;
+                    periodo.configuracionFechas[i].fechaInicioCalSpecified = true;
+                    periodo.configuracionFechas[i].fechaFinCalSpecified = true;
+                    periodo.configuracionFechas[i].fechaInicioPDISpecified = true;
+                    periodo.configuracionFechas[i].fechaFinPDISpecified = true;
 
-            //if (daoPeriodo.actualizarPeriodo(periodo) != 0)
-            //{
-            //    MessageBox.Show("Se guardaron los cambios.",
-            //    "Mensaje de confirmacion",
-            //    MessageBoxButtons.OK,
-            //    MessageBoxIcon.Information);
-            //    Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestCron());
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Ocurrio un error, intentelo de nuevo.",
-            //                                       "Mensaje de error",
-            //                                       MessageBoxButtons.OK,
-            //                                       MessageBoxIcon.Error);
-            //}
+                }
+            }
+            
+
+            if (daoPeriodo.actualizarPeriodo(periodo) != 0)
+            {
+                MessageBox.Show("se guardaron los cambios.",
+                "mensaje de confirmacion",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+                Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestCron());
+            }
+            else
+            {
+                MessageBox.Show("ocurrio un error, intentelo de nuevo.",
+                                                   "mensaje de error",
+                                                   MessageBoxButtons.OK,
+                                                   MessageBoxIcon.Error);
+            }
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -250,16 +254,17 @@ namespace SistemaEDInterfaces
         private void frmAdmGestCronVerDetalle_Load(object sender, EventArgs e)
         {
             //Llena configuraciones fecha
-            //daoPeriodo.listarGerenciaPeriodos(periodo);
+            //periodo = daoPeriodo.listarGerenciaPeriodo(periodo);
 
             txtID.Text = periodo.idPeriodo.ToString();
             txtNombre.Text = periodo.nombre;
             txtEstado.Text = periodo.estado.ToString();
             dtpFechaInicio.Value = periodo.fechaInicio;
             dtpFechaFin.Value = periodo.fechaFin;
-            txtPesoCompetencia.Text = periodo.pesoEvalComp.ToString();
-            txtPesoObjetivos.Text = periodo.pesoEvalObj.ToString();
-
+            txtPesoCompetencia.Text = (periodo.pesoEvalComp*100).ToString();
+            txtPesoObjetivos.Text = (periodo.pesoEvalObj*100).ToString();
+            String dia = periodo.diaNotificacion;
+            cboDiaNotificacion.SelectedItem = dia; 
             //DGV 
             
             dgvPlanificacion.DataSource = periodo.configuracionFechas;
@@ -403,5 +408,44 @@ namespace SistemaEDInterfaces
             if (e.ColumnIndex == 2 || e.ColumnIndex == 3) mostrarFormularioFechaYActualizar(e, Etapas.PDI);
         }
 
+        private void dgvPlanificacion_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvPlanificacion.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvPlanificacion.Rows[e.RowIndex].Cells["ID1"].Value = data.gerencia.idGerencia;
+            dgvPlanificacion.Rows[e.RowIndex].Cells["Nombre1"].Value = data.gerencia.nombre;
+        }
+
+        private void dgvCronEvPrevia_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvCronEvPrevia.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvCronEvPrevia.Rows[e.RowIndex].Cells["ID2"].Value = data.gerencia.idGerencia;
+            dgvCronEvPrevia.Rows[e.RowIndex].Cells["Nombre2"].Value = data.gerencia.nombre;
+        }
+
+        private void dgvCronEvFinal_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvCronEvFinal.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvCronEvFinal.Rows[e.RowIndex].Cells["ID3"].Value = data.gerencia.idGerencia;
+            dgvCronEvFinal.Rows[e.RowIndex].Cells["Nombre3"].Value = data.gerencia.nombre;
+        }
+
+        private void dgvCalibNotas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvCalibNotas.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvCalibNotas.Rows[e.RowIndex].Cells["ID4"].Value = data.gerencia.idGerencia;
+            dgvCalibNotas.Rows[e.RowIndex].Cells["Nombre4"].Value = data.gerencia.nombre;
+        }
+
+        private void dgvPDI_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvPDI.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvPDI.Rows[e.RowIndex].Cells["ID5"].Value = data.gerencia.idGerencia;
+            dgvPDI.Rows[e.RowIndex].Cells["Nombre5"].Value = data.gerencia.nombre;
+        }
     }
 }

@@ -38,7 +38,6 @@
       <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
       <xs:element name="idColaborador" type="xs:int" />
       <xs:element minOccurs="0" name="jefe" type="tns:colaborador" />
-      <xs:element name="nivelAcceso" type="xs:int" />
       <xs:element minOccurs="0" name="nombres" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="objetivos" nillable="true" type="tns:objetivo" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />

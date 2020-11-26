@@ -718,6 +718,9 @@
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.actualizarColaboradorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.autenticarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.buscarJefeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
