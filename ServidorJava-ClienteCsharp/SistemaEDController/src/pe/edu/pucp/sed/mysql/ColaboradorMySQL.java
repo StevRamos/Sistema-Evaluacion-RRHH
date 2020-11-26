@@ -179,9 +179,11 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 
                 Gerencia ger = new Gerencia();
                 ger.setIdGerencia(rs.getInt("id_Gerencias"));
+                ger.setNombre(rs.getString("nombreG"));
                 
                 PuestoTrabajo pt = new PuestoTrabajo();
                 pt.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                pt.setNombre(rs.getString("nombrePT"));
                 
                 col.setGerencia(ger);
                 col.setPuestoTrabajo(pt);
