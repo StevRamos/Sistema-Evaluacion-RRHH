@@ -67,10 +67,36 @@ namespace SistemaEDInterfaces
 
         private void btnAcceder_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmInicio Inicio = new frmInicio();
-            Inicio.ShowDialog();
-            this.Close();
+            if (txtUsuario.Text != "USUARIO")
+            {
+                if (txtContraseña.Text != "CONTRASEÑA")
+                {
+                  
+                        this.Hide();
+                        frmBienvenida bienvenida = new frmBienvenida();
+                        bienvenida.ShowDialog();
+                        frmInicio Inicio = new frmInicio();
+                        Inicio.ShowDialog();
+                        this.Close();
+                    
+
+                }
+                else msgError("Por favor ingresa la contraseña");
+
+            }
+            else msgError("Por favor ingresa el usuario");
+
+            
+            
+            
+            
         }
+        private void msgError(string msg)
+        {
+            lblError.Text = "    " + msg;
+            lblError.Visible = true;
+            picError.Visible = true;
+        }
+
     }
 }

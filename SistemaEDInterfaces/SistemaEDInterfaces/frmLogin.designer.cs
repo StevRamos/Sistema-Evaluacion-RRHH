@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -38,8 +39,13 @@
             this.llblOlvContra = new System.Windows.Forms.LinkLabel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblError = new System.Windows.Forms.Label();
+            this.picError = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picError)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -151,12 +157,40 @@
             this.btnMinimizar.TabStop = false;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblError.Location = new System.Drawing.Point(352, 175);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(74, 13);
+            this.lblError.TabIndex = 9;
+            this.lblError.Text = "Error message";
+            this.lblError.Visible = false;
+            // 
+            // picError
+            // 
+            this.picError.Image = ((System.Drawing.Image)(resources.GetObject("picError.Image")));
+            this.picError.Location = new System.Drawing.Point(329, 172);
+            this.picError.Name = "picError";
+            this.picError.Size = new System.Drawing.Size(21, 19);
+            this.picError.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picError.TabIndex = 10;
+            this.picError.TabStop = false;
+            this.picError.Visible = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.picError);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
@@ -173,6 +207,8 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +225,8 @@
         private System.Windows.Forms.LinkLabel llblOlvContra;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label lblError;
+        private System.Windows.Forms.PictureBox picError;
     }
 }

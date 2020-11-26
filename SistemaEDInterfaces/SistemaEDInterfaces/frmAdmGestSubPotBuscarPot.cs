@@ -23,14 +23,14 @@ namespace SistemaEDInterfaces
             InitializeComponent();
             daoCriterio = new CriterioWS.CriterioWSClient();
             dgvPotenciales.AutoGenerateColumns = false;
-            dgvPotenciales.DataSource = daoCriterio.listar((int)TipoCriterio.Competencia, txtNombrePotencial.Text);
+            dgvPotenciales.DataSource = daoCriterio.listar((int)TipoCriterio.Potencial, txtNombrePotencial.Text);
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             if (dgvPotenciales.CurrentCell == null)
             {
-                MessageBox.Show("Debe seleccionar una competencia.",
+                MessageBox.Show("Debe seleccionar un potencial.",
                                    "Mensaje de error",
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
@@ -43,7 +43,7 @@ namespace SistemaEDInterfaces
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            dgvPotenciales.DataSource = daoCriterio.listar((int)TipoCriterio.Competencia, txtNombrePotencial.Text);
+            dgvPotenciales.DataSource = daoCriterio.listar((int)TipoCriterio.Potencial, txtNombrePotencial.Text);
         }
     }
 }
