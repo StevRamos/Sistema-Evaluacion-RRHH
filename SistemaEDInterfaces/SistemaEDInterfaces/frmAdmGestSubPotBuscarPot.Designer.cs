@@ -47,7 +47,7 @@
             // txtNombrePotencial
             // 
             this.txtNombrePotencial.Location = new System.Drawing.Point(315, 134);
-            this.txtNombrePotencial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombrePotencial.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombrePotencial.Name = "txtNombrePotencial";
             this.txtNombrePotencial.Size = new System.Drawing.Size(179, 20);
             this.txtNombrePotencial.TabIndex = 61;
@@ -149,6 +149,7 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "idCriterio";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -156,6 +157,7 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -163,6 +165,7 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "descripcion";
             this.dataGridViewTextBoxColumn3.HeaderText = "Descripción";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -170,6 +173,7 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "estado";
             this.dataGridViewTextBoxColumn7.HeaderText = "Estado";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
@@ -187,7 +191,7 @@
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblRegistrarObjetivo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAdmGestSubPotBuscarPot";
             this.Text = "frmAdmGestSubPotBuscarPot";
             ((System.ComponentModel.ISupportInitialize)(this.dgvPotenciales)).EndInit();
