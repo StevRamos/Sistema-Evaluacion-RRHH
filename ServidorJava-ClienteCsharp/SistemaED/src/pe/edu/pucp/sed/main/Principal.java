@@ -223,11 +223,11 @@ public class Principal {
         //    System.out.println(a.getIdItemPDI()+ " - " + a.getNombre());
         //}
 //        
-        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
+//        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
 //        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
 //        
-        for(PuestoTrabajo pt : daoPuestoTrabajo.listar("") )
-            System.out.println(pt.getNombre());
+//        for(PuestoTrabajo pt : daoPuestoTrabajo.listar("") )
+//            System.out.println(pt.getNombre());
 ////        
 ////     
 //        try{
@@ -252,7 +252,7 @@ public class Principal {
 //            System.out.println(a.getIdPuestoTrabajo()+ " - " + a.getNombre());
 //        }
     
-//    ArrayList<Periodo> periodos = new ArrayList<>();
+    ArrayList<Periodo> periodos = new ArrayList<>();
 //    
 //    Periodo per = new Periodo();
 //    per.setNombre("periodo prueba 2");
@@ -264,7 +264,7 @@ public class Principal {
 //    per.setHoraNotificacion(new java.sql.Time((new SimpleDateFormat("hh:mm:ss").parse("12:00:00")).getTime()));
 //    
 //    
-//    PeriodoDAO daoPeriodo = new PeriodoMySQL();
+    PeriodoDAO daoPeriodo = new PeriodoMySQL();
 //    
 //    System.out.println("entra aqui");
     
@@ -282,15 +282,15 @@ public class Principal {
 //    if(perDAO.eliminar(per.getIdPeriodo()) == 1)
 //        System.out.println("Se ha eliminado un Periodo");
     
-//    try {
-//            periodos = daoPeriodo.listar();
-//        } catch (Exception ex) {
-//            System.out.println(ex.getMessage());
-//        }
-//    
-//      for(Periodo p : daoPeriodo.listar()){
-//        System.out.println(p.getNombre()+ " - " + p.getIdPeriodo() + " - " + p.getFechaInicio());
-//    }
+    try {
+            periodos = daoPeriodo.listar();
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+    
+      for(Periodo p : daoPeriodo.listar()){
+        System.out.println(p.getNombre()+ " - " + p.getIdPeriodo() + " - " + p.getFechaInicio());
+    }
 //    
 
 //ObjetivoDAO daoObjetivo = new ObjetivoMySQL();
@@ -348,12 +348,12 @@ public class Principal {
         
         //object.setIdObjetivo(11);
         //object.setFechaAprobacion(); 
-        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
-        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
-        pesoscriterio = daopesocriterio.listar(3,"","","");
-        for (PesoCriterio p : pesoscriterio){
-            System.out.println(p.getIdPesoCriterio());
-        }
+//        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
+//        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
+//        pesoscriterio = daopesocriterio.listar(3,"","","");
+//        for (PesoCriterio p : pesoscriterio){
+//            System.out.println(p.getIdPesoCriterio());
+//        }
 //        PesoCriterio peso = new PesoCriterio();
 //        peso.setNombreCriterio("Analisis de probl");
 //        peso.setPeso(0.1);

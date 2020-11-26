@@ -72,11 +72,12 @@ public class PeriodoMySQL implements PeriodoDAO{
             }
                       
             for(ItemPDIPeriodo rangosPDI : periodo.getRangosPDI()){
-                sql = "{call INSERTAR_ITEM_PDI_PERIODOS(?,?,?)}";
+                sql = "{call INSERTAR_ITEM_PDI_PERIODOS(?,?,?,?)}";
                 
                 rangosPDI.setPeriodo(periodo);
                 
                 cs = con.prepareCall(sql);
+                cs.setInt("_ID_ITEMPDI", rangosPDI.getItemPDI().getIdItemPDI());
                 cs.setInt("_ID_PERIODO", rangosPDI.getPeriodo().getIdPeriodo());
                 cs.setDouble("_NOTAMIN", rangosPDI.getNotaMin());
                 cs.setDouble("_NOTAMAX", rangosPDI.getNotaMax());
