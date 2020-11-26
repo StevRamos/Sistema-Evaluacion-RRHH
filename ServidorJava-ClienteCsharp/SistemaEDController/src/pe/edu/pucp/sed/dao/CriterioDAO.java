@@ -8,5 +8,5 @@ public interface CriterioDAO{
         int insertar_individual(Criterio criterio);
 	int actualizar(Criterio criterio);
 	int eliminar(int idCriterio);
-	ArrayList<Criterio> listar();
+	ArrayList<Criterio> listar(int tipo,String nombrecriterio);
 }

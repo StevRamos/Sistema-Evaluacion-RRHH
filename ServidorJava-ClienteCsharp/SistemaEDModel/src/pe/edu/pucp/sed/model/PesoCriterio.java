@@ -15,118 +15,55 @@ public class PesoCriterio{
                 this.puestoTrabajo = new PuestoTrabajo();
                 this.criterio = new Criterio();
 	};
-
-        public String getDescripcion() {
-            return this.criterio.getDescripcion();
-        }
         
-        public void setDescripcion(String descripcion) {
-            this.criterio.setDescripcion(descripcion);
-        }
-        
-        public int getIdCriterio() {
-           return this.criterio.getIdCriterio();
-       }
 
-        public void setIdCriterio(int idCriterio) {
-            this.criterio.setIdCriterio(idCriterio);
-        }
-        
-        public String getNombreCriterio() {
-            return this.criterio.getNombre();
-        }
+    public int getIdPesoCriterio() {
+        return idPesoCriterio;
+    }
 
-        public void setNombreCriterio(String nombre) {
-            this.criterio.setNombre(nombre);
-        }
+    public double getPeso() {
+        return peso;
+    }
 
-        public Criterio getCriterioPadre() {
-            return this.criterio.getCriterioPadre();
-        }
+    public Periodo getPeriodo() {
+        return periodo;
+    }
 
-        public void setCriterioPadre(Criterio criterioPadre) {
-            this.criterio.setCriterioPadre(criterioPadre);
-        }
+    public ArrayList<LineaEvaluacion> getLineasEvaluacion() {
+        return lineasEvaluacion;
+    }
 
-        public int getIdPuestoTrabajo() {
-            return this.puestoTrabajo.getIdPuestoTrabajo();
-        }
+    public PuestoTrabajo getPuestoTrabajo() {
+        return puestoTrabajo;
+    }
 
-        public void setIdPuestoTrabajo(int idPuestoTrabajo) {
-            this.puestoTrabajo.setIdPuestoTrabajo(idPuestoTrabajo);
-        }
+    public Criterio getCriterio() {
+        return criterio;
+    }
 
-        public String getNombrePuestoTrabajo() {
-            return this.puestoTrabajo.getNombre();
-        }
+    public void setIdPesoCriterio(int idPesoCriterio) {
+        this.idPesoCriterio = idPesoCriterio;
+    }
 
-        public void setNombrePuestoTrabajo(String nombre) {
-            this.puestoTrabajo.setNombre(nombre);
-        }
-        
-	public int getIdPesoCriterio(){
-		return this.idPesoCriterio;
-	};
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
 
-	public void setIdPesoCriterio( int idPesoCriterio ){
-		this.idPesoCriterio = idPesoCriterio;
-	};
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
+    }
 
-	public double getPeso(){
-		return this.peso;
-	};
+    public void setLineasEvaluacion(ArrayList<LineaEvaluacion> lineasEvaluacion) {
+        this.lineasEvaluacion = lineasEvaluacion;
+    }
 
-	public void setPeso( double peso ){
-		this.peso = peso;
-	};
+    public void setPuestoTrabajo(PuestoTrabajo puestoTrabajo) {
+        this.puestoTrabajo = puestoTrabajo;
+    }
 
-	public Periodo getPeriodo(){
-		return this.periodo;
-	};
-
-	public void setPeriodo( Periodo periodo ){
-		this.periodo = periodo;
-	};
-        
-        public int getIdPeriodo() {
-            return this.periodo.getIdPeriodo();
-        }
-
-        public void setIdPeriodo(int idPeriodo) {
-            this.periodo.setIdPeriodo(idPeriodo);
-        }
-
-        public String getNombrePeriodo() {
-            return periodo.getNombre();
-        }
-
-        public void setNombrePeriodo(String nombre) {
-            this.periodo.setNombre(nombre);
-        }
-
-	public ArrayList<LineaEvaluacion> getLineasEvaluacion(){
-		return this.lineasEvaluacion;
-	};
-
-	public void setLineasEvaluacion( ArrayList<LineaEvaluacion> lineasEvaluacion ){
-		this.lineasEvaluacion = lineasEvaluacion;
-	};
-
-	public PuestoTrabajo getPuestoTrabajo(){
-		return this.puestoTrabajo;
-	};
-
-	public void setPuestoTrabajo( PuestoTrabajo puestoTrabajo ){
-		this.puestoTrabajo = puestoTrabajo;
-	};
-
-	public Criterio getCriterio(){
-		return this.criterio;
-	};
-
-	public void setCriterio( Criterio criterio ){
-		this.criterio = criterio;
-	};
+    public void setCriterio(Criterio criterio) {
+        this.criterio = criterio;
+    }
 
 }
 

@@ -85,16 +85,18 @@ public class CriterioMySQL implements CriterioDAO{
 		return resultado;
 	}
 	@Override
-	public ArrayList<Criterio> listar(){
+	public ArrayList<Criterio> listar(int tipo,String nombrecriterio){
 		ArrayList<Criterio> criterios = new ArrayList<>();
 		try{
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
                         
-                        String sql = "{call LISTAR_CRITERIOS()}";
+                        String sql = "{call LISTAR_CRITERIO(?,?)}";
 			cs = con.prepareCall(sql);
-                        
-                        rs = cs.executeQuery(sql);
+                        cs.setInt("_TIPO",tipo);
+                        cs.setString("_NOMBRE",nombrecriterio);
+
+                        rs = cs.executeQuery();
                         while(rs.next()){
                             Criterio criterio = new Criterio();
                             criterio.setIdCriterio(rs.getInt("id_Criterio"));
@@ -140,9 +142,9 @@ public class CriterioMySQL implements CriterioDAO{
                     sql = "{call INSERTAR_PESO_CRITERIO_STR(?,?,?,?,?)}";     
                     cs = con.prepareCall(sql);
                     cs.registerOutParameter("_ID_PESO_CRITERIO", java.sql.Types.INTEGER);
-                    cs.setString("_NOMBRE_PERIODO",pc.getNombrePeriodo());
-                    cs.setString("_NOMBRE_PUESTO_TRABAJO",pc.getNombrePuestoTrabajo());
-                    cs.setString("_NOMBRE_CRITERIO",pc.getNombreCriterio());
+                    cs.setString("_NOMBRE_PERIODO",pc.getPeriodo().getNombre());
+                    cs.setString("_NOMBRE_PUESTO_TRABAJO",pc.getPuestoTrabajo().getNombre());
+                    cs.setString("_NOMBRE_CRITERIO",pc.getCriterio().getNombre());
                     cs.setDouble("_PESO", pc.getPeso());
                     cs.executeUpdate();
                     pc.setIdPesoCriterio(cs.getInt("_ID_PESO_CRITERIO"));
