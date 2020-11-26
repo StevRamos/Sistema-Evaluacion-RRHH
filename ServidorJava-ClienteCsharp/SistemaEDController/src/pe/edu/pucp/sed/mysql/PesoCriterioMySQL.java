@@ -27,9 +27,9 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
                         String sql = "{call INSERTAR_PESO_CRITERIO_STR(?,?,?,?,?)}";
                         cs = con.prepareCall(sql);
                         cs.registerOutParameter("_ID_PESO_CRITERIO", java.sql.Types.INTEGER);
-                        cs.setString("_NOMBRE_PERIODO",pesoCriterio.getNombrePeriodo());
-                        cs.setString("_NOMBRE_PUESTO_TRABAJO",pesoCriterio.getNombrePuestoTrabajo());
-                        cs.setString("_NOMBRE_CRITERIO",pesoCriterio.getNombreCriterio());
+                        cs.setString("_NOMBRE_PERIODO",pesoCriterio.getPeriodo().getNombre());
+                        cs.setString("_NOMBRE_PUESTO_TRABAJO",pesoCriterio.getPuestoTrabajo().getNombre());
+                        cs.setString("_NOMBRE_CRITERIO",pesoCriterio.getCriterio().getNombre());
                         cs.setDouble("_PESO", pesoCriterio.getPeso());
                         cs.executeUpdate();
                         pesoCriterio.setIdPesoCriterio(cs.getInt("_ID_PESO_CRITERIO"));
@@ -49,9 +49,9 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
 			con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 			String sql = "{call ACTUALIZAR_PESO_CRITERIO_STR(?,?,?,?)}";
                         cs = con.prepareCall(sql);
-                        cs.setString("_NOMBRE_PERIODO",pesoCriterio.getNombrePeriodo());
-                        cs.setString("_NOMBRE_PUESTO_TRABAJO",pesoCriterio.getNombrePuestoTrabajo());
-                        cs.setString("_NOMBRE_CRITERIO",pesoCriterio.getNombreCriterio());
+                        cs.setString("_NOMBRE_PERIODO",pesoCriterio.getPeriodo().getNombre());
+                        cs.setString("_NOMBRE_PUESTO_TRABAJO",pesoCriterio.getPuestoTrabajo().getNombre());
+                        cs.setString("_NOMBRE_CRITERIO",pesoCriterio.getCriterio().getNombre());
                         cs.setDouble("_PESO", pesoCriterio.getPeso());
                         cs.executeUpdate();
 			resultado = 1;
@@ -97,13 +97,13 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
                         while(rs.next()){
                             PesoCriterio pesocriterio = new PesoCriterio();
                             pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
-                            pesocriterio.setIdPeriodo(rs.getInt("id_Periodo"));
-                            pesocriterio.setNombrePeriodo(rs.getString("periodo"));
-                            pesocriterio.setIdCriterio(rs.getInt("id_Criterio"));
-                            pesocriterio.setNombreCriterio(rs.getString("nombre"));
-                            pesocriterio.setDescripcion(rs.getString("descripcion"));
-                            pesocriterio.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
-                            pesocriterio.setNombrePuestoTrabajo(rs.getString("cargo"));
+                            pesocriterio.getPeriodo().setIdPeriodo(rs.getInt("id_Periodo"));
+                            pesocriterio.getPeriodo().setNombre(rs.getString("periodo"));
+                            pesocriterio.getCriterio().setIdCriterio(rs.getInt("id_Criterio"));
+                            pesocriterio.getCriterio().setNombre(rs.getString("nombre"));
+                            pesocriterio.getCriterio().setDescripcion(rs.getString("descripcion"));
+                            pesocriterio.getPuestoTrabajo().setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                            pesocriterio.getPuestoTrabajo().setNombre(rs.getString("cargo"));
                             pesocriterio.setPeso(rs.getDouble("peso"));
                             pesoCriterios.add(pesocriterio);
                         }
@@ -117,13 +117,13 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
                         while(rs.next()){
                             PesoCriterio pesocriterio = new PesoCriterio();
                             pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
-                            pesocriterio.setIdPeriodo(rs.getInt("id_Periodo"));
-                            pesocriterio.setNombrePeriodo(rs.getString("periodo"));
-                            pesocriterio.setIdCriterio(rs.getInt("id_Criterio"));
-                            pesocriterio.setNombreCriterio(rs.getString("nombre"));
-                            pesocriterio.setDescripcion(rs.getString("descripcion"));
-                            pesocriterio.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
-                            pesocriterio.setNombrePuestoTrabajo(rs.getString("cargo"));
+                            pesocriterio.getPeriodo().setIdPeriodo(rs.getInt("id_Periodo"));
+                            pesocriterio.getPeriodo().setNombre(rs.getString("periodo"));
+                            pesocriterio.getCriterio().setIdCriterio(rs.getInt("id_Criterio"));
+                            pesocriterio.getCriterio().setNombre(rs.getString("nombre"));
+                            pesocriterio.getCriterio().setDescripcion(rs.getString("descripcion"));
+                            pesocriterio.getPuestoTrabajo().setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                            pesocriterio.getPuestoTrabajo().setNombre(rs.getString("cargo"));
                             pesocriterio.setPeso(rs.getDouble("peso"));
                             pesoCriterios.add(pesocriterio);
                         }
@@ -137,18 +137,18 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
                         while(rs.next()){
                             PesoCriterio pesocriterio = new PesoCriterio();
                             pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
-                            pesocriterio.setIdPeriodo(rs.getInt("id_Periodo"));
-                            pesocriterio.setNombrePeriodo(rs.getString("periodo"));
-                            pesocriterio.setIdCriterio(rs.getInt("id_Criterio"));
-                            pesocriterio.setNombreCriterio(rs.getString("nombrehijo"));
+                            pesocriterio.getPeriodo().setIdPeriodo(rs.getInt("id_Periodo"));
+                            pesocriterio.getPeriodo().setNombre(rs.getString("periodo"));
+                            pesocriterio.getCriterio().setIdCriterio(rs.getInt("id_Criterio"));
+                            pesocriterio.getCriterio().setNombre(rs.getString("nombrehijo"));
                             Criterio criteriopadre = new Criterio();
                             criteriopadre.setIdCriterio(rs.getInt("id_CriterioPadre"));
                             criteriopadre.setNombre(rs.getString("nombrepadre"));
                             
                             pesocriterio.getCriterio().setCriterioPadre(criteriopadre);  
-                            pesocriterio.setDescripcion(rs.getString("descripcion"));
-                            pesocriterio.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
-                            pesocriterio.setNombrePuestoTrabajo(rs.getString("cargo"));
+                            pesocriterio.getCriterio().setDescripcion(rs.getString("descripcion"));
+                            pesocriterio.getPuestoTrabajo().setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                            pesocriterio.getPuestoTrabajo().setNombre(rs.getString("cargo"));
                             pesocriterio.setPeso(rs.getDouble("peso"));
                             pesoCriterios.add(pesocriterio);
                         }
@@ -157,29 +157,27 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
                         cs = con.prepareCall(sql);
                         cs.setString("_NOMBRE_CARGO",nomcargo);
                         cs.setString("_NOMBRE_PERIODO",nomPeriodo);
-                        cs.setString("_NOMBRE_SUBPOTENCIALES",nomCompetencia);
+                        cs.setString("_NOMBRE_SUBPOTENCIAL",nomCompetencia);
                         rs = cs.executeQuery();
                         while(rs.next()){
                             PesoCriterio pesocriterio = new PesoCriterio();
                             pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
-                            pesocriterio.setIdPeriodo(rs.getInt("id_Periodo"));
-                            pesocriterio.setNombrePeriodo(rs.getString("periodo"));
-                            pesocriterio.setIdCriterio(rs.getInt("id_Criterio"));
-                            pesocriterio.setNombreCriterio(rs.getString("nombrehijo"));
+                            pesocriterio.getPeriodo().setIdPeriodo(rs.getInt("id_Periodo"));
+                            pesocriterio.getPeriodo().setNombre(rs.getString("periodo"));
+                            pesocriterio.getCriterio().setIdCriterio(rs.getInt("id_Criterio"));
+                            pesocriterio.getCriterio().setNombre(rs.getString("nombrehijo"));
                             Criterio criteriopadre = new Criterio();
                             criteriopadre.setIdCriterio(rs.getInt("id_CriterioPadre"));
                             criteriopadre.setNombre(rs.getString("nombrepadre"));
                             
                             pesocriterio.getCriterio().setCriterioPadre(criteriopadre);  
-                            pesocriterio.setDescripcion(rs.getString("descripcion"));
-                            pesocriterio.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
-                            pesocriterio.setNombrePuestoTrabajo(rs.getString("cargo"));
+                            pesocriterio.getCriterio().setDescripcion(rs.getString("descripcion"));
+                            pesocriterio.getPuestoTrabajo().setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                            pesocriterio.getPuestoTrabajo().setNombre(rs.getString("cargo"));
                             pesocriterio.setPeso(rs.getDouble("peso"));
                             pesoCriterios.add(pesocriterio);
                         }
-                    }
-                    return pesoCriterios;
-                            
+                    }                            
 		}catch(Exception ex){
 			System.out.println(ex.getMessage());
 		}finally{

@@ -17,133 +17,53 @@ public class PesoCriterio{
 	};
         
 
-        public int getIdCriterioPadre() {
-           return this.criterio.getCriterioPadre().getIdCriterio();
-        }
+    public int getIdPesoCriterio() {
+        return idPesoCriterio;
+    }
 
-        public void setIdCriterioPadre(int idCriterio) {
-            this.criterio.getCriterioPadre().setIdCriterio(idCriterio);
-        }
-        
-        public String getNombrePadre() {
-            return this.criterio.getCriterioPadre().getNombre();
-        }        
-        
-        public void setNombrePadre(String nombre) {
-            this.criterio.getCriterioPadre().setNombre(nombre);
-        }
-        
-        public String getDescripcion() {
-            return this.criterio.getDescripcion();
-        }
-        
-        public void setDescripcion(String descripcion) {
-            this.criterio.setDescripcion(descripcion);
-        }
-        
-        public int getIdCriterio() {
-           return this.criterio.getIdCriterio();
-       }
+    public double getPeso() {
+        return peso;
+    }
 
-        public void setIdCriterio(int idCriterio) {
-            this.criterio.setIdCriterio(idCriterio);
-        }
-        
-        public String getNombreCriterio() {
-            return this.criterio.getNombre();
-        }
+    public Periodo getPeriodo() {
+        return periodo;
+    }
 
-        public void setNombreCriterio(String nombre) {
-            this.criterio.setNombre(nombre);
-        }
+    public ArrayList<LineaEvaluacion> getLineasEvaluacion() {
+        return lineasEvaluacion;
+    }
 
-        public Criterio getCriterioPadre() {
-            return this.criterio.getCriterioPadre();
-        }
+    public PuestoTrabajo getPuestoTrabajo() {
+        return puestoTrabajo;
+    }
 
-        public void setCriterioPadre(Criterio criterioPadre) {
-            this.criterio.setCriterioPadre(criterioPadre);
-        }
+    public Criterio getCriterio() {
+        return criterio;
+    }
 
-        public int getIdPuestoTrabajo() {
-            return this.puestoTrabajo.getIdPuestoTrabajo();
-        }
+    public void setIdPesoCriterio(int idPesoCriterio) {
+        this.idPesoCriterio = idPesoCriterio;
+    }
 
-        public void setIdPuestoTrabajo(int idPuestoTrabajo) {
-            this.puestoTrabajo.setIdPuestoTrabajo(idPuestoTrabajo);
-        }
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
 
-        public String getNombrePuestoTrabajo() {
-            return this.puestoTrabajo.getNombre();
-        }
+    public void setPeriodo(Periodo periodo) {
+        this.periodo = periodo;
+    }
 
-        public void setNombrePuestoTrabajo(String nombre) {
-            this.puestoTrabajo.setNombre(nombre);
-        }
-        
-	public int getIdPesoCriterio(){
-		return this.idPesoCriterio;
-	};
+    public void setLineasEvaluacion(ArrayList<LineaEvaluacion> lineasEvaluacion) {
+        this.lineasEvaluacion = lineasEvaluacion;
+    }
 
-	public void setIdPesoCriterio( int idPesoCriterio ){
-		this.idPesoCriterio = idPesoCriterio;
-	};
+    public void setPuestoTrabajo(PuestoTrabajo puestoTrabajo) {
+        this.puestoTrabajo = puestoTrabajo;
+    }
 
-	public double getPeso(){
-		return this.peso;
-	};
-
-	public void setPeso( double peso ){
-		this.peso = peso;
-	};
-
-	public Periodo getPeriodo(){
-		return this.periodo;
-	};
-
-	public void setPeriodo( Periodo periodo ){
-		this.periodo = periodo;
-	};
-        
-        public int getIdPeriodo() {
-            return this.periodo.getIdPeriodo();
-        }
-
-        public void setIdPeriodo(int idPeriodo) {
-            this.periodo.setIdPeriodo(idPeriodo);
-        }
-
-        public String getNombrePeriodo() {
-            return periodo.getNombre();
-        }
-
-        public void setNombrePeriodo(String nombre) {
-            this.periodo.setNombre(nombre);
-        }
-
-	public ArrayList<LineaEvaluacion> getLineasEvaluacion(){
-		return this.lineasEvaluacion;
-	};
-
-	public void setLineasEvaluacion( ArrayList<LineaEvaluacion> lineasEvaluacion ){
-		this.lineasEvaluacion = lineasEvaluacion;
-	};
-
-	public PuestoTrabajo getPuestoTrabajo(){
-		return this.puestoTrabajo;
-	};
-
-	public void setPuestoTrabajo( PuestoTrabajo puestoTrabajo ){
-		this.puestoTrabajo = puestoTrabajo;
-	};
-
-	public Criterio getCriterio(){
-		return this.criterio;
-	};
-
-	public void setCriterio( Criterio criterio ){
-		this.criterio = criterio;
-	};
+    public void setCriterio(Criterio criterio) {
+        this.criterio = criterio;
+    }
 
 }
 

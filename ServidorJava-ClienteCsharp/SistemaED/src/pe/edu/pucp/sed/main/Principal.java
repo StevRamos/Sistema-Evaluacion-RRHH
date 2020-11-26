@@ -348,12 +348,12 @@ public class Principal {
         
         //object.setIdObjetivo(11);
         //object.setFechaAprobacion(); 
-//        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
-//        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
-//        pesoscriterio = daopesocriterio.listar(0,"","","");
-//        for (PesoCriterio p : pesoscriterio){
-//            System.out.println(p.getIdPesoCriterio());
-//        }
+        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
+        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
+        pesoscriterio = daopesocriterio.listar(3,"","","");
+        for (PesoCriterio p : pesoscriterio){
+            System.out.println(p.getIdPesoCriterio());
+        }
 //        PesoCriterio peso = new PesoCriterio();
 //        peso.setNombreCriterio("Analisis de probl");
 //        peso.setPeso(0.1);
@@ -370,11 +370,11 @@ public class Principal {
 //        daopesocriterio.insertar(peso1);
 //        daopesocriterio.eliminar(peso1);
 
-          CriterioDAO daocri = new CriterioMySQL();
-          ArrayList<Criterio> arrcri = new ArrayList<>();
-          arrcri = daocri.listar(0,"");
-          for (Criterio c : arrcri){
-              System.out.println(c.getIdCriterio());
-          }
+//          CriterioDAO daocri = new CriterioMySQL();
+//          ArrayList<Criterio> arrcri = new ArrayList<>();
+//          arrcri = daocri.listar(0,"");
+//          for (Criterio c : arrcri){
+//              System.out.println(c.getIdCriterio());
+//          }
     }
 }

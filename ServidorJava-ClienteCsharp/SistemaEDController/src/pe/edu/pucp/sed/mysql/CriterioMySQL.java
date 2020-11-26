@@ -142,9 +142,9 @@ public class CriterioMySQL implements CriterioDAO{
                     sql = "{call INSERTAR_PESO_CRITERIO_STR(?,?,?,?,?)}";     
                     cs = con.prepareCall(sql);
                     cs.registerOutParameter("_ID_PESO_CRITERIO", java.sql.Types.INTEGER);
-                    cs.setString("_NOMBRE_PERIODO",pc.getNombrePeriodo());
-                    cs.setString("_NOMBRE_PUESTO_TRABAJO",pc.getNombrePuestoTrabajo());
-                    cs.setString("_NOMBRE_CRITERIO",pc.getNombreCriterio());
+                    cs.setString("_NOMBRE_PERIODO",pc.getPeriodo().getNombre());
+                    cs.setString("_NOMBRE_PUESTO_TRABAJO",pc.getPuestoTrabajo().getNombre());
+                    cs.setString("_NOMBRE_CRITERIO",pc.getCriterio().getNombre());
                     cs.setDouble("_PESO", pc.getPeso());
                     cs.executeUpdate();
                     pc.setIdPesoCriterio(cs.getInt("_ID_PESO_CRITERIO"));
