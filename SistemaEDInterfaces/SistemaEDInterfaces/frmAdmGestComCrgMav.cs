@@ -135,7 +135,9 @@ namespace SistemaEDInterfaces
                             //No se actualiza
                             criterio.descripcion = "";
                         }
-
+                        //No actualizar competencia
+                        criterio.criterioPadre = new CriterioWS.criterio();
+                        criterio.criterioPadre.idCriterio = -1;
                         if (daoCriterio.actualizarCriterio(criterio) == 0)
                         {
                             MessageBox.Show("hubo un error");

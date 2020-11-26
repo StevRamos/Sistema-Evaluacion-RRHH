@@ -54,10 +54,9 @@
             this.lblRegistrarObjetivo.AutoSize = true;
             this.lblRegistrarObjetivo.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrarObjetivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblRegistrarObjetivo.Location = new System.Drawing.Point(13, 9);
-            this.lblRegistrarObjetivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistrarObjetivo.Location = new System.Drawing.Point(10, 7);
             this.lblRegistrarObjetivo.Name = "lblRegistrarObjetivo";
-            this.lblRegistrarObjetivo.Size = new System.Drawing.Size(1080, 70);
+            this.lblRegistrarObjetivo.Size = new System.Drawing.Size(867, 56);
             this.lblRegistrarObjetivo.TabIndex = 73;
             this.lblRegistrarObjetivo.Text = "Carga Masiva de Subcompetencias";
             // 
@@ -70,9 +69,11 @@
             this.gbSubCompetencia.Controls.Add(this.rdbInsMavSubCom);
             this.gbSubCompetencia.Controls.Add(this.label4);
             this.gbSubCompetencia.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSubCompetencia.Location = new System.Drawing.Point(25, 102);
+            this.gbSubCompetencia.Location = new System.Drawing.Point(19, 83);
+            this.gbSubCompetencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbSubCompetencia.Name = "gbSubCompetencia";
-            this.gbSubCompetencia.Size = new System.Drawing.Size(1305, 209);
+            this.gbSubCompetencia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubCompetencia.Size = new System.Drawing.Size(979, 170);
             this.gbSubCompetencia.TabIndex = 75;
             this.gbSubCompetencia.TabStop = false;
             this.gbSubCompetencia.Text = "Subcompetencias";
@@ -83,10 +84,9 @@
             this.btnGestSubComSelecSubCom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestSubComSelecSubCom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestSubComSelecSubCom.ForeColor = System.Drawing.Color.White;
-            this.btnGestSubComSelecSubCom.Location = new System.Drawing.Point(1076, 70);
-            this.btnGestSubComSelecSubCom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGestSubComSelecSubCom.Location = new System.Drawing.Point(807, 57);
             this.btnGestSubComSelecSubCom.Name = "btnGestSubComSelecSubCom";
-            this.btnGestSubComSelecSubCom.Size = new System.Drawing.Size(211, 32);
+            this.btnGestSubComSelecSubCom.Size = new System.Drawing.Size(158, 26);
             this.btnGestSubComSelecSubCom.TabIndex = 68;
             this.btnGestSubComSelecSubCom.Text = "Seleccionar archivo";
             this.btnGestSubComSelecSubCom.UseVisualStyleBackColor = false;
@@ -96,18 +96,20 @@
             // 
             this.txtNomArchSubComMav.Enabled = false;
             this.txtNomArchSubComMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomArchSubComMav.Location = new System.Drawing.Point(500, 75);
+            this.txtNomArchSubComMav.Location = new System.Drawing.Point(375, 61);
+            this.txtNomArchSubComMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomArchSubComMav.Name = "txtNomArchSubComMav";
-            this.txtNomArchSubComMav.Size = new System.Drawing.Size(545, 23);
+            this.txtNomArchSubComMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchSubComMav.TabIndex = 69;
             // 
             // rdbActMavSubCom
             // 
             this.rdbActMavSubCom.AutoSize = true;
             this.rdbActMavSubCom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbActMavSubCom.Location = new System.Drawing.Point(916, 150);
+            this.rdbActMavSubCom.Location = new System.Drawing.Point(687, 122);
+            this.rdbActMavSubCom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbActMavSubCom.Name = "rdbActMavSubCom";
-            this.rdbActMavSubCom.Size = new System.Drawing.Size(129, 27);
+            this.rdbActMavSubCom.Size = new System.Drawing.Size(108, 25);
             this.rdbActMavSubCom.TabIndex = 72;
             this.rdbActMavSubCom.TabStop = true;
             this.rdbActMavSubCom.Text = "Actualizar";
@@ -117,10 +119,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 64);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(20, 52);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(301, 33);
+            this.label3.Size = new System.Drawing.Size(234, 24);
             this.label3.TabIndex = 67;
             this.label3.Text = "Nombre del archivo : ";
             // 
@@ -128,9 +129,10 @@
             // 
             this.rdbInsMavSubCom.AutoSize = true;
             this.rdbInsMavSubCom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbInsMavSubCom.Location = new System.Drawing.Point(500, 150);
+            this.rdbInsMavSubCom.Location = new System.Drawing.Point(375, 122);
+            this.rdbInsMavSubCom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbInsMavSubCom.Name = "rdbInsMavSubCom";
-            this.rdbInsMavSubCom.Size = new System.Drawing.Size(102, 27);
+            this.rdbInsMavSubCom.Size = new System.Drawing.Size(87, 25);
             this.rdbInsMavSubCom.TabIndex = 71;
             this.rdbInsMavSubCom.TabStop = true;
             this.rdbInsMavSubCom.Text = "Insertar";
@@ -140,10 +142,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 144);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(20, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(401, 33);
+            this.label4.Size = new System.Drawing.Size(310, 24);
             this.label4.TabIndex = 70;
             this.label4.Text = "Seleccionar tipo de proceso :";
             // 
@@ -156,9 +157,11 @@
             this.gbPesosSubcompetencia.Controls.Add(this.rdbInsMavSubComPesos);
             this.gbPesosSubcompetencia.Controls.Add(this.label2);
             this.gbPesosSubcompetencia.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbPesosSubcompetencia.Location = new System.Drawing.Point(25, 330);
+            this.gbPesosSubcompetencia.Location = new System.Drawing.Point(19, 268);
+            this.gbPesosSubcompetencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbPesosSubcompetencia.Name = "gbPesosSubcompetencia";
-            this.gbPesosSubcompetencia.Size = new System.Drawing.Size(1305, 209);
+            this.gbPesosSubcompetencia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbPesosSubcompetencia.Size = new System.Drawing.Size(979, 170);
             this.gbPesosSubcompetencia.TabIndex = 76;
             this.gbPesosSubcompetencia.TabStop = false;
             this.gbPesosSubcompetencia.Text = "Pesos";
@@ -169,10 +172,9 @@
             this.btnGestSubComSelecPesos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestSubComSelecPesos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestSubComSelecPesos.ForeColor = System.Drawing.Color.White;
-            this.btnGestSubComSelecPesos.Location = new System.Drawing.Point(1076, 70);
-            this.btnGestSubComSelecPesos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGestSubComSelecPesos.Location = new System.Drawing.Point(807, 57);
             this.btnGestSubComSelecPesos.Name = "btnGestSubComSelecPesos";
-            this.btnGestSubComSelecPesos.Size = new System.Drawing.Size(211, 32);
+            this.btnGestSubComSelecPesos.Size = new System.Drawing.Size(158, 26);
             this.btnGestSubComSelecPesos.TabIndex = 68;
             this.btnGestSubComSelecPesos.Text = "Seleccionar archivo";
             this.btnGestSubComSelecPesos.UseVisualStyleBackColor = false;
@@ -182,18 +184,20 @@
             // 
             this.txtNomArchSubComPesosMav.Enabled = false;
             this.txtNomArchSubComPesosMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomArchSubComPesosMav.Location = new System.Drawing.Point(500, 75);
+            this.txtNomArchSubComPesosMav.Location = new System.Drawing.Point(375, 61);
+            this.txtNomArchSubComPesosMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomArchSubComPesosMav.Name = "txtNomArchSubComPesosMav";
-            this.txtNomArchSubComPesosMav.Size = new System.Drawing.Size(545, 23);
+            this.txtNomArchSubComPesosMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchSubComPesosMav.TabIndex = 69;
             // 
             // rdbActMavSubComPesos
             // 
             this.rdbActMavSubComPesos.AutoSize = true;
             this.rdbActMavSubComPesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbActMavSubComPesos.Location = new System.Drawing.Point(916, 150);
+            this.rdbActMavSubComPesos.Location = new System.Drawing.Point(687, 122);
+            this.rdbActMavSubComPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbActMavSubComPesos.Name = "rdbActMavSubComPesos";
-            this.rdbActMavSubComPesos.Size = new System.Drawing.Size(129, 27);
+            this.rdbActMavSubComPesos.Size = new System.Drawing.Size(108, 25);
             this.rdbActMavSubComPesos.TabIndex = 72;
             this.rdbActMavSubComPesos.TabStop = true;
             this.rdbActMavSubComPesos.Text = "Actualizar";
@@ -203,10 +207,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 64);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(20, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 33);
+            this.label1.Size = new System.Drawing.Size(234, 24);
             this.label1.TabIndex = 67;
             this.label1.Text = "Nombre del archivo : ";
             // 
@@ -214,9 +217,10 @@
             // 
             this.rdbInsMavSubComPesos.AutoSize = true;
             this.rdbInsMavSubComPesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbInsMavSubComPesos.Location = new System.Drawing.Point(500, 150);
+            this.rdbInsMavSubComPesos.Location = new System.Drawing.Point(375, 122);
+            this.rdbInsMavSubComPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbInsMavSubComPesos.Name = "rdbInsMavSubComPesos";
-            this.rdbInsMavSubComPesos.Size = new System.Drawing.Size(102, 27);
+            this.rdbInsMavSubComPesos.Size = new System.Drawing.Size(87, 25);
             this.rdbInsMavSubComPesos.TabIndex = 71;
             this.rdbInsMavSubComPesos.TabStop = true;
             this.rdbInsMavSubComPesos.Text = "Insertar";
@@ -226,10 +230,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 144);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(20, 117);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(401, 33);
+            this.label2.Size = new System.Drawing.Size(310, 24);
             this.label2.TabIndex = 70;
             this.label2.Text = "Seleccionar tipo de proceso :";
             // 
@@ -239,10 +242,9 @@
             this.btnRegreCargMavGestSubCom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegreCargMavGestSubCom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegreCargMavGestSubCom.ForeColor = System.Drawing.Color.White;
-            this.btnRegreCargMavGestSubCom.Location = new System.Drawing.Point(303, 574);
-            this.btnRegreCargMavGestSubCom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegreCargMavGestSubCom.Location = new System.Drawing.Point(227, 466);
             this.btnRegreCargMavGestSubCom.Name = "btnRegreCargMavGestSubCom";
-            this.btnRegreCargMavGestSubCom.Size = new System.Drawing.Size(211, 32);
+            this.btnRegreCargMavGestSubCom.Size = new System.Drawing.Size(158, 26);
             this.btnRegreCargMavGestSubCom.TabIndex = 78;
             this.btnRegreCargMavGestSubCom.Text = "Regresar";
             this.btnRegreCargMavGestSubCom.UseVisualStyleBackColor = false;
@@ -254,10 +256,9 @@
             this.btnCargarMasivaGestSubCom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarMasivaGestSubCom.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarMasivaGestSubCom.ForeColor = System.Drawing.Color.White;
-            this.btnCargarMasivaGestSubCom.Location = new System.Drawing.Point(795, 574);
-            this.btnCargarMasivaGestSubCom.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCargarMasivaGestSubCom.Location = new System.Drawing.Point(596, 466);
             this.btnCargarMasivaGestSubCom.Name = "btnCargarMasivaGestSubCom";
-            this.btnCargarMasivaGestSubCom.Size = new System.Drawing.Size(211, 32);
+            this.btnCargarMasivaGestSubCom.Size = new System.Drawing.Size(158, 26);
             this.btnCargarMasivaGestSubCom.TabIndex = 77;
             this.btnCargarMasivaGestSubCom.Text = "Cargar Archivo";
             this.btnCargarMasivaGestSubCom.UseVisualStyleBackColor = false;
@@ -265,15 +266,18 @@
             // 
             // frmAdmGestSubComCrgMav
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1356, 649);
+            this.ClientSize = new System.Drawing.Size(1017, 527);
             this.Controls.Add(this.btnRegreCargMavGestSubCom);
             this.Controls.Add(this.btnCargarMasivaGestSubCom);
             this.Controls.Add(this.gbPesosSubcompetencia);
             this.Controls.Add(this.gbSubCompetencia);
             this.Controls.Add(this.lblRegistrarObjetivo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaximumSize = new System.Drawing.Size(1033, 566);
+            this.MinimumSize = new System.Drawing.Size(1033, 566);
             this.Name = "frmAdmGestSubComCrgMav";
             this.Text = "frmAdmGestSubComCrgMav";
             this.gbSubCompetencia.ResumeLayout(false);

@@ -11,17 +11,35 @@
   <message name="listarGerenciaPeriodoResponse">
     <part name="parameters" element="tns:listarGerenciaPeriodoResponse" />
   </message>
+  <message name="listarItemPDIPeriodo">
+    <part name="parameters" element="tns:listarItemPDIPeriodo" />
+  </message>
+  <message name="listarItemPDIPeriodoResponse">
+    <part name="parameters" element="tns:listarItemPDIPeriodoResponse" />
+  </message>
   <message name="actualizarPeriodo">
     <part name="parameters" element="tns:actualizarPeriodo" />
   </message>
   <message name="actualizarPeriodoResponse">
     <part name="parameters" element="tns:actualizarPeriodoResponse" />
   </message>
-  <message name="listarPeriodos">
-    <part name="parameters" element="tns:listarPeriodos" />
+  <message name="listarGerenciaPeriodoPorId">
+    <part name="parameters" element="tns:listarGerenciaPeriodoPorId" />
   </message>
-  <message name="listarPeriodosResponse">
-    <part name="parameters" element="tns:listarPeriodosResponse" />
+  <message name="listarGerenciaPeriodoPorIdResponse">
+    <part name="parameters" element="tns:listarGerenciaPeriodoPorIdResponse" />
+  </message>
+  <message name="listarEscalaPeriodo">
+    <part name="parameters" element="tns:listarEscalaPeriodo" />
+  </message>
+  <message name="listarEscalaPeriodoResponse">
+    <part name="parameters" element="tns:listarEscalaPeriodoResponse" />
+  </message>
+  <message name="obtenerPeriodo">
+    <part name="parameters" element="tns:obtenerPeriodo" />
+  </message>
+  <message name="obtenerPeriodoResponse">
+    <part name="parameters" element="tns:obtenerPeriodoResponse" />
   </message>
   <message name="insertarPeriodo">
     <part name="parameters" element="tns:insertarPeriodo" />
@@ -29,11 +47,17 @@
   <message name="insertarPeriodoResponse">
     <part name="parameters" element="tns:insertarPeriodoResponse" />
   </message>
-  <message name="obtenerPeriodo">
-    <part name="parameters" element="tns:obtenerPeriodo" />
+  <message name="listarPeriodos">
+    <part name="parameters" element="tns:listarPeriodos" />
   </message>
-  <message name="obtenerPeriodoResponse">
-    <part name="parameters" element="tns:obtenerPeriodoResponse" />
+  <message name="listarPeriodosResponse">
+    <part name="parameters" element="tns:listarPeriodosResponse" />
+  </message>
+  <message name="actualizarRangos">
+    <part name="parameters" element="tns:actualizarRangos" />
+  </message>
+  <message name="actualizarRangosResponse">
+    <part name="parameters" element="tns:actualizarRangosResponse" />
   </message>
   <message name="eliminarPeriodo">
     <part name="parameters" element="tns:eliminarPeriodo" />
@@ -46,21 +70,37 @@
       <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarGerenciaPeriodoRequest" message="tns:listarGerenciaPeriodo" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarGerenciaPeriodoResponse" message="tns:listarGerenciaPeriodoResponse" />
     </operation>
+    <operation name="listarItemPDIPeriodo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarItemPDIPeriodoRequest" message="tns:listarItemPDIPeriodo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarItemPDIPeriodoResponse" message="tns:listarItemPDIPeriodoResponse" />
+    </operation>
     <operation name="actualizarPeriodo">
       <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/actualizarPeriodoRequest" message="tns:actualizarPeriodo" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/actualizarPeriodoResponse" message="tns:actualizarPeriodoResponse" />
     </operation>
-    <operation name="listarPeriodos">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosRequest" message="tns:listarPeriodos" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosResponse" message="tns:listarPeriodosResponse" />
+    <operation name="listarGerenciaPeriodoPorId">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarGerenciaPeriodoPorIdRequest" message="tns:listarGerenciaPeriodoPorId" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarGerenciaPeriodoPorIdResponse" message="tns:listarGerenciaPeriodoPorIdResponse" />
+    </operation>
+    <operation name="listarEscalaPeriodo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarEscalaPeriodoRequest" message="tns:listarEscalaPeriodo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarEscalaPeriodoResponse" message="tns:listarEscalaPeriodoResponse" />
+    </operation>
+    <operation name="obtenerPeriodo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoRequest" message="tns:obtenerPeriodo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoResponse" message="tns:obtenerPeriodoResponse" />
     </operation>
     <operation name="insertarPeriodo">
       <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/insertarPeriodoRequest" message="tns:insertarPeriodo" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/insertarPeriodoResponse" message="tns:insertarPeriodoResponse" />
     </operation>
-    <operation name="obtenerPeriodo">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoRequest" message="tns:obtenerPeriodo" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/obtenerPeriodoResponse" message="tns:obtenerPeriodoResponse" />
+    <operation name="listarPeriodos">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosRequest" message="tns:listarPeriodos" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/listarPeriodosResponse" message="tns:listarPeriodosResponse" />
+    </operation>
+    <operation name="actualizarRangos">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/actualizarRangosRequest" message="tns:actualizarRangos" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/actualizarRangosResponse" message="tns:actualizarRangosResponse" />
     </operation>
     <operation name="eliminarPeriodo">
       <input wsam:Action="http://services.sed.pucp.edu.pe/PeriodoWS/eliminarPeriodoRequest" message="tns:eliminarPeriodo" />
@@ -78,6 +118,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarItemPDIPeriodo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="actualizarPeriodo">
       <soap:operation soapAction="" />
       <input>
@@ -87,7 +136,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarPeriodos">
+    <operation name="listarGerenciaPeriodoPorId">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEscalaPeriodo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerPeriodo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -105,7 +172,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="obtenerPeriodo">
+    <operation name="listarPeriodos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarRangos">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
