@@ -52,6 +52,7 @@
       <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="subordinados" nillable="true" type="tns:colaborador" />
       <xs:element minOccurs="0" name="telefono" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="evaluacion">
@@ -175,11 +176,13 @@
       <xs:element minOccurs="0" name="criterioPadre" type="tns:criterio" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="idCriterio" type="xs:int" />
+      <xs:element name="idCriterioPadre" type="xs:int" />
       <xs:element name="idPeriodo" type="xs:int" />
       <xs:element name="idPesoCriterio" type="xs:int" />
       <xs:element name="idPuestoTrabajo" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
       <xs:element minOccurs="0" name="nombreCriterio" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrePadre" type="xs:string" />
       <xs:element minOccurs="0" name="nombrePeriodo" type="xs:string" />
       <xs:element minOccurs="0" name="nombrePuestoTrabajo" type="xs:string" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
@@ -194,6 +197,7 @@
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="idCriterio" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pesoscriterios" nillable="true" type="tns:pesoCriterio" />
       <xs:element name="tipo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -224,6 +228,15 @@
       <xs:element name="notaMax" type="xs:double" />
       <xs:element name="notaMin" type="xs:double" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenhaAnterior" type="xs:string" />
+      <xs:element name="estadoCuenta" type="xs:int" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element name="nivelAcceso" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarPuestoTrabajoResponse">

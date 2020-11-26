@@ -56,6 +56,7 @@
       <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="subordinados" nillable="true" type="tns:colaborador" />
       <xs:element minOccurs="0" name="telefono" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="evaluacion">
@@ -98,7 +99,7 @@
   <xs:complexType name="periodo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="configuracionFechas" nillable="true" type="tns:gerenciaPeriodo" />
-      <xs:element minOccurs="0" name="diaNotificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="diaNotificacion" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="escalas" nillable="true" type="tns:escalaPeriodo" />
       <xs:element minOccurs="0" name="estado" type="tns:estadoPeriodo" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluaciones" nillable="true" type="tns:evaluacion" />
@@ -149,11 +150,13 @@
       <xs:element minOccurs="0" name="criterioPadre" type="tns:criterio" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="idCriterio" type="xs:int" />
+      <xs:element name="idCriterioPadre" type="xs:int" />
       <xs:element name="idPeriodo" type="xs:int" />
       <xs:element name="idPesoCriterio" type="xs:int" />
       <xs:element name="idPuestoTrabajo" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
       <xs:element minOccurs="0" name="nombreCriterio" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrePadre" type="xs:string" />
       <xs:element minOccurs="0" name="nombrePeriodo" type="xs:string" />
       <xs:element minOccurs="0" name="nombrePuestoTrabajo" type="xs:string" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
@@ -168,6 +171,7 @@
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="idCriterio" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pesoscriterios" nillable="true" type="tns:pesoCriterio" />
       <xs:element name="tipo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -209,6 +213,15 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="pesosCriterio" nillable="true" type="tns:pesoCriterio" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenhaAnterior" type="xs:string" />
+      <xs:element name="estadoCuenta" type="xs:int" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element name="nivelAcceso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="evaluacionDesempenho">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:evaluacion">
@@ -229,16 +242,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="listarObjetivosXColaborador">
-    <xs:sequence>
-      <xs:element name="idColaborador" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarObjetivosXColaboradorResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:objetivo" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="actualizarObjetivo">
     <xs:sequence>
       <xs:element minOccurs="0" name="objetivo" type="tns:objetivo" />
@@ -249,14 +252,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarObjetivo">
+  <xs:complexType name="listarObjetivosXColaborador">
     <xs:sequence>
-      <xs:element name="idObjetivo" type="xs:int" />
+      <xs:element name="idColaborador" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="eliminarObjetivoResponse">
+  <xs:complexType name="listarObjetivosXColaboradorResponse">
     <xs:sequence>
-      <xs:element name="return" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:objetivo" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarObjetivo">
@@ -265,6 +268,16 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarObjetivoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarObjetivo">
+    <xs:sequence>
+      <xs:element name="idObjetivo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarObjetivoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

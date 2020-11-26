@@ -10,6 +10,8 @@
   <xs:element name="listarGerenciasResponse" type="tns:listarGerenciasResponse" />
   <xs:element name="listarGerenciasXColaborador" type="tns:listarGerenciasXColaborador" />
   <xs:element name="listarGerenciasXColaboradorResponse" type="tns:listarGerenciasXColaboradorResponse" />
+  <xs:element name="listarXPeriodoActual" type="tns:listarXPeriodoActual" />
+  <xs:element name="listarXPeriodoActualResponse" type="tns:listarXPeriodoActualResponse" />
   <xs:complexType name="insertarGerencia">
     <xs:sequence>
       <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
@@ -43,6 +45,7 @@
       <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="subordinados" nillable="true" type="tns:colaborador" />
       <xs:element minOccurs="0" name="telefono" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="evaluacion">
@@ -85,7 +88,7 @@
   <xs:complexType name="periodo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="configuracionFechas" nillable="true" type="tns:gerenciaPeriodo" />
-      <xs:element minOccurs="0" name="diaNotificacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="diaNotificacion" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="escalas" nillable="true" type="tns:escalaPeriodo" />
       <xs:element minOccurs="0" name="estado" type="tns:estadoPeriodo" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluaciones" nillable="true" type="tns:evaluacion" />
@@ -124,6 +127,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="descripcionEstado" type="xs:string" />
       <xs:element name="estado" type="xs:int" />
       <xs:element minOccurs="0" name="evaluacion" type="tns:evaluacionDesempenho" />
       <xs:element minOccurs="0" name="fechaAprobacion" type="xs:dateTime" />
@@ -165,11 +169,13 @@
       <xs:element minOccurs="0" name="criterioPadre" type="tns:criterio" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="idCriterio" type="xs:int" />
+      <xs:element name="idCriterioPadre" type="xs:int" />
       <xs:element name="idPeriodo" type="xs:int" />
       <xs:element name="idPesoCriterio" type="xs:int" />
       <xs:element name="idPuestoTrabajo" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
-      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="nombreCriterio" type="xs:string" />
+      <xs:element minOccurs="0" name="nombrePadre" type="xs:string" />
       <xs:element minOccurs="0" name="nombrePeriodo" type="xs:string" />
       <xs:element minOccurs="0" name="nombrePuestoTrabajo" type="xs:string" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
@@ -184,6 +190,7 @@
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="idCriterio" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pesoscriterios" nillable="true" type="tns:pesoCriterio" />
       <xs:element name="tipo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -225,6 +232,15 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="pesosCriterio" nillable="true" type="tns:pesoCriterio" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenhaAnterior" type="xs:string" />
+      <xs:element name="estadoCuenta" type="xs:int" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element name="nivelAcceso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarGerenciaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
@@ -258,6 +274,14 @@
   <xs:complexType name="eliminarGerenciaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarXPeriodoActual">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarXPeriodoActualResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:gerencia" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarGerencias">
