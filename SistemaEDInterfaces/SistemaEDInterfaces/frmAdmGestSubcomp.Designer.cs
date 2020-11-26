@@ -44,11 +44,11 @@
             this.lblBuscarNomPot = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.IdCompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NombreCompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IdSubComp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdCriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreCriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IdSubcriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreSubcriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,18 +100,18 @@
             this.dgvGestSubCom.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvGestSubCom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGestSubCom.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdCompetencia,
-            this.NombreCompetencia,
-            this.IdSubComp,
-            this.Nombre,
-            this.Descripción,
+            this.IdCriterio,
+            this.NombreCriterio,
+            this.IdSubcriterio,
+            this.NombreSubcriterio,
+            this.Descripcion,
             this.Cargo,
             this.Peso,
             this.Periodo});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -140,6 +140,7 @@
             this.dgvGestSubCom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGestSubCom.Size = new System.Drawing.Size(1073, 480);
             this.dgvGestSubCom.TabIndex = 31;
+            this.dgvGestSubCom.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGestSubCom_CellFormatting);
             // 
             // btnCargarMasivaSubCom
             // 
@@ -250,53 +251,47 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // IdCompetencia
+            // IdCriterio
             // 
-            this.IdCompetencia.DataPropertyName = "idCriterioPadre";
-            this.IdCompetencia.HeaderText = "Id Competencia";
-            this.IdCompetencia.MinimumWidth = 6;
-            this.IdCompetencia.Name = "IdCompetencia";
-            this.IdCompetencia.ReadOnly = true;
-            this.IdCompetencia.Width = 125;
+            this.IdCriterio.HeaderText = "Id Competencia";
+            this.IdCriterio.MinimumWidth = 6;
+            this.IdCriterio.Name = "IdCriterio";
+            this.IdCriterio.ReadOnly = true;
+            this.IdCriterio.Width = 125;
             // 
-            // NombreCompetencia
+            // NombreCriterio
             // 
-            this.NombreCompetencia.DataPropertyName = "nombreCriterioPadre";
-            this.NombreCompetencia.HeaderText = "Nombre Competencia";
-            this.NombreCompetencia.Name = "NombreCompetencia";
-            this.NombreCompetencia.ReadOnly = true;
-            this.NombreCompetencia.Width = 250;
+            this.NombreCriterio.HeaderText = "Nombre Competencia";
+            this.NombreCriterio.Name = "NombreCriterio";
+            this.NombreCriterio.ReadOnly = true;
+            this.NombreCriterio.Width = 250;
             // 
-            // IdSubComp
+            // IdSubcriterio
             // 
-            this.IdSubComp.DataPropertyName = "idCriterio";
-            this.IdSubComp.HeaderText = "Id Subcompetencia";
-            this.IdSubComp.MinimumWidth = 6;
-            this.IdSubComp.Name = "IdSubComp";
-            this.IdSubComp.ReadOnly = true;
-            this.IdSubComp.Width = 150;
+            this.IdSubcriterio.HeaderText = "Id Subcompetencia";
+            this.IdSubcriterio.MinimumWidth = 6;
+            this.IdSubcriterio.Name = "IdSubcriterio";
+            this.IdSubcriterio.ReadOnly = true;
+            this.IdSubcriterio.Width = 150;
             // 
-            // Nombre
+            // NombreSubcriterio
             // 
-            this.Nombre.DataPropertyName = "nombreCriterio";
-            this.Nombre.HeaderText = "Nombre Subcompetencia";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
+            this.NombreSubcriterio.HeaderText = "Nombre Subcompetencia";
+            this.NombreSubcriterio.MinimumWidth = 6;
+            this.NombreSubcriterio.Name = "NombreSubcriterio";
+            this.NombreSubcriterio.ReadOnly = true;
+            this.NombreSubcriterio.Width = 250;
             // 
-            // Descripción
+            // Descripcion
             // 
-            this.Descripción.DataPropertyName = "descripcion";
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.MinimumWidth = 6;
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
-            this.Descripción.Width = 625;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 625;
             // 
             // Cargo
             // 
-            this.Cargo.DataPropertyName = "nombrePuestoTrabajo";
             this.Cargo.HeaderText = "Cargo";
             this.Cargo.MinimumWidth = 6;
             this.Cargo.Name = "Cargo";
@@ -314,7 +309,6 @@
             // 
             // Periodo
             // 
-            this.Periodo.DataPropertyName = "nombrePeriodo";
             this.Periodo.HeaderText = "Periodo";
             this.Periodo.MinimumWidth = 6;
             this.Periodo.Name = "Periodo";
@@ -362,11 +356,11 @@
         private System.Windows.Forms.Label lblBuscarNomPot;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCompetencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCompetencia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdSubComp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCriterio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreCriterio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdSubcriterio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreSubcriterio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Periodo;

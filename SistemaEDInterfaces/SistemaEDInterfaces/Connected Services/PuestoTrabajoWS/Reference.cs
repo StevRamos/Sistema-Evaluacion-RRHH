@@ -16,17 +16,13 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
     public interface PuestoTrabajoWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorR" +
-            "equest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorR" +
-            "esponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse listarPuestoTrabajosXColaborador(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest request);
+        SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse actualizarPuestoTrabajo(SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorR" +
-            "equest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorR" +
-            "esponse")]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse> listarPuestoTrabajosXColaboradorAsync(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoResponse")]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse> actualizarPuestoTrabajoAsync(SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/eliminarPuestoTrabajoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/eliminarPuestoTrabajoResponse")]
@@ -47,15 +43,6 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosResponse> listarPuestoTrabajosAsync(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse actualizarPuestoTrabajo(SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoResponse")]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse> actualizarPuestoTrabajoAsync(SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/insertarPuestoTrabajoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/insertarPuestoTrabajoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -63,6 +50,19 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/insertarPuestoTrabajoRequest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/insertarPuestoTrabajoResponse")]
         System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.insertarPuestoTrabajoResponse> insertarPuestoTrabajoAsync(SistemaEDInterfaces.PuestoTrabajoWS.insertarPuestoTrabajoRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorR" +
+            "equest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorR" +
+            "esponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse listarPuestoTrabajosXColaborador(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorR" +
+            "equest", ReplyAction="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorR" +
+            "esponse")]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse> listarPuestoTrabajosXColaboradorAsync(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest request);
     }
     
     /// <remarks/>
@@ -1930,29 +1930,9 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         
         private criterio criterioField;
         
-        private criterio criterioPadreField;
-        
-        private string descripcionField;
-        
-        private int idCriterioField;
-        
-        private int idCriterioPadreField;
-        
-        private int idPeriodoField;
-        
         private int idPesoCriterioField;
         
-        private int idPuestoTrabajoField;
-        
         private lineaEvaluacion[] lineasEvaluacionField;
-        
-        private string nombreCriterioField;
-        
-        private string nombrePadreField;
-        
-        private string nombrePeriodoField;
-        
-        private string nombrePuestoTrabajoField;
         
         private periodo periodoField;
         
@@ -1974,66 +1954,6 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public criterio criterioPadre {
-            get {
-                return this.criterioPadreField;
-            }
-            set {
-                this.criterioPadreField = value;
-                this.RaisePropertyChanged("criterioPadre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string descripcion {
-            get {
-                return this.descripcionField;
-            }
-            set {
-                this.descripcionField = value;
-                this.RaisePropertyChanged("descripcion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public int idCriterio {
-            get {
-                return this.idCriterioField;
-            }
-            set {
-                this.idCriterioField = value;
-                this.RaisePropertyChanged("idCriterio");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public int idCriterioPadre {
-            get {
-                return this.idCriterioPadreField;
-            }
-            set {
-                this.idCriterioPadreField = value;
-                this.RaisePropertyChanged("idCriterioPadre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public int idPeriodo {
-            get {
-                return this.idPeriodoField;
-            }
-            set {
-                this.idPeriodoField = value;
-                this.RaisePropertyChanged("idPeriodo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public int idPesoCriterio {
             get {
                 return this.idPesoCriterioField;
@@ -2045,19 +1965,7 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public int idPuestoTrabajo {
-            get {
-                return this.idPuestoTrabajoField;
-            }
-            set {
-                this.idPuestoTrabajoField = value;
-                this.RaisePropertyChanged("idPuestoTrabajo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("lineasEvaluacion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute("lineasEvaluacion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
         public lineaEvaluacion[] lineasEvaluacion {
             get {
                 return this.lineasEvaluacionField;
@@ -2069,55 +1977,7 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
-        public string nombreCriterio {
-            get {
-                return this.nombreCriterioField;
-            }
-            set {
-                this.nombreCriterioField = value;
-                this.RaisePropertyChanged("nombreCriterio");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public string nombrePadre {
-            get {
-                return this.nombrePadreField;
-            }
-            set {
-                this.nombrePadreField = value;
-                this.RaisePropertyChanged("nombrePadre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
-        public string nombrePeriodo {
-            get {
-                return this.nombrePeriodoField;
-            }
-            set {
-                this.nombrePeriodoField = value;
-                this.RaisePropertyChanged("nombrePeriodo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
-        public string nombrePuestoTrabajo {
-            get {
-                return this.nombrePuestoTrabajoField;
-            }
-            set {
-                this.nombrePuestoTrabajoField = value;
-                this.RaisePropertyChanged("nombrePuestoTrabajo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=13)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public periodo periodo {
             get {
                 return this.periodoField;
@@ -2129,7 +1989,7 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=14)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public double peso {
             get {
                 return this.pesoField;
@@ -2141,7 +2001,7 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public puestoTrabajo puestoTrabajo {
             get {
                 return this.puestoTrabajoField;
@@ -2778,35 +2638,35 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPuestoTrabajosXColaborador", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPuestoTrabajosXColaboradorRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarPuestoTrabajo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarPuestoTrabajoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idColaborador;
+        public SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo puestoTrabajo;
         
-        public listarPuestoTrabajosXColaboradorRequest() {
+        public actualizarPuestoTrabajoRequest() {
         }
         
-        public listarPuestoTrabajosXColaboradorRequest(int idColaborador) {
-            this.idColaborador = idColaborador;
+        public actualizarPuestoTrabajoRequest(SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo puestoTrabajo) {
+            this.puestoTrabajo = puestoTrabajo;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPuestoTrabajosXColaboradorResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarPuestoTrabajosXColaboradorResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarPuestoTrabajoResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarPuestoTrabajoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public listarPuestoTrabajosXColaboradorResponse() {
+        public actualizarPuestoTrabajoResponse() {
         }
         
-        public listarPuestoTrabajosXColaboradorResponse(SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo[] @return) {
+        public actualizarPuestoTrabajoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2886,42 +2746,6 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarPuestoTrabajo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarPuestoTrabajoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo puestoTrabajo;
-        
-        public actualizarPuestoTrabajoRequest() {
-        }
-        
-        public actualizarPuestoTrabajoRequest(SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo puestoTrabajo) {
-            this.puestoTrabajo = puestoTrabajo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarPuestoTrabajoResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarPuestoTrabajoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public actualizarPuestoTrabajoResponse() {
-        }
-        
-        public actualizarPuestoTrabajoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarPuestoTrabajo", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarPuestoTrabajoRequest {
         
@@ -2955,6 +2779,42 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPuestoTrabajosXColaborador", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPuestoTrabajosXColaboradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idColaborador;
+        
+        public listarPuestoTrabajosXColaboradorRequest() {
+        }
+        
+        public listarPuestoTrabajosXColaboradorRequest(int idColaborador) {
+            this.idColaborador = idColaborador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarPuestoTrabajosXColaboradorResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarPuestoTrabajosXColaboradorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo[] @return;
+        
+        public listarPuestoTrabajosXColaboradorResponse() {
+        }
+        
+        public listarPuestoTrabajosXColaboradorResponse(SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PuestoTrabajoWSChannel : SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS, System.ServiceModel.IClientChannel {
     }
@@ -2983,26 +2843,26 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.listarPuestoTrabajosXColaborador(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest request) {
-            return base.Channel.listarPuestoTrabajosXColaborador(request);
+        SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.actualizarPuestoTrabajo(SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest request) {
+            return base.Channel.actualizarPuestoTrabajo(request);
         }
         
-        public SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo[] listarPuestoTrabajosXColaborador(int idColaborador) {
-            SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest();
-            inValue.idColaborador = idColaborador;
-            SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse retVal = ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).listarPuestoTrabajosXColaborador(inValue);
+        public int actualizarPuestoTrabajo(SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo puestoTrabajo) {
+            SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest();
+            inValue.puestoTrabajo = puestoTrabajo;
+            SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse retVal = ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).actualizarPuestoTrabajo(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse> SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorAsync(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest request) {
-            return base.Channel.listarPuestoTrabajosXColaboradorAsync(request);
+        System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse> SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.actualizarPuestoTrabajoAsync(SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest request) {
+            return base.Channel.actualizarPuestoTrabajoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse> listarPuestoTrabajosXColaboradorAsync(int idColaborador) {
-            SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest();
-            inValue.idColaborador = idColaborador;
-            return ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).listarPuestoTrabajosXColaboradorAsync(inValue);
+        public System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse> actualizarPuestoTrabajoAsync(SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo puestoTrabajo) {
+            SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest();
+            inValue.puestoTrabajo = puestoTrabajo;
+            return ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).actualizarPuestoTrabajoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -3052,29 +2912,6 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.actualizarPuestoTrabajo(SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest request) {
-            return base.Channel.actualizarPuestoTrabajo(request);
-        }
-        
-        public int actualizarPuestoTrabajo(SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo puestoTrabajo) {
-            SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest();
-            inValue.puestoTrabajo = puestoTrabajo;
-            SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse retVal = ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).actualizarPuestoTrabajo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse> SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.actualizarPuestoTrabajoAsync(SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest request) {
-            return base.Channel.actualizarPuestoTrabajoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoResponse> actualizarPuestoTrabajoAsync(SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo puestoTrabajo) {
-            SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.actualizarPuestoTrabajoRequest();
-            inValue.puestoTrabajo = puestoTrabajo;
-            return ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).actualizarPuestoTrabajoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SistemaEDInterfaces.PuestoTrabajoWS.insertarPuestoTrabajoResponse SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.insertarPuestoTrabajo(SistemaEDInterfaces.PuestoTrabajoWS.insertarPuestoTrabajoRequest request) {
             return base.Channel.insertarPuestoTrabajo(request);
         }
@@ -3095,6 +2932,29 @@ namespace SistemaEDInterfaces.PuestoTrabajoWS {
             SistemaEDInterfaces.PuestoTrabajoWS.insertarPuestoTrabajoRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.insertarPuestoTrabajoRequest();
             inValue.puestoTrabajo = puestoTrabajo;
             return ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).insertarPuestoTrabajoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.listarPuestoTrabajosXColaborador(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest request) {
+            return base.Channel.listarPuestoTrabajosXColaborador(request);
+        }
+        
+        public SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo[] listarPuestoTrabajosXColaborador(int idColaborador) {
+            SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest();
+            inValue.idColaborador = idColaborador;
+            SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse retVal = ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).listarPuestoTrabajosXColaborador(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse> SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorAsync(SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest request) {
+            return base.Channel.listarPuestoTrabajosXColaboradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorResponse> listarPuestoTrabajosXColaboradorAsync(int idColaborador) {
+            SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest inValue = new SistemaEDInterfaces.PuestoTrabajoWS.listarPuestoTrabajosXColaboradorRequest();
+            inValue.idColaborador = idColaborador;
+            return ((SistemaEDInterfaces.PuestoTrabajoWS.PuestoTrabajoWS)(this)).listarPuestoTrabajosXColaboradorAsync(inValue);
         }
     }
 }

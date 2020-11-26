@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
+import pe.edu.pucp.sed.dao.CriterioDAO;
 import pe.edu.pucp.sed.dao.EscalaDAO;
 import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
 import pe.edu.pucp.sed.dao.GerenciaDAO;
@@ -22,6 +23,7 @@ import pe.edu.pucp.sed.dao.PesoCriterioDAO;
 import pe.edu.pucp.sed.dao.PuestoTrabajoDAO;
 import pe.edu.pucp.sed.dao.UsuarioDAO;
 import pe.edu.pucp.sed.model.Colaborador;
+import pe.edu.pucp.sed.model.Criterio;
 import pe.edu.pucp.sed.model.Escala;
 import pe.edu.pucp.sed.model.EstadoCuenta;
 import pe.edu.pucp.sed.model.EvaluacionDesempenho;
@@ -33,6 +35,7 @@ import pe.edu.pucp.sed.model.Periodo;
 import pe.edu.pucp.sed.model.PesoCriterio;
 import pe.edu.pucp.sed.model.PuestoTrabajo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
+import pe.edu.pucp.sed.mysql.CriterioMySQL;
 import pe.edu.pucp.sed.mysql.EscalaMySQL;
 import pe.edu.pucp.sed.mysql.EvaluacionDesempenhoMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaMySQL;
@@ -347,7 +350,7 @@ public class Principal {
         //object.setFechaAprobacion(); 
         PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
         ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
-        pesoscriterio = daopesocriterio.listar(2,"","","");
+        pesoscriterio = daopesocriterio.listar(3,"","","");
         for (PesoCriterio p : pesoscriterio){
             System.out.println(p.getIdPesoCriterio());
         }
@@ -366,5 +369,12 @@ public class Principal {
 //        peso1.setPeso(0.7);
 //        daopesocriterio.insertar(peso1);
 //        daopesocriterio.eliminar(peso1);
+
+//          CriterioDAO daocri = new CriterioMySQL();
+//          ArrayList<Criterio> arrcri = new ArrayList<>();
+//          arrcri = daocri.listar(0,"");
+//          for (Criterio c : arrcri){
+//              System.out.println(c.getIdCriterio());
+//          }
     }
 }

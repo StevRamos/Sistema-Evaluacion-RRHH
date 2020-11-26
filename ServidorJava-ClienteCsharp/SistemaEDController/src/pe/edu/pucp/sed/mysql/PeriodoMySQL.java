@@ -48,6 +48,9 @@ public class PeriodoMySQL implements PeriodoDAO{
             
             for(GerenciaPeriodo gPer : periodo.getConfiguracionFechas()){
                 sql = "{call INSERTAR_GERENCIA_PERIODO(?,?)}";
+                
+                gPer.setPeriodo(periodo);
+                
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", gPer.getPeriodo().getIdPeriodo());
                 cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
@@ -56,6 +59,9 @@ public class PeriodoMySQL implements PeriodoDAO{
             
             for(EscalaPeriodo escalas : periodo.getEscalas()){
                 sql = "{call REGISTRAR_ESCALA_PERIODO_INI(?,?,?,?,?)}";
+                
+                escalas.setPeriodo(periodo);
+                
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", escalas.getPeriodo().getIdPeriodo());
                 cs.setInt("_ID_ESCALA", escalas.getEscala().getIdEscala());
@@ -67,6 +73,9 @@ public class PeriodoMySQL implements PeriodoDAO{
                       
             for(ItemPDIPeriodo rangosPDI : periodo.getRangosPDI()){
                 sql = "{call INSERTAR_ITEM_PDI_PERIODOS(?,?,?)}";
+                
+                rangosPDI.setPeriodo(periodo);
+                
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", rangosPDI.getPeriodo().getIdPeriodo());
                 cs.setDouble("_NOTAMIN", rangosPDI.getNotaMin());
@@ -117,6 +126,9 @@ public class PeriodoMySQL implements PeriodoDAO{
             
             for(GerenciaPeriodo gPer : periodo.getConfiguracionFechas()){
                 sql = "{call ACTUALIZAR_GERENCIA_PERIODO(?,?,?,?,?,?,?,?,?,?,?,?)}";
+                
+                gPer.setPeriodo(periodo);
+                
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", gPer.getPeriodo().getIdPeriodo());
                 cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
@@ -180,6 +192,9 @@ public class PeriodoMySQL implements PeriodoDAO{
             
             for(GerenciaPeriodo gPer : periodo.getConfiguracionFechas()){
                 sql = "{call ELIMINAR_GERENCIA_PERIODO(?,?)}";
+                
+                gPer.setPeriodo(periodo);
+                
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", gPer.getPeriodo().getIdPeriodo());
                 cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
@@ -239,6 +254,9 @@ public class PeriodoMySQL implements PeriodoDAO{
                 rs = cs.executeQuery();
                 while(rs.next()){
                     PesoCriterio pc = new PesoCriterio();
+                    
+                    //pc.setPeriodo(p);
+                    
                     pc.setIdPesoCriterio(rs.getInt("id_Criterio"));
                     pc.setPeso(rs.getDouble("peso"));
                 }
@@ -471,6 +489,9 @@ public class PeriodoMySQL implements PeriodoDAO{
             
             for(EscalaPeriodo escalas : periodo.getEscalas()){
                 sql = "{call ACTUALIZAR_ESCALA_PERIODO(?,?,?,?,?)}";
+                
+                escalas.setPeriodo(periodo);
+                
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", escalas.getPeriodo().getIdPeriodo());
                 cs.setInt("_ID_ESCALA", escalas.getEscala().getIdEscala());
@@ -482,6 +503,9 @@ public class PeriodoMySQL implements PeriodoDAO{
                       
             for(ItemPDIPeriodo rangosPDI : periodo.getRangosPDI()){
                 sql = "{call ACTUALIZAR_ITEM_PDI_PERIODOS(?,?,?,?)}";
+                
+                rangosPDI.setPeriodo(periodo);
+                
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", rangosPDI.getPeriodo().getIdPeriodo());
                 cs.setInt("_ID_ITEMPDI", rangosPDI.getItemPDI().getIdItemPDI());

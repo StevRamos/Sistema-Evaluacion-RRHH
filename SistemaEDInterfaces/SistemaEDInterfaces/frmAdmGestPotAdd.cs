@@ -46,7 +46,7 @@ namespace SistemaEDInterfaces
             //Obtener datos del criterio 
             criterio.nombre = txtAddNomPot.Text;
             criterio.descripcion = rctAddDescripPot.Text;
-            criterio.tipo = (int)TipoCriterio.Competencia;
+            criterio.tipo = (int)TipoCriterio.Potencial;
             criterio.criterioPadre = new CriterioWS.criterio();
             criterio.criterioPadre.idCriterio = -1;
 
@@ -115,6 +115,11 @@ namespace SistemaEDInterfaces
             {
                 Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestPot());
             }
+        }
+
+        private void txtAddPesoPot_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Global.restringirADecimal(sender, e);
         }
     }
 }

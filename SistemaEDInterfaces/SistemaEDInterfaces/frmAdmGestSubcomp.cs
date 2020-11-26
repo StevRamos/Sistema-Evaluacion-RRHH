@@ -61,7 +61,21 @@ namespace SistemaEDInterfaces
         private void btnCargarMasivaSubCom_Click(object sender, EventArgs e)
         {
             Form formulario = new frmAdmGestSubComCrgMav();
-            formulario.Show();
+            if (formulario.ShowDialog() == DialogResult.OK)
+            {
+                Global.iniciarEspera(this);
+                String nombreCargoSeleccionado, nombrePeriodoSeleccionado, nombreSubcompetencia;
+                nombreSubcompetencia = txtSubcomp.Text;
+                nombreCargoSeleccionado = (String)cmbPuestos.SelectedItem;
+                nombrePeriodoSeleccionado = (String)cmbPeriodos.SelectedItem;
+                if (nombreCargoSeleccionado == "-") nombreCargoSeleccionado = "";
+                if (nombrePeriodoSeleccionado == "-") nombrePeriodoSeleccionado = "";
+                dgvGestSubCom.DataSource = daoPesoCriterio.listarPesosCriterios((int)TipoCriterio.Subcompetencia,
+                                                                                nombreCargoSeleccionado,
+                                                                                nombrePeriodoSeleccionado,
+                                                                                nombreSubcompetencia);
+                Global.terminarEspera(this);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -122,6 +136,20 @@ namespace SistemaEDInterfaces
                                                                             nombrePeriodoSeleccionado,
                                                                             nombreSubcompetencia);
             Global.terminarEspera(this); 
+        }
+
+        private void dgvGestSubCom_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PesoCriterioWS.pesoCriterio data = dgvGestSubCom.Rows[e.RowIndex].DataBoundItem as PesoCriterioWS.pesoCriterio;
+
+            dgvGestSubCom.Rows[e.RowIndex].Cells["IdCriterio"].Value = data.criterio.criterioPadre.idCriterio;
+            dgvGestSubCom.Rows[e.RowIndex].Cells["NombreCriterio"].Value = data.criterio.criterioPadre.nombre;
+            dgvGestSubCom.Rows[e.RowIndex].Cells["IdSubcriterio"].Value = data.criterio.idCriterio;
+            dgvGestSubCom.Rows[e.RowIndex].Cells["NombreSubcriterio"].Value = data.criterio.nombre;
+            dgvGestSubCom.Rows[e.RowIndex].Cells["Descripcion"].Value = data.criterio.descripcion;
+            dgvGestSubCom.Rows[e.RowIndex].Cells["Cargo"].Value = data.puestoTrabajo.nombre;
+            dgvGestSubCom.Rows[e.RowIndex].Cells["Periodo"].Value = data.periodo.nombre;
+
         }
     }
 }

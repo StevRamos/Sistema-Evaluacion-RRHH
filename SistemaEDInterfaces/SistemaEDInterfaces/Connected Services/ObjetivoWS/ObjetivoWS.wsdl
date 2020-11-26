@@ -5,17 +5,11 @@
       <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/ObjetivoWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="actualizarObjetivo">
-    <part name="parameters" element="tns:actualizarObjetivo" />
+  <message name="eliminarObjetivo">
+    <part name="parameters" element="tns:eliminarObjetivo" />
   </message>
-  <message name="actualizarObjetivoResponse">
-    <part name="parameters" element="tns:actualizarObjetivoResponse" />
-  </message>
-  <message name="listarObjetivosXColaborador">
-    <part name="parameters" element="tns:listarObjetivosXColaborador" />
-  </message>
-  <message name="listarObjetivosXColaboradorResponse">
-    <part name="parameters" element="tns:listarObjetivosXColaboradorResponse" />
+  <message name="eliminarObjetivoResponse">
+    <part name="parameters" element="tns:eliminarObjetivoResponse" />
   </message>
   <message name="listarObjetivos">
     <part name="parameters" element="tns:listarObjetivos" />
@@ -29,20 +23,22 @@
   <message name="insertarObjetivoResponse">
     <part name="parameters" element="tns:insertarObjetivoResponse" />
   </message>
-  <message name="eliminarObjetivo">
-    <part name="parameters" element="tns:eliminarObjetivo" />
+  <message name="actualizarObjetivo">
+    <part name="parameters" element="tns:actualizarObjetivo" />
   </message>
-  <message name="eliminarObjetivoResponse">
-    <part name="parameters" element="tns:eliminarObjetivoResponse" />
+  <message name="actualizarObjetivoResponse">
+    <part name="parameters" element="tns:actualizarObjetivoResponse" />
+  </message>
+  <message name="listarObjetivosXColaborador">
+    <part name="parameters" element="tns:listarObjetivosXColaborador" />
+  </message>
+  <message name="listarObjetivosXColaboradorResponse">
+    <part name="parameters" element="tns:listarObjetivosXColaboradorResponse" />
   </message>
   <portType name="ObjetivoWS">
-    <operation name="actualizarObjetivo">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoRequest" message="tns:actualizarObjetivo" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoResponse" message="tns:actualizarObjetivoResponse" />
-    </operation>
-    <operation name="listarObjetivosXColaborador">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorRequest" message="tns:listarObjetivosXColaborador" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorResponse" message="tns:listarObjetivosXColaboradorResponse" />
+    <operation name="eliminarObjetivo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/eliminarObjetivoRequest" message="tns:eliminarObjetivo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/eliminarObjetivoResponse" message="tns:eliminarObjetivoResponse" />
     </operation>
     <operation name="listarObjetivos">
       <input wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosRequest" message="tns:listarObjetivos" />
@@ -52,23 +48,18 @@
       <input wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/insertarObjetivoRequest" message="tns:insertarObjetivo" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/insertarObjetivoResponse" message="tns:insertarObjetivoResponse" />
     </operation>
-    <operation name="eliminarObjetivo">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/eliminarObjetivoRequest" message="tns:eliminarObjetivo" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/eliminarObjetivoResponse" message="tns:eliminarObjetivoResponse" />
+    <operation name="actualizarObjetivo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoRequest" message="tns:actualizarObjetivo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/actualizarObjetivoResponse" message="tns:actualizarObjetivoResponse" />
+    </operation>
+    <operation name="listarObjetivosXColaborador">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorRequest" message="tns:listarObjetivosXColaborador" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ObjetivoWS/listarObjetivosXColaboradorResponse" message="tns:listarObjetivosXColaboradorResponse" />
     </operation>
   </portType>
   <binding name="ObjetivoWSPortBinding" type="tns:ObjetivoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="actualizarObjetivo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarObjetivosXColaborador">
+    <operation name="eliminarObjetivo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -95,7 +86,16 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarObjetivo">
+    <operation name="actualizarObjetivo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarObjetivosXColaborador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

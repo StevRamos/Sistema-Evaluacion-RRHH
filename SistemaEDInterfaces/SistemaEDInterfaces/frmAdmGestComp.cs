@@ -22,7 +22,8 @@ namespace SistemaEDInterfaces
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
             daoPuestoTrabajo = new PuestoTrabajoWS.PuestoTrabajoWSClient();
             dgvCompetencias.AutoGenerateColumns = false;
-            dgvCompetencias.DataSource = daoPesoCriterio.listarPesosCriterios((int)TipoCriterio.Competencia, "", "", "");
+            PesoCriterioWS.pesoCriterio [] lista= daoPesoCriterio.listarPesosCriterios((int)TipoCriterio.Competencia, "", "", "");
+            dgvCompetencias.DataSource = lista; 
             
 
             BindingList<PeriodoWS.periodo> periodos = new BindingList<PeriodoWS.periodo>
@@ -136,6 +137,17 @@ namespace SistemaEDInterfaces
 
             }
             
+        }
+
+        private void dgvCompetencias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PesoCriterioWS.pesoCriterio data = dgvCompetencias.Rows[e.RowIndex].DataBoundItem as PesoCriterioWS.pesoCriterio;
+
+            dgvCompetencias.Rows[e.RowIndex].Cells["idCriterio"].Value = data.criterio.idCriterio;
+            dgvCompetencias.Rows[e.RowIndex].Cells["nombreCriterio"].Value = data.criterio.nombre;
+            dgvCompetencias.Rows[e.RowIndex].Cells["descripcion"].Value = data.criterio.descripcion;
+            dgvCompetencias.Rows[e.RowIndex].Cells["Cargo"].Value = data.puestoTrabajo.nombre;
+            dgvCompetencias.Rows[e.RowIndex].Cells["periodo"].Value = data.periodo.nombre;
         }
     }
 }

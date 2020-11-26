@@ -105,6 +105,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineasSubcompetencias)
                     {
+                        if (linea == "") continue;
                         var valores = linea.Split(',');
 
                         CriterioWS.criterio criterio = new CriterioWS.criterio();
@@ -114,6 +115,8 @@ namespace SistemaEDInterfaces
                         String descripcion = valores[3];
                         criterio.idCriterio = idCriterio;
                         criterio.criterioPadre = new CriterioWS.criterio(); 
+
+                        //en estos momentos no se puede actualizar el idCriterioPadre
                         if (strIdCriterioPadre != "no")
                         {
                             //se actualiza
@@ -156,6 +159,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineasSubcompetencias)
                     {
+                        if (linea == "") continue; 
                         var valores = linea.Split(',');
 
                         CriterioWS.criterio criterio = new CriterioWS.criterio();
@@ -186,6 +190,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineasPesos)
                     {
+                        if (linea == "") continue;
                         var valores = linea.Split(',');
 
                         PesoCriterioWS.pesoCriterio pesoCriterio = new PesoCriterioWS.pesoCriterio();
@@ -214,6 +219,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineasPesos)
                     {
+                        if (linea == "") continue;
                         var valores = linea.Split(',');
 
                         PesoCriterioWS.pesoCriterio pesoCriterio = new PesoCriterioWS.pesoCriterio();
@@ -230,8 +236,9 @@ namespace SistemaEDInterfaces
                         pesoCriterio.periodo = new PesoCriterioWS.periodo();
                         pesoCriterio.periodo.nombre = nombrePeriodo;
                         pesoCriterio.peso = peso;
-
+                        
                         daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
+                        
 
 
                     }
@@ -246,6 +253,8 @@ namespace SistemaEDInterfaces
                                    "Mensaje de confirmación",
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Information);
+            this.DialogResult = DialogResult.OK;
+            this.Close(); 
         }
     }
 }
