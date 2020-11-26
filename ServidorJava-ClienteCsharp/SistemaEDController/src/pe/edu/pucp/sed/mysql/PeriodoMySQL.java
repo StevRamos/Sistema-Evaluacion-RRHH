@@ -53,7 +53,7 @@ public class PeriodoMySQL implements PeriodoDAO{
                 
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", gPer.getPeriodo().getIdPeriodo());
-                cs.setInt("_ID_GERENCIAS", gPer.getGerencia().getIdGerencia());
+                cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
                 cs.setDate("_FECHAINICIOPLAN", 
                    new java.sql.Date(gPer.getFechaInicioPlan().getTime()));
                 cs.setDate("_FECHAFINPLAN", 
