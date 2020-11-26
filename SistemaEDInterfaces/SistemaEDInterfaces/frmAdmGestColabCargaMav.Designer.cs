@@ -43,9 +43,10 @@
             // 
             this.rdbActCargaMavColab.AutoSize = true;
             this.rdbActCargaMavColab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbActCargaMavColab.Location = new System.Drawing.Point(641, 198);
+            this.rdbActCargaMavColab.Location = new System.Drawing.Point(481, 161);
+            this.rdbActCargaMavColab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbActCargaMavColab.Name = "rdbActCargaMavColab";
-            this.rdbActCargaMavColab.Size = new System.Drawing.Size(129, 27);
+            this.rdbActCargaMavColab.Size = new System.Drawing.Size(108, 25);
             this.rdbActCargaMavColab.TabIndex = 81;
             this.rdbActCargaMavColab.TabStop = true;
             this.rdbActCargaMavColab.Text = "Actualizar";
@@ -55,9 +56,10 @@
             // 
             this.rdbInsCargaMavColab.AutoSize = true;
             this.rdbInsCargaMavColab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbInsCargaMavColab.Location = new System.Drawing.Point(470, 198);
+            this.rdbInsCargaMavColab.Location = new System.Drawing.Point(352, 161);
+            this.rdbInsCargaMavColab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbInsCargaMavColab.Name = "rdbInsCargaMavColab";
-            this.rdbInsCargaMavColab.Size = new System.Drawing.Size(102, 27);
+            this.rdbInsCargaMavColab.Size = new System.Drawing.Size(87, 25);
             this.rdbInsCargaMavColab.TabIndex = 80;
             this.rdbInsCargaMavColab.TabStop = true;
             this.rdbInsCargaMavColab.Text = "Insertar";
@@ -67,19 +69,19 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 195);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(401, 33);
+            this.label1.Size = new System.Drawing.Size(310, 24);
             this.label1.TabIndex = 79;
             this.label1.Text = "Seleccionar tipo de proceso :";
             // 
             // txtNomArchColabMav
             // 
             this.txtNomArchColabMav.Enabled = false;
-            this.txtNomArchColabMav.Location = new System.Drawing.Point(470, 140);
+            this.txtNomArchColabMav.Location = new System.Drawing.Point(352, 114);
+            this.txtNomArchColabMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomArchColabMav.Name = "txtNomArchColabMav";
-            this.txtNomArchColabMav.Size = new System.Drawing.Size(521, 22);
+            this.txtNomArchColabMav.Size = new System.Drawing.Size(392, 20);
             this.txtNomArchColabMav.TabIndex = 78;
             // 
             // btnGestColabSelecColab
@@ -88,10 +90,9 @@
             this.btnGestColabSelecColab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestColabSelecColab.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestColabSelecColab.ForeColor = System.Drawing.Color.White;
-            this.btnGestColabSelecColab.Location = new System.Drawing.Point(1014, 135);
-            this.btnGestColabSelecColab.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGestColabSelecColab.Location = new System.Drawing.Point(760, 110);
             this.btnGestColabSelecColab.Name = "btnGestColabSelecColab";
-            this.btnGestColabSelecColab.Size = new System.Drawing.Size(211, 32);
+            this.btnGestColabSelecColab.Size = new System.Drawing.Size(158, 26);
             this.btnGestColabSelecColab.TabIndex = 77;
             this.btnGestColabSelecColab.Text = "Seleccionar archivo";
             this.btnGestColabSelecColab.UseVisualStyleBackColor = false;
@@ -101,10 +102,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 134);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(14, 109);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(301, 33);
+            this.label2.Size = new System.Drawing.Size(234, 24);
             this.label2.TabIndex = 76;
             this.label2.Text = "Nombre del archivo : ";
             // 
@@ -114,10 +114,9 @@
             this.btnRegreCargMavColab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegreCargMavColab.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegreCargMavColab.ForeColor = System.Drawing.Color.White;
-            this.btnRegreCargMavColab.Location = new System.Drawing.Point(127, 333);
-            this.btnRegreCargMavColab.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegreCargMavColab.Location = new System.Drawing.Point(95, 271);
             this.btnRegreCargMavColab.Name = "btnRegreCargMavColab";
-            this.btnRegreCargMavColab.Size = new System.Drawing.Size(211, 32);
+            this.btnRegreCargMavColab.Size = new System.Drawing.Size(158, 26);
             this.btnRegreCargMavColab.TabIndex = 75;
             this.btnRegreCargMavColab.Text = "Regresar";
             this.btnRegreCargMavColab.UseVisualStyleBackColor = false;
@@ -129,10 +128,9 @@
             this.btnCargarColabMasiva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarColabMasiva.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarColabMasiva.ForeColor = System.Drawing.Color.White;
-            this.btnCargarColabMasiva.Location = new System.Drawing.Point(891, 333);
-            this.btnCargarColabMasiva.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCargarColabMasiva.Location = new System.Drawing.Point(668, 271);
             this.btnCargarColabMasiva.Name = "btnCargarColabMasiva";
-            this.btnCargarColabMasiva.Size = new System.Drawing.Size(211, 32);
+            this.btnCargarColabMasiva.Size = new System.Drawing.Size(158, 26);
             this.btnCargarColabMasiva.TabIndex = 74;
             this.btnCargarColabMasiva.Text = "Cargar Archivo";
             this.btnCargarColabMasiva.UseVisualStyleBackColor = false;
@@ -143,19 +141,18 @@
             this.lblRegistrarObjetivo.AutoSize = true;
             this.lblRegistrarObjetivo.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRegistrarObjetivo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblRegistrarObjetivo.Location = new System.Drawing.Point(13, 9);
-            this.lblRegistrarObjetivo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegistrarObjetivo.Location = new System.Drawing.Point(10, 7);
             this.lblRegistrarObjetivo.Name = "lblRegistrarObjetivo";
-            this.lblRegistrarObjetivo.Size = new System.Drawing.Size(990, 70);
+            this.lblRegistrarObjetivo.Size = new System.Drawing.Size(793, 56);
             this.lblRegistrarObjetivo.TabIndex = 73;
             this.lblRegistrarObjetivo.Text = "Carga Masiva de Colaboradores";
             // 
             // frmAdmGestColabCargaMav
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1289, 417);
+            this.ClientSize = new System.Drawing.Size(1107, 749);
             this.Controls.Add(this.rdbActCargaMavColab);
             this.Controls.Add(this.rdbInsCargaMavColab);
             this.Controls.Add(this.label1);
@@ -165,6 +162,7 @@
             this.Controls.Add(this.btnRegreCargMavColab);
             this.Controls.Add(this.btnCargarColabMasiva);
             this.Controls.Add(this.lblRegistrarObjetivo);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAdmGestColabCargaMav";
             this.Text = "frmAdmGestColabCargaMav";
             this.ResumeLayout(false);

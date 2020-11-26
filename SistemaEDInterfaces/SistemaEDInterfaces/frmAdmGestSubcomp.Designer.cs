@@ -36,14 +36,6 @@
             this.cmbPeriodos = new System.Windows.Forms.ComboBox();
             this.txtSubcomp = new System.Windows.Forms.TextBox();
             this.dgvGestSubCom = new System.Windows.Forms.DataGridView();
-            this.btnCargarMasivaSubCom = new System.Windows.Forms.Button();
-            this.btnGestCrearSubCom = new System.Windows.Forms.Button();
-            this.lblGestSubComp = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtBuscarPerioCom = new System.Windows.Forms.Label();
-            this.lblBuscarNomPot = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             this.IdCriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.IdSubcriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +44,14 @@
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCargarMasivaSubCom = new System.Windows.Forms.Button();
+            this.btnGestCrearSubCom = new System.Windows.Forms.Button();
+            this.lblGestSubComp = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBuscarPerioCom = new System.Windows.Forms.Label();
+            this.lblBuscarNomPot = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestSubCom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,9 +138,73 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvGestSubCom.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvGestSubCom.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestSubCom.Size = new System.Drawing.Size(1073, 480);
+            this.dgvGestSubCom.Size = new System.Drawing.Size(1073, 378);
             this.dgvGestSubCom.TabIndex = 31;
             this.dgvGestSubCom.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGestSubCom_CellFormatting);
+            // 
+            // IdCriterio
+            // 
+            this.IdCriterio.HeaderText = "Id Competencia";
+            this.IdCriterio.MinimumWidth = 6;
+            this.IdCriterio.Name = "IdCriterio";
+            this.IdCriterio.ReadOnly = true;
+            this.IdCriterio.Width = 125;
+            // 
+            // NombreCriterio
+            // 
+            this.NombreCriterio.HeaderText = "Nombre Competencia";
+            this.NombreCriterio.Name = "NombreCriterio";
+            this.NombreCriterio.ReadOnly = true;
+            this.NombreCriterio.Width = 250;
+            // 
+            // IdSubcriterio
+            // 
+            this.IdSubcriterio.HeaderText = "Id Subcompetencia";
+            this.IdSubcriterio.MinimumWidth = 6;
+            this.IdSubcriterio.Name = "IdSubcriterio";
+            this.IdSubcriterio.ReadOnly = true;
+            this.IdSubcriterio.Width = 150;
+            // 
+            // NombreSubcriterio
+            // 
+            this.NombreSubcriterio.HeaderText = "Nombre Subcompetencia";
+            this.NombreSubcriterio.MinimumWidth = 6;
+            this.NombreSubcriterio.Name = "NombreSubcriterio";
+            this.NombreSubcriterio.ReadOnly = true;
+            this.NombreSubcriterio.Width = 250;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 625;
+            // 
+            // Cargo
+            // 
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.MinimumWidth = 6;
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
+            this.Cargo.Width = 125;
+            // 
+            // Peso
+            // 
+            this.Peso.DataPropertyName = "peso";
+            this.Peso.HeaderText = "Peso";
+            this.Peso.MinimumWidth = 6;
+            this.Peso.Name = "Peso";
+            this.Peso.ReadOnly = true;
+            this.Peso.Width = 125;
+            // 
+            // Periodo
+            // 
+            this.Periodo.HeaderText = "Periodo";
+            this.Periodo.MinimumWidth = 6;
+            this.Periodo.Name = "Periodo";
+            this.Periodo.ReadOnly = true;
+            this.Periodo.Width = 125;
             // 
             // btnCargarMasivaSubCom
             // 
@@ -227,7 +291,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(21, 694);
+            this.btnEliminar.Location = new System.Drawing.Point(22, 601);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(195, 26);
@@ -251,76 +315,12 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // IdCriterio
-            // 
-            this.IdCriterio.HeaderText = "Id Competencia";
-            this.IdCriterio.MinimumWidth = 6;
-            this.IdCriterio.Name = "IdCriterio";
-            this.IdCriterio.ReadOnly = true;
-            this.IdCriterio.Width = 125;
-            // 
-            // NombreCriterio
-            // 
-            this.NombreCriterio.HeaderText = "Nombre Competencia";
-            this.NombreCriterio.Name = "NombreCriterio";
-            this.NombreCriterio.ReadOnly = true;
-            this.NombreCriterio.Width = 250;
-            // 
-            // IdSubcriterio
-            // 
-            this.IdSubcriterio.HeaderText = "Id Subcompetencia";
-            this.IdSubcriterio.MinimumWidth = 6;
-            this.IdSubcriterio.Name = "IdSubcriterio";
-            this.IdSubcriterio.ReadOnly = true;
-            this.IdSubcriterio.Width = 150;
-            // 
-            // NombreSubcriterio
-            // 
-            this.NombreSubcriterio.HeaderText = "Nombre Subcompetencia";
-            this.NombreSubcriterio.MinimumWidth = 6;
-            this.NombreSubcriterio.Name = "NombreSubcriterio";
-            this.NombreSubcriterio.ReadOnly = true;
-            this.NombreSubcriterio.Width = 250;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.MinimumWidth = 6;
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 625;
-            // 
-            // Cargo
-            // 
-            this.Cargo.HeaderText = "Cargo";
-            this.Cargo.MinimumWidth = 6;
-            this.Cargo.Name = "Cargo";
-            this.Cargo.ReadOnly = true;
-            this.Cargo.Width = 125;
-            // 
-            // Peso
-            // 
-            this.Peso.DataPropertyName = "peso";
-            this.Peso.HeaderText = "Peso";
-            this.Peso.MinimumWidth = 6;
-            this.Peso.Name = "Peso";
-            this.Peso.ReadOnly = true;
-            this.Peso.Width = 125;
-            // 
-            // Periodo
-            // 
-            this.Periodo.HeaderText = "Periodo";
-            this.Periodo.MinimumWidth = 6;
-            this.Periodo.Name = "Periodo";
-            this.Periodo.ReadOnly = true;
-            this.Periodo.Width = 125;
-            // 
             // frmAdmGestSubcomp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1107, 755);
+            this.ClientSize = new System.Drawing.Size(1107, 749);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.label1);
