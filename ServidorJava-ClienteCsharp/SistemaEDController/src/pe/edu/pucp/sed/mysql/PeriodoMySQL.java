@@ -47,13 +47,34 @@ public class PeriodoMySQL implements PeriodoDAO{
             
             
             for(GerenciaPeriodo gPer : periodo.getConfiguracionFechas()){
-                sql = "{call INSERTAR_GERENCIA_PERIODO(?,?)}";
+                sql = "{call INSERTAR_GERENCIA_PERIODO(?,?,?,?,?,?,?,?,?,?,?,?)}";
                 
                 gPer.setPeriodo(periodo);
                 
                 cs = con.prepareCall(sql);
                 cs.setInt("_ID_PERIODO", gPer.getPeriodo().getIdPeriodo());
-                cs.setInt("_ID_GERENCIA", gPer.getGerencia().getIdGerencia());
+                cs.setInt("_ID_GERENCIAS", gPer.getGerencia().getIdGerencia());
+                cs.setDate("_FECHAINICIOPLAN", 
+                   new java.sql.Date(gPer.getFechaInicioPlan().getTime()));
+                cs.setDate("_FECHAFINPLAN", 
+                   new java.sql.Date(gPer.getFechaFinPlan().getTime()));
+                cs.setDate("_FECHAINICIOPDI", 
+                   new java.sql.Date(gPer.getFechaInicioPDI().getTime()));
+                cs.setDate("_FECHAFINPDI", 
+                   new java.sql.Date(gPer.getFechaFinPDI().getTime()));
+                cs.setDate("_FECHAINICIOEVALPREVD", 
+                   new java.sql.Date(gPer.getFechaInicioEvalPrevD().getTime()));
+                cs.setDate("_FECHAFINEVALPREVD", 
+                   new java.sql.Date(gPer.getFechaFinEvalPrevD().getTime()));
+                cs.setDate("_FECHAINICIOEVALFIND", 
+                   new java.sql.Date(gPer.getFechaInicioEvalFinD().getTime()));
+                cs.setDate("_FECHAFINEVALFIND", 
+                   new java.sql.Date(gPer.getFechaFinEvalFinD().getTime()));
+                cs.setDate("_FECHAINICIOCAL", 
+                   new java.sql.Date(gPer.getFechaInicioCal().getTime()));
+                cs.setDate("_FECHAFINCAL", 
+                   new java.sql.Date(gPer.getFechaFinCal().getTime()));
+                
                 cs.executeUpdate();
             }
             
