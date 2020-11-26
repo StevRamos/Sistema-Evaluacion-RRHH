@@ -113,5 +113,19 @@ public class ColaboradorWS {
         
         return colaboradores;
     }
-    
+        
+    @WebMethod(operationName = "autenticarUsuario")
+    public Colaborador autenticarUsuario(@WebParam(name = "correo") String correo,
+            @WebParam(name = "contrasenha") String contrasenha) {
+        Colaborador colaborador = new Colaborador();
+        try{
+            colaborador = daoColaborador.autenticarUsuario(correo, contrasenha);
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        
+        return colaborador;
+        
+    }
 }
