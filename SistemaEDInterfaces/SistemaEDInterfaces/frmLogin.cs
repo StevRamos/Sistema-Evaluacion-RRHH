@@ -71,14 +71,34 @@ namespace SistemaEDInterfaces
             {
                 if (txtContraseña.Text != "CONTRASEÑA")
                 {
-                  
+                    ColaboradorWS.ColaboradorWSClient daoColaborador = new ColaboradorWS.ColaboradorWSClient();
+                    ColaboradorWS.colaborador colaborador;
+
+                    colaborador = daoColaborador.autenticarUsuario(txtUsuario.Text,txtContraseña.Text);
+                    
+                    if (colaborador.apellidos == null)
+                    {
+                        msgError("Usuario o contraseña incorrectos");
+                    }
+                    else
+                    {
                         this.Hide();
                         frmBienvenida bienvenida = new frmBienvenida();
                         bienvenida.ShowDialog();
                         frmInicio Inicio = new frmInicio();
                         Inicio.ShowDialog();
                         this.Close();
+                    }
                     
+                    /*
+                        this.Hide();
+                    frmBienvenida bienvenida = new frmBienvenida();
+                    bienvenida.ShowDialog();
+                    frmInicio Inicio = new frmInicio();
+                    Inicio.ShowDialog();
+                    this.Close();
+                    */
+
 
                 }
                 else msgError("Por favor ingresa la contraseña");
