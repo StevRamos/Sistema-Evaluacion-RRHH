@@ -152,12 +152,13 @@ namespace SistemaEDInterfaces
                         colaborador.puestoTrabajo = new ColaboradorWS.puestoTrabajo();
                         colaborador.gerencia = new ColaboradorWS.gerencia();
                         colaborador.usuario = new ColaboradorWS.usuario();
-
+                        colaborador.periodo = new ColaboradorWS.periodo();
                         colaborador.puestoTrabajo.idPuestoTrabajo = int.Parse(valores[8]);
                         colaborador.gerencia.idGerencia = int.Parse(valores[9]);
                         colaborador.usuario.contrasenha = valores[11];
                         colaborador.usuario.nivelAcceso = int.Parse(valores[10]);
-
+                        
+                        colaborador.periodo.idPeriodo = 1; 
                         resultado=daoColaborador.insertarColaborador(colaborador);
                         if (resultado == 0)
                         {
