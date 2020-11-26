@@ -14,5 +14,4 @@ import pe.edu.pucp.sed.model.Usuario;
  */
 public interface UsuarioDAO {
     public int insertar(Usuario usuario);
-    public Colaborador autenticarUsuario(String correo, String contrasenha); 
 }

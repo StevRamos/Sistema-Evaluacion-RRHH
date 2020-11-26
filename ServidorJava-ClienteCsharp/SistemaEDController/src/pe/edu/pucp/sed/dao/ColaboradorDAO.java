@@ -11,4 +11,5 @@ public interface ColaboradorDAO{
         ArrayList<Colaborador> listarColaboradoresXJefe(int idJefe);
         Colaborador buscarJefe( int idJefe );
         ArrayList<Colaborador> listarJefeXGerenciaXPeriodoActual(int idGerencia);
+        Colaborador autenticarUsuario(String correo, String contrasenha); 
 }

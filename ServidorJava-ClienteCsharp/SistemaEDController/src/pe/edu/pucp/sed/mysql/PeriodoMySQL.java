@@ -72,11 +72,12 @@ public class PeriodoMySQL implements PeriodoDAO{
             }
                       
             for(ItemPDIPeriodo rangosPDI : periodo.getRangosPDI()){
-                sql = "{call INSERTAR_ITEM_PDI_PERIODOS(?,?,?)}";
+                sql = "{call INSERTAR_ITEM_PDI_PERIODOS(?,?,?,?)}";
                 
                 rangosPDI.setPeriodo(periodo);
                 
                 cs = con.prepareCall(sql);
+                cs.setInt("_ID_ITEMPDI", rangosPDI.getItemPDI().getIdItemPDI());
                 cs.setInt("_ID_PERIODO", rangosPDI.getPeriodo().getIdPeriodo());
                 cs.setDouble("_NOTAMIN", rangosPDI.getNotaMin());
                 cs.setDouble("_NOTAMAX", rangosPDI.getNotaMax());
@@ -114,13 +115,18 @@ public class PeriodoMySQL implements PeriodoDAO{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
             con.setAutoCommit(false);
-            String sql = "{call ACTUALIZAR_PERIODO(?,?,?)}";
+            String sql = "{call ACTUALIZAR_PERIODO(?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             cs.setInt("_ID_PERIODO", periodo.getIdPeriodo());
             cs.setDate("_NEW_INI", 
                    new java.sql.Date(periodo.getFechaInicio().getTime()));
             cs.setDate("_NEW_FIN", 
                    new java.sql.Date(periodo.getFechaFin().getTime()));
+            cs.setString("_NOMBRE", periodo.getNombre());
+            cs.setDouble("_PESO_EVOBJETIVOS", periodo.getPesoEvalObj());
+            cs.setDouble("_PESO_EVCOMPETENCIAS", periodo.getPesoEvalComp());
+            cs.setString("_DIA_NOTIFICACION", periodo.getDiaNotificacion());
+            
             cs.executeUpdate();
             
             
