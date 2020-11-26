@@ -104,6 +104,7 @@
             this.dgvMisObjetivos.Size = new System.Drawing.Size(1073, 480);
             this.dgvMisObjetivos.TabIndex = 1;
             this.dgvMisObjetivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMisObjetivos_CellContentClick);
+            this.dgvMisObjetivos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMisObjetivos_CellFormatting);
             // 
             // btnEnviar
             // 
@@ -207,7 +208,6 @@
             // Estado
             // 
             this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Estado.DataPropertyName = "descripcionEstado";
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;

@@ -145,5 +145,23 @@ namespace SistemaEDInterfaces
                 (daoObjetivo.listarObjetivosXColaborador(colaborador.idColaborador).ToArray());
             if(objetivos!=null)dgvMisObjetivos.DataSource = objetivos; 
         }
+
+        private void dgvMisObjetivos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            ObjetivoWS.objetivo data = dgvMisObjetivos.Rows[e.RowIndex].DataBoundItem as ObjetivoWS.objetivo;
+
+            if (data.estado == (int)EstadoObjetivo.EsperandoRevision)
+            {
+                dgvMisObjetivos.Rows[e.RowIndex].Cells["Estado"].Value = "Esperando revision";
+            }
+            else if (data.estado == (int)EstadoObjetivo.Denegado)
+            {
+                dgvMisObjetivos.Rows[e.RowIndex].Cells["Estado"].Value = "Denegado";
+            }
+            else if (data.estado == (int)EstadoObjetivo.Aprobado)
+            {
+                dgvMisObjetivos.Rows[e.RowIndex].Cells["Estado"].Value = "Aprobado";
+            }
+        }
     }
 }

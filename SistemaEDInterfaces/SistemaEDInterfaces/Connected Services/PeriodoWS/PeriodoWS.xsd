@@ -81,7 +81,6 @@
       <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
       <xs:element name="idColaborador" type="xs:int" />
       <xs:element minOccurs="0" name="jefe" type="tns:colaborador" />
-      <xs:element name="nivelAcceso" type="xs:int" />
       <xs:element minOccurs="0" name="nombres" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="objetivos" nillable="true" type="tns:objetivo" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
@@ -160,18 +159,8 @@
   <xs:complexType name="pesoCriterio">
     <xs:sequence>
       <xs:element minOccurs="0" name="criterio" type="tns:criterio" />
-      <xs:element minOccurs="0" name="criterioPadre" type="tns:criterio" />
-      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
-      <xs:element name="idCriterio" type="xs:int" />
-      <xs:element name="idCriterioPadre" type="xs:int" />
-      <xs:element name="idPeriodo" type="xs:int" />
       <xs:element name="idPesoCriterio" type="xs:int" />
-      <xs:element name="idPuestoTrabajo" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
-      <xs:element minOccurs="0" name="nombreCriterio" type="xs:string" />
-      <xs:element minOccurs="0" name="nombrePadre" type="xs:string" />
-      <xs:element minOccurs="0" name="nombrePeriodo" type="xs:string" />
-      <xs:element minOccurs="0" name="nombrePuestoTrabajo" type="xs:string" />
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
       <xs:element name="peso" type="xs:double" />
       <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
@@ -201,7 +190,6 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
-      <xs:element minOccurs="0" name="descripcionEstado" type="xs:string" />
       <xs:element name="estado" type="xs:int" />
       <xs:element minOccurs="0" name="evaluacion" type="tns:evaluacionDesempenho" />
       <xs:element minOccurs="0" name="fechaAprobacion" type="xs:dateTime" />
@@ -254,6 +242,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="obtenerPeriodo">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="obtenerPeriodoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="listarEscalaPeriodo">
     <xs:sequence>
       <xs:element name="idPeriodo" type="xs:int" />
@@ -262,14 +258,6 @@
   <xs:complexType name="listarEscalaPeriodoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:escalaPeriodo" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="obtenerPeriodo">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="obtenerPeriodoResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="return" type="tns:periodo" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="actualizarRangos">
@@ -282,6 +270,14 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarPeriodos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPeriodosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="actualizarPeriodo">
     <xs:sequence>
       <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
@@ -290,14 +286,6 @@
   <xs:complexType name="actualizarPeriodoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarPeriodos">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarPeriodosResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:periodo" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarGerenciaPeriodoPorId">

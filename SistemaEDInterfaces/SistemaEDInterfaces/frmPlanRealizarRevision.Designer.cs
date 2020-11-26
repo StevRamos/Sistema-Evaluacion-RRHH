@@ -281,6 +281,7 @@
             this.dgvMisObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMisObjetivos.Size = new System.Drawing.Size(1073, 465);
             this.dgvMisObjetivos.TabIndex = 63;
+            this.dgvMisObjetivos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMisObjetivos_CellFormatting);
             // 
             // id
             // 

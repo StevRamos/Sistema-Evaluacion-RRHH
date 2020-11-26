@@ -20,7 +20,6 @@ namespace SistemaEDInterfaces
 
         private BindingList<PeriodoWS.gerenciaPeriodo> gerenciasPeriodos;
 
-        private GerenciaPeriodoWS.GerenciaPeriodoWSClient daoGerenciaPeriodo;
         public frmAdmGestCronAgregarPeriodo()
         {
             InitializeComponent();
@@ -29,7 +28,7 @@ namespace SistemaEDInterfaces
 
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
             daoGerencia = new GerenciaWS.GerenciaWSClient();
-            
+
         }
 
         private int realizarValidaciones()
@@ -81,6 +80,100 @@ namespace SistemaEDInterfaces
             return valido;
         }
 
+        private void llenarEscalasValoresPredeterminados()
+        {
+            BindingList<PeriodoWS.escalaPeriodo> escalasPredeterminadas = new BindingList<PeriodoWS.escalaPeriodo>();
+
+
+            String[] nombresEscalas = new string[] { "A", "B", "C", "D", "E", "Alto", "Medio", "Bajo" }; 
+
+            for(int i = 1; i <=nombresEscalas.Count(); i++)
+            {
+                PeriodoWS.escalaPeriodo ep = new PeriodoWS.escalaPeriodo();
+
+                ep.escala = new PeriodoWS.escala();
+                ep.escala.idEscala = i;
+                switch (nombresEscalas[i-1])
+                {
+                    case "A":
+                        ep.notaMax = 100;
+                        ep.notaMin = 80;
+                        ep.porcentajeCupos = 20; 
+                        break;
+                    case "B":
+                        ep.notaMax = 80;
+                        ep.notaMin = 60;
+                        ep.porcentajeCupos = 20;
+
+                        break;
+                    case "C":
+                        ep.notaMax = 60;
+                        ep.notaMin = 40;
+                        ep.porcentajeCupos = 20;
+                        break;
+                    case "D":
+                        ep.notaMax = 40;
+                        ep.notaMin = 20;
+                        ep.porcentajeCupos = 20;
+                        break;
+                    case "E":
+                        ep.notaMax = 20;
+                        ep.notaMin = 0;
+                        ep.porcentajeCupos = 20;
+                        break;
+                    case "Alto":
+                        ep.notaMax = 100;
+                        ep.notaMin = 80;
+                        ep.porcentajeCupos = 0; 
+                        break;
+                    case "Medio":
+                        ep.notaMax = 80;
+                        ep.notaMin = 50;
+                        ep.porcentajeCupos = 0; 
+                        break;
+                    case "Bajo":
+                        ep.notaMax = 50;
+                        ep.notaMin = 0;
+                        ep.porcentajeCupos = 0; 
+                        break; 
+                }
+                
+                escalasPredeterminadas.Add(ep); 
+                
+            }
+
+            periodo.escalas = escalasPredeterminadas.ToArray(); 
+        }
+        private void llenarItemsPDIValoresPredeterminados()
+        {
+            BindingList<PeriodoWS.itemPDIPeriodo> rangosPredeterminados = new BindingList<PeriodoWS.itemPDIPeriodo>();
+
+            String[] nombresPDI = new string[] { "FORTALEZAS", "OPORTUNIDADES DE MEJORA", "DEBILIDADES" }; 
+            for(int i=1; i <= nombresPDI.Count(); i++)
+            {
+                PeriodoWS.itemPDIPeriodo ip = new PeriodoWS.itemPDIPeriodo();
+
+                ip.itemPDI = new PeriodoWS.itemPDI();
+                ip.itemPDI.idItemPDI = i;
+                switch (nombresPDI[i - 1])
+                {
+                    case "FORTALEZAS":
+                        ip.notaMax = 100;
+                        ip.notaMin = 75; 
+                        break;
+                    case "OPORTUNIDADES DE MEJORA":
+                        ip.notaMax = 75;
+                        ip.notaMin = 50; 
+                        break;
+                    case "DEBILIDADES":
+                        ip.notaMax = 50;
+                        ip.notaMin = 0; 
+                        break; 
+                }
+                rangosPredeterminados.Add(ip); 
+            }
+            periodo.rangosPDI = rangosPredeterminados.ToArray();
+        }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
@@ -105,9 +198,13 @@ namespace SistemaEDInterfaces
             periodo.fechaInicioSpecified = true; 
             periodo.pesoEvalObj = (Double.Parse(txtPesoObjetivos.Text))/100;
             periodo.pesoEvalComp = (Double.Parse(txtPesoCompetencia.Text))/100;
-            //periodo.diaNotificacion = cboDiaNotificacion.SelectedItem;
-            //periodo.horaNotificacion = dtpHoraNotificacion.Value.ToString("hh:mm:ss") ;
+            periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
+            //periodo.horaNotificacion = dtpHoraNotificacion.Value.ToString(); 
+
             periodo.configuracionFechas = gerenciasPeriodos.ToArray();
+            llenarEscalasValoresPredeterminados();
+            llenarItemsPDIValoresPredeterminados();
+            int resultado=1;
             if (daoPeriodo.insertarPeriodo(periodo) != 0)
             {
 
@@ -129,9 +226,13 @@ namespace SistemaEDInterfaces
         }
         private void frmAdmGestCronAgregarPeriodo_Load(object sender, EventArgs e)
         {
-            BindingList<GerenciaWS.gerencia> gerencias = new BindingList<GerenciaWS.gerencia>
-                                                            (daoGerencia.listarGerencias().ToArray());
+            GerenciaWS.gerencia[] lista = daoGerencia.listarGerencias();
 
+            BindingList<GerenciaWS.gerencia> gerencias = new BindingList<GerenciaWS.gerencia>(); 
+            if (lista != null)
+            {
+                gerencias = new BindingList<GerenciaWS.gerencia>(lista); 
+            }
             //Crear la lista de gerenciaXperiodos
             gerenciasPeriodos = new BindingList<PeriodoWS.gerenciaPeriodo>();
 
@@ -152,7 +253,6 @@ namespace SistemaEDInterfaces
                 gp.fechaFinCal = DateTime.Now;
                 gp.fechaInicioPDI = DateTime.Now;
                 gp.fechaFinPDI = DateTime.Now;
-                gp.periodo.idPeriodo = periodo.idPeriodo;
 
                 gp.fechaInicioPlanSpecified = true;
                 gp.fechaFinPlanSpecified = true;
@@ -174,7 +274,7 @@ namespace SistemaEDInterfaces
             dgvCronPDI.AutoGenerateColumns = false;
             dgvCalibNotas.AutoGenerateColumns = false;
 
-            //Interesante sera ver como saldran en el dgv las fechas que ahorita estan en nulo
+            //POSIBLE ERROR SI GERENCIASPERIODOS ES LISTA VACIA 
             dgvCronPlanificacion.DataSource = gerenciasPeriodos;
             dgvCronEvPrevia.DataSource = gerenciasPeriodos;
             dgvCronEvFinal.DataSource = gerenciasPeriodos;
@@ -322,6 +422,58 @@ namespace SistemaEDInterfaces
         private void dgvCronPDI_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 2 || e.ColumnIndex == 3) mostrarFormularioFechaYActualizar(e, Etapas.PDI);
+        }
+
+        private void dgvCronPlanificacion_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            
+            PeriodoWS.gerenciaPeriodo data = dgvCronPlanificacion.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvCronPlanificacion.Rows[e.RowIndex].Cells["ID1"].Value = data.gerencia.idGerencia;
+            dgvCronPlanificacion.Rows[e.RowIndex].Cells["Nombre1"].Value = data.gerencia.nombre;
+
+        }
+
+        private void dgvCronEvPrevia_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvCronEvPrevia.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvCronEvPrevia.Rows[e.RowIndex].Cells["ID2"].Value = data.gerencia.idGerencia;
+            dgvCronEvPrevia.Rows[e.RowIndex].Cells["Nombre2"].Value = data.gerencia.nombre;
+        }
+
+        private void dgvCronEvFinal_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvCronEvFinal.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvCronEvFinal.Rows[e.RowIndex].Cells["ID3"].Value = data.gerencia.idGerencia;
+            dgvCronEvFinal.Rows[e.RowIndex].Cells["Nombre3"].Value = data.gerencia.nombre;
+        }
+
+        private void dgvCalibNotas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvCalibNotas.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvCalibNotas.Rows[e.RowIndex].Cells["ID4"].Value = data.gerencia.idGerencia;
+            dgvCalibNotas.Rows[e.RowIndex].Cells["Nombre4"].Value = data.gerencia.nombre;
+        }
+
+        private void dgvCronPDI_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            PeriodoWS.gerenciaPeriodo data = dgvCronPDI.Rows[e.RowIndex].DataBoundItem as PeriodoWS.gerenciaPeriodo;
+
+            dgvCronPDI.Rows[e.RowIndex].Cells["ID5"].Value = data.gerencia.idGerencia;
+            dgvCronPDI.Rows[e.RowIndex].Cells["Nombre5"].Value = data.gerencia.nombre;
+        }
+
+        private void txtPesoObjetivos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Global.restringirADecimal(sender, e); 
+        }
+
+        private void txtPesoCompetencia_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Global.restringirADecimal(sender, e);
         }
     }
 }
