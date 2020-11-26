@@ -66,6 +66,7 @@
             this.txtAddPesoPot.Name = "txtAddPesoPot";
             this.txtAddPesoPot.Size = new System.Drawing.Size(193, 20);
             this.txtAddPesoPot.TabIndex = 37;
+            this.txtAddPesoPot.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAddPesoPot_KeyPress);
             // 
             // lblAddPeriodoPot
             // 

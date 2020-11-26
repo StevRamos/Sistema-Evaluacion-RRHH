@@ -111,9 +111,9 @@ public class Objetivo {
         return this.notaAutoEval;
     }
 
-    ;
 
-	public void setNotaAutoEval(double notaAutoEval) {
+
+    public void setNotaAutoEval(double notaAutoEval) {
         this.notaAutoEval = notaAutoEval;
     }
 
@@ -149,34 +149,34 @@ public class Objetivo {
         this.periodo = periodo;
     }
 
-    public void setDescripcionEstado(String descripcion){
-        
-    }
+//    public void setDescripcionEstado(String descripcion){
+//        
+//    }
+//    
+//    public String getDescripcionEstado(){
+//        String descripcion="";
+//        if (estado==0){
+//            descripcion = "Eliminado";
+//        }else if (estado==1){
+//            descripcion = "Esperando revisión";
+//        }else if (estado==2){
+//            descripcion = "Aprobado";        
+//        }else if (estado==3){
+//            descripcion = "Denegado";
+//        }
+//        return descripcion;
+//    }
     
-    public String getDescripcionEstado(){
-        String descripcion="";
-        if (estado==0){
-            descripcion = "Eliminado";
-        }else if (estado==1){
-            descripcion = "Esperando revisión";
-        }else if (estado==2){
-            descripcion = "Aprobado";        
-        }else if (estado==3){
-            descripcion = "Denegado";
-        }
-        return descripcion;
-    }
-    
-    public void mostrarDatos() {
-
-    }
-
-    public void denegar() {
-
-    }
-
-    public void aprobar() {
-
-    }
+//    public void mostrarDatos() {
+//
+//    }
+//
+//    public void denegar() {
+//
+//    }
+//
+//    public void aprobar() {
+//
+//    }
 
 }

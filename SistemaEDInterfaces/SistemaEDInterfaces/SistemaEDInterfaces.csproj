@@ -885,6 +885,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
+    <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\configuration91.svcinfo" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\configuration.svcinfo" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\Reference.svcmap">
@@ -897,15 +903,15 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
-    <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
-    <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\CriterioWS\configuration91.svcinfo" />
     <None Include="Connected Services\CriterioWS\configuration.svcinfo" />
     <None Include="Connected Services\CriterioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
+    <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -223,11 +223,11 @@ public class Principal {
         //    System.out.println(a.getIdItemPDI()+ " - " + a.getNombre());
         //}
 //        
-        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
+//        PuestoTrabajoDAO daoPuestoTrabajo = new PuestoTrabajoMySQL();
 //        PuestoTrabajo puestoTrabajo = new PuestoTrabajo();
 //        
-        for(PuestoTrabajo pt : daoPuestoTrabajo.listar("") )
-            System.out.println(pt.getNombre());
+//        for(PuestoTrabajo pt : daoPuestoTrabajo.listar("") )
+//            System.out.println(pt.getNombre());
 ////        
 ////     
 //        try{
@@ -255,6 +255,7 @@ public class Principal {
 //    ArrayList<Periodo> periodos = new ArrayList<>();
 //    
 //    Periodo per = new Periodo();
+//    per.setIdPeriodo(20);
 //    per.setNombre("periodo prueba 2");
 //    per.setPesoEvalComp(0.7);
 //    per.setPesoEvalObj(0.3);
@@ -265,8 +266,6 @@ public class Principal {
 //    
 //    
 //    PeriodoDAO daoPeriodo = new PeriodoMySQL();
-//    
-//    System.out.println("entra aqui");
     
    // if(daoPeriodo.insertar(per) == 1)
     //    System.out.println("Se ha ingresaro un Periodo");
@@ -275,8 +274,8 @@ public class Principal {
 //    }catch(Exception ex){
 //        System.out.println(ex.getMessage());
 //    }
-    
-//    if(perDAO.actualizar(per) == 1)
+//    
+//    if(daoPeriodo.actualizar(per) == 1)
 //        System.out.println("Se ha actualizado un Periodo");
     
 //    if(perDAO.eliminar(per.getIdPeriodo()) == 1)
@@ -348,12 +347,12 @@ public class Principal {
         
         //object.setIdObjetivo(11);
         //object.setFechaAprobacion(); 
-        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
-        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
-        pesoscriterio = daopesocriterio.listar(3,"","","");
-        for (PesoCriterio p : pesoscriterio){
-            System.out.println(p.getIdPesoCriterio());
-        }
+//        PesoCriterioDAO daopesocriterio = new PesoCriterioMySQL();
+//        ArrayList<PesoCriterio> pesoscriterio = new ArrayList<>();
+//        pesoscriterio = daopesocriterio.listar(3,"","","");
+//        for (PesoCriterio p : pesoscriterio){
+//            System.out.println(p.getIdPesoCriterio());
+//        }
 //        PesoCriterio peso = new PesoCriterio();
 //        peso.setNombreCriterio("Analisis de probl");
 //        peso.setPeso(0.1);

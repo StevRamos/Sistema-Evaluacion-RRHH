@@ -36,6 +36,12 @@
             this.cmbCargos = new System.Windows.Forms.ComboBox();
             this.cmbPeriodos = new System.Windows.Forms.ComboBox();
             this.dgvCompetencias = new System.Windows.Forms.DataGridView();
+            this.idCriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreCriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCargarMasivaCom = new System.Windows.Forms.Button();
             this.btnCrearCompetencia = new System.Windows.Forms.Button();
@@ -43,12 +49,6 @@
             this.lblBuscarNomCom = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.idCriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreCriterio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompetencias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,9 +138,58 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvCompetencias.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCompetencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCompetencias.Size = new System.Drawing.Size(1073, 480);
+            this.dgvCompetencias.Size = new System.Drawing.Size(1073, 363);
             this.dgvCompetencias.TabIndex = 41;
             this.dgvCompetencias.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvCompetencias_CellFormatting);
+            // 
+            // idCriterio
+            // 
+            this.idCriterio.HeaderText = "Id";
+            this.idCriterio.MinimumWidth = 6;
+            this.idCriterio.Name = "idCriterio";
+            this.idCriterio.ReadOnly = true;
+            this.idCriterio.Width = 50;
+            // 
+            // nombreCriterio
+            // 
+            this.nombreCriterio.HeaderText = "Nombre";
+            this.nombreCriterio.MinimumWidth = 6;
+            this.nombreCriterio.Name = "nombreCriterio";
+            this.nombreCriterio.ReadOnly = true;
+            this.nombreCriterio.Width = 300;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.MinimumWidth = 6;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 500;
+            // 
+            // Cargo
+            // 
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.MinimumWidth = 6;
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
+            this.Cargo.Width = 200;
+            // 
+            // peso
+            // 
+            this.peso.DataPropertyName = "peso";
+            this.peso.HeaderText = "Peso";
+            this.peso.MinimumWidth = 6;
+            this.peso.Name = "peso";
+            this.peso.ReadOnly = true;
+            this.peso.Width = 125;
+            // 
+            // periodo
+            // 
+            this.periodo.HeaderText = "Periodo";
+            this.periodo.MinimumWidth = 6;
+            this.periodo.Name = "periodo";
+            this.periodo.ReadOnly = true;
+            this.periodo.Width = 125;
             // 
             // label2
             // 
@@ -210,7 +259,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(19, 699);
+            this.btnEliminar.Location = new System.Drawing.Point(19, 590);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(188, 26);
@@ -234,61 +283,12 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // idCriterio
-            // 
-            this.idCriterio.HeaderText = "Id";
-            this.idCriterio.MinimumWidth = 6;
-            this.idCriterio.Name = "idCriterio";
-            this.idCriterio.ReadOnly = true;
-            this.idCriterio.Width = 50;
-            // 
-            // nombreCriterio
-            // 
-            this.nombreCriterio.HeaderText = "Nombre";
-            this.nombreCriterio.MinimumWidth = 6;
-            this.nombreCriterio.Name = "nombreCriterio";
-            this.nombreCriterio.ReadOnly = true;
-            this.nombreCriterio.Width = 300;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.MinimumWidth = 6;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 500;
-            // 
-            // Cargo
-            // 
-            this.Cargo.HeaderText = "Cargo";
-            this.Cargo.MinimumWidth = 6;
-            this.Cargo.Name = "Cargo";
-            this.Cargo.ReadOnly = true;
-            this.Cargo.Width = 200;
-            // 
-            // peso
-            // 
-            this.peso.DataPropertyName = "peso";
-            this.peso.HeaderText = "Peso";
-            this.peso.MinimumWidth = 6;
-            this.peso.Name = "peso";
-            this.peso.ReadOnly = true;
-            this.peso.Width = 125;
-            // 
-            // periodo
-            // 
-            this.periodo.HeaderText = "Periodo";
-            this.periodo.MinimumWidth = 6;
-            this.periodo.Name = "periodo";
-            this.periodo.ReadOnly = true;
-            this.periodo.Width = 125;
-            // 
             // frmAdmGestComp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1107, 764);
+            this.ClientSize = new System.Drawing.Size(1107, 749);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtComp);

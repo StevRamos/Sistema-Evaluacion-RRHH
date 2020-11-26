@@ -30,7 +30,7 @@
         {
             this.txtPot = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cmbPuestos = new System.Windows.Forms.ComboBox();
+            this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.txtPeriodo = new System.Windows.Forms.TextBox();
             this.txtPeso = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,14 +64,14 @@
             this.label3.TabIndex = 56;
             this.label3.Text = "Potencial :";
             // 
-            // cmbPuestos
+            // cmbCargo
             // 
-            this.cmbPuestos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPuestos.FormattingEnabled = true;
-            this.cmbPuestos.Location = new System.Drawing.Point(753, 104);
-            this.cmbPuestos.Name = "cmbPuestos";
-            this.cmbPuestos.Size = new System.Drawing.Size(193, 21);
-            this.cmbPuestos.TabIndex = 55;
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCargo.FormattingEnabled = true;
+            this.cmbCargo.Location = new System.Drawing.Point(753, 104);
+            this.cmbCargo.Name = "cmbCargo";
+            this.cmbCargo.Size = new System.Drawing.Size(193, 21);
+            this.cmbCargo.TabIndex = 55;
             // 
             // txtPeriodo
             // 
@@ -234,7 +234,7 @@
             this.Controls.Add(this.btnBusRegSubPot);
             this.Controls.Add(this.txtPot);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cmbPuestos);
+            this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.txtPeriodo);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.label7);
@@ -259,7 +259,7 @@
 
         private System.Windows.Forms.TextBox txtPot;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cmbPuestos;
+        private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.TextBox txtPeriodo;
         private System.Windows.Forms.TextBox txtPeso;
         private System.Windows.Forms.Label label7;
