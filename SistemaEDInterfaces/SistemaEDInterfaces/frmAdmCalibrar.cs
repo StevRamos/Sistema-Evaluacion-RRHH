@@ -32,9 +32,13 @@ namespace SistemaEDInterfaces
             this.cbGerencia.ValueMember = "idGerencia";
             this.cbGerencia.DisplayMember = "nombre";
 
-            this.cbJefe.DataSource = jefes;
-            this.cbJefe.ValueMember = "idColaborador";
-            this.cbJefe.DisplayMember = "nombre";
+            if( jefes != null )
+            {
+                this.cbJefe.DataSource = jefes;
+                this.cbJefe.ValueMember = "idColaborador";
+                this.cbJefe.DisplayMember = "nombre";
+            }
+            
 
         }
 
@@ -47,8 +51,20 @@ namespace SistemaEDInterfaces
 
         private void cbGerencia_SelectedValueChanged(object sender, EventArgs e)
         {
-            jefes = new BindingList<ColaboradorWS.colaborador>(daoColaborador.listarJefeXGerenciaXPeriodoActual(
+            BindingList<ColaboradorWS.colaborador> aux = new BindingList<ColaboradorWS.colaborador>(
+                daoColaborador.listarJefeXGerenciaXPeriodoActual(
                 ((GerenciaWS.gerencia)this.cbGerencia.SelectedItem).idGerencia));
+
+            if( aux == null )
+            {
+                MessageBox.Show("Esta gerencia no tiene jefes disponibles",
+                    "Mensaje de error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                return;
+            }
+
+            jefes = aux;
         }
     }
 }

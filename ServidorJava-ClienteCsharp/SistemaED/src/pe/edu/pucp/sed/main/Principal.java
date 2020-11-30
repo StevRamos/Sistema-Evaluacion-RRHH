@@ -13,6 +13,7 @@ import java.util.Date;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
 import pe.edu.pucp.sed.dao.CriterioDAO;
 import pe.edu.pucp.sed.dao.EscalaDAO;
+import pe.edu.pucp.sed.dao.EscalaPeriodoDAO;
 import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
 import pe.edu.pucp.sed.dao.GerenciaDAO;
 import pe.edu.pucp.sed.dao.GerenciaPeriodoDAO;
@@ -25,6 +26,7 @@ import pe.edu.pucp.sed.dao.UsuarioDAO;
 import pe.edu.pucp.sed.model.Colaborador;
 import pe.edu.pucp.sed.model.Criterio;
 import pe.edu.pucp.sed.model.Escala;
+import pe.edu.pucp.sed.model.EscalaPeriodo;
 import pe.edu.pucp.sed.model.EstadoCuenta;
 import pe.edu.pucp.sed.model.EvaluacionDesempenho;
 import pe.edu.pucp.sed.model.Gerencia;
@@ -37,6 +39,7 @@ import pe.edu.pucp.sed.model.PuestoTrabajo;
 import pe.edu.pucp.sed.mysql.ColaboradorMySQL;
 import pe.edu.pucp.sed.mysql.CriterioMySQL;
 import pe.edu.pucp.sed.mysql.EscalaMySQL;
+import pe.edu.pucp.sed.mysql.EscalaPeriodoMySQL;
 import pe.edu.pucp.sed.mysql.EvaluacionDesempenhoMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaPeriodoMySQL;
@@ -103,6 +106,15 @@ public class Principal {
 //     Colaborador c = daoColab.buscarJefe(11);
 //      System.out.println(c.getNombres() +" " +c.getCorreo());
         
+//EscalaPeriodo
+
+//           EscalaPeriodoDAO daoEscalaPeriodo = new EscalaPeriodoMySQL();
+//           for(EscalaPeriodo ep : daoEscalaPeriodo.listarXPeriodoActual())
+//               System.out.println(ep.getEscala().getNombre() + " " + ep.getPorcentajeCupos());
+
+
+
+
 //Escala
 //        EscalaDAO daoEsc = new EscalaMySQL();
 //        Escala esc = new Escala();

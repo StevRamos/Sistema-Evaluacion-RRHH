@@ -8,4 +8,5 @@ public interface EscalaPeriodoDAO{
 	int actualizar(EscalaPeriodo escalaPeriodo);
 	int eliminar(int idEscalaPeriodo);
 	ArrayList<EscalaPeriodo> listar();
+	ArrayList<EscalaPeriodo> listarXPeriodoActual();
 }
