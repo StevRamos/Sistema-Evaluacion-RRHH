@@ -15,6 +15,22 @@ namespace SistemaEDInterfaces
         public frmPerfilColaborador()
         {
             InitializeComponent();
+            cargarColaborador();
+        }
+
+        public void cargarColaborador()
+        {
+            ColaboradorWS.colaborador colaborador = Global.colaboradorLoggeado;
+            txtCargo.Text = colaborador.puestoTrabajo.nombre;
+            txtCorreo.Text = colaborador.correo;
+            txtDireccion.Text = colaborador.direccion;
+            txtDNI.Text = colaborador.dni;
+            txtGerencia.Text = colaborador.gerencia.nombre;
+            txtID.Text = colaborador.idColaborador.ToString();
+            txtJefe.Text = colaborador.jefe.nombres;
+            txtNombreCompleto.Text = colaborador.nombres + " " + colaborador.apellidos;
+            txtTelefono.Text = colaborador.telefono;
+            dtpFechaNacimiento.Value = colaborador.fechaNac;
         }
     }
 }
