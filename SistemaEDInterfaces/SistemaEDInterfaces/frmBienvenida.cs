@@ -40,6 +40,7 @@ namespace SistemaEDInterfaces
 
         private void frmBienvenida_Load(object sender, EventArgs e)
         {
+            //Usuario
             lblUsuario.Text = Global.colaboradorLoggeado.nombres + " " + Global.colaboradorLoggeado.apellidos;
             this.Opacity = 0.0;
             timer1.Start();
