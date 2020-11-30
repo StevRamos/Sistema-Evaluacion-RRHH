@@ -175,7 +175,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 col.setDireccion(rs.getString("direccion"));
                 col.setCorreo(rs.getString("correo"));
                 col.setTelefono(rs.getString("telefono"));
-                col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                col.setFechaNac(rs.getDate("fechaNac"));
                 
                 Gerencia ger = new Gerencia();
                 ger.setIdGerencia(rs.getInt("id_Gerencias"));
@@ -224,7 +224,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 col.setDireccion(rs.getString("direccion"));
                 col.setCorreo(rs.getString("correo"));
                 col.setTelefono(rs.getString("telefono"));
-                col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                col.setFechaNac(rs.getDate("fechaNac"));
                 
                 Gerencia ger = new Gerencia();
                 ger.setNombre(rs.getString("nombreGerencia"));
@@ -273,7 +273,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 jefe.setDireccion(rs.getString("direccion"));
                 jefe.setCorreo(rs.getString("correo"));
                 jefe.setTelefono(rs.getString("telefono"));
-                jefe.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                jefe.setFechaNac(rs.getDate("fechaNac"));
                
                 Gerencia ger = new Gerencia();
                 ger.setNombre(rs.getString("nombreGerencia"));
@@ -347,7 +347,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
             col.setDireccion(rs.getString("direccion"));
             col.setCorreo(rs.getString("correo"));
             col.setTelefono(rs.getString("telefono"));
-            col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+            col.setFechaNac(rs.getDate("fechaNac"));
 
             col.getGerencia().setIdGerencia(rs.getInt("id_Gerencias"));
             col.getGerencia().setNombre(rs.getString("nombreGerencia"));
