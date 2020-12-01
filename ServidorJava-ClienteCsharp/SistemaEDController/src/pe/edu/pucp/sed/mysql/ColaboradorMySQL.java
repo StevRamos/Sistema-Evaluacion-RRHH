@@ -175,7 +175,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 col.setDireccion(rs.getString("direccion"));
                 col.setCorreo(rs.getString("correo"));
                 col.setTelefono(rs.getString("telefono"));
-                col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                col.setFechaNac(rs.getDate("fechaNac"));
                 
                 Gerencia ger = new Gerencia();
                 ger.setIdGerencia(rs.getInt("id_Gerencias"));
@@ -224,7 +224,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 col.setDireccion(rs.getString("direccion"));
                 col.setCorreo(rs.getString("correo"));
                 col.setTelefono(rs.getString("telefono"));
-                col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                col.setFechaNac(rs.getDate("fechaNac"));
                 
                 Gerencia ger = new Gerencia();
                 ger.setNombre(rs.getString("nombreGerencia"));
@@ -273,7 +273,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 jefe.setDireccion(rs.getString("direccion"));
                 jefe.setCorreo(rs.getString("correo"));
                 jefe.setTelefono(rs.getString("telefono"));
-                jefe.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+                jefe.setFechaNac(rs.getDate("fechaNac"));
                
                 Gerencia ger = new Gerencia();
                 ger.setNombre(rs.getString("nombreGerencia"));
@@ -347,7 +347,7 @@ public class ColaboradorMySQL implements ColaboradorDAO{
             col.setDireccion(rs.getString("direccion"));
             col.setCorreo(rs.getString("correo"));
             col.setTelefono(rs.getString("telefono"));
-            col.setFechaNac(formato.parse(rs.getDate("fechaNac").toString()));
+            col.setFechaNac(rs.getDate("fechaNac"));
 
             col.getGerencia().setIdGerencia(rs.getInt("id_Gerencias"));
             col.getGerencia().setNombre(rs.getString("nombreGerencia"));
@@ -367,6 +367,57 @@ public class ColaboradorMySQL implements ColaboradorDAO{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return col;
+    }
+    
+    @Override
+    public ArrayList<Colaborador> listarColaboradoresXJefeXPeriodo(int idJefe, int idPeriodo){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call LISTAR_COLABORADORES_X_JEFE_X_PERIODO(?,?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_ID_JEFE", idJefe);
+            cs.setInt("_FID_PERIODO", idPeriodo);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                Colaborador jefe = new Colaborador();
+                
+                jefe.setIdColaborador(rs.getInt("id_Jefe"));
+
+               
+                Colaborador col = new Colaborador();
+                col.setJefe(jefe);
+                col.setIdColaborador(rs.getInt("id_Colaborador"));
+                col.setDni(rs.getString("dni"));
+                col.setNombres(rs.getString("nombres"));
+                col.setApellidos(rs.getString("apellidos"));
+                col.setDireccion(rs.getString("direccion"));
+                col.setCorreo(rs.getString("correo"));
+                col.setTelefono(rs.getString("telefono"));
+                col.setFechaNac(rs.getDate("fechaNac"));
+                
+                Gerencia ger = new Gerencia();
+                ger.setNombre(rs.getString("nombreGerencia"));
+                ger.setDescripcion(rs.getString("descripcionGerencia"));
+                
+                PuestoTrabajo pt = new PuestoTrabajo();
+               pt.setNombre(rs.getString("nombrePuestoTrabjo"));
+                pt.setDescripcion(rs.getString("descripcionPuestoTrabajo"));
+                
+                col.setGerencia(ger);
+                col.setPuestoTrabajo(pt);
+                
+                colaboradores.add(col);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return colaboradores;
     }
     
 }

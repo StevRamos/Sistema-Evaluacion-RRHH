@@ -82,6 +82,8 @@ namespace SistemaEDInterfaces
                     }
                     else
                     {
+                        Global.colaboradorLoggeado = colaborador;
+
                         this.Hide();
                         frmBienvenida bienvenida = new frmBienvenida();
                         bienvenida.ShowDialog();

@@ -16,7 +16,7 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
-        int cont = 0;
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (this.Opacity < 1) this.Opacity += 0.05;
@@ -40,7 +40,8 @@ namespace SistemaEDInterfaces
 
         private void frmBienvenida_Load(object sender, EventArgs e)
         {
-           // lblUsuario.Text = Global.colaboradorLoggeado.nombres + "," + Global.colaboradorLoggeado.apellidos;
+            //Usuario
+            lblUsuario.Text = Global.colaboradorLoggeado.nombres + " " + Global.colaboradorLoggeado.apellidos;
             this.Opacity = 0.0;
             timer1.Start();
         }

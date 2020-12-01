@@ -21,8 +21,12 @@ namespace SistemaEDInterfaces
             Global.formPrincipal = this;
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
             Global.periodoActual = daoPeriodo.obtenerPeriodo();
+
             InitializeComponent();
             customizeDesign();
+
+            ColaboradorWS.colaborador colaborador = Global.colaboradorLoggeado;
+            btnLblNombreColab.Text = colaborador.nombres + " " + colaborador.apellidos;
         }
 
 

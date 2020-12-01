@@ -31,6 +31,9 @@
     <service name="PesoCriterioWS">
       <implementation-class>pe.edu.pucp.sed.services.PesoCriterioWS</implementation-class>
     </service>
+    <service name="EscalaPeriodoWS">
+      <implementation-class>pe.edu.pucp.sed.services.EscalaPeriodoWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
