@@ -773,7 +773,7 @@
     <None Include="Connected Services\EscalaPeriodoWS\EscalaPeriodoWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.escalaPeriodo.datasource">
+    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.gerencia.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.listarXPeriodoActualResponse.datasource">
@@ -936,15 +936,15 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\EscalaPeriodoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\EscalaPeriodoWS\configuration.svcinfo" />
-    <None Include="Connected Services\EscalaPeriodoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
     <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EscalaPeriodoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EscalaPeriodoWS\configuration.svcinfo" />
+    <None Include="Connected Services\EscalaPeriodoWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

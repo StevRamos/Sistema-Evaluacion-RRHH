@@ -154,11 +154,8 @@ namespace SistemaEDInterfaces
                         colaborador.gerencia = new ColaboradorWS.gerencia();
                         colaborador.usuario = new ColaboradorWS.usuario();
                         colaborador.periodo = new ColaboradorWS.periodo();
-<<<<<<< HEAD
 
                         colaborador.periodo.idPeriodo = 1;
-=======
->>>>>>> b77d7f25b2f468d55c57631bc26294758700bf28
                         colaborador.puestoTrabajo.idPuestoTrabajo = int.Parse(valores[8]);
                         colaborador.gerencia.idGerencia = int.Parse(valores[9]);
                         colaborador.usuario.contrasenha = valores[11];
