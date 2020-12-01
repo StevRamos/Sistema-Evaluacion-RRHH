@@ -30,7 +30,7 @@ namespace SistemaEDInterfaces
 
             gerencias = new BindingList<GerenciaWS.gerencia>(daoGerencia.listarGerencias().ToList());
             jefes = new BindingList<ColaboradorWS.colaborador>(daoColaborador.listarJefeXGerenciaXPeriodoActual(gerencias[0].idGerencia).ToList());
-            escalasPeriodo = new BindingList<EscalaPeriodoWS.escalaPeriodo>(daoEscalaPeriodo.listarXPeriodoActual().ToList());
+            //escalasPeriodo = new BindingList<EscalaPeriodoWS.escalaPeriodo>(daoEscalaPeriodo.listarXPeriodoActual().ToList());
 
             this.cbGerencia.DataSource = gerencias;
             this.cbGerencia.ValueMember = "idGerencia";
