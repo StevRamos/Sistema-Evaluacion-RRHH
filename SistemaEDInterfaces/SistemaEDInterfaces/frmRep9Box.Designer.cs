@@ -43,6 +43,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cbPeriodo = new System.Windows.Forms.ComboBox();
             this.lblPeriodos = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.gpBusqueda.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -145,7 +146,7 @@
             this.btnDescargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDescargar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDescargar.ForeColor = System.Drawing.Color.White;
-            this.btnDescargar.Location = new System.Drawing.Point(1224, 1191);
+            this.btnDescargar.Location = new System.Drawing.Point(1223, 1248);
             this.btnDescargar.Margin = new System.Windows.Forms.Padding(4);
             this.btnDescargar.Name = "btnDescargar";
             this.btnDescargar.Size = new System.Drawing.Size(211, 32);
@@ -190,6 +191,7 @@
             this.btnBuscar.TabIndex = 15;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cbPeriodo
             // 
@@ -208,13 +210,21 @@
             this.lblPeriodos.TabIndex = 13;
             this.lblPeriodos.Text = "Periodo :";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(653, 1107);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 14;
+            // 
             // frmRep9Box
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1491, 929);
+            this.ClientSize = new System.Drawing.Size(1490, 1004);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.gpBusqueda);
             this.Controls.Add(this.nineBox);
             this.Controls.Add(this.btnDescargar);
@@ -254,5 +264,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.ComboBox cbPeriodo;
         private System.Windows.Forms.Label lblPeriodos;
+        private System.Windows.Forms.Panel panel1;
     }
 }
