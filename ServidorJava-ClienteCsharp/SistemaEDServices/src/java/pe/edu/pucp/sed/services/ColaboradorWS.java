@@ -128,4 +128,19 @@ public class ColaboradorWS {
         return colaborador;
         
     }
+    
+    @WebMethod(operationName = "listarColaboradoresXJefeXPeriodo")
+    public ArrayList<Colaborador> listarColaboradoresXJefeXPeriodo(@WebParam(name = "idJefe") int idJefe,
+            @WebParam(name = "idPeriodo") int idPeriodo){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        
+        try {
+            colaboradores = daoColaborador.listarColaboradoresXJefeXPeriodo(idJefe, idPeriodo);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return colaboradores;
+    }
+    
 }

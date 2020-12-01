@@ -90,7 +90,7 @@ namespace SistemaEDInterfaces
             nombrePeriodoSeleccionado = (String)cmbPeriodo.SelectedItem;
             if (nombreCargoSeleccionado == "-") nombreCargoSeleccionado = "";
             if (nombrePeriodoSeleccionado == "-") nombrePeriodoSeleccionado = "";
-            dgvGestPot.DataSource = daoPesoCriterio.listarPesosCriterios((int)TipoCriterio.Competencia,
+            dgvGestPot.DataSource = daoPesoCriterio.listarPesosCriterios((int)TipoCriterio.Potencial,
                                                                             nombreCargoSeleccionado,
                                                                             nombrePeriodoSeleccionado,
                                                                             nombreCompetencia);

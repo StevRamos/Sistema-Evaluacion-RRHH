@@ -72,6 +72,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\EscalaPeriodoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\EvaluacionDesempenhoWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -764,6 +769,16 @@
     <None Include="Connected Services\CriterioWS\SistemaEDInterfaces.CriterioWS.listarResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\EscalaPeriodoWS\EscalaPeriodoWS.wsdl" />
+    <None Include="Connected Services\EscalaPeriodoWS\EscalaPeriodoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.escalaPeriodo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.listarXPeriodoActualResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.wsdl" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.xsd">
       <SubType>Designer</SubType>
@@ -891,12 +906,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
-    <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
-    <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
@@ -924,6 +933,18 @@
     <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
     <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
     <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EscalaPeriodoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EscalaPeriodoWS\configuration.svcinfo" />
+    <None Include="Connected Services\EscalaPeriodoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ColaboradorWS\configuration.svcinfo" />
+    <None Include="Connected Services\ColaboradorWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -999,6 +1020,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ColaboradorWS\" />
     <WCFMetadataStorage Include="Connected Services\CriterioWS\" />
+    <WCFMetadataStorage Include="Connected Services\EscalaPeriodoWS\" />
     <WCFMetadataStorage Include="Connected Services\EvaluacionDesempenhoWS\" />
     <WCFMetadataStorage Include="Connected Services\GerenciaPeriodoWS\" />
     <WCFMetadataStorage Include="Connected Services\GerenciaWS\" />
