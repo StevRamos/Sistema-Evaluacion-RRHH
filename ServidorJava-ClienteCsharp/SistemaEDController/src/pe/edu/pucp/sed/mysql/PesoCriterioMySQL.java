@@ -185,4 +185,38 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
 		}
 		return pesoCriterios;
 	}
+
+        @Override
+        public ArrayList<PesoCriterio> listar_subcriterios_x_criterio(int _id_criterio_padre, int _id_cargo, int _id_periodo) {
+                ArrayList<PesoCriterio> pesoCriterios = new ArrayList<>();
+                try{
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+                    String sql = "{call LISTAR_PESO_SUBCRI_X_ID_CRITERIO(?,?,?)}";
+                    cs = con.prepareCall(sql);
+                    cs.setInt("_ID_CRITERIO_PADRE",_id_criterio_padre);
+                    cs.setInt("_ID_PERIODO",_id_periodo);
+                    cs.setInt("_ID_PUESTO_TRABAJO",_id_cargo);
+                    rs = cs.executeQuery();
+                    while(rs.next()){
+                        PesoCriterio pesocriterio = new PesoCriterio();
+                        pesocriterio.getCriterio().setIdCriterio(rs.getInt("id_Criterio"));
+                        pesocriterio.getCriterio().setNombre(rs.getString("nombre"));
+                        Criterio c = new Criterio();
+                        c.setIdCriterio(rs.getInt("id_CriterioPadre"));
+                        pesocriterio.getCriterio().setCriterioPadre(c);
+                        pesocriterio.getCriterio().setDescripcion(rs.getString("descripcion"));
+                        pesocriterio.getCriterio().setTipo(rs.getInt("tipo"));
+                        pesocriterio.setPeso(rs.getDouble("peso"));
+                        pesocriterio.getPuestoTrabajo().setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                        pesocriterio.getPeriodo().setIdPeriodo(rs.getInt("id_Periodo"));
+                        pesoCriterios.add(pesocriterio);
+                    }
+		}catch(Exception ex){
+			System.out.println(ex.getMessage());
+		}finally{
+			try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+		}
+		return pesoCriterios;
+        }
 }

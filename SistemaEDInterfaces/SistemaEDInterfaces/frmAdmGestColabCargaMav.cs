@@ -147,12 +147,15 @@ namespace SistemaEDInterfaces
                         colaborador.direccion = valores[4];
                         colaborador.correo = valores[5];
                         colaborador.telefono = valores[6];
+                        colaborador.fechaNacSpecified = true;
                         colaborador.fechaNac = DateTime.Parse(valores[7]);
 
                         colaborador.puestoTrabajo = new ColaboradorWS.puestoTrabajo();
                         colaborador.gerencia = new ColaboradorWS.gerencia();
                         colaborador.usuario = new ColaboradorWS.usuario();
                         colaborador.periodo = new ColaboradorWS.periodo();
+
+                        colaborador.periodo.idPeriodo = 1;
                         colaborador.puestoTrabajo.idPuestoTrabajo = int.Parse(valores[8]);
                         colaborador.gerencia.idGerencia = int.Parse(valores[9]);
                         colaborador.usuario.contrasenha = valores[11];
