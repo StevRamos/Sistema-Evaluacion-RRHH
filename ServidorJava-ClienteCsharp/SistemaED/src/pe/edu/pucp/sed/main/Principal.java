@@ -387,5 +387,12 @@ public class Principal {
 //          for (Criterio c : arrcri){
 //              System.out.println(c.getIdCriterio());
 //          }
+
+        PesoCriterioDAO daopeso = new PesoCriterioMySQL();
+        ArrayList<PesoCriterio> arreglosub = new ArrayList<>();
+        arreglosub = daopeso.listar_subcriterios_x_criterio(3, 2, 1);
+        for (PesoCriterio pc :arreglosub ){
+            System.out.println(pc.getPeso());
+        }
     }
 }
