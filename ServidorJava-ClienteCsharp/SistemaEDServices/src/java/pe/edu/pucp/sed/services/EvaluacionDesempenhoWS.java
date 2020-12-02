@@ -48,4 +48,16 @@ public class EvaluacionDesempenhoWS {
         }
         return resultado;
     }
+    
+    @WebMethod(operationName = "obtenerEvaluacionDesempenho")
+    public EvaluacionDesempenho obtenerEvaluacionDesempenho(@WebParam(name = "idColaborador")int idColaborador,
+            @WebParam(name = "idPeriodo")int idPeriodo) {
+        EvaluacionDesempenho resultado = null;
+        try{
+            resultado = daoEvalDesempenho.obtenerEvaluacionDesempenho(idColaborador, idPeriodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
 }

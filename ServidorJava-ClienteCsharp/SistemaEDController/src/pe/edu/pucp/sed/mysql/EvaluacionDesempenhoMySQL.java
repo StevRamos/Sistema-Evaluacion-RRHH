@@ -10,9 +10,13 @@ import java.util.HashMap;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.EscalaDAO;
 import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
+import pe.edu.pucp.sed.dao.ItemPDIDAO;
+import pe.edu.pucp.sed.model.Criterio;
 import pe.edu.pucp.sed.model.Escala;
 import pe.edu.pucp.sed.model.EstadoEvaluacion;
 import pe.edu.pucp.sed.model.EvaluacionDesempenho;
+import pe.edu.pucp.sed.model.ItemPDI;
+import pe.edu.pucp.sed.model.LineaEvaluacion;
 
 public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
 
@@ -204,11 +208,16 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
         
         EvaluacionDesempenho evaluacionDesempenho = new EvaluacionDesempenho();
         EscalaDAO daoEscala = new EscalaMySQL();
-        HashMap<Integer, Escala> escalas = new HashMap<Integer, Escala>();
+        ItemPDIDAO daoItem = new ItemPDIMySQL();
+        HashMap<Integer, Escala> escalas = new HashMap<>();
+        HashMap<Integer, ItemPDI> itemsPDI = new HashMap<>();
         int aux = 0;
         
         for(Escala e : daoEscala.listar())
-            escalas.put(e.getIdEscala() , e );
+            escalas.put(e.getIdEscala(), e);
+        
+        for(ItemPDI i : daoItem.listar())
+            itemsPDI.put(i.getIdItemPDI(), i);
         
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -260,15 +269,94 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             
             rs.close();
             
-            sql = "{call (?,?)}";
+            sql = "{call LISTAR_LINEAS_EVAL_POR_EVAL(?)}";
             
             cs = con.prepareCall(sql);
-            cs.setInt("_ID_COLABORADOR",idColaborador);
-            cs.setInt("_ID_PERIODO",idPeriodo);
+            cs.setInt("_ID_EVAL", evaluacionDesempenho.getIdEvaluacion());
             
             rs = cs.executeQuery();
-            rs.next();
+            while(rs.next()){
+                LineaEvaluacion le = new LineaEvaluacion();
+                
+                le.setIdLineaEvaluacion(rs.getInt("id_LineasEvaluacion"));
+                
+                aux = rs.getInt("id_ItemPDI");
+                if( aux != 0)
+                    le.setItemPDI(itemsPDI.get(aux));
+                
+                le.getPesoCriterio().setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
+                le.getPesoCriterio().setPeso(rs.getDouble("peso"));
+                
+                le.getPesoCriterio().getPuestoTrabajo().
+                        setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                
+                le.getPesoCriterio().getCriterio().
+                        setIdCriterio(rs.getInt("id_Criterio"));
+                
+                le.getPesoCriterio().getCriterio().
+                        setCriterioPadre(new Criterio());
+                
+                le.getPesoCriterio().getCriterio().
+                        getCriterioPadre().setIdCriterio(rs.getInt("id_CriterioPadre"));
+                
+                le.getPesoCriterio().getCriterio().
+                        setNombre(rs.getString("nombre"));
+                        
+                le.getPesoCriterio().getCriterio().
+                        setDescripcion(rs.getString("descripcion"));
+                        
+                le.getPesoCriterio().getCriterio().
+                        setTipo(rs.getInt("tipo"));
+                
+                evaluacionDesempenho.getLineasEvaluacion().add(le);
+            }
+            
+            rs.close();
+            
+            sql = "{call LISTAR_LINEAS_EVAL_X_LINEAP(?)}";
+            
+            for(LineaEvaluacion l : evaluacionDesempenho.getLineasEvaluacion()){
+                cs = con.prepareCall(sql);
+                cs.setInt("_FID_LINEA", l.getIdLineaEvaluacion());
 
+                rs = cs.executeQuery();
+                while(rs.next()){
+                    LineaEvaluacion le = new LineaEvaluacion();
+                    
+                    le.setIdLineaEvaluacion(rs.getInt("id_LineasEvaluacion"));
+                
+                    aux = rs.getInt("id_ItemPDI");
+                    if( aux != 0)
+                        le.setItemPDI(itemsPDI.get(aux));
+
+                    le.getPesoCriterio().setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
+                    le.getPesoCriterio().setPeso(rs.getDouble("peso"));
+
+                    le.getPesoCriterio().getPuestoTrabajo().
+                            setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+
+                    le.getPesoCriterio().getCriterio().
+                            setIdCriterio(rs.getInt("id_Criterio"));
+
+                    le.getPesoCriterio().getCriterio().
+                            setCriterioPadre(new Criterio());
+
+                    le.getPesoCriterio().getCriterio().
+                            getCriterioPadre().setIdCriterio(rs.getInt("id_CriterioPadre"));
+
+                    le.getPesoCriterio().getCriterio().
+                            setNombre(rs.getString("nombre"));
+
+                    le.getPesoCriterio().getCriterio().
+                            setDescripcion(rs.getString("descripcion"));
+
+                    le.getPesoCriterio().getCriterio().
+                            setTipo(rs.getInt("tipo"));
+                    
+                    l.getSublineasEvaluacion().add(le);
+                }
+            
+            }
             
         }catch(Exception ex){
             System.out.println(ex.getMessage());
