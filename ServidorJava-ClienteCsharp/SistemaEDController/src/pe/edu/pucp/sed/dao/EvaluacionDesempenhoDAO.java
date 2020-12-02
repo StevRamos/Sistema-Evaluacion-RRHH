@@ -10,4 +10,5 @@ public interface EvaluacionDesempenhoDAO{
 	int eliminar(int idEvaluacionDesempenho);
 	ArrayList<EvaluacionDesempenho> listar();
         ArrayList<EvaluacionDesempenho> listarDesempenhoPorPeriodo(int idColaborador, int idPeriodo);
+        EvaluacionDesempenho obtenerEvaluacionDesempenho(int idColaborador, int idPeriodo);
 }
