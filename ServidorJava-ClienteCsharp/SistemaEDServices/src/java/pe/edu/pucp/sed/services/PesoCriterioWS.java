@@ -73,4 +73,17 @@ public class PesoCriterioWS {
         }
         return pesoscriterios;
     }
+    
+    @WebMethod(operationName = "listarSubcriterios_x_CriPadre")
+    public ArrayList<PesoCriterio> listarSubcriterios_x_CriPadre(@WebParam(name = "_id_criterio_padre") int _id_criterio_padre,
+            @WebParam(name = "_id_cargo") int _id_cargo,
+            @WebParam(name = "_id_periodo") int _id_periodo) {
+        ArrayList<PesoCriterio> pesoscriterios = new ArrayList<>();
+        try{
+            pesoscriterios =  daopesocriterio.listar_subcriterios_x_criterio(_id_criterio_padre, _id_cargo, _id_periodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return pesoscriterios;
+    }
 }
