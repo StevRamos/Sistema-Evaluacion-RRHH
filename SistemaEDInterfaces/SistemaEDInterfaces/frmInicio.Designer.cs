@@ -102,7 +102,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(261, 749);
+            this.panelMenu.Size = new System.Drawing.Size(261, 861);
             this.panelMenu.TabIndex = 1;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -638,7 +638,7 @@
             this.panelBarraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraSuperior.Location = new System.Drawing.Point(261, 0);
             this.panelBarraSuperior.Name = "panelBarraSuperior";
-            this.panelBarraSuperior.Size = new System.Drawing.Size(1109, 67);
+            this.panelBarraSuperior.Size = new System.Drawing.Size(1123, 67);
             this.panelBarraSuperior.TabIndex = 2;
             // 
             // btnLblNombreColab
@@ -654,7 +654,7 @@
             this.btnLblNombreColab.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLblNombreColab.ForeColor = System.Drawing.SystemColors.Control;
             this.btnLblNombreColab.Image = global::SistemaEDInterfaces.Properties.Resources.usuario;
-            this.btnLblNombreColab.Location = new System.Drawing.Point(822, 0);
+            this.btnLblNombreColab.Location = new System.Drawing.Point(836, 0);
             this.btnLblNombreColab.Name = "btnLblNombreColab";
             this.btnLblNombreColab.Size = new System.Drawing.Size(234, 67);
             this.btnLblNombreColab.TabIndex = 6;
@@ -675,7 +675,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
             this.btnLogOut.Image = global::SistemaEDInterfaces.Properties.Resources.salida;
-            this.btnLogOut.Location = new System.Drawing.Point(1056, 0);
+            this.btnLogOut.Location = new System.Drawing.Point(1070, 0);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btnLogOut.Size = new System.Drawing.Size(53, 67);
@@ -703,7 +703,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(261, 67);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1109, 682);
+            this.panelContenedor.Size = new System.Drawing.Size(1123, 794);
             this.panelContenedor.TabIndex = 3;
             // 
             // lblInicioFechaActual
@@ -711,7 +711,7 @@
             this.lblInicioFechaActual.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInicioFechaActual.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInicioFechaActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblInicioFechaActual.Location = new System.Drawing.Point(-7, 576);
+            this.lblInicioFechaActual.Location = new System.Drawing.Point(0, 632);
             this.lblInicioFechaActual.Name = "lblInicioFechaActual";
             this.lblInicioFechaActual.Size = new System.Drawing.Size(1120, 82);
             this.lblInicioFechaActual.TabIndex = 2;
@@ -723,7 +723,7 @@
             this.lblInicioHoraActual.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInicioHoraActual.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInicioHoraActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblInicioHoraActual.Location = new System.Drawing.Point(-7, 472);
+            this.lblInicioHoraActual.Location = new System.Drawing.Point(0, 528);
             this.lblInicioHoraActual.Name = "lblInicioHoraActual";
             this.lblInicioHoraActual.Size = new System.Drawing.Size(1120, 112);
             this.lblInicioHoraActual.TabIndex = 1;
@@ -734,7 +734,7 @@
             // 
             this.pbLogoPUCPInicio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbLogoPUCPInicio.Image = global::SistemaEDInterfaces.Properties.Resources.PUCPLogo;
-            this.pbLogoPUCPInicio.Location = new System.Drawing.Point(6, 133);
+            this.pbLogoPUCPInicio.Location = new System.Drawing.Point(13, 189);
             this.pbLogoPUCPInicio.Name = "pbLogoPUCPInicio";
             this.pbLogoPUCPInicio.Size = new System.Drawing.Size(1098, 323);
             this.pbLogoPUCPInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -750,7 +750,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1384, 861);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelBarraSuperior);
             this.Controls.Add(this.panelMenu);

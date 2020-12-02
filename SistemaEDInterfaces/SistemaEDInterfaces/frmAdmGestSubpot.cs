@@ -72,7 +72,7 @@ namespace SistemaEDInterfaces
                 nombrePeriodoSeleccionado = (String)cmbPeriodos.SelectedItem;
                 if (nombreCargoSeleccionado == "-") nombreCargoSeleccionado = "";
                 if (nombrePeriodoSeleccionado == "-") nombrePeriodoSeleccionado = "";
-                dgvGestCompetencias.DataSource = daoPesoCriterio.listarPesosCriterios((int)TipoCriterio.Subcompetencia,
+                dgvGestCompetencias.DataSource = daoPesoCriterio.listarPesosCriterios((int)TipoCriterio.Subpotencial,
                                                                                 nombreCargoSeleccionado,
                                                                                 nombrePeriodoSeleccionado,
                                                                                 nombreSubcompetencia);
@@ -84,14 +84,14 @@ namespace SistemaEDInterfaces
         {
             if (dgvGestCompetencias.CurrentCell == null)
             {
-                MessageBox.Show("Debe seleccionar una subcompetencia.",
+                MessageBox.Show("Debe seleccionar un subpotencial.",
                                    "Mensaje de error",
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);
                 return;
             }
 
-            var result = MessageBox.Show("¿Esta seguro que desea eliminar la subcompetencia seleccionada?",
+            var result = MessageBox.Show("¿Esta seguro que desea eliminar el subpotencial seleccionado?",
                                             "Mensaje de advertencia",
                                             MessageBoxButtons.YesNo,
                                             MessageBoxIcon.Warning);
@@ -105,7 +105,7 @@ namespace SistemaEDInterfaces
                 if (daoPesoCriterio.eliminarPesoCriterio(pesoCriterio) != 0)
                 {
                     Global.terminarEspera(this);
-                    MessageBox.Show("Se elimino la subcompetencia seleccionada.",
+                    MessageBox.Show("Se elimino el subpotencial seleccionado.",
                                 "Mensaje de confirmacion",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
@@ -114,7 +114,7 @@ namespace SistemaEDInterfaces
                 else
                 {
                     Global.terminarEspera(this);
-                    MessageBox.Show("Ocurrió un error al eliminar la subcompetencia, intentelo nuevamente.",
+                    MessageBox.Show("Ocurrió un error al eliminar el subpotencial, intentelo nuevamente.",
                                 "Mensaje de error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
