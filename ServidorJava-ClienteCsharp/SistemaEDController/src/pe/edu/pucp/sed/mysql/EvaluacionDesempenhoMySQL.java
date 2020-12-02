@@ -11,6 +11,7 @@ import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.EscalaDAO;
 import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
 import pe.edu.pucp.sed.dao.ItemPDIDAO;
+import pe.edu.pucp.sed.dao.ObjetivoDAO;
 import pe.edu.pucp.sed.model.Criterio;
 import pe.edu.pucp.sed.model.Escala;
 import pe.edu.pucp.sed.model.EstadoEvaluacion;
@@ -211,6 +212,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
         ItemPDIDAO daoItem = new ItemPDIMySQL();
         HashMap<Integer, Escala> escalas = new HashMap<>();
         HashMap<Integer, ItemPDI> itemsPDI = new HashMap<>();
+        ObjetivoDAO daoObjetivo = new ObjetivoMySQL();
         int aux = 0;
         
         for(Escala e : daoEscala.listar())
@@ -268,6 +270,8 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             evaluacionDesempenho.setEstadoPlanificacion(rs.getInt("estadoPlanificacion"));
             
             rs.close();
+            
+            evaluacionDesempenho.setObjetivos(daoObjetivo.listarObjetivosXColaborador(idColaborador));
             
             sql = "{call LISTAR_LINEAS_EVAL_POR_EVAL(?)}";
             
