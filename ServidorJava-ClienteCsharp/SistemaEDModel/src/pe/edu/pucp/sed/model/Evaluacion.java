@@ -7,7 +7,7 @@ public class Evaluacion{
     private double notaAutoEval;
     private double notaFinal;
     private boolean tipo;
-    private EstadoEvaluacion estado;
+    private int estado;
     private Escala escalaPreCupos;
     private Escala escalaSinCalibrar;
     private Escala escalaFinal;
@@ -89,11 +89,11 @@ public class Evaluacion{
         this.tipo = tipo;
     }
 
-    public EstadoEvaluacion getEstado() {
+    public int getEstado() {
         return this.estado;
     }
 
-    public void setEstado(EstadoEvaluacion estado) {
+    public void setEstado(int estado) {
         this.estado = estado;
     }
 

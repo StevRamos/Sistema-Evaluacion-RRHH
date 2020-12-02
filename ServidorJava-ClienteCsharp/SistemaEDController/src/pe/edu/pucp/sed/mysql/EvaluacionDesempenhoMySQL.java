@@ -6,8 +6,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.HashMap;
 import pe.edu.pucp.sed.config.DBManager;
+import pe.edu.pucp.sed.dao.EscalaDAO;
 import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
+import pe.edu.pucp.sed.model.Escala;
+import pe.edu.pucp.sed.model.EstadoEvaluacion;
 import pe.edu.pucp.sed.model.EvaluacionDesempenho;
 
 public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
@@ -187,13 +191,90 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                 evaluacionDesempenho.setEstadoPlanificacion(rs.getInt("estadoPlanificacion"));
                 evaluacionesDesempenho.add(evaluacionDesempenho);
             }
-            
-            
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
         return evaluacionesDesempenho;
+    }
+    
+    @Override
+    public EvaluacionDesempenho obtenerEvaluacionDesempenho(int idColaborador, int idPeriodo) {
+        
+        EvaluacionDesempenho evaluacionDesempenho = new EvaluacionDesempenho();
+        EscalaDAO daoEscala = new EscalaMySQL();
+        HashMap<Integer, Escala> escalas = new HashMap<Integer, Escala>();
+        int aux = 0;
+        
+        for(Escala e : daoEscala.listar())
+            escalas.put(e.getIdEscala() , e );
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            
+            String sql = "{call LISTAR_EVAL_DESEMPENHO_POR_PERIODO(?,?)}";
+            
+            cs = con.prepareCall(sql);
+            cs.setInt("_ID_COLABORADOR",idColaborador);
+            cs.setInt("_ID_PERIODO",idPeriodo);
+            
+            rs = cs.executeQuery();
+            rs.next();
+            
+            evaluacionDesempenho.setIdEvaluacion(rs.getInt("id_Evaluacion"));
+            
+            aux = rs.getInt("id_EscalaPreCupos");
+            if(aux != 0)
+                evaluacionDesempenho.setEscalaPreCupos(escalas.get(aux));
+            
+            aux = rs.getInt("id_EscalaSinCalibrar");
+            if(aux != 0)
+                evaluacionDesempenho.setEscalaSinCalibrar(escalas.get(aux));
+            
+            aux = rs.getInt("id_EscalaFinal");
+            if(aux != 0)
+                evaluacionDesempenho.setEscalaFinal(escalas.get(aux));
+            
+            evaluacionDesempenho.setEstadoPDI(rs.getInt("estadoPDI"));
+            evaluacionDesempenho.setObservaciones(rs.getString("observaciones"));
+            evaluacionDesempenho.setNotaAutoEval(rs.getDouble("notaAutoEval"));
+            evaluacionDesempenho.setNotaFinal(rs.getDouble("notaFinal"));
+            evaluacionDesempenho.setEstado(rs.getInt("estado"));
+            
+            evaluacionDesempenho.setObservacionesComp(rs.getString("observacionesComp"));
+            evaluacionDesempenho.setObservacionesObj(rs.getString("observacionesObj"));
+
+            evaluacionDesempenho.setNotaAutoEvalComp(rs.getDouble("notaAutoEvalComp"));
+            evaluacionDesempenho.setNotaPreviaComp(rs.getDouble("notaPreviaComp"));
+            evaluacionDesempenho.setNotaFinalComp(rs.getDouble("notaFinalComp"));
+
+            evaluacionDesempenho.setNotaAutoEvalObj(rs.getDouble("notaAutoEvalObj"));
+            evaluacionDesempenho.setNotaPreviaObj(rs.getDouble("notaPreviaObj"));
+            evaluacionDesempenho.setNotaFinalObj(rs.getDouble("notaFinalObj"));
+            
+            
+            evaluacionDesempenho.setEstadoAutoEval(rs.getInt("estadoAutoEval"));
+            evaluacionDesempenho.setEstadoPlanificacion(rs.getInt("estadoPlanificacion"));
+            
+            rs.close();
+            
+            sql = "{call (?,?)}";
+            
+            cs = con.prepareCall(sql);
+            cs.setInt("_ID_COLABORADOR",idColaborador);
+            cs.setInt("_ID_PERIODO",idPeriodo);
+            
+            rs = cs.executeQuery();
+            rs.next();
+
+            
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return evaluacionDesempenho;
     }
 }
