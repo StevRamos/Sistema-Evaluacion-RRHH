@@ -150,11 +150,14 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-            String sql = "{call ACTUALIZAR_ESTADO_EVALUACION_DESEMPENHO(?,?)}";
-            cs = con.prepareCall(sql);
-            cs.setInt("_ID_EVALUACION",evaluacionDesempenho.getIdEvaluacion());
-            cs.setInt("_ESTADOPLANIFICACION",evaluacionDesempenho.getEstadoPlanificacion());         
-            cs.executeUpdate();
+            if((evaluacionDesempenho.getEstadoAutoEval()==0) && (evaluacionDesempenho.getEstado()==0) ){
+                //registrar lineas evaluacion
+            }
+            else{
+                //actualizar lineas evaluacion 
+                
+            }
+            
             resultado = 1;
         }catch(Exception ex){
             System.out.println(ex.getMessage());
