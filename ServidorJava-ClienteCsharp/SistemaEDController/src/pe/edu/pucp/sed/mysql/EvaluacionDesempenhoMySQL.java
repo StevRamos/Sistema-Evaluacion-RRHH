@@ -258,7 +258,27 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
         
     }
 
-    
+    @Override
+    public int actualizarEstadoPlanificacion(EvaluacionDesempenho evaluacionDesempenho){
+
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call ACTUALIZAR_ESTADO_EVALUACION_DESEMPENHO(?,?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_ID_EVALUACION",evaluacionDesempenho.getIdEvaluacion());
+            cs.setInt("_ESTADOPLANIFICACION",evaluacionDesempenho.getEstadoPlanificacion());         
+            cs.executeUpdate();
+            resultado = 1;
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return resultado; 
+
+    }
     
     @Override
     public int actualizarEvaluacionDesempenho(EvaluacionDesempenho evaluacionDesempenho) {

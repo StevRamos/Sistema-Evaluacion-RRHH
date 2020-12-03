@@ -59,6 +59,18 @@ public class EvaluacionDesempenhoWS {
         }
         return resultado;
     }
+
+    @WebMethod(operationName = "actualizarEstadoPlanificacion")
+    public int actualizarEstadoPlanificacion(@WebParam(name = "evalDes")EvaluacionDesempenho evalDes ) {
+        int resultado =0;
+        try{
+            resultado = daoEvalDesempenho.actualizarEstadoPlanificacion(evalDes);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+
     
     @WebMethod(operationName = "obtenerEvaluacionDesempenho")
     public EvaluacionDesempenho obtenerEvaluacionDesempenho(@WebParam(name = "idColaborador")int idColaborador,
