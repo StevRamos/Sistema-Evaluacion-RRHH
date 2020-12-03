@@ -18,6 +18,7 @@ import pe.edu.pucp.sed.model.EstadoEvaluacion;
 import pe.edu.pucp.sed.model.EvaluacionDesempenho;
 import pe.edu.pucp.sed.model.ItemPDI;
 import pe.edu.pucp.sed.model.LineaEvaluacion;
+import pe.edu.pucp.sed.model.Objetivo;
 
 public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
 
@@ -223,6 +224,19 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                 
                }
 
+               // actualizar objetivos
+               for(Objetivo objetivo : evaluacionDesempenho.getObjetivos()){
+                   sql = "{call ACTUALIZAR_NOTA_OBJETIVO(?,?,?,?)}";
+                   cs = con.prepareCall(sql);
+
+                    cs.setInt("_ID_OBJETIVO", objetivo.getIdObjetivo());
+                    cs.setDouble("_NOTAAUTOEVAL", objetivo.getNotaAutoEval()); 
+                    cs.setDouble("_NOTAPREVIA", objetivo.getNotaPrevia()); 
+                    cs.setDouble("_NOTAFINAL", objetivo.getNotaFinal()); 
+
+                    cs.executeUpdate();
+               }
+
             con.commit();
             resultado = 1;
         }catch(Exception ex){
@@ -317,6 +331,20 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                     }
                     
                 }
+
+                // actualizar objetivos
+               for(Objetivo objetivo : evaluacionDesempenho.getObjetivos()){
+                   sql = "{call ACTUALIZAR_NOTA_OBJETIVO(?,?,?,?)}";
+                   cs = con.prepareCall(sql);
+
+                    cs.setInt("_ID_OBJETIVO", objetivo.getIdObjetivo());
+                    cs.setDouble("_NOTAAUTOEVAL", objetivo.getNotaAutoEval()); 
+                    cs.setDouble("_NOTAPREVIA", objetivo.getNotaPrevia()); 
+                    cs.setDouble("_NOTAFINAL", objetivo.getNotaFinal()); 
+                    
+                    cs.executeUpdate();
+               }
+
             con.commit();
             resultado = 1;
         }catch(Exception ex){
