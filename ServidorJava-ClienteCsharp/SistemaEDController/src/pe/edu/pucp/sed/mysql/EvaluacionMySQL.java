@@ -240,7 +240,7 @@ public class EvaluacionMySQL implements EvaluacionDAO{
                     cs.setInt("_ID_ITEM", lEval.getItemPDI().getIdItemPDI());
                     cs.setDouble("_NOTAAUTOEVAL", -1);  
                     cs.setDouble("_NOTAPREVIA", -1);  
-                    cs.setDouble("_NOTAFINAL", lEval.getNotaAutoEval());  
+                    cs.setDouble("_NOTAFINAL", lEval.getNotaFinal());  
                     cs.setString("_ACCIONES", lEval.getAccionesAtomar());
                     cs.setDate("_FECHA", 
                              new java.sql.Date(lEval.getFechaCumplimiento().getTime()));
@@ -254,7 +254,7 @@ public class EvaluacionMySQL implements EvaluacionDAO{
                         cs.setInt("_ID_ITEM", subLineaEval.getItemPDI().getIdItemPDI());
                         cs.setDouble("_NOTAAUTOEVAL", -1);  
                         cs.setDouble("_NOTAPREVIA", -1);  
-                        cs.setDouble("_NOTAFINAL", subLineaEval.getNotaAutoEval());  
+                        cs.setDouble("_NOTAFINAL", subLineaEval.getNotaFinal());  
                         cs.setString("_ACCIONES", subLineaEval.getAccionesAtomar());
                         cs.setDate("_FECHA", 
                                  new java.sql.Date(subLineaEval.getFechaCumplimiento().getTime()));
