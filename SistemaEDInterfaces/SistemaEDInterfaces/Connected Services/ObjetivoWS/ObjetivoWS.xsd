@@ -63,7 +63,7 @@
       <xs:element minOccurs="0" name="escalaFinal" type="tns:escala" />
       <xs:element minOccurs="0" name="escalaPreCupos" type="tns:escala" />
       <xs:element minOccurs="0" name="escalaSinCalibrar" type="tns:escala" />
-      <xs:element minOccurs="0" name="estado" type="tns:estadoEvaluacion" />
+      <xs:element name="estado" type="xs:int" />
       <xs:element name="estadoPDI" type="xs:int" />
       <xs:element name="idEvaluacion" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
@@ -230,16 +230,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="eliminarObjetivo">
-    <xs:sequence>
-      <xs:element name="idObjetivo" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarObjetivoResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarObjetivo">
     <xs:sequence>
       <xs:element minOccurs="0" name="objetivo" type="tns:objetivo" />
@@ -250,12 +240,12 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="actualizarObjetivo">
+  <xs:complexType name="eliminarObjetivo">
     <xs:sequence>
-      <xs:element minOccurs="0" name="objetivo" type="tns:objetivo" />
+      <xs:element name="idObjetivo" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="actualizarObjetivoResponse">
+  <xs:complexType name="eliminarObjetivoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -270,14 +260,17 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:objetivo" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="actualizarObjetivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objetivo" type="tns:objetivo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarObjetivoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:simpleType name="estadoPeriodo">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="ACTIVO" />
-      <xs:enumeration value="INACTIVO" />
-      <xs:enumeration value="ELIMINADA" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="estadoEvaluacion">
     <xs:restriction base="xs:string">
       <xs:enumeration value="ACTIVO" />
       <xs:enumeration value="INACTIVO" />

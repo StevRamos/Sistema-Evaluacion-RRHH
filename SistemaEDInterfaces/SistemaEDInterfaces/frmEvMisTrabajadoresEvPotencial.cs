@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEDInterfaces.ColaboradorWS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +13,14 @@ namespace SistemaEDInterfaces
 {
     public partial class frmEvMisTrabajadoresEvPotencial : Form
     {
+        private ColaboradorWS.colaborador colaborador; 
         public frmEvMisTrabajadoresEvPotencial()
         {
             InitializeComponent();
+
         }
+
+        public colaborador Colaborador { get => colaborador; set => colaborador = value; }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {

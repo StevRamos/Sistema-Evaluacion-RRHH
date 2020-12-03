@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEDInterfaces.ColaboradorWS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace SistemaEDInterfaces
 {
     public partial class frmEvMisTrabajadoresPrevia : Form
     {
+        private ColaboradorWS.colaborador colaborador;
+
+        public colaborador Colaborador { get => colaborador; set => colaborador = value; }
+
         public frmEvMisTrabajadoresPrevia()
         {
             InitializeComponent();

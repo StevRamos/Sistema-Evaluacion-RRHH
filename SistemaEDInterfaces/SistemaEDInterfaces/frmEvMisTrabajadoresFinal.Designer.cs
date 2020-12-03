@@ -48,16 +48,25 @@
             this.nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaP2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.notaF2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.dgvMisObjetivos = new System.Windows.Forms.DataGridView();
             this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.meta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unidadMedida = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notaP1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notaF1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.txtObservacionesObjetivos = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtObservacionesCompetencias = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNotaDesempenho = new System.Windows.Forms.TextBox();
+            this.txtNotaObjetivos = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtNotaCompetencias = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnEditar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +77,7 @@
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(913, 73);
+            this.btnRegresar.Location = new System.Drawing.Point(22, 1241);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(158, 26);
             this.btnRegresar.TabIndex = 28;
@@ -82,7 +91,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(913, 478);
+            this.btnGuardar.Location = new System.Drawing.Point(918, 1241);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(158, 26);
             this.btnGuardar.TabIndex = 27;
@@ -94,11 +103,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(43, 132);
+            this.label1.Location = new System.Drawing.Point(20, 131);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 24);
+            this.label1.Size = new System.Drawing.Size(88, 24);
             this.label1.TabIndex = 26;
-            this.label1.Text = "Evaluación Final de Objetivos";
+            this.label1.Text = "Objetivos";
             // 
             // lblMisObjetivos
             // 
@@ -107,9 +116,9 @@
             this.lblMisObjetivos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             this.lblMisObjetivos.Location = new System.Drawing.Point(12, 9);
             this.lblMisObjetivos.Name = "lblMisObjetivos";
-            this.lblMisObjetivos.Size = new System.Drawing.Size(405, 56);
+            this.lblMisObjetivos.Size = new System.Drawing.Size(779, 56);
             this.lblMisObjetivos.TabIndex = 25;
-            this.lblMisObjetivos.Text = "Evaluación Final";
+            this.lblMisObjetivos.Text = "Evaluación Final de Desempeño";
             // 
             // btnSeleccionar
             // 
@@ -117,7 +126,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(913, 871);
+            this.btnSeleccionar.Location = new System.Drawing.Point(920, 1020);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(158, 26);
             this.btnSeleccionar.TabIndex = 31;
@@ -129,11 +138,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 519);
+            this.label2.Location = new System.Drawing.Point(25, 702);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(313, 24);
+            this.label2.Size = new System.Drawing.Size(131, 24);
             this.label2.TabIndex = 30;
-            this.label2.Text = "Evaluación Previa de Competencias";
+            this.label2.Text = "Competencias";
             // 
             // dataGridView1
             // 
@@ -163,7 +172,7 @@
             this.notaP2,
             this.notaF2});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(47, 597);
+            this.dataGridView1.Location = new System.Drawing.Point(22, 756);
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -179,7 +188,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1024, 244);
+            this.dataGridView1.Size = new System.Drawing.Size(1054, 244);
             this.dataGridView1.TabIndex = 32;
             // 
             // dataGridViewTextBoxColumn1
@@ -226,6 +235,20 @@
             this.notaF2.Name = "notaF2";
             this.notaF2.Width = 150;
             // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizar.Location = new System.Drawing.Point(918, 1289);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(158, 26);
+            this.btnFinalizar.TabIndex = 34;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
             // dgvMisObjetivos
             // 
             this.dgvMisObjetivos.AllowUserToAddRows = false;
@@ -247,15 +270,13 @@
             this.dgvMisObjetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMisObjetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.numero,
-            this.descripcion,
             this.meta,
-            this.unidadMedida,
+            this.Cantidad,
+            this.descripcion,
             this.peso,
-            this.nota,
-            this.notaP1,
-            this.notaF1});
+            this.nota});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
-            this.dgvMisObjetivos.Location = new System.Drawing.Point(24, 180);
+            this.dgvMisObjetivos.Location = new System.Drawing.Point(22, 169);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
@@ -271,8 +292,8 @@
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
             this.dgvMisObjetivos.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvMisObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMisObjetivos.Size = new System.Drawing.Size(1024, 259);
-            this.dgvMisObjetivos.TabIndex = 33;
+            this.dgvMisObjetivos.Size = new System.Drawing.Size(1054, 347);
+            this.dgvMisObjetivos.TabIndex = 35;
             // 
             // numero
             // 
@@ -282,23 +303,23 @@
             this.numero.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.numero.Width = 70;
             // 
+            // meta
+            // 
+            this.meta.HeaderText = "Meta";
+            this.meta.Name = "meta";
+            this.meta.Width = 200;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
             // descripcion
             // 
             this.descripcion.HeaderText = "Descripción";
             this.descripcion.Name = "descripcion";
             this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.descripcion.Width = 500;
-            // 
-            // meta
-            // 
-            this.meta.HeaderText = "Meta";
-            this.meta.Name = "meta";
-            // 
-            // unidadMedida
-            // 
-            this.unidadMedida.HeaderText = "UnidadMedida";
-            this.unidadMedida.Name = "unidadMedida";
-            this.unidadMedida.Width = 200;
             // 
             // peso
             // 
@@ -308,35 +329,110 @@
             // 
             // nota
             // 
-            this.nota.HeaderText = "Nota Autoevaluación";
+            this.nota.HeaderText = "Nota";
             this.nota.Name = "nota";
             this.nota.Width = 150;
             // 
-            // notaP1
+            // txtObservacionesObjetivos
             // 
-            this.notaP1.HeaderText = "Nota Previa";
-            this.notaP1.Name = "notaP1";
-            this.notaP1.Width = 150;
+            this.txtObservacionesObjetivos.Location = new System.Drawing.Point(222, 555);
+            this.txtObservacionesObjetivos.Multiline = true;
+            this.txtObservacionesObjetivos.Name = "txtObservacionesObjetivos";
+            this.txtObservacionesObjetivos.Size = new System.Drawing.Size(711, 84);
+            this.txtObservacionesObjetivos.TabIndex = 37;
             // 
-            // notaF1
+            // label3
             // 
-            this.notaF1.HeaderText = "Nota Final";
-            this.notaF1.Name = "notaF1";
-            this.notaF1.Width = 150;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(20, 555);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(142, 24);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Observaciones:";
             // 
-            // btnFinalizar
+            // txtObservacionesCompetencias
             // 
-            this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFinalizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(913, 924);
-            this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(158, 26);
-            this.btnFinalizar.TabIndex = 34;
-            this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = false;
-            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            this.txtObservacionesCompetencias.Location = new System.Drawing.Point(224, 1090);
+            this.txtObservacionesCompetencias.Multiline = true;
+            this.txtObservacionesCompetencias.Name = "txtObservacionesCompetencias";
+            this.txtObservacionesCompetencias.Size = new System.Drawing.Size(711, 84);
+            this.txtObservacionesCompetencias.TabIndex = 39;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, 1090);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(142, 24);
+            this.label4.TabIndex = 38;
+            this.label4.Text = "Observaciones:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(640, 70);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(299, 25);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Calificación de Desempeño";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // txtNotaDesempenho
+            // 
+            this.txtNotaDesempenho.Location = new System.Drawing.Point(967, 75);
+            this.txtNotaDesempenho.Name = "txtNotaDesempenho";
+            this.txtNotaDesempenho.Size = new System.Drawing.Size(109, 20);
+            this.txtNotaDesempenho.TabIndex = 41;
+            // 
+            // txtNotaObjetivos
+            // 
+            this.txtNotaObjetivos.Location = new System.Drawing.Point(967, 131);
+            this.txtNotaObjetivos.Name = "txtNotaObjetivos";
+            this.txtNotaObjetivos.Size = new System.Drawing.Size(109, 20);
+            this.txtNotaObjetivos.TabIndex = 43;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(616, 126);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(323, 25);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Nota Evaluacion de Objetivos";
+            // 
+            // txtNotaCompetencias
+            // 
+            this.txtNotaCompetencias.Location = new System.Drawing.Point(967, 713);
+            this.txtNotaCompetencias.Name = "txtNotaCompetencias";
+            this.txtNotaCompetencias.Size = new System.Drawing.Size(109, 20);
+            this.txtNotaCompetencias.TabIndex = 45;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(566, 708);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(373, 25);
+            this.label7.TabIndex = 44;
+            this.label7.Text = "Nota Evaluacion de Competencias";
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(732, 1241);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(158, 26);
+            this.btnEditar.TabIndex = 46;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
             // 
             // frmEvMisTrabajadoresFinal
             // 
@@ -346,8 +442,19 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 150);
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
-            this.Controls.Add(this.btnFinalizar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.txtNotaCompetencias);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtNotaObjetivos);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtNotaDesempenho);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtObservacionesCompetencias);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtObservacionesObjetivos);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.dgvMisObjetivos);
+            this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.label2);
@@ -379,15 +486,24 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nota2;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaP2;
         private System.Windows.Forms.DataGridViewTextBoxColumn notaF2;
+        private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.DataGridView dgvMisObjetivos;
         private System.Windows.Forms.DataGridViewTextBoxColumn numero;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn meta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn unidadMedida;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn nota;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notaP1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notaF1;
-        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.TextBox txtObservacionesObjetivos;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtObservacionesCompetencias;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNotaDesempenho;
+        private System.Windows.Forms.TextBox txtNotaObjetivos;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtNotaCompetencias;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnEditar;
     }
 }

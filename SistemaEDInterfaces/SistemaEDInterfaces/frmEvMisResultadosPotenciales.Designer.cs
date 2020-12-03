@@ -38,7 +38,7 @@
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +59,7 @@
             this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(837, 41);
+            this.btnRegresar.Location = new System.Drawing.Point(22, 575);
             this.btnRegresar.Name = "btnRegresar";
             this.btnRegresar.Size = new System.Drawing.Size(158, 26);
             this.btnRegresar.TabIndex = 16;
@@ -91,7 +91,7 @@
             this.nombre,
             this.descripcion,
             this.peso,
-            this.nota3});
+            this.nota});
             this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
             this.dgvMisObjetivos.Location = new System.Drawing.Point(24, 120);
             this.dgvMisObjetivos.Name = "dgvMisObjetivos";
@@ -109,7 +109,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             this.dgvMisObjetivos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMisObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMisObjetivos.Size = new System.Drawing.Size(951, 433);
+            this.dgvMisObjetivos.Size = new System.Drawing.Size(1008, 433);
             this.dgvMisObjetivos.TabIndex = 17;
             // 
             // numero
@@ -134,11 +134,11 @@
             this.peso.HeaderText = "Peso";
             this.peso.Name = "peso";
             // 
-            // nota3
+            // nota
             // 
-            this.nota3.HeaderText = "Nota Final";
-            this.nota3.Name = "nota3";
-            this.nota3.Width = 150;
+            this.nota.HeaderText = "Nota ";
+            this.nota.Name = "nota";
+            this.nota.Width = 150;
             // 
             // frmEvMisResultadosPotenciales
             // 
@@ -165,6 +165,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn peso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
     }
 }

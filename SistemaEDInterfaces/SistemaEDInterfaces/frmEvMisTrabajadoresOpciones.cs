@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEDInterfaces.ColaboradorWS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace SistemaEDInterfaces
 {
     public partial class frmEvMisTrabajadoresOpciones : Form
     {
+        private ColaboradorWS.colaborador colaborador;
+
+        public colaborador Colaborador { get => colaborador; set => colaborador = value; }
+
         public frmEvMisTrabajadoresOpciones()
         {
             InitializeComponent();
@@ -24,17 +29,23 @@ namespace SistemaEDInterfaces
 
         private void btnPrevia_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(false, new frmEvMisTrabajadoresPrevia());
+            frmEvMisTrabajadoresPrevia form = new frmEvMisTrabajadoresPrevia();
+            form.Colaborador = colaborador; 
+            Global.formPrincipal.abrirFormularioHijo(false, form);
         }
 
         private void btnFinal_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(false, new frmEvMisTrabajadoresFinal());
+            frmEvMisTrabajadoresFinal form = new frmEvMisTrabajadoresFinal();
+            form.Colaborador = colaborador; 
+            Global.formPrincipal.abrirFormularioHijo(false, form);
         }
 
         private void btnPotencial_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(false, new frmEvMisTrabajadoresEvPotencial());
+            frmEvMisTrabajadoresEvPotencial form = new frmEvMisTrabajadoresEvPotencial();
+            form.Colaborador = colaborador; 
+            Global.formPrincipal.abrirFormularioHijo(false, form);
         }
     }
 }

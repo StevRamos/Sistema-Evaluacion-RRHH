@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaEDInterfaces.ColaboradorWS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,10 @@ namespace SistemaEDInterfaces
 {
     public partial class frmEvMisTrabajadoresFinal : Form
     {
+        private ColaboradorWS.colaborador colaborador;
+
+        public colaborador Colaborador { get => colaborador; set => colaborador = value; }
+
         public frmEvMisTrabajadoresFinal()
         {
             InitializeComponent();
@@ -37,6 +42,11 @@ namespace SistemaEDInterfaces
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             Global.formPrincipal.cerrarFormularioHijo();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

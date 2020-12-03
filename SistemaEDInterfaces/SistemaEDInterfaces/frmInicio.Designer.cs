@@ -71,6 +71,7 @@
             this.lblInicioHoraActual = new System.Windows.Forms.Label();
             this.pbLogoPUCPInicio = new System.Windows.Forms.PictureBox();
             this.timerFechaHoraActual = new System.Windows.Forms.Timer(this.components);
+            this.btnRepPlanificacion = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelReportesSubmenu.SuspendLayout();
             this.panelAdmSubmenu.SuspendLayout();
@@ -102,19 +103,20 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(261, 861);
+            this.panelMenu.Size = new System.Drawing.Size(261, 904);
             this.panelMenu.TabIndex = 1;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
             // panelReportesSubmenu
             // 
             this.panelReportesSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(27)))), ((int)(((byte)(62)))));
+            this.panelReportesSubmenu.Controls.Add(this.btnRepPlanificacion);
             this.panelReportesSubmenu.Controls.Add(this.btnRepPDI);
             this.panelReportesSubmenu.Controls.Add(this.btnRep9Box);
             this.panelReportesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelReportesSubmenu.Location = new System.Drawing.Point(0, 1191);
             this.panelReportesSubmenu.Name = "panelReportesSubmenu";
-            this.panelReportesSubmenu.Size = new System.Drawing.Size(244, 83);
+            this.panelReportesSubmenu.Size = new System.Drawing.Size(244, 127);
             this.panelReportesSubmenu.TabIndex = 10;
             // 
             // btnRepPDI
@@ -638,7 +640,7 @@
             this.panelBarraSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelBarraSuperior.Location = new System.Drawing.Point(261, 0);
             this.panelBarraSuperior.Name = "panelBarraSuperior";
-            this.panelBarraSuperior.Size = new System.Drawing.Size(1123, 67);
+            this.panelBarraSuperior.Size = new System.Drawing.Size(1147, 67);
             this.panelBarraSuperior.TabIndex = 2;
             // 
             // btnLblNombreColab
@@ -654,7 +656,7 @@
             this.btnLblNombreColab.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLblNombreColab.ForeColor = System.Drawing.SystemColors.Control;
             this.btnLblNombreColab.Image = global::SistemaEDInterfaces.Properties.Resources.usuario;
-            this.btnLblNombreColab.Location = new System.Drawing.Point(836, 0);
+            this.btnLblNombreColab.Location = new System.Drawing.Point(860, 0);
             this.btnLblNombreColab.Name = "btnLblNombreColab";
             this.btnLblNombreColab.Size = new System.Drawing.Size(234, 67);
             this.btnLblNombreColab.TabIndex = 6;
@@ -675,7 +677,7 @@
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(119)))), ((int)(((byte)(186)))));
             this.btnLogOut.Image = global::SistemaEDInterfaces.Properties.Resources.salida;
-            this.btnLogOut.Location = new System.Drawing.Point(1070, 0);
+            this.btnLogOut.Location = new System.Drawing.Point(1094, 0);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Padding = new System.Windows.Forms.Padding(0, 0, 15, 0);
             this.btnLogOut.Size = new System.Drawing.Size(53, 67);
@@ -703,7 +705,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(261, 67);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1123, 794);
+            this.panelContenedor.Size = new System.Drawing.Size(1147, 837);
             this.panelContenedor.TabIndex = 3;
             // 
             // lblInicioFechaActual
@@ -711,7 +713,7 @@
             this.lblInicioFechaActual.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInicioFechaActual.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInicioFechaActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblInicioFechaActual.Location = new System.Drawing.Point(0, 632);
+            this.lblInicioFechaActual.Location = new System.Drawing.Point(12, 653);
             this.lblInicioFechaActual.Name = "lblInicioFechaActual";
             this.lblInicioFechaActual.Size = new System.Drawing.Size(1120, 82);
             this.lblInicioFechaActual.TabIndex = 2;
@@ -723,7 +725,7 @@
             this.lblInicioHoraActual.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblInicioHoraActual.Font = new System.Drawing.Font("Century Gothic", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInicioHoraActual.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.lblInicioHoraActual.Location = new System.Drawing.Point(0, 528);
+            this.lblInicioHoraActual.Location = new System.Drawing.Point(12, 549);
             this.lblInicioHoraActual.Name = "lblInicioHoraActual";
             this.lblInicioHoraActual.Size = new System.Drawing.Size(1120, 112);
             this.lblInicioHoraActual.TabIndex = 1;
@@ -734,7 +736,7 @@
             // 
             this.pbLogoPUCPInicio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pbLogoPUCPInicio.Image = global::SistemaEDInterfaces.Properties.Resources.PUCPLogo;
-            this.pbLogoPUCPInicio.Location = new System.Drawing.Point(13, 189);
+            this.pbLogoPUCPInicio.Location = new System.Drawing.Point(25, 210);
             this.pbLogoPUCPInicio.Name = "pbLogoPUCPInicio";
             this.pbLogoPUCPInicio.Size = new System.Drawing.Size(1098, 323);
             this.pbLogoPUCPInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -746,11 +748,28 @@
             this.timerFechaHoraActual.Enabled = true;
             this.timerFechaHoraActual.Tick += new System.EventHandler(this.timerFechaHoraActual_Tick);
             // 
+            // btnRepPlanificacion
+            // 
+            this.btnRepPlanificacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRepPlanificacion.FlatAppearance.BorderSize = 0;
+            this.btnRepPlanificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepPlanificacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepPlanificacion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRepPlanificacion.Location = new System.Drawing.Point(0, 80);
+            this.btnRepPlanificacion.Name = "btnRepPlanificacion";
+            this.btnRepPlanificacion.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRepPlanificacion.Size = new System.Drawing.Size(244, 40);
+            this.btnRepPlanificacion.TabIndex = 3;
+            this.btnRepPlanificacion.Text = "Planificacion";
+            this.btnRepPlanificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepPlanificacion.UseVisualStyleBackColor = true;
+            this.btnRepPlanificacion.Click += new System.EventHandler(this.btnRepPlanificacion_Click);
+            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1384, 861);
+            this.ClientSize = new System.Drawing.Size(1408, 904);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelBarraSuperior);
             this.Controls.Add(this.panelMenu);
@@ -819,5 +838,6 @@
         private System.Windows.Forms.Button btnGestGerencias;
         private System.Windows.Forms.Button btnGestPuestos;
         private System.Windows.Forms.Button btnGestColaboradores;
+        private System.Windows.Forms.Button btnRepPlanificacion;
     }
 }

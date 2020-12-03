@@ -391,5 +391,12 @@ namespace SistemaEDInterfaces
             cerrarFormulariosActuales();
             abrirFormularioHijo(false, new frmPerfilColaborador());
         }
+
+        private void btnRepPlanificacion_Click(object sender, EventArgs e)
+        {
+            cambiarTituloBarraSuperior(btnReportes, btnRepPlanificacion);
+            cerrarFormulariosActuales();
+            abrirFormularioHijo(false, new frmRepPlanificacion());
+        }
     }
 }

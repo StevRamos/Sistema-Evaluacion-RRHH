@@ -113,6 +113,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Correo.cs" />
+    <Compile Include="EstadoAutoEval.cs" />
+    <Compile Include="EstadoEvalPot.cs" />
+    <Compile Include="EstadoEvD.cs" />
+    <Compile Include="EstadoFormulario.cs" />
     <Compile Include="EstadoObjetivo.cs" />
     <Compile Include="EstadoPlanificacion.cs" />
     <Compile Include="Etapas.cs" />
@@ -494,6 +498,12 @@
     <Compile Include="frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRepPlanificacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRepPlanificacion.Designer.cs">
+      <DependentUpon>frmRepPlanificacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Mensaje.cs" />
     <Compile Include="NineBox.cs">
@@ -707,6 +717,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRepPlanificacion.resx">
+      <DependentUpon>frmRepPlanificacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -780,13 +793,22 @@
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.actualizarEstadoPlanificacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.actualizarEvaluacionDesempenhoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.evaluacionDesempenho.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.insertarLineasEvaluacionDesempenhoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.listarDesempenhoPorPeriodoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EvaluacionDesempenhoWS\SistemaEDInterfaces.EvaluacionDesempenhoWS.obtenerEvaluacionDesempenhoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GerenciaPeriodoWS\GerenciaPeriodoWS.wsdl" />
@@ -886,6 +908,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PesoCriterioWS\SistemaEDInterfaces.PesoCriterioWS.listarPesosCriteriosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\SistemaEDInterfaces.PesoCriterioWS.listarSubcriterios_x_CriPadreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PesoCriterioWS\SistemaEDInterfaces.PesoCriterioWS.pesoCriterio.datasource">

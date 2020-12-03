@@ -12,19 +12,126 @@ namespace SistemaEDInterfaces
 {
     public partial class frmEvMisResultados : Form
     {
+        private int idColaborador;
+        private int idPeriodo;
+        private int idPuestoTrabajo;
+        private EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient daoEvaluacionDesempenho;
+        private EvaluacionDesempenhoWS.evaluacionDesempenho evaluacionDesempenho;
+        //private EvaluacionWS.EvaluacionWSClient daoEvaluacion;
+        //private EvaluacionWS.evaluacion evaluacionPotencial; 
         public frmEvMisResultados()
         {
             InitializeComponent();
+            dgvCompetencias.AutoGenerateColumns = false;
+            dgvObjetivos.AutoGenerateColumns = false;
+            dgvPotenciales.AutoGenerateColumns = false; 
+            daoEvaluacionDesempenho = new EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient();
+            //daoEvaluacion = new EvaluacionWS.EvaluacionWSClient();
+
+            idColaborador = Global.colaboradorLoggeado.idColaborador;
+            idPuestoTrabajo = Global.colaboradorLoggeado.puestoTrabajo.idPuestoTrabajo;
+            idPeriodo = Global.periodoActual.idPeriodo;
+
+            evaluacionDesempenho = daoEvaluacionDesempenho.obtenerEvaluacionDesempenho(idColaborador, idPeriodo);
+            //evaluacionPotencial = daoEvaluacion.obtenerEvaluacion(idColaborador, idPeriodo);
+            //Verificar si esta finalizada 
+            /*
+            if(evaluacionDesempenho.estado != (int)EstadoEvD.FinalFinalizada || evaluacion.estado != (int)EstadoEvalPot.Finalizada)
+            {
+                MessageBox.Show("Aun no puede visualizar resultados ya que la evaluacion no ha sido finalizada .",
+                                "Mensaje de error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                Global.formPrincipal.cerrarFormularioHijo();
+                return; 
+            }*/
+            dgvObjetivos.DataSource = evaluacionDesempenho.objetivos;
+            dgvCompetencias.DataSource = evaluacionDesempenho.lineasEvaluacion;
+            //dgvPotenciales.DataSource = evaluacion.lineasEvaluacion; 
+            txtObservacionesCompetencias.Text = evaluacionDesempenho.observacionesComp;
+            txtObservacionesObjetivos.Text = evaluacionDesempenho.observacionesObj;
+            //txtObservacionesPotencial.Text = evaluacion.observaciones; 
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
+        private void btnGenerar_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(false,new frmEvMisResultadosCompetencias());
+            sfdReporte.ShowDialog();
+            if (sfdReporte.FileName != null && sfdReporte.FileName != "")
+            {
+                byte[] arreglo;
+                //arreglo = daoReporte.generarReporteResultados(gerenciaSeleccionada.idGerencia);
+                Global.iniciarEspera(this);
+                //File.WriteAllBytes(sfdReporte.FileName, arreglo);
+                Global.terminarEspera(this);
+            }
+
+            MessageBox.Show("Reporte generado exitosamente .",
+                                "Mensaje de confirmacion",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Information);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSeleccionarPot_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(false,new frmEvMisResultadosPotenciales());
+            if (dgvPotenciales.CurrentCell == null)
+            {
+                MessageBox.Show("Debe seleccionar un potencial.",
+                                   "Mensaje de error",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                return;
+            }
+            /*
+            EvaluacionWS.lineaEvaluacion lineaSeleccionada = (EvaluacionWS.lineaEvaluacion)
+                                                                                dgvPotenciales.CurrentRow.DataBoundItem;
+
+            frmEvMisResultadosPotenciales form = new frmEvMisResultadosPotenciales();
+            form.Linea = lineaSeleccionada;
+            form.FormPadre = this;
+            form.Estado = estado;
+            Global.formPrincipal.abrirFormularioHijo(false, form);
+            */
+        }
+
+        private void btnSeleccionarComp_Click(object sender, EventArgs e)
+        {
+            if (dgvCompetencias.CurrentCell == null)
+            {
+                MessageBox.Show("Debe seleccionar una competencia.",
+                                   "Mensaje de error",
+                                   MessageBoxButtons.OK,
+                                   MessageBoxIcon.Error);
+                return;
+            }
+            EvaluacionDesempenhoWS.lineaEvaluacion lineaSeleccionada = (EvaluacionDesempenhoWS.lineaEvaluacion)
+                                                                                dgvCompetencias.CurrentRow.DataBoundItem;
+
+            frmEvMisResultadosCompetencias form = new frmEvMisResultadosCompetencias();
+            form.Linea = lineaSeleccionada;
+            form.FormPadre = this;
+            Global.formPrincipal.abrirFormularioHijo(false, form);
+
+        }
+
+        private void dgvCompetencias_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            EvaluacionDesempenhoWS.lineaEvaluacion data = dgvCompetencias.Rows[e.RowIndex].DataBoundItem as EvaluacionDesempenhoWS.lineaEvaluacion;
+            dgvCompetencias.Rows[e.RowIndex].Cells["ID"].Value = data.pesoCriterio.criterio.idCriterio;
+            dgvCompetencias.Rows[e.RowIndex].Cells["nombre"].Value = data.pesoCriterio.criterio.nombre;
+            dgvCompetencias.Rows[e.RowIndex].Cells["DescripcionComp"].Value = data.pesoCriterio.criterio.descripcion;
+            dgvCompetencias.Rows[e.RowIndex].Cells["PesoComp"].Value = data.pesoCriterio.peso;
+
+        }
+
+        private void dgvPotenciales_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            /*
+            EvaluacionWS.lineaEvaluacion data = dgvPotenciales.Rows[e.RowIndex].DataBoundItem as EvaluacionWS.lineaEvaluacion;
+            dgvCompetencias.Rows[e.RowIndex].Cells["ID"].Value = data.pesoCriterio.criterio.idCriterio;
+            dgvCompetencias.Rows[e.RowIndex].Cells["nombre"].Value = data.pesoCriterio.criterio.nombre;
+            dgvCompetencias.Rows[e.RowIndex].Cells["descripcionPot"].Value = data.pesoCriterio.criterio.descripcion;
+            dgvCompetencias.Rows[e.RowIndex].Cells["pesoPot"].Value = data.pesoCriterio.peso;
+            */
         }
     }
 }
