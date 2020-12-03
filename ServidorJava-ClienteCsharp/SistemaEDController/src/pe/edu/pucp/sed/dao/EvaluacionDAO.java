@@ -8,4 +8,7 @@ public interface EvaluacionDAO{
 	int actualizar(Evaluacion evaluacion);
 	int eliminar(int idEvaluacion);
 	ArrayList<Evaluacion> listar();
+	int insertarLineasEvaluacionPotencial(Evaluacion evaluacion);
+	int actualizarEvaluacionPotencial(Evaluacion evaluacion);
+	Evaluacion obtenerEvaluacionPotencial(int idColaborador, int idPeriodo);
 }

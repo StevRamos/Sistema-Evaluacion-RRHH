@@ -156,7 +156,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             
             String sql;
             
-            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             
             cs.setInt("_ID_EVALUACION", evaluacionDesempenho.getIdEvaluacion());
@@ -167,7 +167,6 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             cs.setString("_OBSERVACIONES", evaluacionDesempenho.getObservaciones());
             cs.setDouble("_NOTAAUTOEVAL", evaluacionDesempenho.getNotaAutoEval()); 
             cs.setDouble("_NOTAFINAL", evaluacionDesempenho.getNotaFinal());
-            cs.setBoolean("_TIPO", evaluacionDesempenho.getTipo());
             cs.setInt("_ESTADO", evaluacionDesempenho.getEstado());
             
             cs.setString("_OBSCOMP", evaluacionDesempenho.getObservacionesComp());
@@ -290,7 +289,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             
             String sql;
             
-            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             
             cs.setInt("_ID_EVALUACION", evaluacionDesempenho.getIdEvaluacion());
@@ -301,7 +300,6 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             cs.setString("_OBSERVACIONES", evaluacionDesempenho.getObservaciones());
             cs.setDouble("_NOTAAUTOEVAL", evaluacionDesempenho.getNotaAutoEval()); 
             cs.setDouble("_NOTAFINAL", evaluacionDesempenho.getNotaFinal());
-            cs.setBoolean("_TIPO", evaluacionDesempenho.getTipo());
             cs.setInt("_ESTADO", evaluacionDesempenho.getEstado());
             
             cs.setString("_OBSCOMP", evaluacionDesempenho.getObservacionesComp());
@@ -327,8 +325,8 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                     cs.setInt("_ID_LINEA_EVALUACION", lEval.getIdLineaEvaluacion());
                     cs.setInt("_ID_ITEM", lEval.getItemPDI().getIdItemPDI());
                     cs.setDouble("_NOTAAUTOEVAL", lEval.getNotaAutoEval());  
-                    cs.setDouble("_NOTAPREVIA", lEval.getNotaAutoEval());  
-                    cs.setDouble("_NOTAFINAL", lEval.getNotaAutoEval());  
+                    cs.setDouble("_NOTAPREVIA", lEval.getNotaPrevia());  
+                    cs.setDouble("_NOTAFINAL", lEval.getNotaFinal());  
                     cs.setString("_ACCIONES", lEval.getAccionesAtomar());
                     cs.setDate("_FECHA", 
                              new java.sql.Date(lEval.getFechaCumplimiento().getTime()));
@@ -341,8 +339,8 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                         cs.setInt("_ID_LINEA_EVALUACION", subLineaEval.getIdLineaEvaluacion());
                         cs.setInt("_ID_ITEM", subLineaEval.getItemPDI().getIdItemPDI());
                         cs.setDouble("_NOTAAUTOEVAL", subLineaEval.getNotaAutoEval());  
-                        cs.setDouble("_NOTAPREVIA", subLineaEval.getNotaAutoEval());  
-                        cs.setDouble("_NOTAFINAL", subLineaEval.getNotaAutoEval());  
+                        cs.setDouble("_NOTAPREVIA", subLineaEval.getNotaPrevia());  
+                        cs.setDouble("_NOTAFINAL", subLineaEval.getNotaFinal());  
                         cs.setString("_ACCIONES", subLineaEval.getAccionesAtomar());
                         cs.setDate("_FECHA", 
                                  new java.sql.Date(subLineaEval.getFechaCumplimiento().getTime()));
@@ -532,6 +530,10 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                 le.getPesoCriterio().getCriterio().
                         setTipo(rs.getInt("tipo"));
                 
+                le.setNotaAutoEval(rs.getInt("notaAutoEval"));
+                le.setNotaPrevia(rs.getInt("notaPrevia"));
+                le.setNotaFinal(rs.getInt("notaFinal"));
+
                 evaluacionDesempenho.getLineasEvaluacion().add(le);
             }
             
@@ -577,6 +579,10 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                     le.getPesoCriterio().getCriterio().
                             setTipo(rs.getInt("tipo"));
                     
+                    le.setNotaAutoEval(rs.getInt("notaAutoEval"));
+                    le.setNotaPrevia(rs.getInt("notaPrevia"));
+                    le.setNotaFinal(rs.getInt("notaFinal"));
+
                     l.getSublineasEvaluacion().add(le);
                 }
             

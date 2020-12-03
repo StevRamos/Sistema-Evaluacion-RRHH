@@ -200,6 +200,8 @@ public class PesoCriterioMySQL implements PesoCriterioDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         PesoCriterio pesocriterio = new PesoCriterio();
+
+                        pesocriterio.setIdPesoCriterio(rs.getInt("id_PesoCriterio"));
                         pesocriterio.getCriterio().setIdCriterio(rs.getInt("id_Criterio"));
                         pesocriterio.getCriterio().setNombre(rs.getString("nombre"));
                         Criterio c = new Criterio();
