@@ -156,7 +156,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             
             String sql;
             
-            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             
             cs.setInt("_ID_EVALUACION", evaluacionDesempenho.getIdEvaluacion());
@@ -167,7 +167,6 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             cs.setString("_OBSERVACIONES", evaluacionDesempenho.getObservaciones());
             cs.setDouble("_NOTAAUTOEVAL", evaluacionDesempenho.getNotaAutoEval()); 
             cs.setDouble("_NOTAFINAL", evaluacionDesempenho.getNotaFinal());
-            cs.setBoolean("_TIPO", evaluacionDesempenho.getTipo());
             cs.setInt("_ESTADO", evaluacionDesempenho.getEstado());
             
             cs.setString("_OBSCOMP", evaluacionDesempenho.getObservacionesComp());
@@ -290,7 +289,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             
             String sql;
             
-            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             
             cs.setInt("_ID_EVALUACION", evaluacionDesempenho.getIdEvaluacion());
@@ -301,7 +300,6 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             cs.setString("_OBSERVACIONES", evaluacionDesempenho.getObservaciones());
             cs.setDouble("_NOTAAUTOEVAL", evaluacionDesempenho.getNotaAutoEval()); 
             cs.setDouble("_NOTAFINAL", evaluacionDesempenho.getNotaFinal());
-            cs.setBoolean("_TIPO", evaluacionDesempenho.getTipo());
             cs.setInt("_ESTADO", evaluacionDesempenho.getEstado());
             
             cs.setString("_OBSCOMP", evaluacionDesempenho.getObservacionesComp());
