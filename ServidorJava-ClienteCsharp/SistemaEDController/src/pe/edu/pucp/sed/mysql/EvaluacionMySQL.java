@@ -160,7 +160,7 @@ public class EvaluacionMySQL implements EvaluacionDAO{
                    cs.setInt("_ID_LINEA_EVALUACION_PADRE", -1);
                    cs.setInt("_ID_PESO_CRITERIO", lEval.getPesoCriterio().getIdPesoCriterio());
                    cs.setDouble("_NOTAAUTOEVAL", -1);  
-                   cs.setDouble("_NOTAPREVIA", -1;  
+                   cs.setDouble("_NOTAPREVIA", -1);  
                    cs.setDouble("_NOTAFINAL", lEval.getNotaFinal());  
                    
                    cs.executeUpdate();

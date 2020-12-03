@@ -22,7 +22,7 @@ public class EvaluacionPotencialWS {
 
     private EvaluacionDAO daoEval;
     
-    public EvaluacionDesempenhoWS(){
+    public EvaluacionPotencialWS(){
         daoEval = new EvaluacionMySQL();
     }
     

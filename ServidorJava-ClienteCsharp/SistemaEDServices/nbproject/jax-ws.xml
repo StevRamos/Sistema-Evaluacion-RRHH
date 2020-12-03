@@ -34,6 +34,9 @@
     <service name="EscalaPeriodoWS">
       <implementation-class>pe.edu.pucp.sed.services.EscalaPeriodoWS</implementation-class>
     </service>
+    <service name="EvaluacionPotencialWS">
+      <implementation-class>pe.edu.pucp.sed.services.EvaluacionPotencialWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
