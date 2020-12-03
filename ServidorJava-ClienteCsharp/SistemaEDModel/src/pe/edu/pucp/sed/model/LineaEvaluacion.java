@@ -1,6 +1,7 @@
 package pe.edu.pucp.sed.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class LineaEvaluacion {
 
@@ -13,6 +14,7 @@ public class LineaEvaluacion {
     private Evaluacion evaluacion;
     private ItemPDI itemPDI;
     private PesoCriterio pesoCriterio;
+    private Date fechaCumplimiento;
 
     public LineaEvaluacion() {
         this.sublineasEvaluacion = new ArrayList<>();
@@ -21,6 +23,16 @@ public class LineaEvaluacion {
         this.pesoCriterio = new PesoCriterio();
     }
 
+    public Date getFechaCumplimiento() {
+        return fechaCumplimiento;
+    }
+
+    public void setFechaCumplimiento(Date fechaCumplimiento) {
+        this.fechaCumplimiento = fechaCumplimiento;
+    }
+
+    
+    
     public int getIdLineaEvaluacion() {
         return this.idLineaEvaluacion;
     }

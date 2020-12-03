@@ -151,19 +151,102 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            con.setAutoCommit(false);
+            
+            String sql;
+            
             if((evaluacionDesempenho.getEstadoAutoEval()==0) && (evaluacionDesempenho.getEstado()==0) ){
                 //registrar lineas evaluacion
+               
+                //registrar padre
+               for(LineaEvaluacion lEval : evaluacionDesempenho.getLineasEvaluacion()){
+                    sql = "{call INSERTAR_LINEA_EVALUACION(?,?,?,?,?,?,?)}";
+                    cs = con.prepareCall(sql);
+                   cs.registerOutParameter("_ID_LINEA_EVALUACION", java.sql.Types.INTEGER);
+
+                   cs.setInt("_ID_EVALUACION", evaluacionDesempenho.getIdEvaluacion());
+                   cs.setInt("_ID_LINEA_EVALUACION_PADRE", -1);
+                   cs.setInt("_ID_PESO_CRITERIO", lEval.getPesoCriterio().getIdPesoCriterio());
+                   cs.setDouble("_NOTAAUTOEVAL", lEval.getNotaAutoEval());  
+                   cs.setDouble("_NOTAPREVIA", lEval.getNotaPrevia());  
+                   cs.setDouble("_NOTAFINAL", lEval.getNotaFinal());  
+                   
+                   cs.executeUpdate();
+                   
+                   lEval.setIdLineaEvaluacion(cs.getInt("_ID_LINEA_EVALUACION"));
+                   //insertar hijos
+                   for(LineaEvaluacion subLineaEval : lEval.getSublineasEvaluacion()){
+                     
+                       
+                       sql = "{call INSERTAR_LINEA_EVALUACION(?,?,?,?,?,?,?)}";
+                       cs = con.prepareCall(sql);
+                       
+                        cs.registerOutParameter("_ID_LINEA_EVALUACION", java.sql.Types.INTEGER);
+                       
+                        cs.setInt("_ID_EVALUACION", evaluacionDesempenho.getIdEvaluacion());
+                        cs.setInt("_ID_LINEA_EVALUACION_PADRE", lEval.getIdLineaEvaluacion());
+                        cs.setInt("_ID_PESO_CRITERIO", subLineaEval.getPesoCriterio().getIdPesoCriterio());
+                        cs.setDouble("_NOTAAUTOEVAL", subLineaEval.getNotaAutoEval());  
+                        cs.setDouble("_NOTAPREVIA", subLineaEval.getNotaPrevia());  
+                        cs.setDouble("_NOTAFINAL", subLineaEval.getNotaFinal()); 
+                        cs.executeUpdate();
+                   }
+                
+                
+               }
+                
+                
             }
             else{
                 //actualizar lineas evaluacion 
+                for(LineaEvaluacion lEval : evaluacionDesempenho.getLineasEvaluacion()){
+                    sql = "{call ACTUALIZAR_LINEA_EVALUACION(?,?,?,?,?,?,?)}";
+                    cs = con.prepareCall(sql);
                 
+                    cs.setInt("_ID_LINEA_EVALUACION", lEval.getIdLineaEvaluacion());
+                    cs.setInt("_ID_ITEM", lEval.getItemPDI().getIdItemPDI());
+                    cs.setDouble("_NOTAAUTOEVAL", lEval.getNotaAutoEval());  
+                    cs.setDouble("_NOTAPREVIA", lEval.getNotaAutoEval());  
+                    cs.setDouble("_NOTAFINAL", lEval.getNotaAutoEval());  
+                    cs.setString("_ACCIONES", lEval.getAccionesAtomar());
+                    cs.setDate("_FECHA", 
+                             new java.sql.Date(lEval.getFechaCumplimiento().getTime()));
+                    
+                    cs.executeUpdate();
+                    for(LineaEvaluacion subLineaEval : lEval.getSublineasEvaluacion()){
+                        sql = "{call ACTUALIZAR_LINEA_EVALUACION(?,?,?,?,?,?,?)}";
+                        cs = con.prepareCall(sql);
+
+                        cs.setInt("_ID_LINEA_EVALUACION", subLineaEval.getIdLineaEvaluacion());
+                        cs.setInt("_ID_ITEM", subLineaEval.getItemPDI().getIdItemPDI());
+                        cs.setDouble("_NOTAAUTOEVAL", subLineaEval.getNotaAutoEval());  
+                        cs.setDouble("_NOTAPREVIA", subLineaEval.getNotaAutoEval());  
+                        cs.setDouble("_NOTAFINAL", subLineaEval.getNotaAutoEval());  
+                        cs.setString("_ACCIONES", subLineaEval.getAccionesAtomar());
+                        cs.setDate("_FECHA", 
+                                 new java.sql.Date(subLineaEval.getFechaCumplimiento().getTime()));
+
+                        cs.executeUpdate();   
+                    }
+                    
+                }
             }
-            
+            con.commit();
             resultado = 1;
         }catch(Exception ex){
+            try{
+                con.rollback();
+            }catch(Exception exR){
+                System.out.println(exR.getMessage());
+            }
             System.out.println(ex.getMessage());
         }finally{
-            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
         }
         return resultado; 
     }
