@@ -117,6 +117,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ReporteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Correo.cs" />
     <Compile Include="EstadoAutoEval.cs" />
     <Compile Include="EstadoEvalPot.cs" />
@@ -958,12 +963,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\EvaluacionDesempenhoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\EvaluacionDesempenhoWS\configuration.svcinfo" />
-    <None Include="Connected Services\EvaluacionDesempenhoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\GerenciaPeriodoWS\configuration91.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\configuration.svcinfo" />
     <None Include="Connected Services\GerenciaPeriodoWS\Reference.svcmap">
@@ -973,12 +972,6 @@
     <None Include="Connected Services\CriterioWS\configuration91.svcinfo" />
     <None Include="Connected Services\CriterioWS\configuration.svcinfo" />
     <None Include="Connected Services\CriterioWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
-    <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
-    <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -994,9 +987,27 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
+    <None Include="Connected Services\ReporteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EvaluacionDesempenhoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EvaluacionDesempenhoWS\configuration.svcinfo" />
+    <None Include="Connected Services\EvaluacionDesempenhoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Connected Services\EvaluacionPotencialWS\configuration91.svcinfo" />
     <None Include="Connected Services\EvaluacionPotencialWS\configuration.svcinfo" />
     <None Include="Connected Services\EvaluacionPotencialWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
+    <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -1066,6 +1077,13 @@
     <None Include="Connected Services\PuestoTrabajoWS\SistemaEDInterfaces.PuestoTrabajoWS.puestoTrabajo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ReporteWS\ReporteWS.wsdl" />
+    <None Include="Connected Services\ReporteWS\ReporteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.generarReporteEvaluacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Iconos\PUCP.png" />
     <None Include="Iconos\PUCPLogo.png" />
   </ItemGroup>
@@ -1081,6 +1099,7 @@
     <WCFMetadataStorage Include="Connected Services\PeriodoWS\" />
     <WCFMetadataStorage Include="Connected Services\PesoCriterioWS\" />
     <WCFMetadataStorage Include="Connected Services\PuestoTrabajoWS\" />
+    <WCFMetadataStorage Include="Connected Services\ReporteWS\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

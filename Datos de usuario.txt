@@ -1,0 +1,5 @@
+Usuario: diego.baca@pucp.edu.pe
+Contraseña: ABCDE
+
+En el sistema, puesto que no hay datos completos, por ahora solo funciona con el 
+usuario Jorge Baca en todas las pantallas.

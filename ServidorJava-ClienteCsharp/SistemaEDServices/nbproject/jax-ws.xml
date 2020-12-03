@@ -37,6 +37,9 @@
     <service name="EvaluacionPotencialWS">
       <implementation-class>pe.edu.pucp.sed.services.EvaluacionPotencialWS</implementation-class>
     </service>
+    <service name="ReporteWS">
+      <implementation-class>pe.edu.pucp.sed.services.ReporteWS</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

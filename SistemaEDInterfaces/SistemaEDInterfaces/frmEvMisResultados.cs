@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace SistemaEDInterfaces
         private EvaluacionDesempenhoWS.evaluacionDesempenho evaluacionDesempenho;
         //private EvaluacionWS.EvaluacionWSClient daoEvaluacion;
         //private EvaluacionWS.evaluacion evaluacionPotencial; 
+        private ReporteWS.ReporteWSClient daoReporte;
+
         public frmEvMisResultados()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace SistemaEDInterfaces
             dgvPotenciales.AutoGenerateColumns = false; 
             daoEvaluacionDesempenho = new EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient();
             //daoEvaluacion = new EvaluacionWS.EvaluacionWSClient();
+            daoReporte = new ReporteWS.ReporteWSClient();
 
             idColaborador = Global.colaboradorLoggeado.idColaborador;
             idPuestoTrabajo = Global.colaboradorLoggeado.puestoTrabajo.idPuestoTrabajo;
@@ -55,16 +59,21 @@ namespace SistemaEDInterfaces
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+            sfdReporte.FileOk += SfdReporte_FileOk;
+            sfdReporte.FileName = "Reporte de Evaluacion.pdf";
             sfdReporte.ShowDialog();
             if (sfdReporte.FileName != null && sfdReporte.FileName != "")
             {
                 byte[] arreglo;
-                //arreglo = daoReporte.generarReporteResultados(gerenciaSeleccionada.idGerencia);
+                arreglo = daoReporte.generarReporteEvaluacion();
                 Global.iniciarEspera(this);
-                //File.WriteAllBytes(sfdReporte.FileName, arreglo);
+                File.WriteAllBytes(sfdReporte.FileName, arreglo);
                 Global.terminarEspera(this);
             }
+        }
 
+        private void SfdReporte_FileOk(object sender, CancelEventArgs e)
+        {
             MessageBox.Show("Reporte generado exitosamente .",
                                 "Mensaje de confirmacion",
                                 MessageBoxButtons.OK,
