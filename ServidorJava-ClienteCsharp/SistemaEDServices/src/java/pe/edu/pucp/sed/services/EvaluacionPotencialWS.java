@@ -50,4 +50,16 @@ public class EvaluacionPotencialWS {
     }
 
 
+    @WebMethod(operationName = "obtenerEvaluacionPotencial")
+    public Evaluacion obtenerEvaluacionPotencial(@WebParam(name = "idColaborador")int idColaborador,
+            @WebParam(name = "idPeriodo")int idPeriodo) {
+        Evaluacion resultado = null;
+        try{
+            resultado = daoEval.obtenerEvaluacionPotencial(idColaborador, idPeriodo);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+
 }
