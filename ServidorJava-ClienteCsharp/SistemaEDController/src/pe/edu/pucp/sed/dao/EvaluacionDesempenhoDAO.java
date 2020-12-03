@@ -5,6 +5,7 @@ import pe.edu.pucp.sed.model.EvaluacionDesempenho;
 
 public interface EvaluacionDesempenhoDAO{
 	int insertar(EvaluacionDesempenho evaluacionDesempenho);
+        int insertarLineasEvaluacionDesempenho(EvaluacionDesempenho evaluacionDesempenho);
         int actualizarEvaluacionDesempenho(EvaluacionDesempenho evaluacionDesempenho);
 	int actualizar(EvaluacionDesempenho evaluacionDesempenho);
 	int eliminar(int idEvaluacionDesempenho);

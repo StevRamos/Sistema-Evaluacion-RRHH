@@ -146,8 +146,8 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
     }
 
     @Override
-    public int actualizarEvaluacionDesempenho(EvaluacionDesempenho evaluacionDesempenho) {
-        int resultado = 0;
+    public int insertarLineasEvaluacionDesempenho(EvaluacionDesempenho evaluacionDesempenho) {
+    int resultado = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
@@ -155,8 +155,36 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             
             String sql;
             
-            if((evaluacionDesempenho.getEstadoAutoEval()==0) && (evaluacionDesempenho.getEstado()==0) ){
-                //registrar lineas evaluacion
+            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            cs = con.prepareCall(sql);
+            
+            cs.setInt("_ID_EVALUACION", evaluacionDesempenho.getIdEvaluacion());
+            cs.setInt("_ID_ESCALAPRE", evaluacionDesempenho.getEscalaPreCupos().getIdEscala());
+            cs.setInt("_ID_ESCALASIN", evaluacionDesempenho.getEscalaSinCalibrar().getIdEscala());
+            cs.setInt("_ID_ESCALAFIN", evaluacionDesempenho.getEscalaFinal().getIdEscala());
+            cs.setInt("_ESTADOPDI", evaluacionDesempenho.getEstadoPDI());
+            cs.setString("_OBSERVACIONES", evaluacionDesempenho.getObservaciones());
+            cs.setDouble("_NOTAAUTOEVAL", evaluacionDesempenho.getNotaAutoEval()); 
+            cs.setDouble("_NOTAFINAL", evaluacionDesempenho.getNotaFinal());
+            cs.setBoolean("_TIPO", evaluacionDesempenho.getTipo());
+            cs.setInt("_ESTADO", evaluacionDesempenho.getEstado());
+            
+            cs.setString("_OBSCOMP", evaluacionDesempenho.getObservacionesComp());
+            cs.setDouble("_NOTAAUTOEVALCOMP", evaluacionDesempenho.getNotaAutoEvalComp()); 
+            cs.setDouble("_NOTAPREVCOMP", evaluacionDesempenho.getNotaPreviaComp()); 
+            cs.setDouble("_NOTAFINCOMP", evaluacionDesempenho.getNotaFinalComp()); 
+            
+            cs.setString("_OBSOBJ", evaluacionDesempenho.getObservacionesObj());
+            cs.setDouble("_NOTAAUTOEVALOBJ", evaluacionDesempenho.getNotaAutoEvalObj()); 
+            cs.setDouble("_NOTAPREVOBJ", evaluacionDesempenho.getNotaPreviaObj()); 
+            cs.setDouble("_NOTAFINOBJ", evaluacionDesempenho.getNotaFinalObj()); 
+            cs.setDouble("_NOTAPREVIA", evaluacionDesempenho.getNotaPrevia()); 
+            cs.setInt("_ESTADOAUTOEVAL", evaluacionDesempenho.getEstadoAutoEval());
+            cs.setInt("_ESTADOPLANI", evaluacionDesempenho.getEstadoPlanificacion());
+            
+            cs.executeUpdate();
+            
+              //registrar lineas evaluacion
                
                 //registrar padre
                for(LineaEvaluacion lEval : evaluacionDesempenho.getLineasEvaluacion()){
@@ -194,10 +222,69 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                 
                 
                }
-                
-                
+
+            con.commit();
+            resultado = 1;
+        }catch(Exception ex){
+            try{
+                con.rollback();
+            }catch(Exception exR){
+                System.out.println(exR.getMessage());
             }
-            else{
+            System.out.println(ex.getMessage());
+        }finally{
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }catch(Exception ex){
+                System.out.println(ex.getMessage());
+            }
+        }
+        return resultado; 
+        
+    }
+
+    
+    
+    @Override
+    public int actualizarEvaluacionDesempenho(EvaluacionDesempenho evaluacionDesempenho) {
+        int resultado = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            con.setAutoCommit(false);
+            
+            String sql;
+            
+            sql = "{call ACTUALIZAR_EVALUACIONDESEMPENHO(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)}";
+            cs = con.prepareCall(sql);
+            
+            cs.setInt("_ID_EVALUACION", evaluacionDesempenho.getIdEvaluacion());
+            cs.setInt("_ID_ESCALAPRE", evaluacionDesempenho.getEscalaPreCupos().getIdEscala());
+            cs.setInt("_ID_ESCALASIN", evaluacionDesempenho.getEscalaSinCalibrar().getIdEscala());
+            cs.setInt("_ID_ESCALAFIN", evaluacionDesempenho.getEscalaFinal().getIdEscala());
+            cs.setInt("_ESTADOPDI", evaluacionDesempenho.getEstadoPDI());
+            cs.setString("_OBSERVACIONES", evaluacionDesempenho.getObservaciones());
+            cs.setDouble("_NOTAAUTOEVAL", evaluacionDesempenho.getNotaAutoEval()); 
+            cs.setDouble("_NOTAFINAL", evaluacionDesempenho.getNotaFinal());
+            cs.setBoolean("_TIPO", evaluacionDesempenho.getTipo());
+            cs.setInt("_ESTADO", evaluacionDesempenho.getEstado());
+            
+            cs.setString("_OBSCOMP", evaluacionDesempenho.getObservacionesComp());
+            cs.setDouble("_NOTAAUTOEVALCOMP", evaluacionDesempenho.getNotaAutoEvalComp()); 
+            cs.setDouble("_NOTAPREVCOMP", evaluacionDesempenho.getNotaPreviaComp()); 
+            cs.setDouble("_NOTAFINCOMP", evaluacionDesempenho.getNotaFinalComp()); 
+            
+            cs.setString("_OBSOBJ", evaluacionDesempenho.getObservacionesObj());
+            cs.setDouble("_NOTAAUTOEVALOBJ", evaluacionDesempenho.getNotaAutoEvalObj()); 
+            cs.setDouble("_NOTAPREVOBJ", evaluacionDesempenho.getNotaPreviaObj()); 
+            cs.setDouble("_NOTAFINOBJ", evaluacionDesempenho.getNotaFinalObj()); 
+            cs.setDouble("_NOTAPREVIA", evaluacionDesempenho.getNotaPrevia()); 
+            cs.setInt("_ESTADOAUTOEVAL", evaluacionDesempenho.getEstadoAutoEval());
+            cs.setInt("_ESTADOPLANI", evaluacionDesempenho.getEstadoPlanificacion());
+            
+            cs.executeUpdate();
+            
                 //actualizar lineas evaluacion 
                 for(LineaEvaluacion lEval : evaluacionDesempenho.getLineasEvaluacion()){
                     sql = "{call ACTUALIZAR_LINEA_EVALUACION(?,?,?,?,?,?,?)}";
@@ -230,7 +317,6 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                     }
                     
                 }
-            }
             con.commit();
             resultado = 1;
         }catch(Exception ex){

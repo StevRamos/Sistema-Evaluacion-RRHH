@@ -38,6 +38,17 @@ public class EvaluacionDesempenhoWS {
         return evaluacionDes;
     }
     
+    @WebMethod(operationName = "insertarLineasEvaluacionDesempenho")
+    public int insertarLineasEvaluacionDesempenho(@WebParam(name = "evalDes")EvaluacionDesempenho evalDes ) {
+        int resultado =0;
+        try{
+            resultado = daoEvalDesempenho.insertarLineasEvaluacionDesempenho(evalDes);
+        }catch( Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
     @WebMethod(operationName = "actualizarEvaluacionDesempenho")
     public int actualizarEvaluacionDesempenho(@WebParam(name = "evalDes")EvaluacionDesempenho evalDes ) {
         int resultado =0;
