@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.EvaluacionDAO;
 import pe.edu.pucp.sed.model.Evaluacion;
+import pe.edu.pucp.sed.model.LineaEvaluacion;
 
 public class EvaluacionMySQL implements EvaluacionDAO{
 
