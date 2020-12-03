@@ -38,6 +38,11 @@
             this.cmbPeriodos = new System.Windows.Forms.ComboBox();
             this.txtGestNombrePot = new System.Windows.Forms.TextBox();
             this.dgvGestCompetencias = new System.Windows.Forms.DataGridView();
+            this.lblGestionarComp = new System.Windows.Forms.Label();
+            this.btnCargarMasivaSubPot = new System.Windows.Forms.Button();
+            this.btnCrearCompetencia = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.Cod_Subcompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,11 +50,6 @@
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Periodo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblGestionarComp = new System.Windows.Forms.Label();
-            this.btnCargarMasivaSubPot = new System.Windows.Forms.Button();
-            this.btnCrearCompetencia = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestCompetencias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,62 +166,6 @@
             this.dgvGestCompetencias.TabIndex = 42;
             this.dgvGestCompetencias.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGestCompetencias_CellFormatting);
             // 
-            // Cod_Subcompetencia
-            // 
-            this.Cod_Subcompetencia.HeaderText = "Código Subpotencial";
-            this.Cod_Subcompetencia.MinimumWidth = 6;
-            this.Cod_Subcompetencia.Name = "Cod_Subcompetencia";
-            this.Cod_Subcompetencia.ReadOnly = true;
-            this.Cod_Subcompetencia.Width = 150;
-            // 
-            // Código
-            // 
-            this.Código.HeaderText = "Código Potencial";
-            this.Código.MinimumWidth = 6;
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Width = 125;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
-            // 
-            // Descripción
-            // 
-            this.Descripción.HeaderText = "Descripción";
-            this.Descripción.MinimumWidth = 6;
-            this.Descripción.Name = "Descripción";
-            this.Descripción.ReadOnly = true;
-            this.Descripción.Width = 625;
-            // 
-            // Cargo
-            // 
-            this.Cargo.HeaderText = "Cargo";
-            this.Cargo.MinimumWidth = 6;
-            this.Cargo.Name = "Cargo";
-            this.Cargo.ReadOnly = true;
-            this.Cargo.Width = 125;
-            // 
-            // Peso
-            // 
-            this.Peso.HeaderText = "Peso";
-            this.Peso.MinimumWidth = 6;
-            this.Peso.Name = "Peso";
-            this.Peso.ReadOnly = true;
-            this.Peso.Width = 125;
-            // 
-            // Periodo
-            // 
-            this.Periodo.HeaderText = "Periodo";
-            this.Periodo.MinimumWidth = 6;
-            this.Periodo.Name = "Periodo";
-            this.Periodo.ReadOnly = true;
-            this.Periodo.Width = 125;
-            // 
             // lblGestionarComp
             // 
             this.lblGestionarComp.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -294,6 +238,63 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // Cod_Subcompetencia
+            // 
+            this.Cod_Subcompetencia.HeaderText = "Código Subpotencial";
+            this.Cod_Subcompetencia.MinimumWidth = 6;
+            this.Cod_Subcompetencia.Name = "Cod_Subcompetencia";
+            this.Cod_Subcompetencia.ReadOnly = true;
+            this.Cod_Subcompetencia.Width = 150;
+            // 
+            // Código
+            // 
+            this.Código.HeaderText = "Código Potencial";
+            this.Código.MinimumWidth = 6;
+            this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            this.Código.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 250;
+            // 
+            // Descripción
+            // 
+            this.Descripción.HeaderText = "Descripción";
+            this.Descripción.MinimumWidth = 6;
+            this.Descripción.Name = "Descripción";
+            this.Descripción.ReadOnly = true;
+            this.Descripción.Width = 625;
+            // 
+            // Cargo
+            // 
+            this.Cargo.HeaderText = "Cargo";
+            this.Cargo.MinimumWidth = 6;
+            this.Cargo.Name = "Cargo";
+            this.Cargo.ReadOnly = true;
+            this.Cargo.Width = 125;
+            // 
+            // Peso
+            // 
+            this.Peso.DataPropertyName = "peso";
+            this.Peso.HeaderText = "Peso";
+            this.Peso.MinimumWidth = 6;
+            this.Peso.Name = "Peso";
+            this.Peso.ReadOnly = true;
+            this.Peso.Width = 125;
+            // 
+            // Periodo
+            // 
+            this.Periodo.HeaderText = "Periodo";
+            this.Periodo.MinimumWidth = 6;
+            this.Periodo.Name = "Periodo";
+            this.Periodo.ReadOnly = true;
+            this.Periodo.Width = 125;
             // 
             // frmAdmGestSubpot
             // 

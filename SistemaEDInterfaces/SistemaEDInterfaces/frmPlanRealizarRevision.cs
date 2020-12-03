@@ -68,7 +68,7 @@ namespace SistemaEDInterfaces
                 return;
             }
             evaluacionDesempenho.estadoPlanificacion = (int)EstadoPlanificacion.OcultoParaJefe;
-            if (daoEvaluacionDesempenho.actualizarEvaluacionDesempenho(evaluacionDesempenho) != 0)
+            if (daoEvaluacionDesempenho.actualizarEstadoPlanificacion(evaluacionDesempenho) != 0)
             {
                 //Enviar correo
                 Correo.enviarCorreo("rodriguez.diego@pucp.edu.pe",

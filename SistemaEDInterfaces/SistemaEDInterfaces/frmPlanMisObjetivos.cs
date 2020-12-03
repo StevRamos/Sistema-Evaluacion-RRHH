@@ -169,7 +169,7 @@ namespace SistemaEDInterfaces
             {
                 iniciarEspera();
                 evaluacionDesempenho.estadoPlanificacion = (int)EstadoPlanificacion.OcultoParaColaborador;
-                if (daoEvaluacionDesempenho.actualizarEvaluacionDesempenho(evaluacionDesempenho) == 1)
+                if (daoEvaluacionDesempenho.actualizarEstadoPlanificacion(evaluacionDesempenho) == 1)
                 {
                     //Enviar correo//
                     Correo.enviarCorreo("rodriguez.diego@pucp.edu.pe",

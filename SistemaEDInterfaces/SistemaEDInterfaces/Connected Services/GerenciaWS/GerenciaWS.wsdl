@@ -23,6 +23,12 @@
   <message name="insertarGerenciaResponse">
     <part name="parameters" element="tns:insertarGerenciaResponse" />
   </message>
+  <message name="listarGerenciasXColaborador">
+    <part name="parameters" element="tns:listarGerenciasXColaborador" />
+  </message>
+  <message name="listarGerenciasXColaboradorResponse">
+    <part name="parameters" element="tns:listarGerenciasXColaboradorResponse" />
+  </message>
   <message name="listarXPeriodoActual">
     <part name="parameters" element="tns:listarXPeriodoActual" />
   </message>
@@ -34,12 +40,6 @@
   </message>
   <message name="actualizarGerenciaResponse">
     <part name="parameters" element="tns:actualizarGerenciaResponse" />
-  </message>
-  <message name="listarGerenciasXColaborador">
-    <part name="parameters" element="tns:listarGerenciasXColaborador" />
-  </message>
-  <message name="listarGerenciasXColaboradorResponse">
-    <part name="parameters" element="tns:listarGerenciasXColaboradorResponse" />
   </message>
   <portType name="GerenciaWS">
     <operation name="listarGerencias">
@@ -54,6 +54,10 @@
       <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaRequest" message="tns:insertarGerencia" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaResponse" message="tns:insertarGerenciaResponse" />
     </operation>
+    <operation name="listarGerenciasXColaborador">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorRequest" message="tns:listarGerenciasXColaborador" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorResponse" message="tns:listarGerenciasXColaboradorResponse" />
+    </operation>
     <operation name="listarXPeriodoActual">
       <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarXPeriodoActualRequest" message="tns:listarXPeriodoActual" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarXPeriodoActualResponse" message="tns:listarXPeriodoActualResponse" />
@@ -61,10 +65,6 @@
     <operation name="actualizarGerencia">
       <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/actualizarGerenciaRequest" message="tns:actualizarGerencia" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/actualizarGerenciaResponse" message="tns:actualizarGerenciaResponse" />
-    </operation>
-    <operation name="listarGerenciasXColaborador">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorRequest" message="tns:listarGerenciasXColaborador" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorResponse" message="tns:listarGerenciasXColaboradorResponse" />
     </operation>
   </portType>
   <binding name="GerenciaWSPortBinding" type="tns:GerenciaWS">
@@ -96,6 +96,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarGerenciasXColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarXPeriodoActual">
       <soap:operation soapAction="" />
       <input>
@@ -106,15 +115,6 @@
       </output>
     </operation>
     <operation name="actualizarGerencia">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarGerenciasXColaborador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

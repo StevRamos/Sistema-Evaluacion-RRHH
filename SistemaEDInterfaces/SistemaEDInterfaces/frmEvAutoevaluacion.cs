@@ -43,8 +43,10 @@ namespace SistemaEDInterfaces
             //Si ha sido iniciada 
             else
             {
+                double  notaObj;
+                notaObj = evaluacionDesempenho.notaAutoEvalObj * 100; 
                 txtNotaCompetencias.Text = evaluacionDesempenho.notaAutoEvalComp.ToString();
-                txtNotaObjetivos.Text = evaluacionDesempenho.notaAutoEvalObj.ToString();
+                txtNotaObjetivos.Text = notaObj.ToString();
             }
             
             dgvObjetivos.DataSource = evaluacionDesempenho.objetivos;
@@ -234,7 +236,7 @@ namespace SistemaEDInterfaces
             evaluacionDesempenho.escalaPreCupos.idEscala = -1;
             evaluacionDesempenho.escalaSinCalibrar = new EvaluacionDesempenhoWS.escala();
             evaluacionDesempenho.escalaSinCalibrar.idEscala = -1; 
-            
+
             for(int i = 0; i < evaluacionDesempenho.lineasEvaluacion.Count(); i++)
             {
 
@@ -242,16 +244,18 @@ namespace SistemaEDInterfaces
                 evaluacionDesempenho.lineasEvaluacion[i].notaFinal = -1;
                 evaluacionDesempenho.lineasEvaluacion[i].accionesAtomar = "";
                 evaluacionDesempenho.lineasEvaluacion[i].fechaCumplimiento = DateTime.Parse("01/01/2010");
-                evaluacionDesempenho.lineasEvaluacion[i].fechaCumplimientoSpecified = false; 
-
-                for(int j = 0; j < evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion.Count(); j++)
+                evaluacionDesempenho.lineasEvaluacion[i].fechaCumplimientoSpecified = true;
+                evaluacionDesempenho.lineasEvaluacion[i].itemPDI = new EvaluacionDesempenhoWS.itemPDI();
+                evaluacionDesempenho.lineasEvaluacion[i].itemPDI.idItemPDI = -1; 
+                for (int j = 0; j < evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion.Count(); j++)
                 {
                     evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaPrevia = -1;
                     evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaFinal = -1;
                     evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].accionesAtomar = "";
                     evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].fechaCumplimiento = DateTime.Parse("01/01/2010");
-                    evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].fechaCumplimientoSpecified = false;
-
+                    evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].fechaCumplimientoSpecified = true;
+                    evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].itemPDI = new EvaluacionDesempenhoWS.itemPDI();
+                    evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].itemPDI.idItemPDI = -1;
                 }
             }
         }
@@ -265,10 +269,10 @@ namespace SistemaEDInterfaces
             }
             for(int i = 0; i < evaluacionDesempenho.objetivos.Count(); i++)
             {
-                notaObj += evaluacionDesempenho.objetivos[i].notaAutoEval*(evaluacionDesempenho.objetivos[i].peso/100);
+                notaObj += (evaluacionDesempenho.objetivos[i].notaAutoEval/evaluacionDesempenho.objetivos[i].meta) *(evaluacionDesempenho.objetivos[i].peso/100);
             }
-            evaluacionDesempenho.notaAutoEvalComp = notaComp;
-            evaluacionDesempenho.notaAutoEvalObj = notaObj; 
+            evaluacionDesempenho.notaAutoEvalComp = Math.Round(notaComp);
+            evaluacionDesempenho.notaAutoEvalObj = Math.Round(notaObj,2); 
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -296,7 +300,10 @@ namespace SistemaEDInterfaces
             MessageBox.Show("Se guardaron los cambios",
             "Mensaje Informativo", MessageBoxButtons.OK,
             MessageBoxIcon.Information);
-
+            double notaObj;
+            notaObj = evaluacionDesempenho.notaAutoEvalObj * 100;
+            txtNotaCompetencias.Text = evaluacionDesempenho.notaAutoEvalComp.ToString();
+            txtNotaObjetivos.Text = notaObj.ToString();
             cambiarEstado(EstadoFormulario.Inicial);
         }
 
@@ -333,7 +340,10 @@ namespace SistemaEDInterfaces
                 MessageBox.Show("Ha finalizado la autoevaluación",
                 "Mensaje Informativo", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-
+                double notaObj;
+                notaObj = evaluacionDesempenho.notaAutoEvalObj * 100;
+                txtNotaCompetencias.Text = evaluacionDesempenho.notaAutoEvalComp.ToString();
+                txtNotaObjetivos.Text = notaObj.ToString();
                 cambiarEstado(EstadoFormulario.NoEditable); 
             }
         }

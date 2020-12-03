@@ -96,7 +96,7 @@
       <xs:element minOccurs="0" name="escalaFinal" type="tns:escala" />
       <xs:element minOccurs="0" name="escalaPreCupos" type="tns:escala" />
       <xs:element minOccurs="0" name="escalaSinCalibrar" type="tns:escala" />
-      <xs:element minOccurs="0" name="estado" type="tns:estadoEvaluacion" />
+      <xs:element name="estado" type="xs:int" />
       <xs:element name="estadoPDI" type="xs:int" />
       <xs:element name="idEvaluacion" type="xs:int" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
@@ -131,6 +131,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="accionesAtomar" type="xs:string" />
       <xs:element minOccurs="0" name="evaluacion" type="tns:evaluacion" />
+      <xs:element minOccurs="0" name="fechaCumplimiento" type="xs:dateTime" />
       <xs:element name="idLineaEvaluacion" type="xs:int" />
       <xs:element minOccurs="0" name="itemPDI" type="tns:itemPDI" />
       <xs:element name="notaAutoEval" type="xs:double" />
@@ -328,13 +329,6 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:simpleType name="estadoEvaluacion">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="ACTIVO" />
-      <xs:enumeration value="INACTIVO" />
-      <xs:enumeration value="ELIMINADA" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="estadoPeriodo">
     <xs:restriction base="xs:string">
       <xs:enumeration value="ACTIVO" />

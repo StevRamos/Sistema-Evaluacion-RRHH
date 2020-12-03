@@ -35,7 +35,7 @@ namespace SistemaEDInterfaces
                 EvaluacionDesempenhoWS.lineaEvaluacion lineaActual= 
                     dgvSubcompetencias.Rows[i].DataBoundItem as EvaluacionDesempenhoWS.lineaEvaluacion;
                 //Por si acaso 
-                lineaActual.notaAutoEval = Double.Parse(dgvSubcompetencias.Rows[i].Cells["nota"].Value.ToString());
+                lineaActual.notaAutoEval = Math.Round(Double.Parse(dgvSubcompetencias.Rows[i].Cells["nota"].Value.ToString()),1);
                 //Se calcula la nota de la linea 
                 notaLinea += lineaActual.notaAutoEval * (lineaActual.pesoCriterio.peso/100); 
                 //Se agrega a la lista de lineas 
@@ -61,35 +61,11 @@ namespace SistemaEDInterfaces
             
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Se ha registrado correctamente",
-                "Mensaje Informativo", MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
-        }
 
-        private void btnFinalizar_Click(object sender, EventArgs e)
-        {
-            Global.formPrincipal.cerrarFormularioHijo();
-        }
-        private void agregarLineasSubcompetenciasDataSource()
-        {
-            BindingSource source = new BindingSource();
-
-            foreach (EvaluacionDesempenhoWS.lineaEvaluacion l in linea.sublineasEvaluacion)
-            {
-                if (l.pesoCriterio.criterio.tipo == (int)TipoCriterio.Subcompetencia)
-                {
-                    source.Add(l);
-                }
-
-            }
-            dgvSubcompetencias.DataSource = source;
-        }
         private void frmEvAutoevaluacionComp_Load(object sender, EventArgs e)
         {
-            dgvSubcompetencias.DataSource = linea.sublineasEvaluacion; 
-            if (estado.Equals(EstadoFormulario.Inicial))
+            dgvSubcompetencias.DataSource = linea.sublineasEvaluacion;
+            if (estado.Equals(EstadoFormulario.Inicial) || estado.Equals(EstadoFormulario.NoEditable))
             {
                 dgvSubcompetencias.Columns["nota"].ReadOnly = true;
             }

@@ -32,14 +32,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMisObjetivos = new System.Windows.Forms.Label();
-            this.dgvMisObjetivos = new System.Windows.Forms.DataGridView();
+            this.dgvSubcompetencias = new System.Windows.Forms.DataGridView();
             this.btnRegresar = new System.Windows.Forms.Button();
-            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nota2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
+            this.nota = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubcompetencias)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMisObjetivos
@@ -53,16 +53,16 @@
             this.lblMisObjetivos.TabIndex = 6;
             this.lblMisObjetivos.Text = "SubCompetencias";
             // 
-            // dgvMisObjetivos
+            // dgvSubcompetencias
             // 
-            this.dgvMisObjetivos.AllowUserToAddRows = false;
-            this.dgvMisObjetivos.AllowUserToDeleteRows = false;
-            this.dgvMisObjetivos.AllowUserToResizeColumns = false;
-            this.dgvMisObjetivos.AllowUserToResizeRows = false;
-            this.dgvMisObjetivos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvMisObjetivos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMisObjetivos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvMisObjetivos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSubcompetencias.AllowUserToAddRows = false;
+            this.dgvSubcompetencias.AllowUserToDeleteRows = false;
+            this.dgvSubcompetencias.AllowUserToResizeColumns = false;
+            this.dgvSubcompetencias.AllowUserToResizeRows = false;
+            this.dgvSubcompetencias.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvSubcompetencias.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSubcompetencias.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSubcompetencias.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,17 +70,17 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMisObjetivos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvMisObjetivos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMisObjetivos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.numero,
+            this.dgvSubcompetencias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSubcompetencias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSubcompetencias.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
             this.nombre,
             this.descripcion,
             this.peso,
-            this.nota2});
-            this.dgvMisObjetivos.EnableHeadersVisualStyles = false;
-            this.dgvMisObjetivos.Location = new System.Drawing.Point(24, 108);
-            this.dgvMisObjetivos.Name = "dgvMisObjetivos";
+            this.nota});
+            this.dgvSubcompetencias.EnableHeadersVisualStyles = false;
+            this.dgvSubcompetencias.Location = new System.Drawing.Point(24, 108);
+            this.dgvSubcompetencias.Name = "dgvSubcompetencias";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,15 +88,17 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMisObjetivos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMisObjetivos.RowHeadersVisible = false;
+            this.dgvSubcompetencias.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSubcompetencias.RowHeadersVisible = false;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvMisObjetivos.RowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvMisObjetivos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMisObjetivos.Size = new System.Drawing.Size(971, 369);
-            this.dgvMisObjetivos.TabIndex = 7;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvSubcompetencias.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvSubcompetencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSubcompetencias.Size = new System.Drawing.Size(971, 369);
+            this.dgvSubcompetencias.TabIndex = 7;
+            this.dgvSubcompetencias.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSubcompetencias_CellFormatting);
             // 
             // btnRegresar
             // 
@@ -112,10 +114,10 @@
             this.btnRegresar.UseVisualStyleBackColor = false;
             this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
-            // numero
+            // ID
             // 
-            this.numero.HeaderText = "Número";
-            this.numero.Name = "numero";
+            this.ID.HeaderText = "Número";
+            this.ID.Name = "ID";
             // 
             // nombre
             // 
@@ -134,11 +136,12 @@
             this.peso.HeaderText = "Peso";
             this.peso.Name = "peso";
             // 
-            // nota2
+            // nota
             // 
-            this.nota2.HeaderText = "Nota";
-            this.nota2.Name = "nota2";
-            this.nota2.Width = 150;
+            this.nota.DataPropertyName = "notaPrevia";
+            this.nota.HeaderText = "Nota";
+            this.nota.Name = "nota";
+            this.nota.Width = 150;
             // 
             // frmEvMisTrabajadoresPreviaCompetencias
             // 
@@ -147,11 +150,12 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
             this.Controls.Add(this.btnRegresar);
-            this.Controls.Add(this.dgvMisObjetivos);
+            this.Controls.Add(this.dgvSubcompetencias);
             this.Controls.Add(this.lblMisObjetivos);
             this.Name = "frmEvMisTrabajadoresPreviaCompetencias";
             this.Text = "frmEvMisTrabajadoresCompetencias";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).EndInit();
+            this.Load += new System.EventHandler(this.frmEvMisTrabajadoresPreviaCompetencias_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSubcompetencias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,12 +164,12 @@
         #endregion
 
         private System.Windows.Forms.Label lblMisObjetivos;
-        private System.Windows.Forms.DataGridView dgvMisObjetivos;
+        private System.Windows.Forms.DataGridView dgvSubcompetencias;
         private System.Windows.Forms.Button btnRegresar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn peso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nota2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nota;
     }
 }

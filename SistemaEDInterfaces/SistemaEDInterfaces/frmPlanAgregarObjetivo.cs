@@ -42,22 +42,6 @@ namespace SistemaEDInterfaces
                     MessageBoxIcon.Error);
                 valido = 0; 
             }
-            else
-            {
-                //Validar la suma de pesos
-
-                if ((sumaPesoObjetivos + peso) > 100 || (sumaPesoObjetivos + peso) < 0)
-                {
-                    MessageBox.Show("Los pesos de los objetivos no pueden sumar mas de 100",
-                    "Mensaje de error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-                    valido = 0;
-                }
-               
-
-            }
-
             return valido; 
 
         }

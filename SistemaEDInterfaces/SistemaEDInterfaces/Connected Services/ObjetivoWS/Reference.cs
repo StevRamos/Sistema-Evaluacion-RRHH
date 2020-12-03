@@ -2082,6 +2082,10 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         
         private evaluacion evaluacionField;
         
+        private System.DateTime fechaCumplimientoField;
+        
+        private bool fechaCumplimientoFieldSpecified;
+        
         private int idLineaEvaluacionField;
         
         private itemPDI itemPDIField;
@@ -2122,6 +2126,30 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public System.DateTime fechaCumplimiento {
+            get {
+                return this.fechaCumplimientoField;
+            }
+            set {
+                this.fechaCumplimientoField = value;
+                this.RaisePropertyChanged("fechaCumplimiento");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlIgnoreAttribute()]
+        public bool fechaCumplimientoSpecified {
+            get {
+                return this.fechaCumplimientoFieldSpecified;
+            }
+            set {
+                this.fechaCumplimientoFieldSpecified = value;
+                this.RaisePropertyChanged("fechaCumplimientoSpecified");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public int idLineaEvaluacion {
             get {
                 return this.idLineaEvaluacionField;
@@ -2133,7 +2161,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public itemPDI itemPDI {
             get {
                 return this.itemPDIField;
@@ -2145,7 +2173,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public double notaAutoEval {
             get {
                 return this.notaAutoEvalField;
@@ -2157,7 +2185,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public double notaFinal {
             get {
                 return this.notaFinalField;
@@ -2169,7 +2197,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
         public double notaPrevia {
             get {
                 return this.notaPreviaField;
@@ -2181,7 +2209,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public pesoCriterio pesoCriterio {
             get {
                 return this.pesoCriterioField;
@@ -2193,7 +2221,7 @@ namespace SistemaEDInterfaces.ObjetivoWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("sublineasEvaluacion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=8)]
+        [System.Xml.Serialization.XmlElementAttribute("sublineasEvaluacion", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=9)]
         public lineaEvaluacion[] sublineasEvaluacion {
             get {
                 return this.sublineasEvaluacionField;
