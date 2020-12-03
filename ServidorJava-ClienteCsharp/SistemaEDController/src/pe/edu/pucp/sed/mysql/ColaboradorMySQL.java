@@ -341,6 +341,9 @@ public class ColaboradorMySQL implements ColaboradorDAO{
             col.setIdColaborador(rs.getInt("id_Colaborador"));
             col.setJefe(new Colaborador());
             col.getJefe().setIdColaborador(rs.getInt("id_Jefe"));
+            col.getJefe().setNombres(rs.getString("nombreJefe"));
+            col.getJefe().setApellidos(rs.getString("apellidosJefe"));
+            
             col.setDni(rs.getString("dni"));
             col.setNombres(rs.getString("nombres"));
             col.setApellidos(rs.getString("apellidos"));

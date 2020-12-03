@@ -43,12 +43,12 @@ namespace SistemaEDInterfaces
             if (txtNomArchPotMav.Text != "")
             {
 
-                string[] lineasCompetencias = File.ReadAllLines(txtNomArchPotMav.Text);
+                string[] lineasPotenciales = File.ReadAllLines(txtNomArchPotMav.Text);
 
                 //Para Actualizar: 
                 if (rdbActMavPot.Checked)
                 {
-                    foreach (var linea in lineasCompetencias)
+                    foreach (var linea in lineasPotenciales)
                     {
                         var valores = linea.Split(',');
 
@@ -80,7 +80,7 @@ namespace SistemaEDInterfaces
                             //No se actualiza
                             criterio.descripcion = "";
                         }
-                        //No actualizar competencia
+                        //No actualizar potencial
                         criterio.criterioPadre = new CriterioWS.criterio();
                         criterio.criterioPadre.idCriterio = -1;
                         if (daoCriterio.actualizarCriterio(criterio) == 0)
@@ -92,7 +92,7 @@ namespace SistemaEDInterfaces
                 //Para insertar
                 else if (rdbInsMavPot.Checked)
                 {
-                    foreach (var linea in lineasCompetencias)
+                    foreach (var linea in lineasPotenciales)
                     {
                         var valores = linea.Split(',');
 
@@ -103,7 +103,7 @@ namespace SistemaEDInterfaces
                         criterio.idCriterio = id;
                         criterio.nombre = nombre;
                         criterio.descripcion = descripcion;
-                        criterio.tipo = (int)TipoCriterio.Competencia;
+                        criterio.tipo = (int)TipoCriterio.Potencial;
                         criterio.criterioPadre = new CriterioWS.criterio();
                         criterio.criterioPadre.idCriterio = -1;
 
@@ -202,7 +202,7 @@ namespace SistemaEDInterfaces
             //Accion para cargar los datos a la base de datos
             if (!(rdbActMavPot.Checked) && !(rdbInsMavPot.Checked) && txtNomArchPotMav.Text != "")
             {
-                MessageBox.Show("Debe seleccionar si desea insertar o actualizar competencias.",
+                MessageBox.Show("Debe seleccionar si desea insertar o actualizar potenciales.",
                                    "Mensaje de error",
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Error);

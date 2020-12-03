@@ -234,17 +234,23 @@ namespace SistemaEDInterfaces
             evaluacionDesempenho.escalaPreCupos.idEscala = -1;
             evaluacionDesempenho.escalaSinCalibrar = new EvaluacionDesempenhoWS.escala();
             evaluacionDesempenho.escalaSinCalibrar.idEscala = -1; 
+            
             for(int i = 0; i < evaluacionDesempenho.lineasEvaluacion.Count(); i++)
             {
 
                 evaluacionDesempenho.lineasEvaluacion[i].notaPrevia = -1;
                 evaluacionDesempenho.lineasEvaluacion[i].notaFinal = -1;
                 evaluacionDesempenho.lineasEvaluacion[i].accionesAtomar = "";
+                evaluacionDesempenho.lineasEvaluacion[i].fechaCumplimiento = DateTime.Parse("01/01/2010");
+                evaluacionDesempenho.lineasEvaluacion[i].fechaCumplimientoSpecified = false; 
+
                 for(int j = 0; j < evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion.Count(); j++)
                 {
                     evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaPrevia = -1;
                     evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaFinal = -1;
-                    evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].accionesAtomar = ""; 
+                    evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].accionesAtomar = "";
+                    evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].fechaCumplimiento = DateTime.Parse("01/01/2010");
+                    evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].fechaCumplimientoSpecified = false;
 
                 }
             }
@@ -270,6 +276,8 @@ namespace SistemaEDInterfaces
             bool seRegistra = evaluacionDesempenho.estadoAutoEval.Equals(0) && evaluacionDesempenho.estado.Equals(0);
             //Obtener la lista de objetivos del dgv 
             asignarObjetivos();
+            //Se marca los datos que no se actualizaran 
+            asignarDatosNoActualizables(); 
             //calcular la notaAutoEvalObj y notaAutoEvalComp 
             calcularNotaAutoEv();
             //cambiar el estado de la evaluacionDesemepenho 
@@ -305,6 +313,8 @@ namespace SistemaEDInterfaces
                 bool seRegistra = evaluacionDesempenho.estadoAutoEval.Equals(0) && evaluacionDesempenho.estado.Equals(0);
                 //Obtener la lista de objetivos del dgv 
                 asignarObjetivos();
+                //Se marca los datos que no se actualizaran 
+                asignarDatosNoActualizables();
                 //calcular la notaAutoEvalObj y notaAutoEvalComp 
                 calcularNotaAutoEv();
                 //cambiar el estado de la evaluacionDesemepenho 

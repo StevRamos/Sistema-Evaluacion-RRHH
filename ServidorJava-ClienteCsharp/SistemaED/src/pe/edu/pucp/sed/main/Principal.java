@@ -17,6 +17,7 @@ import pe.edu.pucp.sed.dao.EscalaPeriodoDAO;
 import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
 import pe.edu.pucp.sed.dao.GerenciaDAO;
 import pe.edu.pucp.sed.dao.GerenciaPeriodoDAO;
+import pe.edu.pucp.sed.dao.ItemPDIDAO;
 import pe.edu.pucp.sed.dao.ObjetivoDAO;
 //import pe.edu.pucp.sed.dao.EvaluacionPotencialDAO;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
@@ -31,6 +32,7 @@ import pe.edu.pucp.sed.model.EstadoCuenta;
 import pe.edu.pucp.sed.model.EvaluacionDesempenho;
 import pe.edu.pucp.sed.model.Gerencia;
 import pe.edu.pucp.sed.model.GerenciaPeriodo;
+import pe.edu.pucp.sed.model.ItemPDI;
 import pe.edu.pucp.sed.model.Objetivo;
 //import pe.edu.pucp.sed.model.EvaluacionPotencial;
 import pe.edu.pucp.sed.model.Periodo;
@@ -43,6 +45,7 @@ import pe.edu.pucp.sed.mysql.EscalaPeriodoMySQL;
 import pe.edu.pucp.sed.mysql.EvaluacionDesempenhoMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaMySQL;
 import pe.edu.pucp.sed.mysql.GerenciaPeriodoMySQL;
+import pe.edu.pucp.sed.mysql.ItemPDIMySQL;
 import pe.edu.pucp.sed.mysql.ObjetivoMySQL;
 //import pe.edu.pucp.sed.mysql.EvaluacionPotencialMySQL;
 import pe.edu.pucp.sed.mysql.PeriodoMySQL;
@@ -59,6 +62,10 @@ public class Principal {
         
 //Colaboradores        
    SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+   
+//        ItemPDIDAO daoItem = new ItemPDIMySQL();
+//        for(ItemPDI i : daoItem.listar())
+//            System.out.println(i.getIdItemPDI() + " " + i.getNombre());
         
  //       ColaboradorDAO daoColab = new ColaboradorMySQL();
 //        Colaborador jefe = new Colaborador();
@@ -328,13 +335,17 @@ public class Principal {
 //        System.out.println(per.getIdPeriodo());
 //        System.out.println("-----");
 
-//          EvaluacionDesempenhoDAO daoEvalDes = new EvaluacionDesempenhoMySQL();
-//          EvaluacionDesempenho evalDes = new EvaluacionDesempenho();
-////          ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
-////          evaluacionesDesempenho = daoEvalDes.listarDesempenhoPorPeriodo(1,1);
-////          for (EvaluacionDesempenho eval : evaluacionesDesempenho){
-////              System.out.println(eval.getIdEvaluacion());
-////          }
+          EvaluacionDesempenhoDAO daoEvalDes = new EvaluacionDesempenhoMySQL();
+          EvaluacionDesempenho evalDes = new EvaluacionDesempenho();
+          
+          evalDes = daoEvalDes.obtenerEvaluacionDesempenho(1, 1);
+          System.out.println(evalDes.getIdEvaluacion());
+          
+//          ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
+//          evaluacionesDesempenho = daoEvalDes.listarDesempenhoPorPeriodo(1,1);
+//          for (EvaluacionDesempenho eval : daoEvalDes.listarDesempenhoPorPeriodo(1, 1)){
+//              System.out.println(eval.getEscalaFinal().getIdEscala());
+//          }
 //
 //         evalDes.setIdEvaluacion(1);
 //         evalDes.setEstadoPlanificacion(1);
@@ -387,5 +398,12 @@ public class Principal {
 //          for (Criterio c : arrcri){
 //              System.out.println(c.getIdCriterio());
 //          }
+
+        PesoCriterioDAO daopeso = new PesoCriterioMySQL();
+        ArrayList<PesoCriterio> arreglosub = new ArrayList<>();
+        arreglosub = daopeso.listar_subcriterios_x_criterio(3, 2, 1);
+        for (PesoCriterio pc :arreglosub ){
+            System.out.println(pc.getPeso());
+        }
     }
 }

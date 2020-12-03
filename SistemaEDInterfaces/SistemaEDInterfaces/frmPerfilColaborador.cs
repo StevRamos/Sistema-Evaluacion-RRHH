@@ -27,7 +27,7 @@ namespace SistemaEDInterfaces
             txtDNI.Text = colaborador.dni;
             txtGerencia.Text = colaborador.gerencia.nombre;
             txtID.Text = colaborador.idColaborador.ToString();
-            txtJefe.Text = colaborador.jefe.nombres;
+            txtJefe.Text = colaborador.jefe.nombres + " " + colaborador.jefe.apellidos;
             txtNombreCompleto.Text = colaborador.nombres + " " + colaborador.apellidos;
             txtTelefono.Text = colaborador.telefono;
             dtpFechaNacimiento.Value = colaborador.fechaNac;
