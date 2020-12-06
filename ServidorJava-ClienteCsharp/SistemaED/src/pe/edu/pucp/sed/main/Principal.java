@@ -58,10 +58,14 @@ import pe.edu.pucp.sed.mysql.UsuarioMySQL;
  * @author Jorge Miguel Baca
  */
 public class Principal {
-    public static void main(String[] args) throws ParseException{
+    public static void main(String[] args){
         
 //Colaboradores        
    SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+   
+   ColaboradorDAO daoColaborador = new ColaboradorMySQL();
+   for(Colaborador c : daoColaborador.listarColaboradoresXJefe9Box(1, 1))
+       System.out.println(c.getNombres() + " " + c.getEvaluaciones().get(1).getNotaFinal());
    
 //        ItemPDIDAO daoItem = new ItemPDIMySQL();
 //        for(ItemPDI i : daoItem.listar())
@@ -335,11 +339,11 @@ public class Principal {
 //        System.out.println(per.getIdPeriodo());
 //        System.out.println("-----");
 
-          EvaluacionDesempenhoDAO daoEvalDes = new EvaluacionDesempenhoMySQL();
-          EvaluacionDesempenho evalDes = new EvaluacionDesempenho();
-          
-          evalDes = daoEvalDes.obtenerEvaluacionDesempenho(1, 1);
-          System.out.println(evalDes.getIdEvaluacion());
+//          EvaluacionDesempenhoDAO daoEvalDes = new EvaluacionDesempenhoMySQL();
+//          EvaluacionDesempenho evalDes = new EvaluacionDesempenho();
+//          
+//          evalDes = daoEvalDes.obtenerEvaluacionDesempenho(1, 1);
+//          System.out.println(evalDes.getIdEvaluacion());
           
 //          ArrayList<EvaluacionDesempenho> evaluacionesDesempenho = new ArrayList<>();
 //          evaluacionesDesempenho = daoEvalDes.listarDesempenhoPorPeriodo(1,1);
@@ -398,12 +402,12 @@ public class Principal {
 //          for (Criterio c : arrcri){
 //              System.out.println(c.getIdCriterio());
 //          }
-
-        PesoCriterioDAO daopeso = new PesoCriterioMySQL();
-        ArrayList<PesoCriterio> arreglosub = new ArrayList<>();
-        arreglosub = daopeso.listar_subcriterios_x_criterio(3, 2, 1);
-        for (PesoCriterio pc :arreglosub ){
-            System.out.println(pc.getPeso());
-        }
+//
+//        PesoCriterioDAO daopeso = new PesoCriterioMySQL();
+//        ArrayList<PesoCriterio> arreglosub = new ArrayList<>();
+//        arreglosub = daopeso.listar_subcriterios_x_criterio(3, 2, 1);
+//        for (PesoCriterio pc :arreglosub ){
+//            System.out.println(pc.getPeso());
+//        }
     }
 }

@@ -8,8 +8,11 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.ColaboradorDAO;
+import pe.edu.pucp.sed.dao.EvaluacionDAO;
+import pe.edu.pucp.sed.dao.EvaluacionDesempenhoDAO;
 import pe.edu.pucp.sed.model.Colaborador;
 //<<<<<<< HEAD
 import pe.edu.pucp.sed.model.EstadoCuenta;
@@ -420,6 +423,27 @@ public class ColaboradorMySQL implements ColaboradorDAO{
         }finally{
             try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
         }
+        return colaboradores;
+    }
+    
+    public ArrayList<Colaborador> listarColaboradoresXJefe9Box( int idJefe, int idPeriodo ){
+        ArrayList<Colaborador> colaboradores = null;
+                
+        EvaluacionDAO daoEvaluacion = new EvaluacionMySQL();
+        EvaluacionDesempenhoDAO daoEvaluacionDesempenho = new EvaluacionDesempenhoMySQL();
+        
+        try{
+            colaboradores = this.listarColaboradoresXJefe(idJefe);
+            for(Colaborador c : colaboradores){
+                c.getEvaluaciones().add(daoEvaluacion.obtenerEvaluacionPotencial(c.getIdColaborador(), idPeriodo));
+                c.getEvaluaciones().add(daoEvaluacionDesempenho.obtenerEvaluacionDesempenho(c.getIdColaborador(), idPeriodo));
+            }
+            Collections.sort(colaboradores);
+        }
+        catch(Exception ex){
+            System.out.print(ex.getMessage());
+        }
+        
         return colaboradores;
     }
     
