@@ -764,6 +764,9 @@
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefe9BoxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -796,10 +799,10 @@
     <None Include="Connected Services\EscalaPeriodoWS\EscalaPeriodoWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.gerencia.datasource">
+    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.escalaPeriodo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.listarXPeriodoActualResponse.datasource">
+    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.listarEPXPeriodoActualResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.wsdl" />

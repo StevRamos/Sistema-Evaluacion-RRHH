@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -19,6 +20,7 @@ namespace SistemaEDInterfaces
         BindingList<ColaboradorWS.colaborador> colaboradores;
         EscalaPeriodoWS.EscalaPeriodoWSClient daoEscalaPeriodo;
         BindingList<EscalaPeriodoWS.escalaPeriodo> escalasPeriodo;
+        Hashtable escalas;
 
         public frmAdmCalibrar()
         {
@@ -30,7 +32,9 @@ namespace SistemaEDInterfaces
 
             gerencias = new BindingList<GerenciaWS.gerencia>(daoGerencia.listarGerencias().ToList());
             jefes = new BindingList<ColaboradorWS.colaborador>(daoColaborador.listarJefeXGerenciaXPeriodoActual(gerencias[0].idGerencia).ToList());
-            //escalasPeriodo = new BindingList<EscalaPeriodoWS.escalaPeriodo>(daoEscalaPeriodo.listarXPeriodoActual().ToList());
+            escalasPeriodo = new BindingList<EscalaPeriodoWS.escalaPeriodo>(daoEscalaPeriodo.listarEPXPeriodoActual().ToList());
+            escalas = cargarHashTable();
+
 
             this.cbGerencia.DataSource = gerencias;
             this.cbGerencia.ValueMember = "idGerencia";
@@ -41,6 +45,24 @@ namespace SistemaEDInterfaces
                 this.cbJefe.DataSource = jefes;
                 this.cbJefe.ValueMember = "idColaborador";
                 this.cbJefe.DisplayMember = "nombre";
+            }
+
+            colaboradores = new BindingList<ColaboradorWS.colaborador>(
+                daoColaborador.listarColaboradoresXJefe9Box(
+                    ((ColaboradorWS.colaborador)this.cbJefe.SelectedItem).idColaborador,
+                    Global.periodoActual.idPeriodo).ToList());
+
+            foreach (ColaboradorWS.colaborador c in colaboradores)
+            {
+                BtnColaborador btnColab = new BtnColaborador(c);
+                if (c.evaluaciones[0].escalaPreCupos.nombre != null && c.evaluaciones[1].escalaPreCupos.nombre != null)
+                {
+                    this.nineBox.insertarBtnColaborador(btnColab,
+                        (int)escalas[c.evaluaciones[0].escalaPreCupos.nombre],
+                        (int)escalas[c.evaluaciones[1].escalaPreCupos.nombre]);
+                }
+                else
+                    this.nineBox.insertarBtnColaborador(btnColab, 0, 2);
             }
 
             this.dgvCupos.DataSource = escalasPeriodo;
@@ -55,11 +77,15 @@ namespace SistemaEDInterfaces
 
         private void cbGerencia_SelectedValueChanged(object sender, EventArgs e)
         {
-            BindingList<ColaboradorWS.colaborador> aux = new BindingList<ColaboradorWS.colaborador>(
-                daoColaborador.listarJefeXGerenciaXPeriodoActual(
-                ((GerenciaWS.gerencia)this.cbGerencia.SelectedItem).idGerencia));
+            BindingList<ColaboradorWS.colaborador> aux = jefes;
 
-            if( aux == null )
+            try
+            {
+                aux = new BindingList<ColaboradorWS.colaborador>(
+                    daoColaborador.listarJefeXGerenciaXPeriodoActual(
+                    ((GerenciaWS.gerencia)this.cbGerencia.SelectedItem).idGerencia));
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show("Esta gerencia no tiene jefes disponibles",
                     "Mensaje de error",
@@ -69,6 +95,45 @@ namespace SistemaEDInterfaces
             }
 
             jefes = aux;
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            colaboradores = new BindingList<ColaboradorWS.colaborador>(
+                daoColaborador.listarColaboradoresXJefe9Box(
+                    ((ColaboradorWS.colaborador)this.cbJefe.SelectedItem).idColaborador,
+                    Global.periodoActual.idPeriodo).ToList());
+
+            foreach (ColaboradorWS.colaborador c in colaboradores)
+            {
+                BtnColaborador btnColab = new BtnColaborador(c);
+                if (c.evaluaciones[0].escalaPreCupos.nombre != null && c.evaluaciones[1].escalaPreCupos.nombre != null)
+                {
+                    this.nineBox.insertarBtnColaborador(btnColab,
+                        (int) escalas[c.evaluaciones[0].escalaPreCupos.nombre],
+                        (int) escalas[c.evaluaciones[1].escalaPreCupos.nombre]);
+                }
+                else
+                    this.nineBox.insertarBtnColaborador(btnColab, 0, 2);
+
+            }
+
+        }
+
+        private Hashtable cargarHashTable()
+        {
+            Hashtable ret = new Hashtable();
+
+            ret.Add("A", 4);
+            ret.Add("B", 3);
+            ret.Add("C", 2);
+            ret.Add("D", 1);
+            ret.Add("E", 0);
+            ret.Add("Alto", 0);
+            ret.Add("Medio", 1);
+            ret.Add("Bajo", 2);
+
+            return ret;
         }
     }
 }

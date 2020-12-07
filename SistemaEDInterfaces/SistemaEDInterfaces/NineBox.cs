@@ -14,6 +14,7 @@ namespace SistemaEDInterfaces
     {
         private BtnColaborador colaboradorSeleccionado;
         private BindingList<BtnColaborador> colaboradores;
+        int[] colab;
 
         public NineBox()
         {
@@ -22,6 +23,8 @@ namespace SistemaEDInterfaces
             this.tlp9Box.Size = new Size(940, 500);
 
             InitializeFlowLayoutPanels(3, 5);
+
+            colab = new int[this.tlp9Box.ColumnCount];
 
             colaboradores = new BindingList<BtnColaborador>();
 
@@ -75,6 +78,7 @@ namespace SistemaEDInterfaces
                 org.Controls.Remove(colaboradorSeleccionado);
                 colaboradorSeleccionado.Clicked = false;
                 colaboradorSeleccionado.Contenedor = panel;
+                this.sumatoriaColaboradores();
             }
 
         }
@@ -122,6 +126,7 @@ namespace SistemaEDInterfaces
                 panel.Controls.Add(btn);
                 btn.Contenedor = (FlowLayoutPanel)panel;
                 colaboradores.Add(btn);
+                this.sumatoriaColaboradores();
             }
         }
 
@@ -140,6 +145,25 @@ namespace SistemaEDInterfaces
             this.tlp9Box.Controls.OfType<Control>().Where(p => p is FlowLayoutPanel).ToList().ForEach(panel => {
                 panel.AllowDrop = drop;
             });
+        }
+
+        public void sumatoriaColaboradores()
+        {
+            int x;
+            Control panel;
+
+            for(int i = 0, k = this.tlp9Box.ColumnCount - 1; i < this.tlp9Box.ColumnCount; i++, k-- )
+            {
+                x = 0;
+                for(int j=0; j< tlp9Box.RowCount; j++)
+                {
+                    panel = this.tlp9Box.GetControlFromPosition(i, j);
+                    panel.Controls.OfType<BtnColaborador>().ToList().ForEach(btn => {
+                        x++;
+                    });
+                }
+                colab[k] = x;
+            }
         }
 
     }

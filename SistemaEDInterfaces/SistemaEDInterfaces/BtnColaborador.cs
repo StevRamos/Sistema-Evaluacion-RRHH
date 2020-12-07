@@ -12,12 +12,20 @@ namespace SistemaEDInterfaces
 {
     public partial class BtnColaborador : UserControl
     {
+        private ColaboradorWS.colaborador colaborador;
         private bool clicked = false;
         private FlowLayoutPanel contenedor;
 
         public BtnColaborador()
         {
             InitializeComponent();
+            this.lblNombre = this.Controls.OfType<Label>().First();
+        }
+
+        public BtnColaborador(ColaboradorWS.colaborador c)
+        {
+            InitializeComponent();
+            this.setColaborador(c);
             this.lblNombre = this.Controls.OfType<Label>().First();
         }
 
@@ -32,6 +40,12 @@ namespace SistemaEDInterfaces
                 this.contenedor.DoDragDrop(this, DragDropEffects.Move);
             }
 
+        }
+
+        public void setColaborador(ColaboradorWS.colaborador c)
+        {
+            this.colaborador = c;
+            this.setNombre(c.nombres + " " + c.apellidos);
         }
 
         public void setNombre(String nombre)
