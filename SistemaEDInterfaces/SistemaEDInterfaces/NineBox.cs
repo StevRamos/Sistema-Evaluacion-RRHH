@@ -14,7 +14,9 @@ namespace SistemaEDInterfaces
     {
         private BtnColaborador colaboradorSeleccionado;
         private BindingList<BtnColaborador> colaboradores;
-        String[] colab;
+
+        /* opcional para cupos */
+        private dgvCupos cupos;
 
         public NineBox()
         {
@@ -23,8 +25,6 @@ namespace SistemaEDInterfaces
             this.tlp9Box.Size = new Size(940, 500);
 
             InitializeFlowLayoutPanels(3, 5);
-
-            colab = new String[this.tlp9Box.ColumnCount];
 
             colaboradores = new BindingList<BtnColaborador>();
 
@@ -63,7 +63,7 @@ namespace SistemaEDInterfaces
         }
 
         public BtnColaborador ColaboradorSeleccionado { get => colaboradorSeleccionado; set => colaboradorSeleccionado = value; }
-        public String[] Colab { get => colab; set => colab = value; }
+        public dgvCupos Cupos { get => cupos; set => cupos = value; }
 
         private void P_DragDrop(object sender, DragEventArgs e)
         {
@@ -149,21 +149,27 @@ namespace SistemaEDInterfaces
 
         public void sumatoriaColaboradores()
         {
+            int[] colab;
             int x;
             Control panel;
 
-            for(int i = 0, k = this.tlp9Box.ColumnCount - 1; i < this.tlp9Box.ColumnCount; i++, k-- )
+            colab = new int[this.tlp9Box.ColumnCount];
+
+            for (int i = 0, k = this.tlp9Box.ColumnCount - 1; i < this.tlp9Box.ColumnCount; i++, k-- )
             {
                 x = 0;
-                for(int j=0; j< tlp9Box.RowCount; j++)
+                for(int j=0; j < tlp9Box.RowCount; j++)
                 {
                     panel = this.tlp9Box.GetControlFromPosition(i, j);
                     panel.Controls.OfType<BtnColaborador>().ToList().ForEach(btn => {
                         x++;
                     });
                 }
-                colab[k] = x.ToString();
+                colab[k] = x;
             }
+            if( this.cupos != null)
+                this.cupos.setNineBox(colab);
+
         }
 
         public void vaciar9Box()

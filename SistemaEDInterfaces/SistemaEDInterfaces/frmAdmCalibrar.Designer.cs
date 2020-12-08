@@ -155,12 +155,6 @@
             // 
             this.nineBox.AutoSize = true;
             this.nineBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.nineBox.Colab = new string[] {
-        "",
-        "",
-        "",
-        "",
-        ""};
             this.nineBox.ColaboradorSeleccionado = null;
             this.nineBox.Location = new System.Drawing.Point(174, 35);
             this.nineBox.Name = "nineBox";
@@ -277,10 +271,8 @@
             this.dgvCupos.Location = new System.Drawing.Point(0, 0);
             this.dgvCupos.Margin = new System.Windows.Forms.Padding(0);
             this.dgvCupos.Name = "dgvCupos";
-            this.dgvCupos.NumeroColab = null;
             this.dgvCupos.Size = new System.Drawing.Size(592, 132);
             this.dgvCupos.TabIndex = 0;
-            this.dgvCupos.Load += new System.EventHandler(this.dgvCupos_Load);
             // 
             // groupBox1
             // 

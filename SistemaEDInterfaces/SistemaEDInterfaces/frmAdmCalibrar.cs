@@ -48,6 +48,8 @@ namespace SistemaEDInterfaces
                 this.cbJefe.DisplayMember = "nombre";
             }
 
+            this.nineBox.Cupos = this.dgvCupos;
+
             colaboradores = new BindingList<ColaboradorWS.colaborador>(
                 daoColaborador.listarColaboradoresXJefe9Box(
                     ((ColaboradorWS.colaborador)this.cbJefe.SelectedItem).idColaborador,
@@ -67,10 +69,6 @@ namespace SistemaEDInterfaces
             }
 
             this.dgvCupos.setCupos(this.calcularCupos());
-            this.dgvCupos.NumeroColab = this.nineBox.Colab;
-
-            this.dgvCupos.Location = new Point(710, 60);
-            
         }
 
         private int[] calcularCupos()
@@ -152,14 +150,5 @@ namespace SistemaEDInterfaces
             return ret;
         }
 
-        private void gbCupos_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvCupos_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

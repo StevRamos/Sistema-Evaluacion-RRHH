@@ -13,9 +13,8 @@ namespace SistemaEDInterfaces
     [ComplexBindingProperties("DataSource", "DataMember")]
     public partial class dgvCupos : UserControl
     {
-        Control[] cupos;
-        Control[] nineBox;
-        String[] numeroColab;
+        private Control[] cupos;
+        private Control[] nineBox;
 
         public dgvCupos()
         {
@@ -24,18 +23,6 @@ namespace SistemaEDInterfaces
             nineBox = this.inicializaNineBox();
         }
 
-        public String[] NumeroColab
-        {
-            get
-            {
-                return this.numeroColab;
-            }
-
-            set
-            {
-                this.numeroColab = value;
-            }
-        }
 
         private Control[] inicializaNineBox()
         {
@@ -78,11 +65,7 @@ namespace SistemaEDInterfaces
         public void setNineBox(int[] num)
         {
             for (int i = 0; i < this.nineBox.Length; i++)
-            {
-                this.nineBox[i].DataBindings.Add(new Binding("Checked", 
-                                    num[i], ""));
-            }
-                
+                this.nineBox[i].Text = num[i].ToString();
 
         }
 
