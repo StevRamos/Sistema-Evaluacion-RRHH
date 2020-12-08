@@ -14,7 +14,7 @@ namespace SistemaEDInterfaces
     {
         private BtnColaborador colaboradorSeleccionado;
         private BindingList<BtnColaborador> colaboradores;
-        int[] colab;
+        String[] colab;
 
         public NineBox()
         {
@@ -24,7 +24,7 @@ namespace SistemaEDInterfaces
 
             InitializeFlowLayoutPanels(3, 5);
 
-            colab = new int[this.tlp9Box.ColumnCount];
+            colab = new String[this.tlp9Box.ColumnCount];
 
             colaboradores = new BindingList<BtnColaborador>();
 
@@ -63,6 +63,7 @@ namespace SistemaEDInterfaces
         }
 
         public BtnColaborador ColaboradorSeleccionado { get => colaboradorSeleccionado; set => colaboradorSeleccionado = value; }
+        public String[] Colab { get => colab; set => colab = value; }
 
         private void P_DragDrop(object sender, DragEventArgs e)
         {
@@ -85,7 +86,6 @@ namespace SistemaEDInterfaces
 
         private void P_DragEnter(object sender, DragEventArgs e)
         {
-            //falta hacer la validacion
             e.Effect = DragDropEffects.Move;
         }
 
@@ -162,7 +162,24 @@ namespace SistemaEDInterfaces
                         x++;
                     });
                 }
-                colab[k] = x;
+                colab[k] = x.ToString();
+            }
+        }
+
+        public void vaciar9Box()
+        {
+            Control panel;
+
+            for (int i = 0, k = this.tlp9Box.ColumnCount - 1; i < this.tlp9Box.ColumnCount; i++, k--)
+            {
+                for (int j = 0; j < tlp9Box.RowCount; j++)
+                {
+                    panel = this.tlp9Box.GetControlFromPosition(i, j);
+                    panel.Controls.OfType<BtnColaborador>().ToList().ForEach(btn => {
+                        panel.Controls.Remove(btn);
+                        colaboradores.Remove(btn);
+                    });
+                }
             }
         }
 

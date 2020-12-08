@@ -21,6 +21,7 @@ namespace SistemaEDInterfaces
         EscalaPeriodoWS.EscalaPeriodoWSClient daoEscalaPeriodo;
         BindingList<EscalaPeriodoWS.escalaPeriodo> escalasPeriodo;
         Hashtable escalas;
+        Queue<ColaboradorWS.colaborador> cola;
 
         public frmAdmCalibrar()
         {
@@ -51,21 +52,34 @@ namespace SistemaEDInterfaces
                 daoColaborador.listarColaboradoresXJefe9Box(
                     ((ColaboradorWS.colaborador)this.cbJefe.SelectedItem).idColaborador,
                     Global.periodoActual.idPeriodo).ToList());
-
+            
             foreach (ColaboradorWS.colaborador c in colaboradores)
             {
                 BtnColaborador btnColab = new BtnColaborador(c);
                 if (c.evaluaciones[0].escalaPreCupos.nombre != null && c.evaluaciones[1].escalaPreCupos.nombre != null)
                 {
                     this.nineBox.insertarBtnColaborador(btnColab,
-                        (int)escalas[c.evaluaciones[0].escalaPreCupos.nombre],
-                        (int)escalas[c.evaluaciones[1].escalaPreCupos.nombre]);
+                        (int)escalas[c.evaluaciones[1].escalaPreCupos.nombre],
+                        (int)escalas[c.evaluaciones[0].escalaPreCupos.nombre]);
                 }
                 else
                     this.nineBox.insertarBtnColaborador(btnColab, 0, 2);
             }
 
-            this.dgvCupos.DataSource = escalasPeriodo;
+            this.dgvCupos.setCupos(this.calcularCupos());
+            this.dgvCupos.NumeroColab = this.nineBox.Colab;
+
+            this.dgvCupos.Location = new Point(710, 60);
+            
+        }
+
+        private int[] calcularCupos()
+        {
+            int[] cupos = new int[5];
+            for (int i = 0; i < 5; i++)
+                cupos[i] = (int)Math.Round((escalasPeriodo[i].porcentajeCupos * colaboradores.ToList().Count) / 100);
+
+            return cupos;
         }
 
         private void cbJefe_Format(object sender, ListControlConvertEventArgs e)
@@ -104,14 +118,16 @@ namespace SistemaEDInterfaces
                     ((ColaboradorWS.colaborador)this.cbJefe.SelectedItem).idColaborador,
                     Global.periodoActual.idPeriodo).ToList());
 
+            this.nineBox.vaciar9Box();
+
             foreach (ColaboradorWS.colaborador c in colaboradores)
             {
                 BtnColaborador btnColab = new BtnColaborador(c);
                 if (c.evaluaciones[0].escalaPreCupos.nombre != null && c.evaluaciones[1].escalaPreCupos.nombre != null)
                 {
                     this.nineBox.insertarBtnColaborador(btnColab,
-                        (int) escalas[c.evaluaciones[0].escalaPreCupos.nombre],
-                        (int) escalas[c.evaluaciones[1].escalaPreCupos.nombre]);
+                        (int)escalas[c.evaluaciones[1].escalaPreCupos.nombre],
+                        (int)escalas[c.evaluaciones[0].escalaPreCupos.nombre]);
                 }
                 else
                     this.nineBox.insertarBtnColaborador(btnColab, 0, 2);
@@ -134,6 +150,16 @@ namespace SistemaEDInterfaces
             ret.Add("Bajo", 2);
 
             return ret;
+        }
+
+        private void gbCupos_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCupos_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

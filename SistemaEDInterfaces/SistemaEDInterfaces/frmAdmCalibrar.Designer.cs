@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblCalibracion = new System.Windows.Forms.Label();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
@@ -38,13 +35,6 @@
             this.cbGerencia = new System.Windows.Forms.ComboBox();
             this.lblJefe = new System.Windows.Forms.Label();
             this.lblGerencia = new System.Windows.Forms.Label();
-            this.gbCupos = new System.Windows.Forms.GroupBox();
-            this.dgvCupos = new System.Windows.Forms.DataGridView();
-            this.A = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.B = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.C = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.D = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.E = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel9Box = new System.Windows.Forms.Panel();
             this.nineBox = new SistemaEDInterfaces.NineBox();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -56,10 +46,13 @@
             this.lblBajo = new System.Windows.Forms.Label();
             this.lblMedio = new System.Windows.Forms.Label();
             this.lblAlto = new System.Windows.Forms.Label();
+            this.panelCupos = new System.Windows.Forms.Panel();
+            this.dgvCupos = new SistemaEDInterfaces.dgvCupos();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gbBusqueda.SuspendLayout();
-            this.gbCupos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCupos)).BeginInit();
             this.panel9Box.SuspendLayout();
+            this.panelCupos.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCalibracion
@@ -141,115 +134,6 @@
             this.lblGerencia.TabIndex = 0;
             this.lblGerencia.Text = "Gerencia :";
             // 
-            // gbCupos
-            // 
-            this.gbCupos.Controls.Add(this.dgvCupos);
-            this.gbCupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCupos.Location = new System.Drawing.Point(783, 116);
-            this.gbCupos.Name = "gbCupos";
-            this.gbCupos.Size = new System.Drawing.Size(659, 235);
-            this.gbCupos.TabIndex = 14;
-            this.gbCupos.TabStop = false;
-            this.gbCupos.Text = "Cupos";
-            // 
-            // dgvCupos
-            // 
-            this.dgvCupos.AllowUserToAddRows = false;
-            this.dgvCupos.AllowUserToDeleteRows = false;
-            this.dgvCupos.AllowUserToResizeColumns = false;
-            this.dgvCupos.AllowUserToResizeRows = false;
-            this.dgvCupos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvCupos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvCupos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCupos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCupos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.A,
-            this.B,
-            this.C,
-            this.D,
-            this.E});
-            this.dgvCupos.EnableHeadersVisualStyles = false;
-            this.dgvCupos.GridColor = System.Drawing.SystemColors.ControlText;
-            this.dgvCupos.Location = new System.Drawing.Point(40, 61);
-            this.dgvCupos.Margin = new System.Windows.Forms.Padding(4);
-            this.dgvCupos.Name = "dgvCupos";
-            this.dgvCupos.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCupos.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCupos.RowHeadersVisible = false;
-            this.dgvCupos.RowHeadersWidth = 51;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvCupos.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvCupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCupos.Size = new System.Drawing.Size(589, 130);
-            this.dgvCupos.TabIndex = 2;
-            // 
-            // A
-            // 
-            this.A.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.A.HeaderText = "A";
-            this.A.MinimumWidth = 6;
-            this.A.Name = "A";
-            this.A.ReadOnly = true;
-            this.A.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.A.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // B
-            // 
-            this.B.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.B.HeaderText = "B";
-            this.B.MinimumWidth = 6;
-            this.B.Name = "B";
-            this.B.ReadOnly = true;
-            this.B.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // C
-            // 
-            this.C.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.C.HeaderText = "C";
-            this.C.MinimumWidth = 6;
-            this.C.Name = "C";
-            this.C.ReadOnly = true;
-            this.C.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.C.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // D
-            // 
-            this.D.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.D.HeaderText = "D";
-            this.D.MinimumWidth = 6;
-            this.D.Name = "D";
-            this.D.ReadOnly = true;
-            this.D.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.D.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // E
-            // 
-            this.E.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.E.HeaderText = "E";
-            this.E.MinimumWidth = 6;
-            this.E.Name = "E";
-            this.E.ReadOnly = true;
-            // 
             // panel9Box
             // 
             this.panel9Box.Controls.Add(this.nineBox);
@@ -271,6 +155,12 @@
             // 
             this.nineBox.AutoSize = true;
             this.nineBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.nineBox.Colab = new string[] {
+        "",
+        "",
+        "",
+        "",
+        ""};
             this.nineBox.ColaboradorSeleccionado = null;
             this.nineBox.Location = new System.Drawing.Point(174, 35);
             this.nineBox.Name = "nineBox";
@@ -372,15 +262,46 @@
             this.lblAlto.TabIndex = 13;
             this.lblAlto.Text = "Alto";
             // 
+            // panelCupos
+            // 
+            this.panelCupos.Controls.Add(this.dgvCupos);
+            this.panelCupos.Location = new System.Drawing.Point(36, 61);
+            this.panelCupos.Name = "panelCupos";
+            this.panelCupos.Size = new System.Drawing.Size(592, 132);
+            this.panelCupos.TabIndex = 17;
+            // 
+            // dgvCupos
+            // 
+            this.dgvCupos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F);
+            this.dgvCupos.Location = new System.Drawing.Point(0, 0);
+            this.dgvCupos.Margin = new System.Windows.Forms.Padding(0);
+            this.dgvCupos.Name = "dgvCupos";
+            this.dgvCupos.NumeroColab = null;
+            this.dgvCupos.Size = new System.Drawing.Size(592, 132);
+            this.dgvCupos.TabIndex = 0;
+            this.dgvCupos.Load += new System.EventHandler(this.dgvCupos_Load);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.panelCupos);
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
+            this.groupBox1.Location = new System.Drawing.Point(764, 116);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(671, 235);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Cupos";
+            // 
             // frmAdmCalibrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1544, 929);
+            this.ClientSize = new System.Drawing.Size(1561, 929);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel9Box);
-            this.Controls.Add(this.gbCupos);
             this.Controls.Add(this.gbBusqueda);
             this.Controls.Add(this.lblCalibracion);
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -388,10 +309,10 @@
             this.Text = "frmAdmCalibrar";
             this.gbBusqueda.ResumeLayout(false);
             this.gbBusqueda.PerformLayout();
-            this.gbCupos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCupos)).EndInit();
             this.panel9Box.ResumeLayout(false);
             this.panel9Box.PerformLayout();
+            this.panelCupos.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,14 +325,7 @@
         private System.Windows.Forms.ComboBox cbGerencia;
         private System.Windows.Forms.Label lblJefe;
         private System.Windows.Forms.Label lblGerencia;
-        private System.Windows.Forms.GroupBox gbCupos;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvCupos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn A;
-        private System.Windows.Forms.DataGridViewTextBoxColumn B;
-        private System.Windows.Forms.DataGridViewTextBoxColumn C;
-        private System.Windows.Forms.DataGridViewTextBoxColumn D;
-        private System.Windows.Forms.DataGridViewTextBoxColumn E;
         private System.Windows.Forms.Panel panel9Box;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblE;
@@ -423,5 +337,8 @@
         private System.Windows.Forms.Label lblMedio;
         private System.Windows.Forms.Label lblAlto;
         private NineBox nineBox;
+        private System.Windows.Forms.Panel panelCupos;
+        private dgvCupos dgvCupos;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
