@@ -249,6 +249,58 @@ public class ColaboradorMySQL implements ColaboradorDAO{
         }
         return colaboradores;
     }
+   
+    
+    public ArrayList<Colaborador> listarColaboradoresXGerencia( int idGerencia ){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+        
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            String sql = "{call LISTAR_COLABORADORES_X_GERENCIA(?)}";
+            cs = con.prepareCall(sql);
+            cs.setInt("_FID_ID_GERENCIA", idGerencia);
+            rs = cs.executeQuery(); 
+            while(rs.next()){
+                Colaborador jefe = new Colaborador();
+                
+                jefe.setIdColaborador(rs.getInt("id_Jefe"));
+
+               
+                Colaborador col = new Colaborador();
+                col.setJefe(jefe);
+                col.setIdColaborador(rs.getInt("id_Colaborador"));
+                col.setDni(rs.getString("dni"));
+                col.setNombres(rs.getString("nombres"));
+                col.setApellidos(rs.getString("apellidos"));
+                col.setDireccion(rs.getString("direccion"));
+                col.setCorreo(rs.getString("correo"));
+                col.setTelefono(rs.getString("telefono"));
+                col.setFechaNac(rs.getDate("fechaNac"));
+                
+                Gerencia ger = new Gerencia();
+                ger.setIdGerencia(idGerencia);
+                ger.setNombre(rs.getString("nombreGerencia"));
+                ger.setDescripcion(rs.getString("descripcionGerencia"));
+                
+                PuestoTrabajo pt = new PuestoTrabajo();
+               pt.setNombre(rs.getString("nombrePuestoTrabjo"));
+                pt.setDescripcion(rs.getString("descripcionPuestoTrabajo"));
+                
+                col.setGerencia(ger);
+                col.setPuestoTrabajo(pt);
+                
+                colaboradores.add(col);
+            }
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return colaboradores;
+    }
+    
     
     public Colaborador buscarJefe( int idJefe ){
         Colaborador jefe = new Colaborador();
@@ -426,14 +478,14 @@ public class ColaboradorMySQL implements ColaboradorDAO{
         return colaboradores;
     }
     
-    public ArrayList<Colaborador> listarColaboradoresXJefe9Box( int idJefe, int idPeriodo ){
+    public ArrayList<Colaborador> listarColaboradoresXGerencia9Box( int idGerencia, int idPeriodo ){
         ArrayList<Colaborador> colaboradores = null;
                 
         EvaluacionDAO daoEvaluacion = new EvaluacionMySQL();
         EvaluacionDesempenhoDAO daoEvaluacionDesempenho = new EvaluacionDesempenhoMySQL();
         
         try{
-            colaboradores = this.listarColaboradoresXJefe(idJefe);
+            colaboradores = this.listarColaboradoresXGerencia(idGerencia);
             for(Colaborador c : colaboradores){
                 c.getEvaluaciones().add(daoEvaluacion.obtenerEvaluacionPotencial(c.getIdColaborador(), idPeriodo));
                 c.getEvaluaciones().add(daoEvaluacionDesempenho.obtenerEvaluacionDesempenho(c.getIdColaborador(), idPeriodo));
