@@ -84,5 +84,12 @@ namespace SistemaEDInterfaces
         {
             //Verificar si se encuentra en las fechas para la planificacion de objetivos
         }
+
+        private void dgvListaTrabajadores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            ColaboradorWS.colaborador data = dgvListaTrabajadores.Rows[e.RowIndex].DataBoundItem as ColaboradorWS.colaborador;
+            dgvListaTrabajadores.Rows[e.RowIndex].Cells["Nombre"].Value = data.nombres + " " + data.apellidos;
+
+        }
     }
 }

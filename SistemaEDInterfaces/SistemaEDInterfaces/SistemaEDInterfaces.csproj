@@ -310,11 +310,11 @@
     <Compile Include="frmEvAutoevaluacion.Designer.cs">
       <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvAutoevaluacionComp.cs">
+    <Compile Include="frmEvAutoevaluacionPantallaPrevia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEvAutoevaluacionComp.Designer.cs">
-      <DependentUpon>frmEvAutoevaluacionComp.cs</DependentUpon>
+    <Compile Include="frmEvAutoevaluacionPantallaPrevia.Designer.cs">
+      <DependentUpon>frmEvAutoevaluacionPantallaPrevia.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEvFeedback.cs">
       <SubType>Form</SubType>
@@ -529,6 +529,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="RadioButton2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SeccionSubcompetencia.cs" />
     <Compile Include="TipoCriterio.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -628,8 +632,8 @@
     <EmbeddedResource Include="frmEvAutoevaluacion.resx">
       <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvAutoevaluacionComp.resx">
-      <DependentUpon>frmEvAutoevaluacionComp.cs</DependentUpon>
+    <EmbeddedResource Include="frmEvAutoevaluacionPantallaPrevia.resx">
+      <DependentUpon>frmEvAutoevaluacionPantallaPrevia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvFeedback.resx">
       <DependentUpon>frmEvFeedback.cs</DependentUpon>
@@ -884,11 +888,9 @@
     <None Include="Connected Services\ObjetivoWS\SistemaEDInterfaces.ObjetivoWS.objetivo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\PeriodoWS\configuration91.svcinfo" />
-    <None Include="Connected Services\PeriodoWS\configuration.svcinfo" />
-    <None Include="Connected Services\PeriodoWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
+    <None Include="Connected Services\PeriodoWS\PeriodoWS.wsdl" />
+    <None Include="Connected Services\PeriodoWS\PeriodoWS.xsd">
+      <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.actualizarPeriodoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -903,6 +905,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.gerenciaPeriodo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.insertarPeriodoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.itemPDIPeriodo.datasource">
@@ -920,7 +925,13 @@
     <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.listarItemPDIPeriodoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.obtenerPeriodoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.periodo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PesoCriterioWS\PesoCriterioWS.wsdl" />
@@ -987,12 +998,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
-    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
-    <None Include="Connected Services\ReporteWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\configuration91.svcinfo" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\configuration.svcinfo" />
     <None Include="Connected Services\EvaluacionDesempenhoWS\Reference.svcmap">
@@ -1008,6 +1013,18 @@
     <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
     <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
     <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
+    <None Include="Connected Services\ReporteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PeriodoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PeriodoWS\configuration.svcinfo" />
+    <None Include="Connected Services\PeriodoWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -1040,19 +1057,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\GerenciaWS\SistemaEDInterfaces.GerenciaWS.listarGerenciasResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\PeriodoWS\PeriodoWS.wsdl" />
-    <None Include="Connected Services\PeriodoWS\PeriodoWS.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.insertarPeriodoResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.listarPeriodosResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\PeriodoWS\SistemaEDInterfaces.PeriodoWS.periodo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\PuestoTrabajoWS\PuestoTrabajoWS.wsdl" />

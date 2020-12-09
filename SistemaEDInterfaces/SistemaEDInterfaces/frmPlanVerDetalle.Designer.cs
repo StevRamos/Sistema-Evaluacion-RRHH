@@ -104,7 +104,7 @@
             // txtUnidadMedida
             // 
             this.txtUnidadMedida.Enabled = false;
-            this.txtUnidadMedida.Location = new System.Drawing.Point(774, 317);
+            this.txtUnidadMedida.Location = new System.Drawing.Point(303, 317);
             this.txtUnidadMedida.Name = "txtUnidadMedida";
             this.txtUnidadMedida.Size = new System.Drawing.Size(193, 20);
             this.txtUnidadMedida.TabIndex = 42;
@@ -190,7 +190,7 @@
             // txtMeta
             // 
             this.txtMeta.Enabled = false;
-            this.txtMeta.Location = new System.Drawing.Point(303, 315);
+            this.txtMeta.Location = new System.Drawing.Point(774, 315);
             this.txtMeta.Name = "txtMeta";
             this.txtMeta.Size = new System.Drawing.Size(193, 20);
             this.txtMeta.TabIndex = 33;
@@ -219,9 +219,9 @@
             this.lblUnidadMedida.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUnidadMedida.Location = new System.Drawing.Point(513, 311);
             this.lblUnidadMedida.Name = "lblUnidadMedida";
-            this.lblUnidadMedida.Size = new System.Drawing.Size(204, 24);
+            this.lblUnidadMedida.Size = new System.Drawing.Size(111, 24);
             this.lblUnidadMedida.TabIndex = 30;
-            this.lblUnidadMedida.Text = "Unidad de Medida:";
+            this.lblUnidadMedida.Text = "Cantidad:";
             // 
             // lblEditarObjetivos
             // 

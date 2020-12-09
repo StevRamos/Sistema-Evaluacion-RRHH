@@ -48,7 +48,7 @@ namespace SistemaEDInterfaces
                 
             }
             calcularSumaPesoObjetivos();
-
+            lblDescripcionLista.Text = "Listado de sus objetivos para el " + Global.periodoActual.nombre + " :"; 
         }
 
 
