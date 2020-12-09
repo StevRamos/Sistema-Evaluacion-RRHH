@@ -31,9 +31,7 @@
             this.lblCalibracion = new System.Windows.Forms.Label();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.cbJefe = new System.Windows.Forms.ComboBox();
             this.cbGerencia = new System.Windows.Forms.ComboBox();
-            this.lblJefe = new System.Windows.Forms.Label();
             this.lblGerencia = new System.Windows.Forms.Label();
             this.panel9Box = new System.Windows.Forms.Panel();
             this.nineBox = new SistemaEDInterfaces.NineBox();
@@ -49,6 +47,8 @@
             this.panelCupos = new System.Windows.Forms.Panel();
             this.dgvCupos = new SistemaEDInterfaces.dgvCupos();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCuposAsignados = new System.Windows.Forms.Label();
+            this.lblCuposUsados = new System.Windows.Forms.Label();
             this.gbBusqueda.SuspendLayout();
             this.panel9Box.SuspendLayout();
             this.panelCupos.SuspendLayout();
@@ -70,14 +70,12 @@
             // gbBusqueda
             // 
             this.gbBusqueda.Controls.Add(this.btnBuscar);
-            this.gbBusqueda.Controls.Add(this.cbJefe);
             this.gbBusqueda.Controls.Add(this.cbGerencia);
-            this.gbBusqueda.Controls.Add(this.lblJefe);
             this.gbBusqueda.Controls.Add(this.lblGerencia);
             this.gbBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbBusqueda.Location = new System.Drawing.Point(28, 116);
             this.gbBusqueda.Name = "gbBusqueda";
-            this.gbBusqueda.Size = new System.Drawing.Size(671, 235);
+            this.gbBusqueda.Size = new System.Drawing.Size(593, 190);
             this.gbBusqueda.TabIndex = 13;
             this.gbBusqueda.TabStop = false;
             this.gbBusqueda.Text = "Opciones de Búsqueda";
@@ -89,7 +87,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(425, 178);
+            this.btnBuscar.Location = new System.Drawing.Point(313, 134);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(211, 32);
@@ -98,37 +96,18 @@
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // cbJefe
-            // 
-            this.cbJefe.FormattingEnabled = true;
-            this.cbJefe.Location = new System.Drawing.Point(189, 117);
-            this.cbJefe.Name = "cbJefe";
-            this.cbJefe.Size = new System.Drawing.Size(447, 37);
-            this.cbJefe.TabIndex = 3;
-            this.cbJefe.Format += new System.Windows.Forms.ListControlConvertEventHandler(this.cbJefe_Format);
-            // 
             // cbGerencia
             // 
             this.cbGerencia.FormattingEnabled = true;
-            this.cbGerencia.Location = new System.Drawing.Point(189, 58);
+            this.cbGerencia.Location = new System.Drawing.Point(152, 81);
             this.cbGerencia.Name = "cbGerencia";
-            this.cbGerencia.Size = new System.Drawing.Size(447, 37);
+            this.cbGerencia.Size = new System.Drawing.Size(407, 37);
             this.cbGerencia.TabIndex = 2;
-            this.cbGerencia.SelectedValueChanged += new System.EventHandler(this.cbGerencia_SelectedValueChanged);
-            // 
-            // lblJefe
-            // 
-            this.lblJefe.AutoSize = true;
-            this.lblJefe.Location = new System.Drawing.Point(99, 120);
-            this.lblJefe.Name = "lblJefe";
-            this.lblJefe.Size = new System.Drawing.Size(71, 29);
-            this.lblJefe.TabIndex = 1;
-            this.lblJefe.Text = "Jefe :";
             // 
             // lblGerencia
             // 
             this.lblGerencia.AutoSize = true;
-            this.lblGerencia.Location = new System.Drawing.Point(47, 61);
+            this.lblGerencia.Location = new System.Drawing.Point(23, 84);
             this.lblGerencia.Name = "lblGerencia";
             this.lblGerencia.Size = new System.Drawing.Size(123, 29);
             this.lblGerencia.TabIndex = 0;
@@ -146,7 +125,7 @@
             this.panel9Box.Controls.Add(this.lblBajo);
             this.panel9Box.Controls.Add(this.lblMedio);
             this.panel9Box.Controls.Add(this.lblAlto);
-            this.panel9Box.Location = new System.Drawing.Point(0, 390);
+            this.panel9Box.Location = new System.Drawing.Point(0, 322);
             this.panel9Box.Name = "panel9Box";
             this.panel9Box.Size = new System.Drawing.Size(1455, 922);
             this.panel9Box.TabIndex = 15;
@@ -156,6 +135,7 @@
             this.nineBox.AutoSize = true;
             this.nineBox.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.nineBox.ColaboradorSeleccionado = null;
+            this.nineBox.Cupos = null;
             this.nineBox.Location = new System.Drawing.Point(174, 35);
             this.nineBox.Name = "nineBox";
             this.nineBox.Size = new System.Drawing.Size(952, 508);
@@ -168,7 +148,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(1192, 816);
+            this.btnGuardar.Location = new System.Drawing.Point(1192, 779);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(211, 32);
@@ -180,7 +160,7 @@
             // 
             this.lblE.AutoSize = true;
             this.lblE.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblE.Location = new System.Drawing.Point(284, 716);
+            this.lblE.Location = new System.Drawing.Point(284, 679);
             this.lblE.Name = "lblE";
             this.lblE.Size = new System.Drawing.Size(29, 29);
             this.lblE.TabIndex = 20;
@@ -190,7 +170,7 @@
             // 
             this.lblD.AutoSize = true;
             this.lblD.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblD.Location = new System.Drawing.Point(522, 716);
+            this.lblD.Location = new System.Drawing.Point(522, 679);
             this.lblD.Name = "lblD";
             this.lblD.Size = new System.Drawing.Size(30, 29);
             this.lblD.TabIndex = 19;
@@ -200,7 +180,7 @@
             // 
             this.lblC.AutoSize = true;
             this.lblC.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblC.Location = new System.Drawing.Point(778, 716);
+            this.lblC.Location = new System.Drawing.Point(778, 679);
             this.lblC.Name = "lblC";
             this.lblC.Size = new System.Drawing.Size(30, 29);
             this.lblC.TabIndex = 18;
@@ -210,7 +190,7 @@
             // 
             this.lblA.AutoSize = true;
             this.lblA.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblA.Location = new System.Drawing.Point(1286, 716);
+            this.lblA.Location = new System.Drawing.Point(1286, 679);
             this.lblA.Name = "lblA";
             this.lblA.Size = new System.Drawing.Size(28, 29);
             this.lblA.TabIndex = 17;
@@ -220,7 +200,7 @@
             // 
             this.lblB.AutoSize = true;
             this.lblB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.lblB.Location = new System.Drawing.Point(1016, 716);
+            this.lblB.Location = new System.Drawing.Point(1016, 679);
             this.lblB.Name = "lblB";
             this.lblB.Size = new System.Drawing.Size(29, 29);
             this.lblB.TabIndex = 16;
@@ -259,7 +239,7 @@
             // panelCupos
             // 
             this.panelCupos.Controls.Add(this.dgvCupos);
-            this.panelCupos.Location = new System.Drawing.Point(36, 61);
+            this.panelCupos.Location = new System.Drawing.Point(194, 34);
             this.panelCupos.Name = "panelCupos";
             this.panelCupos.Size = new System.Drawing.Size(592, 132);
             this.panelCupos.TabIndex = 17;
@@ -276,14 +256,34 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCuposAsignados);
+            this.groupBox1.Controls.Add(this.lblCuposUsados);
             this.groupBox1.Controls.Add(this.panelCupos);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
-            this.groupBox1.Location = new System.Drawing.Point(764, 116);
+            this.groupBox1.Location = new System.Drawing.Point(644, 116);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(671, 235);
+            this.groupBox1.Size = new System.Drawing.Size(811, 190);
             this.groupBox1.TabIndex = 18;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cupos";
+            // 
+            // lblCuposAsignados
+            // 
+            this.lblCuposAsignados.AutoSize = true;
+            this.lblCuposAsignados.Location = new System.Drawing.Point(20, 70);
+            this.lblCuposAsignados.Name = "lblCuposAsignados";
+            this.lblCuposAsignados.Size = new System.Drawing.Size(132, 29);
+            this.lblCuposAsignados.TabIndex = 19;
+            this.lblCuposAsignados.Text = "Asignados:";
+            // 
+            // lblCuposUsados
+            // 
+            this.lblCuposUsados.AutoSize = true;
+            this.lblCuposUsados.Location = new System.Drawing.Point(51, 134);
+            this.lblCuposUsados.Name = "lblCuposUsados";
+            this.lblCuposUsados.Size = new System.Drawing.Size(101, 29);
+            this.lblCuposUsados.TabIndex = 18;
+            this.lblCuposUsados.Text = "Usados:";
             // 
             // frmAdmCalibrar
             // 
@@ -291,7 +291,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1561, 929);
+            this.ClientSize = new System.Drawing.Size(1595, 929);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel9Box);
             this.Controls.Add(this.gbBusqueda);
@@ -305,6 +305,7 @@
             this.panel9Box.PerformLayout();
             this.panelCupos.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -313,9 +314,7 @@
         #endregion
         private System.Windows.Forms.Label lblCalibracion;
         private System.Windows.Forms.GroupBox gbBusqueda;
-        private System.Windows.Forms.ComboBox cbJefe;
         private System.Windows.Forms.ComboBox cbGerencia;
-        private System.Windows.Forms.Label lblJefe;
         private System.Windows.Forms.Label lblGerencia;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Panel panel9Box;
@@ -332,5 +331,7 @@
         private System.Windows.Forms.Panel panelCupos;
         private dgvCupos dgvCupos;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblCuposUsados;
+        private System.Windows.Forms.Label lblCuposAsignados;
     }
 }

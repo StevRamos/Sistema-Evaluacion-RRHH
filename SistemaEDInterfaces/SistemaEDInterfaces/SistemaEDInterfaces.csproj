@@ -773,7 +773,10 @@
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefe9BoxResponse.datasource">
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXGerencia9BoxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXGerenciaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefeResponse.datasource">
