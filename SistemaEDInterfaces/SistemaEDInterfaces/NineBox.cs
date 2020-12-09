@@ -15,6 +15,9 @@ namespace SistemaEDInterfaces
         private BtnColaborador colaboradorSeleccionado;
         private BindingList<BtnColaborador> colaboradores;
 
+        /* opcional para cupos */
+        private dgvCupos cupos;
+
         public NineBox()
         {
             InitializeComponent();
@@ -60,6 +63,7 @@ namespace SistemaEDInterfaces
         }
 
         public BtnColaborador ColaboradorSeleccionado { get => colaboradorSeleccionado; set => colaboradorSeleccionado = value; }
+        public dgvCupos Cupos { get => cupos; set => cupos = value; }
 
         private void P_DragDrop(object sender, DragEventArgs e)
         {
@@ -75,13 +79,13 @@ namespace SistemaEDInterfaces
                 org.Controls.Remove(colaboradorSeleccionado);
                 colaboradorSeleccionado.Clicked = false;
                 colaboradorSeleccionado.Contenedor = panel;
+                this.sumatoriaColaboradores();
             }
 
         }
 
         private void P_DragEnter(object sender, DragEventArgs e)
         {
-            //falta hacer la validacion
             e.Effect = DragDropEffects.Move;
         }
 
@@ -122,6 +126,7 @@ namespace SistemaEDInterfaces
                 panel.Controls.Add(btn);
                 btn.Contenedor = (FlowLayoutPanel)panel;
                 colaboradores.Add(btn);
+                this.sumatoriaColaboradores();
             }
         }
 
@@ -140,6 +145,48 @@ namespace SistemaEDInterfaces
             this.tlp9Box.Controls.OfType<Control>().Where(p => p is FlowLayoutPanel).ToList().ForEach(panel => {
                 panel.AllowDrop = drop;
             });
+        }
+
+        public void sumatoriaColaboradores()
+        {
+            int[] colab;
+            int x;
+            Control panel;
+
+            colab = new int[this.tlp9Box.ColumnCount];
+
+            for (int i = 0, k = this.tlp9Box.ColumnCount - 1; i < this.tlp9Box.ColumnCount; i++, k-- )
+            {
+                x = 0;
+                for(int j=0; j < tlp9Box.RowCount; j++)
+                {
+                    panel = this.tlp9Box.GetControlFromPosition(i, j);
+                    panel.Controls.OfType<BtnColaborador>().ToList().ForEach(btn => {
+                        x++;
+                    });
+                }
+                colab[k] = x;
+            }
+            if( this.cupos != null)
+                this.cupos.setNineBox(colab);
+
+        }
+
+        public void vaciar9Box()
+        {
+            Control panel;
+
+            for (int i = 0, k = this.tlp9Box.ColumnCount - 1; i < this.tlp9Box.ColumnCount; i++, k--)
+            {
+                for (int j = 0; j < tlp9Box.RowCount; j++)
+                {
+                    panel = this.tlp9Box.GetControlFromPosition(i, j);
+                    panel.Controls.OfType<BtnColaborador>().ToList().ForEach(btn => {
+                        panel.Controls.Remove(btn);
+                        colaboradores.Remove(btn);
+                    });
+                }
+            }
         }
 
     }

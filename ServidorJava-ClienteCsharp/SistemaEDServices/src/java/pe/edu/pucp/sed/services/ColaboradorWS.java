@@ -88,6 +88,20 @@ public class ColaboradorWS {
         return colaboradores;
     }
     
+    @WebMethod(operationName = "listarColaboradoresXGerencia")
+    public ArrayList<Colaborador> listarColaboradoresXGerencia(@WebParam(name = "idGerencia") int idGerencia){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        
+        try {
+            colaboradores = daoColaborador.listarColaboradoresXGerencia(idGerencia);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return colaboradores;
+    }
+    
+    
     @WebMethod(operationName = "buscarJefe")
     public Colaborador buscarJefe(@WebParam(name = "idJefe") int idJefe){
         Colaborador colaborador = new Colaborador();
@@ -136,6 +150,20 @@ public class ColaboradorWS {
         
         try {
             colaboradores = daoColaborador.listarColaboradoresXJefeXPeriodo(idJefe, idPeriodo);
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return colaboradores;
+    }
+    
+    @WebMethod(operationName = "listarColaboradoresXGerencia9Box")
+    public ArrayList<Colaborador> listarColaboradoresXGerencia9Box(@WebParam(name = "idGerencia") int idGerencia,
+            @WebParam(name = "idPeriodo") int idPeriodo){
+        ArrayList<Colaborador> colaboradores = new ArrayList<>();
+        
+        try {
+            colaboradores = daoColaborador.listarColaboradoresXGerencia9Box(idGerencia, idPeriodo);
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }

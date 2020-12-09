@@ -22,8 +22,8 @@ public class EscalaPeriodoWS {
         daoEscalaPeriodo = new EscalaPeriodoMySQL();
     }
 
-    @WebMethod(operationName = "listarXPeriodoActual")
-    public ArrayList<EscalaPeriodo> listarXPeriodoActual() {
+    @WebMethod(operationName = "listarEPXPeriodoActual")
+    public ArrayList<EscalaPeriodo> listarEPXPeriodoActual() {
         ArrayList<EscalaPeriodo> cupos = new ArrayList<>();
         
         try {

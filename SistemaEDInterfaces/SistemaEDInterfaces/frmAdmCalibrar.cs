@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -15,10 +16,13 @@ namespace SistemaEDInterfaces
         GerenciaWS.GerenciaWSClient daoGerencia;
         ColaboradorWS.ColaboradorWSClient daoColaborador;
         BindingList<GerenciaWS.gerencia> gerencias;
-        BindingList<ColaboradorWS.colaborador> jefes;
         BindingList<ColaboradorWS.colaborador> colaboradores;
         EscalaPeriodoWS.EscalaPeriodoWSClient daoEscalaPeriodo;
         BindingList<EscalaPeriodoWS.escalaPeriodo> escalasPeriodo;
+        Hashtable escalas;
+        Hashtable notasD;
+        Hashtable notasP;
+        Queue<ColaboradorWS.colaborador> cola;
 
         public frmAdmCalibrar()
         {
@@ -28,47 +32,114 @@ namespace SistemaEDInterfaces
             daoColaborador = new ColaboradorWS.ColaboradorWSClient();
             daoEscalaPeriodo = new EscalaPeriodoWS.EscalaPeriodoWSClient();
 
-            gerencias = new BindingList<GerenciaWS.gerencia>(daoGerencia.listarGerencias().ToList());
-            jefes = new BindingList<ColaboradorWS.colaborador>(daoColaborador.listarJefeXGerenciaXPeriodoActual(gerencias[0].idGerencia).ToList());
-            //escalasPeriodo = new BindingList<EscalaPeriodoWS.escalaPeriodo>(daoEscalaPeriodo.listarXPeriodoActual().ToList());
+            this.nineBox.Cupos = this.dgvCupos;
 
-            this.cbGerencia.DataSource = gerencias;
-            this.cbGerencia.ValueMember = "idGerencia";
-            this.cbGerencia.DisplayMember = "nombre";
-
-            if( jefes != null || jefes.Count != 0)
+            GerenciaWS.gerencia[] g = daoGerencia.listarGerencias();
+            if( g != null)
             {
-                this.cbJefe.DataSource = jefes;
-                this.cbJefe.ValueMember = "idColaborador";
-                this.cbJefe.DisplayMember = "nombre";
+                gerencias = new BindingList<GerenciaWS.gerencia>(g.ToList());
+                
+                this.cbGerencia.DataSource = gerencias;
+                this.cbGerencia.ValueMember = "idGerencia";
+                this.cbGerencia.DisplayMember = "nombre";
+
+                EscalaPeriodoWS.escalaPeriodo[] ep = daoEscalaPeriodo.listarEPXPeriodoActual();
+                if(ep != null)
+                {
+                    escalasPeriodo = new BindingList<EscalaPeriodoWS.escalaPeriodo>(ep.ToList());
+                }
+                else
+                {
+                    MessageBox.Show("No hay cupos cargados", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                escalas = cargarHashTable();
+                
+
+                this.llena9Box();
+            }
+            else
+            {
+                MessageBox.Show("No hay gerencias cargadas", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
+            //evaluacionDesempenho actualizar
+            //Evaluacion actualizar
+        }
+
+        private int[] calcularCupos()
+        {
+            int suma = 0, col = colaboradores.ToList().Count;
+            int[] cupos = new int[5];
+            for (int i = 0; i < 4; i++)
+            {
+                cupos[i] = (int)Math.Round((escalasPeriodo[i].porcentajeCupos * col) / 100);
+                suma += cupos[i];
             }
 
-            this.dgvCupos.DataSource = escalasPeriodo;
+            cupos[4] = col - suma;
+
+            return cupos;
         }
 
-        private void cbJefe_Format(object sender, ListControlConvertEventArgs e)
+        private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string nombre = ((ColaboradorWS.colaborador)e.ListItem).nombres;
-            string apellido = ((ColaboradorWS.colaborador)e.ListItem).apellidos;
-            e.Value = nombre + " " + apellido;
+            this.llena9Box();
         }
 
-        private void cbGerencia_SelectedValueChanged(object sender, EventArgs e)
+        private void llena9Box()
         {
-            BindingList<ColaboradorWS.colaborador> aux = new BindingList<ColaboradorWS.colaborador>(
-                daoColaborador.listarJefeXGerenciaXPeriodoActual(
-                ((GerenciaWS.gerencia)this.cbGerencia.SelectedItem).idGerencia));
+            ColaboradorWS.colaborador[] colab = daoColaborador.listarColaboradoresXGerencia9Box(
+                ((GerenciaWS.gerencia)this.cbGerencia.SelectedItem).idGerencia,
+                    Global.periodoActual.idPeriodo);                        
 
-            if( aux == null )
+            if (colab != null)
             {
-                MessageBox.Show("Esta gerencia no tiene jefes disponibles",
-                    "Mensaje de error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                colaboradores = new BindingList<ColaboradorWS.colaborador>(colab.ToList());
+
+                this.dgvCupos.setCupos(this.calcularCupos());
+            }
+            else
+            {
+                MessageBox.Show("Esta gerencia no tiene Colaboradores que mostrar",
+                        "Mensaje de Error", MessageBoxButtons.OK, MessageBoxIcon.Error
+                     );
                 return;
             }
+            this.nineBox.vaciar9Box();
 
-            jefes = aux;
+            int a, b;
+
+            foreach (ColaboradorWS.colaborador c in colaboradores)
+            {
+                BtnColaborador btnColab = new BtnColaborador(c);
+                if (c.evaluaciones[0].escalaPreCupos.nombre != null && c.evaluaciones[1].escalaPreCupos.nombre != null)
+                {
+                    a = (int)escalas[c.evaluaciones[1].escalaPreCupos.nombre];
+                    b = (int)escalas[c.evaluaciones[0].escalaPreCupos.nombre];
+                    this.nineBox.insertarBtnColaborador(btnColab,a,b);
+                }
+                else
+                    this.nineBox.insertarBtnColaborador(btnColab, 0, 2);
+
+            }
         }
+
+        private Hashtable cargarHashTable()
+        {
+            Hashtable ret = new Hashtable();
+
+            ret.Add("A", 4);
+            ret.Add("B", 3);
+            ret.Add("C", 2);
+            ret.Add("D", 1);
+            ret.Add("E", 0);
+            ret.Add("Alto", 0);
+            ret.Add("Medio", 1);
+            ret.Add("Bajo", 2);
+
+            return ret;
+        }
+
     }
 }

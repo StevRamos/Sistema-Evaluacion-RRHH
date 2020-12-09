@@ -123,6 +123,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Correo.cs" />
+    <Compile Include="dgvCupos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="dgvCupos.Designer.cs">
+      <DependentUpon>dgvCupos.cs</DependentUpon>
+    </Compile>
     <Compile Include="EstadoAutoEval.cs" />
     <Compile Include="EstadoEvalPot.cs" />
     <Compile Include="EstadoEvD.cs" />
@@ -542,6 +548,9 @@
     <EmbeddedResource Include="BtnColaborador.resx">
       <DependentUpon>BtnColaborador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="dgvCupos.resx">
+      <DependentUpon>dgvCupos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmCalibrar.resx">
       <DependentUpon>frmAdmCalibrar.cs</DependentUpon>
     </EmbeddedResource>
@@ -768,6 +777,12 @@
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXGerencia9BoxResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXGerenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ColaboradorWS\SistemaEDInterfaces.ColaboradorWS.listarColaboradoresXJefeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -800,10 +815,10 @@
     <None Include="Connected Services\EscalaPeriodoWS\EscalaPeriodoWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.gerencia.datasource">
+    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.escalaPeriodo.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.listarXPeriodoActualResponse.datasource">
+    <None Include="Connected Services\EscalaPeriodoWS\SistemaEDInterfaces.EscalaPeriodoWS.listarEPXPeriodoActualResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\EvaluacionDesempenhoWS\EvaluacionDesempenhoWS.wsdl" />

@@ -3,7 +3,7 @@ package pe.edu.pucp.sed.model;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Colaborador {
+public class Colaborador implements Comparable<Colaborador>{
 
     private int idColaborador;
     private String nombres;
@@ -189,6 +189,18 @@ public class Colaborador {
     public void realizarAutoEvaluacionComp() {
 
     }
-
+    
+    @Override
+    public int compareTo(Colaborador c){
+        int compNota = Double.compare(this.getEvaluaciones().get(1).getNotaFinal(),
+                c.getEvaluaciones().get(1).getNotaFinal());
+        
+        if(compNota != 0)
+            return compNota;
+        
+        return this.getNombres().compareTo(c.getNombres());
+        
+    }
+    
 }
 

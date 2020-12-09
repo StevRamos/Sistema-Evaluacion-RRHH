@@ -39,6 +39,7 @@
             this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 0;
             this.lblNombre.Text = "Nombre";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // BtnColaborador
             // 
