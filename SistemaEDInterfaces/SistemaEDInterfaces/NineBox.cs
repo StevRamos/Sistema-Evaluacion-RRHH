@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
 
 namespace SistemaEDInterfaces
 {
@@ -176,7 +177,7 @@ namespace SistemaEDInterfaces
         {
             Control panel;
 
-            for (int i = 0, k = this.tlp9Box.ColumnCount - 1; i < this.tlp9Box.ColumnCount; i++, k--)
+            for (int i = 0; i < this.tlp9Box.ColumnCount; i++)
             {
                 for (int j = 0; j < tlp9Box.RowCount; j++)
                 {
@@ -189,5 +190,27 @@ namespace SistemaEDInterfaces
             }
         }
 
+        public BindingList<BtnColaborador> asignarNotas(Hashtable potencial, Hashtable desempenho)
+        {
+            BindingList<BtnColaborador> lista = new BindingList<BtnColaborador>();
+
+            Control panel;
+
+            for (int i = 0; i < this.tlp9Box.ColumnCount; i++)
+            {
+                for (int j = 0; j < tlp9Box.RowCount; j++)
+                {
+                    panel = this.tlp9Box.GetControlFromPosition(i, j);
+                    panel.Controls.OfType<BtnColaborador>().ToList().ForEach(btn => {
+                        btn.GetColaborador().evaluaciones[0].escalaFinal.idEscala = (int)potencial[j];
+                        btn.GetColaborador().evaluaciones[1].escalaFinal.idEscala = (int)desempenho[j];
+                        lista.Add(btn);
+                    });
+                }
+            }
+
+            return lista;
+
+        }
     }
 }

@@ -25,6 +25,9 @@ namespace SistemaEDInterfaces
         Hashtable notasD;
         Hashtable notasP;
 
+        //Pantalla de carga
+        private frmCarga pantallaCarga;
+
         public frmAdmCalibrar()
         {
             InitializeComponent();
@@ -38,16 +41,16 @@ namespace SistemaEDInterfaces
             this.nineBox.Cupos = this.dgvCupos;
 
             GerenciaWS.gerencia[] g = daoGerencia.listarGerencias();
-            if( g != null)
+            if (g != null)
             {
                 gerencias = new BindingList<GerenciaWS.gerencia>(g.ToList());
-                
+
                 this.cbGerencia.DataSource = gerencias;
                 this.cbGerencia.ValueMember = "idGerencia";
                 this.cbGerencia.DisplayMember = "nombre";
 
                 EscalaPeriodoWS.escalaPeriodo[] ep = daoEscalaPeriodo.listarEPXPeriodoActual();
-                if(ep != null)
+                if (ep != null)
                 {
                     escalasPeriodo = new BindingList<EscalaPeriodoWS.escalaPeriodo>(ep.ToList());
                 }
@@ -56,7 +59,7 @@ namespace SistemaEDInterfaces
                     MessageBox.Show("No hay cupos cargados", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 escalas = cargarHashTable();
-                
+
 
                 this.llena9Box();
             }
@@ -64,12 +67,35 @@ namespace SistemaEDInterfaces
             {
                 MessageBox.Show("No hay gerencias cargadas", "Mensaje de error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
 
-            //evaluacionDesempenho actualizar
-            //Evaluacion actualizar
+            notasD = setNotasDesempenho();
+            notasP = setNotasPotencial();
+
         }
 
+        private async void cargaDatos()
+        {
+            this.muestraCarga();
+            Task tarea = new Task(asignaEscalaSinCalibrar);
+            tarea.Start();
+
+            await tarea;
+            this.cierraCarga();
+        }
+
+        private void muestraCarga()
+        {
+            this.pantallaCarga = new frmCarga();
+            this.pantallaCarga.Show();
+        }
+
+        private void cierraCarga()
+        {
+            if (this.pantallaCarga != null)
+                this.pantallaCarga.Close();
+        }
+
+        
         private int[] calcularCupos()
         {
             int suma = 0, col = colaboradores.ToList().Count;
@@ -111,7 +137,7 @@ namespace SistemaEDInterfaces
             }
             this.nineBox.vaciar9Box();
 
-            this.asignaEscalaSinCalibrar();
+            this.cargaDatos();
 
             foreach (ColaboradorWS.colaborador c in colaboradores)
             {
@@ -241,5 +267,64 @@ namespace SistemaEDInterfaces
             return ret;
         }
 
+        private Hashtable setNotasDesempenho()
+        {
+            Hashtable ret = new Hashtable();
+
+            ret.Add(4, 1);
+            ret.Add(3, 2);
+            ret.Add(2, 3);
+            ret.Add(1, 4);
+            ret.Add(0, 5);
+
+            return ret;
+        }
+
+        private Hashtable setNotasPotencial()
+        {
+            Hashtable ret = new Hashtable();
+
+            ret.Add(0, 6);
+            ret.Add(1, 7);
+            ret.Add(2, 8);
+
+            return ret;
+        }
+
+        private async void subeNotas()
+        {
+            this.muestraCarga();
+            Task tarea = new Task(guardarNotas);
+            tarea.Start();
+
+            await tarea;
+            this.cierraCarga();
+            MessageBox.Show("Se guardaron todas las notas", "Mensaje de aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            this.subeNotas();
+        }
+
+        private void guardarNotas()
+        {
+            EvaluacionDesempenhoWS.evaluacionDesempenho evalD = new EvaluacionDesempenhoWS.evaluacionDesempenho();
+            EvaluacionPotencialWS.evaluacion evalP = new EvaluacionPotencialWS.evaluacion();
+
+            foreach (BtnColaborador btn in this.nineBox.asignarNotas(notasP, notasD))
+            {
+                this.setEvalPotencial(evalP);
+                evalP.idEvaluacion = btn.GetColaborador().evaluaciones[0].idEvaluacion;
+                evalP.escalaFinal.idEscala = btn.GetColaborador().evaluaciones[0].escalaFinal.idEscala;
+                daoEvaluacionPotencial.actualizarEvaluacionPotencial(evalP);
+
+                this.setEvalDesempenho(evalD);
+                evalD.idEvaluacion = btn.GetColaborador().evaluaciones[1].idEvaluacion;
+                evalD.escalaSinCalibrar.idEscala = btn.GetColaborador().evaluaciones[1].escalaSinCalibrar.idEscala;
+                daoEvaluacionDesempenho.actualizarEvaluacionDesempenho(evalD);
+
+            }
+        }
     }
 }
