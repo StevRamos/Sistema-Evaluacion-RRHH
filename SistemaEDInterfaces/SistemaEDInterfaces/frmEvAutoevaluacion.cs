@@ -76,7 +76,7 @@ namespace SistemaEDInterfaces
                 y += labelNombre.Height + 20;
                 sumaY += labelNombre.Height + 20;
             }
-            sumaY += 15;
+            //sumaY += 15;
             
             lblTituloCompetencias.Location = new Point(lblTituloCompetencias.Location.X,lblTituloCompetencias.Location.Y + sumaY);
             lblDescripcionCompetencias.Location = new Point(lblDescripcionCompetencias.Location.X, lblDescripcionCompetencias.Location.Y + sumaY);
@@ -102,14 +102,15 @@ namespace SistemaEDInterfaces
             txtBoxCompetencias = new BindingList<TextBox>();
             foreach (EvaluacionDesempenhoWS.lineaEvaluacion l in evaluacionDesempenho.lineasEvaluacion)
             {
-                x = lblTituloCompetencias.Location.X; 
+                x = lblDescripcionCompetencias.Location.X; 
                 Label labelNombre = new Label();
                 labelNombre.Location = new Point(x, y);
                 labelNombre.Text = l.pesoCriterio.criterio.nombre + "("+ l.pesoCriterio.peso +"%)";
                 labelNombre.AutoSize = true;
                 labelNombre.MaximumSize = new Size(350, 0);
                 labelNombre.Font = new Font("Microsoft Sans Serif", 15,FontStyle.Bold);
-
+                labelNombre.ForeColor = new Color();
+                labelNombre.ForeColor =  Color.FromArgb(0,66,122);
                 x = lblNotaCompetencias.Location.X;
                 TextBox txtNota = new TextBox();
                 txtNota.Location = new Point(x, y);
@@ -154,21 +155,21 @@ namespace SistemaEDInterfaces
                 this.Controls.Add(lblNota5);
                 
                 */
-                y += labelNombre.Height + 40;
-                sumaY += labelNombre.Height + 40;
+                y += labelNombre.Height + 20;
+                sumaY += labelNombre.Height + 20;
                 BindingList<SeccionSubcompetencia> agrupacionCompetencia;
                 agrupacionCompetencia = new BindingList<SeccionSubcompetencia>();
                 foreach (EvaluacionDesempenhoWS.lineaEvaluacion sl in l.sublineasEvaluacion)
                 {
                     SeccionSubcompetencia agrupacionSubcompetencia = new SeccionSubcompetencia();
-                    x = lblTituloCompetencias.Location.X;
+                    x = lblDescripcionCompetencias.Location.X + 40 ;
                     Label lblGuion = new Label();
                     lblGuion.Location = new Point(x, y);
                     lblGuion.Font = new Font("Microsoft Sans Serif", 15);
                     lblGuion.Text = "-";
-                    lblGuion.Width = 40;
+                    lblGuion.Width = 20;
                     this.Controls.Add(lblGuion);
-                    x = lblGuion.Width + 15;
+                    x = lblGuion.Location.X +  lblGuion.Width ;
                     Label lblNombreSubcriterio = new Label();
                     lblNombreSubcriterio.Location = new Point(x, y);
                     lblNombreSubcriterio.AutoSize = true;

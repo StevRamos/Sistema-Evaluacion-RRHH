@@ -1103,6 +1103,9 @@
     <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.generarReporteEvaluacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.generarReporteObjetivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Iconos\PUCP.png" />
     <None Include="Iconos\PUCPLogo.png" />
   </ItemGroup>
