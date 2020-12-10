@@ -156,11 +156,9 @@ namespace SistemaEDInterfaces
 
         private void asignaEscalaSinCalibrar()
         {
-            bool calificado = false;
+            bool calificado = true;
             foreach (ColaboradorWS.colaborador c in colaboradores)
                 if (c.evaluaciones[0].escalaSinCalibrar.idEscala == 0 && c.evaluaciones[1].escalaSinCalibrar.idEscala == 0)
-                    calificado = true;
-                else
                     calificado = false;
             if (calificado)
                 return;
@@ -304,7 +302,11 @@ namespace SistemaEDInterfaces
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            this.btnGuardar.Enabled = false;
+            this.btnBuscar.Enabled = false;
             this.subeNotas();
+            this.btnGuardar.Enabled = true;
+            this.btnBuscar.Enabled = true;
         }
 
         private void guardarNotas()
@@ -321,7 +323,7 @@ namespace SistemaEDInterfaces
 
                 this.setEvalDesempenho(evalD);
                 evalD.idEvaluacion = btn.GetColaborador().evaluaciones[1].idEvaluacion;
-                evalD.escalaSinCalibrar.idEscala = btn.GetColaborador().evaluaciones[1].escalaSinCalibrar.idEscala;
+                evalD.escalaFinal.idEscala = btn.GetColaborador().evaluaciones[1].escalaSinCalibrar.idEscala;
                 daoEvaluacionDesempenho.actualizarEvaluacionDesempenho(evalD);
 
             }
