@@ -380,6 +380,9 @@ public class ColaboradorMySQL implements ColaboradorDAO{
         ArrayList<Colaborador> colaboradores = new ArrayList<>();
         SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
         
+        EvaluacionDAO daoEvaluacion = new EvaluacionMySQL();
+        EvaluacionDesempenhoDAO daoEvaluacionDesempenho = new EvaluacionDesempenhoMySQL();
+        
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
@@ -410,13 +413,17 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 ger.setDescripcion(rs.getString("descripcionGerencia"));
                 
                 PuestoTrabajo pt = new PuestoTrabajo();
-               pt.setNombre(rs.getString("nombrePuestoTrabjo"));
+                pt.setNombre(rs.getString("nombrePuestoTrabjo"));
                 pt.setDescripcion(rs.getString("descripcionPuestoTrabajo"));
                 
                 col.setGerencia(ger);
                 col.setPuestoTrabajo(pt);
                 
                 colaboradores.add(col);
+            }
+            for(Colaborador c : colaboradores){
+                c.getEvaluaciones().add(daoEvaluacion.obtenerEvaluacionPotencial(c.getIdColaborador(), idPeriodo));
+                c.getEvaluaciones().add(daoEvaluacionDesempenho.obtenerEvaluacionDesempenho(c.getIdColaborador(), idPeriodo));
             }
         }catch(Exception ex){
             System.out.println(ex.getMessage());

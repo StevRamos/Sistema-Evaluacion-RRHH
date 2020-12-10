@@ -19,7 +19,6 @@ namespace SistemaEDInterfaces
         public BtnColaborador()
         {
             InitializeComponent();
-            this.lblNombre = this.Controls.OfType<Label>().First();
         }
 
         public BtnColaborador(ColaboradorWS.colaborador c)

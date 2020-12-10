@@ -203,7 +203,7 @@ namespace SistemaEDInterfaces
                     panel = this.tlp9Box.GetControlFromPosition(i, j);
                     panel.Controls.OfType<BtnColaborador>().ToList().ForEach(btn => {
                         btn.GetColaborador().evaluaciones[0].escalaFinal.idEscala = (int)potencial[j];
-                        btn.GetColaborador().evaluaciones[1].escalaFinal.idEscala = (int)desempenho[j];
+                        btn.GetColaborador().evaluaciones[1].escalaFinal.idEscala = (int)desempenho[i];
                         lista.Add(btn);
                     });
                 }
