@@ -483,7 +483,7 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
             evaluacionDesempenho.setNotaPreviaObj(rs.getDouble("notaPreviaObj"));
             evaluacionDesempenho.setNotaFinalObj(rs.getDouble("notaFinalObj"));
             
-            
+
             evaluacionDesempenho.setEstadoAutoEval(rs.getInt("estadoAutoEval"));
             evaluacionDesempenho.setEstadoPlanificacion(rs.getInt("estadoPlanificacion"));
             
@@ -533,7 +533,9 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                 le.setNotaAutoEval(rs.getInt("notaAutoEval"));
                 le.setNotaPrevia(rs.getInt("notaPrevia"));
                 le.setNotaFinal(rs.getInt("notaFinal"));
-
+                
+                le.setAccionesAtomar(rs.getString("acccionesAtomar"));
+                le.setFechaCumplimiento(rs.getDate("fechaCumplimientoPDI"));
                 evaluacionDesempenho.getLineasEvaluacion().add(le);
             }
             
