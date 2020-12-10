@@ -237,5 +237,11 @@ namespace SistemaEDInterfaces
                 txtNomArchPotMavPesos.Text = buscar.FileName;
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form frmAyuda = new frmAyudaPotenciales();
+            frmAyuda.Show();
+        }
     }
 }

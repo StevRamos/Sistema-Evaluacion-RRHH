@@ -239,5 +239,11 @@ namespace SistemaEDInterfaces
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Information);
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form frmAyuda = new frmAyudaCompetencias();
+            frmAyuda.Show();
+        }
     }
 }

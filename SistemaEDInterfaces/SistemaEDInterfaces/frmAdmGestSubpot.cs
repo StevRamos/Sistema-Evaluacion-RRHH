@@ -144,12 +144,13 @@ namespace SistemaEDInterfaces
         {
             PesoCriterioWS.pesoCriterio data = dgvGestCompetencias.Rows[e.RowIndex].DataBoundItem as PesoCriterioWS.pesoCriterio;
 
-            dgvGestCompetencias.Rows[e.RowIndex].Cells[1].Value = data.criterio.criterioPadre.idCriterio;
-            dgvGestCompetencias.Rows[e.RowIndex].Cells[0].Value = data.criterio.idCriterio;
-            dgvGestCompetencias.Rows[e.RowIndex].Cells[2].Value = data.criterio.nombre;
-            dgvGestCompetencias.Rows[e.RowIndex].Cells[3].Value = data.criterio.descripcion;
-            dgvGestCompetencias.Rows[e.RowIndex].Cells[4].Value = data.puestoTrabajo.nombre;
-            dgvGestCompetencias.Rows[e.RowIndex].Cells[6].Value = data.periodo.nombre;
+            dgvGestCompetencias.Rows[e.RowIndex].Cells[0].Value = data.criterio.criterioPadre.idCriterio;
+            dgvGestCompetencias.Rows[e.RowIndex].Cells[1].Value = data.criterio.criterioPadre.nombre;
+            dgvGestCompetencias.Rows[e.RowIndex].Cells[2].Value = data.criterio.idCriterio;
+            dgvGestCompetencias.Rows[e.RowIndex].Cells[3].Value = data.criterio.nombre;
+            dgvGestCompetencias.Rows[e.RowIndex].Cells[4].Value = data.criterio.descripcion;
+            dgvGestCompetencias.Rows[e.RowIndex].Cells[5].Value = data.puestoTrabajo.nombre;
+            dgvGestCompetencias.Rows[e.RowIndex].Cells[7].Value = data.periodo.nombre;
         }
     }
 }
