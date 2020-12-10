@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="67c16fbd-3932-4583-89de-57d5b79c5313" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9605f566-af3e-4fda-b05b-abf3f0a298c3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://54.160.145.128:8080/SistemaEDServices/PeriodoWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="PeriodoWS.wsdl" MetadataType="Wsdl" ID="72357d6c-b919-4f70-8575-f7be423f75a5" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/PeriodoWS?WSDL" />
-    <MetadataFile FileName="PeriodoWS.xsd" MetadataType="Schema" ID="6f7e34b1-fc6b-4c13-b4d1-fca1674f5458" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/PeriodoWS?xsd=1" />
+    <MetadataFile FileName="PeriodoWS.wsdl" MetadataType="Wsdl" ID="758f7d13-45f4-4cfd-901c-acae8a76bab7" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/PeriodoWS?WSDL" />
+    <MetadataFile FileName="PeriodoWS.xsd" MetadataType="Schema" ID="166927a5-55ba-4af3-9319-e34c543f8c5c" SourceId="1" SourceUrl="http://54.160.145.128:8080/SistemaEDServices/PeriodoWS?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

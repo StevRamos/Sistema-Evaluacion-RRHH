@@ -33,15 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMisObjetivos = new System.Windows.Forms.Label();
             this.dgvMisObjetivos = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnEnviar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnVerDetalle = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblDescripcionLista = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMisObjetivos)).BeginInit();
             this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
@@ -106,6 +107,44 @@
             this.dgvMisObjetivos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMisObjetivos_CellContentClick);
             this.dgvMisObjetivos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvMisObjetivos_CellFormatting);
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "idObjetivo";
+            this.id.HeaderText = "Numero";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.id.Width = 70;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Descripcion.Width = 700;
+            // 
+            // Peso
+            // 
+            this.Peso.DataPropertyName = "peso";
+            this.Peso.HeaderText = "Peso";
+            this.Peso.Name = "Peso";
+            this.Peso.ReadOnly = true;
+            this.Peso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            // 
+            // Estado
+            // 
+            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
+            this.Estado.Width = 200;
+            // 
             // btnEnviar
             // 
             this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
@@ -164,6 +203,7 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.Controls.Add(this.lblDescripcionLista);
             this.panelContenedor.Controls.Add(this.btnEnviar);
             this.panelContenedor.Controls.Add(this.btnVerDetalle);
             this.panelContenedor.Controls.Add(this.lblMisObjetivos);
@@ -177,43 +217,16 @@
             this.panelContenedor.TabIndex = 6;
             this.panelContenedor.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedor_Paint);
             // 
-            // id
+            // lblDescripcionLista
             // 
-            this.id.DataPropertyName = "idObjetivo";
-            this.id.HeaderText = "Numero";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.id.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.id.Width = 70;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "descripcion";
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Descripcion.Width = 700;
-            // 
-            // Peso
-            // 
-            this.Peso.DataPropertyName = "peso";
-            this.Peso.HeaderText = "Peso";
-            this.Peso.Name = "Peso";
-            this.Peso.ReadOnly = true;
-            this.Peso.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Peso.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            // 
-            // Estado
-            // 
-            this.Estado.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Estado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.Estado.Width = 200;
+            this.lblDescripcionLista.AutoSize = true;
+            this.lblDescripcionLista.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcionLista.ForeColor = System.Drawing.Color.Black;
+            this.lblDescripcionLista.Location = new System.Drawing.Point(18, 82);
+            this.lblDescripcionLista.Name = "lblDescripcionLista";
+            this.lblDescripcionLista.Size = new System.Drawing.Size(521, 22);
+            this.lblDescripcionLista.TabIndex = 30;
+            this.lblDescripcionLista.Text = "Listado de sus objetivos para el periodo NombrePeriodo:";
             // 
             // frmPlanMisObjetivos
             // 
@@ -245,5 +258,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn Peso;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.Label lblDescripcionLista;
     }
 }

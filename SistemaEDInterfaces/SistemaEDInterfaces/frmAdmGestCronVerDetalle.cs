@@ -254,7 +254,7 @@ namespace SistemaEDInterfaces
         private void frmAdmGestCronVerDetalle_Load(object sender, EventArgs e)
         {
             //Llena configuraciones fecha
-            //periodo = daoPeriodo.listarGerenciaPeriodo(periodo);
+            periodo = daoPeriodo.listarGerenciaPeriodo(periodo);
 
             txtID.Text = periodo.idPeriodo.ToString();
             txtNombre.Text = periodo.nombre;

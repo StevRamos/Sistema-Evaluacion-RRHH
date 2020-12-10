@@ -66,7 +66,7 @@
             // txtMeta
             // 
             this.txtMeta.Enabled = false;
-            this.txtMeta.Location = new System.Drawing.Point(289, 224);
+            this.txtMeta.Location = new System.Drawing.Point(760, 226);
             this.txtMeta.MaxLength = 50;
             this.txtMeta.Name = "txtMeta";
             this.txtMeta.Size = new System.Drawing.Size(193, 20);
@@ -95,11 +95,11 @@
             // 
             this.lblUnidadMedida.AutoSize = true;
             this.lblUnidadMedida.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidadMedida.Location = new System.Drawing.Point(499, 220);
+            this.lblUnidadMedida.Location = new System.Drawing.Point(28, 220);
             this.lblUnidadMedida.Name = "lblUnidadMedida";
-            this.lblUnidadMedida.Size = new System.Drawing.Size(204, 24);
+            this.lblUnidadMedida.Size = new System.Drawing.Size(69, 24);
             this.lblUnidadMedida.TabIndex = 9;
-            this.lblUnidadMedida.Text = "Unidad de Medida:";
+            this.lblUnidadMedida.Text = "Meta:";
             // 
             // lblPeso
             // 
@@ -125,11 +125,11 @@
             // 
             this.lblMeta.AutoSize = true;
             this.lblMeta.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMeta.Location = new System.Drawing.Point(28, 220);
+            this.lblMeta.Location = new System.Drawing.Point(499, 222);
             this.lblMeta.Name = "lblMeta";
-            this.lblMeta.Size = new System.Drawing.Size(69, 24);
+            this.lblMeta.Size = new System.Drawing.Size(111, 24);
             this.lblMeta.TabIndex = 15;
-            this.lblMeta.Text = "Meta:";
+            this.lblMeta.Text = "Cantidad:";
             // 
             // lblDescripcion
             // 
@@ -184,7 +184,7 @@
             // txtUnidadMedida
             // 
             this.txtUnidadMedida.Enabled = false;
-            this.txtUnidadMedida.Location = new System.Drawing.Point(760, 226);
+            this.txtUnidadMedida.Location = new System.Drawing.Point(289, 224);
             this.txtUnidadMedida.MaxLength = 50;
             this.txtUnidadMedida.Name = "txtUnidadMedida";
             this.txtUnidadMedida.Size = new System.Drawing.Size(193, 20);

@@ -286,7 +286,7 @@
             // id
             // 
             this.id.DataPropertyName = "idObjetivo";
-            this.id.HeaderText = "Numero";
+            this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
             this.id.Resizable = System.Windows.Forms.DataGridViewTriState.False;

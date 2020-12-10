@@ -184,7 +184,7 @@ namespace SistemaEDInterfaces
 
             //Datos del colaborador 
             txtIDColab.Text = colaborador.idColaborador.ToString();
-            txtNombre.Text = colaborador.nombres;
+            txtNombre.Text = colaborador.nombres + " " + colaborador.apellidos;
             txtDNI.Text = colaborador.dni.ToString();
             txtGerencia.Text = colaborador.gerencia.nombre;
             txtCargo.Text = colaborador.puestoTrabajo.nombre;

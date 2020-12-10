@@ -37,6 +37,9 @@
             this.lblJPuesto = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPDI = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblInstrucciones = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtGerencia
@@ -134,12 +137,56 @@
             this.lblPDI.TabIndex = 22;
             this.lblPDI.Text = "Plan de Desarrollo Integral";
             // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFinalizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizar.Location = new System.Drawing.Point(896, 727);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(158, 26);
+            this.btnFinalizar.TabIndex = 32;
+            this.btnFinalizar.Text = "Finalizar Evaluacion";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(705, 727);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(158, 26);
+            this.btnGuardar.TabIndex = 31;
+            this.btnGuardar.Text = "Guardar Cambios";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // lblInstrucciones
+            // 
+            this.lblInstrucciones.AutoSize = true;
+            this.lblInstrucciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInstrucciones.Location = new System.Drawing.Point(39, 329);
+            this.lblInstrucciones.Name = "lblInstrucciones";
+            this.lblInstrucciones.Size = new System.Drawing.Size(821, 50);
+            this.lblInstrucciones.TabIndex = 33;
+            this.lblInstrucciones.Text = "Complete las acciones a tomar para las competencias del colaborador e ingrese una" +
+    "\r\nfecha aproximada para el cumplimiento";
+            // 
             // frmRepPDIColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.AutoScrollMargin = new System.Drawing.Size(0, 100);
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
+            this.Controls.Add(this.lblInstrucciones);
+            this.Controls.Add(this.btnFinalizar);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtGerencia);
             this.Controls.Add(this.lblGerencia);
             this.Controls.Add(this.txtPuesto);
@@ -151,6 +198,7 @@
             this.Controls.Add(this.lblPDI);
             this.Name = "frmRepPDIColaborador";
             this.Text = "frmRepPDIColaborador";
+            this.Load += new System.EventHandler(this.frmRepPDIColaborador_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -167,5 +215,8 @@
         private System.Windows.Forms.Label lblJPuesto;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblPDI;
+        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblInstrucciones;
     }
 }

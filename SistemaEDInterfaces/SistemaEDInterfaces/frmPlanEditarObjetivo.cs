@@ -166,7 +166,6 @@ namespace SistemaEDInterfaces
             }
 
             txtID.Text = objetivo.idObjetivo.ToString();
-            txtEstado.Text = objetivo.estado.ToString();
             txtMeta.Text = objetivo.meta.ToString();
             txtUnidadMedida.Text = objetivo.unidadMedida;
             if (objetivo.estado == (int)EstadoObjetivo.Aprobado)
