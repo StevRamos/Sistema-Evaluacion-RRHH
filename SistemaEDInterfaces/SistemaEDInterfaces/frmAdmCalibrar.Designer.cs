@@ -99,7 +99,7 @@
             // cbGerencia
             // 
             this.cbGerencia.FormattingEnabled = true;
-            this.cbGerencia.Location = new System.Drawing.Point(152, 81);
+            this.cbGerencia.Location = new System.Drawing.Point(152, 70);
             this.cbGerencia.Name = "cbGerencia";
             this.cbGerencia.Size = new System.Drawing.Size(407, 37);
             this.cbGerencia.TabIndex = 2;
@@ -107,7 +107,7 @@
             // lblGerencia
             // 
             this.lblGerencia.AutoSize = true;
-            this.lblGerencia.Location = new System.Drawing.Point(23, 84);
+            this.lblGerencia.Location = new System.Drawing.Point(23, 73);
             this.lblGerencia.Name = "lblGerencia";
             this.lblGerencia.Size = new System.Drawing.Size(123, 29);
             this.lblGerencia.TabIndex = 0;
@@ -279,7 +279,7 @@
             // lblCuposUsados
             // 
             this.lblCuposUsados.AutoSize = true;
-            this.lblCuposUsados.Location = new System.Drawing.Point(51, 134);
+            this.lblCuposUsados.Location = new System.Drawing.Point(51, 125);
             this.lblCuposUsados.Name = "lblCuposUsados";
             this.lblCuposUsados.Size = new System.Drawing.Size(101, 29);
             this.lblCuposUsados.TabIndex = 18;
