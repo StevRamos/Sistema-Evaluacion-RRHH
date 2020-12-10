@@ -295,18 +295,25 @@ namespace SistemaEDInterfaces
             Task tarea = new Task(guardarNotas);
             tarea.Start();
 
+            this.habilitarBotones(false);
+
             await tarea;
             this.cierraCarga();
             MessageBox.Show("Se guardaron todas las notas", "Mensaje de aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.habilitarBotones(true);
+        }
+
+        private void habilitarBotones( bool x )
+        {
+            this.btnGuardar.Enabled = x;
+            this.btnBuscar.Enabled = x;
+            this.nineBox.SetDrop(x);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            this.btnGuardar.Enabled = false;
-            this.btnBuscar.Enabled = false;
             this.subeNotas();
-            this.btnGuardar.Enabled = true;
-            this.btnBuscar.Enabled = true;
         }
 
         private void guardarNotas()
