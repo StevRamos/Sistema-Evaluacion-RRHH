@@ -125,6 +125,7 @@ public class EscalaPeriodoMySQL implements EscalaPeriodoDAO{
             while(rs.next()) {
                 EscalaPeriodo ep = new EscalaPeriodo();
                 
+                ep.getEscala().setIdEscala(rs.getInt("id_Escala"));
                 ep.getEscala().setNombre(rs.getString("nombre"));
                 ep.setPorcentajeCupos(rs.getDouble("porcentajeCupos"));
                 

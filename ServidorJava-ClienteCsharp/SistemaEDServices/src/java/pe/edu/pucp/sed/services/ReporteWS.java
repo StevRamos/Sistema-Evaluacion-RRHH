@@ -59,4 +59,49 @@ public class ReporteWS {
         }
         return arreglo;
     }
+    
+    @WebMethod(operationName = "generarReporteObjetivos")
+    public byte[] generarReporteObjetivos(@WebParam(name = "idGerencia") int idGerencia) {
+        byte[] arreglo = null;
+        try{
+            String rutaReporte = Reporte.class.getResource("/pe/edu/pucp/sed/reportes/ReportePlanificacionObjetivos.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            JasperReport reporte = (JasperReport)
+                JRLoader.loadObjectFromFile(rutaReporte);
+            
+            String rutaSubreporte1 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePlanObj1.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            String rutaSubreporte2 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePlanObj2.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            String rutaSubreporte3 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePlanObj3.jasper")
+                    .getPath().replaceAll("%20", " ");
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            HashMap hm = new HashMap();
+            hm.put("ID_GERENCIA",idGerencia);
+            hm.put("RUTA_SR1",rutaSubreporte1);
+            hm.put("RUTA_SR2",rutaSubreporte2);
+            hm.put("RUTA_SR3",rutaSubreporte3);
+            
+            JasperPrint jp = JasperFillManager.fillReport
+            (reporte, hm, con);
+            
+            con.close();
+            
+            arreglo = JasperExportManager.exportReportToPdf(jp);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return arreglo;
+    }
+    
 }

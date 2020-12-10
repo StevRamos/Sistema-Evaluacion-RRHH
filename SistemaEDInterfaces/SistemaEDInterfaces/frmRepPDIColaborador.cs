@@ -96,7 +96,7 @@ namespace SistemaEDInterfaces
                 DateTimePicker dtpFecha = new DateTimePicker();
                 dtpFecha.Location = new Point(x, y);
                 dtpFecha.Size = new Size(200, 20);
-                //dtpFecha.Value = l.fechaCumplimiento;
+                dtpFecha.Value = l.fechaCumplimiento;
                 this.dtpFechas.Add(dtpFecha);
                 this.Controls.Add(dtpFecha);
 
