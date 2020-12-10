@@ -26,7 +26,6 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
             this.setColaborador(c);
-            this.lblNombre = this.Controls.OfType<Label>().First();
         }
 
         public bool Clicked { get => clicked; set => clicked = value; }
@@ -46,6 +45,11 @@ namespace SistemaEDInterfaces
         {
             this.colaborador = c;
             this.setNombre(c.nombres + " " + c.apellidos);
+        }
+
+        public ColaboradorWS.colaborador GetColaborador()
+        {
+            return this.colaborador;
         }
 
         public void setNombre(String nombre)
