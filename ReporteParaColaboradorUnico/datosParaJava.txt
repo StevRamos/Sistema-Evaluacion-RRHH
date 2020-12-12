@@ -1,0 +1,9 @@
+RUTA_REPOR_OBJ - ReporObj.jasper
+RUTA_SUBREPORTECRIPADRE1 - ReporteCriterioPadre.jasper
+RUTA_POTENCIAL - ReportePotenciales.jasper
+RUTA_SUB_COM_PADRE - ReporSubCom.jasper
+RUTA_SUB_POT_PADRE - Reportesubpotencial.jasper
+FID_COL_IN - (aqui tienes que colocar el id del colaborador)
+
+
+
