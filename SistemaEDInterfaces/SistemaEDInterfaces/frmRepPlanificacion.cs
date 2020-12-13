@@ -27,6 +27,9 @@ namespace SistemaEDInterfaces
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
+
+            sfdReporte.FileOk += SfdReporte_FileOk;
+            sfdReporte.FileName = "Reporte de Planificación" + ((GerenciaWS.gerencia)cmbGerencias.SelectedItem).nombre + ".pdf";
             sfdReporte.ShowDialog();
             if(sfdReporte.FileName !=null && sfdReporte.FileName != "")
             {
@@ -38,10 +41,15 @@ namespace SistemaEDInterfaces
                 Global.terminarEspera(this);
             }
             
+        }
+
+        private void SfdReporte_FileOk(object sender, CancelEventArgs e)
+        {
             MessageBox.Show("Reporte generado exitosamente .",
                                 "Mensaje de confirmacion",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
         }
+
     }
 }

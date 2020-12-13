@@ -815,6 +815,12 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\EvaluacionPotencialWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EvaluacionPotencialWS\configuration.svcinfo" />
+    <None Include="Connected Services\EvaluacionPotencialWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Iconos\waiting.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1088,12 +1094,6 @@
     <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
     <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
     <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Connected Services\EvaluacionPotencialWS\configuration91.svcinfo" />
-    <None Include="Connected Services\EvaluacionPotencialWS\configuration.svcinfo" />
-    <None Include="Connected Services\EvaluacionPotencialWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

@@ -35,7 +35,10 @@ namespace SistemaEDInterfaces
             int x;
             txtBoxCompetencias= new BindingList<RichTextBox>();
             dtpFechas = new BindingList<DateTimePicker>();
-            if (evaluacionDesempenho.lineasEvaluacion == null) return;
+
+            if (this.evaluacionDesempenho.lineasEvaluacion == null)
+                return;
+
             foreach (EvaluacionDesempenhoWS.lineaEvaluacion l in evaluacionDesempenho.lineasEvaluacion)
             {
                 x = lblInstrucciones.Location.X;
