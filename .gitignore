@@ -62,5 +62,13 @@
 !/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/org.jfree.jcommon-osgi_1.0.23.jar
 !/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/org.jfree.chart-osgi_1.0.19.jar
 !/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/org.apache.commons.commons-collections4_4.2.0.jar
-!/ServidorJava-ClienteCsharp/SistemaEDController/src/pe/edu/pucp/sed/lib/mysql-connector-java-8.0.21.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/activation.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/imap.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/mailapi.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/dsn.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/pop3.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/mail.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/gimap.jar
+!/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/smtp.jar
 !/ServidorJava-ClienteCsharp/SistemaED/src/pe/edu/pucp/sed/lib/mysql-connector-java-8.0.21.jar
+!/ServidorJava-ClienteCsharp/SistemaEDController/src/pe/edu/pucp/sed/lib/mysql-connector-java-8.0.21.jar
