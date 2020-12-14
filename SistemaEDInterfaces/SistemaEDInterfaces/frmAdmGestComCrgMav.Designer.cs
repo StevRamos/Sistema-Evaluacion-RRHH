@@ -47,6 +47,7 @@
             this.btnRegreCargMavCompePesos = new System.Windows.Forms.Button();
             this.btnCargarCompetMasiva = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sfdReporte = new System.Windows.Forms.SaveFileDialog();
             this.gbCompetencias.SuspendLayout();
             this.gbPesosCompetencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -326,5 +327,6 @@
         private System.Windows.Forms.Button btnCargarCompetMasiva;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.SaveFileDialog sfdReporte;
     }
 }

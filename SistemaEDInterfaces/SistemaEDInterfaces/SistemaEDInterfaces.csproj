@@ -304,6 +304,18 @@
     <Compile Include="frmAdmSeguimiento.Designer.cs">
       <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAyudaCargaMasiva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaCargaMasiva.Designer.cs">
+      <DependentUpon>frmAyudaCargaMasiva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaCargo.Designer.cs">
+      <DependentUpon>frmAyudaCargo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAyudaColaboradores.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +327,12 @@
     </Compile>
     <Compile Include="frmAyudaCompetencias.Designer.cs">
       <DependentUpon>frmAyudaCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaGerencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaGerencia.Designer.cs">
+      <DependentUpon>frmAyudaGerencia.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAyudaPotenciales.cs">
       <SubType>Form</SubType>
@@ -677,11 +695,20 @@
     <EmbeddedResource Include="frmAdmSeguimiento.resx">
       <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaCargaMasiva.resx">
+      <DependentUpon>frmAyudaCargaMasiva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaCargo.resx">
+      <DependentUpon>frmAyudaCargo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAyudaColaboradores.resx">
       <DependentUpon>frmAyudaColaboradores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAyudaCompetencias.resx">
       <DependentUpon>frmAyudaCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaGerencia.resx">
+      <DependentUpon>frmAyudaGerencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAyudaPotenciales.resx">
       <DependentUpon>frmAyudaPotenciales.cs</DependentUpon>
@@ -821,6 +848,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Iconos\hombre-de-negocios.png" />
     <Content Include="Iconos\waiting.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

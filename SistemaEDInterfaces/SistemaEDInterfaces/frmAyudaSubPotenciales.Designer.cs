@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAyudaSubPotenciales));
             this.label10 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -38,13 +39,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.llblOlvContra = new System.Windows.Forms.LinkLabel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(18, 98);
+            this.label10.Location = new System.Drawing.Point(19, 603);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(593, 21);
             this.label10.TabIndex = 121;
@@ -54,7 +59,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(18, 496);
+            this.label8.Location = new System.Drawing.Point(18, 548);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(498, 21);
             this.label8.TabIndex = 120;
@@ -64,7 +69,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(18, 450);
+            this.label9.Location = new System.Drawing.Point(18, 502);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(391, 21);
             this.label9.TabIndex = 119;
@@ -74,7 +79,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(18, 397);
+            this.label6.Location = new System.Drawing.Point(18, 449);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(498, 21);
             this.label6.TabIndex = 118;
@@ -84,7 +89,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(18, 351);
+            this.label7.Location = new System.Drawing.Point(18, 403);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(370, 21);
             this.label7.TabIndex = 117;
@@ -94,7 +99,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(18, 292);
+            this.label4.Location = new System.Drawing.Point(18, 344);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(398, 21);
             this.label4.TabIndex = 116;
@@ -104,7 +109,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 246);
+            this.label5.Location = new System.Drawing.Point(18, 298);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(468, 21);
             this.label5.TabIndex = 115;
@@ -114,7 +119,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 194);
+            this.label2.Location = new System.Drawing.Point(18, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(398, 21);
             this.label2.TabIndex = 114;
@@ -124,7 +129,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 148);
+            this.label1.Location = new System.Drawing.Point(18, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(447, 21);
             this.label1.TabIndex = 113;
@@ -141,12 +146,49 @@
             this.label3.TabIndex = 112;
             this.label3.Text = "Ayuda Carga Masiva de SubPotenciales";
             // 
+            // llblOlvContra
+            // 
+            this.llblOlvContra.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
+            this.llblOlvContra.AutoSize = true;
+            this.llblOlvContra.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.llblOlvContra.LinkColor = System.Drawing.Color.DimGray;
+            this.llblOlvContra.Location = new System.Drawing.Point(19, 92);
+            this.llblOlvContra.Name = "llblOlvContra";
+            this.llblOlvContra.Size = new System.Drawing.Size(282, 21);
+            this.llblOlvContra.TabIndex = 123;
+            this.llblOlvContra.TabStop = true;
+            this.llblOlvContra.Text = "¿Como realizar una carga masiva?";
+            this.llblOlvContra.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llblOlvContra_LinkClicked);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(18, 146);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(207, 19);
+            this.label11.TabIndex = 124;
+            this.label11.Text = "Estructura del archivo .csv";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(986, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 60);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 122;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmAyudaSubPotenciales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.llblOlvContra);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
@@ -159,6 +201,7 @@
             this.Controls.Add(this.label3);
             this.Name = "frmAyudaSubPotenciales";
             this.Text = "frmAyudaSubPotenciales";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,5 +219,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel llblOlvContra;
+        private System.Windows.Forms.Label label11;
     }
 }

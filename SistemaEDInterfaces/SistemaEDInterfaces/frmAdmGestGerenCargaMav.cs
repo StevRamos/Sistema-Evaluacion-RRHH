@@ -14,7 +14,8 @@ namespace SistemaEDInterfaces
     public partial class frmAdmGestGerenCargaMav : Form
     {
         private GerenciaWS.GerenciaWSClient daoGerencia;
-
+        int resultado;
+        string errores = "";
         public frmAdmGestGerenCargaMav()
         {
             InitializeComponent();
@@ -56,8 +57,13 @@ namespace SistemaEDInterfaces
                             gerencia.descripcion = "";
                         }
 
-                        daoGerencia.actualizarGerencia(gerencia);
+                        resultado = daoGerencia.actualizarGerencia(gerencia);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
                     }
+                    cargarErrores();
                 }
                 else if (rdbInsCargaMavGer.Checked != false)
                 {
@@ -67,8 +73,13 @@ namespace SistemaEDInterfaces
                         GerenciaWS.gerencia gerencia = new GerenciaWS.gerencia();
                         gerencia.nombre = valores[0].ToString();
                         gerencia.descripcion = valores[1].ToString();
-                        daoGerencia.insertarGerencia(gerencia);
+                        resultado = daoGerencia.insertarGerencia(gerencia);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
                     }
+                    cargarErrores();
                 }
 
                 MessageBox.Show("El archivo se cargó correctamente");
@@ -101,6 +112,23 @@ namespace SistemaEDInterfaces
         private void btnRegreCargMavGer_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void cargarErrores()
+        {
+            if (errores == "") return;
+            sfdReporte.FileName = "Errores de la Carga Masiva.csv";
+            sfdReporte.ShowDialog();
+            if (sfdReporte.FileName != null && sfdReporte.FileName != "")
+            {
+                File.WriteAllText(sfdReporte.FileName, errores);
+            }
+            errores = "";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form frmAyuda = new frmAyudaGerencia();
+            frmAyuda.Show();
         }
     }
 }

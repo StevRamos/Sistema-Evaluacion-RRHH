@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace SistemaEDInterfaces
 {
-    public partial class frmAyudaColaboradores : Form
+    public partial class frmAyudaCargo : Form
     {
-        public frmAyudaColaboradores()
+        public frmAyudaCargo()
         {
             InitializeComponent();
         }
