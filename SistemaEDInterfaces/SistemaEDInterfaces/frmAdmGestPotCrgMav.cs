@@ -16,6 +16,7 @@ namespace SistemaEDInterfaces
     {
         CriterioWS.CriterioWSClient daoCriterio;
         PesoCriterioWS.PesoCriterioWSClient daoPesoCriterio;
+        //para las validaciones
         int resultado;
         string errores = "";
         public frmAdmGestPotCrgMav()
