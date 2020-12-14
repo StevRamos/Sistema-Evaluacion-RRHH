@@ -115,6 +115,56 @@ public class ReporteWS {
         return arreglo;
     }
     
+    
+        @WebMethod(operationName = "generarReportePDI")
+    public byte[] generarReportePDI(@WebParam(name = "idColaborador") int idColaborador) {
+        byte[] arreglo = null;
+        try{
+            String rutaReporte = Reporte.class.getResource("/pe/edu/pucp/sed/reportes/ReportePDI.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            JasperReport reporte = (JasperReport)
+                JRLoader.loadObjectFromFile(rutaReporte);
+            
+            String rutaSubreporte1 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePDI1.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            String rutaSubreporte2 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePDI2.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            String rutaSubreporte3 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePDI3.jasper")
+                    .getPath().replaceAll("%20", " ");
+
+            String rutaSubreporte4 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePDI4.jasper")
+                    .getPath().replaceAll("%20", " ");
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            HashMap hm = new HashMap();
+            hm.put("ID_COLABORADOR",idColaborador);
+            hm.put("R_SR1",rutaSubreporte1);
+            hm.put("R_SR2",rutaSubreporte2);
+            hm.put("R_SR3",rutaSubreporte3);
+            hm.put("R_SR4",rutaSubreporte3);
+            
+            JasperPrint jp = JasperFillManager.fillReport
+            (reporte, hm, con);
+            
+            con.close();
+            
+            arreglo = JasperExportManager.exportReportToPdf(jp);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return arreglo;
+    }
+    
     @WebMethod(operationName = "generarReporteEvaluacionColaborador")
     public byte[] generarReporteEvaluacionColaborador( 
             @WebParam(name = "idColaborador") int idColaborador ) {
