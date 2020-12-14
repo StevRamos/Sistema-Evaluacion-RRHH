@@ -90,7 +90,7 @@ namespace SistemaEDInterfaces
                                    "Mensaje de confirmación",
                                    MessageBoxButtons.OK,
                                    MessageBoxIcon.Information);
-            Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestSubcomp());
+            Global.formPrincipal.abrirFormularioHijo(true, new frmAdmGestSubpot());
         }
 
         private void btnBusRegSubPot_Click(object sender, EventArgs e)

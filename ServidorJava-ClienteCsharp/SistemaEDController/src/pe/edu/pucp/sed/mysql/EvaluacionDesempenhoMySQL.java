@@ -530,9 +530,9 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                 le.getPesoCriterio().getCriterio().
                         setTipo(rs.getInt("tipo"));
                 
-                le.setNotaAutoEval(rs.getInt("notaAutoEval"));
-                le.setNotaPrevia(rs.getInt("notaPrevia"));
-                le.setNotaFinal(rs.getInt("notaFinal"));
+                le.setNotaAutoEval(rs.getDouble("notaAutoEval"));
+                le.setNotaPrevia(rs.getDouble("notaPrevia"));
+                le.setNotaFinal(rs.getDouble("notaFinal"));
                 
                 le.setAccionesAtomar(rs.getString("acccionesAtomar"));
                 le.setFechaCumplimiento(rs.getDate("fechaCumplimientoPDI"));
@@ -581,9 +581,9 @@ public class EvaluacionDesempenhoMySQL implements EvaluacionDesempenhoDAO{
                     le.getPesoCriterio().getCriterio().
                             setTipo(rs.getInt("tipo"));
                     
-                    le.setNotaAutoEval(rs.getInt("notaAutoEval"));
-                    le.setNotaPrevia(rs.getInt("notaPrevia"));
-                    le.setNotaFinal(rs.getInt("notaFinal"));
+                    le.setNotaAutoEval(rs.getDouble("notaAutoEval"));
+                    le.setNotaPrevia(rs.getDouble("notaPrevia"));
+                    le.setNotaFinal(rs.getDouble("notaFinal"));
 
                     l.getSublineasEvaluacion().add(le);
                 }

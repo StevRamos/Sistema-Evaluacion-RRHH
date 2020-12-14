@@ -47,8 +47,8 @@
             this.panelCupos = new System.Windows.Forms.Panel();
             this.dgvCupos = new SistemaEDInterfaces.dgvCupos();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblCuposPreAsignados = new System.Windows.Forms.Label();
             this.lblCuposAsignados = new System.Windows.Forms.Label();
-            this.lblCuposUsados = new System.Windows.Forms.Label();
             this.gbBusqueda.SuspendLayout();
             this.panel9Box.SuspendLayout();
             this.panelCupos.SuspendLayout();
@@ -257,8 +257,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblCuposPreAsignados);
             this.groupBox1.Controls.Add(this.lblCuposAsignados);
-            this.groupBox1.Controls.Add(this.lblCuposUsados);
             this.groupBox1.Controls.Add(this.panelCupos);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F);
             this.groupBox1.Location = new System.Drawing.Point(644, 116);
@@ -268,23 +268,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cupos";
             // 
+            // lblCuposPreAsignados
+            // 
+            this.lblCuposPreAsignados.AutoSize = true;
+            this.lblCuposPreAsignados.Location = new System.Drawing.Point(20, 70);
+            this.lblCuposPreAsignados.Name = "lblCuposPreAsignados";
+            this.lblCuposPreAsignados.Size = new System.Drawing.Size(168, 29);
+            this.lblCuposPreAsignados.TabIndex = 19;
+            this.lblCuposPreAsignados.Text = "Preasignados:";
+            // 
             // lblCuposAsignados
             // 
             this.lblCuposAsignados.AutoSize = true;
-            this.lblCuposAsignados.Location = new System.Drawing.Point(20, 70);
+            this.lblCuposAsignados.Location = new System.Drawing.Point(56, 122);
             this.lblCuposAsignados.Name = "lblCuposAsignados";
             this.lblCuposAsignados.Size = new System.Drawing.Size(132, 29);
-            this.lblCuposAsignados.TabIndex = 19;
+            this.lblCuposAsignados.TabIndex = 18;
             this.lblCuposAsignados.Text = "Asignados:";
-            // 
-            // lblCuposUsados
-            // 
-            this.lblCuposUsados.AutoSize = true;
-            this.lblCuposUsados.Location = new System.Drawing.Point(51, 125);
-            this.lblCuposUsados.Name = "lblCuposUsados";
-            this.lblCuposUsados.Size = new System.Drawing.Size(101, 29);
-            this.lblCuposUsados.TabIndex = 18;
-            this.lblCuposUsados.Text = "Usados:";
             // 
             // frmAdmCalibrar
             // 
@@ -332,7 +332,7 @@
         private System.Windows.Forms.Panel panelCupos;
         private dgvCupos dgvCupos;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblCuposUsados;
         private System.Windows.Forms.Label lblCuposAsignados;
+        private System.Windows.Forms.Label lblCuposPreAsignados;
     }
 }

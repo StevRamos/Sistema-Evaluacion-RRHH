@@ -14,6 +14,8 @@ namespace SistemaEDInterfaces
     public partial class frmAdmGestCargoCargaMav : Form
     {
         private PuestoTrabajoWS.PuestoTrabajoWSClient daoPuesto;
+        int resultado;
+        string errores = "";
         public frmAdmGestCargoCargaMav()
         {
             InitializeComponent();
@@ -62,9 +64,14 @@ namespace SistemaEDInterfaces
                         {
                             puesto.descripcion = "";
                         }
-                        
-                        daoPuesto.actualizarPuestoTrabajo(puesto);
+
+                        resultado = daoPuesto.actualizarPuestoTrabajo(puesto);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
                     }
+                    cargarErrores();
                 }
                 else if (rdbInsCargaMavCargo.Checked != false)
                 {
@@ -74,9 +81,14 @@ namespace SistemaEDInterfaces
                         PuestoTrabajoWS.puestoTrabajo puesto = new PuestoTrabajoWS.puestoTrabajo();
                         puesto.nombre = valores[0].ToString();
                         puesto.descripcion = valores[1].ToString();
-                        
-                        daoPuesto.insertarPuestoTrabajo(puesto);
+
+                        resultado = daoPuesto.insertarPuestoTrabajo(puesto);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
                     }
+                    cargarErrores();
                 }
                 MessageBox.Show("El archivo se cargó correctamente");
                 this.DialogResult = DialogResult.OK;
@@ -99,6 +111,23 @@ namespace SistemaEDInterfaces
         private void btnRegreCargMavCargo_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private void cargarErrores()
+        {
+            if (errores == "") return;
+            sfdReporte.FileName = "Errores de la Carga Masiva.csv";
+            sfdReporte.ShowDialog();
+            if (sfdReporte.FileName != null && sfdReporte.FileName != "")
+            {
+                File.WriteAllText(sfdReporte.FileName, errores);
+            }
+            errores = "";
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Form frmAyuda = new frmAyudaCargo();
+            frmAyuda.Show();
         }
     }
 }

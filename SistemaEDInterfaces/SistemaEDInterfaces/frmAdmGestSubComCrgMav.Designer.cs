@@ -47,6 +47,7 @@
             this.btnRegreCargMavGestSubCom = new System.Windows.Forms.Button();
             this.btnCargarMasivaGestSubCom = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sfdReporte = new System.Windows.Forms.SaveFileDialog();
             this.gbSubCompetencia.SuspendLayout();
             this.gbPesosSubcompetencia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -324,5 +325,6 @@
         private System.Windows.Forms.Button btnRegreCargMavGestSubCom;
         private System.Windows.Forms.Button btnCargarMasivaGestSubCom;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.SaveFileDialog sfdReporte;
     }
 }

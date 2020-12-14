@@ -403,7 +403,7 @@ public class EvaluacionMySQL implements EvaluacionDAO{
                 
                 // le.setNotaAutoEval(rs.getInt("notaAutoEval"));
                 // le.setNotaPrevia(rs.getInt("notaPrevia"));
-                le.setNotaFinal(rs.getInt("notaFinal"));
+                le.setNotaFinal(rs.getDouble("notaFinal"));
 
                 evaluacionPot.getLineasEvaluacion().add(le);
             }
@@ -452,7 +452,7 @@ public class EvaluacionMySQL implements EvaluacionDAO{
                     
                     // le.setNotaAutoEval(rs.getInt("notaAutoEval"));
                     // le.setNotaPrevia(rs.getInt("notaPrevia"));
-                    le.setNotaFinal(rs.getInt("notaFinal"));
+                    le.setNotaFinal(rs.getDouble("notaFinal"));
 
                     l.getSublineasEvaluacion().add(le);
                 }

@@ -39,6 +39,7 @@
             this.btnCargarColabMasiva = new System.Windows.Forms.Button();
             this.lblRegistrarObjetivo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sfdReporte = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,5 +199,6 @@
         private System.Windows.Forms.Button btnCargarColabMasiva;
         private System.Windows.Forms.Label lblRegistrarObjetivo;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.SaveFileDialog sfdReporte;
     }
 }
