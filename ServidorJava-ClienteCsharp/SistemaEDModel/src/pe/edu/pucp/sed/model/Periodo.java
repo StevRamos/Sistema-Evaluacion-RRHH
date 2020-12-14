@@ -158,10 +158,6 @@ public class Periodo{
         this.objetivos = objetivos;
     }
 
-    public void finalizar() {
-
-    }
-
     public String getNombre() {
         return nombre;
     }
