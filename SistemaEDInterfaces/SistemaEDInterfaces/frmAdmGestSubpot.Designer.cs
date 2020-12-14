@@ -46,6 +46,7 @@
             this.Cod_Subcompetencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreSubPotencial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripción = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +138,7 @@
             this.Cod_Subcompetencia,
             this.Código,
             this.Nombre,
+            this.NombreSubPotencial,
             this.Descripción,
             this.Cargo,
             this.Peso,
@@ -162,7 +164,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvGestCompetencias.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGestCompetencias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestCompetencias.Size = new System.Drawing.Size(1073, 480);
+            this.dgvGestCompetencias.Size = new System.Drawing.Size(1073, 376);
             this.dgvGestCompetencias.TabIndex = 42;
             this.dgvGestCompetencias.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGestCompetencias_CellFormatting);
             // 
@@ -215,7 +217,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(21, 694);
+            this.btnEliminar.Location = new System.Drawing.Point(22, 608);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(204, 26);
@@ -241,27 +243,34 @@
             // 
             // Cod_Subcompetencia
             // 
-            this.Cod_Subcompetencia.HeaderText = "Código Subpotencial";
+            this.Cod_Subcompetencia.HeaderText = "id Subpotencial";
             this.Cod_Subcompetencia.MinimumWidth = 6;
             this.Cod_Subcompetencia.Name = "Cod_Subcompetencia";
             this.Cod_Subcompetencia.ReadOnly = true;
-            this.Cod_Subcompetencia.Width = 150;
+            this.Cod_Subcompetencia.Width = 125;
             // 
             // Código
             // 
-            this.Código.HeaderText = "Código Potencial";
+            this.Código.HeaderText = "Nombre Potencial";
             this.Código.MinimumWidth = 6;
             this.Código.Name = "Código";
             this.Código.ReadOnly = true;
-            this.Código.Width = 125;
+            this.Código.Width = 250;
             // 
             // Nombre
             // 
-            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.HeaderText = "id SubPotencial";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 250;
+            this.Nombre.Width = 150;
+            // 
+            // NombreSubPotencial
+            // 
+            this.NombreSubPotencial.HeaderText = "NombreSubPotencial";
+            this.NombreSubPotencial.Name = "NombreSubPotencial";
+            this.NombreSubPotencial.ReadOnly = true;
+            this.NombreSubPotencial.Width = 300;
             // 
             // Descripción
             // 
@@ -277,7 +286,7 @@
             this.Cargo.MinimumWidth = 6;
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
-            this.Cargo.Width = 125;
+            this.Cargo.Width = 175;
             // 
             // Peso
             // 
@@ -286,7 +295,7 @@
             this.Peso.MinimumWidth = 6;
             this.Peso.Name = "Peso";
             this.Peso.ReadOnly = true;
-            this.Peso.Width = 125;
+            this.Peso.Width = 50;
             // 
             // Periodo
             // 
@@ -294,7 +303,7 @@
             this.Periodo.MinimumWidth = 6;
             this.Periodo.Name = "Periodo";
             this.Periodo.ReadOnly = true;
-            this.Periodo.Width = 125;
+            this.Periodo.Width = 120;
             // 
             // frmAdmGestSubpot
             // 
@@ -339,6 +348,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cod_Subcompetencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreSubPotencial;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripción;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Peso;

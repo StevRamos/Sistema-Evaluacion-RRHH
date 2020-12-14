@@ -77,8 +77,8 @@ namespace SistemaEDInterfaces
         private void dgvColaboradores_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             ColaboradorWS.colaborador data = dgvColaboradores.Rows[e.RowIndex].DataBoundItem as ColaboradorWS.colaborador;
-            dgvColaboradores.Rows[e.RowIndex].Cells[2].Value = data.jefe.idColaborador;
-            dgvColaboradores.Rows[e.RowIndex].Cells["Cargo"].Value = data.puestoTrabajo.nombre;
+            dgvColaboradores.Rows[e.RowIndex].Cells[5].Value = data.jefe.idColaborador;
+            dgvColaboradores.Rows[e.RowIndex].Cells[4].Value = data.puestoTrabajo.nombre;
         }
 
         private void btnDesactivar_Click(object sender, EventArgs e)

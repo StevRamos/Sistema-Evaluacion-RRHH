@@ -25,9 +25,13 @@ namespace SistemaEDInterfaces
             
 
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
-            periodo = Global.periodoActual; 
+            periodo = Global.periodoActual;
 
-            escalasPeriodos =
+           /* escalasPeriodos = new BindingList<PeriodoWS.escalaPeriodo>();
+            itemsPDIPeriodos = new BindingList<PeriodoWS.itemPDIPeriodo>();
+           */
+            
+           escalasPeriodos =
                new BindingList<PeriodoWS.escalaPeriodo>(daoPeriodo.listarEscalaPeriodo(periodo.idPeriodo).ToArray());
 
             itemsPDIPeriodos 
@@ -162,12 +166,12 @@ namespace SistemaEDInterfaces
             
             iniciarEspera();
             
-            
+            /*
             if (realizarValidaciones()==0)
             {
                 terminarEspera();
                 return; 
-            }
+            }*/
 
             actualizarEscalaPeriodo();
             actualizarPDI();
@@ -247,6 +251,7 @@ namespace SistemaEDInterfaces
 
 
                 }
+                
             }
         }
 

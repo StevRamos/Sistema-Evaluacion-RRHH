@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmGestSubComCrgMav));
             this.lblRegistrarObjetivo = new System.Windows.Forms.Label();
             this.gbSubCompetencia = new System.Windows.Forms.GroupBox();
             this.btnGestSubComSelecSubCom = new System.Windows.Forms.Button();
@@ -45,8 +46,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnRegreCargMavGestSubCom = new System.Windows.Forms.Button();
             this.btnCargarMasivaGestSubCom = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbSubCompetencia.SuspendLayout();
             this.gbPesosSubcompetencia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegistrarObjetivo
@@ -70,9 +73,9 @@
             this.gbSubCompetencia.Controls.Add(this.label4);
             this.gbSubCompetencia.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSubCompetencia.Location = new System.Drawing.Point(19, 83);
-            this.gbSubCompetencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubCompetencia.Margin = new System.Windows.Forms.Padding(2);
             this.gbSubCompetencia.Name = "gbSubCompetencia";
-            this.gbSubCompetencia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubCompetencia.Padding = new System.Windows.Forms.Padding(2);
             this.gbSubCompetencia.Size = new System.Drawing.Size(979, 170);
             this.gbSubCompetencia.TabIndex = 75;
             this.gbSubCompetencia.TabStop = false;
@@ -97,7 +100,7 @@
             this.txtNomArchSubComMav.Enabled = false;
             this.txtNomArchSubComMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomArchSubComMav.Location = new System.Drawing.Point(375, 61);
-            this.txtNomArchSubComMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomArchSubComMav.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomArchSubComMav.Name = "txtNomArchSubComMav";
             this.txtNomArchSubComMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchSubComMav.TabIndex = 69;
@@ -107,7 +110,7 @@
             this.rdbActMavSubCom.AutoSize = true;
             this.rdbActMavSubCom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbActMavSubCom.Location = new System.Drawing.Point(687, 122);
-            this.rdbActMavSubCom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbActMavSubCom.Margin = new System.Windows.Forms.Padding(2);
             this.rdbActMavSubCom.Name = "rdbActMavSubCom";
             this.rdbActMavSubCom.Size = new System.Drawing.Size(108, 25);
             this.rdbActMavSubCom.TabIndex = 72;
@@ -130,7 +133,7 @@
             this.rdbInsMavSubCom.AutoSize = true;
             this.rdbInsMavSubCom.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbInsMavSubCom.Location = new System.Drawing.Point(375, 122);
-            this.rdbInsMavSubCom.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbInsMavSubCom.Margin = new System.Windows.Forms.Padding(2);
             this.rdbInsMavSubCom.Name = "rdbInsMavSubCom";
             this.rdbInsMavSubCom.Size = new System.Drawing.Size(87, 25);
             this.rdbInsMavSubCom.TabIndex = 71;
@@ -158,9 +161,9 @@
             this.gbPesosSubcompetencia.Controls.Add(this.label2);
             this.gbPesosSubcompetencia.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPesosSubcompetencia.Location = new System.Drawing.Point(19, 268);
-            this.gbPesosSubcompetencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbPesosSubcompetencia.Margin = new System.Windows.Forms.Padding(2);
             this.gbPesosSubcompetencia.Name = "gbPesosSubcompetencia";
-            this.gbPesosSubcompetencia.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbPesosSubcompetencia.Padding = new System.Windows.Forms.Padding(2);
             this.gbPesosSubcompetencia.Size = new System.Drawing.Size(979, 170);
             this.gbPesosSubcompetencia.TabIndex = 76;
             this.gbPesosSubcompetencia.TabStop = false;
@@ -185,7 +188,7 @@
             this.txtNomArchSubComPesosMav.Enabled = false;
             this.txtNomArchSubComPesosMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomArchSubComPesosMav.Location = new System.Drawing.Point(375, 61);
-            this.txtNomArchSubComPesosMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomArchSubComPesosMav.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomArchSubComPesosMav.Name = "txtNomArchSubComPesosMav";
             this.txtNomArchSubComPesosMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchSubComPesosMav.TabIndex = 69;
@@ -195,7 +198,7 @@
             this.rdbActMavSubComPesos.AutoSize = true;
             this.rdbActMavSubComPesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbActMavSubComPesos.Location = new System.Drawing.Point(687, 122);
-            this.rdbActMavSubComPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbActMavSubComPesos.Margin = new System.Windows.Forms.Padding(2);
             this.rdbActMavSubComPesos.Name = "rdbActMavSubComPesos";
             this.rdbActMavSubComPesos.Size = new System.Drawing.Size(108, 25);
             this.rdbActMavSubComPesos.TabIndex = 72;
@@ -218,7 +221,7 @@
             this.rdbInsMavSubComPesos.AutoSize = true;
             this.rdbInsMavSubComPesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbInsMavSubComPesos.Location = new System.Drawing.Point(375, 122);
-            this.rdbInsMavSubComPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbInsMavSubComPesos.Margin = new System.Windows.Forms.Padding(2);
             this.rdbInsMavSubComPesos.Name = "rdbInsMavSubComPesos";
             this.rdbInsMavSubComPesos.Size = new System.Drawing.Size(87, 25);
             this.rdbInsMavSubComPesos.TabIndex = 71;
@@ -264,18 +267,30 @@
             this.btnCargarMasivaGestSubCom.UseVisualStyleBackColor = false;
             this.btnCargarMasivaGestSubCom.Click += new System.EventHandler(this.btnCargarMasivaGestSubCom_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(937, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 99;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frmAdmGestSubComCrgMav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1017, 527);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegreCargMavGestSubCom);
             this.Controls.Add(this.btnCargarMasivaGestSubCom);
             this.Controls.Add(this.gbPesosSubcompetencia);
             this.Controls.Add(this.gbSubCompetencia);
             this.Controls.Add(this.lblRegistrarObjetivo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximumSize = new System.Drawing.Size(1033, 566);
             this.MinimumSize = new System.Drawing.Size(1033, 566);
             this.Name = "frmAdmGestSubComCrgMav";
@@ -284,6 +299,7 @@
             this.gbSubCompetencia.PerformLayout();
             this.gbPesosSubcompetencia.ResumeLayout(false);
             this.gbPesosSubcompetencia.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -307,5 +323,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnRegreCargMavGestSubCom;
         private System.Windows.Forms.Button btnCargarMasivaGestSubCom;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -28,43 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.lblMisObjetivos = new System.Windows.Forms.Label();
-            this.dgvPotenciales = new System.Windows.Forms.DataGridView();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.txtObservaciones = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnFinalizar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblGhost = new System.Windows.Forms.Label();
+            this.panelDatosColaborador = new System.Windows.Forms.Panel();
+            this.txtIDColab = new System.Windows.Forms.TextBox();
+            this.lblDatosColaborador = new System.Windows.Forms.Label();
+            this.lblIDColab = new System.Windows.Forms.Label();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtGerencia = new System.Windows.Forms.TextBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtCargo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.txtNotaPotencial = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblGhost = new System.Windows.Forms.Label();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.peso = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.notaFinal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPotenciales)).BeginInit();
+            this.btnRegresar = new System.Windows.Forms.Button();
+            this.lblMaxCar = new System.Windows.Forms.Label();
+            this.btnFinalizar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.lblDescripcionPotenciales = new System.Windows.Forms.Label();
+            this.lblTituloPotenciales = new System.Windows.Forms.Label();
+            this.txtObservaciones = new System.Windows.Forms.TextBox();
+            this.lblObservaciones = new System.Windows.Forms.Label();
+            this.lblNotaPotenciales = new System.Windows.Forms.Label();
+            this.lblNo = new System.Windows.Forms.Label();
+            this.lblSi = new System.Windows.Forms.Label();
+            this.lblFantasma = new System.Windows.Forms.Label();
+            this.panelDatosColaborador.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.ForeColor = System.Drawing.Color.White;
-            this.btnRegresar.Location = new System.Drawing.Point(18, 724);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
-            this.btnRegresar.TabIndex = 20;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = false;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
             // 
             // lblMisObjetivos
             // 
@@ -77,111 +70,188 @@
             this.lblMisObjetivos.TabIndex = 19;
             this.lblMisObjetivos.Text = "Evaluación de Potencial";
             // 
-            // dgvPotenciales
+            // lblGhost
             // 
-            this.dgvPotenciales.AllowUserToAddRows = false;
-            this.dgvPotenciales.AllowUserToDeleteRows = false;
-            this.dgvPotenciales.AllowUserToResizeColumns = false;
-            this.dgvPotenciales.AllowUserToResizeRows = false;
-            this.dgvPotenciales.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvPotenciales.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPotenciales.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvPotenciales.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPotenciales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvPotenciales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPotenciales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Nombre,
-            this.descripcion,
-            this.peso,
-            this.notaFinal});
-            this.dgvPotenciales.EnableHeadersVisualStyles = false;
-            this.dgvPotenciales.Location = new System.Drawing.Point(24, 147);
-            this.dgvPotenciales.MultiSelect = false;
-            this.dgvPotenciales.Name = "dgvPotenciales";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPotenciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvPotenciales.RowHeadersVisible = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.LightGray;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvPotenciales.RowsDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvPotenciales.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPotenciales.Size = new System.Drawing.Size(1026, 356);
-            this.dgvPotenciales.TabIndex = 25;
-            this.dgvPotenciales.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvPotenciales_CellFormatting);
+            this.lblGhost.AutoSize = true;
+            this.lblGhost.Location = new System.Drawing.Point(938, 804);
+            this.lblGhost.Name = "lblGhost";
+            this.lblGhost.Size = new System.Drawing.Size(0, 13);
+            this.lblGhost.TabIndex = 62;
             // 
-            // btnSeleccionar
+            // panelDatosColaborador
             // 
-            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(892, 520);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(158, 26);
-            this.btnSeleccionar.TabIndex = 24;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = false;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            this.panelDatosColaborador.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.panelDatosColaborador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelDatosColaborador.Controls.Add(this.txtIDColab);
+            this.panelDatosColaborador.Controls.Add(this.lblDatosColaborador);
+            this.panelDatosColaborador.Controls.Add(this.lblIDColab);
+            this.panelDatosColaborador.Controls.Add(this.lblDNI);
+            this.panelDatosColaborador.Controls.Add(this.lblNombre);
+            this.panelDatosColaborador.Controls.Add(this.txtGerencia);
+            this.panelDatosColaborador.Controls.Add(this.txtNombre);
+            this.panelDatosColaborador.Controls.Add(this.txtCargo);
+            this.panelDatosColaborador.Controls.Add(this.label1);
+            this.panelDatosColaborador.Controls.Add(this.txtDNI);
+            this.panelDatosColaborador.Controls.Add(this.label2);
+            this.panelDatosColaborador.Location = new System.Drawing.Point(0, 68);
+            this.panelDatosColaborador.Name = "panelDatosColaborador";
+            this.panelDatosColaborador.Size = new System.Drawing.Size(1140, 120);
+            this.panelDatosColaborador.TabIndex = 67;
             // 
-            // txtObservaciones
+            // txtIDColab
             // 
-            this.txtObservaciones.Enabled = false;
-            this.txtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.txtObservaciones.Location = new System.Drawing.Point(214, 580);
-            this.txtObservaciones.Multiline = true;
-            this.txtObservaciones.Name = "txtObservaciones";
-            this.txtObservaciones.Size = new System.Drawing.Size(711, 84);
-            this.txtObservaciones.TabIndex = 55;
+            this.txtIDColab.Enabled = false;
+            this.txtIDColab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDColab.Location = new System.Drawing.Point(154, 43);
+            this.txtIDColab.Name = "txtIDColab";
+            this.txtIDColab.Size = new System.Drawing.Size(339, 27);
+            this.txtIDColab.TabIndex = 51;
             // 
-            // label8
+            // lblDatosColaborador
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(20, 580);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(142, 24);
-            this.label8.TabIndex = 54;
-            this.label8.Text = "Observaciones:";
+            this.lblDatosColaborador.AutoSize = true;
+            this.lblDatosColaborador.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosColaborador.ForeColor = System.Drawing.Color.White;
+            this.lblDatosColaborador.Location = new System.Drawing.Point(32, 10);
+            this.lblDatosColaborador.Name = "lblDatosColaborador";
+            this.lblDatosColaborador.Size = new System.Drawing.Size(251, 24);
+            this.lblDatosColaborador.TabIndex = 60;
+            this.lblDatosColaborador.Text = "Datos del Colaborador:";
             // 
-            // label7
+            // lblIDColab
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 105);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(135, 25);
-            this.label7.TabIndex = 56;
-            this.label7.Text = "Potenciales";
+            this.lblIDColab.AutoSize = true;
+            this.lblIDColab.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDColab.ForeColor = System.Drawing.Color.White;
+            this.lblIDColab.Location = new System.Drawing.Point(32, 44);
+            this.lblIDColab.Name = "lblIDColab";
+            this.lblIDColab.Size = new System.Drawing.Size(36, 24);
+            this.lblIDColab.TabIndex = 50;
+            this.lblIDColab.Text = "ID:";
             // 
-            // btnEditar
+            // lblDNI
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(686, 724);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(158, 26);
-            this.btnEditar.TabIndex = 59;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = false;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNI.ForeColor = System.Drawing.Color.White;
+            this.lblDNI.Location = new System.Drawing.Point(858, 46);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(52, 24);
+            this.lblDNI.TabIndex = 59;
+            this.lblDNI.Text = "DNI:";
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(32, 83);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(100, 24);
+            this.lblNombre.TabIndex = 52;
+            this.lblNombre.Text = "Nombre:";
+            // 
+            // txtGerencia
+            // 
+            this.txtGerencia.Enabled = false;
+            this.txtGerencia.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGerencia.Location = new System.Drawing.Point(637, 80);
+            this.txtGerencia.Name = "txtGerencia";
+            this.txtGerencia.Size = new System.Drawing.Size(209, 27);
+            this.txtGerencia.TabIndex = 58;
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Enabled = false;
+            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(154, 80);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(339, 27);
+            this.txtNombre.TabIndex = 53;
+            // 
+            // txtCargo
+            // 
+            this.txtCargo.Enabled = false;
+            this.txtCargo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCargo.Location = new System.Drawing.Point(637, 44);
+            this.txtCargo.Name = "txtCargo";
+            this.txtCargo.Size = new System.Drawing.Size(209, 27);
+            this.txtCargo.TabIndex = 57;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(508, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 24);
+            this.label1.TabIndex = 54;
+            this.label1.Text = "Cargo:";
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Enabled = false;
+            this.txtDNI.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI.Location = new System.Drawing.Point(916, 44);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(177, 27);
+            this.txtDNI.TabIndex = 56;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(508, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(111, 24);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Gerencia:";
+            // 
+            // txtNotaPotencial
+            // 
+            this.txtNotaPotencial.Enabled = false;
+            this.txtNotaPotencial.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNotaPotencial.Location = new System.Drawing.Point(917, 283);
+            this.txtNotaPotencial.Name = "txtNotaPotencial";
+            this.txtNotaPotencial.Size = new System.Drawing.Size(153, 49);
+            this.txtNotaPotencial.TabIndex = 70;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label6.Location = new System.Drawing.Point(912, 243);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 25);
+            this.label6.TabIndex = 69;
+            this.label6.Text = "Calificación";
+            // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Location = new System.Drawing.Point(21, 217);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
+            this.btnRegresar.TabIndex = 68;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
+            // lblMaxCar
+            // 
+            this.lblMaxCar.AutoSize = true;
+            this.lblMaxCar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaxCar.Location = new System.Drawing.Point(233, 556);
+            this.lblMaxCar.Name = "lblMaxCar";
+            this.lblMaxCar.Size = new System.Drawing.Size(135, 17);
+            this.lblMaxCar.TabIndex = 125;
+            this.lblMaxCar.Text = "Max. 100 caracteres";
             // 
             // btnFinalizar
             // 
@@ -189,11 +259,11 @@
             this.btnFinalizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFinalizar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(886, 766);
+            this.btnFinalizar.Location = new System.Drawing.Point(939, 630);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(158, 26);
-            this.btnFinalizar.TabIndex = 58;
-            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.TabIndex = 124;
+            this.btnFinalizar.Text = "Finalizar Evaluacion";
             this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
@@ -203,76 +273,98 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(886, 724);
+            this.btnGuardar.Location = new System.Drawing.Point(758, 630);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(158, 26);
-            this.btnGuardar.TabIndex = 57;
-            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TabIndex = 123;
+            this.btnGuardar.Text = "Guardar Cambios";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtNotaPotencial
+            // lblDescripcionPotenciales
             // 
-            this.txtNotaPotencial.Enabled = false;
-            this.txtNotaPotencial.Location = new System.Drawing.Point(941, 110);
-            this.txtNotaPotencial.Name = "txtNotaPotencial";
-            this.txtNotaPotencial.Size = new System.Drawing.Size(109, 20);
-            this.txtNotaPotencial.TabIndex = 61;
+            this.lblDescripcionPotenciales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcionPotenciales.Location = new System.Drawing.Point(33, 342);
+            this.lblDescripcionPotenciales.Name = "lblDescripcionPotenciales";
+            this.lblDescripcionPotenciales.Size = new System.Drawing.Size(537, 46);
+            this.lblDescripcionPotenciales.TabIndex = 117;
+            this.lblDescripcionPotenciales.Text = "Indique el cumplimiento de cada subpotencial (Marqué \'Sí\' si considera que hubo c" +
+    "umplimiento y \'No\' en caso contrario)";
             // 
-            // label6
+            // lblTituloPotenciales
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(614, 105);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(273, 25);
-            this.label6.TabIndex = 60;
-            this.label6.Text = "Calificación de Potencial";
+            this.lblTituloPotenciales.AutoSize = true;
+            this.lblTituloPotenciales.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloPotenciales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblTituloPotenciales.Location = new System.Drawing.Point(29, 283);
+            this.lblTituloPotenciales.Name = "lblTituloPotenciales";
+            this.lblTituloPotenciales.Size = new System.Drawing.Size(177, 33);
+            this.lblTituloPotenciales.TabIndex = 114;
+            this.lblTituloPotenciales.Text = "Potenciales";
             // 
-            // lblGhost
+            // txtObservaciones
             // 
-            this.lblGhost.AutoSize = true;
-            this.lblGhost.Location = new System.Drawing.Point(938, 804);
-            this.lblGhost.Name = "lblGhost";
-            this.lblGhost.Size = new System.Drawing.Size(0, 13);
-            this.lblGhost.TabIndex = 62;
+            this.txtObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.txtObservaciones.Location = new System.Drawing.Point(236, 457);
+            this.txtObservaciones.MaxLength = 100;
+            this.txtObservaciones.Multiline = true;
+            this.txtObservaciones.Name = "txtObservaciones";
+            this.txtObservaciones.Size = new System.Drawing.Size(711, 84);
+            this.txtObservaciones.TabIndex = 113;
             // 
-            // ID
+            // lblObservaciones
             // 
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.ID.Width = 70;
+            this.lblObservaciones.AutoSize = true;
+            this.lblObservaciones.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObservaciones.Location = new System.Drawing.Point(37, 457);
+            this.lblObservaciones.Name = "lblObservaciones";
+            this.lblObservaciones.Size = new System.Drawing.Size(142, 24);
+            this.lblObservaciones.TabIndex = 112;
+            this.lblObservaciones.Text = "Observaciones:";
             // 
-            // Nombre
+            // lblNotaPotenciales
             // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 300;
+            this.lblNotaPotenciales.AutoSize = true;
+            this.lblNotaPotenciales.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNotaPotenciales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblNotaPotenciales.Location = new System.Drawing.Point(912, 342);
+            this.lblNotaPotenciales.Name = "lblNotaPotenciales";
+            this.lblNotaPotenciales.Size = new System.Drawing.Size(61, 25);
+            this.lblNotaPotenciales.TabIndex = 129;
+            this.lblNotaPotenciales.Text = "Nota";
             // 
-            // descripcion
+            // lblNo
             // 
-            this.descripcion.HeaderText = "Descripcion";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
-            this.descripcion.Width = 500;
+            this.lblNo.AutoSize = true;
+            this.lblNo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblNo.Location = new System.Drawing.Point(721, 342);
+            this.lblNo.Name = "lblNo";
+            this.lblNo.Size = new System.Drawing.Size(41, 25);
+            this.lblNo.TabIndex = 131;
+            this.lblNo.Text = "No";
             // 
-            // peso
+            // lblSi
             // 
-            this.peso.HeaderText = "Peso";
-            this.peso.Name = "peso";
-            this.peso.ReadOnly = true;
+            this.lblSi.AutoSize = true;
+            this.lblSi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.lblSi.Location = new System.Drawing.Point(633, 342);
+            this.lblSi.Name = "lblSi";
+            this.lblSi.Size = new System.Drawing.Size(33, 25);
+            this.lblSi.TabIndex = 130;
+            this.lblSi.Text = "Sí";
             // 
-            // notaFinal
+            // lblFantasma
             // 
-            this.notaFinal.DataPropertyName = "notaFinal";
-            this.notaFinal.HeaderText = "Nota ";
-            this.notaFinal.Name = "notaFinal";
-            this.notaFinal.Width = 150;
+            this.lblFantasma.AutoSize = true;
+            this.lblFantasma.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFantasma.ForeColor = System.Drawing.Color.White;
+            this.lblFantasma.Location = new System.Drawing.Point(855, 659);
+            this.lblFantasma.Name = "lblFantasma";
+            this.lblFantasma.Size = new System.Drawing.Size(61, 25);
+            this.lblFantasma.TabIndex = 132;
+            this.lblFantasma.Text = "Nota";
             // 
             // frmEvMisTrabajadoresEvPotencial
             // 
@@ -280,48 +372,62 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1141, 749);
-            this.Controls.Add(this.lblGhost);
-            this.Controls.Add(this.txtNotaPotencial);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.btnEditar);
+            this.ClientSize = new System.Drawing.Size(1158, 749);
+            this.Controls.Add(this.lblFantasma);
+            this.Controls.Add(this.lblNo);
+            this.Controls.Add(this.lblSi);
+            this.Controls.Add(this.lblNotaPotenciales);
+            this.Controls.Add(this.lblMaxCar);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblDescripcionPotenciales);
+            this.Controls.Add(this.lblTituloPotenciales);
             this.Controls.Add(this.txtObservaciones);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.dgvPotenciales);
-            this.Controls.Add(this.btnSeleccionar);
+            this.Controls.Add(this.lblObservaciones);
+            this.Controls.Add(this.txtNotaPotencial);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.btnRegresar);
+            this.Controls.Add(this.panelDatosColaborador);
+            this.Controls.Add(this.lblGhost);
             this.Controls.Add(this.lblMisObjetivos);
             this.Name = "frmEvMisTrabajadoresEvPotencial";
             this.Text = "frmEvMisTrabajadoresEvPotencial";
             this.Load += new System.EventHandler(this.frmEvMisTrabajadoresEvPotencial_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPotenciales)).EndInit();
+            this.panelDatosColaborador.ResumeLayout(false);
+            this.panelDatosColaborador.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Label lblMisObjetivos;
-        private System.Windows.Forms.DataGridView dgvPotenciales;
-        private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.TextBox txtObservaciones;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblGhost;
+        private System.Windows.Forms.Panel panelDatosColaborador;
+        private System.Windows.Forms.TextBox txtIDColab;
+        private System.Windows.Forms.Label lblDatosColaborador;
+        private System.Windows.Forms.Label lblIDColab;
+        private System.Windows.Forms.Label lblDNI;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtGerencia;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtCargo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNotaPotencial;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblGhost;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn peso;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notaFinal;
+        private System.Windows.Forms.Button btnRegresar;
+        private System.Windows.Forms.Label lblMaxCar;
+        private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label lblDescripcionPotenciales;
+        private System.Windows.Forms.Label lblTituloPotenciales;
+        private System.Windows.Forms.TextBox txtObservaciones;
+        private System.Windows.Forms.Label lblObservaciones;
+        private System.Windows.Forms.Label lblNotaPotenciales;
+        private System.Windows.Forms.Label lblNo;
+        private System.Windows.Forms.Label lblSi;
+        private System.Windows.Forms.Label lblFantasma;
     }
 }

@@ -117,7 +117,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvGestPot.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvGestPot.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestPot.Size = new System.Drawing.Size(1073, 480);
+            this.dgvGestPot.Size = new System.Drawing.Size(1073, 388);
             this.dgvGestPot.TabIndex = 15;
             this.dgvGestPot.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvGestPot_CellFormatting);
             // 
@@ -211,7 +211,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(24, 694);
+            this.btnEliminar.Location = new System.Drawing.Point(24, 625);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(188, 26);
@@ -241,7 +241,7 @@
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
-            this.Id.Width = 125;
+            this.Id.Width = 40;
             // 
             // Nombre
             // 
@@ -249,7 +249,7 @@
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 300;
+            this.Nombre.Width = 250;
             // 
             // Descripción
             // 
@@ -257,7 +257,7 @@
             this.Descripción.MinimumWidth = 6;
             this.Descripción.Name = "Descripción";
             this.Descripción.ReadOnly = true;
-            this.Descripción.Width = 625;
+            this.Descripción.Width = 390;
             // 
             // Cargo
             // 
@@ -265,7 +265,7 @@
             this.Cargo.MinimumWidth = 6;
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
-            this.Cargo.Width = 125;
+            this.Cargo.Width = 200;
             // 
             // Peso
             // 
@@ -274,7 +274,7 @@
             this.Peso.MinimumWidth = 6;
             this.Peso.Name = "Peso";
             this.Peso.ReadOnly = true;
-            this.Peso.Width = 125;
+            this.Peso.Width = 50;
             // 
             // Periodo
             // 
@@ -282,14 +282,14 @@
             this.Periodo.MinimumWidth = 6;
             this.Periodo.Name = "Periodo";
             this.Periodo.ReadOnly = true;
-            this.Periodo.Width = 125;
+            this.Periodo.Width = 110;
             // 
             // frmAdmGestPot
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1158, 736);
+            this.ClientSize = new System.Drawing.Size(1107, 749);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.lblCargoPot);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmGestColabCargaMav));
             this.rdbActCargaMavColab = new System.Windows.Forms.RadioButton();
             this.rdbInsCargaMavColab = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
@@ -37,6 +38,8 @@
             this.btnRegreCargMavColab = new System.Windows.Forms.Button();
             this.btnCargarColabMasiva = new System.Windows.Forms.Button();
             this.lblRegistrarObjetivo = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // rdbActCargaMavColab
@@ -44,7 +47,7 @@
             this.rdbActCargaMavColab.AutoSize = true;
             this.rdbActCargaMavColab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbActCargaMavColab.Location = new System.Drawing.Point(481, 161);
-            this.rdbActCargaMavColab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbActCargaMavColab.Margin = new System.Windows.Forms.Padding(2);
             this.rdbActCargaMavColab.Name = "rdbActCargaMavColab";
             this.rdbActCargaMavColab.Size = new System.Drawing.Size(108, 25);
             this.rdbActCargaMavColab.TabIndex = 81;
@@ -57,7 +60,7 @@
             this.rdbInsCargaMavColab.AutoSize = true;
             this.rdbInsCargaMavColab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbInsCargaMavColab.Location = new System.Drawing.Point(352, 161);
-            this.rdbInsCargaMavColab.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbInsCargaMavColab.Margin = new System.Windows.Forms.Padding(2);
             this.rdbInsCargaMavColab.Name = "rdbInsCargaMavColab";
             this.rdbInsCargaMavColab.Size = new System.Drawing.Size(87, 25);
             this.rdbInsCargaMavColab.TabIndex = 80;
@@ -79,7 +82,7 @@
             // 
             this.txtNomArchColabMav.Enabled = false;
             this.txtNomArchColabMav.Location = new System.Drawing.Point(352, 114);
-            this.txtNomArchColabMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomArchColabMav.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomArchColabMav.Name = "txtNomArchColabMav";
             this.txtNomArchColabMav.Size = new System.Drawing.Size(392, 20);
             this.txtNomArchColabMav.TabIndex = 78;
@@ -147,12 +150,24 @@
             this.lblRegistrarObjetivo.TabIndex = 73;
             this.lblRegistrarObjetivo.Text = "Carga Masiva de Colaboradores";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(929, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 82;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
             // frmAdmGestColabCargaMav
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1107, 749);
+            this.ClientSize = new System.Drawing.Size(1017, 361);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.rdbActCargaMavColab);
             this.Controls.Add(this.rdbInsCargaMavColab);
             this.Controls.Add(this.label1);
@@ -162,9 +177,10 @@
             this.Controls.Add(this.btnRegreCargMavColab);
             this.Controls.Add(this.btnCargarColabMasiva);
             this.Controls.Add(this.lblRegistrarObjetivo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAdmGestColabCargaMav";
             this.Text = "frmAdmGestColabCargaMav";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +197,6 @@
         private System.Windows.Forms.Button btnRegreCargMavColab;
         private System.Windows.Forms.Button btnCargarColabMasiva;
         private System.Windows.Forms.Label lblRegistrarObjetivo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

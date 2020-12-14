@@ -46,6 +46,7 @@ namespace SistemaEDInterfaces
                         colaborador.puestoTrabajo = new ColaboradorWS.puestoTrabajo();
                         colaborador.gerencia = new ColaboradorWS.gerencia();
                         colaborador.usuario = new ColaboradorWS.usuario();
+                        colaborador.jefe = new ColaboradorWS.colaborador();
 
                         int dato = int.Parse(valores[0].ToString());
                         colaborador.idColaborador=dato;
@@ -56,7 +57,8 @@ namespace SistemaEDInterfaces
                         dato = int.Parse(valores[2].ToString());
                         colaborador.puestoTrabajo.idPuestoTrabajo = dato;
 
-                        if (valores[3] != "NO")
+                        /*
+                        if (valores[3] != "no")
                         {
                             colaborador.dni = valores[3].ToString();
                         }
@@ -64,8 +66,8 @@ namespace SistemaEDInterfaces
                         {
                             colaborador.dni = "";
                         }
-
-                        if (valores[4] != "NO")
+                        */
+                        if (valores[3] != "no")
                         {
                             colaborador.jefe.idColaborador = int.Parse(valores[4].ToString());
                         }
@@ -73,8 +75,8 @@ namespace SistemaEDInterfaces
                         {
                             colaborador.jefe.idColaborador = -1;
                         }
-
-                        if (valores[5] != "NO")
+                        /*
+                        if (valores[5] != "no")
                         {
                             colaborador.nombres = valores[5].ToString();
                         }
@@ -83,7 +85,7 @@ namespace SistemaEDInterfaces
                             colaborador.nombres = "";
                         }
 
-                        if (valores[6] != "NO")
+                        if (valores[6] != "no")
                         {
                             colaborador.apellidos= valores[6].ToString();
                         }
@@ -91,8 +93,8 @@ namespace SistemaEDInterfaces
                         {
                             colaborador.apellidos = "";
                         }
-
-                        if (valores[7] != "NO")
+                        */
+                        if (valores[4] != "no")
                         {
                             colaborador.direccion= valores[7].ToString();
                         }
@@ -101,7 +103,7 @@ namespace SistemaEDInterfaces
                             colaborador.direccion = "";
                         }
 
-                        if (valores[8] != "NO")
+                        if (valores[5] != "no")
                         {
                             colaborador.correo = valores[8].ToString();
                         }
@@ -110,7 +112,7 @@ namespace SistemaEDInterfaces
                             colaborador.correo = "";
                         }
 
-                        if (valores[9] != "NO")
+                        if (valores[6] != "no")
                         {
                             colaborador.telefono= valores[7].ToString();
                         }
@@ -119,7 +121,7 @@ namespace SistemaEDInterfaces
                             colaborador.telefono = "";
                         }
 
-                        if (valores[10] != "NO")
+                        if (valores[7] != "no")
                         {
                             colaborador.fechaNac = DateTime.Parse(valores[7].ToString());
                         }
@@ -137,7 +139,7 @@ namespace SistemaEDInterfaces
                     {
                         if (linea == "") continue;
                         int resultado;
-                        var valores = linea.Split(';');
+                        var valores = linea.Split(',');
                         ColaboradorWS.colaborador colaborador = new ColaboradorWS.colaborador();
                         colaborador.dni = valores[0];
                         colaborador.jefe = new ColaboradorWS.colaborador();
@@ -192,6 +194,17 @@ namespace SistemaEDInterfaces
         private void btnRegreCargMavColab_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            Form frmAyuda = new frmAyudaColaboradores();
+            frmAyuda.Show();
         }
     }
 }

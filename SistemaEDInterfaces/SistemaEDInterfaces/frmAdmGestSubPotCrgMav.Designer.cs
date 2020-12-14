@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmGestSubPotCrgMav));
             this.label3 = new System.Windows.Forms.Label();
             this.gbSubPotencial = new System.Windows.Forms.GroupBox();
             this.btnGestSubPotSelecSubPot = new System.Windows.Forms.Button();
@@ -45,8 +46,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnRegreCargMavSubPot = new System.Windows.Forms.Button();
             this.btnCargarMasivaGestSubPot = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbSubPotencial.SuspendLayout();
             this.gbSubpotencialesPesos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -54,10 +57,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label3.Location = new System.Drawing.Point(13, 9);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(10, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(1000, 70);
+            this.label3.Size = new System.Drawing.Size(803, 56);
             this.label3.TabIndex = 91;
             this.label3.Text = "Carga Masiva de Subpotenciales";
             // 
@@ -70,9 +72,11 @@
             this.gbSubPotencial.Controls.Add(this.rdbInsMavSubPot);
             this.gbSubPotencial.Controls.Add(this.label4);
             this.gbSubPotencial.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSubPotencial.Location = new System.Drawing.Point(25, 102);
+            this.gbSubPotencial.Location = new System.Drawing.Point(19, 83);
+            this.gbSubPotencial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbSubPotencial.Name = "gbSubPotencial";
-            this.gbSubPotencial.Size = new System.Drawing.Size(1305, 209);
+            this.gbSubPotencial.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubPotencial.Size = new System.Drawing.Size(979, 170);
             this.gbSubPotencial.TabIndex = 92;
             this.gbSubPotencial.TabStop = false;
             this.gbSubPotencial.Text = "Subpotenciales";
@@ -83,10 +87,9 @@
             this.btnGestSubPotSelecSubPot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestSubPotSelecSubPot.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestSubPotSelecSubPot.ForeColor = System.Drawing.Color.White;
-            this.btnGestSubPotSelecSubPot.Location = new System.Drawing.Point(1076, 70);
-            this.btnGestSubPotSelecSubPot.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGestSubPotSelecSubPot.Location = new System.Drawing.Point(807, 57);
             this.btnGestSubPotSelecSubPot.Name = "btnGestSubPotSelecSubPot";
-            this.btnGestSubPotSelecSubPot.Size = new System.Drawing.Size(211, 32);
+            this.btnGestSubPotSelecSubPot.Size = new System.Drawing.Size(158, 26);
             this.btnGestSubPotSelecSubPot.TabIndex = 68;
             this.btnGestSubPotSelecSubPot.Text = "Seleccionar archivo";
             this.btnGestSubPotSelecSubPot.UseVisualStyleBackColor = false;
@@ -96,18 +99,20 @@
             // 
             this.txtNomArchSubPotMav.Enabled = false;
             this.txtNomArchSubPotMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomArchSubPotMav.Location = new System.Drawing.Point(500, 75);
+            this.txtNomArchSubPotMav.Location = new System.Drawing.Point(375, 61);
+            this.txtNomArchSubPotMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomArchSubPotMav.Name = "txtNomArchSubPotMav";
-            this.txtNomArchSubPotMav.Size = new System.Drawing.Size(545, 23);
+            this.txtNomArchSubPotMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchSubPotMav.TabIndex = 69;
             // 
             // rdbActMavSubPot
             // 
             this.rdbActMavSubPot.AutoSize = true;
             this.rdbActMavSubPot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbActMavSubPot.Location = new System.Drawing.Point(916, 150);
+            this.rdbActMavSubPot.Location = new System.Drawing.Point(687, 122);
+            this.rdbActMavSubPot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbActMavSubPot.Name = "rdbActMavSubPot";
-            this.rdbActMavSubPot.Size = new System.Drawing.Size(129, 27);
+            this.rdbActMavSubPot.Size = new System.Drawing.Size(108, 25);
             this.rdbActMavSubPot.TabIndex = 72;
             this.rdbActMavSubPot.TabStop = true;
             this.rdbActMavSubPot.Text = "Actualizar";
@@ -117,10 +122,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(26, 64);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(20, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(301, 33);
+            this.label1.Size = new System.Drawing.Size(234, 24);
             this.label1.TabIndex = 67;
             this.label1.Text = "Nombre del archivo : ";
             // 
@@ -128,9 +132,10 @@
             // 
             this.rdbInsMavSubPot.AutoSize = true;
             this.rdbInsMavSubPot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbInsMavSubPot.Location = new System.Drawing.Point(500, 150);
+            this.rdbInsMavSubPot.Location = new System.Drawing.Point(375, 122);
+            this.rdbInsMavSubPot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbInsMavSubPot.Name = "rdbInsMavSubPot";
-            this.rdbInsMavSubPot.Size = new System.Drawing.Size(102, 27);
+            this.rdbInsMavSubPot.Size = new System.Drawing.Size(87, 25);
             this.rdbInsMavSubPot.TabIndex = 71;
             this.rdbInsMavSubPot.TabStop = true;
             this.rdbInsMavSubPot.Text = "Insertar";
@@ -140,10 +145,9 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(26, 144);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(20, 117);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(401, 33);
+            this.label4.Size = new System.Drawing.Size(310, 24);
             this.label4.TabIndex = 70;
             this.label4.Text = "Seleccionar tipo de proceso :";
             // 
@@ -156,9 +160,11 @@
             this.gbSubpotencialesPesos.Controls.Add(this.rdbInsMavSubPotPesos);
             this.gbSubpotencialesPesos.Controls.Add(this.label5);
             this.gbSubpotencialesPesos.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbSubpotencialesPesos.Location = new System.Drawing.Point(25, 330);
+            this.gbSubpotencialesPesos.Location = new System.Drawing.Point(19, 268);
+            this.gbSubpotencialesPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbSubpotencialesPesos.Name = "gbSubpotencialesPesos";
-            this.gbSubpotencialesPesos.Size = new System.Drawing.Size(1305, 209);
+            this.gbSubpotencialesPesos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubpotencialesPesos.Size = new System.Drawing.Size(979, 170);
             this.gbSubpotencialesPesos.TabIndex = 93;
             this.gbSubpotencialesPesos.TabStop = false;
             this.gbSubpotencialesPesos.Text = "Pesos";
@@ -169,10 +175,9 @@
             this.btnGestSubPotSelecPesos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestSubPotSelecPesos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestSubPotSelecPesos.ForeColor = System.Drawing.Color.White;
-            this.btnGestSubPotSelecPesos.Location = new System.Drawing.Point(1076, 70);
-            this.btnGestSubPotSelecPesos.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGestSubPotSelecPesos.Location = new System.Drawing.Point(807, 57);
             this.btnGestSubPotSelecPesos.Name = "btnGestSubPotSelecPesos";
-            this.btnGestSubPotSelecPesos.Size = new System.Drawing.Size(211, 32);
+            this.btnGestSubPotSelecPesos.Size = new System.Drawing.Size(158, 26);
             this.btnGestSubPotSelecPesos.TabIndex = 68;
             this.btnGestSubPotSelecPesos.Text = "Seleccionar archivo";
             this.btnGestSubPotSelecPesos.UseVisualStyleBackColor = false;
@@ -182,18 +187,20 @@
             // 
             this.txtNomArchSubPotPesosMav.Enabled = false;
             this.txtNomArchSubPotPesosMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomArchSubPotPesosMav.Location = new System.Drawing.Point(500, 75);
+            this.txtNomArchSubPotPesosMav.Location = new System.Drawing.Point(375, 61);
+            this.txtNomArchSubPotPesosMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNomArchSubPotPesosMav.Name = "txtNomArchSubPotPesosMav";
-            this.txtNomArchSubPotPesosMav.Size = new System.Drawing.Size(545, 23);
+            this.txtNomArchSubPotPesosMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchSubPotPesosMav.TabIndex = 69;
             // 
             // rdbActMavSubPotPesos
             // 
             this.rdbActMavSubPotPesos.AutoSize = true;
             this.rdbActMavSubPotPesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbActMavSubPotPesos.Location = new System.Drawing.Point(916, 150);
+            this.rdbActMavSubPotPesos.Location = new System.Drawing.Point(687, 122);
+            this.rdbActMavSubPotPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbActMavSubPotPesos.Name = "rdbActMavSubPotPesos";
-            this.rdbActMavSubPotPesos.Size = new System.Drawing.Size(129, 27);
+            this.rdbActMavSubPotPesos.Size = new System.Drawing.Size(108, 25);
             this.rdbActMavSubPotPesos.TabIndex = 72;
             this.rdbActMavSubPotPesos.TabStop = true;
             this.rdbActMavSubPotPesos.Text = "Actualizar";
@@ -203,10 +210,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(26, 64);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(20, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(301, 33);
+            this.label2.Size = new System.Drawing.Size(234, 24);
             this.label2.TabIndex = 67;
             this.label2.Text = "Nombre del archivo : ";
             // 
@@ -214,9 +220,10 @@
             // 
             this.rdbInsMavSubPotPesos.AutoSize = true;
             this.rdbInsMavSubPotPesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbInsMavSubPotPesos.Location = new System.Drawing.Point(500, 150);
+            this.rdbInsMavSubPotPesos.Location = new System.Drawing.Point(375, 122);
+            this.rdbInsMavSubPotPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rdbInsMavSubPotPesos.Name = "rdbInsMavSubPotPesos";
-            this.rdbInsMavSubPotPesos.Size = new System.Drawing.Size(102, 27);
+            this.rdbInsMavSubPotPesos.Size = new System.Drawing.Size(87, 25);
             this.rdbInsMavSubPotPesos.TabIndex = 71;
             this.rdbInsMavSubPotPesos.TabStop = true;
             this.rdbInsMavSubPotPesos.Text = "Insertar";
@@ -226,10 +233,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(26, 144);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(20, 117);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(401, 33);
+            this.label5.Size = new System.Drawing.Size(310, 24);
             this.label5.TabIndex = 70;
             this.label5.Text = "Seleccionar tipo de proceso :";
             // 
@@ -239,10 +245,9 @@
             this.btnRegreCargMavSubPot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegreCargMavSubPot.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegreCargMavSubPot.ForeColor = System.Drawing.Color.White;
-            this.btnRegreCargMavSubPot.Location = new System.Drawing.Point(303, 574);
-            this.btnRegreCargMavSubPot.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRegreCargMavSubPot.Location = new System.Drawing.Point(227, 466);
             this.btnRegreCargMavSubPot.Name = "btnRegreCargMavSubPot";
-            this.btnRegreCargMavSubPot.Size = new System.Drawing.Size(211, 32);
+            this.btnRegreCargMavSubPot.Size = new System.Drawing.Size(158, 26);
             this.btnRegreCargMavSubPot.TabIndex = 95;
             this.btnRegreCargMavSubPot.Text = "Regresar";
             this.btnRegreCargMavSubPot.UseVisualStyleBackColor = false;
@@ -254,32 +259,45 @@
             this.btnCargarMasivaGestSubPot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCargarMasivaGestSubPot.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCargarMasivaGestSubPot.ForeColor = System.Drawing.Color.White;
-            this.btnCargarMasivaGestSubPot.Location = new System.Drawing.Point(795, 574);
-            this.btnCargarMasivaGestSubPot.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCargarMasivaGestSubPot.Location = new System.Drawing.Point(596, 466);
             this.btnCargarMasivaGestSubPot.Name = "btnCargarMasivaGestSubPot";
-            this.btnCargarMasivaGestSubPot.Size = new System.Drawing.Size(211, 32);
+            this.btnCargarMasivaGestSubPot.Size = new System.Drawing.Size(158, 26);
             this.btnCargarMasivaGestSubPot.TabIndex = 94;
             this.btnCargarMasivaGestSubPot.Text = "Cargar Archivo";
             this.btnCargarMasivaGestSubPot.UseVisualStyleBackColor = false;
             this.btnCargarMasivaGestSubPot.Click += new System.EventHandler(this.btnCargarMasivaGestSubPot_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(937, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 100;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // frmAdmGestSubPotCrgMav
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1356, 649);
+            this.ClientSize = new System.Drawing.Size(1017, 527);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegreCargMavSubPot);
             this.Controls.Add(this.btnCargarMasivaGestSubPot);
             this.Controls.Add(this.gbSubpotencialesPesos);
             this.Controls.Add(this.gbSubPotencial);
             this.Controls.Add(this.label3);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmAdmGestSubPotCrgMav";
             this.Text = "frmAdmGestSubPotCrgMav";
             this.gbSubPotencial.ResumeLayout(false);
             this.gbSubPotencial.PerformLayout();
             this.gbSubpotencialesPesos.ResumeLayout(false);
             this.gbSubpotencialesPesos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,5 +321,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnRegreCargMavSubPot;
         private System.Windows.Forms.Button btnCargarMasivaGestSubPot;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

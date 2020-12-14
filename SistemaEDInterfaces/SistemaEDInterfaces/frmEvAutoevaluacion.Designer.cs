@@ -156,7 +156,7 @@
             // 
             this.lblDescripcionCompetencias.AutoSize = true;
             this.lblDescripcionCompetencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionCompetencias.Location = new System.Drawing.Point(59, 454);
+            this.lblDescripcionCompetencias.Location = new System.Drawing.Point(22, 458);
             this.lblDescripcionCompetencias.Name = "lblDescripcionCompetencias";
             this.lblDescripcionCompetencias.Size = new System.Drawing.Size(438, 20);
             this.lblDescripcionCompetencias.TabIndex = 48;
@@ -166,7 +166,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(59, 210);
+            this.label4.Location = new System.Drawing.Point(22, 213);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(312, 20);
             this.label4.TabIndex = 49;

@@ -304,11 +304,47 @@
     <Compile Include="frmAdmSeguimiento.Designer.cs">
       <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAyudaColaboradores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaColaboradores.Designer.cs">
+      <DependentUpon>frmAyudaColaboradores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaCompetencias.Designer.cs">
+      <DependentUpon>frmAyudaCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaPotenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaPotenciales.Designer.cs">
+      <DependentUpon>frmAyudaPotenciales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaSubCompetencias.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaSubCompetencias.Designer.cs">
+      <DependentUpon>frmAyudaSubCompetencias.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyudaSubPotenciales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyudaSubPotenciales.Designer.cs">
+      <DependentUpon>frmAyudaSubPotenciales.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBienvenida.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBienvenida.Designer.cs">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCarga.Designer.cs">
+      <DependentUpon>frmCarga.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEvAutoevaluacion.cs">
       <SubType>Form</SubType>
@@ -352,18 +388,6 @@
     <Compile Include="frmEvMisTrabajadores.Designer.cs">
       <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvMisTrabajadoresFinalCompetencias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresFinalCompetencias.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresFinalCompetencias.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresPreviaCompetencias.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresPreviaCompetencias.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresPreviaCompetencias.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmEvMisTrabajadoresEvPotencial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -381,12 +405,6 @@
     </Compile>
     <Compile Include="frmEvMisTrabajadoresOpciones.Designer.cs">
       <DependentUpon>frmEvMisTrabajadoresOpciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresPotenciales.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmEvMisTrabajadoresPotenciales.Designer.cs">
-      <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEvMisTrabajadoresPrevia.cs">
       <SubType>Form</SubType>
@@ -514,6 +532,12 @@
     <Compile Include="frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRepPDIColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRepPDIColaborador.Designer.cs">
+      <DependentUpon>frmRepPDIColaborador.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmRepPlanificacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -539,7 +563,9 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="SeccionSubcompetencia.cs" />
+    <Compile Include="SeccionSubpotencial.cs" />
     <Compile Include="TipoCriterio.cs" />
+    <Compile Include="TipoEvaluacion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -635,8 +661,26 @@
     <EmbeddedResource Include="frmAdmSeguimiento.resx">
       <DependentUpon>frmAdmSeguimiento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaColaboradores.resx">
+      <DependentUpon>frmAyudaColaboradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaCompetencias.resx">
+      <DependentUpon>frmAyudaCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaPotenciales.resx">
+      <DependentUpon>frmAyudaPotenciales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaSubCompetencias.resx">
+      <DependentUpon>frmAyudaSubCompetencias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyudaSubPotenciales.resx">
+      <DependentUpon>frmAyudaSubPotenciales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBienvenida.resx">
       <DependentUpon>frmBienvenida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCarga.resx">
+      <DependentUpon>frmCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvAutoevaluacion.resx">
       <DependentUpon>frmEvAutoevaluacion.cs</DependentUpon>
@@ -659,12 +703,6 @@
     <EmbeddedResource Include="frmEvMisTrabajadores.resx">
       <DependentUpon>frmEvMisTrabajadores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresFinalCompetencias.resx">
-      <DependentUpon>frmEvMisTrabajadoresFinalCompetencias.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresPreviaCompetencias.resx">
-      <DependentUpon>frmEvMisTrabajadoresPreviaCompetencias.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmEvMisTrabajadoresEvPotencial.resx">
       <DependentUpon>frmEvMisTrabajadoresEvPotencial.cs</DependentUpon>
     </EmbeddedResource>
@@ -673,9 +711,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvMisTrabajadoresOpciones.resx">
       <DependentUpon>frmEvMisTrabajadoresOpciones.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmEvMisTrabajadoresPotenciales.resx">
-      <DependentUpon>frmEvMisTrabajadoresPotenciales.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEvMisTrabajadoresPrevia.resx">
       <DependentUpon>frmEvMisTrabajadoresPrevia.cs</DependentUpon>
@@ -740,6 +775,9 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRepPDIColaborador.resx">
+      <DependentUpon>frmRepPDIColaborador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmRepPlanificacion.resx">
       <DependentUpon>frmRepPlanificacion.cs</DependentUpon>
     </EmbeddedResource>
@@ -752,6 +790,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Iconos\waiting.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Connected Services\ColaboradorWS\ColaboradorWS.wsdl" />
     <None Include="Connected Services\ColaboradorWS\ColaboradorWS.xsd">
       <SubType>Designer</SubType>
@@ -1019,15 +1060,21 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
+    <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Connected Services\EvaluacionPotencialWS\configuration91.svcinfo" />
     <None Include="Connected Services\EvaluacionPotencialWS\configuration.svcinfo" />
     <None Include="Connected Services\EvaluacionPotencialWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Connected Services\PesoCriterioWS\configuration91.svcinfo" />
-    <None Include="Connected Services\PesoCriterioWS\configuration.svcinfo" />
-    <None Include="Connected Services\PesoCriterioWS\Reference.svcmap">
+    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
+    <None Include="Connected Services\ReporteWS\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -1054,6 +1101,7 @@
     <Content Include="Iconos\planificacion.png" />
     <Content Include="Iconos\reportes.png" />
     <Content Include="Iconos\salida.png" />
+    <Content Include="Iconos\signo-de-interrogacion.png" />
     <Content Include="Iconos\usuario.png" />
     <None Include="Connected Services\GerenciaWS\GerenciaWS.wsdl" />
     <None Include="Connected Services\GerenciaWS\GerenciaWS.xsd">
@@ -1099,6 +1147,9 @@
     <None Include="Connected Services\ReporteWS\ReporteWS.wsdl" />
     <None Include="Connected Services\ReporteWS\ReporteWS.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.generarReporteEvaluacionColaboradorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.generarReporteEvaluacionResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>

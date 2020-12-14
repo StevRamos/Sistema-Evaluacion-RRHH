@@ -61,11 +61,11 @@ public class Principal {
     public static void main(String[] args){
         
 //Colaboradores        
-   SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
-   
-   ColaboradorDAO daoColaborador = new ColaboradorMySQL();
-   for(Colaborador c : daoColaborador.listarColaboradoresXJefe9Box(1, 1))
-       System.out.println(c.getNombres() + " " + c.getEvaluaciones().get(1).getNotaFinal());
+//   SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
+//   
+//   ColaboradorDAO daoColaborador = new ColaboradorMySQL();
+//   for(Colaborador c : daoColaborador.listarColaboradoresXJefe9Box(1, 1))
+//       System.out.println(c.getNombres() + " " + c.getEvaluaciones().get(1).getNotaFinal());
    
 //        ItemPDIDAO daoItem = new ItemPDIMySQL();
 //        for(ItemPDI i : daoItem.listar())
