@@ -27,17 +27,22 @@ namespace SistemaEDInterfaces
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
             periodo = Global.periodoActual;
 
+<<<<<<< HEAD
+            escalasPeriodos =
+               new BindingList<PeriodoWS.escalaPeriodo>(daoPeriodo.listarEscalaPeriodo(periodo.idPeriodo).ToArray()); 
+=======
            /* escalasPeriodos = new BindingList<PeriodoWS.escalaPeriodo>();
             itemsPDIPeriodos = new BindingList<PeriodoWS.itemPDIPeriodo>();
            */
             
            escalasPeriodos =
                new BindingList<PeriodoWS.escalaPeriodo>(daoPeriodo.listarEscalaPeriodo(periodo.idPeriodo).ToArray());
+>>>>>>> 9805d051d5760062e80f415d52c839b7dc70f25e
 
             itemsPDIPeriodos 
                 = new BindingList<PeriodoWS.itemPDIPeriodo>(daoPeriodo.listarItemPDIPeriodo(periodo.idPeriodo).ToArray());
 
-            foreach(PeriodoWS.escalaPeriodo ep in escalasPeriodos)
+            foreach (PeriodoWS.escalaPeriodo ep in escalasPeriodos)
             {
                 switch(ep.escala.nombre)
                 {
@@ -177,8 +182,9 @@ namespace SistemaEDInterfaces
             actualizarPDI();
             periodo.escalas = escalasPeriodos.ToArray();
             periodo.rangosPDI = itemsPDIPeriodos.ToArray();
-            //int resultado = 0;
-            int resultado = daoPeriodo.actualizarRangos(periodo);
+            int resultado = 0;
+            resultado = daoPeriodo.actualizarRangos(periodo);
+            
             terminarEspera(); 
             if (resultado == 0)
             {

@@ -28,7 +28,8 @@ public class Correo {
             props.setProperty("mail.smtp.port", "587");
             props.setProperty("mail.smtp.user", "Sistema de Evaluación");
             props.setProperty("mail.smtp.auth", "true");
-
+            props.setProperty("mail.smtp.ssl.trust", "smtp.gmail.com");
+            
             Session session = Session.getDefaultInstance(props, null);
 //            session.setDebug(true);
 
@@ -61,7 +62,7 @@ public class Correo {
             resultado = 1;
         }
         catch (Exception e){
-            e.printStackTrace();
+            System.out.println(e.getMessage());
         }
         
         return resultado;

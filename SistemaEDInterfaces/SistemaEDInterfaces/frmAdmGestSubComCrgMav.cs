@@ -105,6 +105,7 @@ namespace SistemaEDInterfaces
                 //Para Actualizar: 
                 if (rdbActMavSubCom.Checked)
                 {
+
                     foreach (var linea in lineasSubcompetencias)
                     {
                         if (linea == "") continue;
@@ -158,13 +159,25 @@ namespace SistemaEDInterfaces
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no ingresaron correctamente los ID's de las subcompetencias." +
+                        "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente de competencias");
+                    }
                 }
                 //Para insertar
                 else if (rdbInsMavSubCom.Checked)
                 {
+                    BindingList<CriterioWS.criterio> listaSubcompetencias = new BindingList<CriterioWS.criterio>(daoCriterio.listar(2,""));
+                    int validar = 0;
                     foreach (var linea in lineasSubcompetencias)
                     {
+                        validar = 0;
                         if (linea == "") continue; 
                         var valores = linea.Split(',');
 
@@ -179,14 +192,32 @@ namespace SistemaEDInterfaces
                         criterio.tipo = (int)TipoCriterio.Subcompetencia;
                         criterio.criterioPadre = new CriterioWS.criterio();
                         criterio.criterioPadre.idCriterio = idCriterioPadre;
-
-                        resultado = daoCriterio.insertarMasivo(criterio);
-                        if (resultado == 0)
+                        foreach (CriterioWS.criterio subcompetencia in listaSubcompetencias)
+                        {
+                            if (subcompetencia.nombre.Equals(criterio.nombre))
+                            {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoCriterio.insertarMasivo(criterio);
+                        }
+                        if (resultado == 0 || validar == 1)
                         {
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv de subcompetencias que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
 
             }
@@ -226,13 +257,26 @@ namespace SistemaEDInterfaces
                         }
 
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no ingresó correctamente el nombre de la subcompetencia" +
+                            ",el nombre del puesto de trabajo o el nombre del periodo actual." +
+                        "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
                 //Para insertar 
                 if (rdbInsMavSubComPesos.Checked)
                 {
+                    BindingList<PesoCriterioWS.pesoCriterio> listapesossubcompetencias = new BindingList<PesoCriterioWS.pesoCriterio>(daoPesoCriterio.listarPesosCriterios(2, "", "", ""));
+                    int validar = 0;
                     foreach (var linea in lineasPesos)
                     {
+                        validar = 0;
                         if (linea == "") continue;
                         var valores = linea.Split(',');
 
@@ -251,25 +295,42 @@ namespace SistemaEDInterfaces
                         pesoCriterio.periodo.nombre = nombrePeriodo;
                         pesoCriterio.peso = peso;
 
-                        resultado = daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
-                        if (resultado == 0)
+                        foreach (PesoCriterioWS.pesoCriterio pesos in listapesossubcompetencias)
+                        {
+                            if (pesos.periodo.idPeriodo == pesoCriterio.periodo.idPeriodo && pesos.puestoTrabajo.idPuestoTrabajo == pesoCriterio.puestoTrabajo.idPuestoTrabajo && pesos.criterio.idCriterio == pesoCriterio.criterio.idCriterio)
+                            {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
+                        }
+                        if (resultado == 0 || validar == 1)
                         {
                             errores = errores + linea + "\n";
                         }
-
-
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv de pesos subcompetencias que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
             }
 
 
             //Falta realizar validacion para ver si se insertaron/actualizarion correctamente las competencias/pesos 
             Global.terminarEspera(this);
-            MessageBox.Show("Se procesaron correctamente los archivos.",
-                                   "Mensaje de confirmación",
-                                   MessageBoxButtons.OK,
-                                   MessageBoxIcon.Information);
+            //MessageBox.Show("Se procesaron correctamente los archivos.",
+            //                       "Mensaje de confirmación",
+            //                       MessageBoxButtons.OK,
+            //                       MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
             this.Close(); 
         }

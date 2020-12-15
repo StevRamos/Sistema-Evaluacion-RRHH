@@ -211,6 +211,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineasPesos)
                     {
+                        if (linea == "") continue;
                         var valores = linea.Split(',');
 
                         PesoCriterioWS.pesoCriterio pesoCriterio = new PesoCriterioWS.pesoCriterio();

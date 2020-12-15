@@ -330,7 +330,7 @@ namespace SistemaEDInterfaces
 
                 this.setEvalDesempenho(evalD);
                 evalD.idEvaluacion = btn.GetColaborador().evaluaciones[1].idEvaluacion;
-                evalD.escalaFinal.idEscala = btn.GetColaborador().evaluaciones[1].escalaSinCalibrar.idEscala;
+                evalD.escalaFinal.idEscala = btn.GetColaborador().evaluaciones[1].escalaFinal.idEscala;
                 daoEvaluacionDesempenho.actualizarEvaluacionDesempenho(evalD);
 
             }
