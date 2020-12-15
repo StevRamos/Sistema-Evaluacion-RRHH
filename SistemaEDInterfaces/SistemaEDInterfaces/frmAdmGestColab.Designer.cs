@@ -43,10 +43,9 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Apellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cargo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_JEFE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreJefe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvColaboradores)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,13 +90,13 @@
             this.dgvColaboradores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.DNI,
-            this.dataGridViewTextBoxColumn2,
-            this.Apellidos,
+            this.nombre,
             this.Cargo,
-            this.id_JEFE});
+            this.nombreJefe});
             this.dgvColaboradores.EnableHeadersVisualStyles = false;
             this.dgvColaboradores.Location = new System.Drawing.Point(19, 204);
             this.dgvColaboradores.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvColaboradores.MultiSelect = false;
             this.dgvColaboradores.Name = "dgvColaboradores";
             this.dgvColaboradores.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -116,7 +115,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvColaboradores.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvColaboradores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvColaboradores.Size = new System.Drawing.Size(882, 324);
+            this.dgvColaboradores.Size = new System.Drawing.Size(1048, 403);
             this.dgvColaboradores.TabIndex = 41;
             this.dgvColaboradores.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvColaboradores_CellFormatting);
             // 
@@ -188,7 +187,7 @@
             this.btnDesactivar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesactivar.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDesactivar.ForeColor = System.Drawing.Color.White;
-            this.btnDesactivar.Location = new System.Drawing.Point(19, 544);
+            this.btnDesactivar.Location = new System.Drawing.Point(19, 631);
             this.btnDesactivar.Margin = new System.Windows.Forms.Padding(2);
             this.btnDesactivar.Name = "btnDesactivar";
             this.btnDesactivar.Size = new System.Drawing.Size(188, 26);
@@ -230,23 +229,13 @@
             this.DNI.Name = "DNI";
             this.DNI.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // nombre
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombres";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombres";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 200;
-            // 
-            // Apellidos
-            // 
-            this.Apellidos.DataPropertyName = "apellidos";
-            this.Apellidos.HeaderText = "Apellidos";
-            this.Apellidos.MinimumWidth = 6;
-            this.Apellidos.Name = "Apellidos";
-            this.Apellidos.ReadOnly = true;
-            this.Apellidos.Width = 200;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 6;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 250;
             // 
             // Cargo
             // 
@@ -254,14 +243,15 @@
             this.Cargo.MinimumWidth = 6;
             this.Cargo.Name = "Cargo";
             this.Cargo.ReadOnly = true;
-            this.Cargo.Width = 200;
+            this.Cargo.Width = 250;
             // 
-            // id_JEFE
+            // nombreJefe
             // 
-            this.id_JEFE.HeaderText = "ID Jefe";
-            this.id_JEFE.MinimumWidth = 6;
-            this.id_JEFE.Name = "id_JEFE";
-            this.id_JEFE.ReadOnly = true;
+            this.nombreJefe.HeaderText = "Nombre Jefe";
+            this.nombreJefe.MinimumWidth = 6;
+            this.nombreJefe.Name = "nombreJefe";
+            this.nombreJefe.ReadOnly = true;
+            this.nombreJefe.Width = 350;
             // 
             // frmAdmGestColab
             // 
@@ -301,9 +291,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellidos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cargo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_JEFE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreJefe;
     }
 }
