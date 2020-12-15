@@ -183,6 +183,7 @@ namespace SistemaEDInterfaces
 
                         CriterioWS.criterio criterio = new CriterioWS.criterio();
                         int id = int.Parse(valores[0]);
+
                         int idCriterioPadre = Int32.Parse(valores[1]); 
                         String nombre = valores[2];
                         String descripcion = valores[3];
