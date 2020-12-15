@@ -47,6 +47,7 @@
             this.btnRegreCargMavSubPot = new System.Windows.Forms.Button();
             this.btnCargarMasivaGestSubPot = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.sfdReporte = new System.Windows.Forms.SaveFileDialog();
             this.gbSubPotencial.SuspendLayout();
             this.gbSubpotencialesPesos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -73,9 +74,9 @@
             this.gbSubPotencial.Controls.Add(this.label4);
             this.gbSubPotencial.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSubPotencial.Location = new System.Drawing.Point(19, 83);
-            this.gbSubPotencial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubPotencial.Margin = new System.Windows.Forms.Padding(2);
             this.gbSubPotencial.Name = "gbSubPotencial";
-            this.gbSubPotencial.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubPotencial.Padding = new System.Windows.Forms.Padding(2);
             this.gbSubPotencial.Size = new System.Drawing.Size(979, 170);
             this.gbSubPotencial.TabIndex = 92;
             this.gbSubPotencial.TabStop = false;
@@ -100,7 +101,7 @@
             this.txtNomArchSubPotMav.Enabled = false;
             this.txtNomArchSubPotMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomArchSubPotMav.Location = new System.Drawing.Point(375, 61);
-            this.txtNomArchSubPotMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomArchSubPotMav.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomArchSubPotMav.Name = "txtNomArchSubPotMav";
             this.txtNomArchSubPotMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchSubPotMav.TabIndex = 69;
@@ -110,7 +111,7 @@
             this.rdbActMavSubPot.AutoSize = true;
             this.rdbActMavSubPot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbActMavSubPot.Location = new System.Drawing.Point(687, 122);
-            this.rdbActMavSubPot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbActMavSubPot.Margin = new System.Windows.Forms.Padding(2);
             this.rdbActMavSubPot.Name = "rdbActMavSubPot";
             this.rdbActMavSubPot.Size = new System.Drawing.Size(108, 25);
             this.rdbActMavSubPot.TabIndex = 72;
@@ -133,7 +134,7 @@
             this.rdbInsMavSubPot.AutoSize = true;
             this.rdbInsMavSubPot.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbInsMavSubPot.Location = new System.Drawing.Point(375, 122);
-            this.rdbInsMavSubPot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbInsMavSubPot.Margin = new System.Windows.Forms.Padding(2);
             this.rdbInsMavSubPot.Name = "rdbInsMavSubPot";
             this.rdbInsMavSubPot.Size = new System.Drawing.Size(87, 25);
             this.rdbInsMavSubPot.TabIndex = 71;
@@ -161,9 +162,9 @@
             this.gbSubpotencialesPesos.Controls.Add(this.label5);
             this.gbSubpotencialesPesos.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbSubpotencialesPesos.Location = new System.Drawing.Point(19, 268);
-            this.gbSubpotencialesPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubpotencialesPesos.Margin = new System.Windows.Forms.Padding(2);
             this.gbSubpotencialesPesos.Name = "gbSubpotencialesPesos";
-            this.gbSubpotencialesPesos.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbSubpotencialesPesos.Padding = new System.Windows.Forms.Padding(2);
             this.gbSubpotencialesPesos.Size = new System.Drawing.Size(979, 170);
             this.gbSubpotencialesPesos.TabIndex = 93;
             this.gbSubpotencialesPesos.TabStop = false;
@@ -188,7 +189,7 @@
             this.txtNomArchSubPotPesosMav.Enabled = false;
             this.txtNomArchSubPotPesosMav.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomArchSubPotPesosMav.Location = new System.Drawing.Point(375, 61);
-            this.txtNomArchSubPotPesosMav.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomArchSubPotPesosMav.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomArchSubPotPesosMav.Name = "txtNomArchSubPotPesosMav";
             this.txtNomArchSubPotPesosMav.Size = new System.Drawing.Size(410, 20);
             this.txtNomArchSubPotPesosMav.TabIndex = 69;
@@ -198,7 +199,7 @@
             this.rdbActMavSubPotPesos.AutoSize = true;
             this.rdbActMavSubPotPesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbActMavSubPotPesos.Location = new System.Drawing.Point(687, 122);
-            this.rdbActMavSubPotPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbActMavSubPotPesos.Margin = new System.Windows.Forms.Padding(2);
             this.rdbActMavSubPotPesos.Name = "rdbActMavSubPotPesos";
             this.rdbActMavSubPotPesos.Size = new System.Drawing.Size(108, 25);
             this.rdbActMavSubPotPesos.TabIndex = 72;
@@ -221,7 +222,7 @@
             this.rdbInsMavSubPotPesos.AutoSize = true;
             this.rdbInsMavSubPotPesos.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rdbInsMavSubPotPesos.Location = new System.Drawing.Point(375, 122);
-            this.rdbInsMavSubPotPesos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.rdbInsMavSubPotPesos.Margin = new System.Windows.Forms.Padding(2);
             this.rdbInsMavSubPotPesos.Name = "rdbInsMavSubPotPesos";
             this.rdbInsMavSubPotPesos.Size = new System.Drawing.Size(87, 25);
             this.rdbInsMavSubPotPesos.TabIndex = 71;
@@ -290,7 +291,7 @@
             this.Controls.Add(this.gbSubpotencialesPesos);
             this.Controls.Add(this.gbSubPotencial);
             this.Controls.Add(this.label3);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmAdmGestSubPotCrgMav";
             this.Text = "frmAdmGestSubPotCrgMav";
             this.gbSubPotencial.ResumeLayout(false);
@@ -322,5 +323,6 @@
         private System.Windows.Forms.Button btnRegreCargMavSubPot;
         private System.Windows.Forms.Button btnCargarMasivaGestSubPot;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.SaveFileDialog sfdReporte;
     }
 }

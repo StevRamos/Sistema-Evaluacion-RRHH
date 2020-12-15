@@ -254,7 +254,8 @@ namespace SistemaEDInterfaces
         private void frmAdmGestCronVerDetalle_Load(object sender, EventArgs e)
         {
             //Llena configuraciones fecha
-            periodo = daoPeriodo.listarGerenciaPeriodo(periodo);
+            PeriodoWS.gerenciaPeriodo[] lista = daoPeriodo.listarGerenciaPeriodoPorId(periodo.idPeriodo);
+            if(lista!=null) periodo.configuracionFechas = lista.ToArray(); 
 
             txtID.Text = periodo.idPeriodo.ToString();
             txtNombre.Text = periodo.nombre;
@@ -264,9 +265,14 @@ namespace SistemaEDInterfaces
             txtPesoCompetencia.Text = (periodo.pesoEvalComp*100).ToString();
             txtPesoObjetivos.Text = (periodo.pesoEvalObj*100).ToString();
             String dia = periodo.diaNotificacion;
-            cboDiaNotificacion.SelectedItem = dia; 
+            cboDiaNotificacion.SelectedItem = dia;
             //DGV 
-            
+            dgvPlanificacion.AutoGenerateColumns = false;
+            dgvCronEvPrevia.AutoGenerateColumns = false;
+            dgvCronEvFinal.AutoGenerateColumns = false;
+            dgvPDI.AutoGenerateColumns = false;
+            dgvCalibNotas.AutoGenerateColumns = false;
+
             dgvPlanificacion.DataSource = periodo.configuracionFechas;
             dgvCronEvPrevia.DataSource = periodo.configuracionFechas;
             dgvCronEvFinal.DataSource = periodo.configuracionFechas;

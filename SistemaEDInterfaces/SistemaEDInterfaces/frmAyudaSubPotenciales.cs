@@ -16,5 +16,11 @@ namespace SistemaEDInterfaces
         {
             InitializeComponent();
         }
+
+        private void llblOlvContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Form frmAyuda = new frmAyudaCargaMasiva();
+            frmAyuda.Show();
+        }
     }
 }

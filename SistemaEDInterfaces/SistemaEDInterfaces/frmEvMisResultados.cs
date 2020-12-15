@@ -65,9 +65,13 @@ namespace SistemaEDInterfaces
             if (sfdReporte.FileName != null && sfdReporte.FileName != "")
             {
                 byte[] arreglo;
+<<<<<<< HEAD
                 arreglo = daoReporte.generarReporteEvaluacion(Global.colaboradorLoggeado.idColaborador); //dummy
+=======
+                //arreglo = daoReporte.generarReporteEvaluacion();
+>>>>>>> 9805d051d5760062e80f415d52c839b7dc70f25e
                 Global.iniciarEspera(this);
-                File.WriteAllBytes(sfdReporte.FileName, arreglo);
+                //File.WriteAllBytes(sfdReporte.FileName, arreglo);
                 Global.terminarEspera(this);
             }
         }

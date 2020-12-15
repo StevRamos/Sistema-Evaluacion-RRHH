@@ -33,21 +33,88 @@ namespace SistemaEDInterfaces
 
         }
 
-        private void cargarObjetivosYCompetenciasEnPantalla()
+        private void reposicionarElementos(int diferenciaY)
+        {
+            lblTituloCompetencias.Location = new Point(lblTituloCompetencias.Location.X, lblTituloCompetencias.Location.Y + diferenciaY);
+            lblDescripcionCompetencias.Location = new Point(lblDescripcionCompetencias.Location.X, lblDescripcionCompetencias.Location.Y + diferenciaY);
+            lblNotaCompetencias.Location = new Point(lblNotaCompetencias.Location.X, lblNotaCompetencias.Location.Y + diferenciaY);
+            txtNotaCompetencias.Location = new Point(txtNotaCompetencias.Location.X, txtNotaCompetencias.Location.Y + diferenciaY);
+            btnGuardar.Location = new Point(btnGuardar.Location.X, btnGuardar.Location.Y + diferenciaY);
+            btnFinalizar.Location = new Point(btnFinalizar.Location.X, btnFinalizar.Location.Y + diferenciaY);
+            lbl1.Location = new Point(lbl1.Location.X, lbl1.Location.Y + diferenciaY);
+            lbl2.Location = new Point(lbl2.Location.X, lbl2.Location.Y + diferenciaY);
+            lbl3.Location = new Point(lbl3.Location.X, lbl3.Location.Y + diferenciaY);
+            lbl4.Location = new Point(lbl4.Location.X, lbl4.Location.Y + diferenciaY);
+            lbl5.Location = new Point(lbl5.Location.X, lbl5.Location.Y + diferenciaY);
+        }
+
+        private RadioButton2 crearRadioButtonSubcompetencia(Label lblCalificacion, Label lblNombreGrupo)
+        {
+            RadioButton2 rb = new RadioButton2();
+            rb.Location = new Point(lblCalificacion.Location.X + 5, lblNombreGrupo.Location.Y+10);
+            rb.Width = lblCalificacion.Width;
+            rb.GroupName = lblNombreGrupo.Text;
+            rb.AutoSize = true;
+            rb.AutoCheck = false;
+            rb.Click += RadioButton2_Clicked;
+            return rb; 
+        }
+        private void agregarRadioButtons(double nota, SeccionSubcompetencia agrupacionSubcompetencia,
+                                                            Label lblNombre)
+        {
+            RadioButton2 rb1 = crearRadioButtonSubcompetencia(lbl1, lblNombre);
+            RadioButton2 rb2 = crearRadioButtonSubcompetencia(lbl2, lblNombre);
+            RadioButton2 rb3 = crearRadioButtonSubcompetencia(lbl3, lblNombre);
+            RadioButton2 rb4 = crearRadioButtonSubcompetencia(lbl4, lblNombre);
+            RadioButton2 rb5 = crearRadioButtonSubcompetencia(lbl5, lblNombre);
+            this.Controls.Add(rb1);
+            this.Controls.Add(rb2);
+            this.Controls.Add(rb3);
+            this.Controls.Add(rb4);
+            this.Controls.Add(rb5);
+            agrupacionSubcompetencia.RbNota1 = rb1;
+            agrupacionSubcompetencia.RbNota2 = rb2;
+            agrupacionSubcompetencia.RbNota3 = rb3;
+            agrupacionSubcompetencia.RbNota4 = rb4;
+            agrupacionSubcompetencia.RbNota5 = rb5;
+
+            if (nota == 5)
+            {
+                rb5.Checked = true;
+            }
+            else if (nota == 4)
+            {
+                rb4.Checked = true;
+            }
+            else if (nota == 3)
+            {
+                rb3.Checked = true;
+            }
+            else if (nota == 2)
+            {
+                rb2.Checked = true;
+            }
+            else
+            {
+                rb1.Checked = true;
+            }
+
+        }
+        private void cargarObjetivosEnPantalla()
         {
             int y = lblObjetivo.Location.Y + lblObjetivo.Height + 20, sumaY = 20;
             int x;
-            txtBoxObjetivos = new BindingList<TextBox>(); 
-            foreach(EvaluacionDesempenhoWS.objetivo o in evaluacionDesempenho.objetivos)
+            txtBoxObjetivos = new BindingList<TextBox>();
+            foreach (EvaluacionDesempenhoWS.objetivo o in evaluacionDesempenho.objetivos)
             {
-                x = lblObjetivo.Location.X; 
+                x = lblObjetivo.Location.X;
                 //Label de nombre 
                 Label labelNombre = new Label();
                 labelNombre.Location = new Point(x, y);
                 labelNombre.Text = o.descripcion;
                 labelNombre.AutoSize = true;
                 labelNombre.MaximumSize = new Size(350, 0);
-                labelNombre.Font = new Font("Microsoft Sans Serif",15);
+                labelNombre.Font = new Font("Microsoft Sans Serif", 15);
                 x = lblCantidad.Location.X;
 
                 Label labelCantidad = new Label();
@@ -65,110 +132,83 @@ namespace SistemaEDInterfaces
                 TextBox txtLogro = new TextBox();
                 txtLogro.Location = new Point(x, y);
                 txtLogro.Font = new Font("Microsoft Sans Serif", 15);
-                txtLogro.Text = o.notaAutoEval.ToString(); 
+                txtLogro.Text = o.notaAutoEval.ToString();
+                txtLogro.KeyPress += txt_KeyPress;
 
                 txtBoxObjetivos.Add(txtLogro);
                 this.Controls.Add(labelNombre);
-                this.Controls.Add(labelCantidad); 
+                this.Controls.Add(labelCantidad);
                 this.Controls.Add(labelPeso);
                 this.Controls.Add(txtLogro);
 
                 y += labelNombre.Height + 20;
                 sumaY += labelNombre.Height + 20;
             }
-            sumaY += 15;
-            
-            lblTituloCompetencias.Location = new Point(lblTituloCompetencias.Location.X,lblTituloCompetencias.Location.Y + sumaY);
-            lblDescripcionCompetencias.Location = new Point(lblDescripcionCompetencias.Location.X, lblDescripcionCompetencias.Location.Y + sumaY);
-            lblNotaCompetencias.Location = new Point(lblNotaCompetencias.Location.X, lblNotaCompetencias.Location.Y + sumaY);
-            txtNotaCompetencias.Location = new Point(txtNotaCompetencias.Location.X, txtNotaCompetencias.Location.Y + sumaY);
-            btnGuardar.Location = new Point(btnGuardar.Location.X, btnGuardar.Location.Y + sumaY);
-            btnFinalizar.Location = new Point(btnFinalizar.Location.X, btnFinalizar.Location.Y + sumaY);
-            lbl1.Location = new Point(lbl1.Location.X, lbl1.Location.Y + sumaY);
-            lbl2.Location = new Point(lbl2.Location.X, lbl2.Location.Y + sumaY);
-            lbl3.Location = new Point(lbl3.Location.X, lbl3.Location.Y + sumaY);
-            lbl4.Location = new Point(lbl4.Location.X, lbl4.Location.Y + sumaY);
-            lbl5.Location = new Point(lbl5.Location.X, lbl5.Location.Y + sumaY);
+            reposicionarElementos(sumaY);
 
-            /*lbl1.Hide();
-            lbl2.Hide();
-            lbl3.Hide();
-            lbl4.Hide();
-            lbl5.Hide(); 
-            */
-            //Competencias 
+            
+        }
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // Solo permitir un punto decimal
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+
+        private void cargarCompetenciasEnPantalla()
+        {
+            int y, sumaY = 20, x;
             y = lblDescripcionCompetencias.Location.Y + lblDescripcionCompetencias.Height + 20;
             sumaY = 20;
             txtBoxCompetencias = new BindingList<TextBox>();
             foreach (EvaluacionDesempenhoWS.lineaEvaluacion l in evaluacionDesempenho.lineasEvaluacion)
             {
-                x = lblTituloCompetencias.Location.X; 
+                x = lblObjetivo.Location.X; 
                 Label labelNombre = new Label();
                 labelNombre.Location = new Point(x, y);
                 labelNombre.Text = l.pesoCriterio.criterio.nombre + "("+ l.pesoCriterio.peso +"%)";
                 labelNombre.AutoSize = true;
                 labelNombre.MaximumSize = new Size(350, 0);
                 labelNombre.Font = new Font("Microsoft Sans Serif", 15,FontStyle.Bold);
-
+                labelNombre.ForeColor = new Color();
+                labelNombre.ForeColor =  Color.FromArgb(0,66,122);
                 x = lblNotaCompetencias.Location.X;
                 TextBox txtNota = new TextBox();
                 txtNota.Location = new Point(x, y);
                 txtNota.Font = new Font("Microsoft Sans Serif", 15);
                 txtNota.Text = l.notaAutoEval.ToString();
+                
                 txtNota.Enabled = false;
-                txtBoxCompetencias.Add(txtNota);
 
+                txtBoxCompetencias.Add(txtNota);
                 this.Controls.Add(labelNombre);
                 this.Controls.Add(txtNota);
 
-                /*
-                Label lblNota1 = new Label();
-                lblNota1.Text = lbl1.Text;
-                lblNota1.Width = lbl1.Width; 
-                lblNota1.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
-                lblNota1.Location = new Point(lbl1.Location.X, labelNombre.Location.Y );
-                this.Controls.Add(lblNota1);
-                Label lblNota2 = new Label();
-                lblNota2.Text = lbl2.Text;
-                lblNota2.Width = lbl2.Width; 
-                lblNota2.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
-                lblNota2.Location = new Point(lbl2.Location.X, labelNombre.Location.Y);
-                this.Controls.Add(lblNota2);
-                Label lblNota3 = new Label();
-                lblNota3.Text = lbl3.Text;
-                lblNota3.Width = lbl3.Width; 
-                lblNota3.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
-                lblNota3.Location = new Point(lbl3.Location.X, labelNombre.Location.Y);
-                this.Controls.Add(lblNota3);
-                Label lblNota4 = new Label();
-                lblNota4.Text = lbl4.Text;
-                lblNota4.Width = lbl4.Width; 
-                lblNota4.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
-                lblNota4.Location = new Point(lbl4.Location.X, labelNombre.Location.Y);
-                this.Controls.Add(lblNota4);
-                Label lblNota5 = new Label();
-                lblNota5.Text = lbl5.Text;
-                lblNota5.Width = lbl5.Width; 
-                lblNota5.Font = new Font("Microsoft Sans Serif", 16, FontStyle.Bold);
-                lblNota5.Location = new Point(lbl5.Location.X, labelNombre.Location.Y);
-                this.Controls.Add(lblNota5);
                 
-                */
-                y += labelNombre.Height + 40;
-                sumaY += labelNombre.Height + 40;
+                y += labelNombre.Height + 20;
+                sumaY += labelNombre.Height + 20;
                 BindingList<SeccionSubcompetencia> agrupacionCompetencia;
                 agrupacionCompetencia = new BindingList<SeccionSubcompetencia>();
                 foreach (EvaluacionDesempenhoWS.lineaEvaluacion sl in l.sublineasEvaluacion)
                 {
                     SeccionSubcompetencia agrupacionSubcompetencia = new SeccionSubcompetencia();
-                    x = lblTituloCompetencias.Location.X;
+                    x = lblObjetivo.Location.X + 40 ;
                     Label lblGuion = new Label();
                     lblGuion.Location = new Point(x, y);
                     lblGuion.Font = new Font("Microsoft Sans Serif", 15);
                     lblGuion.Text = "-";
-                    lblGuion.Width = 40;
+                    lblGuion.Width = 20;
                     this.Controls.Add(lblGuion);
-                    x = lblGuion.Width + 15;
+                    x = lblGuion.Location.X +  lblGuion.Width ;
                     Label lblNombreSubcriterio = new Label();
                     lblNombreSubcriterio.Location = new Point(x, y);
                     lblNombreSubcriterio.AutoSize = true;
@@ -176,91 +216,17 @@ namespace SistemaEDInterfaces
                     lblNombreSubcriterio.Font = new Font("Microsoft Sans Serif", 15);
                     lblNombreSubcriterio.Text = sl.pesoCriterio.criterio.nombre + "(" + sl.pesoCriterio.peso + "%)"; 
                     this.Controls.Add(lblNombreSubcriterio);
-
                     //Crear radiobuttons
-                    RadioButton2 rb1 = new RadioButton2();
-                    rb1.Location = new Point(lbl1.Location.X + 5, lblNombreSubcriterio.Location.Y);
-                    rb1.Width = lbl1.Width;
-                    rb1.GroupName = lblNombreSubcriterio.Text;
-                    rb1.AutoSize = true;
-                    rb1.AutoCheck = false;
-                    rb1.Click += RadioButton2_Clicked;
-                    RadioButton2 rb2 = new RadioButton2();
-                    rb2.Location = new Point(lbl2.Location.X + 5, lblNombreSubcriterio.Location.Y);
-                    rb2.Width = lbl2.Width;
-                    rb2.GroupName = lblNombreSubcriterio.Text;
-                    rb2.AutoSize = true;
-                    rb2.AutoCheck = false;
-                    rb2.Click += RadioButton2_Clicked;
-                    RadioButton2 rb3 = new RadioButton2();
-                    rb3.Location = new Point(lbl3.Location.X + 5, lblNombreSubcriterio.Location.Y);
-                    rb3.Width = lbl3.Width;
-                    rb3.GroupName = lblNombreSubcriterio.Text;
-                    rb3.AutoSize = true;
-                    rb3.AutoCheck = false;
-                    rb3.Click += RadioButton2_Clicked;
-                    RadioButton2 rb4 = new RadioButton2();
-                    rb4.Location = new Point(lbl4.Location.X + 5, lblNombreSubcriterio.Location.Y);
-                    rb4.Width = lbl4.Width;
-                    rb4.GroupName = lblNombreSubcriterio.Text;
-                    rb4.AutoSize = true;
-                    rb4.AutoCheck = false;
-                    rb4.Click += RadioButton2_Clicked;
-                    RadioButton2 rb5 = new RadioButton2();
-                    rb5.Location = new Point(lbl5.Location.X + 5, lblNombreSubcriterio.Location.Y);
-                    rb5.Width = lbl5.Width;
-                    rb5.GroupName = lblNombreSubcriterio.Text;
-                    rb5.AutoSize = true;
-                    rb5.AutoCheck = false;
-                    rb5.Click += RadioButton2_Clicked;
-
-                    this.Controls.Add(rb1);
-                    this.Controls.Add(rb2);
-                    this.Controls.Add(rb3);
-                    this.Controls.Add(rb4);
-                    this.Controls.Add(rb5);
-                    agrupacionSubcompetencia.RbNota1 = rb1;
-                    agrupacionSubcompetencia.RbNota2 = rb2;
-                    agrupacionSubcompetencia.RbNota3 = rb3;
-                    agrupacionSubcompetencia.RbNota4 = rb4;
-                    agrupacionSubcompetencia.RbNota5 = rb5;
-                    agrupacionCompetencia.Add(agrupacionSubcompetencia);
-                    if (sl.notaAutoEval == 5)
-                    {
-                        rb5.Checked = true;
-                    } else if (sl.notaAutoEval == 4)
-                    {
-                        rb4.Checked = true;
-                    } else if (sl.notaAutoEval == 3)
-                    {
-                        rb3.Checked = true;
-                    } else if (sl.notaAutoEval == 2)
-                    {
-                        rb2.Checked = true;
-                    }
-                    else
-                    {
-                        rb1.Checked = true;
-                    }
-
+                    agregarRadioButtons(sl.notaAutoEval, agrupacionSubcompetencia, lblNombreSubcriterio);
                     y += lblNombreSubcriterio.Height + 30;
                     sumaY += lblNombreSubcriterio.Height + 30;
-
+                    agrupacionCompetencia.Add(agrupacionSubcompetencia);
                 }
                 secciones.Add(agrupacionCompetencia);
-
-
             }
             sumaY += 15;
-
             btnGuardar.Location = new Point(btnGuardar.Location.X, btnGuardar.Location.Y + sumaY);
             btnFinalizar.Location = new Point(btnFinalizar.Location.X, btnFinalizar.Location.Y + sumaY);
-
-        }
-
-        private void cargarCompetenciasEnPantalla()
-        {
-
         }
 
 
@@ -450,7 +416,11 @@ namespace SistemaEDInterfaces
             for(int i = 0; i < evaluacionDesempenho.objetivos.Count(); i++)
             {
                 evaluacionDesempenho.objetivos[i].notaAutoEval = Double.Parse(txtBoxObjetivos.ElementAt(i).Text);
-                notaObj += (evaluacionDesempenho.objetivos[i].notaAutoEval/evaluacionDesempenho.objetivos[i].meta) *(evaluacionDesempenho.objetivos[i].peso/100);
+                if(evaluacionDesempenho.objetivos[i].notaAutoEval > evaluacionDesempenho.objetivos[i].meta)
+                {
+                    notaObj += 1 * (evaluacionDesempenho.objetivos[i].peso / 100);
+                }
+                else notaObj += (evaluacionDesempenho.objetivos[i].notaAutoEval/evaluacionDesempenho.objetivos[i].meta) *(evaluacionDesempenho.objetivos[i].peso/100);
             }
             evaluacionDesempenho.notaAutoEvalComp = Math.Round(notaComp,2);
             evaluacionDesempenho.notaAutoEvalObj = Math.Round(notaObj,2); 
@@ -470,8 +440,11 @@ namespace SistemaEDInterfaces
                 txtBoxCompetencias.ElementAt(i).Text = evaluacionDesempenho.lineasEvaluacion[i].notaAutoEval.ToString();
             }
         }
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            
+
             //Verificar si se deben registrar o actualizar las lineas de evaluacion 
             bool seRegistra = evaluacionDesempenho.estadoAutoEval.Equals(0) && evaluacionDesempenho.estado.Equals(0);
             //Se marca los datos que no se actualizaran 
@@ -554,7 +527,11 @@ namespace SistemaEDInterfaces
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(true, new frmEvAutoevaluacionPantallaPrevia());
+            frmEvAutoevaluacionPantallaPrevia form = new frmEvAutoevaluacionPantallaPrevia();
+            form.TipoEval = TipoEvaluacion.Autoevaluacion;
+            form.Periodo = Global.periodoActual;
+            form.Colaborador = Global.colaboradorLoggeado;
+            Global.formPrincipal.abrirFormularioHijo(true, form);
         }
 
         private void frmEvAutoevaluacion_Load(object sender, EventArgs e)
@@ -586,7 +563,8 @@ namespace SistemaEDInterfaces
             }
 
             //Cargar Objetivos y competencias en pantalla 
-            cargarObjetivosYCompetenciasEnPantalla();
+            cargarObjetivosEnPantalla();
+            cargarCompetenciasEnPantalla();
             cambiarEstado(Estado);
         }
     }

@@ -15,6 +15,8 @@ namespace SistemaEDInterfaces
     public partial class frmAdmGestColabCargaMav : Form
     {
         private ColaboradorWS.ColaboradorWSClient daoColaborador;
+        int resultado;
+        string errores = "";
         public frmAdmGestColabCargaMav()
         {
             InitializeComponent();
@@ -130,8 +132,13 @@ namespace SistemaEDInterfaces
                             colaborador.fechaNac = DateTime.Parse("000");
                         }
 
-                        daoColaborador.actualizarColaborador(colaborador);
+                        resultado = daoColaborador.actualizarColaborador(colaborador);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
                     }
+                    cargarErrores();
                 }
                 else if (rdbInsCargaMavColab.Checked != false)
                 {
@@ -167,12 +174,10 @@ namespace SistemaEDInterfaces
                         resultado=daoColaborador.insertarColaborador(colaborador);
                         if (resultado == 0)
                         {
-                            MessageBox.Show("Error al registrar colaborador",
-                                  "Mensaje de error",
-                                  MessageBoxButtons.OK,
-                                  MessageBoxIcon.Error);
+                            errores = errores + linea + "\n";
                         }
                     }
+                    cargarErrores();
                 }
                 MessageBox.Show("El archivo se cargó correctamente");
                 this.Close();
@@ -205,6 +210,17 @@ namespace SistemaEDInterfaces
         {
             Form frmAyuda = new frmAyudaColaboradores();
             frmAyuda.Show();
+        }
+        private void cargarErrores()
+        {
+            if (errores == "") return;
+            sfdReporte.FileName = "Errores de la Carga Masiva.csv";
+            sfdReporte.ShowDialog();
+            if (sfdReporte.FileName != null && sfdReporte.FileName != "")
+            {
+                File.WriteAllText(sfdReporte.FileName, errores);
+            }
+            errores = "";
         }
     }
 }

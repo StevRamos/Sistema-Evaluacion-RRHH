@@ -214,7 +214,11 @@ namespace SistemaEDInterfaces
         {
             cambiarTituloBarraSuperior(btnEvaluacion, btnEvAutoevaluacion);
             cerrarFormulariosActuales();
-            abrirFormularioHijo(false,new frmEvAutoevaluacionPantallaPrevia());
+            frmEvAutoevaluacionPantallaPrevia form = new frmEvAutoevaluacionPantallaPrevia();
+            form.TipoEval = TipoEvaluacion.Autoevaluacion;
+            form.Periodo = Global.periodoActual;
+            form.Colaborador = Global.colaboradorLoggeado; 
+            abrirFormularioHijo(false,form);
         }
 
         private void btnEvMisTrabajadores_Click(object sender, EventArgs e)

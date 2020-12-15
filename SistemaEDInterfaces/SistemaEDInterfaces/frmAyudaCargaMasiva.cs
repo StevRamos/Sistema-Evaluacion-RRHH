@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace SistemaEDInterfaces
 {
-    public partial class frmAyudaColaboradores : Form
+    public partial class frmAyudaCargaMasiva : Form
     {
-        public frmAyudaColaboradores()
+        public frmAyudaCargaMasiva()
         {
             InitializeComponent();
-        }
-
-        private void llblOlvContra_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Form frmAyuda = new frmAyudaCargaMasiva();
-            frmAyuda.Show();
         }
     }
 }

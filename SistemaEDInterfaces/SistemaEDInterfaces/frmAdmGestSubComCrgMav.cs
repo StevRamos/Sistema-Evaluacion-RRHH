@@ -15,6 +15,8 @@ namespace SistemaEDInterfaces
     {
         CriterioWS.CriterioWSClient daoCriterio;
         PesoCriterioWS.PesoCriterioWSClient daoPesoCriterio;
+        int resultado;
+        string errores = "";
         public frmAdmGestSubComCrgMav()
         {
             InitializeComponent();
@@ -150,9 +152,13 @@ namespace SistemaEDInterfaces
                             criterio.descripcion = "";
                         }
 
-                        daoCriterio.actualizarCriterio(criterio); 
-                        
+                        resultado = daoCriterio.actualizarCriterio(criterio);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
                     }
+                    cargarErrores();
                 }
                 //Para insertar
                 else if (rdbInsMavSubCom.Checked)
@@ -174,8 +180,13 @@ namespace SistemaEDInterfaces
                         criterio.criterioPadre = new CriterioWS.criterio();
                         criterio.criterioPadre.idCriterio = idCriterioPadre;
 
-                        daoCriterio.insertarMasivo(criterio);
+                        resultado = daoCriterio.insertarMasivo(criterio);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
                     }
+                    cargarErrores();
                 }
 
             }
@@ -208,11 +219,14 @@ namespace SistemaEDInterfaces
                         pesoCriterio.periodo.nombre = nombrePeriodo;
                         pesoCriterio.peso = peso;
 
-                        daoPesoCriterio.actualizarPesoCriterio(pesoCriterio);
-
+                        resultado = daoPesoCriterio.actualizarPesoCriterio(pesoCriterio);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
 
                     }
-
+                    cargarErrores();
                 }
                 //Para insertar 
                 if (rdbInsMavSubComPesos.Checked)
@@ -236,13 +250,16 @@ namespace SistemaEDInterfaces
                         pesoCriterio.periodo = new PesoCriterioWS.periodo();
                         pesoCriterio.periodo.nombre = nombrePeriodo;
                         pesoCriterio.peso = peso;
-                        
-                        daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
-                        
+
+                        resultado = daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
+                        if (resultado == 0)
+                        {
+                            errores = errores + linea + "\n";
+                        }
 
 
                     }
-
+                    cargarErrores();
                 }
             }
 
@@ -261,6 +278,17 @@ namespace SistemaEDInterfaces
         {
             Form frmAyuda = new frmAyudaSubCompetencias();
             frmAyuda.Show();
+        }
+        private void cargarErrores()
+        {
+            if (errores == "") return;
+            sfdReporte.FileName = "Errores de la Carga Masiva.csv";
+            sfdReporte.ShowDialog();
+            if (sfdReporte.FileName != null && sfdReporte.FileName != "")
+            {
+                File.WriteAllText(sfdReporte.FileName, errores);
+            }
+            errores = "";
         }
     }
 }

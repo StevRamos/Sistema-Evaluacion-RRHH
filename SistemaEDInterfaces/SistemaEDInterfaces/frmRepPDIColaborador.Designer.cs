@@ -40,10 +40,12 @@
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblInstrucciones = new System.Windows.Forms.Label();
+            this.btnRegresar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtGerencia
             // 
+            this.txtGerencia.Enabled = false;
             this.txtGerencia.Location = new System.Drawing.Point(261, 259);
             this.txtGerencia.Margin = new System.Windows.Forms.Padding(2);
             this.txtGerencia.Name = "txtGerencia";
@@ -65,6 +67,7 @@
             // 
             // txtPuesto
             // 
+            this.txtPuesto.Enabled = false;
             this.txtPuesto.Location = new System.Drawing.Point(261, 154);
             this.txtPuesto.Margin = new System.Windows.Forms.Padding(2);
             this.txtPuesto.Name = "txtPuesto";
@@ -75,6 +78,7 @@
             // 
             // txtJefe
             // 
+            this.txtJefe.Enabled = false;
             this.txtJefe.Location = new System.Drawing.Point(261, 206);
             this.txtJefe.Margin = new System.Windows.Forms.Padding(2);
             this.txtJefe.Name = "txtJefe";
@@ -85,6 +89,7 @@
             // 
             // txtNombre
             // 
+            this.txtNombre.Enabled = false;
             this.txtNombre.Location = new System.Drawing.Point(261, 103);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
@@ -176,6 +181,20 @@
             this.lblInstrucciones.Text = "Complete las acciones a tomar para las competencias del colaborador e ingrese una" +
     "\r\nfecha aproximada para el cumplimiento";
             // 
+            // btnRegresar
+            // 
+            this.btnRegresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(157)))), ((int)(((byte)(6)))), ((int)(((byte)(32)))));
+            this.btnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegresar.ForeColor = System.Drawing.Color.White;
+            this.btnRegresar.Location = new System.Drawing.Point(46, 727);
+            this.btnRegresar.Name = "btnRegresar";
+            this.btnRegresar.Size = new System.Drawing.Size(158, 26);
+            this.btnRegresar.TabIndex = 34;
+            this.btnRegresar.Text = "Regresar";
+            this.btnRegresar.UseVisualStyleBackColor = false;
+            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
+            // 
             // frmRepPDIColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -184,6 +203,7 @@
             this.AutoScrollMargin = new System.Drawing.Size(0, 100);
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
+            this.Controls.Add(this.btnRegresar);
             this.Controls.Add(this.lblInstrucciones);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.btnGuardar);
@@ -218,5 +238,6 @@
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblInstrucciones;
+        private System.Windows.Forms.Button btnRegresar;
     }
 }

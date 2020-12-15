@@ -51,7 +51,7 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.Black;
-            this.lblEstado.Location = new System.Drawing.Point(18, 110);
+            this.lblEstado.Location = new System.Drawing.Point(18, 148);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(77, 22);
             this.lblEstado.TabIndex = 31;
@@ -62,7 +62,7 @@
             this.lblEstadoNombre.AutoSize = true;
             this.lblEstadoNombre.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstadoNombre.ForeColor = System.Drawing.Color.Black;
-            this.lblEstadoNombre.Location = new System.Drawing.Point(101, 110);
+            this.lblEstadoNombre.Location = new System.Drawing.Point(101, 148);
             this.lblEstadoNombre.Name = "lblEstadoNombre";
             this.lblEstadoNombre.Size = new System.Drawing.Size(72, 22);
             this.lblEstadoNombre.TabIndex = 32;
@@ -74,7 +74,7 @@
             this.btnAccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAccion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAccion.ForeColor = System.Drawing.Color.White;
-            this.btnAccion.Location = new System.Drawing.Point(22, 152);
+            this.btnAccion.Location = new System.Drawing.Point(22, 190);
             this.btnAccion.Name = "btnAccion";
             this.btnAccion.Size = new System.Drawing.Size(236, 26);
             this.btnAccion.TabIndex = 33;
@@ -84,12 +84,11 @@
             // 
             // lblDescripcion
             // 
-            this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.Black;
             this.lblDescripcion.Location = new System.Drawing.Point(18, 78);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(686, 22);
+            this.lblDescripcion.Size = new System.Drawing.Size(1019, 32);
             this.lblDescripcion.TabIndex = 34;
             this.lblDescripcion.Text = "A continuación puede acceder a su autoevaluación del NombrePeriodo ";
             // 
@@ -106,6 +105,7 @@
             this.Controls.Add(this.lblMisObjetivos);
             this.Name = "frmEvAutoevaluacionPantallaPrevia";
             this.Text = "frmEvAutoevaluacionPantallaPrevia";
+            this.Load += new System.EventHandler(this.frmEvAutoevaluacionPantallaPrevia_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
