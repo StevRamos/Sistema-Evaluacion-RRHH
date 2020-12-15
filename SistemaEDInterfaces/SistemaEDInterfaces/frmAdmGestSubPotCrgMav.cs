@@ -154,13 +154,25 @@ namespace SistemaEDInterfaces
                         }
 
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no ingresaron correctamente los ID's de los subpotenciales." +
+                        "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente de competencias");
+                    }
                 }
                 //Para insertar
                 else if (rdbInsMavSubPot.Checked)
                 {
+                    BindingList<CriterioWS.criterio> listasubpotenciales = new BindingList<CriterioWS.criterio>(daoCriterio.listar(3, ""));
+                    int validar = 0;
                     foreach (var linea in lineasSubpotenciales)
                     {
+                        validar = 0;
                         if (linea == "") continue;
                         var valores = linea.Split(',');
 
@@ -175,15 +187,33 @@ namespace SistemaEDInterfaces
                         criterio.tipo = (int)TipoCriterio.Subpotencial;
                         criterio.criterioPadre = new CriterioWS.criterio();
                         criterio.criterioPadre.idCriterio = idCriterioPadre;
-
-                        resultado = daoCriterio.insertarMasivo(criterio);
-                        if (resultado==0)
+                        foreach (CriterioWS.criterio subpotencial in listasubpotenciales)
+                        {
+                            if (subpotencial.nombre.Equals(criterio.nombre))
+                            {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoCriterio.insertarMasivo(criterio);
+                        }
+                        if (resultado == 0 || validar == 1)
                         {
                             errores = errores + linea + "\n";
                         }
-                        
+
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv de subpotenciales que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
 
             }
@@ -223,14 +253,27 @@ namespace SistemaEDInterfaces
                         }
 
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no ingresó correctamente el nombre de los subpotenciales" +
+                            ",el nombre del puesto de trabajo o el nombre del periodo actual." +
+                        "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
 
                 }
                 //Para insertar 
                 if (rdbInsMavSubPotPesos.Checked)
                 {
+                    BindingList<PesoCriterioWS.pesoCriterio> listapesosSubPot = new BindingList<PesoCriterioWS.pesoCriterio>(daoPesoCriterio.listarPesosCriterios(3,"","",""));
+                    int validar = 0;
                     foreach (var linea in lineasPesos)
                     {
+                        validar = 0;
                         if (linea == "") continue;
                         var valores = linea.Split(',');
 
@@ -248,26 +291,42 @@ namespace SistemaEDInterfaces
                         pesoCriterio.periodo = new PesoCriterioWS.periodo();
                         pesoCriterio.periodo.nombre = nombrePeriodo;
                         pesoCriterio.peso = peso;
-
-                        resultado = daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
-                        if (resultado == 0)
+                        foreach (PesoCriterioWS.pesoCriterio pesos in listapesosSubPot)
+                        {
+                            if ((pesos.periodo.idPeriodo == pesoCriterio.periodo.idPeriodo) && (pesos.puestoTrabajo.idPuestoTrabajo == pesoCriterio.puestoTrabajo.idPuestoTrabajo) && (pesos.criterio.idCriterio == pesoCriterio.criterio.idCriterio))
+                            {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
+                        }
+                        if (resultado == 0 || validar == 1)
                         {
                             errores = errores + linea + "\n";
                         }
-
-
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv de pesos subpotenciales que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
             }
 
 
             //Falta realizar validacion para ver si se insertaron/actualizarion correctamente las potenciales/pesos 
             Global.terminarEspera(this);
-            MessageBox.Show("Se procesaron correctamente los archivos.",
-                                   "Mensaje de confirmación",
-                                   MessageBoxButtons.OK,
-                                   MessageBoxIcon.Information);
+            //MessageBox.Show("Se procesaron correctamente los archivos.",
+            //                       "Mensaje de confirmación",
+            //                       MessageBoxButtons.OK,
+            //                       MessageBoxIcon.Information);
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

@@ -39,7 +39,6 @@ namespace SistemaEDInterfaces
         {
             int valido = 1;
 
-            //Accion para cargar los datos a la base de datos
             if (!(rdbActCargaMavCom.Checked) && !(rdbInsCargaMavCom.Checked) && txtNomArchComMav.Text != "")
             {
                 MessageBox.Show("Debe seleccionar si desea insertar o actualizar competencias.",
@@ -101,8 +100,6 @@ namespace SistemaEDInterfaces
             {
 
                 string[] lineasCompetencias = File.ReadAllLines(txtNomArchComMav.Text);
-
-                //Para Actualizar: 
                 if (rdbActCargaMavCom.Checked)
                 {
                     foreach (var linea in lineasCompetencias)
@@ -117,24 +114,19 @@ namespace SistemaEDInterfaces
 
                         if (nombre != "no")
                         {
-
-                            //Se actualiza
                             criterio.nombre = nombre;
                         }
                         else
                         {
-                            //No se actualiza 
                             criterio.nombre = "";
                         }
 
                         if (descripcion != "no")
                         {
-                            //Se actualiza
                             criterio.descripcion = descripcion;
                         }
                         else
                         {
-                            //No se actualiza
                             criterio.descripcion = "";
                         }
                         //No actualizar competencia
@@ -146,13 +138,26 @@ namespace SistemaEDInterfaces
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no ingresaron correctamente los ID's de las competencias." +
+                        "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente de competencias");
+                    }
                 }
                 //Para insertar
                 else if (rdbInsCargaMavCom.Checked)
                 {
+                    BindingList<CriterioWS.criterio> listacompetencias = new BindingList<CriterioWS.criterio>(daoCriterio.listar(0, ""));
+                    int validar = 0;
+                    
                     foreach (var linea in lineasCompetencias)
                     {
+                        validar = 0;
                         var valores = linea.Split(',');
 
                         CriterioWS.criterio criterio = new CriterioWS.criterio();
@@ -166,13 +171,32 @@ namespace SistemaEDInterfaces
                         criterio.criterioPadre = new CriterioWS.criterio();
                         criterio.criterioPadre.idCriterio = -1;
 
-                        resultado = daoCriterio.insertarMasivo(criterio);
-                        if (resultado == 0)
+                        foreach (CriterioWS.criterio competencia in listacompetencias)
+                        {
+                            if (competencia.nombre.Equals(criterio.nombre))
+                            {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoCriterio.insertarMasivo(criterio);
+                        }
+                        if (resultado == 0 || validar == 1)
                         {
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv de competencias que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
 
             }
@@ -187,6 +211,7 @@ namespace SistemaEDInterfaces
                 {
                     foreach (var linea in lineasPesos)
                     {
+                        if (linea == "") continue;
                         var valores = linea.Split(',');
 
                         PesoCriterioWS.pesoCriterio pesoCriterio = new PesoCriterioWS.pesoCriterio();
@@ -211,13 +236,26 @@ namespace SistemaEDInterfaces
                         }
 
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no ingresó correctamente el nombre de la competencia" +
+                            ",el nombre del puesto de trabajo o el nombre del periodo actual." +
+                        "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
                 //Para insertar 
                 if (rdbInsCargaMavCompePesos.Checked)
                 {
+                    BindingList<PesoCriterioWS.pesoCriterio> listapesoscompetencias = new BindingList<PesoCriterioWS.pesoCriterio>(daoPesoCriterio.listarPesosCriterios(0,"","",""));
+                    int validar = 0;
                     foreach (var linea in lineasPesos)
                     {
+                        validar = 0;
                         var valores = linea.Split(',');
 
                         PesoCriterioWS.pesoCriterio pesoCriterio = new PesoCriterioWS.pesoCriterio();
@@ -235,24 +273,43 @@ namespace SistemaEDInterfaces
                         pesoCriterio.periodo.nombre = nombrePeriodo;
                         pesoCriterio.peso = peso;
 
-                        resultado = daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
-                        if (resultado == 0)
+                        foreach (PesoCriterioWS.pesoCriterio pesos in listapesoscompetencias)
+                        {
+                            if ((pesos.periodo.idPeriodo == pesoCriterio.periodo.idPeriodo) && (pesos.puestoTrabajo.idPuestoTrabajo == pesoCriterio.puestoTrabajo.idPuestoTrabajo)  && (pesos.criterio.idCriterio == pesoCriterio.criterio.idCriterio))
+                            {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
+                        }
+                        if (resultado == 0 || validar == 1)
                         {
                             errores = errores + linea + "\n";
                         }
 
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv de pesos competencias que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
             }
 
 
             //Falta realizar validacion para ver si se insertaron/actualizarion correctamente las competencias/pesos 
             Global.terminarEspera(this);
-            MessageBox.Show("Se procesaron correctamente los archivos.",
-                                   "Mensaje de confirmación",
-                                   MessageBoxButtons.OK,
-                                   MessageBoxIcon.Information);
+            //MessageBox.Show("Se procesaron correctamente los archivos.",
+            //                       "Mensaje de confirmación",
+            //                       MessageBoxButtons.OK,
+            //                       MessageBoxIcon.Information);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
