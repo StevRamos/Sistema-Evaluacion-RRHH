@@ -172,7 +172,7 @@ namespace SistemaEDInterfaces
                 if (daoEvaluacionDesempenho.actualizarEstadoPlanificacion(evaluacionDesempenho) == 1)
                 {
                     //Enviar correo//
-                    Correo.enviarCorreo("rodriguez.diego@pucp.edu.pe",
+                    Correo.enviarCorreo(Global.colaboradorLoggeado.correo,
                                          Mensaje.TituloRegistroObjetivos("Jorge Baca"),
                                          Mensaje.CuerpoRegistroObjetivos("Jorge Baca", "Jorge Baca", 123456789));
                     ////////////////////////////////////////////

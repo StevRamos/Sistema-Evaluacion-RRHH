@@ -395,38 +395,46 @@ namespace SistemaEDInterfaces
                 for (int j = 0; j < evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion.Count(); j++)
                 {
                     SeccionSubcompetencia agrupacionSubcompetencia = secciones.ElementAt(i).ElementAt(j);
+                    //Las notas finales se settean temporalmente con la nota previa, luego pueden cambiarse en la evaluacion final 
                     if (agrupacionSubcompetencia.RbNota1.Checked)
                     {
                         evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaPrevia = 1;
+                        evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaFinal = 1;
 
                     }
                     else if (agrupacionSubcompetencia.RbNota2.Checked)
                     {
                         evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaPrevia = 2;
-
+                        evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaFinal = 2;
                     }
                     else if (agrupacionSubcompetencia.RbNota3.Checked)
                     {
                         evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaPrevia = 3;
+                        evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaFinal = 3;
                     }
                     else if (agrupacionSubcompetencia.RbNota4.Checked)
                     {
                         evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaPrevia = 4;
+                        evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaFinal = 4;
                     }
                     else if (agrupacionSubcompetencia.RbNota5.Checked)
                     {
                         evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaPrevia = 5;
+                        evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaFinal = 5;
                     }
                     notaCriterio += evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].notaPrevia
                                                 * (evaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion[j].pesoCriterio.peso / 100);
 
                 }
                 evaluacionDesempenho.lineasEvaluacion[i].notaPrevia = Math.Round(notaCriterio, 2);
+                evaluacionDesempenho.lineasEvaluacion[i].notaFinal = Math.Round(notaCriterio, 2);
                 notaComp += notaCriterio * (evaluacionDesempenho.lineasEvaluacion[i].pesoCriterio.peso / 100);
             }
             for (int i = 0; i < evaluacionDesempenho.objetivos.Count(); i++)
             {
                 evaluacionDesempenho.objetivos[i].notaPrevia = Double.Parse(txtBoxObjetivos.ElementAt(i).Text);
+                evaluacionDesempenho.objetivos[i].notaFinal = Double.Parse(txtBoxObjetivos.ElementAt(i).Text);
+
                 if (evaluacionDesempenho.objetivos[i].notaPrevia > evaluacionDesempenho.objetivos[i].meta)
                 {
                     notaObj += 1 * (evaluacionDesempenho.objetivos[i].peso / 100);
@@ -435,6 +443,8 @@ namespace SistemaEDInterfaces
             }
             evaluacionDesempenho.notaPreviaComp = Math.Round(notaComp, 2);
             evaluacionDesempenho.notaPreviaObj = Math.Round(notaObj, 2);
+            evaluacionDesempenho.notaFinalComp = Math.Round(notaComp, 2);
+            evaluacionDesempenho.notaFinalObj = Math.Round(notaObj, 2);
         }
         private void actualizarInformacionFormulario()
         {

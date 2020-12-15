@@ -33,12 +33,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblMisObjetivos = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvPeriodos = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPeriodos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,6 +68,17 @@
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
+            this.label1.Location = new System.Drawing.Point(18, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(223, 23);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Seleccione un periodo:";
+            // 
             // dgvPeriodos
             // 
             this.dgvPeriodos.AllowUserToAddRows = false;
@@ -90,9 +102,10 @@
             this.ID,
             this.Nombre,
             this.FechaInicio,
-            this.FechaFin});
+            this.FechaFin,
+            this.Estado});
             this.dgvPeriodos.EnableHeadersVisualStyles = false;
-            this.dgvPeriodos.Location = new System.Drawing.Point(24, 135);
+            this.dgvPeriodos.Location = new System.Drawing.Point(22, 142);
             this.dgvPeriodos.MultiSelect = false;
             this.dgvPeriodos.Name = "dgvPeriodos";
             this.dgvPeriodos.ReadOnly = true;
@@ -111,12 +124,12 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvPeriodos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPeriodos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPeriodos.Size = new System.Drawing.Size(1025, 378);
-            this.dgvPeriodos.TabIndex = 32;
+            this.dgvPeriodos.Size = new System.Drawing.Size(1039, 359);
+            this.dgvPeriodos.TabIndex = 34;
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "ID";
+            this.ID.DataPropertyName = "idPeriodo";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -126,7 +139,7 @@
             // 
             // Nombre
             // 
-            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.DataPropertyName = "nombre";
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
@@ -154,16 +167,12 @@
             this.FechaFin.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Programmatic;
             this.FechaFin.Width = 200;
             // 
-            // label1
+            // Estado
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(66)))), ((int)(((byte)(122)))));
-            this.label1.Location = new System.Drawing.Point(18, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 23);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Seleccione un periodo:";
+            this.Estado.DataPropertyName = "Estado";
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
             // 
             // frmHisMisEvaluaciones
             // 
@@ -171,8 +180,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1107, 749);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvPeriodos);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.lblMisObjetivos);
             this.Name = "frmHisMisEvaluaciones";
@@ -188,11 +197,12 @@
 
         private System.Windows.Forms.Label lblMisObjetivos;
         private System.Windows.Forms.Button btnSeleccionar;
-        private System.Windows.Forms.DataGridView dgvPeriodos;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgvPeriodos;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFin;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

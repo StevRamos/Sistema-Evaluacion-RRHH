@@ -12,14 +12,77 @@ namespace SistemaEDInterfaces
 {
     public partial class frmHisMisEvaluaciones : Form
     {
+        private PeriodoWS.PeriodoWSClient daoPeriodo;
+        private BindingList<PeriodoWS.periodo> periodosPasados;
+        private EvaluacionPotencialWS.EvaluacionPotencialWSClient daoEvaluacionPotencial;
+        private EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient daoEvaluacionDesempenho; 
         public frmHisMisEvaluaciones()
         {
             InitializeComponent();
+            daoPeriodo = new PeriodoWS.PeriodoWSClient();
+            daoEvaluacionPotencial = new EvaluacionPotencialWS.EvaluacionPotencialWSClient();
+            daoEvaluacionDesempenho = new EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient(); 
+            periodosPasados = new BindingList<PeriodoWS.periodo>(); 
+            dgvPeriodos.AutoGenerateColumns = false;
+            PeriodoWS.periodo []lista = daoPeriodo.listarPeriodos();
+            if (lista != null)
+            {
+                for(int i = 0; i < lista.Count(); i++)
+                {
+                    if(lista[i].idPeriodo!=Global.periodoActual.idPeriodo)periodosPasados.Add(lista[i]); 
+                }
+                dgvPeriodos.DataSource = periodosPasados; 
+            }
+            
         }
 
+        private int validarEvaluacion(PeriodoWS.periodo periodoSeleccionado)
+        {
+            int esValido = 1;
+            EvaluacionDesempenhoWS.evaluacionDesempenho evaluacionDesempenho = 
+                                                daoEvaluacionDesempenho.obtenerEvaluacionDesempenho(Global.colaboradorLoggeado.idColaborador, periodoSeleccionado.idPeriodo);
+            EvaluacionPotencialWS.evaluacion evaluacionPotencial
+                                                = daoEvaluacionPotencial.obtenerEvaluacionPotencial(Global.colaboradorLoggeado.idColaborador, periodoSeleccionado.idPeriodo);
+            int resultado = 0; 
+            if(evaluacionDesempenho == null || evaluacionPotencial == null)
+            {
+                return 0; 
+            }
+            if(evaluacionDesempenho.idEvaluacion == 0 || evaluacionPotencial.idEvaluacion == 0)
+            {
+                return 0; 
+            }
+            return esValido; 
+        }
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            Global.formPrincipal.abrirFormularioHijo(false, new frmHisMisEvaluacionesResultado());
+            if (dgvPeriodos.CurrentCell == null)
+            {
+                MessageBox.Show("Debe seleccionar un periodo.",
+                               "Mensaje de error",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                return;
+            }
+
+            PeriodoWS.periodo periodoSeleccionado = (PeriodoWS.periodo)dgvPeriodos.CurrentRow.DataBoundItem; 
+            //Verificar si tiene evaluacion en ese periodo 
+            Global.iniciarEspera(this);
+            if (validarEvaluacion(periodoSeleccionado) == 0)
+            {
+                MessageBox.Show("Usted no tiene una evaluación en ese periodo .",
+                               "Mensaje de error",
+                               MessageBoxButtons.OK,
+                               MessageBoxIcon.Error);
+                Global.terminarEspera(this);
+                return;
+            }
+            Global.terminarEspera(this); 
+            frmEvMisResultados form = new frmEvMisResultados();
+            form.Colaborador = Global.colaboradorLoggeado;
+            form.Periodo = periodoSeleccionado;
+            form.Modo = ModoResultados.HisMisEval;
+            Global.formPrincipal.abrirFormularioHijo(false, form);
         }
         public void agregarDatosDummyDGV()
         {
@@ -54,7 +117,8 @@ namespace SistemaEDInterfaces
         }
         private void frmHisMisEvaluaciones_Load(object sender, EventArgs e)
         {
-            agregarDatosDummyDGV();
+
+            //agregarDatosDummyDGV();
         }
     }
 }
