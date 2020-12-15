@@ -28,7 +28,7 @@ namespace SistemaEDInterfaces
 
             daoPeriodo = new PeriodoWS.PeriodoWSClient();
             daoGerencia = new GerenciaWS.GerenciaWSClient();
-
+            
         }
 
         private int realizarValidaciones()
@@ -199,8 +199,8 @@ namespace SistemaEDInterfaces
             periodo.pesoEvalObj = (Double.Parse(txtPesoObjetivos.Text))/100;
             periodo.pesoEvalComp = (Double.Parse(txtPesoCompetencia.Text))/100;
             periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
-            //periodo.horaNotificacion = dtpHoraNotificacion.Value.ToString(); 
-
+            periodo.horaNotificacion = dtpHoraNotificacion.Value.ToString("HH:mm:ss"); 
+            
             periodo.configuracionFechas = gerenciasPeriodos.ToArray();
             llenarEscalasValoresPredeterminados();
             llenarItemsPDIValoresPredeterminados();
@@ -235,7 +235,7 @@ namespace SistemaEDInterfaces
             }
             //Crear la lista de gerenciaXperiodos
             gerenciasPeriodos = new BindingList<PeriodoWS.gerenciaPeriodo>();
-
+            dtpHoraNotificacion.Value = DateTime.Parse("08:00:00");
             foreach (GerenciaWS.gerencia g in gerencias)
             {
                 PeriodoWS.gerenciaPeriodo gp = new PeriodoWS.gerenciaPeriodo();

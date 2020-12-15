@@ -419,10 +419,10 @@ namespace SistemaEDInterfaces
             {
                 byte[] arreglo;
 
-                arreglo = daoReporte.generarReporteEvaluacion(Global.colaboradorLoggeado.idColaborador); //dummy
+                arreglo = daoReporte.generarReporteEvaluacionColaborador(Global.colaboradorLoggeado.idColaborador); 
 
                 Global.iniciarEspera(this);
-                //File.WriteAllBytes(sfdReporte.FileName, arreglo);
+                File.WriteAllBytes(sfdReporte.FileName, arreglo);
                 Global.terminarEspera(this);
             }
         }

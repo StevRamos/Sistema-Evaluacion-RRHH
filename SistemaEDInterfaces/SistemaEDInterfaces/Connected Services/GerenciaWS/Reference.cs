@@ -16,6 +16,15 @@ namespace SistemaEDInterfaces.GerenciaWS {
     public interface GerenciaWS {
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse insertarGerencia(SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaResponse")]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse> insertarGerenciaAsync(SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest request);
+        
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/eliminarGerenciaRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/eliminarGerenciaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -34,15 +43,6 @@ namespace SistemaEDInterfaces.GerenciaWS {
         System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarGerenciasResponse> listarGerenciasAsync(SistemaEDInterfaces.GerenciaWS.listarGerenciasRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse insertarGerencia(SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/insertarGerenciaResponse")]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse> insertarGerenciaAsync(SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarXPeriodoActualRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/listarXPeriodoActualResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -52,15 +52,6 @@ namespace SistemaEDInterfaces.GerenciaWS {
         System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarXPeriodoActualResponse> listarXPeriodoActualAsync(SistemaEDInterfaces.GerenciaWS.listarXPeriodoActualRequest request);
         
         // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse listarGerenciasXColaborador(SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorResponse")]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse> listarGerenciasXColaboradorAsync(SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest request);
-        
-        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/actualizarGerenciaRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/actualizarGerenciaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -68,42 +59,15 @@ namespace SistemaEDInterfaces.GerenciaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/actualizarGerenciaRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/actualizarGerenciaResponse")]
         System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.actualizarGerenciaResponse> actualizarGerenciaAsync(SistemaEDInterfaces.GerenciaWS.actualizarGerenciaRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarGerencia", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarGerenciaRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idGerencia;
+        // CODEGEN: El parámetro 'return' requiere información adicional de esquema que no se puede capturar con el modo de parámetros. El atributo específico es 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse listarGerenciasXColaborador(SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest request);
         
-        public eliminarGerenciaRequest() {
-        }
-        
-        public eliminarGerenciaRequest(int idGerencia) {
-            this.idGerencia = idGerencia;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarGerenciaResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarGerenciaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarGerenciaResponse() {
-        }
-        
-        public eliminarGerenciaResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorRequest", ReplyAction="http://services.sed.pucp.edu.pe/GerenciaWS/listarGerenciasXColaboradorResponse")]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse> listarGerenciasXColaboradorAsync(SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest request);
     }
     
     /// <remarks/>
@@ -897,7 +861,7 @@ namespace SistemaEDInterfaces.GerenciaWS {
         
         private bool fechaInicioFieldSpecified;
         
-        private time horaNotificacionField;
+        private string horaNotificacionField;
         
         private int idPeriodoField;
         
@@ -1035,7 +999,7 @@ namespace SistemaEDInterfaces.GerenciaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public time horaNotificacion {
+        public string horaNotificacion {
             get {
                 return this.horaNotificacionField;
             }
@@ -2615,63 +2579,20 @@ namespace SistemaEDInterfaces.GerenciaWS {
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.sed.pucp.edu.pe/")]
-    public partial class time : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.sed.pucp.edu.pe/")]
     public enum estadoPeriodo {
         
         /// <remarks/>
-        ACTIVO,
+        ELIMINADO,
         
         /// <remarks/>
-        INACTIVO,
+        CREADO,
         
         /// <remarks/>
-        ELIMINADA,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGerencias", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarGerenciasRequest {
+        ENPROGRESO,
         
-        public listarGerenciasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGerenciasResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarGerenciasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SistemaEDInterfaces.GerenciaWS.gerencia[] @return;
-        
-        public listarGerenciasResponse() {
-        }
-        
-        public listarGerenciasResponse(SistemaEDInterfaces.GerenciaWS.gerencia[] @return) {
-            this.@return = @return;
-        }
+        /// <remarks/>
+        FINALIZADO,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2713,6 +2634,70 @@ namespace SistemaEDInterfaces.GerenciaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarGerencia", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarGerenciaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idGerencia;
+        
+        public eliminarGerenciaRequest() {
+        }
+        
+        public eliminarGerenciaRequest(int idGerencia) {
+            this.idGerencia = idGerencia;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarGerenciaResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarGerenciaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarGerenciaResponse() {
+        }
+        
+        public eliminarGerenciaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGerencias", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarGerenciasRequest {
+        
+        public listarGerenciasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGerenciasResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarGerenciasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SistemaEDInterfaces.GerenciaWS.gerencia[] @return;
+        
+        public listarGerenciasResponse() {
+        }
+        
+        public listarGerenciasResponse(SistemaEDInterfaces.GerenciaWS.gerencia[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarXPeriodoActual", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarXPeriodoActualRequest {
         
@@ -2734,42 +2719,6 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
         
         public listarXPeriodoActualResponse(SistemaEDInterfaces.GerenciaWS.gerencia[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGerenciasXColaborador", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarGerenciasXColaboradorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int idColaborador;
-        
-        public listarGerenciasXColaboradorRequest() {
-        }
-        
-        public listarGerenciasXColaboradorRequest(int idColaborador) {
-            this.idColaborador = idColaborador;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGerenciasXColaboradorResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarGerenciasXColaboradorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public SistemaEDInterfaces.GerenciaWS.gerencia[] @return;
-        
-        public listarGerenciasXColaboradorResponse() {
-        }
-        
-        public listarGerenciasXColaboradorResponse(SistemaEDInterfaces.GerenciaWS.gerencia[] @return) {
             this.@return = @return;
         }
     }
@@ -2810,6 +2759,42 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGerenciasXColaborador", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarGerenciasXColaboradorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int idColaborador;
+        
+        public listarGerenciasXColaboradorRequest() {
+        }
+        
+        public listarGerenciasXColaboradorRequest(int idColaborador) {
+            this.idColaborador = idColaborador;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarGerenciasXColaboradorResponse", WrapperNamespace="http://services.sed.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarGerenciasXColaboradorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.sed.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public SistemaEDInterfaces.GerenciaWS.gerencia[] @return;
+        
+        public listarGerenciasXColaboradorResponse() {
+        }
+        
+        public listarGerenciasXColaboradorResponse(SistemaEDInterfaces.GerenciaWS.gerencia[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface GerenciaWSChannel : SistemaEDInterfaces.GerenciaWS.GerenciaWS, System.ServiceModel.IClientChannel {
     }
@@ -2835,6 +2820,29 @@ namespace SistemaEDInterfaces.GerenciaWS {
         
         public GerenciaWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse SistemaEDInterfaces.GerenciaWS.GerenciaWS.insertarGerencia(SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest request) {
+            return base.Channel.insertarGerencia(request);
+        }
+        
+        public int insertarGerencia(SistemaEDInterfaces.GerenciaWS.gerencia gerencia) {
+            SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest inValue = new SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest();
+            inValue.gerencia = gerencia;
+            SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse retVal = ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).insertarGerencia(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse> SistemaEDInterfaces.GerenciaWS.GerenciaWS.insertarGerenciaAsync(SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest request) {
+            return base.Channel.insertarGerenciaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse> insertarGerenciaAsync(SistemaEDInterfaces.GerenciaWS.gerencia gerencia) {
+            SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest inValue = new SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest();
+            inValue.gerencia = gerencia;
+            return ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).insertarGerenciaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2882,29 +2890,6 @@ namespace SistemaEDInterfaces.GerenciaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse SistemaEDInterfaces.GerenciaWS.GerenciaWS.insertarGerencia(SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest request) {
-            return base.Channel.insertarGerencia(request);
-        }
-        
-        public int insertarGerencia(SistemaEDInterfaces.GerenciaWS.gerencia gerencia) {
-            SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest inValue = new SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest();
-            inValue.gerencia = gerencia;
-            SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse retVal = ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).insertarGerencia(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse> SistemaEDInterfaces.GerenciaWS.GerenciaWS.insertarGerenciaAsync(SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest request) {
-            return base.Channel.insertarGerenciaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.insertarGerenciaResponse> insertarGerenciaAsync(SistemaEDInterfaces.GerenciaWS.gerencia gerencia) {
-            SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest inValue = new SistemaEDInterfaces.GerenciaWS.insertarGerenciaRequest();
-            inValue.gerencia = gerencia;
-            return ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).insertarGerenciaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         SistemaEDInterfaces.GerenciaWS.listarXPeriodoActualResponse SistemaEDInterfaces.GerenciaWS.GerenciaWS.listarXPeriodoActual(SistemaEDInterfaces.GerenciaWS.listarXPeriodoActualRequest request) {
             return base.Channel.listarXPeriodoActual(request);
         }
@@ -2923,29 +2908,6 @@ namespace SistemaEDInterfaces.GerenciaWS {
         public System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarXPeriodoActualResponse> listarXPeriodoActualAsync() {
             SistemaEDInterfaces.GerenciaWS.listarXPeriodoActualRequest inValue = new SistemaEDInterfaces.GerenciaWS.listarXPeriodoActualRequest();
             return ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).listarXPeriodoActualAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse SistemaEDInterfaces.GerenciaWS.GerenciaWS.listarGerenciasXColaborador(SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest request) {
-            return base.Channel.listarGerenciasXColaborador(request);
-        }
-        
-        public SistemaEDInterfaces.GerenciaWS.gerencia[] listarGerenciasXColaborador(int idColaborador) {
-            SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest inValue = new SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest();
-            inValue.idColaborador = idColaborador;
-            SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse retVal = ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).listarGerenciasXColaborador(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse> SistemaEDInterfaces.GerenciaWS.GerenciaWS.listarGerenciasXColaboradorAsync(SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest request) {
-            return base.Channel.listarGerenciasXColaboradorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse> listarGerenciasXColaboradorAsync(int idColaborador) {
-            SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest inValue = new SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest();
-            inValue.idColaborador = idColaborador;
-            return ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).listarGerenciasXColaboradorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2969,6 +2931,29 @@ namespace SistemaEDInterfaces.GerenciaWS {
             SistemaEDInterfaces.GerenciaWS.actualizarGerenciaRequest inValue = new SistemaEDInterfaces.GerenciaWS.actualizarGerenciaRequest();
             inValue.gerencia = gerencia;
             return ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).actualizarGerenciaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse SistemaEDInterfaces.GerenciaWS.GerenciaWS.listarGerenciasXColaborador(SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest request) {
+            return base.Channel.listarGerenciasXColaborador(request);
+        }
+        
+        public SistemaEDInterfaces.GerenciaWS.gerencia[] listarGerenciasXColaborador(int idColaborador) {
+            SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest inValue = new SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest();
+            inValue.idColaborador = idColaborador;
+            SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse retVal = ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).listarGerenciasXColaborador(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse> SistemaEDInterfaces.GerenciaWS.GerenciaWS.listarGerenciasXColaboradorAsync(SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest request) {
+            return base.Channel.listarGerenciasXColaboradorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorResponse> listarGerenciasXColaboradorAsync(int idColaborador) {
+            SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest inValue = new SistemaEDInterfaces.GerenciaWS.listarGerenciasXColaboradorRequest();
+            inValue.idColaborador = idColaborador;
+            return ((SistemaEDInterfaces.GerenciaWS.GerenciaWS)(this)).listarGerenciasXColaboradorAsync(inValue);
         }
     }
 }
