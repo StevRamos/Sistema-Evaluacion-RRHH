@@ -264,6 +264,7 @@ namespace SistemaEDInterfaces
                 "Mensaje Informativo", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
             verificarEstado();
+
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
