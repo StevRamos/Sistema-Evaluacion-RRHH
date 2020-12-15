@@ -113,6 +113,7 @@ namespace SistemaEDInterfaces
 
             btnGuardar.Location = new Point(705, y);
             btnFinalizar.Location = new Point(896, y);
+            btnRegresar.Location = new Point(46, y);
         }
 
         private void asignarDatosNoActualizables()
@@ -163,6 +164,15 @@ namespace SistemaEDInterfaces
             {
                 btnFinalizar.Enabled = false;
                 btnGuardar.Enabled = false;
+                int i = 0;
+                for (i = 0; i < txtBoxCompetencias.Count; i++)
+                {
+                    txtBoxCompetencias[i].Enabled = false;
+                }
+                for (i = 0; i < dtpFechas.Count; i++)
+                {
+                    dtpFechas[i].Enabled = false;
+                }
             }
 
         }
@@ -233,6 +243,11 @@ namespace SistemaEDInterfaces
                 MessageBoxIcon.Information);
                 verificarEstado();
             }
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.cerrarFormularioHijo();
         }
     }
 }
