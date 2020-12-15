@@ -41,10 +41,9 @@ namespace SistemaEDInterfaces
         }
 
 
-
         private void btnGestColabCargaMav_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmAdmGestColabCargaMav();
+            frmAdmGestColabCargaMav formulario = new frmAdmGestColabCargaMav();
             formulario.Show();
         }
 

@@ -39,7 +39,6 @@ namespace SistemaEDInterfaces
             cmbCargos.DataSource = nombresPuestos;
             cmbPeriodos.DataSource = nombresPeriodos; 
         }
-
         private void cargarNombres(BindingList<PeriodoWS.periodo> periodos, BindingList<PuestoTrabajoWS.puestoTrabajo> puestos,
                                    BindingList<String> nombresPeriodos, BindingList<String> nombresPuestos)
         {
@@ -74,7 +73,8 @@ namespace SistemaEDInterfaces
 
         private void btnCargarMasivaCom_Click_1(object sender, EventArgs e)
         {
-            Form formulario = new frmAdmGestComCrgMav();
+            frmAdmGestComCrgMav formulario = new frmAdmGestComCrgMav();
+            formulario.FrmCompetencias = this;
             formulario.Show();
         }
 

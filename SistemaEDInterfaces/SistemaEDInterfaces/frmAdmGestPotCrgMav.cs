@@ -16,9 +16,13 @@ namespace SistemaEDInterfaces
     {
         CriterioWS.CriterioWSClient daoCriterio;
         PesoCriterioWS.PesoCriterioWSClient daoPesoCriterio;
+        private frmAdmGestPot frmPotenciales;
         //para las validaciones
         int resultado;
         string errores = "";
+
+        public frmAdmGestPot FrmPotenciales { get => frmPotenciales; set => frmPotenciales = value; }
+
         public frmAdmGestPotCrgMav()
         {
             InitializeComponent();
@@ -102,6 +106,7 @@ namespace SistemaEDInterfaces
                     {
                         MessageBox.Show("El archivo se cargó correctamente de potenciales");
                     }
+                    FrmPotenciales.actualizarDGV();
                 }
                 //Para insertar
                 else if (rdbInsMavPot.Checked)
@@ -149,6 +154,7 @@ namespace SistemaEDInterfaces
                     {
                         MessageBox.Show("El archivo se cargó correctamente");
                     }
+                    FrmPotenciales.actualizarDGV();
                 }
 
             }
@@ -198,6 +204,7 @@ namespace SistemaEDInterfaces
                     {
                         MessageBox.Show("El archivo se cargó correctamente de los pesos de los potenciales.");
                     }
+                    FrmPotenciales.actualizarDGV();
                 }
                 //Para insertar 
                 if (rdbInsMavPotPesos.Checked)
@@ -251,6 +258,7 @@ namespace SistemaEDInterfaces
                     {
                         MessageBox.Show("El archivo se cargó correctamente");
                     }
+                    FrmPotenciales.actualizarDGV();
                 }
             }
 

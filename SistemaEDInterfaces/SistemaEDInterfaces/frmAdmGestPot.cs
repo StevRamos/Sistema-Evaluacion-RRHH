@@ -39,6 +39,11 @@ namespace SistemaEDInterfaces
             cmbPeriodo.DataSource = nombresPeriodos;
         }
 
+        public void actualizarDGV()
+        {
+            PesoCriterioWS.pesoCriterio[] lista = daoPesoCriterio.listarPesosCriterios((int)TipoCriterio.Potencial, "", "", "");
+            dgvGestPot.DataSource = lista;
+        }
         private void cargarNombres(BindingList<PeriodoWS.periodo> periodos, BindingList<PuestoTrabajoWS.puestoTrabajo> puestos,
                                   BindingList<String> nombresPeriodos, BindingList<String> nombresPuestos)
         {
@@ -78,7 +83,8 @@ namespace SistemaEDInterfaces
 
         private void btnCargarMasivaPot_Click(object sender, EventArgs e)
         {
-            Form formulario = new frmAdmGestPotCrgMav();
+            frmAdmGestPotCrgMav formulario = new frmAdmGestPotCrgMav();
+            formulario.FrmPotenciales = this; 
             formulario.Show();
         }
 

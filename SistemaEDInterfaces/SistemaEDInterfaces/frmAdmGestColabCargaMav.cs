@@ -14,9 +14,12 @@ namespace SistemaEDInterfaces
 {
     public partial class frmAdmGestColabCargaMav : Form
     {
+        private frmAdmGestColab frmColab; 
         private ColaboradorWS.ColaboradorWSClient daoColaborador;
         int resultado;
         string errores = "";
+
+
         public frmAdmGestColabCargaMav()
         {
             InitializeComponent();

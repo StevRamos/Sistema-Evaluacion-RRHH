@@ -15,6 +15,7 @@ namespace SistemaEDInterfaces
         private PesoCriterioWS.PesoCriterioWSClient daoPesoCriterio;
         private PeriodoWS.PeriodoWSClient daoPeriodo;
         private PuestoTrabajoWS.PuestoTrabajoWSClient daoPuestoTrabajo;
+        
         public frmAdmGestSubpot()
         {
             InitializeComponent();

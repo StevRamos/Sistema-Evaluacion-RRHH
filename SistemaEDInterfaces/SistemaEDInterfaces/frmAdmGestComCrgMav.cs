@@ -16,8 +16,11 @@ namespace SistemaEDInterfaces
     {
         CriterioWS.CriterioWSClient daoCriterio;
         PesoCriterioWS.PesoCriterioWSClient daoPesoCriterio;
+        private frmAdmGestComp frmCompetencias; 
         int resultado;
         string errores = "";
+
+        public frmAdmGestComp FrmCompetencias { get => frmCompetencias; set => frmCompetencias = value; }
 
         public frmAdmGestComCrgMav()
         {
@@ -83,6 +86,7 @@ namespace SistemaEDInterfaces
 
         private void btnRegreCargMavCompePesos_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
 
@@ -312,6 +316,7 @@ namespace SistemaEDInterfaces
             //                       "Mensaje de confirmación",
             //                       MessageBoxButtons.OK,
             //                       MessageBoxIcon.Information);
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

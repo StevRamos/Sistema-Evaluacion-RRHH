@@ -51,7 +51,6 @@ namespace SistemaEDInterfaces
             {
                 deshabilitarBoton(btnPlanValidarObjetivos,panelPlanificacionSubmenu);
                 deshabilitarBoton(btnEvMisTrabajadores, panelEvaluacionSubmenu);
-                deshabilitarBoton(btnHisMisTrabajadores, panelHistorialSubmenu);
                 btnReportes.Hide(); 
             }
         }
@@ -263,12 +262,12 @@ namespace SistemaEDInterfaces
             abrirFormularioHijo(false, new frmHisMisEvaluaciones());
         }
 
-        private void btnHisMisTrabajadores_Click(object sender, EventArgs e)
-        {
-            cambiarTituloBarraSuperior(btnHistorialEv, btnHisMisTrabajadores);
-            cerrarFormulariosActuales();
-            abrirFormularioHijo(false, new frmHisMisTrabajadores());
-        }
+        //private void btnHisMisTrabajadores_Click(object sender, EventArgs e)
+        //{
+        //    cambiarTituloBarraSuperior(btnHistorialEv, btnHisMisTrabajadores);
+        //    cerrarFormulariosActuales();
+        //    abrirFormularioHijo(false, new frmHisMisTrabajadores());
+        //}
 
         //Submenu de Administracion
         private void btnAdmGestCron_Click(object sender, EventArgs e)

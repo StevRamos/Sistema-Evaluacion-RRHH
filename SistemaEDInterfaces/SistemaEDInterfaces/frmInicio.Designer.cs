@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.panelReportesSubmenu = new System.Windows.Forms.Panel();
+            this.btnRepPlanificacion = new System.Windows.Forms.Button();
             this.btnRepPDI = new System.Windows.Forms.Button();
             this.btnRep9Box = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@
             this.btnAdmGestCron = new System.Windows.Forms.Button();
             this.btnAdministracion = new System.Windows.Forms.Button();
             this.panelHistorialSubmenu = new System.Windows.Forms.Panel();
-            this.btnHisMisTrabajadores = new System.Windows.Forms.Button();
             this.btnHisMisEvaluaciones = new System.Windows.Forms.Button();
             this.btnHistorialEv = new System.Windows.Forms.Button();
             this.panelEvaluacionSubmenu = new System.Windows.Forms.Panel();
@@ -71,7 +71,6 @@
             this.lblInicioHoraActual = new System.Windows.Forms.Label();
             this.pbLogoPUCPInicio = new System.Windows.Forms.PictureBox();
             this.timerFechaHoraActual = new System.Windows.Forms.Timer(this.components);
-            this.btnRepPlanificacion = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelReportesSubmenu.SuspendLayout();
             this.panelAdmSubmenu.SuspendLayout();
@@ -114,10 +113,27 @@
             this.panelReportesSubmenu.Controls.Add(this.btnRepPDI);
             this.panelReportesSubmenu.Controls.Add(this.btnRep9Box);
             this.panelReportesSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelReportesSubmenu.Location = new System.Drawing.Point(0, 1191);
+            this.panelReportesSubmenu.Location = new System.Drawing.Point(0, 1164);
             this.panelReportesSubmenu.Name = "panelReportesSubmenu";
             this.panelReportesSubmenu.Size = new System.Drawing.Size(244, 127);
             this.panelReportesSubmenu.TabIndex = 10;
+            // 
+            // btnRepPlanificacion
+            // 
+            this.btnRepPlanificacion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnRepPlanificacion.FlatAppearance.BorderSize = 0;
+            this.btnRepPlanificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRepPlanificacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepPlanificacion.ForeColor = System.Drawing.SystemColors.Control;
+            this.btnRepPlanificacion.Location = new System.Drawing.Point(0, 80);
+            this.btnRepPlanificacion.Name = "btnRepPlanificacion";
+            this.btnRepPlanificacion.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnRepPlanificacion.Size = new System.Drawing.Size(244, 40);
+            this.btnRepPlanificacion.TabIndex = 3;
+            this.btnRepPlanificacion.Text = "Planificacion";
+            this.btnRepPlanificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRepPlanificacion.UseVisualStyleBackColor = true;
+            this.btnRepPlanificacion.Click += new System.EventHandler(this.btnRepPlanificacion_Click);
             // 
             // btnRepPDI
             // 
@@ -162,7 +178,7 @@
             this.btnReportes.ForeColor = System.Drawing.SystemColors.Control;
             this.btnReportes.Image = global::SistemaEDInterfaces.Properties.Resources.reportes;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 1146);
+            this.btnReportes.Location = new System.Drawing.Point(0, 1119);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(244, 45);
             this.btnReportes.TabIndex = 9;
@@ -186,7 +202,7 @@
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestComp);
             this.panelAdmSubmenu.Controls.Add(this.btnAdmGestCron);
             this.panelAdmSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAdmSubmenu.Location = new System.Drawing.Point(0, 703);
+            this.panelAdmSubmenu.Location = new System.Drawing.Point(0, 676);
             this.panelAdmSubmenu.Name = "panelAdmSubmenu";
             this.panelAdmSubmenu.Size = new System.Drawing.Size(244, 443);
             this.panelAdmSubmenu.TabIndex = 8;
@@ -370,7 +386,7 @@
             this.btnAdministracion.ForeColor = System.Drawing.SystemColors.Control;
             this.btnAdministracion.Image = global::SistemaEDInterfaces.Properties.Resources.administracion;
             this.btnAdministracion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdministracion.Location = new System.Drawing.Point(0, 658);
+            this.btnAdministracion.Location = new System.Drawing.Point(0, 631);
             this.btnAdministracion.Name = "btnAdministracion";
             this.btnAdministracion.Size = new System.Drawing.Size(244, 45);
             this.btnAdministracion.TabIndex = 7;
@@ -383,30 +399,12 @@
             // panelHistorialSubmenu
             // 
             this.panelHistorialSubmenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(27)))), ((int)(((byte)(62)))));
-            this.panelHistorialSubmenu.Controls.Add(this.btnHisMisTrabajadores);
             this.panelHistorialSubmenu.Controls.Add(this.btnHisMisEvaluaciones);
             this.panelHistorialSubmenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHistorialSubmenu.Location = new System.Drawing.Point(0, 578);
             this.panelHistorialSubmenu.Name = "panelHistorialSubmenu";
-            this.panelHistorialSubmenu.Size = new System.Drawing.Size(244, 80);
+            this.panelHistorialSubmenu.Size = new System.Drawing.Size(244, 53);
             this.panelHistorialSubmenu.TabIndex = 6;
-            // 
-            // btnHisMisTrabajadores
-            // 
-            this.btnHisMisTrabajadores.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHisMisTrabajadores.FlatAppearance.BorderSize = 0;
-            this.btnHisMisTrabajadores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHisMisTrabajadores.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHisMisTrabajadores.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnHisMisTrabajadores.Location = new System.Drawing.Point(0, 40);
-            this.btnHisMisTrabajadores.Name = "btnHisMisTrabajadores";
-            this.btnHisMisTrabajadores.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnHisMisTrabajadores.Size = new System.Drawing.Size(244, 40);
-            this.btnHisMisTrabajadores.TabIndex = 2;
-            this.btnHisMisTrabajadores.Text = "Mis Trabajadores";
-            this.btnHisMisTrabajadores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHisMisTrabajadores.UseVisualStyleBackColor = true;
-            this.btnHisMisTrabajadores.Click += new System.EventHandler(this.btnHisMisTrabajadores_Click);
             // 
             // btnHisMisEvaluaciones
             // 
@@ -748,23 +746,6 @@
             this.timerFechaHoraActual.Enabled = true;
             this.timerFechaHoraActual.Tick += new System.EventHandler(this.timerFechaHoraActual_Tick);
             // 
-            // btnRepPlanificacion
-            // 
-            this.btnRepPlanificacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRepPlanificacion.FlatAppearance.BorderSize = 0;
-            this.btnRepPlanificacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRepPlanificacion.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRepPlanificacion.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnRepPlanificacion.Location = new System.Drawing.Point(0, 80);
-            this.btnRepPlanificacion.Name = "btnRepPlanificacion";
-            this.btnRepPlanificacion.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnRepPlanificacion.Size = new System.Drawing.Size(244, 40);
-            this.btnRepPlanificacion.TabIndex = 3;
-            this.btnRepPlanificacion.Text = "Planificacion";
-            this.btnRepPlanificacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRepPlanificacion.UseVisualStyleBackColor = true;
-            this.btnRepPlanificacion.Click += new System.EventHandler(this.btnRepPlanificacion_Click);
-            // 
             // frmInicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -815,7 +796,6 @@
         private System.Windows.Forms.Button btnAdmGestCron;
         private System.Windows.Forms.Button btnAdministracion;
         private System.Windows.Forms.Panel panelHistorialSubmenu;
-        private System.Windows.Forms.Button btnHisMisTrabajadores;
         private System.Windows.Forms.Button btnHisMisEvaluaciones;
         private System.Windows.Forms.Button btnHistorialEv;
         private System.Windows.Forms.Button btnEvMisResultados;
