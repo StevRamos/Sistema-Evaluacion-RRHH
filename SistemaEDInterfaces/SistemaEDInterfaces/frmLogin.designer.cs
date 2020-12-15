@@ -36,7 +36,6 @@
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnAcceder = new System.Windows.Forms.Button();
-            this.llblOlvContra = new System.Windows.Forms.LinkLabel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -122,19 +121,6 @@
             this.btnAcceder.UseVisualStyleBackColor = false;
             this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
             // 
-            // llblOlvContra
-            // 
-            this.llblOlvContra.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.llblOlvContra.AutoSize = true;
-            this.llblOlvContra.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.llblOlvContra.LinkColor = System.Drawing.Color.DimGray;
-            this.llblOlvContra.Location = new System.Drawing.Point(457, 263);
-            this.llblOlvContra.Name = "llblOlvContra";
-            this.llblOlvContra.Size = new System.Drawing.Size(136, 17);
-            this.llblOlvContra.TabIndex = 0;
-            this.llblOlvContra.TabStop = true;
-            this.llblOlvContra.Text = "Olvide mi contraseña";
-            // 
             // btnCerrar
             // 
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
@@ -194,7 +180,6 @@
             this.Controls.Add(this.lblLogin);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.llblOlvContra);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.txtUsuario);
@@ -222,7 +207,6 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Button btnAcceder;
-        private System.Windows.Forms.LinkLabel llblOlvContra;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.ErrorProvider errorProvider1;
