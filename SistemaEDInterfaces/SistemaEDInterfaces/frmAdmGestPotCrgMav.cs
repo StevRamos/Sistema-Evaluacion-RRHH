@@ -92,11 +92,22 @@ namespace SistemaEDInterfaces
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no ingresaron correctamente los ID's de los potenciales." +
+                        "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente de potenciales");
+                    }
                 }
                 //Para insertar
                 else if (rdbInsMavPot.Checked)
                 {
+                    BindingList<CriterioWS.criterio> listapotenciales = new BindingList<CriterioWS.criterio>(daoCriterio.listar(1, ""));
+                    int validar = 0;
                     foreach (var linea in lineasPotenciales)
                     {
                         var valores = linea.Split(',');
@@ -112,13 +123,33 @@ namespace SistemaEDInterfaces
                         criterio.criterioPadre = new CriterioWS.criterio();
                         criterio.criterioPadre.idCriterio = -1;
 
-                        resultado=daoCriterio.insertarMasivo(criterio);
-                        if (resultado == 0)
+                        foreach (CriterioWS.criterio potencial in listapotenciales)
+                        {
+                            if (potencial.nombre.Equals(criterio.nombre))
+                            {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoCriterio.insertarMasivo(criterio);
+                        }
+
+                        if (resultado == 0 || validar == 1)
                         {
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv de potenciales que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
 
             }
@@ -157,13 +188,26 @@ namespace SistemaEDInterfaces
                         }
 
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no ingresó correctamente el nombre del potencial" +
+                            ",el nombre del puesto de trabajo o el nombre del periodo actual." +
+                        "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente de los pesos de los potenciales.");
+                    }
                 }
                 //Para insertar 
                 if (rdbInsMavPotPesos.Checked)
                 {
+                    BindingList<PesoCriterioWS.pesoCriterio> listapesospotenciales = new BindingList<PesoCriterioWS.pesoCriterio>(daoPesoCriterio.listarPesosCriterios(1, "", "", ""));
+                    int validar = 0;
                     foreach (var linea in lineasPesos)
                     {
+                        validar = 0;
                         var valores = linea.Split(',');
 
                         PesoCriterioWS.pesoCriterio pesoCriterio = new PesoCriterioWS.pesoCriterio();
@@ -180,25 +224,43 @@ namespace SistemaEDInterfaces
                         pesoCriterio.periodo = new PesoCriterioWS.periodo();
                         pesoCriterio.periodo.nombre = nombrePeriodo;
                         pesoCriterio.peso = peso;
-
-                        resultado=daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
-                        if (resultado == 0)
+                        foreach (PesoCriterioWS.pesoCriterio pesos in listapesospotenciales)
+                        {
+                            if (pesos.periodo.idPeriodo == pesoCriterio.periodo.idPeriodo && pesos.puestoTrabajo.idPuestoTrabajo == pesoCriterio.puestoTrabajo.idPuestoTrabajo && pesos.criterio.idCriterio == pesoCriterio.criterio.idCriterio)
+                            {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoPesoCriterio.insertarPesoCriterio(pesoCriterio);
+                        }
+                        if (resultado == 0 || validar == 1)
                         {
                             errores = errores + linea + "\n";
                         }
 
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv de pesos potenciales que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
             }
 
 
             //Falta realizar validacion para ver si se insertaron/actualizarion correctamente las competencias/pesos 
             Global.terminarEspera(this);
-            MessageBox.Show("Se procesaron correctamente los archivos.",
-                                   "Mensaje de confirmación",
-                                   MessageBoxButtons.OK,
-                                   MessageBoxIcon.Information);
+            //MessageBox.Show("Se procesaron correctamente los archivos.",
+            //                       "Mensaje de confirmación",
+            //                       MessageBoxButtons.OK,
+            //                       MessageBoxIcon.Information);
         
         }
 

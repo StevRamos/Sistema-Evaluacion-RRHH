@@ -41,6 +41,7 @@ namespace SistemaEDInterfaces
             {
                 if (rdbActCargaMavColab.Checked != false)
                 {
+
                     foreach (var linea in lineas)
                     {
                         var valores = linea.Split(',');
@@ -59,16 +60,7 @@ namespace SistemaEDInterfaces
                         dato = int.Parse(valores[2].ToString());
                         colaborador.puestoTrabajo.idPuestoTrabajo = dato;
 
-                        /*
-                        if (valores[3] != "no")
-                        {
-                            colaborador.dni = valores[3].ToString();
-                        }
-                        else
-                        {
-                            colaborador.dni = "";
-                        }
-                        */
+
                         if (valores[3] != "no")
                         {
                             colaborador.jefe.idColaborador = int.Parse(valores[4].ToString());
@@ -77,25 +69,6 @@ namespace SistemaEDInterfaces
                         {
                             colaborador.jefe.idColaborador = -1;
                         }
-                        /*
-                        if (valores[5] != "no")
-                        {
-                            colaborador.nombres = valores[5].ToString();
-                        }
-                        else
-                        {
-                            colaborador.nombres = "";
-                        }
-
-                        if (valores[6] != "no")
-                        {
-                            colaborador.apellidos= valores[6].ToString();
-                        }
-                        else
-                        {
-                            colaborador.apellidos = "";
-                        }
-                        */
                         if (valores[4] != "no")
                         {
                             colaborador.direccion= valores[7].ToString();
@@ -138,10 +111,20 @@ namespace SistemaEDInterfaces
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no se ingresó los ID's correctos de los colaboradores." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
                 else if (rdbInsCargaMavColab.Checked != false)
                 {
+                    int validar = 0;
                     foreach (var linea in lineas)
                     {
                         if (linea == "") continue;
@@ -174,12 +157,20 @@ namespace SistemaEDInterfaces
                         resultado=daoColaborador.insertarColaborador(colaborador);
                         if (resultado == 0)
                         {
+                            validar = 1;
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (validar == 1) {
+                        MessageBox.Show("Error: Existen datos que no se ingresaron." 
+                        + "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no ingresados:");
+                        cargarErrores();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
-                MessageBox.Show("El archivo se cargó correctamente");
                 this.Close();
             }
             else if ((rdbActCargaMavColab.Checked == false) && (rdbInsCargaMavColab.Checked == false) && txtNomArchColabMav.Text != "")
