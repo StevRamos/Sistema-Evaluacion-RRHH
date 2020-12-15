@@ -13,7 +13,7 @@ import java.util.HashMap;
  */
 
 public enum EstadoPeriodo{
-  ACTIVO(1), INACTIVO(2), ELIMINADA(3);
+  ELIMINADO(0), CREADO(1), ENPROGRESO(2), FINALIZADO(3);
 
   private int value;
   private static HashMap map = new HashMap<>();

@@ -1,5 +1,11 @@
 package pe.edu.pucp.sed.services;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.HashMap;
@@ -12,6 +18,8 @@ import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import pe.edu.pucp.sed.config.DBManager;
+import pe.edu.pucp.sed.correo.Correo;
+import pe.edu.pucp.sed.model.Colaborador;
 import pe.edu.pucp.sed.servlets.Reporte;
 
 @WebService(serviceName = "ReporteWS")
@@ -116,7 +124,7 @@ public class ReporteWS {
     }
     
     
-        @WebMethod(operationName = "generarReportePDI")
+    @WebMethod(operationName = "generarReportePDI")
     public byte[] generarReportePDI(@WebParam(name = "idColaborador") int idColaborador) {
         byte[] arreglo = null;
         try{
@@ -226,6 +234,76 @@ public class ReporteWS {
             System.out.println(ex.getMessage());
         }
         return arreglo;
+    }
+    
+    
+    @WebMethod(operationName = "enviarReportePDI")
+    public void enviarReportePDI(@WebParam(name = "colaborador") Colaborador colaborador) {
+        try{
+            String rutaReporte = Reporte.class.getResource("/pe/edu/pucp/sed/reportes/ReportePDI.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            JasperReport reporte = (JasperReport)
+                JRLoader.loadObjectFromFile(rutaReporte);
+            
+            String rutaSubreporte1 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePDI1.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            String rutaSubreporte2 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePDI2.jasper")
+                    .getPath().replaceAll("%20", " ");
+            
+            String rutaSubreporte3 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePDI3.jasper")
+                    .getPath().replaceAll("%20", " ");
+
+            String rutaSubreporte4 = 
+               Reporte.class.getResource("/pe/edu/pucp/sed/reportes/SubReportePDI4.jasper")
+                    .getPath().replaceAll("%20", " ");
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            HashMap hm = new HashMap();
+            hm.put("ID_COLABORADOR",colaborador.getIdColaborador());
+            hm.put("R_SR1",rutaSubreporte1);
+            hm.put("R_SR2",rutaSubreporte2);
+            hm.put("R_SR3",rutaSubreporte3);
+            hm.put("R_SR4",rutaSubreporte3);
+            
+            JasperPrint jp = JasperFillManager.fillReport
+            (reporte, hm, con);
+            
+            con.close();
+            
+            File pdi = File.createTempFile("ReportePDI", null);
+            try{
+                FileOutputStream aux = new FileOutputStream(pdi);
+
+                aux.write(JasperExportManager.exportReportToPdf(jp));
+                aux.close();
+                
+                String cuerpo = "Estimado " + colaborador.getNombres() + ":\n"
+                        + "Se le presenta su Plan de Desarrollo Integral para el"
+                        + "proximo año, esperoamos que pueda seguir mejorando.\n";
+                
+                Correo.enviarCorreo(colaborador.getCorreo(), "Plan de Desarrollo"
+                        + " Integral " + colaborador.getPeriodo().getNombre()
+                        , cuerpo, pdi);
+                
+//                pdi.deleteOnExit();
+            }catch(Exception e){
+                System.out.println(e.getMessage());
+            }finally{
+                System.out.println(pdi.getPath());
+            }
+            pdi.delete();
+            
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
     }
     
 }
