@@ -419,7 +419,10 @@ namespace SistemaEDInterfaces
             {
                 byte[] arreglo;
 
-                arreglo = daoReporte.generarReporteEvaluacionColaborador(Global.colaboradorLoggeado.idColaborador); 
+                arreglo = daoReporte.generarReporteEvaluacionColaborador(Global.colaboradorLoggeado.idColaborador);
+
+                if (arreglo.Length == 0)
+                    MessageBox.Show("Error con el puto archivo");
 
                 Global.iniciarEspera(this);
                 File.WriteAllBytes(sfdReporte.FileName, arreglo);
