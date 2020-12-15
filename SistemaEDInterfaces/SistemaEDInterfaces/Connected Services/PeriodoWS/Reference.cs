@@ -1471,8 +1471,6 @@ namespace SistemaEDInterfaces.PeriodoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.sed.pucp.edu.pe/")]
-<<<<<<< HEAD
-=======
     public partial class time : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
@@ -1491,7 +1489,7 @@ namespace SistemaEDInterfaces.PeriodoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.sed.pucp.edu.pe/")]
->>>>>>> 9805d051d5760062e80f415d52c839b7dc70f25e
+
     public partial class usuario : object, System.ComponentModel.INotifyPropertyChanged {
         
         private string contrasenhaField;
