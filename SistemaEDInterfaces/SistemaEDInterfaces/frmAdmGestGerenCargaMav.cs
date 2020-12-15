@@ -28,7 +28,6 @@ namespace SistemaEDInterfaces
 
             if ((rdbActCargaMavGer.Checked || rdbInsCargaMavGer.Checked) && txtNomArchGerenMav.Text != "")
             {
-
                 if (rdbActCargaMavGer.Checked != false)
                 {
                     foreach (var linea in lineas)
@@ -63,26 +62,51 @@ namespace SistemaEDInterfaces
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "") {
+                        MessageBox.Show("Error: Hubo errores en algunas filas, ya que no se ingresó los ID's correctos de las gerencias." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos no actualizados:");
+                        cargarErrores();
+                    } else if (errores == "") {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
                 else if (rdbInsCargaMavGer.Checked != false)
                 {
+                    BindingList<GerenciaWS.gerencia> listagerencias = new BindingList<GerenciaWS.gerencia>(daoGerencia.listarGerencias());
+                    int validar = 0;
                     foreach (var linea in lineas)
                     {
+                        validar = 0;
                         var valores = linea.Split(',');
                         GerenciaWS.gerencia gerencia = new GerenciaWS.gerencia();
                         gerencia.nombre = valores[0].ToString();
                         gerencia.descripcion = valores[1].ToString();
-                        resultado = daoGerencia.insertarGerencia(gerencia);
-                        if (resultado == 0)
+                        foreach(GerenciaWS.gerencia ger in listagerencias)
                         {
+                            if (ger.nombre.Equals(gerencia.nombre)) {
+                                validar = 1;
+                            }
+                        }
+                        if (validar == 0)
+                        {
+                            resultado = daoGerencia.insertarGerencia(gerencia);
+                        }
+                        if (resultado == 0 || validar ==1)
+                        { 
                             errores = errores + linea + "\n";
                         }
                     }
-                    cargarErrores();
+                    if (errores != "")
+                    {
+                        MessageBox.Show("Alerta: Hubo datos del archivo csv que ya existian en el sistema; sin embargo, no se ingresaron." +
+                            "Por favor, ingrese la dirección donde desea descargar el archivo con los datos que no se ingresaron:");
+                        cargarErrores();
+                    }
+                    else if (errores == "")
+                    {
+                        MessageBox.Show("El archivo se cargó correctamente");
+                    }
                 }
-
-                MessageBox.Show("El archivo se cargó correctamente");
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
