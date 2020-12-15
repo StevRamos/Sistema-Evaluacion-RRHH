@@ -63,9 +63,9 @@ public class ReporteWS {
             hm.put("RUTA_REPOR_OBJ",rutaSubreporte1);
             hm.put("RUTA_SUBREPORTECRIPADRE1",rutaSubreporte2);
             hm.put("RUTA_POTENCIAL",rutaSubreporte3);
-            hm.put("RUTA_SUB_COM_PADRE ",rutaSubreporte4);
-            hm.put("RUTA_SUB_POT_PADRE ",rutaSubreporte5);
-            hm.put("FID_JEFE  ", idJefe);
+            hm.put("RUTA_SUB_COM_PADRE",rutaSubreporte4);
+            hm.put("RUTA_SUB_POT_PADRE",rutaSubreporte5);
+            hm.put("FID_JEFE", idJefe);
             
             JasperPrint jp = JasperFillManager.fillReport
             (reporte, hm, con);
@@ -220,9 +220,9 @@ public class ReporteWS {
             hm.put("RUTA_REPOR_OBJ",rutaSubreporte1);
             hm.put("RUTA_SUBREPORTECRIPADRE1",rutaSubreporte2);
             hm.put("RUTA_POTENCIAL",rutaSubreporte3);
-            hm.put("RUTA_SUB_COM_PADRE ",rutaSubreporte4);
-            hm.put("RUTA_SUB_POT_PADRE ",rutaSubreporte5);
-            hm.put("FID_COL_IN  ", idColaborador);
+            hm.put("RUTA_SUB_COM_PADRE",rutaSubreporte4);
+            hm.put("RUTA_SUB_POT_PADRE",rutaSubreporte5);
+            hm.put("FID_COL_IN", idColaborador);
             
             JasperPrint jp = JasperFillManager.fillReport
             (reporte, hm, con);
