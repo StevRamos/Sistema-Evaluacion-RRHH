@@ -111,7 +111,6 @@ namespace SistemaEDInterfaces
                     foreach (var linea in lineasPotenciales)
                     {
                         var valores = linea.Split(',');
-
                         CriterioWS.criterio criterio = new CriterioWS.criterio();
                         int id = int.Parse(valores[0]);
                         String nombre = valores[1];
@@ -203,7 +202,7 @@ namespace SistemaEDInterfaces
                 //Para insertar 
                 if (rdbInsMavPotPesos.Checked)
                 {
-                    BindingList<PesoCriterioWS.pesoCriterio> listapesospotenciales = new BindingList<PesoCriterioWS.pesoCriterio>(daoPesoCriterio.listarPesosCriterios(1, "", "", ""));
+                    BindingList<PesoCriterioWS.pesoCriterio> listapesospotenciales = new BindingList<PesoCriterioWS.pesoCriterio>(daoPesoCriterio.listarPesosCriterios(1,"","",""));
                     int validar = 0;
                     foreach (var linea in lineasPesos)
                     {
@@ -226,7 +225,9 @@ namespace SistemaEDInterfaces
                         pesoCriterio.peso = peso;
                         foreach (PesoCriterioWS.pesoCriterio pesos in listapesospotenciales)
                         {
-                            if (pesos.periodo.idPeriodo == pesoCriterio.periodo.idPeriodo && pesos.puestoTrabajo.idPuestoTrabajo == pesoCriterio.puestoTrabajo.idPuestoTrabajo && pesos.criterio.idCriterio == pesoCriterio.criterio.idCriterio)
+                            if ((pesos.periodo.nombre.Equals(pesoCriterio.periodo.nombre))
+                                && (pesos.puestoTrabajo.nombre.Equals(pesoCriterio.puestoTrabajo.nombre))
+                                && (pesos.criterio.nombre.Equals(pesoCriterio.criterio.nombre)))
                             {
                                 validar = 1;
                             }
@@ -239,7 +240,6 @@ namespace SistemaEDInterfaces
                         {
                             errores = errores + linea + "\n";
                         }
-
                     }
                     if (errores != "")
                     {

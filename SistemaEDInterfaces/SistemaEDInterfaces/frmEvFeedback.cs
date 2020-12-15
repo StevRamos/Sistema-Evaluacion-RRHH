@@ -12,14 +12,14 @@ namespace SistemaEDInterfaces
 {
     public partial class frmEvFeedback : Form
     {
-        ColaboradorWS.colaborador colaborador;
+        ColaboradorWS.colaborador colaborador = Global.colaboradorLoggeado;
         private int idColaborador;
         private int idPeriodo;
         private BindingList<RichTextBox> txtBoxCompetencias;
         private BindingList<DateTimePicker> dtpFechas;
         private EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient daoEvaluacionDesempenho;
         private EvaluacionDesempenhoWS.evaluacionDesempenho evaluacionDesempenho;
-
+        private ReporteWS.ReporteWSClient daoReporte;
 
         public frmEvFeedback()
         {
@@ -107,6 +107,8 @@ namespace SistemaEDInterfaces
 
             }
 
+            btnGenerar.Location = new Point(705, y);
+
         }
 
         private void frmEvFeedback_Load(object sender, EventArgs e)
@@ -116,6 +118,26 @@ namespace SistemaEDInterfaces
             idPeriodo = Global.periodoActual.idPeriodo;
             evaluacionDesempenho = daoEvaluacionDesempenho.obtenerEvaluacionDesempenho(idColaborador, idPeriodo);
             CargarCompetencias();
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            
+            daoReporte = new ReporteWS.ReporteWSClient();
+            ReporteWS.colaborador colab = new ReporteWS.colaborador();
+            colab.idColaborador = this.colaborador.idColaborador;
+            colab.nombres = this.colaborador.nombres;
+            colab.apellidos = this.colaborador.apellidos;
+            colab.correo = this.colaborador.correo;
+            colab.periodo = new ReporteWS.periodo();
+            colab.periodo.idPeriodo = Global.periodoActual.idPeriodo;
+            colab.periodo.nombre = Global.periodoActual.nombre;
+            daoReporte = new ReporteWS.ReporteWSClient();
+            daoReporte.enviarReportePDI(colab);
+            MessageBox.Show("Se ha enviado el reporte al correo",
+                "Mensaje Informativo", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+
         }
     }
 }

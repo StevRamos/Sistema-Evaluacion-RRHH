@@ -183,6 +183,7 @@ namespace SistemaEDInterfaces
 
                         CriterioWS.criterio criterio = new CriterioWS.criterio();
                         int id = int.Parse(valores[0]);
+
                         int idCriterioPadre = Int32.Parse(valores[1]); 
                         String nombre = valores[2];
                         String descripcion = valores[3];
@@ -272,7 +273,7 @@ namespace SistemaEDInterfaces
                 //Para insertar 
                 if (rdbInsMavSubComPesos.Checked)
                 {
-                    BindingList<PesoCriterioWS.pesoCriterio> listapesossubcompetencias = new BindingList<PesoCriterioWS.pesoCriterio>(daoPesoCriterio.listarPesosCriterios(2, "", "", ""));
+                    BindingList<PesoCriterioWS.pesoCriterio> listapesossubcompetencias = new BindingList<PesoCriterioWS.pesoCriterio>(daoPesoCriterio.listarPesosCriterios(2,"","",""));
                     int validar = 0;
                     foreach (var linea in lineasPesos)
                     {
@@ -297,7 +298,9 @@ namespace SistemaEDInterfaces
 
                         foreach (PesoCriterioWS.pesoCriterio pesos in listapesossubcompetencias)
                         {
-                            if (pesos.periodo.idPeriodo == pesoCriterio.periodo.idPeriodo && pesos.puestoTrabajo.idPuestoTrabajo == pesoCriterio.puestoTrabajo.idPuestoTrabajo && pesos.criterio.idCriterio == pesoCriterio.criterio.idCriterio)
+                            if ((pesos.periodo.nombre.Equals(pesoCriterio.periodo.nombre)) 
+                                && (pesos.puestoTrabajo.nombre.Equals(pesoCriterio.puestoTrabajo.nombre))
+                                && (pesos.criterio.nombre.Equals(pesoCriterio.criterio.nombre)))
                             {
                                 validar = 1;
                             }
