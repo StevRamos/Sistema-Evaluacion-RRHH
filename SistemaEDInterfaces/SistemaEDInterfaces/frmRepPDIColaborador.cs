@@ -20,6 +20,7 @@ namespace SistemaEDInterfaces
         private BindingList<DateTimePicker> dtpFechas;
         private EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient daoEvaluacionDesempenho;
         private EvaluacionDesempenhoWS.evaluacionDesempenho evaluacionDesempenho;
+        private ReporteWS.ReporteWSClient daoReporte;
 
         public frmRepPDIColaborador()
         {
@@ -113,6 +114,7 @@ namespace SistemaEDInterfaces
 
             btnGuardar.Location = new Point(705, y);
             btnFinalizar.Location = new Point(896, y);
+            btnRegresar.Location = new Point(46, y);
         }
 
         private void asignarDatosNoActualizables()
@@ -161,8 +163,17 @@ namespace SistemaEDInterfaces
         {
             if (evaluacionDesempenho.estadoPDI == 1)
             {
-                btnFinalizar.Enabled = false;
+                //btnFinalizar.Enabled = false;
                 btnGuardar.Enabled = false;
+                int i = 0;
+                for (i = 0; i < txtBoxCompetencias.Count; i++)
+                {
+                    txtBoxCompetencias[i].Enabled = false;
+                }
+                for (i = 0; i < dtpFechas.Count; i++)
+                {
+                    dtpFechas[i].Enabled = false;
+                }
             }
 
         }
@@ -213,6 +224,7 @@ namespace SistemaEDInterfaces
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             asignarDatosNoActualizables();
+            daoReporte = new ReporteWS.ReporteWSClient();
             int resultado;
             var result = MessageBox.Show("¿Desea finalizar la evaluación?",
                 "Mensaje de Pregunta", MessageBoxButtons.YesNo,
@@ -228,11 +240,32 @@ namespace SistemaEDInterfaces
                          MessageBoxIcon.Error);
                     return;
                 }
+                enviarReporte();
                 MessageBox.Show("Ha finalizado la autoevaluación",
                 "Mensaje Informativo", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
                 verificarEstado();
             }
+
+        }
+
+        private void enviarReporte()
+        {
+            ReporteWS.colaborador colab = new ReporteWS.colaborador();
+            colab.idColaborador = this.colaborador.idColaborador;
+            colab.nombres = this.colaborador.nombres;
+            colab.apellidos = this.colaborador.apellidos;
+            colab.correo = this.colaborador.correo;
+            colab.periodo = new ReporteWS.periodo();
+            colab.periodo.idPeriodo = Global.periodoActual.idPeriodo;
+            colab.periodo.nombre = Global.periodoActual.nombre;
+            daoReporte = new ReporteWS.ReporteWSClient();
+            daoReporte.enviarReportePDI(colab);
+        }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Global.formPrincipal.cerrarFormularioHijo();
         }
     }
 }

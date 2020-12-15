@@ -1178,6 +1178,9 @@
     <None Include="Connected Services\ReporteWS\ReporteWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.enviarReportePDIResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.generarReporteEvaluacionColaboradorResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -1185,6 +1188,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.generarReporteObjetivosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\SistemaEDInterfaces.ReporteWS.generarReportePDIResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Iconos\PUCP.png" />
