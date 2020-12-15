@@ -172,9 +172,13 @@ namespace SistemaEDInterfaces
                 if (daoEvaluacionDesempenho.actualizarEstadoPlanificacion(evaluacionDesempenho) == 1)
                 {
                     //Enviar correo//
-                    Correo.enviarCorreo(Global.colaboradorLoggeado.correo,
-                                         Mensaje.TituloRegistroObjetivos("Jorge Baca"),
-                                         Mensaje.CuerpoRegistroObjetivos("Jorge Baca", "Jorge Baca", 123456789));
+                    String nombreColab = Global.colaboradorLoggeado.nombres + " " + Global.colaboradorLoggeado.apellidos;
+                    String nombreJefe = Global.colaboradorLoggeado.jefe.nombres + " " + Global.colaboradorLoggeado.jefe.apellidos;
+                    int dni = Int32.Parse(Global.colaboradorLoggeado.dni); 
+
+                    Correo.enviarCorreo(Global.colaboradorLoggeado.jefe.correo,
+                                         Mensaje.TituloRegistroObjetivos(nombreColab),
+                                         Mensaje.CuerpoRegistroObjetivos(nombreJefe,nombreColab, dni));
                     ////////////////////////////////////////////
                     terminarEspera();
                     MessageBox.Show("Objetivos enviados para revision.",
