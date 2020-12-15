@@ -27,8 +27,34 @@ namespace SistemaEDInterfaces
 
             ColaboradorWS.colaborador colaborador = Global.colaboradorLoggeado;
             btnLblNombreColab.Text = colaborador.nombres + " " + colaborador.apellidos;
+
+            //Deshabilitar ventanas segun nivel de acceso del colaborador loggeado (nivel de permiso) 
+            deshabilitarVentanasSegunNivelAcceso(); 
         }
 
+        private void deshabilitarBoton(Button btnParaEliminar, Panel panelPadre)
+        {
+            btnParaEliminar.Hide();
+            panelPadre.Height -= btnParaEliminar.Height; 
+        }
+        private void deshabilitarVentanasSegunNivelAcceso()
+        {
+            int nivelAcceso = Global.colaboradorLoggeado.usuario.nivelAcceso; 
+            
+            //Bloquear ventanas que son solo para administradores 
+            if(nivelAcceso < (int) NivelAcceso.Admin)
+            {
+                btnAdministracion.Hide();
+                deshabilitarBoton(btnRepPlanificacion, panelReportesSubmenu); 
+            }
+            if (nivelAcceso < (int)NivelAcceso.Jefe)
+            {
+                deshabilitarBoton(btnPlanValidarObjetivos,panelPlanificacionSubmenu);
+                deshabilitarBoton(btnEvMisTrabajadores, panelEvaluacionSubmenu);
+                deshabilitarBoton(btnHisMisTrabajadores, panelHistorialSubmenu);
+                btnReportes.Hide(); 
+            }
+        }
 
 
 
@@ -70,24 +96,6 @@ namespace SistemaEDInterfaces
             }
         }
 
-        //public void cerrarFormularioHijoYabrirPadre()
-        //{
-        //    int n = formulariosActuales.Count - 1;
-        //    if (n >= 1)
-        //    {
-        //        if (formulariosActuales[n] != null)
-        //        {
-        //            formulariosActuales[n].Close();
-        //            formulariosActuales.RemoveAt(n);
-        //        }
-        //        Form formularioActual = formulariosActuales[n - 1];
-        //        formularioActual.TopLevel = false;
-        //        panelContenedor.Tag = formularioActual;
-        //        formularioActual.BringToFront();
-        //        formularioActual.Show(); 
-        //    }
-            
-        //}
 
         public void cerrarFormulariosActuales()
         {
@@ -237,9 +245,14 @@ namespace SistemaEDInterfaces
 
         private void btnEvMisResultados_Click(object sender, EventArgs e)
         {
+            frmEvMisResultados form = new frmEvMisResultados();
+            form.Colaborador = Global.colaboradorLoggeado;
+            form.Periodo = Global.periodoActual;
+            form.Modo = ModoResultados.MisResultados; 
+
             cambiarTituloBarraSuperior(btnEvaluacion, btnEvMisResultados);
             cerrarFormulariosActuales();
-            abrirFormularioHijo(false, new frmEvMisResultados());
+            abrirFormularioHijo(false, form);
         }
 
         //Submenu de Historial
