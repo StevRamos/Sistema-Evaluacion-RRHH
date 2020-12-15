@@ -136,7 +136,7 @@ public class PeriodoMySQL implements PeriodoDAO{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
             con.setAutoCommit(false);
-            String sql = "{call ACTUALIZAR_PERIODO(?,?,?,?,?,?,?)}";
+            String sql = "{call ACTUALIZAR_PERIODO(?,?,?,?,?,?,?,?)}";
             cs = con.prepareCall(sql);
             cs.setInt("_ID_PERIODO", periodo.getIdPeriodo());
             cs.setDate("_NEW_INI", 
@@ -147,7 +147,8 @@ public class PeriodoMySQL implements PeriodoDAO{
             cs.setDouble("_PESO_EVOBJETIVOS", periodo.getPesoEvalObj());
             cs.setDouble("_PESO_EVCOMPETENCIAS", periodo.getPesoEvalComp());
             cs.setString("_DIA_NOTIFICACION", periodo.getDiaNotificacion());
-            
+            cs.setTime("_HORA_NOT", new java.sql.Time(periodo.getHoraNotificacion().getTime()));
+
             cs.executeUpdate();
             
             
