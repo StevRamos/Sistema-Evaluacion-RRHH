@@ -115,6 +115,7 @@ namespace SistemaEDInterfaces
             btnGuardar.Location = new Point(705, y);
             btnFinalizar.Location = new Point(896, y);
             btnRegresar.Location = new Point(46, y);
+            btnGenerar.Location = new Point(261, y);
         }
 
         private void asignarDatosNoActualizables()
@@ -163,7 +164,7 @@ namespace SistemaEDInterfaces
         {
             if (evaluacionDesempenho.estadoPDI == 1)
             {
-                //btnFinalizar.Enabled = false;
+                btnFinalizar.Enabled = false;
                 btnGuardar.Enabled = false;
                 int i = 0;
                 for (i = 0; i < txtBoxCompetencias.Count; i++)
@@ -224,7 +225,6 @@ namespace SistemaEDInterfaces
         private void btnFinalizar_Click(object sender, EventArgs e)
         {
             asignarDatosNoActualizables();
-            daoReporte = new ReporteWS.ReporteWSClient();
             int resultado;
             var result = MessageBox.Show("¿Desea finalizar la evaluación?",
                 "Mensaje de Pregunta", MessageBoxButtons.YesNo,
@@ -240,7 +240,6 @@ namespace SistemaEDInterfaces
                          MessageBoxIcon.Error);
                     return;
                 }
-                enviarReporte();
                 MessageBox.Show("Ha finalizado la autoevaluación",
                 "Mensaje Informativo", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
@@ -261,11 +260,21 @@ namespace SistemaEDInterfaces
             colab.periodo.nombre = Global.periodoActual.nombre;
             daoReporte = new ReporteWS.ReporteWSClient();
             daoReporte.enviarReportePDI(colab);
+            MessageBox.Show("Se ha enviado el reporte al correo",
+                "Mensaje Informativo", MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+            verificarEstado();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             Global.formPrincipal.cerrarFormularioHijo();
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            daoReporte = new ReporteWS.ReporteWSClient();
+            enviarReporte();
         }
     }
 }
