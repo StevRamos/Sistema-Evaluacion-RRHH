@@ -71,9 +71,10 @@ namespace SistemaEDInterfaces
             if (daoEvaluacionDesempenho.actualizarEstadoPlanificacion(evaluacionDesempenho) != 0)
             {
                 //Enviar correo
-                /*Correo.enviarCorreo(Global.,
+                String nombreColab = colaborador.nombres + " " + colaborador.apellidos; 
+                Correo.enviarCorreo(colaborador.correo,
                                          Mensaje.TituloRevisionObjetivos(),
-                                         Mensaje.CuerpoRevisionObjetivos("Jorge Baca"));*/
+                                         Mensaje.CuerpoRevisionObjetivos(nombreColab));
                 //////////////////
                 terminarEspera();
                 MessageBox.Show("Validaciones enviadas a colaborador",

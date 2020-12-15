@@ -5,18 +5,6 @@
       <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/PuestoTrabajoWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="eliminarPuestoTrabajo">
-    <part name="parameters" element="tns:eliminarPuestoTrabajo" />
-  </message>
-  <message name="eliminarPuestoTrabajoResponse">
-    <part name="parameters" element="tns:eliminarPuestoTrabajoResponse" />
-  </message>
-  <message name="listarPuestoTrabajosXColaborador">
-    <part name="parameters" element="tns:listarPuestoTrabajosXColaborador" />
-  </message>
-  <message name="listarPuestoTrabajosXColaboradorResponse">
-    <part name="parameters" element="tns:listarPuestoTrabajosXColaboradorResponse" />
-  </message>
   <message name="listarPuestoTrabajos">
     <part name="parameters" element="tns:listarPuestoTrabajos" />
   </message>
@@ -29,6 +17,18 @@
   <message name="insertarPuestoTrabajoResponse">
     <part name="parameters" element="tns:insertarPuestoTrabajoResponse" />
   </message>
+  <message name="eliminarPuestoTrabajo">
+    <part name="parameters" element="tns:eliminarPuestoTrabajo" />
+  </message>
+  <message name="eliminarPuestoTrabajoResponse">
+    <part name="parameters" element="tns:eliminarPuestoTrabajoResponse" />
+  </message>
+  <message name="listarPuestoTrabajosXColaborador">
+    <part name="parameters" element="tns:listarPuestoTrabajosXColaborador" />
+  </message>
+  <message name="listarPuestoTrabajosXColaboradorResponse">
+    <part name="parameters" element="tns:listarPuestoTrabajosXColaboradorResponse" />
+  </message>
   <message name="actualizarPuestoTrabajo">
     <part name="parameters" element="tns:actualizarPuestoTrabajo" />
   </message>
@@ -36,14 +36,6 @@
     <part name="parameters" element="tns:actualizarPuestoTrabajoResponse" />
   </message>
   <portType name="PuestoTrabajoWS">
-    <operation name="eliminarPuestoTrabajo">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/eliminarPuestoTrabajoRequest" message="tns:eliminarPuestoTrabajo" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/eliminarPuestoTrabajoResponse" message="tns:eliminarPuestoTrabajoResponse" />
-    </operation>
-    <operation name="listarPuestoTrabajosXColaborador">
-      <input wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorRequest" message="tns:listarPuestoTrabajosXColaborador" />
-      <output wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorResponse" message="tns:listarPuestoTrabajosXColaboradorResponse" />
-    </operation>
     <operation name="listarPuestoTrabajos">
       <input wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosRequest" message="tns:listarPuestoTrabajos" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosResponse" message="tns:listarPuestoTrabajosResponse" />
@@ -52,6 +44,14 @@
       <input wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/insertarPuestoTrabajoRequest" message="tns:insertarPuestoTrabajo" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/insertarPuestoTrabajoResponse" message="tns:insertarPuestoTrabajoResponse" />
     </operation>
+    <operation name="eliminarPuestoTrabajo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/eliminarPuestoTrabajoRequest" message="tns:eliminarPuestoTrabajo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/eliminarPuestoTrabajoResponse" message="tns:eliminarPuestoTrabajoResponse" />
+    </operation>
+    <operation name="listarPuestoTrabajosXColaborador">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorRequest" message="tns:listarPuestoTrabajosXColaborador" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/listarPuestoTrabajosXColaboradorResponse" message="tns:listarPuestoTrabajosXColaboradorResponse" />
+    </operation>
     <operation name="actualizarPuestoTrabajo">
       <input wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoRequest" message="tns:actualizarPuestoTrabajo" />
       <output wsam:Action="http://services.sed.pucp.edu.pe/PuestoTrabajoWS/actualizarPuestoTrabajoResponse" message="tns:actualizarPuestoTrabajoResponse" />
@@ -59,24 +59,6 @@
   </portType>
   <binding name="PuestoTrabajoWSPortBinding" type="tns:PuestoTrabajoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarPuestoTrabajo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarPuestoTrabajosXColaborador">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="listarPuestoTrabajos">
       <soap:operation soapAction="" />
       <input>
@@ -87,6 +69,24 @@
       </output>
     </operation>
     <operation name="insertarPuestoTrabajo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPuestoTrabajo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPuestoTrabajosXColaborador">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

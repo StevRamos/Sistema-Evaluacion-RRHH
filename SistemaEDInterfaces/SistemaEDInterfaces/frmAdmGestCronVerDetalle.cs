@@ -98,7 +98,7 @@ namespace SistemaEDInterfaces
             periodo.pesoEvalObj = (Double.Parse(txtPesoObjetivos.Text))/100;
             periodo.pesoEvalComp = (Double.Parse(txtPesoCompetencia.Text))/100;
             periodo.diaNotificacion = cboDiaNotificacion.SelectedItem.ToString();
-            //periodo.horaNotificacion = dtpHoraNotificacion.Value;
+            periodo.horaNotificacion = dtpHoraNotificacion.Value.ToString("HH:mm:ss");
 
             //Specified de GerenciasPeriodos
             if (periodo.configuracionFechas != null)
@@ -266,6 +266,7 @@ namespace SistemaEDInterfaces
             txtPesoObjetivos.Text = (periodo.pesoEvalObj*100).ToString();
             String dia = periodo.diaNotificacion;
             cboDiaNotificacion.SelectedItem = dia;
+            dtpHoraNotificacion.Value = DateTime.Parse(periodo.horaNotificacion);
             //DGV 
             dgvPlanificacion.AutoGenerateColumns = false;
             dgvCronEvPrevia.AutoGenerateColumns = false;
