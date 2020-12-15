@@ -163,7 +163,7 @@ namespace SistemaEDInterfaces
         {
             if (evaluacionDesempenho.estadoPDI == 1)
             {
-                //btnFinalizar.Enabled = false;
+                btnFinalizar.Enabled = false;
                 btnGuardar.Enabled = false;
                 int i = 0;
                 for (i = 0; i < txtBoxCompetencias.Count; i++)

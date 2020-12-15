@@ -23,12 +23,15 @@ public class Correo {
         try{
 
             Properties props = new Properties();
-            props.put("mail.smtp.host", "smtp.gmail.com");
+            props.setProperty("mail.smtp.host", "smtp.gmail.com");
             props.setProperty("mail.smtp.starttls.enable", "true");
             props.setProperty("mail.smtp.port", "587");
             props.setProperty("mail.smtp.user", "Sistema de Evaluación");
             props.setProperty("mail.smtp.auth", "true");
-            props.setProperty("mail.smtp.ssl.trust", "smtp.gmail.com");
+//            props.setProperty("mail.smtp.ssl.trust", "smtp.gmail.com");
+            props.setProperty("mail.smtp.ssl.trust", "*");
+//            props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+
             
             Session session = Session.getDefaultInstance(props, null);
 //            session.setDebug(true);
@@ -61,8 +64,10 @@ public class Correo {
             t.close();
             resultado = 1;
         }
-        catch (Exception e){
+        catch (Exception e){            
             System.out.println(e.getMessage());
+            System.out.println(e.getStackTrace());
+            System.out.println(e.getCause());
         }
         
         return resultado;

@@ -65,6 +65,9 @@ public class Principal {
 //   SimpleDateFormat formato = new SimpleDateFormat("dd-MM-yyyy");
 //   
 //   ColaboradorDAO daoColaborador = new ColaboradorMySQL();
+//   
+//   System.out.println(daoColaborador.autenticarUsuario("jorge.baca@pucp.edu.pe", "ABCDE").getJefe().getCorreo());
+   
 //   for(Colaborador c : daoColaborador.listarColaboradoresXJefe9Box(1, 1))
 //       System.out.println(c.getNombres() + " " + c.getEvaluaciones().get(1).getNotaFinal());
    
@@ -289,28 +292,28 @@ public class Principal {
 //    per.setHoraNotificacion(new java.sql.Time((new SimpleDateFormat("hh:mm:ss").parse("12:00:00")).getTime()));
 //    
 //    
-    PeriodoDAO daoPeriodo = new PeriodoMySQL();
-    Periodo p = new Periodo();
-    p.setIdPeriodo(1);
-    ArrayList<EscalaPeriodo> items = daoPeriodo.listarEscalaPeriodo(1);
-    ArrayList<ItemPDIPeriodo> pdi = daoPeriodo.listarItemPDIPeriodo(1);
-    
-    for(EscalaPeriodo ep : items){
-        System.out.println(ep.getEscala().getNombre());
-        ep.setNotaMax(0);
-        ep.setNotaMin(0);
-    }
-    
-    for(ItemPDIPeriodo ipdi : pdi){
-        System.out.println(ipdi.getItemPDI().getNombre());
-        ipdi.setNotaMax(0);
-        ipdi.setNotaMin(0);
-    }
-    
-    p.setEscalas(items);
-    p.setRangosPDI(pdi);
-    int resultado = daoPeriodo.actualizarRangos(p);
-    System.out.println(resultado);
+//    PeriodoDAO daoPeriodo = new PeriodoMySQL();
+//    Periodo p = new Periodo();
+//    p.setIdPeriodo(1);
+//    ArrayList<EscalaPeriodo> items = daoPeriodo.listarEscalaPeriodo(1);
+//    ArrayList<ItemPDIPeriodo> pdi = daoPeriodo.listarItemPDIPeriodo(1);
+//    
+//    for(EscalaPeriodo ep : items){
+//        System.out.println(ep.getEscala().getNombre());
+//        ep.setNotaMax(0);
+//        ep.setNotaMin(0);
+//    }
+//    
+//    for(ItemPDIPeriodo ipdi : pdi){
+//        System.out.println(ipdi.getItemPDI().getNombre());
+//        ipdi.setNotaMax(0);
+//        ipdi.setNotaMin(0);
+//    }
+//    
+//    p.setEscalas(items);
+//    p.setRangosPDI(pdi);
+//    int resultado = daoPeriodo.actualizarRangos(p);
+//    System.out.println(resultado);
     
    // if(daoPeriodo.insertar(per) == 1)
     //    System.out.println("Se ha ingresaro un Periodo");

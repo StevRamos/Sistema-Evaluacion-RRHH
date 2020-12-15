@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.sed.config.DBManager;
 import pe.edu.pucp.sed.dao.PeriodoDAO;
 import pe.edu.pucp.sed.model.EscalaPeriodo;
+import pe.edu.pucp.sed.model.EstadoPeriodo;
 import pe.edu.pucp.sed.model.GerenciaPeriodo;
 import pe.edu.pucp.sed.model.ItemPDIPeriodo;
 import pe.edu.pucp.sed.model.Periodo;
@@ -272,19 +273,16 @@ public class PeriodoMySQL implements PeriodoDAO{
                 per.setDiaNotificacion(rs.getString("diaNotificacion"));
                 per.setHoraNotificacion(rs.getTime("horaNotificacion"));
                 per.setNombre(rs.getString("nombre"));
-                
+                per.setEstado(EstadoPeriodo.valueOf(rs.getInt("estado")));
                 periodos.add(per);
             }
             rs.close();
-            //falta acabar
+            
             for(Periodo p : periodos){
                 cs = con.prepareCall(" call LISTAR_PESOSCRITERIO_X_ID_PERIODO() ");
                 rs = cs.executeQuery();
                 while(rs.next()){
                     PesoCriterio pc = new PesoCriterio();
-                    
-                    //pc.setPeriodo(p);
-                    
                     pc.setIdPesoCriterio(rs.getInt("id_Criterio"));
                     pc.setPeso(rs.getDouble("peso"));
                 }
