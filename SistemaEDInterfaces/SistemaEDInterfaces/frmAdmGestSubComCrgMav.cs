@@ -297,7 +297,7 @@ namespace SistemaEDInterfaces
 
                         foreach (PesoCriterioWS.pesoCriterio pesos in listapesossubcompetencias)
                         {
-                            if (pesos.periodo.idPeriodo == pesoCriterio.periodo.idPeriodo && pesos.puestoTrabajo.idPuestoTrabajo == pesoCriterio.puestoTrabajo.idPuestoTrabajo && pesos.criterio.idCriterio == pesoCriterio.criterio.idCriterio)
+                            if ((pesos.periodo.idPeriodo == pesoCriterio.periodo.idPeriodo) && (pesos.puestoTrabajo.idPuestoTrabajo == pesoCriterio.puestoTrabajo.idPuestoTrabajo) && (pesos.criterio.idCriterio == pesoCriterio.criterio.idCriterio))
                             {
                                 validar = 1;
                             }
