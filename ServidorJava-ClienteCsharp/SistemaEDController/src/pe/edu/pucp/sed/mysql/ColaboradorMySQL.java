@@ -230,11 +230,13 @@ public class ColaboradorMySQL implements ColaboradorDAO{
                 col.setFechaNac(rs.getDate("fechaNac"));
                 
                 Gerencia ger = new Gerencia();
+                ger.setIdGerencia(rs.getInt("id_Gerencias"));
                 ger.setNombre(rs.getString("nombreGerencia"));
                 ger.setDescripcion(rs.getString("descripcionGerencia"));
                 
                 PuestoTrabajo pt = new PuestoTrabajo();
-               pt.setNombre(rs.getString("nombrePuestoTrabjo"));
+                pt.setIdPuestoTrabajo(rs.getInt("id_PuestosTrabajo"));
+                pt.setNombre(rs.getString("nombrePuestoTrabjo"));
                 pt.setDescripcion(rs.getString("descripcionPuestoTrabajo"));
                 
                 col.setGerencia(ger);
