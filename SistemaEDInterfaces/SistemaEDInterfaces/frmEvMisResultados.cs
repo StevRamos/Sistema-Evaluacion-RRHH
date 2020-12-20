@@ -418,9 +418,7 @@ namespace SistemaEDInterfaces
             if (sfdReporte.FileName != null && sfdReporte.FileName != "")
             {
                 byte[] arreglo;
-                
                 arreglo = daoReporte.generarReporteEvaluacionColaborador(Global.colaboradorLoggeado.idColaborador); 
-
                 Global.iniciarEspera(this);
                 File.WriteAllBytes(sfdReporte.FileName, arreglo);
                 Global.terminarEspera(this);
