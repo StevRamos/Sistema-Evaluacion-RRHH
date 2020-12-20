@@ -20,13 +20,13 @@ namespace SistemaEDInterfaces
             BindingList<String> nombresGerencias = new BindingList<string>();
             daoPuestoTrabajo = new PuestoTrabajoWS.PuestoTrabajoWSClient();
             daoGerencia = new GerenciaWS.GerenciaWSClient();
+            dgbCargos.AutoGenerateColumns = false; 
             dgbCargos.DataSource = daoPuestoTrabajo.listarPuestoTrabajos("");
 
             BindingList<GerenciaWS.gerencia> gerencias = new BindingList<GerenciaWS.gerencia>
                                                   (daoGerencia.listarGerencias().ToArray());
             cargarNombres(gerencias,nombresGerencias);
             cmbGestCargosNomGeren.DataSource = nombresGerencias;
-            dgbCargos.AutoGenerateColumns = false;
             /*
             cmbGestCargosNomGeren.DataSource = daoGerencia.listarGerencias();
             cmbGestCargosNomGeren.DisplayMember = "nombre";

@@ -429,6 +429,10 @@ namespace SistemaEDInterfaces
                 EvaluacionDesempenho.lineasEvaluacion[i].fechaCumplimientoSpecified = true;
                 EvaluacionDesempenho.lineasEvaluacion[i].itemPDI = new EvaluacionDesempenhoWS.itemPDI();
                 EvaluacionDesempenho.lineasEvaluacion[i].itemPDI.idItemPDI = -1;
+                EvaluacionDesempenho.escalaSinCalibrar = new EvaluacionDesempenhoWS.escala();
+                EvaluacionDesempenho.escalaSinCalibrar.idEscala = -1;
+                EvaluacionDesempenho.escalaFinal = new EvaluacionDesempenhoWS.escala();
+                EvaluacionDesempenho.escalaFinal.idEscala = -1;
 
                 for (int j = 0; j < EvaluacionDesempenho.lineasEvaluacion[i].sublineasEvaluacion.Count(); j++)
                 {
@@ -516,8 +520,8 @@ namespace SistemaEDInterfaces
         private void asignarEscala()
         {
             EvaluacionDesempenho.escalaPreCupos = new EvaluacionDesempenhoWS.escala();
-            EvaluacionDesempenho.escalaSinCalibrar = new EvaluacionDesempenhoWS.escala();
-            EvaluacionDesempenho.escalaFinal = new EvaluacionDesempenhoWS.escala(); 
+            /*EvaluacionDesempenho.escalaSinCalibrar = new EvaluacionDesempenhoWS.escala();
+            EvaluacionDesempenho.escalaFinal = new EvaluacionDesempenhoWS.escala(); */
             PeriodoWS.escalaPeriodo[] lista = daoPeriodo.listarEscalaPeriodo(Periodo.idPeriodo);
             BindingList<PeriodoWS.escalaPeriodo> escalasPeriodos;
             if (lista != null) {
@@ -529,10 +533,10 @@ namespace SistemaEDInterfaces
                     {
                         EvaluacionDesempenho.escalaPreCupos.idEscala = ep.escala.idEscala;
                         EvaluacionDesempenho.escalaPreCupos.nombre = ep.escala.nombre;
-                        EvaluacionDesempenho.escalaSinCalibrar.idEscala = ep.escala.idEscala;
+                        /*EvaluacionDesempenho.escalaSinCalibrar.idEscala = ep.escala.idEscala;
                         EvaluacionDesempenho.escalaSinCalibrar.nombre = ep.escala.nombre; 
                         EvaluacionDesempenho.escalaFinal.idEscala = ep.escala.idEscala;
-                        EvaluacionDesempenho.escalaFinal.nombre = ep.escala.nombre; 
+                        EvaluacionDesempenho.escalaFinal.nombre = ep.escala.nombre; */
                     }
                 }   
             }

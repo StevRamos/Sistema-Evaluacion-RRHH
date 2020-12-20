@@ -198,7 +198,7 @@ namespace SistemaEDInterfaces
                 sumaY += labelNombre.Height + 20;
                 BindingList<SeccionSubcompetencia> agrupacionCompetencia;
                 agrupacionCompetencia = new BindingList<SeccionSubcompetencia>();
-                foreach (EvaluacionDesempenhoWS.lineaEvaluacion sl in l.sublineasEvaluacion)
+                foreach (EvaluacionDesempenhoWS.lineaEvaluacion sl  in l.sublineasEvaluacion)
                 {
                     SeccionSubcompetencia agrupacionSubcompetencia = new SeccionSubcompetencia();
                     x = lblObjetivo.Location.X + 40 ;

@@ -418,8 +418,8 @@ namespace SistemaEDInterfaces
             if (sfdReporte.FileName != null && sfdReporte.FileName != "")
             {
                 byte[] arreglo;
-                //Global.colaboradorLoggeado.idColaborador
-                arreglo = daoReporte.generarReporteEvaluacionColaborador(1); 
+                
+                arreglo = daoReporte.generarReporteEvaluacionColaborador(Global.colaboradorLoggeado.idColaborador); 
 
                 Global.iniciarEspera(this);
                 File.WriteAllBytes(sfdReporte.FileName, arreglo);

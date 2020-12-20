@@ -243,7 +243,7 @@
             // 
             // Cod_Subcompetencia
             // 
-            this.Cod_Subcompetencia.HeaderText = "id Subpotencial";
+            this.Cod_Subcompetencia.HeaderText = "id Potencial";
             this.Cod_Subcompetencia.MinimumWidth = 6;
             this.Cod_Subcompetencia.Name = "Cod_Subcompetencia";
             this.Cod_Subcompetencia.ReadOnly = true;

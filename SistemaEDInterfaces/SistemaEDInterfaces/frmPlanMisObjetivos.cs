@@ -28,7 +28,7 @@ namespace SistemaEDInterfaces
             daoEvaluacionDesempenho = new EvaluacionDesempenhoWS.EvaluacionDesempenhoWSClient();
             objetivos = new BindingList<ObjetivoWS.objetivo>(); 
             dgvMisObjetivos.AutoGenerateColumns = false;
-            IdColaboradorLoggeado = 1;
+            IdColaboradorLoggeado = Global.colaboradorLoggeado.idColaborador;
 
             //Obtener la evaluacion de desempenho del periodo actual 
             BindingList<EvaluacionDesempenhoWS.evaluacionDesempenho> evaluaciones;

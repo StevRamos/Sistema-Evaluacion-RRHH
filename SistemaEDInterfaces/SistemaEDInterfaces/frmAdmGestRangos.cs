@@ -166,12 +166,12 @@ namespace SistemaEDInterfaces
             
             iniciarEspera();
             
-            /*
+            
             if (realizarValidaciones()==0)
             {
                 terminarEspera();
                 return; 
-            }*/
+            }
 
             actualizarEscalaPeriodo();
             actualizarPDI();

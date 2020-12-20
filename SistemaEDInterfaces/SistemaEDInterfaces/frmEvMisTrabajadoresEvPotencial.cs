@@ -438,7 +438,7 @@ namespace SistemaEDInterfaces
                 MessageBox.Show("Se guardaron los cambios",
                 "Mensaje Informativo", MessageBoxButtons.OK,
                 MessageBoxIcon.Information);
-                txtNotaPotencial.Text = EvaluacionPotencial.escalaFinal.nombre;
+                actualizarInformacionFormulario();
                 cambiarEstado(EstadoFormulario.NoEditable);
             }
         }

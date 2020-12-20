@@ -307,7 +307,7 @@ namespace SistemaEDInterfaces
 
                 lineasEv.Add(linea);
             }
-            EvaluacionDesempenho.lineasEvaluacion = lineasEv.ToArray();
+            evaluacionDesempenho.lineasEvaluacion = lineasEv.ToArray();
         }
         private void cambiarEstado(EstadoFormulario estadoNuevo)
         {
