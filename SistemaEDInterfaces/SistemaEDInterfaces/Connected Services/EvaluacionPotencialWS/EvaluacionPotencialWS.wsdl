@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.sed.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="EvaluacionPotencialWS" targetNamespace="http://services.sed.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/EvaluacionPotencialWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="insertarLineasEvaluacionPotencial">
+    <part name="parameters" element="tns:insertarLineasEvaluacionPotencial" />
+  </message>
+  <message name="insertarLineasEvaluacionPotencialResponse">
+    <part name="parameters" element="tns:insertarLineasEvaluacionPotencialResponse" />
+  </message>
+  <message name="actualizarEvaluacionPotencial">
+    <part name="parameters" element="tns:actualizarEvaluacionPotencial" />
+  </message>
+  <message name="actualizarEvaluacionPotencialResponse">
+    <part name="parameters" element="tns:actualizarEvaluacionPotencialResponse" />
+  </message>
+  <message name="obtenerEvaluacionPotencial">
+    <part name="parameters" element="tns:obtenerEvaluacionPotencial" />
+  </message>
+  <message name="obtenerEvaluacionPotencialResponse">
+    <part name="parameters" element="tns:obtenerEvaluacionPotencialResponse" />
+  </message>
+  <portType name="EvaluacionPotencialWS">
+    <operation name="insertarLineasEvaluacionPotencial">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionPotencialWS/insertarLineasEvaluacionPotencialRequest" message="tns:insertarLineasEvaluacionPotencial" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionPotencialWS/insertarLineasEvaluacionPotencialResponse" message="tns:insertarLineasEvaluacionPotencialResponse" />
+    </operation>
+    <operation name="actualizarEvaluacionPotencial">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionPotencialWS/actualizarEvaluacionPotencialRequest" message="tns:actualizarEvaluacionPotencial" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionPotencialWS/actualizarEvaluacionPotencialResponse" message="tns:actualizarEvaluacionPotencialResponse" />
+    </operation>
+    <operation name="obtenerEvaluacionPotencial">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionPotencialWS/obtenerEvaluacionPotencialRequest" message="tns:obtenerEvaluacionPotencial" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionPotencialWS/obtenerEvaluacionPotencialResponse" message="tns:obtenerEvaluacionPotencialResponse" />
+    </operation>
+  </portType>
+  <binding name="EvaluacionPotencialWSPortBinding" type="tns:EvaluacionPotencialWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarLineasEvaluacionPotencial">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarEvaluacionPotencial">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerEvaluacionPotencial">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EvaluacionPotencialWS">
+    <port name="EvaluacionPotencialWSPort" binding="tns:EvaluacionPotencialWSPortBinding">
+      <soap:address location="http://54.160.145.128:8080/SistemaEDServices/EvaluacionPotencialWS" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.sed.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="PesoCriterioWS" targetNamespace="http://services.sed.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/PesoCriterioWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="insertarPesoCriterio">
+    <part name="parameters" element="tns:insertarPesoCriterio" />
+  </message>
+  <message name="insertarPesoCriterioResponse">
+    <part name="parameters" element="tns:insertarPesoCriterioResponse" />
+  </message>
+  <message name="listarSubcriterios_x_CriPadre">
+    <part name="parameters" element="tns:listarSubcriterios_x_CriPadre" />
+  </message>
+  <message name="listarSubcriterios_x_CriPadreResponse">
+    <part name="parameters" element="tns:listarSubcriterios_x_CriPadreResponse" />
+  </message>
+  <message name="eliminarPesoCriterio">
+    <part name="parameters" element="tns:eliminarPesoCriterio" />
+  </message>
+  <message name="eliminarPesoCriterioResponse">
+    <part name="parameters" element="tns:eliminarPesoCriterioResponse" />
+  </message>
+  <message name="actualizarPesoCriterio">
+    <part name="parameters" element="tns:actualizarPesoCriterio" />
+  </message>
+  <message name="actualizarPesoCriterioResponse">
+    <part name="parameters" element="tns:actualizarPesoCriterioResponse" />
+  </message>
+  <message name="listarPesosCriterios">
+    <part name="parameters" element="tns:listarPesosCriterios" />
+  </message>
+  <message name="listarPesosCriteriosResponse">
+    <part name="parameters" element="tns:listarPesosCriteriosResponse" />
+  </message>
+  <portType name="PesoCriterioWS">
+    <operation name="insertarPesoCriterio">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/insertarPesoCriterioRequest" message="tns:insertarPesoCriterio" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/insertarPesoCriterioResponse" message="tns:insertarPesoCriterioResponse" />
+    </operation>
+    <operation name="listarSubcriterios_x_CriPadre">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/listarSubcriterios_x_CriPadreRequest" message="tns:listarSubcriterios_x_CriPadre" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/listarSubcriterios_x_CriPadreResponse" message="tns:listarSubcriterios_x_CriPadreResponse" />
+    </operation>
+    <operation name="eliminarPesoCriterio">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/eliminarPesoCriterioRequest" message="tns:eliminarPesoCriterio" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/eliminarPesoCriterioResponse" message="tns:eliminarPesoCriterioResponse" />
+    </operation>
+    <operation name="actualizarPesoCriterio">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/actualizarPesoCriterioRequest" message="tns:actualizarPesoCriterio" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/actualizarPesoCriterioResponse" message="tns:actualizarPesoCriterioResponse" />
+    </operation>
+    <operation name="listarPesosCriterios">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/listarPesosCriteriosRequest" message="tns:listarPesosCriterios" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/PesoCriterioWS/listarPesosCriteriosResponse" message="tns:listarPesosCriteriosResponse" />
+    </operation>
+  </portType>
+  <binding name="PesoCriterioWSPortBinding" type="tns:PesoCriterioWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarPesoCriterio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarSubcriterios_x_CriPadre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarPesoCriterio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarPesoCriterio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPesosCriterios">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PesoCriterioWS">
+    <port name="PesoCriterioWSPort" binding="tns:PesoCriterioWSPortBinding">
+      <soap:address location="http://54.160.145.128:8080/SistemaEDServices/PesoCriterioWS" />
+    </port>
+  </service>
+</definitions>

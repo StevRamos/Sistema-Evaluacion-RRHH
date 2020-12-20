@@ -41,7 +41,6 @@
 /SistemaEDInterfaces/SistemaEDInterfaces/obj/
 /SistemaEDInterfaces/SistemaEDInterfaces/bin/
 /SistemaEDInterfaces/.vs/SistemaEDInterfaces/v16/
-/SistemaEDInterfaces/SistemaEDInterfaces/Connected Services/
 !/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/jasperreports-chart-themes-6.16.0.jar
 !/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/jasperreports-annotation-processors-6.10.0.jar
 !/ServidorJava-ClienteCsharp/SistemaEDServices/src/java/pe/edu/pucp/sed/lib/jasperreports-6.16.0.jar

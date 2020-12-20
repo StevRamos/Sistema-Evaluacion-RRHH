@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.sed.pucp.edu.pe/" targetNamespace="http://services.sed.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="enviarReportePDI" type="tns:enviarReportePDI" />
+  <xs:element name="enviarReportePDIResponse" type="tns:enviarReportePDIResponse" />
+  <xs:element name="generarReporteEvaluacion" type="tns:generarReporteEvaluacion" />
+  <xs:element name="generarReporteEvaluacionColaborador" type="tns:generarReporteEvaluacionColaborador" />
+  <xs:element name="generarReporteEvaluacionColaboradorResponse" type="tns:generarReporteEvaluacionColaboradorResponse" />
+  <xs:element name="generarReporteEvaluacionResponse" type="tns:generarReporteEvaluacionResponse" />
+  <xs:element name="generarReporteObjetivos" type="tns:generarReporteObjetivos" />
+  <xs:element name="generarReporteObjetivosResponse" type="tns:generarReporteObjetivosResponse" />
+  <xs:element name="generarReportePDI" type="tns:generarReportePDI" />
+  <xs:element name="generarReportePDIResponse" type="tns:generarReportePDIResponse" />
+  <xs:complexType name="enviarReportePDI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="colaborador">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="apellidos" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluaciones" nillable="true" type="tns:evaluacion" />
+      <xs:element minOccurs="0" name="fechaNac" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+      <xs:element name="idColaborador" type="xs:int" />
+      <xs:element minOccurs="0" name="jefe" type="tns:colaborador" />
+      <xs:element minOccurs="0" name="nombres" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objetivos" nillable="true" type="tns:objetivo" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+      <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="subordinados" nillable="true" type="tns:colaborador" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evaluacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
+      <xs:element minOccurs="0" name="escalaFinal" type="tns:escala" />
+      <xs:element minOccurs="0" name="escalaPreCupos" type="tns:escala" />
+      <xs:element minOccurs="0" name="escalaSinCalibrar" type="tns:escala" />
+      <xs:element name="estado" type="xs:int" />
+      <xs:element name="estadoPDI" type="xs:int" />
+      <xs:element name="idEvaluacion" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
+      <xs:element name="notaAutoEval" type="xs:double" />
+      <xs:element name="notaFinal" type="xs:double" />
+      <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+      <xs:element name="tipo" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="escala">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluacionesFinales" nillable="true" type="tns:evaluacion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluacionesPreCupos" nillable="true" type="tns:evaluacion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluacionesSinCalibrar" nillable="true" type="tns:evaluacion" />
+      <xs:element name="idEscala" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rangos" nillable="true" type="tns:escalaPeriodo" />
+      <xs:element name="tipo" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="escalaPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="escala" type="tns:escala" />
+      <xs:element name="notaMax" type="xs:double" />
+      <xs:element name="notaMin" type="xs:double" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+      <xs:element name="porcentajeCupos" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="periodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="configuracionFechas" nillable="true" type="tns:gerenciaPeriodo" />
+      <xs:element minOccurs="0" name="diaNotificacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="escalas" nillable="true" type="tns:escalaPeriodo" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoPeriodo" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="evaluaciones" nillable="true" type="tns:evaluacion" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicio" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="horaNotificacion" type="xs:string" />
+      <xs:element name="idPeriodo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objetivos" nillable="true" type="tns:objetivo" />
+      <xs:element name="pesoEvalComp" type="xs:double" />
+      <xs:element name="pesoEvalObj" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pesosCriterio" nillable="true" type="tns:pesoCriterio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rangosPDI" nillable="true" type="tns:itemPDIPeriodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gerenciaPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaFinCal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinEvalFinD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinEvalPrevD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinPDI" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFinPlan" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioCal" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioEvalFinD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioEvalPrevD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioPDI" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaInicioPlan" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="gerencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="colaboradores" nillable="true" type="tns:colaborador" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="configuracionFechas" nillable="true" type="tns:gerenciaPeriodo" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idGerencia" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="objetivo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="colaborador" type="tns:colaborador" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="estado" type="xs:int" />
+      <xs:element minOccurs="0" name="evaluacion" type="tns:evaluacionDesempenho" />
+      <xs:element minOccurs="0" name="fechaAprobacion" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFormulacion" type="xs:dateTime" />
+      <xs:element name="idObjetivo" type="xs:int" />
+      <xs:element name="meta" type="xs:double" />
+      <xs:element name="notaAutoEval" type="xs:double" />
+      <xs:element name="notaFinal" type="xs:double" />
+      <xs:element name="notaPrevia" type="xs:double" />
+      <xs:element minOccurs="0" name="observacion" type="xs:string" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+      <xs:element name="peso" type="xs:double" />
+      <xs:element minOccurs="0" name="unidadMedida" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="evaluacionDesempenho">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:evaluacion">
+        <xs:sequence>
+          <xs:element name="estadoAutoEval" type="xs:int" />
+          <xs:element name="estadoPlanificacion" type="xs:int" />
+          <xs:element name="notaAutoEvalComp" type="xs:double" />
+          <xs:element name="notaAutoEvalObj" type="xs:double" />
+          <xs:element name="notaFinalComp" type="xs:double" />
+          <xs:element name="notaFinalObj" type="xs:double" />
+          <xs:element name="notaPrevia" type="xs:double" />
+          <xs:element name="notaPreviaComp" type="xs:double" />
+          <xs:element name="notaPreviaObj" type="xs:double" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="objetivos" nillable="true" type="tns:objetivo" />
+          <xs:element minOccurs="0" name="observacionesComp" type="xs:string" />
+          <xs:element minOccurs="0" name="observacionesObj" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="pesoCriterio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="criterio" type="tns:criterio" />
+      <xs:element name="idPesoCriterio" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+      <xs:element name="peso" type="xs:double" />
+      <xs:element minOccurs="0" name="puestoTrabajo" type="tns:puestoTrabajo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="criterio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="criterioPadre" type="tns:criterio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="criterios" nillable="true" type="tns:criterio" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="idCriterio" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pesoscriterios" nillable="true" type="tns:pesoCriterio" />
+      <xs:element name="tipo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="lineaEvaluacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accionesAtomar" type="xs:string" />
+      <xs:element minOccurs="0" name="evaluacion" type="tns:evaluacion" />
+      <xs:element minOccurs="0" name="fechaCumplimiento" type="xs:dateTime" />
+      <xs:element name="idLineaEvaluacion" type="xs:int" />
+      <xs:element minOccurs="0" name="itemPDI" type="tns:itemPDI" />
+      <xs:element name="notaAutoEval" type="xs:double" />
+      <xs:element name="notaFinal" type="xs:double" />
+      <xs:element name="notaPrevia" type="xs:double" />
+      <xs:element minOccurs="0" name="pesoCriterio" type="tns:pesoCriterio" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="sublineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemPDI">
+    <xs:sequence>
+      <xs:element name="idItemPDI" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="lineasEvaluacion" nillable="true" type="tns:lineaEvaluacion" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rangos" nillable="true" type="tns:itemPDIPeriodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="itemPDIPeriodo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="itemPDI" type="tns:itemPDI" />
+      <xs:element name="notaMax" type="xs:double" />
+      <xs:element name="notaMin" type="xs:double" />
+      <xs:element minOccurs="0" name="periodo" type="tns:periodo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="puestoTrabajo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="gerencia" type="tns:gerencia" />
+      <xs:element name="idPuestoTrabajo" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="pesosCriterio" nillable="true" type="tns:pesoCriterio" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contrasenha" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasenhaAnterior" type="xs:string" />
+      <xs:element name="estadoCuenta" type="xs:int" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element name="nivelAcceso" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enviarReportePDIResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="generarReporteEvaluacionColaborador">
+    <xs:sequence>
+      <xs:element name="idColaborador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteEvaluacionColaboradorResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteEvaluacion">
+    <xs:sequence>
+      <xs:element name="idJefe" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteEvaluacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteObjetivos">
+    <xs:sequence>
+      <xs:element name="idGerencia" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteObjetivosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReportePDI">
+    <xs:sequence>
+      <xs:element name="idColaborador" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReportePDIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="estadoPeriodo">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ELIMINADO" />
+      <xs:enumeration value="CREADO" />
+      <xs:enumeration value="ENPROGRESO" />
+      <xs:enumeration value="FINALIZADO" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

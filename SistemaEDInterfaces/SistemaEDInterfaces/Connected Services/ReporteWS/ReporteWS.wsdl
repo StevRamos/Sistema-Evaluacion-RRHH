@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.sed.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ReporteWS" targetNamespace="http://services.sed.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/ReporteWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="enviarReportePDI">
+    <part name="parameters" element="tns:enviarReportePDI" />
+  </message>
+  <message name="enviarReportePDIResponse">
+    <part name="parameters" element="tns:enviarReportePDIResponse" />
+  </message>
+  <message name="generarReporteEvaluacionColaborador">
+    <part name="parameters" element="tns:generarReporteEvaluacionColaborador" />
+  </message>
+  <message name="generarReporteEvaluacionColaboradorResponse">
+    <part name="parameters" element="tns:generarReporteEvaluacionColaboradorResponse" />
+  </message>
+  <message name="generarReporteEvaluacion">
+    <part name="parameters" element="tns:generarReporteEvaluacion" />
+  </message>
+  <message name="generarReporteEvaluacionResponse">
+    <part name="parameters" element="tns:generarReporteEvaluacionResponse" />
+  </message>
+  <message name="generarReportePDI">
+    <part name="parameters" element="tns:generarReportePDI" />
+  </message>
+  <message name="generarReportePDIResponse">
+    <part name="parameters" element="tns:generarReportePDIResponse" />
+  </message>
+  <message name="generarReporteObjetivos">
+    <part name="parameters" element="tns:generarReporteObjetivos" />
+  </message>
+  <message name="generarReporteObjetivosResponse">
+    <part name="parameters" element="tns:generarReporteObjetivosResponse" />
+  </message>
+  <portType name="ReporteWS">
+    <operation name="enviarReportePDI">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/enviarReportePDIRequest" message="tns:enviarReportePDI" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/enviarReportePDIResponse" message="tns:enviarReportePDIResponse" />
+    </operation>
+    <operation name="generarReporteEvaluacionColaborador">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/generarReporteEvaluacionColaboradorRequest" message="tns:generarReporteEvaluacionColaborador" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/generarReporteEvaluacionColaboradorResponse" message="tns:generarReporteEvaluacionColaboradorResponse" />
+    </operation>
+    <operation name="generarReporteEvaluacion">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/generarReporteEvaluacionRequest" message="tns:generarReporteEvaluacion" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/generarReporteEvaluacionResponse" message="tns:generarReporteEvaluacionResponse" />
+    </operation>
+    <operation name="generarReportePDI">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/generarReportePDIRequest" message="tns:generarReportePDI" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/generarReportePDIResponse" message="tns:generarReportePDIResponse" />
+    </operation>
+    <operation name="generarReporteObjetivos">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/generarReporteObjetivosRequest" message="tns:generarReporteObjetivos" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ReporteWS/generarReporteObjetivosResponse" message="tns:generarReporteObjetivosResponse" />
+    </operation>
+  </portType>
+  <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="enviarReportePDI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteEvaluacionColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteEvaluacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReportePDI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteObjetivos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ReporteWS">
+    <port name="ReporteWSPort" binding="tns:ReporteWSPortBinding">
+      <soap:address location="http://54.160.145.128:8080/SistemaEDServices/ReporteWS" />
+    </port>
+  </service>
+</definitions>

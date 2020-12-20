@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.sed.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ColaboradorWS" targetNamespace="http://services.sed.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/ColaboradorWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="buscarJefe">
+    <part name="parameters" element="tns:buscarJefe" />
+  </message>
+  <message name="buscarJefeResponse">
+    <part name="parameters" element="tns:buscarJefeResponse" />
+  </message>
+  <message name="listarJefeXGerenciaXPeriodoActual">
+    <part name="parameters" element="tns:listarJefeXGerenciaXPeriodoActual" />
+  </message>
+  <message name="listarJefeXGerenciaXPeriodoActualResponse">
+    <part name="parameters" element="tns:listarJefeXGerenciaXPeriodoActualResponse" />
+  </message>
+  <message name="insertarColaborador">
+    <part name="parameters" element="tns:insertarColaborador" />
+  </message>
+  <message name="insertarColaboradorResponse">
+    <part name="parameters" element="tns:insertarColaboradorResponse" />
+  </message>
+  <message name="listarColaboradores">
+    <part name="parameters" element="tns:listarColaboradores" />
+  </message>
+  <message name="listarColaboradoresResponse">
+    <part name="parameters" element="tns:listarColaboradoresResponse" />
+  </message>
+  <message name="actualizarColaborador">
+    <part name="parameters" element="tns:actualizarColaborador" />
+  </message>
+  <message name="actualizarColaboradorResponse">
+    <part name="parameters" element="tns:actualizarColaboradorResponse" />
+  </message>
+  <message name="listarColaboradoresXGerencia9Box">
+    <part name="parameters" element="tns:listarColaboradoresXGerencia9Box" />
+  </message>
+  <message name="listarColaboradoresXGerencia9BoxResponse">
+    <part name="parameters" element="tns:listarColaboradoresXGerencia9BoxResponse" />
+  </message>
+  <message name="autenticarUsuario">
+    <part name="parameters" element="tns:autenticarUsuario" />
+  </message>
+  <message name="autenticarUsuarioResponse">
+    <part name="parameters" element="tns:autenticarUsuarioResponse" />
+  </message>
+  <message name="eliminarColaborador">
+    <part name="parameters" element="tns:eliminarColaborador" />
+  </message>
+  <message name="eliminarColaboradorResponse">
+    <part name="parameters" element="tns:eliminarColaboradorResponse" />
+  </message>
+  <message name="listarColaboradoresXJefeXPeriodo">
+    <part name="parameters" element="tns:listarColaboradoresXJefeXPeriodo" />
+  </message>
+  <message name="listarColaboradoresXJefeXPeriodoResponse">
+    <part name="parameters" element="tns:listarColaboradoresXJefeXPeriodoResponse" />
+  </message>
+  <message name="listarColaboradoresXJefe">
+    <part name="parameters" element="tns:listarColaboradoresXJefe" />
+  </message>
+  <message name="listarColaboradoresXJefeResponse">
+    <part name="parameters" element="tns:listarColaboradoresXJefeResponse" />
+  </message>
+  <message name="listarColaboradoresXGerencia">
+    <part name="parameters" element="tns:listarColaboradoresXGerencia" />
+  </message>
+  <message name="listarColaboradoresXGerenciaResponse">
+    <part name="parameters" element="tns:listarColaboradoresXGerenciaResponse" />
+  </message>
+  <portType name="ColaboradorWS">
+    <operation name="buscarJefe">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/buscarJefeRequest" message="tns:buscarJefe" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/buscarJefeResponse" message="tns:buscarJefeResponse" />
+    </operation>
+    <operation name="listarJefeXGerenciaXPeriodoActual">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarJefeXGerenciaXPeriodoActualRequest" message="tns:listarJefeXGerenciaXPeriodoActual" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarJefeXGerenciaXPeriodoActualResponse" message="tns:listarJefeXGerenciaXPeriodoActualResponse" />
+    </operation>
+    <operation name="insertarColaborador">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/insertarColaboradorRequest" message="tns:insertarColaborador" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/insertarColaboradorResponse" message="tns:insertarColaboradorResponse" />
+    </operation>
+    <operation name="listarColaboradores">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresRequest" message="tns:listarColaboradores" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresResponse" message="tns:listarColaboradoresResponse" />
+    </operation>
+    <operation name="actualizarColaborador">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/actualizarColaboradorRequest" message="tns:actualizarColaborador" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/actualizarColaboradorResponse" message="tns:actualizarColaboradorResponse" />
+    </operation>
+    <operation name="listarColaboradoresXGerencia9Box">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresXGerencia9BoxRequest" message="tns:listarColaboradoresXGerencia9Box" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresXGerencia9BoxResponse" message="tns:listarColaboradoresXGerencia9BoxResponse" />
+    </operation>
+    <operation name="autenticarUsuario">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/autenticarUsuarioRequest" message="tns:autenticarUsuario" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/autenticarUsuarioResponse" message="tns:autenticarUsuarioResponse" />
+    </operation>
+    <operation name="eliminarColaborador">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/eliminarColaboradorRequest" message="tns:eliminarColaborador" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/eliminarColaboradorResponse" message="tns:eliminarColaboradorResponse" />
+    </operation>
+    <operation name="listarColaboradoresXJefeXPeriodo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresXJefeXPeriodoRequest" message="tns:listarColaboradoresXJefeXPeriodo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresXJefeXPeriodoResponse" message="tns:listarColaboradoresXJefeXPeriodoResponse" />
+    </operation>
+    <operation name="listarColaboradoresXJefe">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresXJefeRequest" message="tns:listarColaboradoresXJefe" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresXJefeResponse" message="tns:listarColaboradoresXJefeResponse" />
+    </operation>
+    <operation name="listarColaboradoresXGerencia">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresXGerenciaRequest" message="tns:listarColaboradoresXGerencia" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/ColaboradorWS/listarColaboradoresXGerenciaResponse" message="tns:listarColaboradoresXGerenciaResponse" />
+    </operation>
+  </portType>
+  <binding name="ColaboradorWSPortBinding" type="tns:ColaboradorWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="buscarJefe">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarJefeXGerenciaXPeriodoActual">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarColaboradores">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarColaboradoresXGerencia9Box">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="autenticarUsuario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarColaborador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarColaboradoresXJefeXPeriodo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarColaboradoresXJefe">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarColaboradoresXGerencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ColaboradorWS">
+    <port name="ColaboradorWSPort" binding="tns:ColaboradorWSPortBinding">
+      <soap:address location="http://54.160.145.128:8080/SistemaEDServices/ColaboradorWS" />
+    </port>
+  </service>
+</definitions>

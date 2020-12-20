@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.sed.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="EvaluacionDesempenhoWS" targetNamespace="http://services.sed.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/EvaluacionDesempenhoWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="insertarLineasEvaluacionDesempenho">
+    <part name="parameters" element="tns:insertarLineasEvaluacionDesempenho" />
+  </message>
+  <message name="insertarLineasEvaluacionDesempenhoResponse">
+    <part name="parameters" element="tns:insertarLineasEvaluacionDesempenhoResponse" />
+  </message>
+  <message name="actualizarEvaluacionDesempenho">
+    <part name="parameters" element="tns:actualizarEvaluacionDesempenho" />
+  </message>
+  <message name="actualizarEvaluacionDesempenhoResponse">
+    <part name="parameters" element="tns:actualizarEvaluacionDesempenhoResponse" />
+  </message>
+  <message name="obtenerEvaluacionDesempenho">
+    <part name="parameters" element="tns:obtenerEvaluacionDesempenho" />
+  </message>
+  <message name="obtenerEvaluacionDesempenhoResponse">
+    <part name="parameters" element="tns:obtenerEvaluacionDesempenhoResponse" />
+  </message>
+  <message name="listarDesempenhoPorPeriodo">
+    <part name="parameters" element="tns:listarDesempenhoPorPeriodo" />
+  </message>
+  <message name="listarDesempenhoPorPeriodoResponse">
+    <part name="parameters" element="tns:listarDesempenhoPorPeriodoResponse" />
+  </message>
+  <message name="actualizarEstadoPlanificacion">
+    <part name="parameters" element="tns:actualizarEstadoPlanificacion" />
+  </message>
+  <message name="actualizarEstadoPlanificacionResponse">
+    <part name="parameters" element="tns:actualizarEstadoPlanificacionResponse" />
+  </message>
+  <portType name="EvaluacionDesempenhoWS">
+    <operation name="insertarLineasEvaluacionDesempenho">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/insertarLineasEvaluacionDesempenhoRequest" message="tns:insertarLineasEvaluacionDesempenho" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/insertarLineasEvaluacionDesempenhoResponse" message="tns:insertarLineasEvaluacionDesempenhoResponse" />
+    </operation>
+    <operation name="actualizarEvaluacionDesempenho">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/actualizarEvaluacionDesempenhoRequest" message="tns:actualizarEvaluacionDesempenho" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/actualizarEvaluacionDesempenhoResponse" message="tns:actualizarEvaluacionDesempenhoResponse" />
+    </operation>
+    <operation name="obtenerEvaluacionDesempenho">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/obtenerEvaluacionDesempenhoRequest" message="tns:obtenerEvaluacionDesempenho" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/obtenerEvaluacionDesempenhoResponse" message="tns:obtenerEvaluacionDesempenhoResponse" />
+    </operation>
+    <operation name="listarDesempenhoPorPeriodo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/listarDesempenhoPorPeriodoRequest" message="tns:listarDesempenhoPorPeriodo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/listarDesempenhoPorPeriodoResponse" message="tns:listarDesempenhoPorPeriodoResponse" />
+    </operation>
+    <operation name="actualizarEstadoPlanificacion">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/actualizarEstadoPlanificacionRequest" message="tns:actualizarEstadoPlanificacion" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/EvaluacionDesempenhoWS/actualizarEstadoPlanificacionResponse" message="tns:actualizarEstadoPlanificacionResponse" />
+    </operation>
+  </portType>
+  <binding name="EvaluacionDesempenhoWSPortBinding" type="tns:EvaluacionDesempenhoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarLineasEvaluacionDesempenho">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarEvaluacionDesempenho">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerEvaluacionDesempenho">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarDesempenhoPorPeriodo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarEstadoPlanificacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EvaluacionDesempenhoWS">
+    <port name="EvaluacionDesempenhoWSPort" binding="tns:EvaluacionDesempenhoWSPortBinding">
+      <soap:address location="http://54.160.145.128:8080/SistemaEDServices/EvaluacionDesempenhoWS" />
+    </port>
+  </service>
+</definitions>

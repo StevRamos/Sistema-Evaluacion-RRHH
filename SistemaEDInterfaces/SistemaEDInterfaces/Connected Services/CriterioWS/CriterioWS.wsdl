@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.sed.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="CriterioWS" targetNamespace="http://services.sed.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://54.160.145.128:8080/SistemaEDServices/CriterioWS?xsd=1" namespace="http://services.sed.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="listar">
+    <part name="parameters" element="tns:listar" />
+  </message>
+  <message name="listarResponse">
+    <part name="parameters" element="tns:listarResponse" />
+  </message>
+  <message name="insertarMasivo">
+    <part name="parameters" element="tns:insertarMasivo" />
+  </message>
+  <message name="insertarMasivoResponse">
+    <part name="parameters" element="tns:insertarMasivoResponse" />
+  </message>
+  <message name="actualizarCriterio">
+    <part name="parameters" element="tns:actualizarCriterio" />
+  </message>
+  <message name="actualizarCriterioResponse">
+    <part name="parameters" element="tns:actualizarCriterioResponse" />
+  </message>
+  <message name="insertarIndividual">
+    <part name="parameters" element="tns:insertarIndividual" />
+  </message>
+  <message name="insertarIndividualResponse">
+    <part name="parameters" element="tns:insertarIndividualResponse" />
+  </message>
+  <portType name="CriterioWS">
+    <operation name="listar">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/CriterioWS/listarRequest" message="tns:listar" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/CriterioWS/listarResponse" message="tns:listarResponse" />
+    </operation>
+    <operation name="insertarMasivo">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/CriterioWS/insertarMasivoRequest" message="tns:insertarMasivo" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/CriterioWS/insertarMasivoResponse" message="tns:insertarMasivoResponse" />
+    </operation>
+    <operation name="actualizarCriterio">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/CriterioWS/actualizarCriterioRequest" message="tns:actualizarCriterio" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/CriterioWS/actualizarCriterioResponse" message="tns:actualizarCriterioResponse" />
+    </operation>
+    <operation name="insertarIndividual">
+      <input wsam:Action="http://services.sed.pucp.edu.pe/CriterioWS/insertarIndividualRequest" message="tns:insertarIndividual" />
+      <output wsam:Action="http://services.sed.pucp.edu.pe/CriterioWS/insertarIndividualResponse" message="tns:insertarIndividualResponse" />
+    </operation>
+  </portType>
+  <binding name="CriterioWSPortBinding" type="tns:CriterioWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarMasivo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarCriterio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarIndividual">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CriterioWS">
+    <port name="CriterioWSPort" binding="tns:CriterioWSPortBinding">
+      <soap:address location="http://54.160.145.128:8080/SistemaEDServices/CriterioWS" />
+    </port>
+  </service>
+</definitions>
