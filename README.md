@@ -1,4 +1,2 @@
 # Sistema-Evaluacion-RRHH
-Sistema de evaluacion de desempeño
-
-1. Project was created using NetBeans
+Aplicaciòn de escritorio desarrollada en C# y Java. El objetivo de este fue implementar una soluciòn que permita evaluar el desempeño de los colaboradores de una empresa
